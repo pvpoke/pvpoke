@@ -3107,22 +3107,29 @@ a.download-csv {
 .rank .details .detail-section .moveset .name-container.stats-container.move-effect, .rank .details .detail-section .moveset .name-container.stats-container.move-count {
   justify-content: flex-start;
 }
+.quiz-hints-container .details .detail-section .moveset .name-container.stats-container.move-effect div,
 .rank .details .detail-section .moveset .name-container.stats-container.move-effect div, .rank .details .detail-section .moveset .name-container.stats-container.move-count div {
   margin: 5px 5px 0 0;
 }
+.quiz-hints-container .details .detail-section .moveset .stats-container,
 .rank .details .detail-section .moveset .stats-container {
   font-size: 12px;
   justify-content: space-between;
 }
+.quiz-hints-container .details .detail-section .moveset .archetype,
 .rank .details .detail-section .moveset .archetype {
   display: flex;
   align-items: center;
   margin-top: 2px;
   font-size: 12px;
 }
+
+.quiz-hints-container .details .detail-section .moveset .archetype .name, .rank .details .detail-section .moveset .archetype .icon,
 .rank .details .detail-section .moveset .archetype .name, .rank .details .detail-section .moveset .archetype .icon {
   display: block;
 }
+
+.quiz-hints-container .details .detail-section .moveset .archetype .icon,
 .rank .details .detail-section .moveset .archetype .icon {
   width: 16px;
   height: 16px;
@@ -3130,24 +3137,31 @@ a.download-csv {
   background-repeat: no-repeat;
   margin-left: 5px;
 }
+.quiz-hints-container .details .detail-section .moveset .archetype .icon.spam,
 .rank .details .detail-section .moveset .archetype .icon.spam {
   background-position: -16px 0;
 }
+.quiz-hints-container .details .detail-section .moveset .archetype .icon.self-debuff,
 .rank .details .detail-section .moveset .archetype .icon.self-debuff {
   background-position: -32px 0;
 }
+.quiz-hints-container, .details .detail-section .moveset .archetype .icon.debuff,
 .rank .details .detail-section .moveset .archetype .icon.debuff {
   background-position: -48px 0;
 }
+.quiz-hints-container, .details .detail-section .moveset .archetype .icon.boost,
 .rank .details .detail-section .moveset .archetype .icon.boost {
   background-position: -64px 0;
 }
+.quiz-hints-container .details .detail-section .moveset .archetype .icon.high-energy,
 .rank .details .detail-section .moveset .archetype .icon.high-energy {
   background-position: -80px 0;
 }
+.quiz-hints-container .details .detail-section .moveset .archetype .icon.general,
 .rank .details .detail-section .moveset .archetype .icon.general {
   background-position: -96px 0;
 }
+.quiz-hints-container .details .detail-section .moveset .archetype .icon.low-quality,
 .rank .details .detail-section .moveset .archetype .icon.low-quality {
   border-radius: 16px;
   background: #000;
@@ -3155,6 +3169,7 @@ a.download-csv {
   text-align: center;
   font-weight: bold;
 }
+.quiz-hints-container .details .detail-section .moveset .archetype .icon.low-quality:before,
 .rank .details .detail-section .moveset .archetype .icon.low-quality:before {
   content: "x";
 }
@@ -3269,6 +3284,7 @@ a.download-csv {
 
 .rank.typed-ranking .pokemon-info .name-container .quiz-moves-container {
   padding-top: 6px;
+  font-size: 14px;
 }
 
 .rank.typed-ranking .pokemon-info .name-container .quiz-moves-container .quiz-move {
