@@ -237,7 +237,7 @@ var InterfaceMaster = (function () {
 					rankingDisplayIncrement = 5;
 				}
 
-				// FIXME 20 è hardocdato
+				// FIXME 20 è hardcodato
 				this.quiz_ranking_index = Math.floor(Math.random() * 20);
 				// Mostra solo il primo elemento della lista rankings
 				try {
@@ -271,62 +271,11 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				// Construct meta group from ranked Pokemon
-				if((index < 100)&&(context == "custom")){
-					metaGroup.push(pokemon);
-				}
-
-				if(context != "custom"){
-					for(var n = 0; n < metaGroupData.length; n++){
-						if(metaGroupData[n].speciesId == pokemon.speciesId){
-							pokemon.score = r.score;
-							metaGroup.push(pokemon);
-							break;
-						}
-					}
-				}
-
-				// Get names of of ranking moves
-
-				var moveNameStr = "";
-
-				// Put together the recommended moveset string
-				for(var n = 0; n < r.moveset.length; n++){
-					if(n == 0){
-						for(var j = 0; j < pokemon.fastMovePool.length; j++){
-							if(r.moveset[n] == pokemon.fastMovePool[j].moveId){
-								moveNameStr += pokemon.fastMovePool[j].displayName;
-
-								moveNameStr += "<span class=\"count fast\">"+(pokemon.fastMovePool[j].cooldown / 500)+"</span>";
-								break;
-							}
-						}
-					} else{
-						for(var j = 0; j < pokemon.chargedMovePool.length; j++){
-							if(r.moveset[n] == pokemon.chargedMovePool[j].moveId){
-								moveNameStr += pokemon.chargedMovePool[j].displayName;
-
-								var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, pokemon.chargedMovePool[j]);
-								var moveCount = moveCounts[0];
-
-								if(moveCounts[0] > moveCounts[1]){
-									moveCount+="-";
-								}
-
-								if(moveCounts[2] < moveCounts[1] && moveCounts[1] == moveCounts[0]){
-									moveCount+=".";
-								}
-
-								moveNameStr += "<span class=\"count\">"+moveCount+"</span>";
-								break;
-							}
-						}
-					}
-
-					if(n < r.moveset.length - 1){
-						moveNameStr += ", "
-					}
-				}
+				// Store the selected moves
+				this.fastMove = pokemon.fastMove
+				// Select which charged move to quiz out of the two reccomended
+				chargedMoveIndex = Math.floor(Math.random() * 2);
+				this.chargedMove = pokemon.chargedMoves[chargedMoveIndex]
 
 				// Show the pokemon details
 				var $el = $("<div class=\"rank typed-ranking quiz " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
@@ -335,8 +284,8 @@ var InterfaceMaster = (function () {
 							"<span class=\"number\">#"+(index+1)+"</span>" +
 							"<span class=\"name\">"+pokemon.speciesName+"</span>" +
 							"<div class=\"quiz-moves-container\">" +
-								"<div class=\"quiz-move\"><b>Fast Move:</b> "+ pokemon.fastMove.name + "</div>" +
-								"<div class=\"quiz-move\"><b>Charged Move:</b> " + pokemon.chargedMoves[0].name + "</div>" +
+								"<div class=\"quiz-move\"><b>Fast Move:</b> "+ this.fastMove.name + "</div>" +
+								"<div class=\"quiz-move\"><b>Charged Move:</b> " + this.chargedMove.name + "</div>" +
 							"</div>" +
 						"</div>" +
 						"<div class=\"type-container\"></div>" +
@@ -491,8 +440,8 @@ var InterfaceMaster = (function () {
 			function addHintMoveDetails(){
 				// Display move data
 				var pokemon = self.pokemon
-				fastMove = self.pokemon.fastMove
-				chargedMove = self.pokemon.chargedMoves[0]
+				fastMove = self.fastMove
+				chargedMove = self.chargedMove
 
 				var $details = $(".quiz-hints-container");
 				// Clear previous content
