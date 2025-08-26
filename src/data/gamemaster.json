@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-08-25 19:26:01",
+    "timestamp": "2025-08-26 02:05:15",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -156,11 +156,11 @@
                     },
                     {
                         "points": 7,
-                        "pokemon": ["aggron_mega", "gallade_mega", "kyurem_black", "kyurem_white", "zygarde_complete"]
+                        "pokemon": ["aggron_mega", "eternatus", "gallade_mega", "kyurem_black", "kyurem_white", "zygarde_complete"]
                     },
                     {
                         "points": 6,
-                        "pokemon": ["charizard_mega_y", "eternatus", "gengar_mega"]
+                        "pokemon": ["charizard_mega_y", "gengar_mega"]
                     },
                     {
                         "points": 5,
@@ -192,7 +192,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["feraligatr", "tentacruel", "moltres_galarian", "primeape", "bellibolt", "malamar", "virizion", "blastoise", "weezing_galarian", "cradily", "giratina_altered", "registeel"]
+                    "values": ["feraligatr", "tentacruel", "moltres_galarian", "dusknoir", "forretress", "lickilicky", "runerigus", "talonflame", "tinkaton", "giratina_altered_shadow"]
                 }
             ]
         },
