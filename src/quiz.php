@@ -120,34 +120,42 @@ require_once 'header.php';
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
 		<div class="quiz-answer-input">
-		<select id="guess">
-			<option value="" disabled selected>-- Choose --</option>
-			<!-- Generate 0 to 16 -->
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-			<option value="11">11</option>
-			<option value="12">12</option>
-			<option value="13">13</option>
-			<option value="14">14</option>
-			<option value="15">15</option>
-			<option value="16">16</option>
-		</select>
+			<select id="guess">
+				<option value="" disabled selected>-- Choose --</option>
+				<!-- Generate 0 to 16 -->
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+			</select>
 		</div>
+		<button class="quiz-check-btn quiz-button" style="display: none;">
+			<span class="btn-content-wrap">
+				<span class="btn-label">Check Answer</span>
+			</span>
+		</button>
 	</div>
-	<button class="quiz-check-btn button" style="display: none;">
-		<span class="btn-content-wrap">
-			<span class="btn-label">Check Answer</span>
-		</span>
-	</button>
+	<div class="quiz-feedback" style="color: red;"></div>
+	<div>
+		<button class="quiz-skip-btn button" style="display: none;">
+			<span class="btn-content-wrap">
+				<span class="btn-label">Skip Question</span>
+			</span>
+		</button>
+	</div>
 </div>
 
 <?php require 'modules/ads/body-728.php'; ?>

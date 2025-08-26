@@ -56,6 +56,7 @@ var InterfaceMaster = (function () {
 				$(".league-select").on("change", selectLeague);
 				$(".category-select").on("change", selectCategory);
 				$("body").on("click", ".quiz-check-btn", checkAnswer);
+				$("body").on("click", ".quiz-skip-btn", skipQuestion);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.quiz-reccomended-moveset", toggleUseOnlyReccomendedMoveset);
 
@@ -154,6 +155,7 @@ var InterfaceMaster = (function () {
 				var gm = GameMaster.getInstance();
 
 				trials = 0;
+				$(".quiz-feedback").text("")
 				data = rankings;
 				this.rankings = rankings;
 
@@ -327,6 +329,7 @@ var InterfaceMaster = (function () {
 				//when the data is loaded, show the question
 				$(".quiz-question").show();
 				$(".quiz-check-btn ").show();
+				$(".quiz-skip-btn ").show();
 			}
 
 			// Given JSON of get parameters, load these settings
@@ -651,6 +654,10 @@ var InterfaceMaster = (function () {
 				self.pushHistoryState(cup, cp, category, null);
 			}
 
+			function skipQuestion(){
+				self.displayRankingData(self.rankings)
+			}
+
 			function checkAnswer() {
 				var quizAnswerInputValue = $(".quiz-answer-input option:selected").val();
 				var numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
@@ -659,6 +666,9 @@ var InterfaceMaster = (function () {
 				result = quizAnswerInputValue == numberOfMoves[0]
 				if(result && trials == 1){
 					numberCorrectAnswers++
+				}
+				if(!result){
+					$(".quiz-feedback").text(quizAnswerInputValue + " is not the right answer, try again!");
 				}
 
 				updateScore()

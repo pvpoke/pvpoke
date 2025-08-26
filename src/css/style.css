@@ -1399,7 +1399,22 @@ select.large {
   font-weight: bold;
   max-width: 250px;
 }
-
+.quiz-button {
+    position: relative;
+    display: block;
+    font-size: 12px;
+    margin: 10px auto;
+    border-radius: 30px;
+    border: 2px solid #000;
+    padding: 5px 12px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    background: #f9a01b;
+    background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
+    background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
+    background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
+}
 .button {
   position: relative;
   display: block;
