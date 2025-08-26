@@ -85,7 +85,7 @@ require_once 'header.php';
 
 ?>
 
-<h1>Quiz</h1>
+<h1>Fast Move Energy Quiz</h1>
 <div class="section league-select-container white">
 	<div class="ranking-filters flex">
 		<div class="ranking-filter">
@@ -100,6 +100,37 @@ require_once 'header.php';
 
 	<h2 class="loading">Loading data...</h2>
 	<div class="rankings-container clear"></div>
+	<div class="quiz-question">
+		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
+		<div class="quiz-answer-input">
+		<select id="guess">
+			<option value="" disabled selected>-- Choose --</option>
+			<!-- Generate 0 to 16 -->
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+		</select>
+		</div>
+	</div>
+	<button class="quiz-check-btn button">
+		<span class="btn-content-wrap">
+			<span class="btn-label">Check Answer</span>
+		</span>
+	</button>
 </div>
 
 <a href="#" class="button download-csv">Export to CSV</a>

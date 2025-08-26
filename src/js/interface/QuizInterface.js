@@ -5,7 +5,6 @@ var InterfaceMaster = (function () {
 
     function createInstance() {
 
-
         var object = new interfaceObject();
 
 		function interfaceObject(){
@@ -55,6 +54,7 @@ var InterfaceMaster = (function () {
 				$(".format-select").on("change", selectFormat);
 				$(".league-select").on("change", selectLeague);
 				$(".category-select").on("change", selectCategory);
+				$("body").on("click", ".quiz-check-btn", checkAnswer);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
 				$("body").on("click", ".check.xl", toggleXLPokemon);
@@ -156,6 +156,7 @@ var InterfaceMaster = (function () {
 				var gm = GameMaster.getInstance();
 
 				data = rankings;
+				this.rankings = rankings;
 
 				// Load meta group
 				if(context != "custom"){
@@ -244,11 +245,13 @@ var InterfaceMaster = (function () {
 					rankingDisplayIncrement = 5;
 				}
 
+				// FIXME 20 è hardocdato
+				this.quiz_ranking_index = Math.floor(Math.random() * 20);
 				// Mostra solo il primo elemento della lista rankings
 				try {
-					self.displayRankingEntry(rankings[0], 0);
+					self.displayRankingEntry(rankings[this.quiz_ranking_index], this.quiz_ranking_index);
 				} catch (err) {
-					console.error(rankings[0].speciesId + " could not be displayed", err);
+					console.error(rankings[this.quiz_ranking_index].speciesId + " could not be displayed", err);
 				}
 
 
@@ -258,6 +261,7 @@ var InterfaceMaster = (function () {
 
 			this.displayRankingEntry = function(r, index){
 				var pokemon = new Pokemon(r.speciesId, 0, battle);
+				this.pokemon = pokemon;
 				console.log('showing pokemon:', pokemon)
 
 				pokemon.initialize(true);
@@ -331,14 +335,15 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				var $el = $("<div class=\"rank typed-ranking " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
-					"<div class=\"expand-label\"></div>" +
+				var $el = $("<div class=\"rank typed-ranking quiz " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
 					"<div class=\"pokemon-info\">" +
 						"<div class=\"name-container\">" +
 							"<span class=\"number\">#"+(index+1)+"</span>" +
 							"<span class=\"name\">"+pokemon.speciesName+"</span>" +
-							"<div class=\"quiz-move\"><b>Fast Move:</b> "+ pokemon.fastMove.name + "</div>" +
-							"<div class=\"quiz-move\"><b>Charged Move:</b> " + pokemon.chargedMoves[0].name + "</div>" +
+							"<div class=\"quiz-moves-container\">" +
+								"<div class=\"quiz-move\"><b>Fast Move:</b> "+ pokemon.fastMove.name + "</div>" +
+								"<div class=\"quiz-move\"><b>Charged Move:</b> " + pokemon.chargedMoves[0].name + "</div>" +
+							"</div>" +
 						"</div>" +
 						"<div class=\"type-container\"></div>" +
 					"</div>" +
@@ -449,7 +454,7 @@ var InterfaceMaster = (function () {
 					chargedMove2Count = Math.ceil(pokemon.chargedMoves[1].energy / pokemon.fastMove.energyGain);
 				}
 
-				$el.on("click", selectPokemon);
+				//$el.on("click", selectPokemon);
 
 				csv += pokemon.speciesName+','+r.score+','+pokemon.dex+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.cp+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+chargedMove2Name+','+chargedMove1Count+','+chargedMove2Count+','+pokemon.buddyDistance+','+pokemon.thirdMoveCost+'\n';
 
@@ -727,6 +732,17 @@ var InterfaceMaster = (function () {
 				self.pushHistoryState(cup, cp, category, null);
 			}
 
+			function checkAnswer(e) {
+				var quizAnswerInputValue = $(".quiz-answer-input option:selected").val();
+				var numberOfMoves = Pokemon.calculateMoveCounts(self.pokemon.fastMove, self.pokemon.chargedMoves[0]);
+				console.log(numberOfMoves)
+				if(quizAnswerInputValue == numberOfMoves[0]){
+					console.log('Correct')
+					self.displayRankingData(self.rankings)
+				} else {
+					console.log('Wrong')
+				}
+			}
 
 			// Event handler for selecting ranking category
 

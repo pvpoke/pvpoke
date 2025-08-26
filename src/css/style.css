@@ -2625,6 +2625,31 @@ a.download-csv {
 .rankings-container > .rank:hover, .rankings-container > .rank.selected {
   border-left: 20px solid #222;
 }
+
+.rankings-container > .rank.quiz:hover {
+  border-left: 20px solid rgba(0, 0, 0, 0.1);
+}
+
+.quiz-question {
+  display: flex;
+  justify-content: space-between; /* space between text and controls */
+  align-items: center;            /* vertical alignment */
+  gap: 1rem;                      /* spacing between */
+  margin-top: 16px;
+}
+
+.quiz-question .question-text {
+  flex: 1; /* take all available space */
+  font-weight: bold;
+}
+
+.quiz-question .answer-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
 .rankings-container.pokebox-list {
   display: flex;
   flex-wrap: wrap;
@@ -3217,6 +3242,15 @@ a.download-csv {
   margin-bottom: -3px;
   min-width: 46.5%;
 }
+
+.rank.typed-ranking .pokemon-info .name-container .quiz-moves-container {
+  padding-top: 6px;
+}
+
+.rank.typed-ranking .pokemon-info .name-container .quiz-moves-container .quiz-move {
+  padding: 1px 0px;
+}
+
 .rank.typed-ranking .pokemon-info .type-container {
   display: flex;
   flex-wrap: wrap;
@@ -3458,6 +3492,10 @@ a.download-csv {
 .rankings-container > .rank,
 .rankings-container > .rank > .rating-container {
   cursor: pointer;
+}
+
+.rankings-container > .rank.quiz {
+  cursor: default;
 }
 
 .rating.star,
