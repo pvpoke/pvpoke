@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-08-18 17:02:32",
+    "timestamp": "2025-08-26 02:05:15",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -156,11 +156,11 @@
                     },
                     {
                         "points": 7,
-                        "pokemon": ["aggron_mega", "gallade_mega", "kyurem_black", "kyurem_white", "zygarde_complete"]
+                        "pokemon": ["aggron_mega", "eternatus", "gallade_mega", "kyurem_black", "kyurem_white", "zygarde_complete"]
                     },
                     {
                         "points": 6,
-                        "pokemon": ["charizard_mega_y", "eternatus", "gengar_mega"]
+                        "pokemon": ["charizard_mega_y", "gengar_mega"]
                     },
                     {
                         "points": 5,
@@ -192,7 +192,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["feraligatr", "tentacruel", "moltres_galarian", "primeape", "bellibolt", "malamar", "virizion", "blastoise", "weezing_galarian", "cradily", "giratina_altered", "registeel"]
+                    "values": ["feraligatr", "tentacruel", "moltres_galarian", "dusknoir", "forretress", "lickilicky", "runerigus", "talonflame", "tinkaton", "giratina_altered_shadow"]
                 }
             ]
         },
@@ -43332,12 +43332,13 @@
             "chargedMoves": ["OUTRAGE", "SURF", "HYDRO_PUMP", "LIQUIDATION"],
             "defaultIVs": {
                 "cp500": [6.5, 4, 10, 13],
-                "cp1500": [18.5, 6, 13, 14],
+                "cp1500": [20, 0, 2, 2],
                 "cp2500": [32, 4, 14, 15]
             },
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
-            "released": false
+            "released": true,
+            "levelFloor": 20
         },
         {
             "dex": 978,

@@ -11,6 +11,18 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
 }, {
+    "speciesId": "bellibolt",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["PARABOLIC_CHARGE","ZAP_CANNON"]
+}, {
+    "speciesId": "bellibolt",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["PARABOLIC_CHARGE","ZAP_CANNON"]
+}, {
+    "speciesId": "blastoise",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
+}, {
     "speciesId": "clefable",
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["SWIFT", "MOONBLAST"]
@@ -22,6 +34,14 @@
     "speciesId": "corviknight",
     "fastMove": "SAND_ATTACK",
     "chargedMoves": ["SKY_ATTACK", "IRON_HEAD"]
+}, {
+    "speciesId": "cradily",
+    "fastMove": "ACID",
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
+}, {
+    "speciesId": "cradily",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
 }, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
@@ -41,25 +61,17 @@
     "fastMove": "HEX",
     "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
 }, {
-    "speciesId": "dusknoir",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["SHADOW_PUNCH","DYNAMIC_PUNCH"]
-}, {
-    "speciesId": "dusknoir_shadow",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["SHADOW_PUNCH","DYNAMIC_PUNCH"]
-}, {
-    "speciesId": "forretress",
-    "fastMove": "BUG_BITE",
-    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
-}, {
-    "speciesId": "forretress",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
-}, {
     "speciesId": "gastrodon",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
+}, {
+    "speciesId": "giratina_altered",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
+}, {
+    "speciesId": "giratina_altered",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
 }, {
     "speciesId": "gliscor",
     "fastMove": "FURY_CUTTER",
@@ -101,9 +113,13 @@
     "fastMove": "PSYWAVE",
     "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
 }, {
-    "speciesId": "lickilicky",
-    "fastMove": "ROLLOUT",
-    "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
+    "speciesId": "malamar",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"]
+}, {
+    "speciesId": "malamar_shadow",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"]
 }, {
     "speciesId": "mandibuzz",
     "fastMove": "SNARL",
@@ -125,6 +141,18 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["ICY_WIND", "SCALD"]
 }, {
+    "speciesId": "primeape",
+    "fastMove": "KARATE_CHOP",
+    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "primeape_shadow",
+    "fastMove": "KARATE_CHOP",
+    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "registeel",
+    "fastMove": "LOCK_ON",
+    "chargedMoves": ["FOCUS_BLAST","ZAP_CANNON"]
+}, {
     "speciesId": "samurott",
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["HYDRO_CANNON", "MEGAHORN"]
@@ -142,14 +170,6 @@
     "fastMove": "THUNDER_FANG",
     "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
 }, {
-    "speciesId": "talonflame",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["FLY","FLAME_CHARGE"]
-}, {
-    "speciesId": "tinkaton",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["PLAY_ROUGH", "BULLDOZE"]
-}, {
     "speciesId": "typhlosion",
     "fastMove": "INCINERATE",
     "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"]
@@ -157,6 +177,18 @@
     "speciesId": "venusaur",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "virizion",
+    "fastMove": "DOUBLE_KICK",
+    "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
+}, {
+    "speciesId": "weezing_galarian",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["BRUTAL_SWING", "SLUDGE"]
+}, {
+    "speciesId": "weezing_galarian_shadow",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["BRUTAL_SWING", "SLUDGE"]
 }, {
     "speciesId": "zygarde_complete",
     "fastMove": "DRAGON_TAIL",
