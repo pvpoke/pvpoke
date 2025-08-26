@@ -96,11 +96,22 @@ require_once 'header.php';
 
 			<?php require 'modules/formatselect.php'; ?>
 		</div>
+		<div class="flex quiz-score">
+			<div>Score: </div>
+			<div>1</div>
+			<div>/</div>
+			<div>3</div>
+		</div>
 	</div>
 
-	<h2 class="loading">Loading data...</h2>
-	<div class="rankings-container clear"></div>
-	<div class="quiz-question">
+	<h2 class="loading">Loading question...</h2>
+	<div class="quiz-container clear"></div>
+	<details>
+		<summary>Moves Details</summary>
+			<div class="quiz-hints-container clear"></div>
+	</details>
+	<?php require_once 'modules/quizhints.php'; ?>
+	<div class="quiz-question" style="display: none;">
 		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
 		<div class="quiz-answer-input">
 		<select id="guess">
@@ -126,18 +137,14 @@ require_once 'header.php';
 		</select>
 		</div>
 	</div>
-	<button class="quiz-check-btn button">
+	<button class="quiz-check-btn button" style="display: none;">
 		<span class="btn-content-wrap">
 			<span class="btn-label">Check Answer</span>
 		</span>
 	</button>
 </div>
 
-<a href="#" class="button download-csv">Export to CSV</a>
-
 <?php require 'modules/ads/body-728.php'; ?>
-
-<?php require_once 'modules/rankingdetails.php'; ?>
 
 <div class="hide">
 	<?php require 'modules/pokeselect.php'; ?>

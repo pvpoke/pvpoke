@@ -2614,6 +2614,12 @@ a.download-csv {
   text-align: right;
 }
 
+.quiz-container {
+  margin-top: 20px;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
 .rankings-container {
   margin-top: 20px;
   max-height: 600px;
@@ -2649,6 +2655,12 @@ a.download-csv {
   gap: 0.5rem;
 }
 
+.quiz-score {
+  justify-content: right;
+  align-items: center;
+  flex: 1;
+  padding-right: 20px;
+}
 
 .rankings-container.pokebox-list {
   display: flex;
@@ -2805,6 +2817,7 @@ a.download-csv {
   display: flex;
   flex-wrap: wrap;
 }
+.quiz-hints-container .details .detail-section,
 .rank .details .detail-section {
   background: rgba(255, 255, 255, 0.8);
   padding: 5px;
@@ -2812,22 +2825,29 @@ a.download-csv {
   box-sizing: border-box;
   margin-top: 5px;
 }
+.quiz-hints-container .details .detail-section.float,
 .rank .details .detail-section.float {
   width: 49.5%;
 }
+
+.quiz-hints-container details .detail-section.float.margin,
 .rank .details .detail-section.float.margin {
   margin-right: 1%;
 }
+.quiz-hints-container .details .detail-section.overall, .quiz-hints-container .details .detail-section.stats, .quiz-hints-container .details .detail-section.typing,
 .rank .details .detail-section.overall, .rank .details .detail-section.stats, .rank .details .detail-section.typing {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.quiz-hints-container .details .detail-section.overall .rating-container, .quiz-hints-container .details .detail-section.stats .rating-container, .quiz-hints-container .details .detail-section.typing .rating-container,
 .rank .details .detail-section.overall .rating-container, .rank .details .detail-section.stats .rating-container, .rank .details .detail-section.typing .rating-container {
   text-align: center;
   padding: 5px;
 }
+
 .rank .details .detail-section.overall .rating-container .ranking-header, .rank .details .detail-section.stats .rating-container .ranking-header, .rank .details .detail-section.typing .rating-container .ranking-header {
   float: none;
   margin: 0;
@@ -3043,9 +3063,11 @@ a.download-csv {
 .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(6) .comparison {
   left: -38px;
 }
+.quiz-hints-container .details .detail-section .moveset.show-stats .name-container,
 .rank .details .detail-section .moveset.show-stats .name-container {
   border-bottom: 1px solid;
 }
+.quiz-hints-container .details .detail-section .moveset.show-stats .name-container.stats-container,
 .rank .details .detail-section .moveset.show-stats .name-container.stats-container {
   display: flex;
 }
@@ -3058,6 +3080,7 @@ a.download-csv {
 .rank .details .detail-section .moveset.show-stats.fast .move-detail-template:hover.selected {
   border-left: 10px solid #000;
 }
+.quiz-hints-container .details .detail-section .moveset .name-container,
 .rank .details .detail-section .moveset .name-container {
   float: none;
   padding-bottom: 3px;
@@ -3066,6 +3089,7 @@ a.download-csv {
   align-items: baseline;
   font-size: 14px;
 }
+.quiz-hints-container .details .detail-section .moveset .name-container.stats-container,
 .rank .details .detail-section .moveset .name-container.stats-container {
   border: none;
   margin: 0;
