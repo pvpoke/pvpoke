@@ -104,13 +104,19 @@ require_once 'header.php';
 		</div>
 	</div>
 
-	<h2 class="loading">Loading question...</h2>
+	<div class="quiz-checks flex">
+		<div class="check quiz-reccomended-moveset on"><span></span>Only Use Recommended Moveset</div>
+	</div>
+
+	<div class="quiz-header">Pokemon</div>
+	<h5 class="loading" style="padding-bottom=4px">Loading question...</h5>
 	<div class="quiz-container clear"></div>
 	<details>
 		<summary>Moves Details</summary>
 			<div class="quiz-hints-container clear"></div>
 	</details>
 	<?php require_once 'modules/quizhints.php'; ?>
+	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
 		<div class="quiz-answer-input">

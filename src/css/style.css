@@ -2603,6 +2603,12 @@ a.download-csv {
 }
 
 /* RANKING STYLING */
+.quiz-header {
+  font-weight: bold;
+  padding: 5px 0px;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
 .ranking-header {
   width: 50%;
   float: left;
@@ -2615,7 +2621,6 @@ a.download-csv {
 }
 
 .quiz-container {
-  margin-top: 20px;
   max-height: 600px;
   overflow-y: scroll;
 }
@@ -2641,12 +2646,11 @@ a.download-csv {
   justify-content: space-between; /* space between text and controls */
   align-items: center;            /* vertical alignment */
   gap: 1rem;                      /* spacing between */
-  margin-top: 16px;
 }
 
 .quiz-question .question-text {
   flex: 1; /* take all available space */
-  font-weight: bold;
+  font-size: 16px;
 }
 
 .quiz-question .answer-input {
@@ -3433,6 +3437,7 @@ a.download-csv {
   display: inline-block;
 }
 
+.quiz-checks,
 .ranking-checks {
   font-size: 14px;
 }
