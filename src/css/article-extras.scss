@@ -1126,6 +1126,28 @@ input.article-search{
 	}
 }
 
+.section.rookidee{
+
+	background: #dce6f0;
+	border:4px solid #161e2b;
+
+	.article-header, .mega-section{
+		background: #161e2b !important;
+	}
+
+	.feature{
+		h4{
+			color:#161e2b;
+			border-bottom:1px solid #161e2b;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
+
 /* Edit control toggle */
 
 .edit-control-on{
