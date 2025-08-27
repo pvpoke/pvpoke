@@ -22,6 +22,8 @@ var InterfaceMaster = (function () {
 			var chargedMove;
 			var fastMove;
 			var useOnlyReccomendedMoveset = true;
+			// FIXME
+			var numberTopPokemons = 40;
 
 			this.questionAnswers = {}
 
@@ -56,7 +58,7 @@ var InterfaceMaster = (function () {
 				$(".league-select").on("change", selectLeague);
 				$(".category-select").on("change", selectCategory);
 				$("body").on("click", ".quiz-check-btn", checkAnswer);
-				$("body").on("click", ".quiz-skip-btn", skipQuestion);
+				$("body").on("click", ".quiz-next-btn", nextQuestion);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.quiz-reccomended-moveset", toggleUseOnlyReccomendedMoveset);
 
@@ -246,8 +248,7 @@ var InterfaceMaster = (function () {
 					rankingDisplayIncrement = 5;
 				}
 
-				// FIXME Valore è hardcodato
-				this.quiz_ranking_index = Math.floor(Math.random() * 40);
+				this.quiz_ranking_index = Math.floor(Math.random() * numberTopPokemons);
 				// Mostra solo il primo elemento della lista rankings
 				try {
 					self.displayRankingEntry(rankings[this.quiz_ranking_index], this.quiz_ranking_index);
@@ -329,7 +330,7 @@ var InterfaceMaster = (function () {
 				//when the data is loaded, show the question
 				$(".quiz-question").show();
 				$(".quiz-check-btn ").show();
-				$(".quiz-skip-btn ").show();
+				$(".quiz-next-btn ").show();
 			}
 
 			// Given JSON of get parameters, load these settings
@@ -654,7 +655,12 @@ var InterfaceMaster = (function () {
 				self.pushHistoryState(cup, cp, category, null);
 			}
 
-			function skipQuestion(){
+			function nextQuestion(){
+				$(".quiz-feedback-header").addClass("hidden")
+				$(".quiz-feedback").addClass("hidden")
+				$(".quiz-feedback-explanation").addClass("hidden")
+				$(".quiz-feedback-explanation").addClass("hidden")
+				$("details").removeAttr("open");
 				self.displayRankingData(self.rankings)
 			}
 
@@ -667,17 +673,26 @@ var InterfaceMaster = (function () {
 				if(result && trials == 1){
 					numberCorrectAnswers++
 				}
+				
+				// Show feedback
+				$(".quiz-feedback-header").removeClass("hidden");
 				if(!result){
-					$(".quiz-feedback").text(quizAnswerInputValue + " is not the right answer, try again!");
+					$(".quiz-feedback")
+						.removeClass("hidden feedback-correct")
+						.addClass("feedback-wrong")
+						.text("❌ " + quizAnswerInputValue + " is not the correct answer, try again!");
+				} else {
+					$(".quiz-feedback")
+						.removeClass("hidden feedback-wrong")
+						.addClass("feedback-correct")
+						.text("✅ " + quizAnswerInputValue + " is the correct answer!");
+					$(".quiz-feedback-explanation").removeClass("hidden").text(
+							"The charging pattern is: " + numberOfMoves
+					);
 				}
 
 				updateScore()
 				updateAnswersHistory(self.pokemon, fastMove, chargedMove, result)
-				
-				// Generate new question
-				if(result){
-					self.displayRankingData(self.rankings)
-				}
 			}
 
 			function updateAnswersHistory(pokemon, fastMove, chargedMove, result){

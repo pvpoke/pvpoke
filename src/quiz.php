@@ -111,7 +111,7 @@ require_once 'header.php';
 	<div class="quiz-header">Pokemon</div>
 	<h5 class="loading" style="padding-bottom=4px">Loading question...</h5>
 	<div class="quiz-container clear"></div>
-	<details>
+	<details class='quiz-hints'>
 		<summary>Moves Details</summary>
 			<div class="quiz-hints-container clear"></div>
 	</details>
@@ -148,11 +148,13 @@ require_once 'header.php';
 			</span>
 		</button>
 	</div>
-	<div class="quiz-feedback" style="color: red;"></div>
+	<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
+	<div class="quiz-feedback hidden"></div>
+	<div class="quiz-feedback-explanation hidden"></div>
 	<div>
-		<button class="quiz-skip-btn button" style="display: none;">
+		<button class="quiz-next-btn button" style="display: none;">
 			<span class="btn-content-wrap">
-				<span class="btn-label">Skip Question</span>
+				<span class="btn-label">Next Question</span>
 			</span>
 		</button>
 	</div>

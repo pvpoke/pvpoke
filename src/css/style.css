@@ -2617,6 +2617,16 @@ a.download-csv {
   font-size: 14px;
 }
 
+.feedback-wrong {
+    color: red;
+}
+.feedback-correct {
+    color: green;
+}
+.hidden {
+    display: none;
+}
+
 /* RANKING STYLING */
 .quiz-header {
   font-weight: bold;
