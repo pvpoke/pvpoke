@@ -415,6 +415,11 @@ var InterfaceMaster = (function () {
 
                         source.splice(targetIndex+1, 0, copy);
 
+                        // Automatically save for duplicated entries so they can be edited
+                        gm.saveCustomGameMaster(data);
+                        lastSavedJSON = JSON.stringify(source);
+                        lastSavedGM = window.localStorage.getItem(settings.gamemaster);
+
                         self.displayList();
 
                         if($(".poke-search").first().val() != ''){
@@ -523,6 +528,7 @@ var InterfaceMaster = (function () {
                     modalWindow("Data Saved", $(".save-data").first());
 
                     lastSavedJSON = JSON.stringify(source);
+                    lastSavedGM = window.localStorage.getItem(settings.gamemaster);
                 } else{
                     modalWindow("Error", $(".save-data-error").first());
                 }

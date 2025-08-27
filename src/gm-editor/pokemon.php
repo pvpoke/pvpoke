@@ -270,6 +270,14 @@ require_once '../header.php';
 	<p>There was an error saving the data. Ensure that all entries are valid.</p>
 </div>
 
+<div class="entry-not-found hide">
+	<p>The entry you are trying to edit wasn't found. Ensure the previous window has all changes saved or is refreshed with your latest saved data.</p>
+</div>
+
+<div class="refresh-prompt hide">
+	<p>Data was changed in a different window. <a href="#"><b>Refresh the page</b></a> to prevent your data from being overwritten.</p>
+</div>
+
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>
 

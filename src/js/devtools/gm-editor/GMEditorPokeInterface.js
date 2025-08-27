@@ -34,6 +34,7 @@ var InterfaceMaster = (function () {
 
             this.updateLastSavedJSON = function(){
                 lastSavedJSON = JSON.stringify(selectedPokemon);
+                lastSavedGM = window.localStorage.getItem(settings.gamemaster);
                 $("#save-changes-btn").attr("disabled", "disabled");
             }
 
@@ -90,7 +91,22 @@ var InterfaceMaster = (function () {
 
 						switch(key){
 							case "p":
-                                if(val == "new"){
+                                let pokemonFound = false;
+
+                                if(val != "new"){
+                                    selectedPokemon = gm.getPokemonById(val);
+
+                                    if(selectedPokemon){
+                                        self.updateLastSavedJSON();
+                                        self.displaySelectedPokemon();
+                                        pokemonFound = true;
+                                    } else{
+                                        modalWindow("Entry Not Found", $(".entry-not-found").first());
+                                    }
+                                }
+                                
+                                // Create new Pokemon entry if none found
+                                if(! pokemonFound){
                                     selectedPokemon = {
                                         speciesId: "",
                                         speciesName: "",
@@ -117,13 +133,6 @@ var InterfaceMaster = (function () {
 
                                     self.updateLastSavedJSON();
                                     self.displaySelectedPokemon();
-                                } else{
-                                    selectedPokemon = gm.getPokemonById(val);
-
-                                    if(selectedPokemon){
-                                        self.updateLastSavedJSON();
-                                        self.displaySelectedPokemon();
-                                    }
                                 }
 								break;
 						}
@@ -575,12 +584,12 @@ var InterfaceMaster = (function () {
                     modalWindow("Data Saved", $(".save-data").first());
 
                     lastSavedJSON = JSON.stringify(selectedPokemon);
+                    lastSavedGM = window.localStorage.getItem(settings.gamemaster);
                 } else{
                     modalWindow("Error", $(".save-data-error").first());
                 }
 
             });
-
 		};
 
         return object;

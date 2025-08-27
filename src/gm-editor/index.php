@@ -117,6 +117,10 @@ require_once '../header.php';
 	</div>
 </div>
 
+<div class="refresh-prompt hide">
+	<p>Data was changed in a different window. <a href="#"><b>Refresh the page</b></a> to prevent your data from being overwritten.</p>
+</div>
+
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>

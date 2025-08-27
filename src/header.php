@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.36.1.6';
+$SITE_VERSION = '1.36.2';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -177,6 +177,7 @@ if(! isset($OG_IMAGE)){
 			hardMovesetLinks: <?php echo intval($_SETTINGS->hardMovesetLinks); ?>,
 			colorblindMode: <?php echo intval($_SETTINGS->colorblindMode); ?>,
 			performanceMode: <?php echo intval($_SETTINGS->performanceMode); ?>,
+			theme: "<?php echo htmlspecialchars($_SETTINGS->theme); ?>"
 		};
 	<?php else: ?>
 
@@ -191,7 +192,8 @@ if(! isset($OG_IMAGE)){
 			rankingDetails: "one-page",
 			hardMovesetLinks: 0,
 			colorblindMode: 0,
-			performanceMode: 0
+			performanceMode: 0,
+			theme: "default"
 		};
 
 	<?php endif; ?>

@@ -124,6 +124,7 @@ var InterfaceMaster = (function () {
 
             this.updateLastSavedJSON = function(){
                 lastSavedJSON = JSON.stringify(data);
+                lastSavedGM = window.localStorage.getItem(settings.gamemaster);
                 $("#save-btn").attr("disabled", "disabled");
             }
 
@@ -322,6 +323,8 @@ var InterfaceMaster = (function () {
                 // Save settings to new gamemaster
                 if(! initializing){
                     settings.gamemaster = id;
+
+                    console.log(settings);
 
                     $.ajax({
 

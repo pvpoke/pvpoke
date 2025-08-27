@@ -64,6 +64,7 @@ var InterfaceMaster = (function () {
 
             this.updateLastSavedJSON = function(){
                 lastSavedJSON = JSON.stringify(selectedMove);
+                lastSavedGM = window.localStorage.getItem(settings.gamemaster);
                 $("#save-changes-btn").attr("disabled", "disabled");
             }
 
@@ -116,7 +117,21 @@ var InterfaceMaster = (function () {
 
 						switch(key){
 							case "m":
-                                if(val == "new"){
+                                let moveFound = false;
+                                
+                                if(val !== "new"){
+                                    selectedMove = gm.getMoveDataById(val);
+
+                                    if(selectedMove){
+                                        self.updateLastSavedJSON();
+                                        self.displaySelectedMove();
+                                        moveFound = true;
+                                    } else{
+                                        modalWindow("Entry Not Found", $(".entry-not-found").first());
+                                    }
+                                }
+
+                                if(! moveFound){
                                     selectedMove = {
                                         "moveId": "",
                                         "name": "",
@@ -132,13 +147,6 @@ var InterfaceMaster = (function () {
                                     data.moves.push(selectedMove);
                                     self.updateLastSavedJSON();
                                     self.displaySelectedMove();
-                                } else{
-                                    selectedMove = gm.getMoveDataById(val);
-
-                                    if(selectedMove){
-                                        self.updateLastSavedJSON();
-                                        self.displaySelectedMove();
-                                    }
                                 }
 								break;
 						}
@@ -696,6 +704,7 @@ var InterfaceMaster = (function () {
                     modalWindow("Data Saved", $(".save-data").first());
 
                     lastSavedJSON = JSON.stringify(selectedMove);
+                    lastSavedGM = window.localStorage.getItem(settings.gamemaster);
                 } else{
                     modalWindow("Error", $(".save-data-error").first());
                 }
