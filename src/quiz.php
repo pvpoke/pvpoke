@@ -109,7 +109,7 @@ require_once 'header.php';
 	</div>
 
 	<div class="quiz-header">Pokemon</div>
-	<h5 class="loading" style="padding-bottom=4px">Loading question...</h5>
+	<h5 class="loading" style="padding-bottom=4px">Loading pokemon...</h5>
 	<div class="quiz-container clear"></div>
 	<details class='quiz-hints'>
 		<summary>Moves Details</summary>
@@ -119,34 +119,36 @@ require_once 'header.php';
 	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
-		<div class="quiz-answer-input">
-			<select id="guess">
-				<option value="" disabled selected>-- Choose --</option>
-				<!-- Generate 0 to 16 -->
-				<option value="0">0</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-				<option value="13">13</option>
-				<option value="14">14</option>
-				<option value="15">15</option>
-				<option value="16">16</option>
-			</select>
+		<div class="quiz-omt-answer-input-container">
+			<div class="quiz-answer-input">
+				<select id="guess" style="height: 100%">
+					<option value="" disabled selected>-- Choose --</option>
+					<!-- Generate 0 to 16 -->
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+				</select>
+			</div>
+			<button class="quiz-check-btn quiz-button" style="display: none;">
+				<span class="btn-content-wrap">
+					<span class="btn-label">Check Answer</span>
+				</span>
+			</button>
 		</div>
-		<button class="quiz-check-btn quiz-button" style="display: none;">
-			<span class="btn-content-wrap">
-				<span class="btn-label">Check Answer</span>
-			</span>
-		</button>
 	</div>
 	<div class="quiz-feedback-container">
 		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
@@ -154,7 +156,7 @@ require_once 'header.php';
 		<div class="quiz-feedback-explanation hidden"></div>
 	</div>
 		<div style="padding-top:8px">
-			<button class="quiz-next-btn button" style="display: none;">
+			<button class="quiz-next-btn quiz-next-button" style="display: none;">
 				<span class="btn-content-wrap">
 					<span class="btn-label">Next Question</span>
 			</span>

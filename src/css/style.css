@@ -1405,7 +1405,7 @@ select.large {
     font-size: 12px;
     border-radius: 30px;
     border: 2px solid #000;
-    padding: 5px 12px;
+    padding: 10px 12px;
     cursor: pointer;
     text-decoration: none;
     color: #000;
@@ -2856,6 +2856,35 @@ a.download-csv {
   align-items: center;
   font-size: 18px;
   font-weight: bold;
+}
+.quiz-next-button {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border-radius: 50px;
+  margin: 20px auto;
+  padding: 8px 20px;
+  box-sizing: border-box;
+  max-width: 400px;
+  background: #7d7d7d;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #bcbcbc 30%, #7d7d7d 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #bcbcbc 30%, #7d7d7d 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #bcbcbc 30%, #7d7d7d 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.quiz-answer-input {
+  flex: 1;
+}
+.quiz-omt-answer-input-container {
+  display: flex;
+  gap: 20px;
+}
+.quiz-omt-match-container {
+  gap: 20px;
+  flex-wrap: wrap;
 }
 .quiz-feedback-container {
   text-align: center;
@@ -5046,6 +5075,19 @@ a.pokebattler {
 
 /* RESPONSIVE */
 @media only screen and (max-width: 468px) {
+  .versus-text {
+    width: 100%;
+  }
+  .quiz-omt-answer-input-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .quiz-question{
+    flex-direction: column;
+  }
+  .quiz-omt-match-container {
+    gap: 0px;
+  }
   .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1) {
     top: 0%;
     left: 44%;
@@ -5233,6 +5275,7 @@ a.pokebattler {
     width: 100%;
   }
 
+  .quiz-hints-container .details .detail-section.float,
   .rank .details .detail-section.float {
     float: none;
     width: 100%;

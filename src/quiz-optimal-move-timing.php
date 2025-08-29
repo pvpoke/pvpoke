@@ -108,10 +108,10 @@ require_once 'header.php';
 		<div class="check quiz-reccomended-moveset on"><span></span>Only Use Recommended Moveset</div>
 	</div>
 
-	<div class="flex" style="gap: 20px">
+	<div class="flex quiz-omt-match-container">
 		<div class="yours" style="flex: 1">
 			<div class="quiz-header">Your Pokemon</div>
-			<h5 class="loading" style="padding-bottom=4px">Loading question...</h5>
+			<h5 class="loading" style="padding-bottom=4px">Loading pokemon...</h5>
 			<div class="quiz-container clear"></div>
 			<details class='quiz-hints'>
 				<summary>Move Details</summary>
@@ -120,7 +120,7 @@ require_once 'header.php';
 		<div class="versus-text">VS</div>
 		<div class="opponents" style="flex: 1">
 			<div class="quiz-header">Opponent's Pokemon</div>
-			<h5 class="loading" style="padding-bottom=4px">Loading question...</h5>
+			<h5 class="loading" style="padding-bottom=4px">Loading pokemon...</h5>
 			<div class="quiz-container clear"></div>
 			<details class='quiz-hints'>
 				<summary>Move Details</summary>
@@ -145,21 +145,23 @@ require_once 'header.php';
 	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">After how many Fast Moves should you throw the Charged Moves for the most optimal timing?</span>
-		<div class="quiz-answer-input">
-			<select id="quiz-omt-guess">
-				<option value="" disabled selected>-- Choose --</option>
-				<!-- Generate 0 to 16 -->
-				<option value="No optimal timing possible">No optimal timing possible</option>
-				<option value="1,4,7">1,4,7</option>
-				<option value="1,3,5">1,3,5</option>
-				<option value="2,5,8">2,5,8</option>
-			</select>
+		<div class="quiz-omt-answer-input-container">
+			<div class="quiz-answer-input">
+				<select id="quiz-omt-guess" style="height: 100%">
+					<option value="" disabled selected>-- Choose --</option>
+					<!-- Generate 0 to 16 -->
+					<option value="No optimal timing possible">No optimal timing possible</option>
+					<option value="1,4,7">1,4,7</option>
+					<option value="1,3,5">1,3,5</option>
+					<option value="2,5,8">2,5,8</option>
+				</select>
+			</div>
+			<button class="quiz-check-btn quiz-button" style="display: none;">
+				<span class="btn-content-wrap">
+					<span class="btn-label">Check Answer</span>
+				</span>
+			</button>
 		</div>
-		<button class="quiz-check-btn quiz-button" style="display: none;">
-			<span class="btn-content-wrap">
-				<span class="btn-label">Check Answer</span>
-			</span>
-		</button>
 	</div>
 	<div class="quiz-feedback-container">
 		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
@@ -176,9 +178,9 @@ require_once 'header.php';
 		</div>
 	</div>
 	<div style="padding-top:8px">
-		<button class="quiz-next-btn button" style="display: none;">
-			<span class="btn-content-wrap">
-				<span class="btn-label">Next Question</span>
+			<button class="quiz-next-btn quiz-next-button" style="display: none;">
+				<span class="btn-content-wrap">
+					<span class="btn-label">Next Question</span>
 			</span>
 		</button>
 	</div>
