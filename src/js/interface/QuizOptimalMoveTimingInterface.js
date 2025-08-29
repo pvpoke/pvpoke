@@ -23,7 +23,7 @@ var InterfaceMaster = (function () {
 			var fastMove;
 			var useOnlyReccomendedMoveset = true;
 			// FIXME
-			var numberTopPokemons = 40;
+			var numberTopPokemons = 100;
 
 			this.questionAnswers = {}
 

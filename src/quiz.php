@@ -148,13 +148,15 @@ require_once 'header.php';
 			</span>
 		</button>
 	</div>
-	<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
-	<div class="quiz-feedback hidden"></div>
-	<div class="quiz-feedback-explanation hidden"></div>
-	<div style="padding-top:8px">
-		<button class="quiz-next-btn button" style="display: none;">
-			<span class="btn-content-wrap">
-				<span class="btn-label">Next Question</span>
+	<div class="quiz-feedback-container">
+		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
+		<div class="quiz-feedback hidden"></div>
+		<div class="quiz-feedback-explanation hidden"></div>
+	</div>
+		<div style="padding-top:8px">
+			<button class="quiz-next-btn button" style="display: none;">
+				<span class="btn-content-wrap">
+					<span class="btn-label">Next Question</span>
 			</span>
 		</button>
 	</div>

@@ -152,7 +152,7 @@ require_once 'header.php';
 				<option value="No optimal timing possible">No optimal timing possible</option>
 				<option value="1,4,7">1,4,7</option>
 				<option value="1,3,5">1,3,5</option>
-				<option value="3">3</option>
+				<option value="2,5,8">2,5,8</option>
 			</select>
 		</div>
 		<button class="quiz-check-btn quiz-button" style="display: none;">
