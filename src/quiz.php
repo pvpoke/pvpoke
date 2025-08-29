@@ -151,7 +151,7 @@ require_once 'header.php';
 	<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
 	<div class="quiz-feedback hidden"></div>
 	<div class="quiz-feedback-explanation hidden"></div>
-	<div>
+	<div style="padding-top:8px">
 		<button class="quiz-next-btn button" style="display: none;">
 			<span class="btn-content-wrap">
 				<span class="btn-label">Next Question</span>
