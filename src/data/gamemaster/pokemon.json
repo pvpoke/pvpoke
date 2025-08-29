@@ -37711,8 +37711,8 @@
         },
         "types": ["flying", "steel"],
         "fastMoves": ["STEEL_WING", "AIR_SLASH", "SAND_ATTACK"],
-        "chargedMoves": ["SKY_ATTACK", "PAYBACK", "IRON_HEAD"],
-        "eliteMoves": ["IRON_HEAD"],
+        "chargedMoves": ["SKY_ATTACK", "PAYBACK", "IRON_HEAD", "AIR_CUTTER"],
+        "eliteMoves": ["IRON_HEAD", "AIR_CUTTER"],
         "defaultIVs": {
             "cp500": [7.5, 10, 14, 14],
             "cp1500": [23, 4, 12, 14],

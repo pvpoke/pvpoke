@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-08-26 02:05:15",
+    "timestamp": "2025-08-29 21:28:57",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -38866,8 +38866,8 @@
             },
             "types": ["flying", "steel"],
             "fastMoves": ["STEEL_WING", "AIR_SLASH", "SAND_ATTACK"],
-            "chargedMoves": ["SKY_ATTACK", "PAYBACK", "IRON_HEAD"],
-            "eliteMoves": ["IRON_HEAD"],
+            "chargedMoves": ["SKY_ATTACK", "PAYBACK", "IRON_HEAD", "AIR_CUTTER"],
+            "eliteMoves": ["IRON_HEAD", "AIR_CUTTER"],
             "defaultIVs": {
                 "cp500": [7.5, 10, 14, 14],
                 "cp1500": [23, 4, 12, 14],
