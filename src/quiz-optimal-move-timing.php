@@ -85,7 +85,7 @@ require_once 'header.php';
 
 ?>
 
-<h1>Fast Move Energy Quiz</h1>
+<h1>Optimal Move Timing Quiz</h1>
 <div class="section league-select-container white">
 	<div class="ranking-filters flex">
 		<div class="ranking-filter">
@@ -108,38 +108,51 @@ require_once 'header.php';
 		<div class="check quiz-reccomended-moveset on"><span></span>Only Use Recommended Moveset</div>
 	</div>
 
-	<div class="quiz-header">Pokemon</div>
-	<h5 class="loading" style="padding-bottom=4px">Loading question...</h5>
-	<div class="quiz-container clear"></div>
-	<details class='quiz-hints'>
-		<summary>Moves Details</summary>
-			<div class="quiz-hints-container clear"></div>
+	<div class="flex" style="gap: 20px">
+		<div class="yours" style="flex: 1">
+			<div class="quiz-header">Your Pokemon</div>
+			<h5 class="loading" style="padding-bottom=4px">Loading question...</h5>
+			<div class="quiz-container clear"></div>
+			<details class='quiz-hints'>
+				<summary>Move Details</summary>
+				<div class="quiz-hints-container quiz-omt-hints-container clear"></div>
+		</div>
+		<div class="versus-text">VS</div>
+		<div class="opponents" style="flex: 1">
+			<div class="quiz-header">Opponent's Pokemon</div>
+			<h5 class="loading" style="padding-bottom=4px">Loading question...</h5>
+			<div class="quiz-container clear"></div>
+			<details class='quiz-hints'>
+				<summary>Move Details</summary>
+				<div class="quiz-hints-container quiz-omt-hints-container clear"></div>
+		</div>
+	</div>
 	</details>
-	<?php require_once 'modules/quizhints.php'; ?>
+	<?php require_once 'modules/quizhints-only-fast-move.php'; ?>
+	<details class="quiz-hints">
+		<summary>Moves pattern</summary>
+		<div class="battle-results">
+		<div class="battle-details">
+			<div class="optimal-timing-section">
+				<div class="optimal-timing-timeline">
+					<div class="timeline"></div>
+					<div class="timeline"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</details>
 	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
-		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
+		<span class="question-text">After how many Fast Moves should you throw the Charged Moves for the most optimal timing?</span>
 		<div class="quiz-answer-input">
-			<select id="guess">
+			<select id="quiz-omt-guess">
 				<option value="" disabled selected>-- Choose --</option>
 				<!-- Generate 0 to 16 -->
-				<option value="0">0</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-				<option value="13">13</option>
-				<option value="14">14</option>
-				<option value="15">15</option>
-				<option value="16">16</option>
+				<option value="No optimal timing possible">No optimal timing possible</option>
+				<option value="1,4,7">1,4,7</option>
+				<option value="1,3,5">1,3,5</option>
+				<option value="2,5,8">2,5,8</option>
 			</select>
 		</div>
 		<button class="quiz-check-btn quiz-button" style="display: none;">
@@ -151,12 +164,21 @@ require_once 'header.php';
 	<div class="quiz-feedback-container">
 		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
 		<div class="quiz-feedback hidden"></div>
-		<div class="quiz-feedback-explanation hidden"></div>
+		<div class="quiz-feedback-explanation hidden">
+			<div class="battle-results">
+				<div class="battle-details">
+					<div class="optimal-timing-section">
+						<p class="timing-none">Optimal Charged Move timing isn't applicable for <span class="name-attacker">Pokemon</span> in this matchup.</p>
+						<p class="timing-most-optimal"><span class="name-attacker">Pokemon</span> should throw its Charged Moves after <span class="optimal-1"></span>, <span class="optimal-2"></span>, or <span class="optimal-3"></span> Fast Moves for the most optimal timing.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-		<div style="padding-top:8px">
-			<button class="quiz-next-btn button" style="display: none;">
-				<span class="btn-content-wrap">
-					<span class="btn-label">Next Question</span>
+	<div style="padding-top:8px">
+		<button class="quiz-next-btn button" style="display: none;">
+			<span class="btn-content-wrap">
+				<span class="btn-label">Next Question</span>
 			</span>
 		</button>
 	</div>
@@ -172,7 +194,7 @@ require_once 'header.php';
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/QuizInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/QuizOptimalMoveTimingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
