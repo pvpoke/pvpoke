@@ -213,6 +213,13 @@ require_once '../header.php';
 	<p>Could not remove this move from <a class="edit-pokemon" href="#" target="_blank"><b><span class="name"></span></b></a> because it must have at least one move. See the Pokemon entry to make changes.</p>
 </div>
 
+<div class="entry-not-found hide">
+	<p>The entry you are trying to edit wasn't found. Ensure the previous window has all changes saved or is refreshed with your latest saved data.</p>
+</div>
+
+<div class="refresh-prompt hide">
+	<p>Data was changed in a different window. <a href="#"><b>Refresh the page</b></a> to prevent your data from being overwritten.</p>
+</div>
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>
 

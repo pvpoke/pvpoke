@@ -92,7 +92,7 @@ if(isset($_GET['c'])){
                             <td data="dex"></td>
                             <td data="name"></td>
                             <td class="controls">
-                                <a class="poke-edit" href="#" target="_blank">Edit</a>
+                                <a class="poke-edit" href="#">Edit</a>
                                 <a class="poke-copy" href="#">Copy</a>
                                 <a class="poke-delete" href="#">Delete</a>
                             </td>
@@ -171,6 +171,9 @@ if(isset($_GET['c'])){
 	<p>There was an error saving the data. Ensure that all entries are valid.</p>
 </div>
 
+<div class="refresh-prompt hide">
+	<p>Data was changed in a different window. <a href="#"><b>Refresh the page</b></a> to prevent your data from being overwritten.</p>
+</div>
 
 <?php
 if($category == 'pokemon'){

@@ -364,3 +364,15 @@ $.ajax({
         console.log(GMEditorValidations);
     }
 });
+
+let lastSavedGM = window.localStorage.getItem(settings.gamemaster);
+// Detect data change when tab is reactivated
+/*document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible' && window.localStorage.getItem(settings.gamemaster) != lastSavedGM && $(".modal").length == 0){
+        modalWindow("Data Changed", $(".refresh-prompt").first());
+
+        $(".modal a").click(function(e){
+            location.reload();
+        });
+    }
+});*/

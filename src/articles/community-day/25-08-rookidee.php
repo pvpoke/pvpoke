@@ -11,9 +11,9 @@ require_once '../../header.php';
 
 ?>
 
-<div class="section article white mankey">
+<div class="section article white rookidee">
 	<h1>Rookidee Community Day Guide for PvP</h1>
-	<div class="date">Last updated August 22nd, 2025</div>
+	<div class="date">Last updated August 27th, 2025</div>
 	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/25-08-rookidee/banner.jpg" />
 	<p>Corviknight has hovered on the edge of the PvP meta, but may finally have its chance to swoop in. It's getting a crucial speed buff with its exclusive attack, Air Cutter. Will it be enough to push Corviknight into core relevance? Let's look ahead to the move updates next season to get a bird's-eye view on Corviknight's prospects. You can find more info on Rookidee Community Day at the <a href="https://pokemongo.com/news/communityday-august-2025-rookidee" target="_blank">Pokemon GO blog</a>. </p>
 
