@@ -1915,6 +1915,11 @@ select.large {
   line-height: 18px;
   padding: 5px 10px 5px 31px;
 }
+.quiz-feedback-explanation .battle-results .battle-details .optimal-timing-section {
+  max-width: 340px;
+  margin: 0 auto 0px auto;
+  text-align: center;
+}
 .battle-results .battle-details .breakpoints-section,
 .battle-results .battle-details .matchup-detail-section,
 .battle-results .battle-details .cmp-section,
@@ -2845,6 +2850,22 @@ a.download-csv {
   display: flex;
   flex-wrap: wrap;
 }
+.versus-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.quiz-feedback-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.quiz-hints {
+  margin-top: 8px;
+}
 .quiz-hints-container .details .detail-section,
 .rank .details .detail-section {
   background: rgba(255, 255, 255, 0.8);
@@ -2852,6 +2873,9 @@ a.download-csv {
   border-radius: 8px;
   box-sizing: border-box;
   margin-top: 5px;
+}
+.quiz-omt-hints-container .details .detail-section.float {
+  width: 100% !important;
 }
 .quiz-hints-container .details .detail-section.float,
 .rank .details .detail-section.float {
@@ -3299,6 +3323,13 @@ a.download-csv {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  min-width: 0;
+}
+.rank.typed-ranking.quiz .pokemon-info{
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   min-width: 0;
 }
