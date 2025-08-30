@@ -2857,6 +2857,9 @@ a.download-csv {
   font-size: 18px;
   font-weight: bold;
 }
+.quiz-next-btn-container {
+  padding-top: 8px
+}
 .quiz-next-button {
   display: block;
   text-decoration: none;
@@ -5078,9 +5081,24 @@ a.pokebattler {
   .versus-text {
     width: 100%;
   }
+  .quiz-next-btn-container {
+    padding-top: 0px
+  }
+  .quiz-feedback-container {
+    gap: 4px;
+  }
+  .quiz-feedback-explanation,
+  .quiz-feedback,
+  .quiz-question .question-text {
+    font-size: 14px;
+  }
   .quiz-omt-answer-input-container {
     width: 100%;
     justify-content: space-between;
+  }
+  .battle-results .battle-details p {
+    font-size: 12px;
+    margin-top: 0px;
   }
   .quiz-question{
     flex-direction: column;

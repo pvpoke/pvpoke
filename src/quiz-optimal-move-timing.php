@@ -177,7 +177,7 @@ require_once 'header.php';
 			</div>
 		</div>
 	</div>
-	<div style="padding-top:8px">
+	<div class="quiz-next-btn-container">
 			<button class="quiz-next-btn quiz-next-button" style="display: none;">
 				<span class="btn-content-wrap">
 					<span class="btn-label">Next Question</span>
