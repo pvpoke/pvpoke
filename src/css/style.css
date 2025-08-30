@@ -2092,6 +2092,9 @@ select.large {
   float: none;
   margin-top: 10px;
 }
+.quiz-feedback-explanation .battle-results .battle-details p {
+  margin-top: 0px;
+}
 .battle-results .battle-details p, .battle-results.matrix p {
   font-size: 14px;
   margin-bottom: 0 !important;
@@ -5096,7 +5099,7 @@ a.pokebattler {
     width: 100%;
     justify-content: space-between;
   }
-  .battle-results .battle-details p {
+  .quiz-feedback-explanation .battle-results .battle-details p {
     font-size: 12px;
     margin-top: 0px;
   }
