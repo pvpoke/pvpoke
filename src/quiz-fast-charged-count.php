@@ -85,7 +85,7 @@ require_once 'header.php';
 
 ?>
 
-<h1>Fast Move Energy Quiz</h1>
+<h1>Fast-Charged Count Quiz</h1>
 <div class="section league-select-container white">
 	<div class="ranking-filters flex">
 		<div class="ranking-filter">
