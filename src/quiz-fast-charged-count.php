@@ -87,14 +87,27 @@ require_once 'header.php';
 
 <h1>Fast-Charged Count Quiz</h1>
 <div class="section league-select-container white">
-	<div class="ranking-filters flex">
-		<div class="ranking-filter">
-			<div class="flex">
-				<h4>Format</h4>
-				<a class="format-rules" href="#">Rules</a>
+	<div class="quiz-ranking-filters flex">
+		<div class="quiz-select-container">
+			<div class="ranking-filter">
+				<div class="flex">
+					<h4>Format</h4>
+					<a class="format-rules" href="#">Rules</a>
+				</div>
+				
+				<?php require 'modules/formatselect.php'; ?>
 			</div>
-
-			<?php require 'modules/formatselect.php'; ?>
+			<div class="ranking-filter">
+				<div class="flex">
+					<h4>Top Rankings</h4>
+				</div>
+				<select class="top-ranking-select">
+					<option value="10">10</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
+					<option value="200">200</option>
+				</select>
+			</div>
 		</div>
 		<div class="flex quiz-score">
 			<div style="padding-right: 4px"><b>Score: </b></div>
@@ -174,7 +187,7 @@ require_once 'header.php';
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/QuizInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/QuizFastChargedCountInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>

@@ -22,8 +22,7 @@ var InterfaceMaster = (function () {
 			var chargedMove;
 			var fastMove;
 			var useOnlyReccomendedMoveset = true;
-			// FIXME
-			var numberTopPokemons = 100;
+			var numberTopPokemons;
 
 			this.questionAnswers = {}
 
@@ -55,6 +54,7 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".format-select").on("change", selectFormat);
+				$(".top-ranking-select").on("change", selectTopRankings);
 				$(".league-select").on("change", selectLeague);
 				$(".category-select").on("change", selectCategory);
 				$("body").on("click", ".quiz-check-btn", checkAnswer);
@@ -69,6 +69,16 @@ var InterfaceMaster = (function () {
 					self.loadGetData();
 				});
 			};
+
+			// Initialize with starting value when page loads
+			$(document).ready(function() {
+				selectTopRankings();
+			});
+
+			function selectTopRankings(e){
+				var selectNumberTopPokemons = $(".top-ranking-select option:selected").val();
+				numberTopPokemons = selectNumberTopPokemons
+			}
 
 			// Toggle use only reccomended moveset
 
@@ -301,8 +311,6 @@ var InterfaceMaster = (function () {
 			}
 
 			this.displayRankingEntry = function(pokemon, isYours){
-				console.log('showing pokemon:', pokemon, ' is yours: ', isYours)
-
 				if(! pokemon.speciesId){
 					return;
 				}
@@ -405,7 +413,6 @@ var InterfaceMaster = (function () {
 					displayCycles = optimalTimes[2];
 				}
 				this.optimalTimes = optimalTimes;
-				console.log(optimalTimes)
 
 				// Add an empty chunk at the beginning for 1 turn switch
 				if(pokemon[0].startCooldown == 1000){

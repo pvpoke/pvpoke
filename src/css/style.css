@@ -1386,6 +1386,11 @@ select, input {
   border: 2px solid #285e85;
 }
 
+.top-ranking-select {
+  min-width: 150px;
+}
+
+.top-ranking-select,
 .league-select,
 .cup-select,
 .format-select,
@@ -2652,6 +2657,10 @@ a.download-csv {
   text-align: right;
 }
 
+.quiz-select-container {
+  display: flex;
+}
+
 .quiz-container {
   max-height: 600px;
   overflow-y: scroll;
@@ -3413,25 +3422,36 @@ a.download-csv {
   align-self: flex-start;
 }
 
+.quiz-ranking-filters .ranking-filter {
+  padding-right: 20px;
+  box-sizing: border-box;
+}
 .ranking-filters .ranking-filter {
   max-width: 60%;
   padding-right: 20px;
   box-sizing: border-box;
 }
+.quiz-ranking-filters .ranking-filter:last-of-type {
+  padding-right: 0;
+}
 .ranking-filters .ranking-filter:last-of-type {
   max-width: 40%;
   padding-right: 0;
 }
+.quiz-ranking-filters .ranking-filter h4,
 .ranking-filters .ranking-filter h4 {
   margin: 0 0 5px 0;
   font-size: 12px;
 }
+.quiz-ranking-filters .ranking-filter select,
 .ranking-filters .ranking-filter select {
   max-width: 100%;
 }
+.quiz-ranking-filters .ranking-filter select optgroup,
 .ranking-filters .ranking-filter select optgroup {
   font-weight: normal;
 }
+.quiz-ranking-filters .ranking-filter .sort-button,
 .ranking-filters .ranking-filter .sort-button {
   background: none !important;
   font-size: 14px;
@@ -3440,9 +3460,11 @@ a.download-csv {
   padding: 5px 8px;
   min-width: 100px;
 }
+.quiz-ranking-filters .ranking-filter .flex,
 .ranking-filters .ranking-filter .flex {
   justify-content: space-between;
 }
+.quiz-ranking-filters .ranking-filter a.format-rules,
 .ranking-filters .ranking-filter a.format-rules {
   font-size: 12px;
   display: none;
@@ -5084,6 +5106,10 @@ a.pokebattler {
   .versus-text {
     width: 100%;
   }
+  .quiz-select-container {
+    flex-direction: column;
+    max-width: 60%;
+  }
   .quiz-next-btn-container {
     padding-top: 0px
   }
@@ -5343,6 +5369,13 @@ a.pokebattler {
 .cup-select,
 .category-select {
     max-width: 48%;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  .top-ranking-select {
+    max-width: 35%;
+    min-width: 150px;
     margin-bottom: 5px;
     font-size: 16px;
   }

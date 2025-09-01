@@ -22,8 +22,7 @@ var InterfaceMaster = (function () {
 			var chargedMove;
 			var fastMove;
 			var useOnlyReccomendedMoveset = true;
-			// FIXME
-			var numberTopPokemons = 40;
+			var numberTopPokemons;
 
 			this.questionAnswers = {}
 
@@ -55,6 +54,7 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".format-select").on("change", selectFormat);
+				$(".top-ranking-select").on("change", selectTopRankings);
 				$(".league-select").on("change", selectLeague);
 				$(".category-select").on("change", selectCategory);
 				$("body").on("click", ".quiz-check-btn", checkAnswer);
@@ -70,6 +70,15 @@ var InterfaceMaster = (function () {
 				});
 			};
 
+			// Initialize with starting value when page loads
+			$(document).ready(function() {
+				selectTopRankings();
+			});
+
+			function selectTopRankings(e){
+				var selectNumberTopPokemons = $(".top-ranking-select option:selected").val();
+				numberTopPokemons = selectNumberTopPokemons
+			}
 			// Toggle use only reccomended moveset
 
 			function toggleUseOnlyReccomendedMoveset(e){
