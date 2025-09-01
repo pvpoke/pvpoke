@@ -99,6 +99,18 @@
         "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
     },
     {
+        "speciesId": "giratina_altered_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "giratina_altered_shadow",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "gligar_shadow",
         "fastMove": "FURY_CUTTER",
         "chargedMoves": ["AERIAL_ACE", "DIG"],
@@ -242,15 +254,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "giratina_altered_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "giratina_altered_shadow",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"],
-        "shadowType": "shadow"
+        "speciesId": "corviknight",
+        "fastMove": "SAND_ATTACK",
+        "chargedMoves": ["AIR_CUTTER", "PAYBACK"]
     }
 ]
