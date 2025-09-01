@@ -259,12 +259,19 @@ var InterfaceMaster = (function () {
 					rankingDisplayIncrement = 5;
 				}
 
+				
+				if(numberTopPokemons == 'ALL'){
+					realNumberTopPokemons = rankings.length
+				} else {
+					realNumberTopPokemons = numberTopPokemons;
+				}
+
 				// Random index for "yours"
-				this.quizRankingIndexYours = Math.floor(Math.random() * numberTopPokemons);
+				this.quizRankingIndexYours = Math.floor(Math.random() * realNumberTopPokemons);
 
 				// Random index for "opponents", different from "yours"
 				do {
-				this.quizRankingIndexOpponents = Math.floor(Math.random() * numberTopPokemons);
+				this.quizRankingIndexOpponents = Math.floor(Math.random() * realNumberTopPokemons);
 				} while (this.quizRankingIndexOpponents === this.quizRankingIndexYours);
 				
 				// Create your pokemon

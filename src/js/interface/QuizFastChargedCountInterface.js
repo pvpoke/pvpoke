@@ -257,7 +257,11 @@ var InterfaceMaster = (function () {
 					rankingDisplayIncrement = 5;
 				}
 
-				this.quiz_ranking_index = Math.floor(Math.random() * numberTopPokemons);
+				if(numberTopPokemons == 'ALL'){
+					this.quiz_ranking_index = Math.floor(Math.random() * rankings.length);
+				} else {
+					this.quiz_ranking_index = Math.floor(Math.random() * numberTopPokemons);
+				}
 				// Mostra solo il primo elemento della lista rankings
 				try {
 					self.displayRankingEntry(rankings[this.quiz_ranking_index], this.quiz_ranking_index);
