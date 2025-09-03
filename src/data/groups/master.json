@@ -45,6 +45,11 @@
         "chargedMoves": ["SANDSEAR_STORM", "STONE_EDGE"]
     },
     {
+        "speciesId": "lugia",
+        "fastMove": "DRAGON_TAIL",
+        "chargedMoves": ["AEROBLAST", "FLY"]
+    },
+    {
         "speciesId": "lunala",
         "fastMove": "SHADOW_CLAW",
         "chargedMoves": ["SHADOW_BALL", "MOONBLAST"]
@@ -55,9 +60,19 @@
         "chargedMoves": ["DOUBLE_IRON_BASH", "THUNDERBOLT"]
     },
     {
+        "speciesId": "meloetta_aria",
+        "fastMove": "CONFUSION",
+        "chargedMoves": ["PSYSHOCK", "DAZZLING_GLEAM"]
+    },
+    {
         "speciesId": "metagross",
         "fastMove": "BULLET_PUNCH",
         "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "mewtwo",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": ["PSYSTRIKE", "SHADOW_BALL"]
     },
     {
         "speciesId": "necrozma_dawn_wings",
@@ -80,15 +95,14 @@
         "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
     },
     {
+        "speciesId": "reshiram",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["FUSION_FLARE", "DRACO_METEOR"]
+    },
+    {
         "speciesId": "rhyperior",
         "fastMove": "MUD_SLAP",
         "chargedMoves": ["BREAKING_SWIPE", "ROCK_WRECKER"]
-    },
-    {
-        "speciesId": "rhyperior_shadow",
-        "fastMove": "MUD_SLAP",
-        "chargedMoves": ["ROCK_WRECKER", "BREAKING_SWIPE"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "solgaleo",
@@ -99,6 +113,11 @@
         "speciesId": "tapu_bulu",
         "fastMove": "BULLET_SEED",
         "chargedMoves": ["GRASS_KNOT", "NATURES_MADNESS"]
+    },
+    {
+        "speciesId": "tapu_lele",
+        "fastMove": "ASTONISH",
+        "chargedMoves": ["PSYSHOCK", "NATURES_MADNESS"]
     },
     {
         "speciesId": "xerneas",
@@ -136,38 +155,18 @@
         "chargedMoves": ["POWER_WHIP", "DARK_PULSE"]
     },
     {
-        "speciesId": "zygarde_complete",
-        "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
-    },
-    {
-        "speciesId": "mewtwo",
-        "fastMove": "PSYCHO_CUT",
-        "chargedMoves": ["PSYSTRIKE", "SHADOW_BALL"]
-    },
-    {
-        "speciesId": "lugia",
-        "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["AEROBLAST", "FLY"]
-    },
-    {
-        "speciesId": "reshiram",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["FUSION_FLARE", "DRACO_METEOR"]
-    },
-    {
         "speciesId": "zekrom",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["OUTRAGE", "FUSION_BOLT"]
     },
     {
-        "speciesId": "meloetta_aria",
-        "fastMove": "CONFUSION",
-        "chargedMoves": ["PSYSHOCK", "DAZZLING_GLEAM"]
+        "speciesId": "zygarde_complete",
+        "fastMove": "DRAGON_TAIL",
+        "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
     },
     {
-        "speciesId": "tapu_lele",
-        "fastMove": "ASTONISH",
-        "chargedMoves": ["PSYSHOCK", "NATURES_MADNESS"]
+        "speciesId": "togekiss",
+        "fastMove": "PECK",
+        "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"]
     }
 ]

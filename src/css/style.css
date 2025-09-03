@@ -61,7 +61,7 @@ header {
   z-index: 25;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px;
-  top: 28px;
+  top: 0;
 }
 header .header-wrap {
   max-width: 800px;
@@ -238,7 +238,6 @@ footer a.domz-link {
   margin: auto;
   padding: 60px 10px 10px 10px;
   border-radius: 12px;
-  padding: 90px 10px 10px 10px;
 }
 #main > h1 {
   margin: 0;
@@ -4979,7 +4978,6 @@ a.pokebattler {
     box-sizing: border-box;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
     overflow-y: auto;
-    top: 65px;
   }
   header .menu a {
     padding: 9px 8px 9px 38px;

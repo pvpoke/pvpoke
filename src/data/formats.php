@@ -41,6 +41,96 @@ $formats = array (
   ),
   3 => 
   array (
+    'title' => 'Retro Cup',
+    'cup' => 'retro',
+    'cp' => 1500,
+    'meta' => 'retro',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  4 => 
+  array (
+    'title' => 'Battle Frontier (Aurora)',
+    'cup' => 'aurora',
+    'cp' => 1500,
+    'meta' => 'aurora',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  5 => 
+  array (
+    'title' => 'Battle Frontier (Onyx)',
+    'cup' => 'onyx',
+    'cp' => 1500,
+    'meta' => 'onyx',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  6 => 
+  array (
+    'title' => 'Battle Frontier (Ultra)',
+    'cup' => 'battlefrontierultra',
+    'cp' => 2500,
+    'meta' => 'ultra',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  7 => 
+  array (
+    'title' => 'Battle Frontier (Master)',
+    'cup' => 'battlefrontiermaster',
+    'cp' => 10000,
+    'meta' => 'battlefrontiermaster',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  8 => 
+  array (
+    'title' => 'Devon Ascension Cup',
+    'cup' => 'ascension',
+    'cp' => 1500,
+    'meta' => 'ascension',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  9 => 
+  array (
+    'title' => 'Devon (Championship Invitational S2)',
+    'cup' => 'devonchampionship',
+    'cp' => 1500,
+    'meta' => 'devonchampionship',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  10 => 
+  array (
+    'title' => 'Gymbreakers Pillar Cup Remix',
+    'cup' => 'pillar2',
+    'cp' => 1500,
+    'meta' => 'pillar2',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  11 => 
+  array (
+    'title' => 'Zygarden Chrono Meta',
+    'cup' => 'chrono',
+    'cp' => 1500,
+    'meta' => 'chrono',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  12 => 
+  array (
     'title' => 'Little Cup',
     'cup' => 'little',
     'cp' => 500,
@@ -49,7 +139,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  4 => 
+  13 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -59,7 +149,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  5 => 
+  14 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

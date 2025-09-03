@@ -416,7 +416,8 @@
             "id": "FAMILY_CHARMANDER",
             "parent": "charmeleon_shadow"
         },
-        "nicknames": ["zard"]
+        "nicknames": ["zard"],
+        "searchPriority": 6
     },
     {
         "dex": 7,
@@ -2427,7 +2428,7 @@
             "cp2500l40": [40, 15, 15, 15]
         },
         "eliteMoves": ["POUND"],
-        "searchPriority": 8,
+        "searchPriority": 3,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -2652,7 +2653,7 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER"],
-        "searchPriority": 3,
+        "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -4424,7 +4425,7 @@
             "cp2500": [30, 4, 15, 14]
         },
         "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION", "PAYBACK"],
-        "searchPriority": 12,
+        "searchPriority": 3,
         "level25CP": 1893,
         "tags": ["shadoweligible"],
         "buddyDistance": 3,
@@ -4453,7 +4454,7 @@
             "cp2500": [30, 4, 15, 14]
         },
         "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION", "PAYBACK"],
-        "searchPriority": 12,
+        "searchPriority": 4,
         "tags": ["shadow"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
@@ -6890,7 +6891,7 @@
             "parent": "cubone_shadow"
         },
         "nicknames": ["kwak"],
-        "searchPriority": 6
+        "searchPriority": 10
     },
     {
         "dex": 106,
@@ -8270,7 +8271,7 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"],
-        "searchPriority": 4,
+        "searchPriority": 9,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -9120,7 +9121,8 @@
             "parent": "dratini_shadow",
             "evolutions": ["dragonite_shadow"]
         },
-        "nicknames": ["dnair", "nair"]
+        "nicknames": ["dnair", "nair"],
+        "searchPriority": 5
     },
     {
         "dex": 149,
@@ -9171,7 +9173,7 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
-        "searchPriority": 3,
+        "searchPriority": 4,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -10083,7 +10085,7 @@
             "cp2500l40": [37, 13, 15, 13]
         },
         "level25CP": 1624,
-        "searchPriority": 3,
+        "searchPriority": 1,
         "tags": ["shadoweligible"],
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
@@ -10111,7 +10113,7 @@
             "cp2500": [40.5, 4, 12, 14],
             "cp2500l40": [37, 13, 15, 13]
         },
-        "searchPriority": 3,
+        "searchPriority": 1,
         "tags": ["shadow"],
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
@@ -10985,7 +10987,7 @@
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [39.5, 5, 14, 15]
         },
-        "searchPriority": 6,
+        "searchPriority": 4,
         "level25CP": 958,
         "tags": ["shadoweligible"],
         "buddyDistance": 3,
@@ -11015,7 +11017,7 @@
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [39.5, 5, 14, 15]
         },
-        "searchPriority": 5,
+        "searchPriority": 4,
         "tags": ["shadow"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
@@ -12164,7 +12166,7 @@
             "cp2500": [31, 4, 15, 14]
         },
         "tags": ["shadow"],
-        "searchPriority": 7,
+        "searchPriority": 11,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -12681,7 +12683,7 @@
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 3,
+        "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -13007,7 +13009,7 @@
             "cp2500l40": [37.5, 12, 14, 14]
         },
         "eliteMoves": ["WATER_GUN"],
-        "searchPriority": 2,
+        "searchPriority": 9,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -17916,7 +17918,7 @@
             "cp2500": [50, 15, 15, 15]
         },
         "nicknames": ["cash"],
-        "searchPriority": 10,
+        "searchPriority": 4,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -17945,7 +17947,7 @@
             "cp2500": [50, 15, 15, 15]
         },
         "nicknames": ["cash"],
-        "searchPriority": 10,
+        "searchPriority": 4,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -18184,7 +18186,7 @@
             "cp1500": [25.5, 4, 14, 14],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 2,
+        "searchPriority": 10,
         "level25CP": 1335,
         "tags": ["shadoweligible"],
         "buddyDistance": 3,
@@ -19790,7 +19792,7 @@
             "cp2500": [49, 4, 6, 14],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 40,
+        "searchPriority": 10,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
@@ -19816,7 +19818,7 @@
             "cp2500": [46.5, 8, 7, 13],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 40,
+        "searchPriority": 10,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -20173,7 +20175,8 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": true
+        "released": true,
+        "searchPriority": 4
     },
     {
         "dex": 386,
@@ -20721,7 +20724,7 @@
             "cp2500": [33, 6, 15, 14]
         },
         "eliteMoves": ["HYDRO_CANNON"],
-        "searchPriority": 4,
+        "searchPriority": 8,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true,
@@ -21887,7 +21890,7 @@
             "cp1500": [27.5, 4, 13, 14],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 7,
+        "searchPriority": 2,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -22831,7 +22834,7 @@
             "cp1500": [14, 4, 10, 14],
             "cp2500": [23, 4, 15, 14]
         },
-        "searchPriority": 8,
+        "searchPriority": 3,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -22884,7 +22887,7 @@
             "cp1500": [14, 4, 10, 14],
             "cp2500": [23, 4, 15, 14]
         },
-        "searchPriority": 8,
+        "searchPriority": 3,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -23665,7 +23668,7 @@
         },
         "tags": ["shadow"],
         "nicknames": ["zone"],
-        "searchPriority": 4,
+        "searchPriority": 5,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -23942,7 +23945,7 @@
             "cp1500": [16.5, 4, 15, 15],
             "cp2500": [27.5, 5, 13, 15]
         },
-        "searchPriority": 5,
+        "searchPriority": 8,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -24686,7 +24689,7 @@
             "cp1500": [13.5, 5, 15, 8],
             "cp2500": [22, 7, 14, 14]
         },
-        "searchPriority": 10,
+        "searchPriority": 11,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -24934,32 +24937,6 @@
     },
     {
         "dex": 487,
-        "speciesName": "Giratina (Altered) (Shadow)",
-        "speciesId": "giratina_altered_shadow_b",
-        "aliasId": "giratina_altered_shadow",
-        "baseStats": {
-            "atk": 187,
-            "def": 225,
-            "hp": 284
-        },
-        "types": ["ghost", "dragon"],
-        "fastMoves": ["DRAGON_BREATH", "SHADOW_CLAW"],
-        "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW", "SHADOW_SNEAK", "SHADOW_FORCE"],
-        "eliteMoves": ["SHADOW_FORCE"],
-        "tags": ["legendary", "shadow", "duplicate", "duplicate1500"],
-        "defaultIVs": {
-            "cp500": [5.5, 12, 8, 15],
-            "cp1500": [16, 10, 9, 15],
-            "cp2500": [27, 11, 10, 8]
-        },
-        "searchPriority": 7,
-        "buddyDistance": 20,
-        "thirdMoveCost": 100000,
-        "released": true,
-        "nicknames": ["tina", "gira a", "tinaa", "tina a"]
-    },
-    {
-        "dex": 487,
         "speciesName": "Giratina (Origin)",
         "speciesId": "giratina_origin",
         "baseStats": {
@@ -25002,7 +24979,7 @@
             "cp2500": [36.5, 4, 11, 11]
         },
         "eliteMoves": ["GRASS_KNOT"],
-        "searchPriority": 10,
+        "searchPriority": 6,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
@@ -27123,7 +27100,7 @@
             "cp1500": [17, 4, 14, 13],
             "cp2500": [28, 6, 15, 13]
         },
-        "searchPriority": 5,
+        "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -27151,7 +27128,7 @@
             "cp1500": [17, 4, 14, 13],
             "cp2500": [28, 6, 15, 13]
         },
-        "searchPriority": 5,
+        "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -28329,7 +28306,8 @@
             "parent": "dwebble"
         },
         "level25CP": 1555,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible"],
+        "searchPriority": 3
     },
     {
         "dex": 558,
@@ -29645,7 +29623,7 @@
             "cp1500": [19, 4, 15, 15],
             "cp2500": [33.5, 4, 15, 15]
         },
-        "searchPriority": 7,
+        "searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -29833,7 +29811,7 @@
             "cp2500": [47.5, 12, 14, 12],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 3,
+        "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -31133,7 +31111,7 @@
             "cp1500": [26.5, 5, 15, 13],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 15,
+        "searchPriority": 9,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -32079,7 +32057,7 @@
             "cp1500": [21, 5, 12, 12],
             "cp2500": [39.5, 4, 13, 15]
         },
-        "searchPriority": 4,
+        "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true,
@@ -33062,7 +33040,7 @@
             "cp2500": [50, 4, 13, 15],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 11,
+        "searchPriority": 7,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -33091,7 +33069,7 @@
             "cp2500": [50, 4, 13, 15],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 11,
+        "searchPriority": 7,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -33583,7 +33561,7 @@
             "cp1500": [30, 6, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 6,
+        "searchPriority": 12,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -33607,7 +33585,7 @@
             "cp1500l40": [40, 15, 15, 15]
         },
         "nicknames": ["bink"],
-        "searchPriority": 3,
+        "searchPriority": 8,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -34911,7 +34889,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "searchPriority": 12,
+        "searchPriority": 8,
         "released": true,
         "family": {
             "id": "FAMILY_GRUBBIN",
@@ -34941,7 +34919,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "searchPriority": 12,
+        "searchPriority": 8,
         "released": true,
         "family": {
             "id": "FAMILY_GRUBBIN",
@@ -35407,7 +35385,7 @@
             "id": "FAMILY_MAREANIE",
             "parent": "mareanie"
         },
-        "searchPriority": 9
+        "searchPriority": 4
     },
     {
         "dex": 749,
@@ -36499,7 +36477,8 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": true
+        "released": true,
+        "searchPriority": 4
     },
     {
         "dex": 777,
@@ -37725,7 +37704,8 @@
         "family": {
             "id": "FAMILY_ROOKIDEE",
             "parent": "corvisquire"
-        }
+        },
+        "searchPriority": 5
     },
     {
         "dex": 824,
@@ -39800,7 +39780,8 @@
         "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": true
+        "released": true,
+        "searchPriority": 12
     },
     {
         "dex": 896,
@@ -42330,7 +42311,7 @@
             "cp1500": [29.5, 4, 14, 10],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 15,
+        "searchPriority": 9,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
