@@ -41,6 +41,16 @@ $formats = array (
   ),
   3 => 
   array (
+    'title' => 'Retro Cup',
+    'cup' => 'retro',
+    'cp' => 1500,
+    'meta' => 'retro',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  4 => 
+  array (
     'title' => 'Battle Frontier (Aurora)',
     'cup' => 'aurora',
     'cp' => 1500,
@@ -49,7 +59,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  4 => 
+  5 => 
   array (
     'title' => 'Battle Frontier (Onyx)',
     'cup' => 'onyx',
@@ -59,7 +69,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  5 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (Ultra)',
     'cup' => 'battlefrontierultra',
@@ -69,7 +79,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -79,7 +89,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Devon Ascension Cup',
     'cup' => 'ascension',
@@ -89,7 +99,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  9 => 
   array (
     'title' => 'Devon (Championship Invitational S2)',
     'cup' => 'devonchampionship',
@@ -99,7 +109,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  10 => 
   array (
     'title' => 'Gymbreakers Pillar Cup Remix',
     'cup' => 'pillar2',
@@ -109,7 +119,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  11 => 
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -119,7 +129,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  12 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -129,7 +139,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  13 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -139,7 +149,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  14 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
