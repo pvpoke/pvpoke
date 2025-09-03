@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-09-03 02:06:19",
+    "timestamp": "2025-09-03 20:58:57",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -990,7 +990,18 @@
             "meta": "retro",
             "showCup": true,
             "showFormat": true,
-            "showMeta": true
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Dark-,  Steel-,  and Fairy-type Pokémon are not eligible."]
+        },
+        {
+            "title": "Summer Cup (Great League)",
+            "cup": "summer",
+            "cp": 1500,
+            "meta": "summer",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Fire-,  Water-,  Grass-,  Electric-,  and Bug-type Pokémon are eligible."]
         },
         {
             "title": "Battle Frontier (Aurora)",

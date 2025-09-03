@@ -40,7 +40,24 @@
 		"meta": "retro",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": true
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Dark-, Steel-, and Fairy-type Pokémon are not eligible."
+		]
+	},
+	{
+		"title": "Summer Cup (Great League)",
+		"cup": "summer",
+		"cp": 1500,
+		"meta": "summer",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible."
+		]
 	},
 	{
 		"title": "Battle Frontier (Aurora)",
