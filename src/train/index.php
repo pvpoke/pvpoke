@@ -53,11 +53,6 @@ require_once '../header.php';
 				<option value="2">Elite</option>
 				<option value="3" selected>Champion</option>
 			</select>
-			<h3 class="section-title" style="display:none;">Switch Timer</h3>
-			<select class="switch-time-select"  style="display:none;">
-				<option value="30000">30s</option>
-				<option value="50000" selected>60s</option>
-			</select>
 			<div class="check autotap-toggle"><span></span>Autotap</div>
 			<h3 class="section-title">Team Selection</h3>
 			<select class="team-method-select">

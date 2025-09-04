@@ -47,8 +47,7 @@ function Battle(){
 	var phaseTimeout; // Used to trigger the end of certain phases like charging up and switching
 	var mainLoopInterval;
 	var isPaused = false; // A flag for whether or not to pause the battle
-	var sixtySecondMarked = false; // Flag for if the 60 second marker has been displayed yet in the timeline
-	var thirtySecondMarked = false; // Flag for if the 60 second marker has been displayed yet in the timeline
+	var switchTimerMarked = false; // Flag for if the 60 second marker has been displayed yet in the timeline
 
 	var roundChargedMoveUsed;
 	var roundChargedMovesInitiated; // used in decision making
@@ -264,8 +263,7 @@ function Battle(){
 		turnActions = [];
 		turnMessages = [];
 		turnAnimations = [];
-		sixtySecondMarked = false;
-		thirtySecondMarked = false;
+		switchTimerMarked = false;
 		decisionLog = [];
 	}
 
@@ -536,14 +534,9 @@ function Battle(){
 
 		// Display sixty second marker after 60 seconds have passed
 
-		if((mode == "simulate")&&(matchupDisplayTime >= 50000)&&(! sixtySecondMarked)){
-			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (50 seconds)", 0, time, turns));
-			sixtySecondMarked = true;
-		}
-
-		if((mode == "simulate")&&(matchupDisplayTime >= 30000)&&(! thirtySecondMarked)){
-			//timeline.push(new TimelineEvent("switchAvailable", "Switch Available (30 seconds)", 0, time, turns));
-			thirtySecondMarked = true;
+		if((mode == "simulate")&&(matchupDisplayTime >= 45000)&&(! switchTimerMarked)){
+			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (45 seconds)", 0, time, turns));
+			switchTimerMarked = true;
 		}
 
 		// Check for faint

@@ -42,9 +42,6 @@ function MatchHandler(){
 		var opponent = new Player(1, props.difficulty, battle);
 		players.push(opponent);
 
-		player.setSwitchTime(props.switchTime);
-		opponent.setSwitchTime(props.switchTime);
-
 		if(props.teamSelectMethod == "manual"){
 			opponent.setRoster(props.teams[1]);
 			self.startBattle();
