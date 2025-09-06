@@ -148,9 +148,9 @@ $formats = array (
   12 => 
   array (
     'title' => 'Gymbreakers Pillar Cup Remix',
-    'cup' => 'pillar2',
+    'cup' => 'pillar3',
     'cp' => 1500,
-    'meta' => 'pillar2',
+    'meta' => 'pillar3',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
