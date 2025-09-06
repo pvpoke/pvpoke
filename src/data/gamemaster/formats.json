@@ -60,6 +60,20 @@
 		]
 	},
 	{
+		"title": "Willpower Cup",
+		"cup": "willpower",
+		"cp": 1500,
+		"meta": "willpower",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Fighting-, Psychic-, and Dark-type Pokémon will be eligible.",
+			"The following Pokémon will not be allowed: Gardevoir, Zorua, Zoroark"
+		]
+	},
+	{
 		"title": "Battle Frontier (Aurora)",
 		"cup": "aurora",
 		"cp": 1500,
