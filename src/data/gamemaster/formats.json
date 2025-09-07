@@ -40,7 +40,38 @@
 		"meta": "retro",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": true
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Dark-, Steel-, and Fairy-type Pokémon are not eligible."
+		]
+	},
+	{
+		"title": "Summer Cup (Great League)",
+		"cup": "summer",
+		"cp": 1500,
+		"meta": "summer",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible."
+		]
+	},
+	{
+		"title": "Willpower Cup",
+		"cup": "willpower",
+		"cp": 1500,
+		"meta": "willpower",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Fighting-, Psychic-, and Dark-type Pokémon will be eligible.",
+			"The following Pokémon will not be allowed: Gardevoir, Zorua, Zoroark"
+		]
 	},
 	{
 		"title": "Battle Frontier (Aurora)",
@@ -98,9 +129,9 @@
 	},
 	{
 		"title": "Gymbreakers Pillar Cup Remix",
-		"cup": "pillar2",
+		"cup": "pillar3",
 		"cp": 1500,
-		"meta": "pillar2",
+		"meta": "pillar3",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

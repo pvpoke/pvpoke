@@ -19,7 +19,7 @@ class Player {
 		// Battle properties
 		this.shields = 2;
 		this.switchTimer = 0;
-		this.switchTime = 50000;
+		this.switchTime = 45000;
 		this.wins = 0;
 		this.priority = index;
 	}
@@ -101,6 +101,8 @@ class Player {
 	 */
 	startSwitchTimer() {
 		this.switchTimer = this.switchTime;
+
+		console.log(this.switchTime);
 	}
 
 	decrementSwitchTimer(deltaTime) {
