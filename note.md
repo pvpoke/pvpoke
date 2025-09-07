@@ -11,3 +11,7 @@ new Pokemon(gm['rankings']['alloverall500'][0]['speciesId'], 0, battle)
 per contare le mosse veloci per caricata usare questo:
 var moveCounts = Pokemon.calculateMoveCounts(fastMove, chargedMove);
 ritorna array di 4 numeri uno per il numero di veolci per ogni caricata (prima, seconda, terza, quarta)
+
+TODO:
+- omt -> updateHistoryAnswer da errore non trova pokemon.speciesId
+- fcc -> pushHistoryState, cosa fa? ha senso?
