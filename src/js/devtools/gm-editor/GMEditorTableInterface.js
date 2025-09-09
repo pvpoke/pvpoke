@@ -420,6 +420,8 @@ var InterfaceMaster = (function () {
                         lastSavedJSON = JSON.stringify(source);
                         lastSavedGM = window.localStorage.getItem(settings.gamemaster);
 
+                        gm.flushAllPokemonCache();
+
                         self.displayList();
 
                         if($(".poke-search").first().val() != ''){
