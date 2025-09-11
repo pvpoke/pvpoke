@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-09-11 16:35:58",
+    "timestamp": "2025-09-11 17:17:24",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -1623,7 +1623,7 @@
                 "parent": "charmeleon_shadow"
             },
             "nicknames": ["zard"],
-            "searchPriority": 6
+            "searchPriority": 8
         },
         {
             "dex": 7,
@@ -36179,7 +36179,7 @@
             },
             "buddyDistance": 1,
             "thirdMoveCost": 10000,
-            "searchPriority": 8,
+            "searchPriority": 7,
             "released": true,
             "family": {
                 "id": "FAMILY_GRUBBIN",
@@ -36209,7 +36209,7 @@
             },
             "buddyDistance": 1,
             "thirdMoveCost": 10000,
-            "searchPriority": 8,
+            "searchPriority": 7,
             "released": true,
             "family": {
                 "id": "FAMILY_GRUBBIN",
