@@ -23,9 +23,9 @@ var InterfaceMaster = (function () {
 			this.questionAnswers = {}
 
 			// Show useRecc toggle if previously set
-			if(window.localStorage.getItem("useOnlyReccomendedMoveset") == "false"){
-				$(".check.quiz-reccomended-moveset").removeClass("on");
+			if(window.localStorage.getItem("quiz_fcc_useOnlyReccomendedMoveset") == "false"){
 				useOnlyReccomendedMoveset = false;
+				updateReccomendedMovesetCheckbox()
 			}
 
 			this.init = function(){
@@ -60,9 +60,18 @@ var InterfaceMaster = (function () {
 			}
 			// Toggle use only reccomended moveset
 
-			function toggleUseOnlyReccomendedMoveset(e){
+			function toggleUseOnlyReccomendedMoveset(){
 				useOnlyReccomendedMoveset = !useOnlyReccomendedMoveset
-				window.localStorage.setItem("useOnlyReccomendedMoveset", useOnlyReccomendedMoveset)
+				window.localStorage.setItem("quiz_fcc_useOnlyReccomendedMoveset", useOnlyReccomendedMoveset)
+				updateReccomendedMovesetCheckbox()
+			}
+
+			function updateReccomendedMovesetCheckbox(){
+				if(!useOnlyReccomendedMoveset){
+					$(".check.quiz-reccomended-moveset").removeClass("on");
+				}else{
+					$(".check.quiz-reccomended-moveset").addClass("on");
+				}
 			}
 
 			// Grabs ranking data from the Game Master
