@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-09-09 21:47:25",
+    "timestamp": "2025-09-11 16:35:58",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -975,22 +975,12 @@
     ],
     "formats": [
         {
-            "title": "Master League (Classic)",
-            "cup": "classic",
-            "cp": 10000,
-            "meta": "master",
-            "showCup": false,
-            "showFormat": true,
-            "showMeta": false,
-            "hideRankings": true
-        },
-        {
             "title": "Master Premier",
             "cup": "premier",
             "cp": 10000,
             "meta": "premiermaster",
             "showCup": true,
-            "showFormat": true,
+            "showFormat": false,
             "showMeta": true,
             "hideRankings": true,
             "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
@@ -33834,7 +33824,7 @@
             },
             "types": ["fairy", "none"],
             "fastMoves": ["VINE_WHIP", "TACKLE", "RAZOR_LEAF", "FAIRY_WIND"],
-            "chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "PSYCHIC", "DISARMING_VOICE", "TRAILBLAZE"],
+            "chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "PSYCHIC", "DISARMING_VOICE", "TRAILBLAZE", "CHILLING_WATER"],
             "defaultIVs": {
                 "cp500": [6, 4, 8, 14],
                 "cp1500": [17, 6, 13, 14],
@@ -33847,7 +33837,8 @@
             "family": {
                 "id": "FAMILY_FLABEBE",
                 "parent": "floette"
-            }
+            },
+            "eliteMoves": ["CHILLING_WATER"]
         },
         {
             "dex": 672,
@@ -44907,7 +44898,7 @@
         },
         {
             "moveId": "CHILLING_WATER",
-            "name": "Chilling Water (Speculative)",
+            "name": "Chilling Water",
             "type": "water",
             "power": 60,
             "energy": 45,

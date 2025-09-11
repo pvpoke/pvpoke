@@ -32618,7 +32618,7 @@
         },
         "types": ["fairy", "none"],
         "fastMoves": ["VINE_WHIP", "TACKLE", "RAZOR_LEAF", "FAIRY_WIND"],
-        "chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "PSYCHIC", "DISARMING_VOICE", "TRAILBLAZE"],
+        "chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "PSYCHIC", "DISARMING_VOICE", "TRAILBLAZE", "CHILLING_WATER"],
         "defaultIVs": {
             "cp500": [6, 4, 8, 14],
             "cp1500": [17, 6, 13, 14],
@@ -32631,7 +32631,8 @@
         "family": {
             "id": "FAMILY_FLABEBE",
             "parent": "floette"
-        }
+        },
+        "eliteMoves": ["CHILLING_WATER"]
     },
     {
         "dex": 672,
