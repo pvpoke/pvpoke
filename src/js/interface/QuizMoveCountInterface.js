@@ -446,9 +446,9 @@ var InterfaceMaster = (function () {
 						.removeClass("hidden feedback-wrong")
 						.addClass("feedback-correct")
 						.text("✅ " + quizAnswerInputValue + " is the correct answer!");
-					$(".quiz-feedback-explanation").removeClass("hidden").text(
-							"The charging pattern is: " + numberOfMoves
-					);
+					$(".quiz-feedback-explanation")
+						.removeClass("hidden")
+						.html(`Charging pattern for <b>${fastMove.name}</b> into <b>${chargedMove.name}</b> is: ${numberOfMoves}`);
 				}
 
 				updateAnswersHistory(self.pokemon, fastMove, chargedMove, result)
