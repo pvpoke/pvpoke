@@ -45,7 +45,7 @@ $formatFound = false;
 
 if($cup != 'all' && ! $formatFound){
 	// Only load format data for non default cups
-	require_once 'data/formats.php';
+	require_once '../data/formats.php';
 
 	if(isset($formats) && is_array($formats)){
 		// Find the format that matches the cup and cp
@@ -81,12 +81,15 @@ if(isset($_GET['p'])){
 	$CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/' . htmlspecialchars($_GET['p']) . '/';
 }
 
-require_once 'header.php';
+require_once '../header.php';
 
 ?>
 
 <h1>Optimal Move Timing Quiz</h1>
-<div class="section league-select-container white">
+<div class="section league-select-container white" id='quiz'>
+	<div class="flex space-between align-items-start" style="padding-bottom: 12px">
+        <a class="back-title" href="<?php echo $WEB_ROOT; ?>quizzes/">&larr; Quizzes</a>
+    </div>
 	<div class="quiz-ranking-filters flex">
 		<div class="quiz-select-container">
 			<div class="ranking-filter">
@@ -95,7 +98,7 @@ require_once 'header.php';
 					<a class="format-rules" href="#">Rules</a>
 				</div>
 				
-				<?php require 'modules/formatselect.php'; ?>
+				<?php require '../modules/formatselect.php'; ?>
 			</div>
 			<div class="ranking-filter">
 				<div class="flex">
@@ -142,7 +145,7 @@ require_once 'header.php';
 		</div>
 	</div>
 	</details>
-	<?php require_once 'modules/quizhints-only-fast-move.php'; ?>
+	<?php require_once '../modules/quizhints-only-fast-move.php'; ?>
 	<details class="quiz-hints">
 		<summary>Moves pattern</summary>
 		<div class="battle-results">
@@ -194,7 +197,7 @@ require_once 'header.php';
 		</div>
 	</div>
 	<div class="quiz-next-btn-container">
-			<button class="quiz-next-btn quiz-next-button" style="display: none;">
+			<button class="quiz-next-btn button" style="display: none;">
 				<span class="btn-content-wrap">
 					<span class="btn-label">Next Question</span>
 			</span>
@@ -202,13 +205,13 @@ require_once 'header.php';
 	</div>
 </div>
 
-<?php require 'modules/ads/body-728.php'; ?>
+<?php require '../modules/ads/body-728.php'; ?>
 
 <div class="hide">
-	<?php require 'modules/pokeselect.php'; ?>
+	<?php require '../modules/pokeselect.php'; ?>
 </div>
 
-<?php require_once 'modules/scripts/battle-scripts.php'; ?>
+<?php require_once '../modules/scripts/battle-scripts.php'; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -221,4 +224,4 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/RankingMain.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/libs/hexagon-chart.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once '../footer.php'; ?>

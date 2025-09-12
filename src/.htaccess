@@ -49,9 +49,8 @@ RewriteRule ^rankings/(\d+)/([a-zA-Z0-9-]+).*$ rankings.php?cp=$1&cat=$2 [L,QSA]
 RewriteRule ^rankings/(\d+).*$ rankings.php?cp=$1 [L,QSA]
 RewriteRule ^rankings.?$ rankings.php [L,QSA]
 
-RewriteRule ^quizzes/?$ quizzes.php [L,QSA]
-RewriteRule ^quiz-fast-charged-count/?$ quiz-fast-charged-count.php [L,QSA]
-RewriteRule ^quiz-optimal-move-timing/?$ quiz-optimal-move-timing.php [L,QSA]
+RewriteRule ^quizzes/quiz-move-count/?$ quizzes/quiz-move-count.php [L,QSA]
+RewriteRule ^quizzes/quiz-optimal-move-timing/?$ quizzes/quiz-optimal-move-timing.php [L,QSA]
 
 RewriteRule team-builder/([a-zA-Z0-9-]+)/([\d-]+)/([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+).*$ team-builder.php?cup=$1&cp=$2&p1=$3&p2=$4&p3=$5&m1=$6&m2=$7&m3=$8 [L,QSA]
 RewriteRule team-builder/([a-zA-Z0-9-]+)/([\d-]+)/([a-zA-Z_]+)/([a-zA-Z_]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+).*$ team-builder.php?cup=$1&cp=$2&p1=$3&p2=$4&m1=$5&m2=$6 [L,QSA]

@@ -2662,7 +2662,6 @@ a.download-csv {
 
 .quiz-container {
   max-height: 600px;
-  overflow-y: scroll;
 }
 
 .rankings-container {
@@ -2871,23 +2870,20 @@ a.download-csv {
 .quiz-next-btn-container {
   padding-top: 8px
 }
-.quiz-next-button {
+.quiz-next-btn {
+  position: relative;
   display: block;
+  font-size: 12px;
+  border-radius: 30px;
+  border: 2px solid #000;
+  padding: 10px 12px;
+  cursor: pointer;
   text-decoration: none;
-  color: black;
-  border-radius: 50px;
-  margin: 20px auto;
-  padding: 8px 20px;
-  box-sizing: border-box;
-  max-width: 400px;
-  background: #7d7d7d;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #bcbcbc 30%, #7d7d7d 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #bcbcbc 30%, #7d7d7d 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #bcbcbc 30%, #7d7d7d 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: #000;
+  background: #f9a01b;
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
 }
 .quiz-answer-input {
   flex: 1;
@@ -6336,6 +6332,7 @@ a.feed-subscribe {
   gap: 10px;
 }
 
+#quiz .back-title,
 #gm-editor-pokemon .gm-title,
 #gm-editor-moves .gm-title,
 #gm-editor-learnset .gm-title {
