@@ -12,8 +12,6 @@ var InterfaceMaster = (function () {
 			var self = this;
 			var gm = GameMaster.getInstance();
 			var battle = new Battle();
-			var numberAskedQuestions = 0;
-			var numberCorrectAnswers = 0;
 			var chargedMove;
 			var fastMove;
 			var useOnlyReccomendedMoveset = true;
@@ -23,7 +21,7 @@ var InterfaceMaster = (function () {
 			this.questionAnswers = {}
 
 			// Show useRecc toggle if previously set
-			if(window.localStorage.getItem("quiz_fcc_useOnlyReccomendedMoveset") == "false"){
+			if(window.localStorage.getItem("quiz_mc_useOnlyReccomendedMoveset") == "false"){
 				useOnlyReccomendedMoveset = false;
 				updateReccomendedMovesetCheckbox()
 			}
@@ -62,7 +60,7 @@ var InterfaceMaster = (function () {
 
 			function toggleUseOnlyReccomendedMoveset(){
 				useOnlyReccomendedMoveset = !useOnlyReccomendedMoveset
-				window.localStorage.setItem("quiz_fcc_useOnlyReccomendedMoveset", useOnlyReccomendedMoveset)
+				window.localStorage.setItem("quiz_mc_useOnlyReccomendedMoveset", useOnlyReccomendedMoveset)
 				updateReccomendedMovesetCheckbox()
 			}
 
@@ -135,7 +133,6 @@ var InterfaceMaster = (function () {
 
 				// Poi chiama la funzione finale
 				self.completeRankingDisplay();
-				numberAskedQuestions++
 			}
 
 			this.displayRankingEntry = function(r, index){
@@ -430,12 +427,8 @@ var InterfaceMaster = (function () {
 			function checkAnswer() {
 				var quizAnswerInputValue = $(".quiz-answer-input option:selected").val();
 				var numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
-				trials++
 				result = quizAnswerInputValue == numberOfMoves[0]
-				if(result && trials == 1){
-					numberCorrectAnswers++
-				}
-				
+				trials++
 				// Show feedback
 				$(".quiz-feedback-header").removeClass("hidden");
 				if(!result){
@@ -453,8 +446,8 @@ var InterfaceMaster = (function () {
 					);
 				}
 
-				updateScore()
 				updateAnswersHistory(self.pokemon, fastMove, chargedMove, result)
+				updateScore()
 			}
 
 			function updateAnswersHistory(pokemon, fastMove, chargedMove, result){
@@ -470,9 +463,11 @@ var InterfaceMaster = (function () {
 				// Select the quiz-score container
 				var $score = $(".quiz-score");
 
+				const answers = self.questionAnswers
+
 				// Update the current score
-				$score.children().eq(1).text(numberCorrectAnswers);
-				$score.children().eq(3).text(numberAskedQuestions);
+				$score.children().eq(1).text(Object.values(answers).filter(value => value === true).length);
+				$score.children().eq(3).text(Object.keys(answers).length);
 			}
 		};
         return object;

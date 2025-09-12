@@ -162,7 +162,7 @@ require_once '../header.php';
 	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">After how many Fast Moves should you throw the Charged Moves for the most optimal timing?</span>
-		<div class="quiz-omt-answer-input-container">
+		<div class="quiz-answer-input-container">
 			<div class="quiz-answer-input">
 				<select id="quiz-omt-guess" style="height: 100%">
 					<option value="" disabled selected>-- Choose --</option>

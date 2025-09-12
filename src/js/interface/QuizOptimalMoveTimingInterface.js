@@ -12,8 +12,6 @@ var InterfaceMaster = (function () {
 			var self = this;
 			var gm = GameMaster.getInstance();
 			var battle = new Battle();
-			var numberAskedQuestions = 0;
-			var numberCorrectAnswers = 0;
 			this.yourPokemon = null;
 			this.opponentsPokemon = null;
 			var chargedMove;
@@ -219,7 +217,6 @@ var InterfaceMaster = (function () {
 
 				// Poi chiama la funzione finale
 				self.completeRankingDisplay();
-				numberAskedQuestions++
 			}
 
 			this.displayRankingEntry = function(pokemon, isYours){
@@ -558,9 +555,6 @@ var InterfaceMaster = (function () {
 					optimalTimes.join(",") == quizAnswerInputValue){
 					result = true
 				}
-				if(result && trials == 1){
-					numberCorrectAnswers++
-				}
 				
 				// Show feedback
 				$(".quiz-feedback-header").removeClass("hidden");
@@ -577,8 +571,8 @@ var InterfaceMaster = (function () {
 					$(".quiz-feedback-explanation").removeClass("hidden");
 				}
 
-				updateScore()
 				updateAnswersHistory(self.yourPokemon, self.opponentsPokemon, result)
+				updateScore()
 			}
 
 			function updateAnswersHistory(yourPokemon, opponentsPokemon, result){
@@ -594,9 +588,11 @@ var InterfaceMaster = (function () {
 				// Select the quiz-score container
 				var $score = $(".quiz-score");
 
+				const answers = self.questionAnswers
+
 				// Update the current score
-				$score.children().eq(1).text(numberCorrectAnswers);
-				$score.children().eq(3).text(numberAskedQuestions);
+				$score.children().eq(1).text(Object.values(answers).filter(value => value === true).length);
+				$score.children().eq(3).text(Object.keys(answers).length);
 			}
 		};
         return object;

@@ -136,7 +136,7 @@ require_once '../header.php';
 	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
-		<div class="quiz-omt-answer-input-container">
+		<div class="quiz-answer-input-container">
 			<div class="quiz-answer-input">
 				<select id="guess" style="height: 100%">
 					<option value="" disabled selected>-- Choose --</option>
@@ -191,7 +191,7 @@ require_once '../header.php';
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/QuizFastChargedCountInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/QuizMoveCountInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>

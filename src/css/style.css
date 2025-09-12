@@ -2888,7 +2888,7 @@ a.download-csv {
 .quiz-answer-input {
   flex: 1;
 }
-.quiz-omt-answer-input-container {
+.quiz-answer-input-container {
   display: flex;
   gap: 20px;
 }
@@ -5116,7 +5116,7 @@ a.pokebattler {
   .quiz-question .question-text {
     font-size: 14px;
   }
-  .quiz-omt-answer-input-container {
+  .quiz-answer-input-container {
     width: 100%;
     justify-content: space-between;
   }
