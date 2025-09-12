@@ -6332,6 +6332,11 @@ a.feed-subscribe {
   gap: 10px;
 }
 
+.quiz-link-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 #quiz .back-title,
 #gm-editor-pokemon .gm-title,
 #gm-editor-moves .gm-title,

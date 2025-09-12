@@ -171,11 +171,14 @@ require_once '../header.php';
 		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
 		<div class="quiz-feedback hidden"></div>
 		<div class="quiz-feedback-explanation hidden"></div>
+		<div class="quiz-link-title-container hidden" style="padding-top: 10px">
+        	<a class="quiz-link-title"  target="_blank" data-webroot="<?php echo $WEB_ROOT; ?>" href=""></a>
+    	</div>
 	</div>
-		<div class="quiz-next-btn-container">
-			<button class="quiz-next-btn button" style="display: none;">
-				<span class="btn-content-wrap">
-					<span class="btn-label">Next Question</span>
+	<div class="quiz-next-btn-container">
+		<button class="quiz-next-btn button" style="display: none;">
+			<span class="btn-content-wrap">
+				<span class="btn-label">Next Question</span>
 			</span>
 		</button>
 	</div>

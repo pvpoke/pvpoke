@@ -27,8 +27,12 @@ var InterfaceMaster = (function () {
 			}
 
 			this.init = function(){
+				this.category = 'overall'
+				this.cp = '1500'
+				this.cup = 'all'
+
 				if(! get){
-					this.displayRankings("overall","1500","all");
+					this.displayRankings(this.category,this.cp,this.cup);
 				} else{
 					this.loadGetData();
 				}
@@ -200,6 +204,17 @@ var InterfaceMaster = (function () {
 				$(".section.white > .quiz-container").append($el);
 
 				addHintMoveDetails()
+				updateLink()
+			}
+
+			function updateLink(){
+				const newPath = `rankings/${self.cup}/${self.cp}/${self.category}/${self.pokemon.speciesId}`; 
+				const newText = `See ${self.pokemon.speciesName} ranking →`;
+				const root = $(".quiz-link-title").data("webroot");
+
+				$(".quiz-link-title")
+					.attr("href", root + newPath)
+					.text(newText);
 			}
 
 			this.completeRankingDisplay = function(){
@@ -403,21 +418,21 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the cup select
 
 			function selectFormat(e){
-				var cp = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
-				var category = $(".category-select option:selected").val();
-				var sort = $(".category-select option:selected").attr("sort");
+				self.cp = $(".format-select option:selected").val();
+				self.cup = $(".format-select option:selected").attr("cup");
+				self.category = $(".category-select option:selected").val();
+				self.sort = $(".category-select option:selected").attr("sort");
 
-				if(! category){
-					category = "overall";
+				if(! self.category){
+					self.category = "overall";
 				}
 
-				if(cup == "custom"){
+				if(self.cup == "custom"){
 					window.location.href = webRoot+'custom-rankings/';
 					return;
 				}
 
-				self.displayRankings(category, cp, cup);
+				self.displayRankings(self.category, self.cp, self.cup);
 			}
 
 			function nextQuestion(){
@@ -425,17 +440,22 @@ var InterfaceMaster = (function () {
 				$(".quiz-feedback").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
+				$(".quiz-link-title-container").addClass("hidden")
 				$("details").removeAttr("open");
 				self.displayRankingData(self.rankings)
 			}
 
 			function checkAnswer() {
 				var quizAnswerInputValue = $(".quiz-answer-input option:selected").val();
+				if(quizAnswerInputValue == ''){
+					return
+				}
 				var numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
 				result = quizAnswerInputValue == numberOfMoves[0]
 				trials++
 				// Show feedback
 				$(".quiz-feedback-header").removeClass("hidden");
+				$(".quiz-link-title-container").removeClass("hidden")
 				if(!result){
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-correct")

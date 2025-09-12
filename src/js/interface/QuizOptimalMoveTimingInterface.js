@@ -569,6 +569,9 @@ var InterfaceMaster = (function () {
 
 			function checkAnswer() {
 				var quizAnswerInputValue = $(".quiz-answer-input option:selected").val();
+				if(quizAnswerInputValue == ''){
+					return
+				}
 				result = false
 				trials++
 				if((optimalTimes.length == 0 && quizAnswerInputValue == 'No optimal timing possible') || 
