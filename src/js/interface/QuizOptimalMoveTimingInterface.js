@@ -163,6 +163,41 @@ var InterfaceMaster = (function () {
 				$(".section.white .yours .quiz-container").html('');
 				$(".loading").hide();
 
+				self.displayQuestion()
+
+				// Poi chiama la funzione finale
+				self.completeRankingDisplay();
+			}
+
+			this.displayQuestion = function(){
+				let questionKey;
+				//Avoid infinite loops
+				let questionsPicked = 0;
+				//Pick a new question that hasn't been correctly answered yet
+				do {
+					self.pickQuestion()
+					questionsPicked++;
+					console.log(questionsPicked)
+					questionKey = getQuestionKey(this.yourPokemon, this.opponentsPokemon);
+					console.log(questionKey)
+				} while (questionKey in this.questionAnswers &&
+						 this.questionAnswers[questionKey] === true &&
+						 questionsPicked < 10000)
+
+				try {
+					self.displayRankingEntry(this.yourPokemon, true);
+				} catch (err) {
+					console.error(this.yourPokemon.speciesId + " could not be displayed", err);
+				}
+				try {
+					self.displayRankingEntry(this.opponentsPokemon, false);
+				} catch (err) {
+					console.error(this.opponentsPokemon.speciesId + " could not be displayed", err);
+				}
+				fastMoveTiming(this.yourPokemon, this.opponentsPokemon)
+			}
+
+			this.pickQuestion = function(){
 				if(numberTopPokemons == 'ALL'){
 					realNumberTopPokemons = rankings.length
 				} else {
@@ -178,12 +213,12 @@ var InterfaceMaster = (function () {
 				} while (this.quizRankingIndexOpponents === this.quizRankingIndexYours);
 				
 				// Create your pokemon
-				this.yourPokemon = new Pokemon(rankings[this.quizRankingIndexYours].speciesId, 0, battle);
+				this.yourPokemon = new Pokemon(self.rankings[this.quizRankingIndexYours].speciesId, 0, battle);
 				this.yourPokemon.initialize(true);
 
 				// Pick the fast moves
 				if(useOnlyReccomendedMoveset){
-					this.yourPokemon.selectMove("fast", rankings[this.quizRankingIndexYours].moveset[0])
+					this.yourPokemon.selectMove("fast", self.rankings[this.quizRankingIndexYours].moveset[0])
 				} else {
 					// Pick among all available moves
 					fastMoveIndex = Math.floor(Math.random() * this.yourPokemon.fastMovePool.length)
@@ -191,32 +226,17 @@ var InterfaceMaster = (function () {
 				}
 				
 				// Create opponent's pokemon
-				this.opponentsPokemon = new Pokemon(rankings[this.quizRankingIndexOpponents].speciesId, 0, battle);
+				this.opponentsPokemon = new Pokemon(self.rankings[this.quizRankingIndexOpponents].speciesId, 0, battle);
 				this.opponentsPokemon.initialize(true);
 				
 				// Pick the fast moves
 				if(useOnlyReccomendedMoveset){
-					this.opponentsPokemon.selectMove("fast", rankings[this.quizRankingIndexOpponents].moveset[0])
+					this.opponentsPokemon.selectMove("fast", self.rankings[this.quizRankingIndexOpponents].moveset[0])
 				} else {
 					// Pick among all available moves
 					fastMoveIndex = Math.floor(Math.random() * this.opponentsPokemon.fastMovePool.length)
 					this.opponentsPokemon.selectMove("fast", this.opponentsPokemon.fastMovePool[fastMoveIndex].moveId)
 				}
-
-				try {
-					self.displayRankingEntry(this.yourPokemon, true);
-				} catch (err) {
-					console.error(this.yourPokemon.speciesId + " could not be displayed", err);
-				}
-				try {
-					self.displayRankingEntry(this.opponentsPokemon, false);
-				} catch (err) {
-					console.error(this.opponentsPokemon.speciesId + " could not be displayed", err);
-				}
-				fastMoveTiming(this.yourPokemon, this.opponentsPokemon)
-
-				// Poi chiama la funzione finale
-				self.completeRankingDisplay();
 			}
 
 			this.displayRankingEntry = function(pokemon, isYours){
@@ -580,8 +600,13 @@ var InterfaceMaster = (function () {
 				if(trials > 1){
 					result = false
 				}
-				questionKey = yourPokemon.speciesId + '|' + yourPokemon.fastMove.moveId + '|' + opponentsPokemon.speciesId + '|' + opponentsPokemon.fastMove.moveId 
+				questionKey = getQuestionKey(yourPokemon, opponentsPokemon)
 				self.questionAnswers[questionKey] = result
+			}
+
+			function getQuestionKey(yourPokemon, opponentsPokemon){
+				const questionKey = yourPokemon.speciesId + '|' + yourPokemon.fastMove.moveId + '|' + opponentsPokemon.speciesId + '|' + opponentsPokemon.fastMove.moveId 
+				return questionKey
 			}
 
 			function updateScore(){

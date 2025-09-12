@@ -111,31 +111,21 @@ var InterfaceMaster = (function () {
 
 				$(".loading").hide();
 
-				var i = 0;
-				var rankingDisplayIncrement = 15;
+				self.displayRankingEntry();
+				// Poi chiama la funzione finale
+				self.completeRankingDisplay();
+			}
 
-				if(settings.performanceMode){
-					rankingDisplayIncrement = 5;
-				}
-
+			this.pickQuestion = function(){
+				//pick ranking
 				if(numberTopPokemons == 'ALL'){
 					this.quiz_ranking_index = Math.floor(Math.random() * rankings.length);
 				} else {
 					this.quiz_ranking_index = Math.floor(Math.random() * numberTopPokemons);
 				}
-				// Mostra solo il primo elemento della lista rankings
-				try {
-					self.displayRankingEntry(rankings[this.quiz_ranking_index], this.quiz_ranking_index);
-				} catch (err) {
-					console.error(rankings[this.quiz_ranking_index].speciesId + " could not be displayed", err);
-				}
+				const r = this.rankings[this.quiz_ranking_index];
 
-
-				// Poi chiama la funzione finale
-				self.completeRankingDisplay();
-			}
-
-			this.displayRankingEntry = function(r, index){
+				//pick moves
 				var pokemon = new Pokemon(r.speciesId, 0, battle);
 				this.pokemon = pokemon;
 
@@ -165,7 +155,22 @@ var InterfaceMaster = (function () {
 					this.fastMove = pokemon.fastMovePool[fastMoveIndex]
 				}
 				this.chargedMove = pokemon.chargedMoves[chargedMoveIndex]
+			}
 
+			this.displayRankingEntry = function(){
+				let questionKey;
+				//Avoid infinite loops
+				let questionsPicked = 0;
+				//Pick a new question that hasn't been correctly answered yet
+				do {
+					self.pickQuestion()
+					questionsPicked++;
+					questionKey = getQuestionKey(this.pokemon, this.fastMove, this.chargedMove);
+				} while (questionKey in this.questionAnswers &&
+						 this.questionAnswers[questionKey] === true &&
+						 questionsPicked < 10000)
+				
+				const pokemon = this.pokemon
 				// Show the pokemon details
 				var $el = $("<div class=\"rank typed-ranking quiz " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
 					"<div class=\"pokemon-info\">" +
@@ -455,8 +460,13 @@ var InterfaceMaster = (function () {
 				if(trials > 1){
 					result = false
 				}
-				questionKey = pokemon.speciesId + '|' + fastMove.moveId + '|' + chargedMove.moveId
+				const questionKey = getQuestionKey(pokemon, fastMove, chargedMove)
 				self.questionAnswers[questionKey] = result
+			}
+
+			function getQuestionKey(pokemon, fastMove, chargedMove){
+				const questionKey = pokemon.speciesId + '|' + fastMove.moveId + '|' + chargedMove.moveId
+				return questionKey
 			}
 
 			function updateScore(){
