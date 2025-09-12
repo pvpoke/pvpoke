@@ -1,0 +1,58 @@
+{
+	"species": [
+		{
+			"speciesId": "flabebe",
+			"baseSpeciesId": "flabebe"
+		},
+		{
+			"speciesId": "floette",
+			"baseSpeciesId": "flabebe"
+		},
+		{
+			"speciesId": "florges",
+			"baseSpeciesId": "flabebe",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Florges",
+			"speciesId": "florges",
+			"baseSpeciesId": "flabebe",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [17.5, 0, 14, 13],
+			"priority": 1,
+			"notes": "Florges reaches several bulkpoints with maximum Defense spreads such as 0/15/1, but maximum stat product appears more beneficial overall. Slight Attack weight should also be a consideration since Florges occupies a packed Attack stat tier, and striking first with Chilling Water can be vital to reduce damage."
+		},
+		{
+			"title": "High Rank Florges",
+			"speciesId": "florges",
+			"baseSpeciesId": "flabebe",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [29, 0, 14, 15],
+			"priority": 1,
+			"notes": "Florges reaches several bulkpoints with maximum Defense spreads such as 0/15/1, but maximum stat product appears more beneficial overall. Slight Attack weight should also be a consideration since Florges occupies a packed Attack stat tier, and striking first with Chilling Water can be vital to reduce damage."
+		},
+		{
+			"title": "High IV Florges",
+			"speciesId": "florges",
+			"baseSpeciesId": "flabebe",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 1,
+			"notes": "Florges has loose IV requirements for Master League. If given the option, a lower HP IV is typically preferred over lower Defense or Attack."
+		},
+		{
+			"title": "Little Cup Florges",
+			"speciesId": "florges",
+			"baseSpeciesId": "florges",
+			"league": "special",
+			"cp": 500,
+			"ivs": [6, 1, 15, 14],
+			"priority": 3
+		}
+	]
+}
