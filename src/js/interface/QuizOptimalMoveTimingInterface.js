@@ -582,14 +582,15 @@ var InterfaceMaster = (function () {
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-correct")
 						.addClass("feedback-wrong")
-						.text("❌ " + quizAnswerInputValue + " is not the correct answer, try again!");
+						.text("❌ " + quizAnswerInputValue + " is not the correct answer");
 				} else {
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-wrong")
 						.addClass("feedback-correct")
 						.text("✅ " + quizAnswerInputValue + " is the correct answer!");
-					$(".quiz-feedback-explanation").removeClass("hidden");
 				}
+				//Show answer in any case
+				$(".quiz-feedback-explanation").removeClass("hidden");
 
 				updateAnswersHistory(self.yourPokemon, self.opponentsPokemon, result)
 				updateScore()

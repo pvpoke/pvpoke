@@ -1921,7 +1921,7 @@ select.large {
 }
 .quiz-feedback-explanation .battle-results .battle-details .optimal-timing-section {
   max-width: 340px;
-  margin: 0 auto 0px auto;
+  margin: 8px auto 0px auto;
   text-align: center;
 }
 .battle-results .battle-details .breakpoints-section,

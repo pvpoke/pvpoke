@@ -440,16 +440,17 @@ var InterfaceMaster = (function () {
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-correct")
 						.addClass("feedback-wrong")
-						.text("❌ " + quizAnswerInputValue + " is not the correct answer, try again!");
+						.text("❌ " + quizAnswerInputValue + " is not the correct answer");
 				} else {
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-wrong")
 						.addClass("feedback-correct")
-						.text("✅ " + quizAnswerInputValue + " is the correct answer!");
-					$(".quiz-feedback-explanation")
-						.removeClass("hidden")
-						.html(`Charging pattern for <b>${fastMove.name}</b> into <b>${chargedMove.name}</b> is: ${numberOfMoves}`);
+						.text("✅ " + quizAnswerInputValue + " is the correct answer");
 				}
+				//Show the correct answer in any case
+				$(".quiz-feedback-explanation")
+					.removeClass("hidden")
+					.html(`Charging pattern for <b>${fastMove.name}</b> into <b>${chargedMove.name}</b> is: ${numberOfMoves}`);
 
 				updateAnswersHistory(self.pokemon, fastMove, chargedMove, result)
 				updateScore()

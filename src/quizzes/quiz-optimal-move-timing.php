@@ -146,19 +146,6 @@ require_once '../header.php';
 	</div>
 	</details>
 	<?php require_once '../modules/quizhints-only-fast-move.php'; ?>
-	<details class="quiz-hints">
-		<summary>Moves pattern</summary>
-		<div class="battle-results">
-		<div class="battle-details">
-			<div class="optimal-timing-section">
-				<div class="optimal-timing-timeline">
-					<div class="timeline"></div>
-					<div class="timeline"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</details>
 	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">After how many Fast Moves should you throw the Charged Moves for the most optimal timing?</span>
@@ -187,7 +174,13 @@ require_once '../header.php';
 		<div class="quiz-feedback hidden"></div>
 		<div class="quiz-feedback-explanation hidden">
 			<div class="battle-results">
-				<div class="battle-details">
+				<div class="quiz battle-details">
+					<div class="optimal-timing-section">
+						<div class="optimal-timing-timeline">
+							<div class="timeline"></div>
+							<div class="timeline"></div>
+						</div>
+					</div>
 					<div class="optimal-timing-section">
 						<p class="timing-none">Optimal Charged Move timing isn't applicable for <span class="name-attacker">Pokemon</span> in this matchup.</p>
 						<p class="timing-most-optimal"><span class="name-attacker">Pokemon</span> should throw its Charged Moves after <span class="optimal-1"></span>, <span class="optimal-2"></span>, or <span class="optimal-3"></span> Fast Moves for the most optimal timing.</p>
