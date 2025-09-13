@@ -41,9 +41,10 @@ var InterfaceMaster = (function () {
 
 				$(".format-select").on("change", selectFormat);
 				$(".top-ranking-select").on("change", selectTopRankings);
-				$("body").on("click", ".quiz-check-btn", checkAnswer);
 				$("body").on("click", ".quiz-next-btn", nextQuestion);
 				$("body").on("click", ".check.quiz-reccomended-moveset", toggleUseOnlyReccomendedMoveset);
+				$("body").on("change", "#quiz-omt-guess", checkAnswer)
+
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -623,6 +624,7 @@ var InterfaceMaster = (function () {
 			function nextQuestion(){
 				hideAnswer()
 				self.displayRankingData(self.rankings)
+				$("#quiz-omt-guess").val("");
 			}
 
 			function checkAnswer() {

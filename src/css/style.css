@@ -2874,10 +2874,8 @@ a.download-csv {
   font-size: 18px;
   font-weight: bold;
 }
-.quiz-next-btn-container {
-  padding-top: 8px
-}
 .quiz-next-btn {
+  margin: 0px;
   position: relative;
   display: block;
   font-size: 12px;

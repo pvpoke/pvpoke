@@ -39,7 +39,7 @@ var InterfaceMaster = (function () {
 
 				$(".format-select").on("change", selectFormat);
 				$(".top-ranking-select").on("change", selectTopRankings);
-				$("body").on("click", ".quiz-check-btn", checkAnswer);
+				$("body").on("change", "#quiz-mc-guess", checkAnswer)
 				$("body").on("click", ".quiz-next-btn", nextQuestion);
 				$("body").on("click", ".check.quiz-reccomended-moveset", toggleUseOnlyReccomendedMoveset);
 
@@ -474,6 +474,7 @@ var InterfaceMaster = (function () {
 			function nextQuestion(){
 				hideAnswer()
 				self.displayRankingData(self.rankings)
+				$("#quiz-mc-guess").val("");
 			}
 
 			function checkAnswer() {

@@ -61,7 +61,7 @@ require_once '../header.php';
 		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
 		<div class="quiz-answer-input-container">
 			<div class="quiz-answer-input">
-				<select id="guess" style="height: 100%">
+				<select id="quiz-mc-guess" style="height: 100%">
 					<option value="" disabled selected>-- Choose --</option>
 					<!-- Generate 0 to 16 -->
 					<option value="0">0</option>
@@ -83,22 +83,17 @@ require_once '../header.php';
 					<option value="16">16</option>
 				</select>
 			</div>
-			<button class="quiz-check-btn quiz-button" style="display: none;">
-				<span class="btn-content-wrap">
-					<span class="btn-label">Check Answer</span>
-				</span>
-			</button>
+			<div class="quiz-next-btn-container">
+				<button class="quiz-next-btn button" style="display: none;">
+					<span class="btn-content-wrap">
+						<span class="btn-label">Next Question</span>
+					</span>
+				</button>
+			</div>
 		</div>
 	</div>
-	<div class="quiz-next-btn-container">
-		<button class="quiz-next-btn button" style="display: none;">
-			<span class="btn-content-wrap">
-				<span class="btn-label">Next Question</span>
-			</span>
-		</button>
-	</div>
 	<div class="quiz-feedback-container">
-		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
+		<div class="quiz-header quiz-feedback-header hidden" style="margin-top: 0px">Answer Review</div>
 		<div class="quiz-feedback hidden"></div>
 		<div class="quiz-feedback-explanation hidden"></div>
 		<div class="quiz-link-title-container hidden" style="padding-top: 10px">

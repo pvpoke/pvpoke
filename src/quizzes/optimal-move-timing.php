@@ -85,22 +85,17 @@ require_once '../header.php';
 					<option value="3,8,13">3,8,13</option>
 				</select>
 			</div>
-			<button class="quiz-check-btn quiz-button" style="display: none;">
-				<span class="btn-content-wrap">
-					<span class="btn-label">Check Answer</span>
-				</span>
-			</button>
+			<div class="quiz-next-btn-container">
+				<button class="quiz-next-btn button" style="display: none;">
+					<span class="btn-content-wrap">
+						<span class="btn-label">Next Question</span>
+					</span>
+				</button>
+			</div>
 		</div>
 	</div>
-	<div class="quiz-next-btn-container">
-			<button class="quiz-next-btn button" style="display: none;">
-				<span class="btn-content-wrap">
-					<span class="btn-label">Next Question</span>
-			</span>
-		</button>
-	</div>
 	<div class="quiz-feedback-container">
-		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
+		<div class="quiz-header quiz-feedback-header hidden" style="margin-top: 0px">Answer Review</div>
 		<div class="quiz-feedback-container-inner">
 			<div class="quiz-feedback-container-left">
 				<div class="quiz-feedback hidden"></div>
