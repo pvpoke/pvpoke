@@ -6,7 +6,7 @@
 
 	<p class="small">Welcome to Quiz PvP on PvPoke.com — train your Pokémon GO knowledge and sharpen your battle skills!</p>
 
-	<a href="quiz-move-count/" class="button">
+	<a href="move-count/" class="button">
 		<span class="btn-content-wrap">
 			<span class="btn-icon btn-icon-battle"></span>
 			<span class="btn-label">
@@ -16,7 +16,7 @@
 		</span>
 	</a>
 
-	<a href="quiz-optimal-move-timing/" class="button">
+	<a href="optimal-move-timing/" class="button">
 		<span class="btn-content-wrap">
 			<span class="btn-icon btn-icon-rankings"></span>
 			<span class="btn-label">
