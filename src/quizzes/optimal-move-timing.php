@@ -44,7 +44,7 @@ require_once '../header.php';
 		</div>
 	</div>
 
-	<div class="quiz-checks flex">
+	<div class="quiz-checks flex hidden">
 		<div class="check quiz-reccomended-moveset on"><span></span>Only Use Recommended Moveset</div>
 	</div>
 
@@ -92,6 +92,13 @@ require_once '../header.php';
 			</button>
 		</div>
 	</div>
+	<div class="quiz-next-btn-container">
+			<button class="quiz-next-btn button" style="display: none;">
+				<span class="btn-content-wrap">
+					<span class="btn-label">Next Question</span>
+			</span>
+		</button>
+	</div>
 	<div class="quiz-feedback-container">
 		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
 		<div class="quiz-feedback-container-inner">
@@ -120,13 +127,6 @@ require_once '../header.php';
 			<div class="quiz-link-title-container hidden" style="padding-top: 10px">
         	<a class="quiz-link-title"  target="_blank" data-webroot="<?php echo $WEB_ROOT; ?>" href=""></a>
     	</div>
-	</div>
-	<div class="quiz-next-btn-container">
-			<button class="quiz-next-btn button" style="display: none;">
-				<span class="btn-content-wrap">
-					<span class="btn-label">Next Question</span>
-			</span>
-		</button>
 	</div>
 </div>
 
