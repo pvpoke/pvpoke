@@ -220,6 +220,18 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/lucario.png");
 }
 
+[mega=mawile] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/mawile.png");
+}
+
+[mega=audino] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/audino.png");
+}
+
+[mega=diancie] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/diancie.png");
+}
+
 /* FAQ styling */
 .faq-item {
   border-radius: 8px;
@@ -929,6 +941,21 @@ input.article-search {
   border-bottom: 1px solid #161e2b;
 }
 .section.rookidee .faq-item {
+  background: #ffffff;
+}
+
+.section.flabebe {
+  background: #fff;
+  border: 4px solid #0072cc;
+}
+.section.flabebe .article-header, .section.flabebe .mega-section {
+  background: #0072cc !important;
+}
+.section.flabebe .feature h4 {
+  color: #0072cc;
+  border-bottom: 1px solid #0072cc;
+}
+.section.flabebe .faq-item {
   background: #ffffff;
 }
 
