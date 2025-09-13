@@ -68,7 +68,7 @@ require_once '../header.php';
 		</div>
 	</div>
 	</details>
-	<?php require_once '../modules/quizhints-only-fast-move.php'; ?>
+	<?php require_once '../modules/quiz-fast-move-details.php'; ?>
 	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">After how many Fast Moves should you throw the Charged Moves for the most optimal timing?</span>

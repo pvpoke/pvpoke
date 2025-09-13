@@ -55,7 +55,7 @@ require_once '../header.php';
 		<summary>Moves Details</summary>
 			<div class="quiz-hints-container clear"></div>
 	</details>
-	<?php require_once '../modules/quizhints.php'; ?>
+	<?php require_once '../modules/quiz-fast-charged-moves-details.php'; ?>
 	<div class="quiz-header">Question</div>
 	<div class="quiz-question" style="display: none;">
 		<span class="question-text">How many Fast Moves does it take to reach the first Charged Move?</span>
