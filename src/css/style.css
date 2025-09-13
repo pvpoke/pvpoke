@@ -5136,6 +5136,7 @@ a.pokebattler {
   }
   .quiz-feedback-container {
     gap: 4px;
+    margin-top: 8px;
   }
   .quiz-feedback-container-inner{
     flex-direction: column;
