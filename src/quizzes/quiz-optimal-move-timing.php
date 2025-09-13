@@ -25,13 +25,13 @@ require_once '../header.php';
 			</div>
 			<div class="ranking-filter">
 				<div class="flex">
-					<h4>Top Rankings</h4>
+					<h4>Pokemon Set</h4>
 				</div>
 				<select class="top-ranking-select">
-					<option value="10">10</option>
-					<option value="50">50</option>
-					<option value="100">100</option>
-					<option value="200">200</option>
+					<option value="META">Meta Pokemon</option>
+					<option value="20">Rankings Top 20</option>
+					<option value="50">Rankings Top 50</option>
+					<option value="100">Rankings Top 100</option>
 					<option value="ALL">All</option>
 				</select>
 			</div>

@@ -43,8 +43,6 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".quiz-next-btn", nextQuestion);
 				$("body").on("click", ".check.quiz-reccomended-moveset", toggleUseOnlyReccomendedMoveset);
 
-				pokeSearch.setBattle(battle);
-
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
 					self.loadGetData();
@@ -59,6 +57,8 @@ var InterfaceMaster = (function () {
 			function selectTopRankings(e){
 				var selectNumberTopPokemons = $(".top-ranking-select option:selected").val();
 				numberTopPokemons = selectNumberTopPokemons
+				resetQuiz()
+				self.displayRankings(self.category, self.cp, self.cup);
 			}
 			// Toggle use only reccomended moveset
 
@@ -111,6 +111,21 @@ var InterfaceMaster = (function () {
 				data = rankings;
 				this.rankings = rankings;
 
+				// Load meta group
+				var metaKey = $(".format-select option:selected").attr("meta-group");
+
+				if(! gm.groups[metaKey]){
+					runningResults = true;
+					gm.loadGroupData(self, metaKey, data);
+					return false;
+				} else{
+					metaGroupData = gm.groups[metaKey];
+					//Add moveset field, needed to uniform to ranking list
+					metaGroupData.forEach(r => {
+						r.moveset = [r.fastMove, ...r.chargedMoves];
+					});
+				}
+
 				$(".section.white > .quiz-container").html('');
 
 				$(".loading").hide();
@@ -121,13 +136,18 @@ var InterfaceMaster = (function () {
 			}
 
 			this.pickQuestion = function(){
-				//pick ranking
-				if(numberTopPokemons == 'ALL'){
+				let r;
+				//select pokemon
+				if(numberTopPokemons.toUpperCase() == 'META'){
+					this.quiz_ranking_index = Math.floor(Math.random() * metaGroupData.length);
+					r = metaGroupData[this.quiz_ranking_index];
+				} else if(numberTopPokemons.toUpperCase() == 'ALL') {
 					this.quiz_ranking_index = Math.floor(Math.random() * rankings.length);
+					r = this.rankings[this.quiz_ranking_index];
 				} else {
 					this.quiz_ranking_index = Math.floor(Math.random() * numberTopPokemons);
+					r = this.rankings[this.quiz_ranking_index];
 				}
-				const r = this.rankings[this.quiz_ranking_index];
 
 				//pick moves
 				var pokemon = new Pokemon(r.speciesId, 0, battle);

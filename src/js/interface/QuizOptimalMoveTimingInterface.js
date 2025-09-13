@@ -45,8 +45,6 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".quiz-next-btn", nextQuestion);
 				$("body").on("click", ".check.quiz-reccomended-moveset", toggleUseOnlyReccomendedMoveset);
 
-				pokeSearch.setBattle(battle);
-
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
 					self.loadGetData();
@@ -60,7 +58,9 @@ var InterfaceMaster = (function () {
 
 			function selectTopRankings(e){
 				var selectNumberTopPokemons = $(".top-ranking-select option:selected").val();
-				numberTopPokemons = selectNumberTopPokemons
+				numberTopPokemons = selectNumberTopPokemons				
+				resetQuiz()
+				self.displayRankings(self.category, self.cp, self.cup);
 			}
 
 			// Toggle use only reccomended moveset
@@ -163,6 +163,21 @@ var InterfaceMaster = (function () {
 				data = rankings;
 				this.rankings = rankings;
 
+				// Load meta group
+				var metaKey = $(".format-select option:selected").attr("meta-group");
+
+				if(! gm.groups[metaKey]){
+					runningResults = true;
+					gm.loadGroupData(self, metaKey, data);
+					return false;
+				} else{
+					metaGroupData = gm.groups[metaKey];
+					//Add moveset field, needed to uniform to ranking list
+					metaGroupData.forEach(r => {
+						r.moveset = [r.fastMove, ...r.chargedMoves];
+					});
+				}
+
 				$(".section.white .opponents .quiz-container").html('');
 				$(".section.white .yours .quiz-container").html('');
 				$(".loading").hide();
@@ -229,12 +244,20 @@ var InterfaceMaster = (function () {
 			}
 
 			this.pickQuestion = function(){
-				if(numberTopPokemons == 'ALL'){
-					realNumberTopPokemons = rankings.length
-				} else {
-					realNumberTopPokemons = numberTopPokemons;
+				let pokemonSet;
+				let realNumberTopPokemons;
+				if(numberTopPokemons.toUpperCase() == 'META'){
+					realNumberTopPokemons = metaGroupData.length
+					pokemonSet = metaGroupData
 				}
-
+				else if(numberTopPokemons == 'ALL'){
+					realNumberTopPokemons = rankings.length
+					pokemonSet = this.rankings
+				} else {
+					realNumberTopPokemons = Math.min(numberTopPokemons, this.rankings.length);
+					pokemonSet = this.rankings
+				}
+				
 				// Random index for "yours"
 				this.quizRankingIndexYours = Math.floor(Math.random() * realNumberTopPokemons);
 
@@ -244,12 +267,12 @@ var InterfaceMaster = (function () {
 				} while (this.quizRankingIndexOpponents === this.quizRankingIndexYours);
 				
 				// Create your pokemon
-				this.yourPokemon = new Pokemon(self.rankings[this.quizRankingIndexYours].speciesId, 0, battle);
+				this.yourPokemon = new Pokemon(pokemonSet[this.quizRankingIndexYours].speciesId, 0, battle);
 				this.yourPokemon.initialize(true);
 
 				// Pick the fast moves
 				if(useOnlyReccomendedMoveset){
-					this.yourPokemon.selectMove("fast", self.rankings[this.quizRankingIndexYours].moveset[0])
+					this.yourPokemon.selectMove("fast", pokemonSet[this.quizRankingIndexYours].moveset[0])
 				} else {
 					// Pick among all available moves
 					fastMoveIndex = Math.floor(Math.random() * this.yourPokemon.fastMovePool.length)
@@ -257,12 +280,12 @@ var InterfaceMaster = (function () {
 				}
 				
 				// Create opponent's pokemon
-				this.opponentsPokemon = new Pokemon(self.rankings[this.quizRankingIndexOpponents].speciesId, 0, battle);
+				this.opponentsPokemon = new Pokemon(pokemonSet[this.quizRankingIndexOpponents].speciesId, 0, battle);
 				this.opponentsPokemon.initialize(true);
 				
 				// Pick the fast moves
 				if(useOnlyReccomendedMoveset){
-					this.opponentsPokemon.selectMove("fast", self.rankings[this.quizRankingIndexOpponents].moveset[0])
+					this.opponentsPokemon.selectMove("fast", pokemonSet[this.quizRankingIndexOpponents].moveset[0])
 				} else {
 					// Pick among all available moves
 					fastMoveIndex = Math.floor(Math.random() * this.opponentsPokemon.fastMovePool.length)
