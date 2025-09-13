@@ -188,6 +188,9 @@ require_once '../header.php';
 				</div>
 			</div>
 		</div>
+		<div class="quiz-link-title-container hidden" style="padding-top: 10px">
+        	<a class="quiz-link-title"  target="_blank" data-webroot="<?php echo $WEB_ROOT; ?>" href=""></a>
+    	</div>
 	</div>
 	<div class="quiz-next-btn-container">
 			<button class="quiz-next-btn button" style="display: none;">

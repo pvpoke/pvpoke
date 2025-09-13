@@ -29,8 +29,12 @@ var InterfaceMaster = (function () {
 			}
 
 			this.init = function(){
+				this.category = 'overall'
+				this.cp = '1500'
+				this.cup = 'all'
+				
 				if(! get){
-					this.displayRankings("overall","1500","all");
+					this.displayRankings(this.category,this.cp,this.cup);
 				} else{
 					this.loadGetData();
 				}
@@ -195,6 +199,36 @@ var InterfaceMaster = (function () {
 					console.error(this.opponentsPokemon.speciesId + " could not be displayed", err);
 				}
 				fastMoveTiming(this.yourPokemon, this.opponentsPokemon)
+
+				updateLink()
+			}
+
+			function updateLink(){
+				const pokemon = self.yourPokemon
+				const opponent = self.opponentsPokemon
+
+				console.log(pokemon, opponent, self.yourPokemon, self.opponentsPokemon)
+				var pokeMoveStr = pokemon.generateURLMoveStr();
+
+				var battleLink = host+"battle/"+self.cp+"/"+pokemon.aliasId+"/"+opponent.aliasId+"/11/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
+
+				// Append energy settings
+				battleLink += pokemon.stats.hp + "-" + opponent.stats.hp + "/";
+
+				battleLink += "0";
+				battleLink += "-";
+				battleLink += "0";
+
+				battleLink += "/";
+				
+				
+				const newPath = battleLink; 
+				const newText = `See ${pokemon.speciesName} vs ${opponent.speciesName} matchup →`;
+				const root = $(".quiz-link-title").data("webroot");
+
+				$(".quiz-link-title")
+					.attr("href", root + newPath)
+					.text(newText);
 			}
 
 			this.pickQuestion = function(){
@@ -486,15 +520,6 @@ var InterfaceMaster = (function () {
 						}
 					}
 				}
-
-				// Load data via existing change function
-
-				var cp = battle.getCP();
-				var category = $(".category-select option:selected").val();
-				var cup = battle.getCup().name;
-
-				$(".format-select option[value=\""+cp+"\"][cup=\""+cup+"\"]").prop("selected","selected");
-
 				self.displayRankings(category, cp, cup, null);
 			}
 
@@ -550,20 +575,32 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the cup select
 
 			function selectFormat(e){
-				var cp = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
+				self.cp = $(".format-select option:selected").val();
+				self.cup = $(".format-select option:selected").attr("cup");
 				
-				category = "overall";
-				
-				self.displayRankings(category, cp, cup);
+				self.category = "overall";
+
+				resetQuiz()
+				self.displayRankings(self.category, self.cp, self.cup);
 			}
 
-			function nextQuestion(){
+			function resetQuiz(){
+				hideAnswer()
+				self.questionAnswers = {}
+				updateScore()
+			}
+
+			function hideAnswer(){
 				$(".quiz-feedback-header").addClass("hidden")
 				$(".quiz-feedback").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
+				$(".quiz-link-title-container").addClass("hidden")
 				$("details").removeAttr("open");
+			}
+
+			function nextQuestion(){
+				hideAnswer()
 				self.displayRankingData(self.rankings)
 			}
 
@@ -581,6 +618,7 @@ var InterfaceMaster = (function () {
 				
 				// Show feedback
 				$(".quiz-feedback-header").removeClass("hidden");
+				$(".quiz-link-title-container").removeClass("hidden")
 				if(!result){
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-correct")

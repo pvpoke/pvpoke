@@ -431,17 +431,27 @@ var InterfaceMaster = (function () {
 					window.location.href = webRoot+'custom-rankings/';
 					return;
 				}
-
+ 
+				resetQuiz()
 				self.displayRankings(self.category, self.cp, self.cup);
 			}
 
-			function nextQuestion(){
+			function resetQuiz(){
+				hideAnswer()
+				self.questionAnswers = {}
+				updateScore()
+			}
+
+			function hideAnswer(){
 				$(".quiz-feedback-header").addClass("hidden")
 				$(".quiz-feedback").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
 				$(".quiz-link-title-container").addClass("hidden")
 				$("details").removeAttr("open");
+			}
+
+			function nextQuestion(){
 				self.displayRankingData(self.rankings)
 			}
 
