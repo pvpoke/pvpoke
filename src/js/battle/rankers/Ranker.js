@@ -469,6 +469,9 @@ var RankerMaster = (function () {
 							}
 
 							// For switches, punish hard losses more. The goal is to identify safe switches
+							if(matches[j].adjRating > 750){
+								matches[j].adjRating = 750 + ((matches[j].adjRating - 750) / 4);
+							}
 
 							if((scenario.slug == "switches")&&(matches[j].adjRating < 500)){
 								weight *= (1 + (Math.pow(500 - matches[j].adjRating, 2)/20000));
