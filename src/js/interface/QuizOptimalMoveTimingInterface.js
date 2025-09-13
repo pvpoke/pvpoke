@@ -181,9 +181,7 @@ var InterfaceMaster = (function () {
 				do {
 					self.pickQuestion()
 					questionsPicked++;
-					console.log(questionsPicked)
 					questionKey = getQuestionKey(this.yourPokemon, this.opponentsPokemon);
-					console.log(questionKey)
 				} while (questionKey in this.questionAnswers &&
 						 this.questionAnswers[questionKey] === true &&
 						 questionsPicked < 10000)
@@ -207,7 +205,6 @@ var InterfaceMaster = (function () {
 				const pokemon = self.yourPokemon
 				const opponent = self.opponentsPokemon
 
-				console.log(pokemon, opponent, self.yourPokemon, self.opponentsPokemon)
 				var pokeMoveStr = pokemon.generateURLMoveStr();
 
 				var battleLink = host+"battle/"+self.cp+"/"+pokemon.aliasId+"/"+opponent.aliasId+"/11/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
@@ -312,8 +309,8 @@ var InterfaceMaster = (function () {
 				$(".optimal-timing-section .timeline").html("");
 
 				var pokemon = [yourPokemon, opponentsPokemon]
-				$(".quiz-feedback-explanation .name-attacker").html(pokemon[0].speciesName);
-				$(".quiz-feedback-explanation .name-defender").html(pokemon[1].speciesName);
+				$(".quiz-feedback-container .name-attacker").html(pokemon[0].speciesName);
+				$(".quiz-feedback-container .name-defender").html(pokemon[1].speciesName);
 
 				var targetCooldown = 500;
 				var startCooldown = pokemon[0].startCooldown - 500;
@@ -408,7 +405,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Add an empty chunk at the end for a Charged Move space
-				$(".quiz-feedback-explanation p").hide();
+				$(".quiz-feedback-container p").hide();
 
 				if(targetCooldown > 0){
 					$fastItem = $('<div class="item fast throw '+pokemon[0].fastMove.type+'"></div>');
@@ -418,16 +415,16 @@ var InterfaceMaster = (function () {
 					}
 					$(".optimal-timing-section .timeline").eq(0).append($fastItem);
 
-					$(".quiz-feedback-explanation .optimal-1").html(optimalTimes[0]);
-					$(".quiz-feedback-explanation .optimal-2").html(optimalTimes[1]);
-					$(".quiz-feedback-explanation .optimal-3").html(optimalTimes[2]);
+					$(".quiz-feedback-container .optimal-1").html(optimalTimes[0]);
+					$(".quiz-feedback-container .optimal-2").html(optimalTimes[1]);
+					$(".quiz-feedback-container .optimal-3").html(optimalTimes[2]);
 
-					$(".quiz-feedback-explanation p.timing-most-optimal").show();
+					$(".quiz-feedback-container p.timing-most-optimal").show();
 				} else if(pokemon[0].startCooldown == 1000 && pokemon[1].startCooldown == 0 && pokemon[0].fastMove.cooldown == pokemon[1].fastMove.cooldown
 				&& pokemon[0].fastMove.cooldown != 500){
-					$(".quiz-feedback-explanation p.timing-offset").show();
+					$(".quiz-feedback-container p.timing-offset").show();
 				} else{
-					$(".quiz-feedback-explanation p.timing-none").show();
+					$(".quiz-feedback-container p.timing-none").show();
 				}
 
 				for(i = 0; i < opponentFastCount; i++){
@@ -596,6 +593,7 @@ var InterfaceMaster = (function () {
 				$(".quiz-feedback-explanation").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
 				$(".quiz-link-title-container").addClass("hidden")
+				$(".optimal-timing-section").addClass("hidden")
 				$("details").removeAttr("open");
 			}
 
@@ -619,6 +617,7 @@ var InterfaceMaster = (function () {
 				// Show feedback
 				$(".quiz-feedback-header").removeClass("hidden");
 				$(".quiz-link-title-container").removeClass("hidden")
+				$(".optimal-timing-section").removeClass("hidden")
 				if(!result){
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-correct")

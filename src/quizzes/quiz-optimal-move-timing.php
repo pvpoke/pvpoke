@@ -171,24 +171,30 @@ require_once '../header.php';
 	</div>
 	<div class="quiz-feedback-container">
 		<div class="quiz-header quiz-feedback-header hidden">Answer Review</div>
-		<div class="quiz-feedback hidden"></div>
-		<div class="quiz-feedback-explanation hidden">
-			<div class="battle-results">
-				<div class="quiz battle-details">
-					<div class="optimal-timing-section">
-						<div class="optimal-timing-timeline">
-							<div class="timeline"></div>
-							<div class="timeline"></div>
+		<div class="quiz-feedback-container-inner">
+			<div class="quiz-feedback-container-left">
+				<div class="quiz-feedback hidden"></div>
+				<div class="optimal-timing-section optimal-timing-section-text hidden">
+					<p class="timing-none" style="margin-top: 1em">Optimal Charged Move timing isn't applicable for <span class="name-attacker">Pokemon</span> in this matchup.</p>
+					<p class="timing-most-optimal"><span class="name-attacker">Pokemon</span> should throw its Charged Moves after <span class="optimal-1"></span>, <span class="optimal-2"></span>, or <span class="optimal-3"></span> Fast Moves for the most optimal timing.</p>
+				</div>
+			</div>
+			<div style="flex: 1">
+				<div class="quiz-feedback-explanation hidden">
+					<div class="battle-results">
+						<div class="quiz battle-details">
+							<div class="optimal-timing-section" style="flex: 1">
+								<div class="optimal-timing-timeline">
+									<div class="timeline"></div>
+									<div class="timeline"></div>
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="optimal-timing-section">
-						<p class="timing-none">Optimal Charged Move timing isn't applicable for <span class="name-attacker">Pokemon</span> in this matchup.</p>
-						<p class="timing-most-optimal"><span class="name-attacker">Pokemon</span> should throw its Charged Moves after <span class="optimal-1"></span>, <span class="optimal-2"></span>, or <span class="optimal-3"></span> Fast Moves for the most optimal timing.</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="quiz-link-title-container hidden" style="padding-top: 10px">
+			<div class="quiz-link-title-container hidden" style="padding-top: 10px">
         	<a class="quiz-link-title"  target="_blank" data-webroot="<?php echo $WEB_ROOT; ?>" href=""></a>
     	</div>
 	</div>

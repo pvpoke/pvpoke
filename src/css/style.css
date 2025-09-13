@@ -1919,10 +1919,10 @@ select.large {
   line-height: 18px;
   padding: 5px 10px 5px 31px;
 }
-.quiz-feedback-explanation .battle-results .battle-details .optimal-timing-section {
+.quiz-feedback-explanation .battle-results .battle-details .optimal-timing-section,
+.quiz-feedback-container .optimal-timing-section {
   max-width: 340px;
-  margin: 8px auto 0px auto;
-  text-align: center;
+  margin: 0px 0px 0px 0px;
 }
 .battle-results .battle-details .breakpoints-section,
 .battle-results .battle-details .matchup-detail-section,
@@ -1974,10 +1974,14 @@ select.large {
   background: #111 !important;
   color: #f9fdff;
 }
+.quiz-feedback-container .battle-results .battle-details .optimal-timing-section .optimal-timing-timeline {
+  margin: 0em auto 0 auto;
+}
 .battle-results .battle-details .breakpoints-section .optimal-timing-timeline,
 .battle-results .battle-details .matchup-detail-section .optimal-timing-timeline,
 .battle-results .battle-details .cmp-section .optimal-timing-timeline,
-.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline, .battle-results.matrix .breakpoints-section .optimal-timing-timeline,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline, 
+.battle-results.matrix .breakpoints-section .optimal-timing-timeline,
 .battle-results.matrix .matchup-detail-section .optimal-timing-timeline,
 .battle-results.matrix .cmp-section .optimal-timing-timeline,
 .battle-results.matrix .optimal-timing-section .optimal-timing-timeline {
@@ -2064,6 +2068,9 @@ select.large {
   border: 1px dashed rgba(0, 0, 0, 0.125);
   box-sizing: border-box;
 }
+.quiz-feedback-container .optimal-1,
+.quiz-feedback-container .optimal-2,
+.quiz-feedback-container .optimal-3,
 .battle-results .battle-details .breakpoints-section .optimal-1, .battle-results .battle-details .breakpoints-section .optimal-2, .battle-results .battle-details .breakpoints-section .optimal-3,
 .battle-results .battle-details .matchup-detail-section .optimal-1,
 .battle-results .battle-details .matchup-detail-section .optimal-2,
@@ -2689,7 +2696,7 @@ a.download-csv {
 
 .quiz-question .question-text {
   flex: 1; /* take all available space */
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .quiz-question .answer-input {
@@ -2896,11 +2903,32 @@ a.download-csv {
   gap: 20px;
   flex-wrap: wrap;
 }
+.quiz-feedback {
+  font-size: 14px;
+}
 .quiz-feedback-container {
-  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+.quiz-feedback-container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex: 1;
+}
+.quiz-feedback-explanation {
+  font-size: 14px;
+}
+.quiz-feedback-container-inner{
+  display: flex
+}
+.quiz.battle-details {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .quiz-hints {
   margin-top: 8px;
@@ -5111,6 +5139,9 @@ a.pokebattler {
   .quiz-feedback-container {
     gap: 4px;
   }
+  .quiz-feedback-container-inner{
+    flex-direction: column;
+  }
   .quiz-feedback-explanation,
   .quiz-feedback,
   .quiz-question .question-text {
@@ -6331,7 +6362,9 @@ a.feed-subscribe {
   display: flex;
   gap: 10px;
 }
-
+.quiz-link-title-container{
+  text-align: center;
+}
 .quiz-link-title {
   font-size: 14px;
   font-weight: bold;

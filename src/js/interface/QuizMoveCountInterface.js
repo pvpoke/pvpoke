@@ -452,6 +452,7 @@ var InterfaceMaster = (function () {
 			}
 
 			function nextQuestion(){
+				hideAnswer()
 				self.displayRankingData(self.rankings)
 			}
 
