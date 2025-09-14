@@ -237,6 +237,19 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/lucario.png");
 }
 
+[mega="mawile"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/mawile.png");
+}
+
+[mega="audino"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/audino.png");
+}
+
+[mega="diancie"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/diancie.png");
+}
+
+
 /* FAQ styling */
 
 .faq-item{
@@ -1139,6 +1152,27 @@ input.article-search{
 		h4{
 			color:#161e2b;
 			border-bottom:1px solid #161e2b;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
+.section.flabebe{
+
+	background: #fff;
+	border:4px solid #0072cc;
+
+	.article-header, .mega-section{
+		background: #0072cc !important;
+	}
+
+	.feature{
+		h4{
+			color:#0072cc;
+			border-bottom:1px solid #0072cc;
 		}
 	}
 

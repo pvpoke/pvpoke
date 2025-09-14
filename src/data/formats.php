@@ -3,23 +3,12 @@
 $formats = array (
   0 => 
   array (
-    'title' => 'Master League (Classic)',
-    'cup' => 'classic',
-    'cp' => 10000,
-    'meta' => 'master',
-    'showCup' => false,
-    'showFormat' => true,
-    'showMeta' => false,
-    'hideRankings' => true,
-  ),
-  1 => 
-  array (
     'title' => 'Master Premier',
     'cup' => 'premier',
     'cp' => 10000,
     'meta' => 'premiermaster',
     'showCup' => true,
-    'showFormat' => true,
+    'showFormat' => false,
     'showMeta' => true,
     'hideRankings' => true,
     'rules' => 
@@ -28,7 +17,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  2 => 
+  1 => 
   array (
     'title' => 'P!P Championship Series',
     'cup' => 'championshipseries',
@@ -39,22 +28,7 @@ $formats = array (
     'showMeta' => true,
     'hideRankings' => true,
   ),
-  3 => 
-  array (
-    'title' => 'Retro Cup',
-    'cup' => 'retro',
-    'cp' => 1500,
-    'meta' => 'retro',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Dark-, Steel-, and Fairy-type Pokémon are not eligible.',
-    ),
-  ),
-  4 => 
+  2 => 
   array (
     'title' => 'Summer Cup (Great League)',
     'cup' => 'summer',
@@ -69,7 +43,7 @@ $formats = array (
       1 => 'Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible.',
     ),
   ),
-  5 => 
+  3 => 
   array (
     'title' => 'Willpower Cup',
     'cup' => 'willpower',
@@ -84,6 +58,31 @@ $formats = array (
       1 => 'Only Fighting-, Psychic-, and Dark-type Pokémon will be eligible.',
       2 => 'The following Pokémon will not be allowed: Gardevoir, Zorua, Zoroark',
     ),
+  ),
+  4 => 
+  array (
+    'title' => 'Mega Master League',
+    'cup' => 'mega',
+    'cp' => 10000,
+    'meta' => 'mega',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'No CP limit.',
+      1 => 'Mega-Evolved Pokémon are allowed.',
+    ),
+  ),
+  5 => 
+  array (
+    'title' => 'LAIC 2025 Championship Series Cup',
+    'cup' => 'laic2025',
+    'cp' => 1500,
+    'meta' => 'laic2025',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
   ),
   6 => 
   array (

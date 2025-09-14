@@ -213,6 +213,12 @@ var GameMaster = (function () {
 			return object.allPokemon[key]
 		}
 
+		// Flush all values in the search cache and all Pokemon list
+		object.flushAllPokemonCache = function(){
+			object.searchStringCache = {};
+			object.allPokemon = {};
+		}
+
 
 		// Return a Pokemon object given species ID
 
