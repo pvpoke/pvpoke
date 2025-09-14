@@ -213,9 +213,44 @@ var InterfaceMaster = (function () {
 					console.error(this.opponentsPokemon.speciesId + " could not be displayed", err);
 				}
 				fastMoveTiming(this.yourPokemon, this.opponentsPokemon)
-
+				repopulateSelect(optimalTimes)
 				updateLink()
 			}
+
+			function repopulateSelect(correctAnswer) {
+				const $select = $('#quiz-omt-guess');
+				let correctAnswerString = correctAnswer.join(',');
+				if(correctAnswerString==''){
+					correctAnswerString = 'No optimal timing possible'
+				}
+
+				// Start with your predefined options
+				let options = ['1,3,5','1,4,7','2,5,8','2,7,12','3,8,13','4,9,14','No optimal timing possible'];
+
+				// If the correct answer isn't already in the list, add it
+				if (!options.includes(correctAnswerString)) {
+					options.push(correctAnswerString);
+				}
+
+				// Sort (keep "No optimal timing possible" at the top if desired)
+				options = options.filter(o => o !== 'No optimal timing possible').sort((a,b) => {
+					// optional: natural numeric sort by first number
+					const aFirst = parseInt(a.split(',')[0]);
+					const bFirst = parseInt(b.split(',')[0]);
+					return aFirst - bFirst;
+				});
+
+				// Add back the special option on top
+				options.unshift('No optimal timing possible');
+
+				// Clear and rebuild select
+				$select.empty();
+				$select.append('<option value="" disabled selected>-- Choose --</option>');
+				options.forEach(val => {
+					$select.append(`<option value="${val}">${val}</option>`);
+				});
+			}
+
 
 			function updateLink(){
 				const pokemon = self.yourPokemon

@@ -194,6 +194,12 @@ var InterfaceMaster = (function () {
 						 this.questionAnswers[questionKey] === true &&
 						 questionsPicked < 10000)
 				
+				// Calculate answer
+				this.numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
+				var correctAnswer = this.numberOfMoves[0]
+				// Populate the selector
+				repopulateSelect(correctAnswer)
+
 				const pokemon = this.pokemon
 				// Show the pokemon details
 				var $el = $("<div class=\"rank typed-ranking quiz " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
@@ -226,6 +232,37 @@ var InterfaceMaster = (function () {
 				addHintMoveDetails()
 				updateLink()
 			}
+
+			function repopulateSelect(correctAnswer) {
+				const $select = $('#quiz-mc-guess');
+				const min = 0;
+
+				// Decide how many before and after (1 to 6 each)
+				const beforeCount = Math.min(3, Math.floor(Math.random() * 6) + 1);
+				const afterCount = Math.min(3, Math.floor(Math.random() * 6) + 1);
+
+				// Build list of numbers before and after (clamped to range)
+				const before = [];
+				for (let i = correctAnswer - 1; i >= min && before.length < beforeCount; i--) {
+					before.unshift(i); // unshift so they stay in ascending order
+				}
+
+				const after = [];
+				for (let i = correctAnswer + 1; after.length < afterCount; i++) {
+					after.push(i);
+				}
+
+				// Combine them with the correct answer in the middle
+				const allOptions = [...before, correctAnswer, ...after];
+
+				// Clear and rebuild select
+				$select.empty();
+				$select.append('<option value="" disabled selected>-- Choose --</option>');
+				allOptions.forEach(num => {
+					$select.append(`<option value="${num}">${num}</option>`);
+				});
+			}
+
 
 			function updateLink(){
 				const newPath = `rankings/${self.cup}/${self.cp}/${self.category}/${self.pokemon.speciesId}`; 
@@ -482,8 +519,7 @@ var InterfaceMaster = (function () {
 				if(quizAnswerInputValue == ''){
 					return
 				}
-				var numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
-				result = quizAnswerInputValue == numberOfMoves[0]
+				result = quizAnswerInputValue == self.numberOfMoves[0]
 				trials++
 				// Show feedback
 				$(".quiz-feedback-header").removeClass("hidden");
@@ -502,7 +538,7 @@ var InterfaceMaster = (function () {
 				//Show the correct answer in any case
 				$(".quiz-feedback-explanation")
 					.removeClass("hidden")
-					.html(`Charging pattern for <b>${fastMove.name}</b> into <b>${chargedMove.name}</b> is: ${numberOfMoves}`);
+					.html(`Charging pattern for <b>${fastMove.name}</b> into <b>${chargedMove.name}</b> is: ${self.numberOfMoves}`);
 
 				updateAnswersHistory(self.pokemon, fastMove, chargedMove, result)
 				updateScore()
