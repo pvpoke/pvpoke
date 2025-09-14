@@ -254,7 +254,7 @@ var RankerMaster = (function () {
 						// Factor in meta relevance
 
 						if(context == "team-counters" || context == "team-alternatives"){
-							let isMetaFactor = 0.25;
+							let isMetaFactor = 0.4;
 
 							if(score > 500 && prioritizeMeta){
 								if(metaGroup.some(poke => poke.speciesId.replace("_shadow", "") == pokemon.speciesId.replace("_shadow", ""))){

@@ -11,19 +11,9 @@
         "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
     },
     {
-        "speciesId": "bastiodon",
-        "fastMove": "SMACK_DOWN",
-        "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
-    },
-    {
         "speciesId": "blastoise",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
-    },
-    {
-        "speciesId": "carbink",
-        "fastMove": "ROCK_THROW",
-        "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
     },
     {
         "speciesId": "charizard_shadow",
@@ -138,6 +128,12 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "giratina_altered_shadow",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "golisopod",
         "fastMove": "FURY_CUTTER",
         "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
@@ -244,11 +240,5 @@
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
-    },
-    {
-        "speciesId": "giratina_altered_shadow",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW"],
-        "shadowType": "shadow"
     }
 ]
