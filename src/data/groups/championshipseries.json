@@ -32,6 +32,12 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "charizard_shadow",
+        "fastMove": "EMBER",
+        "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "charjabug",
         "fastMove": "VOLT_SWITCH",
         "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
@@ -137,6 +143,11 @@
         "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
     },
     {
+        "speciesId": "goodra",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["AQUA_TAIL", "THUNDER_PUNCH"]
+    },
+    {
         "speciesId": "greninja",
         "fastMove": "WATER_SHURIKEN",
         "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
@@ -214,6 +225,12 @@
         "chargedMoves": ["FLY", "FLAME_CHARGE"]
     },
     {
+        "speciesId": "talonflame_shadow",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["FLAME_CHARGE", "FLY"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "tinkaton",
         "fastMove": "FAIRY_WIND",
         "chargedMoves": ["PLAY_ROUGH", "BULLDOZE"]
@@ -221,7 +238,7 @@
     {
         "speciesId": "togekiss",
         "fastMove": "PECK",
-        "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"]
+        "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
     },
     {
         "speciesId": "wigglytuff",
@@ -229,20 +246,9 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "charizard_shadow",
-        "fastMove": "EMBER",
-        "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "goodra",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["AQUA_TAIL", "THUNDER_PUNCH"]
-    },
-    {
-        "speciesId": "talonflame_shadow",
-        "fastMove": "INCINERATE",
-        "chargedMoves": ["FLAME_CHARGE", "FLY"],
+        "speciesId": "giratina_altered_shadow",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW"],
         "shadowType": "shadow"
     }
 ]
