@@ -445,7 +445,7 @@ var InterfaceMaster = (function () {
 
 				var i = 0;
 
-				while((count < total)&&(i < counterRankings.length)){
+				while((count < total || counterTeam.length < 6)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
 					// Don't exclude threats that are part of a custom threat list
@@ -475,18 +475,28 @@ var InterfaceMaster = (function () {
 
 					var pokemon = r.pokemon;
 
-					// Display threat score
-					if(count < 6){
-						avgThreatScore += r.rating;
-					}
-
 					// Push to counter team
+					if(counterTeam.length < 6){
+						let similarCounterExists = counterTeam.some(counter => {
+							let similarityScore = counter.calculateSimilarity(pokemon, pokemon?.traits, false);
 
-					if(count < 6){
-						counterTeam.push(pokemon);
+							return similarityScore == -1 || similarityScore >= 1000;
+						});
+
+						//let isMeta = (metaGroup.some(poke => poke.speciesId.replace("_shadow", "") == pokemon.speciesId.replace("_shadow", "")));
+
+						if(! similarCounterExists){
+							counterTeam.push(pokemon);
+
+							avgThreatScore += r.rating;
+						}
 					}
 
 					// Add results to threats table
+					if(count >= total){
+						i++;
+						continue;
+					}
 
 					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"</b></th></tr>");
 

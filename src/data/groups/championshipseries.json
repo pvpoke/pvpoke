@@ -11,6 +11,11 @@
         "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
     },
     {
+        "speciesId": "bastiodon",
+        "fastMove": "SMACK_DOWN",
+        "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
+    },
+    {
         "speciesId": "blastoise",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
@@ -182,10 +187,9 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "primeape_shadow",
+        "speciesId": "primeape",
         "fastMove": "KARATE_CHOP",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
-        "shadowType": "shadow"
+        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
     },
     {
         "speciesId": "quagsire",

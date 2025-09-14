@@ -40,7 +40,7 @@ require_once 'header.php';
 			</div>
 			<div class="team-option">
 				<h3>Shadow Pokemon</h3>
-				<div class="check allow-shadows"><span></span>Show Shadow Pokemon in results</div>
+				<div class="check on allow-shadows"><span></span>Show Shadow Pokemon in results</div>
 			</div>
 			<div class="team-option">
 				<h3>Prioritize Meta</h3>
