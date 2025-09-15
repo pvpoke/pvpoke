@@ -18580,7 +18580,35 @@
         "family": {
             "id": "FAMILY_FEEBAS",
             "evolutions": ["milotic"]
-        }
+        },
+        "level25CP": 109,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 349,
+        "speciesName": "Feebas (Shadow)",
+        "speciesId": "feebas_shadow",
+        "baseStats": {
+            "atk": 29,
+            "def": 85,
+            "hp": 85
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["SPLASH", "TACKLE"],
+        "chargedMoves": ["MIRROR_COAT"],
+        "defaultIVs": {
+            "cp500": [50, 15, 15, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_FEEBAS",
+            "evolutions": ["milotic_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 350,
@@ -18605,7 +18633,35 @@
         "family": {
             "id": "FAMILY_FEEBAS",
             "parent": "feebas"
-        }
+        },
+        "level25CP": 1863,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 350,
+        "speciesName": "Milotic (Shadow)",
+        "speciesId": "milotic_shadow",
+        "baseStats": {
+            "atk": 192,
+            "def": 219,
+            "hp": 216
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["DRAGON_TAIL", "WATERFALL"],
+        "chargedMoves": ["BLIZZARD", "HYPER_BEAM", "SURF", "WRAP"],
+        "defaultIVs": {
+            "cp500": [6.5, 4, 11, 8],
+            "cp1500": [18.5, 5, 14, 12],
+            "cp2500": [31.5, 4, 14, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_FEEBAS",
+            "parent": "feebas_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 351,
@@ -31699,6 +31755,28 @@
     },
     {
         "dex": 641,
+        "speciesId": "tornadus_incarnate_shadow",
+        "speciesName": "Tornadus (Incarnate) (Shadow)",
+        "baseStats": {
+            "atk": 266,
+            "def": 164,
+            "hp": 188
+        },
+        "types": ["flying", "none"],
+        "fastMoves": ["BITE", "AIR_SLASH"],
+        "chargedMoves": ["GRASS_KNOT", "DARK_PULSE", "HYPER_BEAM", "HURRICANE"],
+        "defaultIVs": {
+            "cp500": [6, 4, 4, 4],
+            "cp1500": [16.5, 7, 12, 10],
+            "cp2500": [27.5, 5, 14, 9]
+        },
+        "tags": ["legendary", "shadow"],
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true
+    },
+    {
+        "dex": 641,
         "speciesId": "tornadus_therian",
         "speciesName": "Tornadus (Therian)",
         "baseStats": {
@@ -31716,28 +31794,6 @@
             "cp2500": [29, 4, 13, 9]
         },
         "tags": ["legendary"],
-        "buddyDistance": 20,
-        "thirdMoveCost": 100000,
-        "released": true
-    },
-    {
-        "dex": 641,
-        "speciesId": "tornadus_incarnate_shadow",
-        "speciesName": "Tornadus (Incarnate) (Shadow)",
-        "baseStats": {
-            "atk": 266,
-            "def": 164,
-            "hp": 188
-        },
-        "types": ["flying", "none"],
-        "fastMoves": ["BITE", "AIR_SLASH"],
-        "chargedMoves": ["GRASS_KNOT", "DARK_PULSE", "HYPER_BEAM", "HURRICANE"],
-        "defaultIVs": {
-            "cp500": [6, 4, 4, 4],
-            "cp1500": [16.5, 7, 12, 10],
-            "cp2500": [27.5, 5, 14, 9]
-        },
-        "tags": ["legendary", "shadow"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
