@@ -68,12 +68,6 @@
         "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
     },
     {
-        "speciesId": "dragonite_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "drapion_shadow",
         "fastMove": "POISON_STING",
         "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
@@ -154,12 +148,6 @@
         "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
     },
     {
-        "speciesId": "gyarados_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "jellicent",
         "fastMove": "HEX",
         "chargedMoves": ["SURF", "SHADOW_BALL"]
@@ -179,12 +167,6 @@
         "speciesId": "moltres_galarian",
         "fastMove": "SUCKER_PUNCH",
         "chargedMoves": ["FLY", "BRAVE_BIRD"]
-    },
-    {
-        "speciesId": "ninetales_shadow",
-        "fastMove": "EMBER",
-        "chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "primeape",
@@ -244,5 +226,10 @@
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
+    },
+    {
+        "speciesId": "lanturn",
+        "fastMove": "WATER_GUN",
+        "chargedMoves": ["SURF", "THUNDERBOLT"]
     }
 ]
