@@ -24,19 +24,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Summer Cup (Great League)",
-		"cup": "summer",
-		"cp": 1500,
-		"meta": "summer",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "Willpower Cup",
 		"cup": "willpower",
 		"cp": 1500,
@@ -61,6 +48,19 @@
 		"rules": [
 			"No CP limit.",
 			"Mega-Evolved Pokémon are allowed."
+		]
+	},
+	{
+		"title": "Fantasy Cup",
+		"cup": "fantasy",
+		"cp": 1500,
+		"meta": "fantasy",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
 		]
 	},
 	{
