@@ -93,10 +93,14 @@ var GameMaster = (function () {
 						}
 
 						if(customData?.pokemon){
+							// Strip any empty values
+							customData.pokemon = customData.pokemon.filter(pokemon => pokemon.speciesId != "");
 							object.data.pokemon = customData.pokemon
 						}
 
 						if(customData?.moves){
+							// Strip any empty values
+							customData.moves = customData.moves.filter(move => move.moveId != "");
 							object.data.moves = customData.moves
 						}
 
@@ -155,6 +159,7 @@ var GameMaster = (function () {
 
 				try{
 					customData = JSON.parse(content);
+
 					callback(customData);
 				} catch(e){
 					console.error("Could not load custom gamemaster", e);

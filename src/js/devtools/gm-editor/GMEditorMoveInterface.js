@@ -419,7 +419,7 @@ var InterfaceMaster = (function () {
                                     }
 
                                     if(! selectedMove?.buffApplyChance){
-                                        selectedMove.buffApplyChance = 1;
+                                        selectedMove.buffApplyChance = "1";
                                     }
                                     break;
 
@@ -438,7 +438,7 @@ var InterfaceMaster = (function () {
                                     }
 
                                     if(! selectedMove?.buffApplyChance){
-                                        selectedMove.buffApplyChance = 1;
+                                        selectedMove.buffApplyChance = "1";
                                     }
                                     break;
 
@@ -513,7 +513,6 @@ var InterfaceMaster = (function () {
                     }
                 });
 
-
                 $("#gm-editor-learnset .poke-search").val("");
                 $("#gm-editor-learnset .poke-search").trigger("keyup");
 
@@ -574,7 +573,7 @@ var InterfaceMaster = (function () {
                             chance = 1;
                         }
 
-                        selectedMove.buffApplyChance = parseFloat(val);
+                        selectedMove.buffApplyChance = val+""; // Convert to string
                         break;
 
                     case "attacker-stat-atk":
@@ -700,6 +699,53 @@ var InterfaceMaster = (function () {
                 let errors = []; // Add validation here
 
                 if(errors.length == 0){
+                    // Load most recent data and insert this entry into the document
+                    let lastSavedObj = JSON.parse(lastSavedJSON);
+                    let currentData = JSON.parse(localStorage.getItem(settings.gamemaster));
+                    
+                    // Find last saved object in current data
+                    let targetEntry = currentData.moves.findIndex(move => move.moveId == lastSavedObj.moveId);
+
+                    if(targetEntry !== -1){
+                        // Overwrite an existing entry
+                        currentData.moves[targetEntry] = selectedMove;
+                    } else{
+                        // Insert a new entry
+                        currentData.moves.push(selectedMove);
+
+                    }
+
+                    // Save individual learnsets
+                    pokemonWithMove.forEach(p => {
+                        let currentPokemon = currentData.pokemon.find(poke => poke.speciesId == p.speciesId);
+                        let newPokemon = data.pokemon.find(poke => poke.speciesId == p.speciesId);
+
+                        // Map learnset changes onto current data from localstorage
+                        if(currentPokemon && newPokemon && ! currentPokemon.fastMoves.includes(selectedMove.moveId) && ! currentPokemon.chargedMoves.includes(selectedMove.moveId)){
+                            if(selectedMove.energy > 0){
+                                currentPokemon.chargedMoves.push(selectedMove.moveId);
+                            } else{
+                                currentPokemon.fastMoves.push(selectedMove.moveId);
+                            }
+                        }
+                    });
+
+                    pokemonWithoutMove.forEach(p => {
+                        let currentPokemon = currentData.pokemon.find(poke => poke.speciesId == p.speciesId);
+                        let newPokemon = data.pokemon.find(poke => poke.speciesId == p.speciesId);
+
+                        // Map learnset changes onto current data from localstorage
+                        if(currentPokemon && newPokemon && (currentPokemon.fastMoves.includes(selectedMove.moveId) || ! currentPokemon.chargedMoves.includes(selectedMove.moveId))){
+                            if(selectedMove.energy > 0){
+                                currentPokemon.chargedMoves = newPokemon.chargedMoves;
+                            } else{
+                                currentPokemon.fastdMoves = newPokemon.fastMoves;
+                            }
+                        }
+                    });
+
+                    data = currentData;
+
                     gm.saveCustomGameMaster(data);
                     modalWindow("Data Saved", $(".save-data").first());
 
