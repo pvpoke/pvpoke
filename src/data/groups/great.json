@@ -33,7 +33,7 @@
     },
     {
         "speciesId": "charizard_shadow",
-        "fastMove": "DRAGON_BREATH",
+        "fastMove": "EMBER",
         "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"],
         "shadowType": "shadow"
     },
@@ -180,10 +180,9 @@
         "chargedMoves": ["AURA_WHEEL_ELECTRIC", "PSYCHIC_FANGS"]
     },
     {
-        "speciesId": "primeape_shadow",
+        "speciesId": "primeape",
         "fastMove": "KARATE_CHOP",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
-        "shadowType": "shadow"
+        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
     },
     {
         "speciesId": "quagsire",

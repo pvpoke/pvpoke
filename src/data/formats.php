@@ -30,21 +30,6 @@ $formats = array (
   ),
   2 => 
   array (
-    'title' => 'Summer Cup (Great League)',
-    'cup' => 'summer',
-    'cp' => 1500,
-    'meta' => 'summer',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible.',
-    ),
-  ),
-  3 => 
-  array (
     'title' => 'Willpower Cup',
     'cup' => 'willpower',
     'cp' => 1500,
@@ -59,7 +44,7 @@ $formats = array (
       2 => 'The following Pokémon will not be allowed: Gardevoir, Zorua, Zoroark',
     ),
   ),
-  4 => 
+  3 => 
   array (
     'title' => 'Mega Master League',
     'cup' => 'mega',
@@ -72,6 +57,21 @@ $formats = array (
     array (
       0 => 'No CP limit.',
       1 => 'Mega-Evolved Pokémon are allowed.',
+    ),
+  ),
+  4 => 
+  array (
+    'title' => 'Fantasy Cup',
+    'cup' => 'fantasy',
+    'cp' => 1500,
+    'meta' => 'fantasy',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Dragon-, Steel-, and Fairy-type Pokémon are eligible.',
     ),
   ),
   5 => 

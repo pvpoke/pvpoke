@@ -340,7 +340,6 @@ function PokeSelect(element, i){
 						form.setIV("def", selectedPokemon.ivs.def);
 						form.setIV("hp", selectedPokemon.ivs.hp);
 						form.setLevel(selectedPokemon.level, false);
-						form.level = selectedPokemon.level;
 					}
 				});
 
@@ -412,7 +411,6 @@ function PokeSelect(element, i){
 
 				$formSelect.find("option").eq(0).prop("selected", "selected");
 			}
-
 		}
 	}
 
@@ -739,7 +737,12 @@ function PokeSelect(element, i){
 
 		// Preserve this form for later reference
 		if(selectedPokemon.formChange && ! previousForms.some(form => form.speciesId == selectedPokemon.speciesId)){
-			previousForms.push({...selectedPokemon});
+			let previousForm = new Pokemon(selectedPokemon.speciesId, index, battle);
+			previousForm.setIV("atk", selectedPokemon.ivs.atk);
+			previousForm.setIV("def", selectedPokemon.ivs.def);
+			previousForm.setIV("hp", selectedPokemon.ivs.hp);
+			previousForm.setLevel(selectedPokemon.level, false);
+			previousForms.push(previousForm);
 		}
 
 		self.updateIVRank();
@@ -794,7 +797,12 @@ function PokeSelect(element, i){
 
 		// Preserve this form for later reference
 		if(selectedPokemon.formChange && ! previousForms.some(form => form.speciesId == selectedPokemon.speciesId)){
-			previousForms.push({...selectedPokemon});
+			let previousForm = new Pokemon(selectedPokemon.speciesId, index, battle);
+			previousForm.setIV("atk", selectedPokemon.ivs.atk);
+			previousForm.setIV("def", selectedPokemon.ivs.def);
+			previousForm.setIV("hp", selectedPokemon.ivs.hp);
+			previousForm.setLevel(selectedPokemon.level, false);
+			previousForms.push(previousForm);
 		}
 
 		self.reset();
