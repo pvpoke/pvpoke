@@ -417,7 +417,7 @@
             "parent": "charmeleon_shadow"
         },
         "nicknames": ["zard"],
-        "searchPriority": 8
+        "searchPriority": 6
     },
     {
         "dex": 7,
@@ -8271,7 +8271,7 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"],
-        "searchPriority": 9,
+        "searchPriority": 6,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -22221,7 +22221,7 @@
             "cp2500l40": [40, 15, 15, 15]
         },
         "tags": ["regional"],
-        "searchPriority": 7,
+        "searchPriority": 9,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true

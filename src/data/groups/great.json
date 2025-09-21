@@ -27,12 +27,6 @@
     },
     {
         "speciesId": "charizard_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "charizard_shadow",
         "fastMove": "EMBER",
         "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"],
         "shadowType": "shadow"
@@ -71,12 +65,6 @@
         "speciesId": "diggersby",
         "fastMove": "QUICK_ATTACK",
         "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
-    },
-    {
-        "speciesId": "dragonite_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "drapion_shadow",
@@ -143,17 +131,6 @@
         "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
     },
     {
-        "speciesId": "greninja",
-        "fastMove": "WATER_SHURIKEN",
-        "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
-    },
-    {
-        "speciesId": "gyarados_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "jellicent",
         "fastMove": "HEX",
         "chargedMoves": ["SURF", "SHADOW_BALL"]
@@ -183,12 +160,6 @@
         "speciesId": "primeape",
         "fastMove": "KARATE_CHOP",
         "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
-    },
-    {
-        "speciesId": "quagsire",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "regidrago",
@@ -228,14 +199,25 @@
         "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
     },
     {
-        "speciesId": "weezing_galarian_shadow",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["SLUDGE", "BRUTAL_SWING"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
+    },
+    {
+        "speciesId": "talonflame_shadow",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["FLAME_CHARGE", "FLY"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "murkrow_shadow",
+        "fastMove": "PECK",
+        "chargedMoves": ["DRILL_PECK", "FOUL_PLAY"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "dewgong",
+        "fastMove": "ICE_SHARD",
+        "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
     }
 ]

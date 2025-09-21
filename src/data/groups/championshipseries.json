@@ -22,12 +22,6 @@
     },
     {
         "speciesId": "charizard_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "charizard_shadow",
         "fastMove": "EMBER",
         "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"],
         "shadowType": "shadow"
@@ -36,6 +30,11 @@
         "speciesId": "charjabug",
         "fastMove": "VOLT_SWITCH",
         "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+    },
+    {
+        "speciesId": "charjabug",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["X_SCISSOR", "CRUNCH"]
     },
     {
         "speciesId": "clodsire",
@@ -74,11 +73,6 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "dunsparce",
-        "fastMove": "ROLLOUT",
-        "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
-    },
-    {
         "speciesId": "dusclops",
         "fastMove": "HEX",
         "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
@@ -88,22 +82,6 @@
         "fastMove": "HEX",
         "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"],
         "shadowType": "shadow"
-    },
-    {
-        "speciesId": "empoleon",
-        "fastMove": "METAL_SOUND",
-        "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-    },
-    {
-        "speciesId": "empoleon_shadow",
-        "fastMove": "METAL_SOUND",
-        "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "feraligatr",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
     },
     {
         "speciesId": "forretress",
@@ -122,12 +100,6 @@
     },
     {
         "speciesId": "giratina_altered_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "giratina_altered_shadow",
         "fastMove": "SHADOW_CLAW",
         "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW"],
         "shadowType": "shadow"
@@ -143,19 +115,14 @@
         "chargedMoves": ["AQUA_TAIL", "THUNDER_PUNCH"]
     },
     {
-        "speciesId": "greninja",
-        "fastMove": "WATER_SHURIKEN",
-        "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
+        "speciesId": "guzzlord",
+        "fastMove": "DRAGON_TAIL",
+        "chargedMoves": ["BRUTAL_SWING", "SLUDGE_BOMB"]
     },
     {
-        "speciesId": "jellicent",
-        "fastMove": "HEX",
-        "chargedMoves": ["SURF", "SHADOW_BALL"]
-    },
-    {
-        "speciesId": "lapras",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
+        "speciesId": "lanturn",
+        "fastMove": "WATER_GUN",
+        "chargedMoves": ["SURF", "THUNDERBOLT"]
     },
     {
         "speciesId": "marowak_shadow",
@@ -169,20 +136,30 @@
         "chargedMoves": ["FLY", "BRAVE_BIRD"]
     },
     {
+        "speciesId": "moltres_galarian",
+        "fastMove": "SUCKER_PUNCH",
+        "chargedMoves": ["FLY", "PAYBACK"]
+    },
+    {
+        "speciesId": "murkrow",
+        "fastMove": "PECK",
+        "chargedMoves": ["DRILL_PECK", "FOUL_PLAY"]
+    },
+    {
+        "speciesId": "murkrow_shadow",
+        "fastMove": "PECK",
+        "chargedMoves": ["DRILL_PECK", "FOUL_PLAY"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "primeape",
         "fastMove": "KARATE_CHOP",
         "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
     },
     {
-        "speciesId": "quagsire",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "regidrago",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["DRAGON_ENERGY", "HYPER_BEAM"]
+        "speciesId": "primeape_shadow",
+        "fastMove": "KARATE_CHOP",
+        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
     },
     {
         "speciesId": "scizor_shadow",
@@ -228,8 +205,9 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "lanturn",
-        "fastMove": "WATER_GUN",
-        "chargedMoves": ["SURF", "THUNDERBOLT"]
+        "speciesId": "dusknoir_shadow",
+        "fastMove": "ASTONISH",
+        "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_PUNCH"],
+        "shadowType": "shadow"
     }
 ]

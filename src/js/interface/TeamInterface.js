@@ -485,7 +485,8 @@ var InterfaceMaster = (function () {
 
 						//let isMeta = (metaGroup.some(poke => poke.speciesId.replace("_shadow", "") == pokemon.speciesId.replace("_shadow", "")));
 
-						if(! similarCounterExists){
+						let customThreatsListLength = multiSelectors[1].getPokemonList().length;
+						if(! similarCounterExists || (customThreatsListLength != 0 && customThreatsListLength <= 12)){
 							counterTeam.push(pokemon);
 
 							avgThreatScore += r.rating;
