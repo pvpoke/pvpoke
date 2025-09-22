@@ -60,6 +60,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check.xl", toggleXLPokemon);
 				$("body").on("click", ".continentals .check", toggleSlots);
 				$("body").on("click", ".detail-section .trait-info, .detail-section .traits > div", openTraitPopup);
+				$("body").on("click", ".detail-section .editor-score-info", openEditorScorePopup);
 				$("body").on("click", ".detail-tab-nav a", toggleDetailTab);
 				$("body").on("click", ".detail-section a.show-move-stats", toggleMoveStats);
 				$("body").on("click", ".check.move-counts", toggleMoveCounts);
@@ -1277,6 +1278,14 @@ var InterfaceMaster = (function () {
 					$details.find(".detail-section.poke-stats").css("float", "none");
 				}
 
+				// Display editor score and notes
+				if(r.editorScore && r.editorNotes){
+					$details.find(".notes-container").show();
+					$details.find(".notes-container .editor-score").html(r.editorScore);
+					$details.find(".notes-container .editor-score").addClass(pokemon.types[0]);
+					$details.find(".notes-container .editor-notes").html(r.editorNotes);
+				}
+
 				// Display buddy distance and second move cost
 				var moveCostStr = pokemon.thirdMoveCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Ugh regex
 
@@ -1588,6 +1597,14 @@ var InterfaceMaster = (function () {
 				$traits.find("div").each(function(index, value){
 					$(".modal .traits").append("<div class=\""+$(this).attr("class")+"\"><div class=\"name\">"+$(this).html()+"</div><div class=\"desc\">"+$(this).attr("title")+"</div></div>");
 				});
+			}
+
+			// Display editor score info
+
+			function openEditorScorePopup(e){
+				e.preventDefault();
+
+				modalWindow("About Editor Scores", $(".editor-score-modal"));
 			}
 
 			// Jump to a Pokemon entry from the similar Pokemon section
