@@ -126,25 +126,15 @@ $formats = array (
   ),
   10 => 
   array (
-    'title' => 'Devon Ascension Cup',
-    'cup' => 'ascension',
+    'title' => 'Devon Metamorphosis Cup',
+    'cup' => 'metamorphosis',
     'cp' => 1500,
-    'meta' => 'ascension',
+    'meta' => 'metamorphosis',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   11 => 
-  array (
-    'title' => 'Devon (Championship Invitational S2)',
-    'cup' => 'devonchampionship',
-    'cp' => 1500,
-    'meta' => 'devonchampionship',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  12 => 
   array (
     'title' => 'Gymbreakers Pillar Cup Remix',
     'cup' => 'pillar3',
@@ -154,7 +144,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  13 => 
+  12 => 
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -164,7 +154,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  14 => 
+  13 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -174,7 +164,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  15 => 
+  14 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -184,7 +174,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  16 => 
+  15 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

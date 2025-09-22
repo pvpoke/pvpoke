@@ -1,0 +1,61 @@
+{
+  "name": "metamorphosis",
+  "title": "Metamorphosis",
+  "include": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "dragon",
+        "flying",
+        "psychic"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "togekiss",
+        "jellicent",
+        "trevenant",
+        "marowak_alolan",
+        "marowak_alolan_shadow",
+        "seaking",
+        "primeape",
+        "primeape_shadow"
+      ]
+    }
+  ],
+  "exclude": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "dark",
+        "electric",
+        "steel",
+        "ice"
+      ]
+    },
+    {
+      "filterType": "tag",
+      "name": "Tag",
+      "values": [
+        "mega"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "corsola_galarian",
+	"rapidash_galarian",
+	"togetic"
+      ]
+    }
+  ],
+  "overrides": [],
+  "league": 1500,
+  "useDefaultMovesets": 1,
+  "excludeLowPokemon": 1
+}
