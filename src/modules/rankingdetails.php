@@ -232,7 +232,7 @@
 </div>
 
 <div class="editor-score-modal hide">
-	<p>An Editor's Score is assigned to Pokemon whose simulated scores may not accurately reflect their in-game performance or meta relevance. In these cases, a Pokemon's overall score is a combination of both the editor's score and its simulated performance. The associated notes aim to provide a personal commentary on the Pokemon and its simulations.</p>
+	<p>An Editor's Score is assigned to provide commentary on meta relevant Pokemon or improve accuracy for Pokemon whose simulated scores may not reflect their in-game performance. In these cases, a Pokemon's overall score is a combination of both the editor's score and its simulated performance.</p>
 	<p>Editor scores follow the guide below:</p>
 	<table class="train-table" cellspacing="0">
 		<thead>
@@ -250,7 +250,7 @@
 			</tr>
 			<tr>
 				<td>90</td>
-				<td>Strong meta Pokemon but not overused or centralizing, may have one or two drawbacks.</td>
+				<td>Strong and typically meta Pokemon but not overused or centralizing, may have one or two drawbacks.</td>
 			</tr>
 			<tr>
 				<td>85</td>
@@ -258,7 +258,7 @@
 			</tr>
 			<tr>
 				<td>80</td>
-				<td>Viable but challenging Pokemon with significant drawbacks, spice picks. May require expert hands.</td>
+				<td>Viable but challenging Pokemon with significant drawbacks, generally spice picks. May require expert hands.</td>
 			</tr>
 			<tr>
 				<td>75 or below</td>

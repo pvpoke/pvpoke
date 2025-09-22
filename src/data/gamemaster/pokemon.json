@@ -42690,34 +42690,6 @@
         }
     },
     {
-        "dex": 980,
-        "speciesName": "Clodsire",
-        "speciesId": "clodsiresb",
-        "aliasId": "clodsire",
-        "baseStats": {
-            "atk": 127,
-            "def": 151,
-            "hp": 277
-        },
-        "types": ["poison", "ground"],
-        "fastMoves": ["POISON_STING", "MUD_SHOT"],
-        "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE", "STONE_EDGE", "ACID_SPRAY", "WATER_PULSE", "MEGAHORN"],
-        "eliteMoves": ["MEGAHORN"],
-        "defaultIVs": {
-            "cp500": [10, 4, 6, 15],
-            "cp1500": [29.5, 4, 14, 10],
-            "cp2500": [50, 15, 15, 15]
-        },
-        "tags": ["duplicate", "duplicate1500"],
-        "buddyDistance": 3,
-        "thirdMoveCost": 50000,
-        "released": true,
-        "family": {
-            "id": "FAMILY_WOOPER_PALDEAN",
-            "parent": "wooper_paldean"
-        }
-    },
-    {
         "dex": 981,
         "speciesName": "Farigiraf",
         "speciesId": "farigiraf",

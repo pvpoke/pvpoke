@@ -251,8 +251,6 @@ var InterfaceMaster = (function () {
 				if($(".modal .editor-notes").val()){
 					override.editorNotes = $(".modal .editor-notes").val();
 				}
-				
-				console.log(override);
 
 				return override;
 			}
