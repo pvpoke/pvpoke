@@ -225,7 +225,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Start with your predefined options
-				let options = ['1,3,5','1,4,7','2,5,8','2,7,12','3,8,13','4,9,14','No optimal timing possible'];
+				let options = ['1,3,5','1,4,7','1,5,9','2,5,8','2,7,12','3,8,13','4,9,14','No optimal timing possible'];
 
 				// If the correct answer isn't already in the list, add it
 				if (!options.includes(correctAnswerString)) {
