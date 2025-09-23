@@ -11797,7 +11797,11 @@
         "searchPriority": 5,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": true
+        "released": true,
+        "family": {
+            "id": "FAMILY_DUNSPARCE",
+            "evolutions": ["dudunsparce"]
+        }
     },
     {
         "dex": 207,
@@ -42733,7 +42737,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_DUNSPARCE",
             "parent": "dunsparce"
@@ -42758,7 +42762,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_DUNSPARCE",
             "parent": "dunsparce"
@@ -42783,7 +42787,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_DUNSPARCE",
             "parent": "dunsparce"
