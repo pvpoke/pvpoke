@@ -3209,6 +3209,14 @@ a.download-csv{
 						position: relative;
 						top: -4px;
 					}
+
+					
+					&.editor-score-header{
+						background:url('../img/notes-icon.png');
+						background-repeat: no-repeat;
+						background-position-y: 5px;
+						padding-left: 26px;
+					}
 				}
 
 				.list{

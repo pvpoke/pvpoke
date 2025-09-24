@@ -2862,6 +2862,12 @@ a.download-csv {
   position: relative;
   top: -4px;
 }
+.rank .details .detail-section.traits-container .ranking-header.editor-score-header, .rank .details .detail-section.similar-pokemon .ranking-header.editor-score-header, .rank .details .detail-section.partner-pokemon .ranking-header.editor-score-header, .rank .details .detail-section.notes-container .ranking-header.editor-score-header {
+  background: url("../img/notes-icon.png");
+  background-repeat: no-repeat;
+  background-position-y: 5px;
+  padding-left: 26px;
+}
 .rank .details .detail-section.traits-container .list, .rank .details .detail-section.similar-pokemon .list, .rank .details .detail-section.partner-pokemon .list, .rank .details .detail-section.notes-container .list {
   justify-content: center;
 }

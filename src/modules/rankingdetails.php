@@ -115,7 +115,7 @@
 			</div>
 		</div>
 		<div class="detail-section notes-container hide">
-			<div class="ranking-header">Editor's Score <a href="#" class="info-icon editor-score-info">?</a></div>
+			<div class="ranking-header editor-score-header">Editor's Score <a href="#" class="info-icon editor-score-info">?</a></div>
 			<div class="flex">
 				<div class="editor-score">
 					100
