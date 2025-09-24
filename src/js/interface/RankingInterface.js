@@ -437,7 +437,12 @@ var InterfaceMaster = (function () {
 
 				if(pokemon.needsXLCandy()){
 					$el.attr("needs-xls", "true");
-					$el.find(".name").append("<span class=\"xl-info-icon\"></span>");
+					$el.find(".name").append("<span class=\"xl-info-icon\" title=\"Requires Candy XL's\"></span>");
+				}
+
+				if(r.editorScore){
+					$el.attr("has-editor-notes", "true");
+					$el.find(".name").append("<span class=\"editor-note-icon\" title=\"Entry has editor's score and notes\"></span>");
 				}
 
 

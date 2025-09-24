@@ -2694,9 +2694,10 @@ a.download-csv {
 .rank .name {
   font-weight: bold;
 }
-.rank .xl-info-icon {
+.rank .xl-info-icon,
+.rank .editor-note-icon {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 6px;
   opacity: 0.3;
   position: relative;
   top: 3px;
@@ -2706,6 +2707,11 @@ a.download-csv {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+.rank .editor-note-icon {
+  width: 21px;
+  height: 17px;
+  background-image: url("../img/notes-icon.png");
 }
 .rank .rating-container {
   /*a{

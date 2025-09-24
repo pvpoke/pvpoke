@@ -3012,9 +3012,10 @@ a.download-csv{
 		font-weight:bold;
 	}
 
-	.xl-info-icon{
+	.xl-info-icon,
+	.editor-note-icon{
 		display: inline-block;
-	    margin-left: 10px;
+	    margin-left: 6px;
 	    opacity: .3;
 		position: relative;
 		top: 3px;
@@ -3024,6 +3025,12 @@ a.download-csv{
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+	}
+
+	.editor-note-icon{
+		width:21px;
+		height:17px;
+		background-image: url('../img/notes-icon.png');
 	}
 
 	.rating-container{

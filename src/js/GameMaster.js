@@ -1353,6 +1353,7 @@ var GameMaster = (function () {
 			var regions = object.data.pokemonRegions;
 
 			var metaKey = $(".format-select option:selected").first().attr("meta-group");
+			let rankingKey = battle.getCup().name + "overall" + battle.getCP();
 
 			if(! battle){
 				battle = new Battle();
@@ -1564,6 +1565,18 @@ var GameMaster = (function () {
 								}
 							}
 
+							// Editor notes search on rankings page
+							
+							if(param == "notes" && window.location.href.indexOf("/rankings/") > -1){
+
+								let $rankEntries = $(".rank[has-editor-notes='true'");
+								$rankEntries.each(function(index, item){
+
+									if(pokemon.speciesId == $(item).attr("data")){
+										valid = true;
+									}
+								});
+							}
 
 							// Trait search
 
