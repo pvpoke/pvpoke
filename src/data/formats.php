@@ -30,37 +30,6 @@ $formats = array (
   ),
   2 => 
   array (
-    'title' => 'Willpower Cup',
-    'cup' => 'willpower',
-    'cp' => 1500,
-    'meta' => 'willpower',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Fighting-, Psychic-, and Dark-type Pokémon will be eligible.',
-      2 => 'The following Pokémon will not be allowed: Gardevoir, Zorua, Zoroark',
-    ),
-  ),
-  3 => 
-  array (
-    'title' => 'Mega Master League',
-    'cup' => 'mega',
-    'cp' => 10000,
-    'meta' => 'mega',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'No CP limit.',
-      1 => 'Mega-Evolved Pokémon are allowed.',
-    ),
-  ),
-  4 => 
-  array (
     'title' => 'Fantasy Cup',
     'cup' => 'fantasy',
     'cp' => 1500,
@@ -72,6 +41,38 @@ $formats = array (
     array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
       1 => 'Only Dragon-, Steel-, and Fairy-type Pokémon are eligible.',
+    ),
+  ),
+  3 => 
+  array (
+    'title' => 'Jungle Cup',
+    'cup' => 'jungle',
+    'cp' => 1500,
+    'meta' => 'jungle',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.',
+      2 => 'The following Pokémon will not be allowed: Gligar, Galarian Stunfisk',
+    ),
+  ),
+  4 => 
+  array (
+    'title' => 'Mega Master League',
+    'cup' => 'mega',
+    'cp' => 10000,
+    'meta' => 'mega',
+    'showCup' => false,
+    'showFormat' => false,
+    'showMeta' => false,
+    'hideRankings' => true,
+    'rules' => 
+    array (
+      0 => 'No CP limit.',
+      1 => 'Mega-Evolved Pokémon are allowed.',
     ),
   ),
   5 => 

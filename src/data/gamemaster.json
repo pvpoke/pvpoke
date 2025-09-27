@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-09-23 17:26:47",
+    "timestamp": "2025-09-27 15:37:13",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -568,6 +568,28 @@
             ]
         },
         {
+            "name": "jungle",
+            "title": "Jungle Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["normal", "grass", "electric", "poison", "ground", "flying", "bug", "dark"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "id",
+                    "values": ["gligar", "stunfisk_galarian"]
+                },
+                {
+                    "filterType": "tag",
+                    "values": ["mega"]
+                }
+            ],
+            "partySize": 3,
+            "presetOnly": true
+        },
+        {
             "name": "laic2025",
             "title": "LAIC 2025 Championship Series Cup",
             "link": "https://laic.gg/competitor_info/pokemon_go/",
@@ -1049,26 +1071,6 @@
             "hideRankings": true
         },
         {
-            "title": "Willpower Cup",
-            "cup": "willpower",
-            "cp": 1500,
-            "meta": "willpower",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Fighting-,  Psychic-,  and Dark-type Pokémon will be eligible.", "The following Pokémon will not be allowed: Gardevoir,  Zorua,  Zoroark"]
-        },
-        {
-            "title": "Mega Master League",
-            "cup": "mega",
-            "cp": 10000,
-            "meta": "mega",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["No CP limit.", "Mega-Evolved Pokémon are allowed."]
-        },
-        {
             "title": "Fantasy Cup",
             "cup": "fantasy",
             "cp": 1500,
@@ -1077,6 +1079,27 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Dragon-,  Steel-,  and Fairy-type Pokémon are eligible."]
+        },
+        {
+            "title": "Jungle Cup",
+            "cup": "jungle",
+            "cp": 1500,
+            "meta": "jungle",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Grass-,  Electric-,  Poison-,  Ground-,  Flying-,  Bug-,  and Dark-type Pokémon are eligible.", "The following Pokémon will not be allowed: Gligar,  Galarian Stunfisk"]
+        },
+        {
+            "title": "Mega Master League",
+            "cup": "mega",
+            "cp": 10000,
+            "meta": "mega",
+            "showCup": false,
+            "showFormat": false,
+            "showMeta": false,
+            "hideRankings": true,
+            "rules": ["No CP limit.", "Mega-Evolved Pokémon are allowed."]
         },
         {
             "title": "LAIC 2025 Championship Series Cup",
