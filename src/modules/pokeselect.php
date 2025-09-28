@@ -186,6 +186,13 @@
 			<h3 class="section-title">Ranking Weight Multiplier</h3>
 			<input class="ranking-weight" type="number" placeholder="Weight" min="0" value="1" />
 			<div class="legacy">Matchup scores against this Pokemon will be multiplied by the value above. Default is 1. Use values of 2-10 depending on meta relevancy. Use 0 to remove all weighting.</div>
+
+			<?php if(strpos($_SERVER['REQUEST_URI'], 'overrideEditor') !== false): ?>
+				<h3 class="section-title">Editor's Score</h3>
+				<input class="editor-score" type="number" placeholder="Editor Score" min="0" max="100" />
+				<h3 class="section-title">Editor's Notes</h3>
+				<textarea class="editor-notes"></textarea>
+			<?php endif; ?>
 		</div>
 
 		<a href="#" class="clear-selection">Clear Selection</a>

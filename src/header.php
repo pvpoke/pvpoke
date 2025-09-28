@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.36.3.4';
+$SITE_VERSION = '1.36.7.4';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -138,14 +138,14 @@ if(! isset($OG_IMAGE)){
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=214">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=217">
 
 <?php if(strpos($META_TITLE, 'Train') !== false || strpos($META_TITLE, 'Performers') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=21">
 <?php endif; ?>
 
 <?php if(strpos($_SERVER['REQUEST_URI'], 'articles') !== false): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/article-extras.css?v=22">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/article-extras.css?v=23">
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>

@@ -114,8 +114,19 @@
 				</div>
 			</div>
 		</div>
+		<div class="detail-section notes-container hide">
+			<div class="ranking-header editor-score-header">Editor's Score <a href="#" class="info-icon editor-score-info">?</a></div>
+			<div class="flex">
+				<div class="editor-score">
+					100
+				</div>
+				<div class="editor-notes">
+					asdfasdfas
+				</div>
+			</div>
+		</div>
 		<div class="detail-section traits-container">
-			<div class="ranking-header">Traits <a href="#" class="trait-info">?</a></div>
+			<div class="ranking-header">Traits <a href="#" class="info-icon trait-info">?</a></div>
 			<div class="traits"></div>
 		</div>
 	</div><!-- end tab stats-->
@@ -218,4 +229,41 @@
 
 	<div class="traits">
 	</div>
+</div>
+
+<div class="editor-score-modal hide">
+	<p>An Editor's Score is assigned to provide commentary on meta relevant Pokemon or improve accuracy for Pokemon whose simulated scores may not reflect their in-game performance. In these cases, a Pokemon's overall score is a combination of both the editor's score and its simulated performance.</p>
+	<p>Editor scores follow the guide below:</p>
+	<table class="train-table" cellspacing="0">
+		<thead>
+			<th>Editor's Score</th>
+			<th>Description</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>100</td>
+				<td>Undisputed best Pokemon in the format, meta defining and dominating picks with little to no drawbacks.</td>
+			</tr>
+			<tr>
+				<td>95</td>
+				<td>Top meta Pokemon with high usage and consistent competitive play, may have a minor drawback or weakness.</td>
+			</tr>
+			<tr>
+				<td>90</td>
+				<td>Strong and typically meta Pokemon but not overused or centralizing, may have one or two drawbacks.</td>
+			</tr>
+			<tr>
+				<td>85</td>
+				<td>Competitive Pokemon which may be underused, outside the meta, anti-meta, or considered a downgrade to meta picks.</td>
+			</tr>
+			<tr>
+				<td>80</td>
+				<td>Viable but challenging Pokemon with significant drawbacks, generally spice picks. May require expert hands.</td>
+			</tr>
+			<tr>
+				<td>75 or below</td>
+				<td>Not competitively relevant, low or inconsistent performance with multiple significant drawbacks.</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

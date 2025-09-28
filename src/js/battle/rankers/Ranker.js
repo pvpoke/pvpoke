@@ -468,8 +468,18 @@ var RankerMaster = (function () {
 								}
 							}
 
-							// For switches, punish hard losses more. The goal is to identify safe switches
+							// Implement scoring soft cap, reduce impact of wins over 700 to reduce scores for volatile Pokemon (hard win/hard loss)
+							if(matches[j].adjRating > 700){
+								matches[j].adjRating = 700 + Math.pow(matches[j].adjRating - 700, 0.5);
+							}
 
+							// Implement harsh scoring curve at bottom of scale, increasing impact of losses under 300 to reduce scores for Pokemon with significant hard losses
+							if(matches[j].adjRating < 300) {
+								const curveAdjustment = 300; // Increase to soften curve
+								matches[j].adjRating = Math.pow(300, (curveAdjustment + matches[j].adjRating) / (300 + curveAdjustment));
+							}
+
+							// For switches, punish hard losses more. The goal is to identify safe switches
 							if((scenario.slug == "switches")&&(matches[j].adjRating < 500)){
 								weight *= (1 + (Math.pow(500 - matches[j].adjRating, 2)/20000));
 							}

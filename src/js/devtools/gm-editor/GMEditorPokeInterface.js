@@ -580,6 +580,24 @@ var InterfaceMaster = (function () {
                 let errors = []; // Add validation here
 
                 if(errors.length == 0){
+                    // Load most recent data and insert this entry into the document
+                    let lastSavedObj = JSON.parse(lastSavedJSON);
+                    let currentData = JSON.parse(localStorage.getItem(settings.gamemaster));
+                    
+                    // Find last saved object in current data
+                    let targetEntry = currentData.pokemon.findIndex(pokemon => pokemon.speciesId == lastSavedObj.speciesId);
+
+                    if(targetEntry !== -1){
+                        // Overwrite an existing entry
+                        currentData.pokemon[targetEntry] = selectedPokemon;
+                    } else{
+                        // Insert a new entry
+                        currentData.pokemon.push(selectedPokemon);
+
+                    }
+
+                    data = currentData;
+
                     gm.saveCustomGameMaster(data);
                     modalWindow("Data Saved", $(".save-data").first());
 

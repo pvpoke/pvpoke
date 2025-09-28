@@ -1,0 +1,19 @@
+{
+    "name": "laic2025",
+    "title": "LAIC 2025 Championship Series Cup",
+    "link": "https://laic.gg/competitor_info/pokemon_go/",
+    "include": [{
+        "filterType": "type",
+        "values": ["dragon", "flying", "ghost", "ice", "psychic"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "values": ["dark", "rock"]
+    }, {
+        "filterType": "tag",
+        "values": ["mega", "legendary", "mythical", "shadow", "ultrabeast"]
+    }, {
+        "filterType": "id",
+        "values": ["sandslash_alolan", "sandshrew_alolan", "corsola_galarian", "corviknight", "jellicent", "lapras", "kingdra", "ninetales_alolan", "honedge", "doublade", "aegislash_shield", "aegislash_blade"]
+    }]
+}

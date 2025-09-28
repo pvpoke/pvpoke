@@ -839,6 +839,17 @@ b {
 .poke .custom-ranking-options {
   display: none;
 }
+.poke .custom-ranking-options textarea {
+  width: 100%;
+  resize: none;
+  height: 200px;
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 10px 0;
+}
 .poke a.random,
 .poke a.swap {
   font-size: 10px;
@@ -1385,11 +1396,6 @@ select, input {
   border: 2px solid #285e85;
 }
 
-.top-ranking-select {
-  min-width: 150px;
-}
-
-.top-ranking-select,
 .league-select,
 .cup-select,
 .format-select,
@@ -1403,21 +1409,7 @@ select.large {
   font-weight: bold;
   max-width: 250px;
 }
-.quiz-button {
-    position: relative;
-    display: block;
-    font-size: 12px;
-    border-radius: 30px;
-    border: 2px solid #000;
-    padding: 10px 12px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #000;
-    background: #f9a01b;
-    background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-    background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-    background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
-}
+
 .button {
   position: relative;
   display: block;
@@ -1919,11 +1911,6 @@ select.large {
   line-height: 18px;
   padding: 5px 10px 5px 31px;
 }
-.quiz-feedback-explanation .battle-results .battle-details .optimal-timing-section {
-  max-width: 340px;
-  margin: 0 auto 0px auto;
-  text-align: center;
-}
 .battle-results .battle-details .breakpoints-section,
 .battle-results .battle-details .matchup-detail-section,
 .battle-results .battle-details .cmp-section,
@@ -2095,9 +2082,6 @@ select.large {
 .battle-results .battle-details .ranking-categories, .battle-results.matrix .ranking-categories {
   float: none;
   margin-top: 10px;
-}
-.quiz-feedback-explanation .battle-results .battle-details p {
-  margin-top: 0px;
 }
 .battle-results .battle-details p, .battle-results.matrix p {
   font-size: 14px;
@@ -2628,23 +2612,7 @@ a.download-csv {
   font-size: 14px;
 }
 
-.feedback-wrong {
-    color: red;
-}
-.feedback-correct {
-    color: green;
-}
-.hidden {
-    display: none;
-}
-
 /* RANKING STYLING */
-.quiz-header {
-  font-weight: bold;
-  padding: 5px 0px;
-  box-sizing: border-box;
-  margin-top: 8px;
-}
 .ranking-header {
   width: 50%;
   float: left;
@@ -2654,15 +2622,6 @@ a.download-csv {
 }
 .ranking-header.right {
   text-align: right;
-}
-
-.quiz-select-container {
-  display: flex;
-}
-
-.quiz-container {
-  max-height: 600px;
-  overflow-y: scroll;
 }
 
 .rankings-container {
@@ -2676,36 +2635,6 @@ a.download-csv {
 .rankings-container > .rank:hover, .rankings-container > .rank.selected {
   border-left: 20px solid #222;
 }
-
-.rankings-container > .rank.quiz:hover {
-  border-left: 20px solid rgba(0, 0, 0, 0.1);
-}
-
-.quiz-question {
-  display: flex;
-  justify-content: space-between; /* space between text and controls */
-  align-items: center;            /* vertical alignment */
-  gap: 1rem;                      /* spacing between */
-}
-
-.quiz-question .question-text {
-  flex: 1; /* take all available space */
-  font-size: 16px;
-}
-
-.quiz-question .answer-input {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.quiz-score {
-  justify-content: right;
-  align-items: center;
-  flex: 1;
-  padding-right: 20px;
-}
-
 .rankings-container.pokebox-list {
   display: flex;
   flex-wrap: wrap;
@@ -2765,9 +2694,10 @@ a.download-csv {
 .rank .name {
   font-weight: bold;
 }
-.rank .xl-info-icon {
+.rank .xl-info-icon,
+.rank .editor-note-icon {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 6px;
   opacity: 0.3;
   position: relative;
   top: 3px;
@@ -2777,6 +2707,11 @@ a.download-csv {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+.rank .editor-note-icon {
+  width: 21px;
+  height: 17px;
+  background-image: url("../img/notes-icon.png");
 }
 .rank .rating-container {
   /*a{
@@ -2861,55 +2796,6 @@ a.download-csv {
   display: flex;
   flex-wrap: wrap;
 }
-.versus-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-}
-.quiz-next-btn-container {
-  padding-top: 8px
-}
-.quiz-next-button {
-  display: block;
-  text-decoration: none;
-  color: black;
-  border-radius: 50px;
-  margin: 20px auto;
-  padding: 8px 20px;
-  box-sizing: border-box;
-  max-width: 400px;
-  background: #7d7d7d;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #bcbcbc 30%, #7d7d7d 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #bcbcbc 30%, #7d7d7d 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #bcbcbc 30%, #7d7d7d 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-.quiz-answer-input {
-  flex: 1;
-}
-.quiz-omt-answer-input-container {
-  display: flex;
-  gap: 20px;
-}
-.quiz-omt-match-container {
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.quiz-feedback-container {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.quiz-hints {
-  margin-top: 8px;
-}
-.quiz-hints-container .details .detail-section,
 .rank .details .detail-section {
   background: rgba(255, 255, 255, 0.8);
   padding: 5px;
@@ -2917,32 +2803,22 @@ a.download-csv {
   box-sizing: border-box;
   margin-top: 5px;
 }
-.quiz-omt-hints-container .details .detail-section.float {
-  width: 100% !important;
-}
-.quiz-hints-container .details .detail-section.float,
 .rank .details .detail-section.float {
   width: 49.5%;
 }
-
-.quiz-hints-container details .detail-section.float.margin,
 .rank .details .detail-section.float.margin {
   margin-right: 1%;
 }
-.quiz-hints-container .details .detail-section.overall, .quiz-hints-container .details .detail-section.stats, .quiz-hints-container .details .detail-section.typing,
 .rank .details .detail-section.overall, .rank .details .detail-section.stats, .rank .details .detail-section.typing {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
-.quiz-hints-container .details .detail-section.overall .rating-container, .quiz-hints-container .details .detail-section.stats .rating-container, .quiz-hints-container .details .detail-section.typing .rating-container,
 .rank .details .detail-section.overall .rating-container, .rank .details .detail-section.stats .rating-container, .rank .details .detail-section.typing .rating-container {
   text-align: center;
   padding: 5px;
 }
-
 .rank .details .detail-section.overall .rating-container .ranking-header, .rank .details .detail-section.stats .rating-container .ranking-header, .rank .details .detail-section.typing .rating-container .ranking-header {
   float: none;
   margin: 0;
@@ -2964,14 +2840,14 @@ a.download-csv {
   text-transform: capitalize;
   padding: 2px 12px;
 }
-.rank .details .detail-section.traits-container, .rank .details .detail-section.similar-pokemon, .rank .details .detail-section.partner-pokemon {
+.rank .details .detail-section.traits-container, .rank .details .detail-section.similar-pokemon, .rank .details .detail-section.partner-pokemon, .rank .details .detail-section.notes-container {
   width: 100%;
 }
-.rank .details .detail-section.traits-container .ranking-header, .rank .details .detail-section.similar-pokemon .ranking-header, .rank .details .detail-section.partner-pokemon .ranking-header {
+.rank .details .detail-section.traits-container .ranking-header, .rank .details .detail-section.similar-pokemon .ranking-header, .rank .details .detail-section.partner-pokemon .ranking-header, .rank .details .detail-section.notes-container .ranking-header {
   float: none;
   width: 100%;
 }
-.rank .details .detail-section.traits-container .ranking-header a.trait-info, .rank .details .detail-section.similar-pokemon .ranking-header a.trait-info, .rank .details .detail-section.partner-pokemon .ranking-header a.trait-info {
+.rank .details .detail-section.traits-container .ranking-header a.info-icon, .rank .details .detail-section.similar-pokemon .ranking-header a.info-icon, .rank .details .detail-section.partner-pokemon .ranking-header a.info-icon, .rank .details .detail-section.notes-container .ranking-header a.info-icon {
   text-decoration: none;
   color: #00171c;
   border: 1px solid #00171c;
@@ -2986,7 +2862,13 @@ a.download-csv {
   position: relative;
   top: -4px;
 }
-.rank .details .detail-section.traits-container .list, .rank .details .detail-section.similar-pokemon .list, .rank .details .detail-section.partner-pokemon .list {
+.rank .details .detail-section.traits-container .ranking-header.editor-score-header, .rank .details .detail-section.similar-pokemon .ranking-header.editor-score-header, .rank .details .detail-section.partner-pokemon .ranking-header.editor-score-header, .rank .details .detail-section.notes-container .ranking-header.editor-score-header {
+  background: url("../img/notes-icon.png");
+  background-repeat: no-repeat;
+  background-position-y: 5px;
+  padding-left: 26px;
+}
+.rank .details .detail-section.traits-container .list, .rank .details .detail-section.similar-pokemon .list, .rank .details .detail-section.partner-pokemon .list, .rank .details .detail-section.notes-container .list {
   justify-content: center;
 }
 .rank .details .detail-section .stat-details .stat-row {
@@ -3158,11 +3040,19 @@ a.download-csv {
 .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(6) .comparison {
   left: -38px;
 }
-.quiz-hints-container .details .detail-section .moveset.show-stats .name-container,
+.rank .details .detail-section.notes-container .editor-score {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+.rank .details .detail-section.notes-container .editor-notes {
+  font-size: 14px;
+}
 .rank .details .detail-section .moveset.show-stats .name-container {
   border-bottom: 1px solid;
 }
-.quiz-hints-container .details .detail-section .moveset.show-stats .name-container.stats-container,
 .rank .details .detail-section .moveset.show-stats .name-container.stats-container {
   display: flex;
 }
@@ -3175,7 +3065,6 @@ a.download-csv {
 .rank .details .detail-section .moveset.show-stats.fast .move-detail-template:hover.selected {
   border-left: 10px solid #000;
 }
-.quiz-hints-container .details .detail-section .moveset .name-container,
 .rank .details .detail-section .moveset .name-container {
   float: none;
   padding-bottom: 3px;
@@ -3184,7 +3073,6 @@ a.download-csv {
   align-items: baseline;
   font-size: 14px;
 }
-.quiz-hints-container .details .detail-section .moveset .name-container.stats-container,
 .rank .details .detail-section .moveset .name-container.stats-container {
   border: none;
   margin: 0;
@@ -3202,29 +3090,22 @@ a.download-csv {
 .rank .details .detail-section .moveset .name-container.stats-container.move-effect, .rank .details .detail-section .moveset .name-container.stats-container.move-count {
   justify-content: flex-start;
 }
-.quiz-hints-container .details .detail-section .moveset .name-container.stats-container.move-effect div,
 .rank .details .detail-section .moveset .name-container.stats-container.move-effect div, .rank .details .detail-section .moveset .name-container.stats-container.move-count div {
   margin: 5px 5px 0 0;
 }
-.quiz-hints-container .details .detail-section .moveset .stats-container,
 .rank .details .detail-section .moveset .stats-container {
   font-size: 12px;
   justify-content: space-between;
 }
-.quiz-hints-container .details .detail-section .moveset .archetype,
 .rank .details .detail-section .moveset .archetype {
   display: flex;
   align-items: center;
   margin-top: 2px;
   font-size: 12px;
 }
-
-.quiz-hints-container .details .detail-section .moveset .archetype .name, .rank .details .detail-section .moveset .archetype .icon,
 .rank .details .detail-section .moveset .archetype .name, .rank .details .detail-section .moveset .archetype .icon {
   display: block;
 }
-
-.quiz-hints-container .details .detail-section .moveset .archetype .icon,
 .rank .details .detail-section .moveset .archetype .icon {
   width: 16px;
   height: 16px;
@@ -3232,31 +3113,24 @@ a.download-csv {
   background-repeat: no-repeat;
   margin-left: 5px;
 }
-.quiz-hints-container .details .detail-section .moveset .archetype .icon.spam,
 .rank .details .detail-section .moveset .archetype .icon.spam {
   background-position: -16px 0;
 }
-.quiz-hints-container .details .detail-section .moveset .archetype .icon.self-debuff,
 .rank .details .detail-section .moveset .archetype .icon.self-debuff {
   background-position: -32px 0;
 }
-.quiz-hints-container, .details .detail-section .moveset .archetype .icon.debuff,
 .rank .details .detail-section .moveset .archetype .icon.debuff {
   background-position: -48px 0;
 }
-.quiz-hints-container, .details .detail-section .moveset .archetype .icon.boost,
 .rank .details .detail-section .moveset .archetype .icon.boost {
   background-position: -64px 0;
 }
-.quiz-hints-container .details .detail-section .moveset .archetype .icon.high-energy,
 .rank .details .detail-section .moveset .archetype .icon.high-energy {
   background-position: -80px 0;
 }
-.quiz-hints-container .details .detail-section .moveset .archetype .icon.general,
 .rank .details .detail-section .moveset .archetype .icon.general {
   background-position: -96px 0;
 }
-.quiz-hints-container .details .detail-section .moveset .archetype .icon.low-quality,
 .rank .details .detail-section .moveset .archetype .icon.low-quality {
   border-radius: 16px;
   background: #000;
@@ -3264,7 +3138,6 @@ a.download-csv {
   text-align: center;
   font-weight: bold;
 }
-.quiz-hints-container .details .detail-section .moveset .archetype .icon.low-quality:before,
 .rank .details .detail-section .moveset .archetype .icon.low-quality:before {
   content: "x";
 }
@@ -3369,13 +3242,6 @@ a.download-csv {
   align-items: center;
   min-width: 0;
 }
-.rank.typed-ranking.quiz .pokemon-info{
-  flex: 1;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  min-width: 0;
-}
 .rank.typed-ranking .pokemon-info .name-container {
   margin-right: 8px;
   align-items: center;
@@ -3383,16 +3249,6 @@ a.download-csv {
   margin-bottom: -3px;
   min-width: 46.5%;
 }
-
-.rank.typed-ranking .pokemon-info .name-container .quiz-moves-container {
-  padding-top: 6px;
-  font-size: 14px;
-}
-
-.rank.typed-ranking .pokemon-info .name-container .quiz-moves-container .quiz-move {
-  padding: 1px 0px;
-}
-
 .rank.typed-ranking .pokemon-info .type-container {
   display: flex;
   flex-wrap: wrap;
@@ -3421,36 +3277,25 @@ a.download-csv {
   align-self: flex-start;
 }
 
-.quiz-ranking-filters .ranking-filter {
-  padding-right: 20px;
-  box-sizing: border-box;
-}
 .ranking-filters .ranking-filter {
   max-width: 60%;
   padding-right: 20px;
   box-sizing: border-box;
 }
-.quiz-ranking-filters .ranking-filter:last-of-type {
-  padding-right: 0;
-}
 .ranking-filters .ranking-filter:last-of-type {
   max-width: 40%;
   padding-right: 0;
 }
-.quiz-ranking-filters .ranking-filter h4,
 .ranking-filters .ranking-filter h4 {
   margin: 0 0 5px 0;
   font-size: 12px;
 }
-.quiz-ranking-filters .ranking-filter select,
 .ranking-filters .ranking-filter select {
   max-width: 100%;
 }
-.quiz-ranking-filters .ranking-filter select optgroup,
 .ranking-filters .ranking-filter select optgroup {
   font-weight: normal;
 }
-.quiz-ranking-filters .ranking-filter .sort-button,
 .ranking-filters .ranking-filter .sort-button {
   background: none !important;
   font-size: 14px;
@@ -3459,11 +3304,9 @@ a.download-csv {
   padding: 5px 8px;
   min-width: 100px;
 }
-.quiz-ranking-filters .ranking-filter .flex,
 .ranking-filters .ranking-filter .flex {
   justify-content: space-between;
 }
-.quiz-ranking-filters .ranking-filter a.format-rules,
 .ranking-filters .ranking-filter a.format-rules {
   font-size: 12px;
   display: none;
@@ -3548,7 +3391,6 @@ a.download-csv {
   display: inline-block;
 }
 
-.quiz-checks,
 .ranking-checks {
   font-size: 14px;
 }
@@ -3632,6 +3474,13 @@ a.download-csv {
   border: none !important;
 }
 
+.modal .editor-score-modal table th {
+  text-align: left;
+}
+.modal .editor-score-modal table th, .modal .editor-score-modal table td {
+  padding: 4px 2px;
+}
+
 .modal .search-traits-selector .traits > div {
   display: block;
   width: auto;
@@ -3648,10 +3497,6 @@ a.download-csv {
 .rankings-container > .rank,
 .rankings-container > .rank > .rating-container {
   cursor: pointer;
-}
-
-.rankings-container > .rank.quiz {
-  cursor: default;
 }
 
 .rating.star,
@@ -5102,38 +4947,6 @@ a.pokebattler {
 
 /* RESPONSIVE */
 @media only screen and (max-width: 468px) {
-  .versus-text {
-    width: 100%;
-  }
-  .quiz-select-container {
-    flex-direction: column;
-    max-width: 60%;
-  }
-  .quiz-next-btn-container {
-    padding-top: 0px
-  }
-  .quiz-feedback-container {
-    gap: 4px;
-  }
-  .quiz-feedback-explanation,
-  .quiz-feedback,
-  .quiz-question .question-text {
-    font-size: 14px;
-  }
-  .quiz-omt-answer-input-container {
-    width: 100%;
-    justify-content: space-between;
-  }
-  .quiz-feedback-explanation .battle-results .battle-details p {
-    font-size: 12px;
-    margin-top: 0px;
-  }
-  .quiz-question{
-    flex-direction: column;
-  }
-  .quiz-omt-match-container {
-    gap: 0px;
-  }
   .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1) {
     top: 0%;
     left: 44%;
@@ -5320,7 +5133,6 @@ a.pokebattler {
     width: 100%;
   }
 
-  .quiz-hints-container .details .detail-section.float,
   .rank .details .detail-section.float {
     float: none;
     width: 100%;
@@ -5367,13 +5179,6 @@ a.pokebattler {
 .cup-select,
 .category-select {
     max-width: 48%;
-    margin-bottom: 5px;
-    font-size: 16px;
-  }
-
-  .top-ranking-select {
-    max-width: 35%;
-    min-width: 150px;
     margin-bottom: 5px;
     font-size: 16px;
   }

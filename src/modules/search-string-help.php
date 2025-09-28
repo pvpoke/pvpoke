@@ -70,6 +70,10 @@
 			<td>meta</td>
 		</tr>
 		<tr>
+			<td><strong>Editor Notes</strong></td>
+			<td>notes</td>
+		</tr>
+		<tr>
 			<td><strong>4* Pokemon</strong></td>
 			<td>4*, Hundo</td>
 		</tr>

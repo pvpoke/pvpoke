@@ -93,10 +93,14 @@ var GameMaster = (function () {
 						}
 
 						if(customData?.pokemon){
+							// Strip any empty values
+							customData.pokemon = customData.pokemon.filter(pokemon => pokemon.speciesId != "");
 							object.data.pokemon = customData.pokemon
 						}
 
 						if(customData?.moves){
+							// Strip any empty values
+							customData.moves = customData.moves.filter(move => move.moveId != "");
 							object.data.moves = customData.moves
 						}
 
@@ -155,6 +159,7 @@ var GameMaster = (function () {
 
 				try{
 					customData = JSON.parse(content);
+
 					callback(customData);
 				} catch(e){
 					console.error("Could not load custom gamemaster", e);
@@ -211,6 +216,12 @@ var GameMaster = (function () {
 			}
 
 			return object.allPokemon[key]
+		}
+
+		// Flush all values in the search cache and all Pokemon list
+		object.flushAllPokemonCache = function(){
+			object.searchStringCache = {};
+			object.allPokemon = {};
 		}
 
 
@@ -1342,6 +1353,7 @@ var GameMaster = (function () {
 			var regions = object.data.pokemonRegions;
 
 			var metaKey = $(".format-select option:selected").first().attr("meta-group");
+			let rankingKey = battle.getCup().name + "overall" + battle.getCP();
 
 			if(! battle){
 				battle = new Battle();
@@ -1553,6 +1565,18 @@ var GameMaster = (function () {
 								}
 							}
 
+							// Editor notes search on rankings page
+							
+							if(param == "notes" && window.location.href.indexOf("/rankings/") > -1){
+
+								let $rankEntries = $(".rank[has-editor-notes='true'");
+								$rankEntries.each(function(index, item){
+
+									if(pokemon.speciesId == $(item).attr("data")){
+										valid = true;
+									}
+								});
+							}
 
 							// Trait search
 

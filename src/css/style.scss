@@ -1060,6 +1060,18 @@ b{
 
 	.custom-ranking-options{
 		display: none;
+
+		textarea{
+			width: 100%;
+			resize: none;
+			height: 200px;
+			font-family: arial, sans-serif;
+			font-size: 12px;
+			box-sizing: border-box;
+			border-radius: 4px;
+			padding: 8px;
+			margin:10px 0;
+		}
 	}
 
 	a.random,
@@ -3000,9 +3012,10 @@ a.download-csv{
 		font-weight:bold;
 	}
 
-	.xl-info-icon{
+	.xl-info-icon,
+	.editor-note-icon{
 		display: inline-block;
-	    margin-left: 10px;
+	    margin-left: 6px;
 	    opacity: .3;
 		position: relative;
 		top: 3px;
@@ -3012,6 +3025,12 @@ a.download-csv{
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+	}
+
+	.editor-note-icon{
+		width:21px;
+		height:17px;
+		background-image: url('../img/notes-icon.png');
 	}
 
 	.rating-container{
@@ -3167,14 +3186,15 @@ a.download-csv{
 
 			&.traits-container,
 			&.similar-pokemon,
-			&.partner-pokemon{
+			&.partner-pokemon,
+			&.notes-container{
 				width:100%;
 
 				.ranking-header{
 					float:none;
 					width:100%;
 
-					a.trait-info{
+					a.info-icon{
 						text-decoration: none;
 					    color: #00171c;
 					    border: 1px solid #00171c;
@@ -3188,6 +3208,14 @@ a.download-csv{
 						font-size: 12px;
 						position: relative;
 						top: -4px;
+					}
+
+					
+					&.editor-score-header{
+						background:url('../img/notes-icon.png');
+						background-repeat: no-repeat;
+						background-position-y: 5px;
+						padding-left: 26px;
 					}
 				}
 
@@ -3391,6 +3419,20 @@ a.download-csv{
 							}
 						}
 					}
+				}
+			}
+
+			&.notes-container{
+				.editor-score{
+					font-size: 24px;
+					font-weight: bold;
+					padding: 4px 8px;
+					border-radius: 8px;
+					margin-right: 5px;
+				}
+
+				.editor-notes{
+					font-size: 14px;
 				}
 			}
 
@@ -3858,6 +3900,16 @@ a.download-csv{
 .modal .trait-modal .traits > div{
 	cursor:default;
 	border:none !important;
+}
+
+.modal .editor-score-modal table{
+	th{
+		text-align: left;
+	}
+
+	th, td{
+		padding: 4px 2px;
+	}
 }
 
 .modal .search-traits-selector{

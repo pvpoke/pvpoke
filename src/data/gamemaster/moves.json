@@ -381,7 +381,7 @@
         "cooldown": 500,
         "buffs": [-1, 0],
         "buffTarget": "opponent",
-        "buffApplyChance": 1,
+        "buffApplyChance": "1",
         "archetype": "Debuff",
         "turns": 1
     },
@@ -539,7 +539,7 @@
     },
     {
         "moveId": "CHILLING_WATER",
-        "name": "Chilling Water (Speculative)",
+        "name": "Chilling Water",
         "type": "water",
         "power": 60,
         "energy": 45,
@@ -2974,7 +2974,7 @@
         "cooldown": 500,
         "buffs": [-1, 0],
         "buffTarget": "opponent",
-        "buffApplyChance": 0.1,
+        "buffApplyChance": "0.1",
         "archetype": "Debuff",
         "turns": 1
     },

@@ -18,6 +18,7 @@ require_once '../header.php';
 		<button class="new-pokemon">+ New Pokemon</button>
 		<button class="import-movesets" style="margin-left: 15px;">Import League Movesets</button>
 		<button class="clear-weights" style="margin-left: 15px;">Clear Weights</button>
+		<button class="clear-editor-scores" style="margin-left: 15px;">Clear Editor Scores</button>
 	</div>
 	<hr></hr>
 	<br>
@@ -25,7 +26,16 @@ require_once '../header.php';
 		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
 		<a href="#" class="search-info" title="Search Help">?</a>
 		<a href="#" class="search-traits" title="Search Traits">+</a>
-		<button style="margin-left: 100px; width:100px;" class="toggle-sort">Sort: Name</button>
+
+		<div  style="margin-left: 100px;" class="flex align-items-center">
+			<label>Sort:</label>
+			<select style="margin-left: 5px; width:100px;" class="sort-select">
+				<option value="id">ID</option>
+				<option value="weight">Weight</option>
+				<option value="editorscore">Editor Score</option>
+			</select>
+		</div>
+
 	</div>
 
 

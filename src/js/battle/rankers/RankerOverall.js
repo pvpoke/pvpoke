@@ -23,6 +23,8 @@ var RankerMaster = (function () {
 
 			var self = this;
 
+			var overrides = []; // Overrides for specific cup and league
+
 			// Hook for interface
 
 			this.rankLoop = function(cp, cup){
@@ -145,6 +147,11 @@ var RankerMaster = (function () {
 
 					var r = rankings[i];
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
+
+					if(! pokemon.initialize){
+						continue;
+					}
+					
 					pokemon.initialize(true);
 					pokemon.selectMove("fast", r.moveset[0]);
 					pokemon.selectMove("charged", r.moveset[1], 0);
@@ -184,6 +191,27 @@ var RankerMaster = (function () {
 						rankings[i].score = Math.pow( Math.pow(rankings[i].score, 14) * Math.pow(scores[4], 1) * Math.pow(consistencyScore, 1), (1/16));
 					}
 
+					// Incorporate editor's score and notes from overrides, if any
+					let cupOverrides = overrides.find(o => o.league == battle.getCP() && o.cup == battle.getCup().name);
+
+					if(cupOverrides){
+						let override = cupOverrides.pokemon.find(r => r.speciesId == pokemon.speciesId);
+
+						if(override){
+							if(override.editorScore){
+								rankings[i].editorScore = override.editorScore;
+
+								// Calculate overall score weighted heavily toward editor score
+								rankings[i].score = (rankings[i].score * 0.25) + (override.editorScore * 0.75);
+							}
+
+							if(override.editorNotes){
+								rankings[i].editorNotes = override.editorNotes;
+							}
+						}
+					}
+					
+					// Final score rounding
 					rankings[i].score = Math.floor(rankings[i].score*10) / 10;
 
 					// Add Pokemon stats
@@ -316,6 +344,29 @@ var RankerMaster = (function () {
 				});
 
 				return rankings;
+			}
+
+			// Set move overrides for a specific cup and league
+
+			this.setMoveOverrides = function(league, cup, values){
+				// Iterate through existing overrides and replace if already exists
+				var cupFound = false;
+
+				for(var i = 0; i < overrides.length; i++){
+					if((overrides[i].league == league)&&(overrides[i].cup == cup)){
+						cupFound = true;
+						overrides[i].pokemon = values;
+					}
+				}
+
+				// If a cup wasn't found, add a new one
+				if(! cupFound){
+					overrides.push({
+						league: league,
+						cup: cup,
+						pokemon: values
+					})
+				}
 			}
 
 		};

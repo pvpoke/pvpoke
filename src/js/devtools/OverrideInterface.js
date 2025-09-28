@@ -119,6 +119,11 @@ var InterfaceMaster = (function () {
 
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">x"+displayWeight+"</div><div class=\"clear\"></div></div><div class=\"details\"></div>");
 
+					// Display indicator for editor score/notes
+					if(r.editorScore){
+						$("<div class=\"rating\" style=\"margin-right:5px;\">" + r.editorScore + "*</div>").insertAfter($el.find(".rating"));
+					}
+
 					$(".section.white > .rankings-container").append($el);
 
 					// Determine XL category
@@ -144,10 +149,23 @@ var InterfaceMaster = (function () {
 
 			// Sorty alphabetically or by weight
 			this.sortOverrideData = function(){
-				if(sort == "id"){
-					data.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
-				} else if(sort == "weight"){
-					data.sort((a,b) => (a.weight > b.weight) ? -1 : ((b.weight > a.weight) ? 1 : 0));
+				switch(sort){
+					case "id":
+						data.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
+						break;
+
+					case "weight":
+						data.sort((a,b) => (a.weight > b.weight) ? -1 : ((b.weight > a.weight) ? 1 : 0));
+						break;
+
+					case "editorscore":
+						data.sort((a,b) => {
+							let scoreA = a?.editorScore ? a.editorScore : 0;
+							let scoreB = b?.editorScore ? b.editorScore : 0;
+
+							return scoreA > scoreB ? -1 : ((scoreB > scoreA) ? 1 : 0);
+						});
+						break;
 				}
 			}
 
@@ -226,6 +244,14 @@ var InterfaceMaster = (function () {
 					override.chargedMoves.push(pokemon.chargedMoves[i].moveId);
 				}
 
+				if($(".modal .editor-score").val()){
+					override.editorScore = parseFloat($(".modal .editor-score").val());
+				}
+
+				if($(".modal .editor-notes").val()){
+					override.editorNotes = $(".modal .editor-notes").val();
+				}
+
 				return override;
 			}
 
@@ -287,6 +313,14 @@ var InterfaceMaster = (function () {
 				}
 
 				self.openPokeSelect(pokemon);
+
+				if(r.editorScore){
+					$(".modal .editor-score").val(r.editorScore);
+				}
+
+				if(r.editorNotes){
+					$(".modal .editor-notes").html(r.editorNotes);
+				}
 			}
 
 			// Turn checkboxes on and off
@@ -296,15 +330,8 @@ var InterfaceMaster = (function () {
 				$(this).trigger("stateChange");
 			}
 
-			$("button.toggle-sort").click(function(e){
-				if(sort == "id"){
-					sort = "weight";
-				} else if(sort == "weight"){
-					sort = "id";
-				}
-
-				$("button.toggle-sort").html("Sort: " + sort);
-
+			$(".sort-select").change(function(e){
+				sort = $(".sort-select option:selected").val();
 				self.sortOverrideData();
 				self.displayOverrideData(data);
 
@@ -320,6 +347,17 @@ var InterfaceMaster = (function () {
 			$(".clear-weights").click(function(e){
 				for(var i = 0; i < data.length; i++){
 					delete data[i].weight;
+				}
+
+				self.displayOverrideData(data);
+			});
+
+			// Clear all editor scores from the overrides
+
+			$(".clear-editor-scores").click(function(e){
+				for(var i = 0; i < data.length; i++){
+					delete data[i].editorScore;
+					delete data[i].editorNotes;
 				}
 
 				self.displayOverrideData(data);
