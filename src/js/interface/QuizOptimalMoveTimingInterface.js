@@ -12,8 +12,6 @@ var InterfaceMaster = (function () {
 			var self = this;
 			var gm = GameMaster.getInstance();
 			var battle = new Battle();
-			var numberAskedQuestions = 0;
-			var numberCorrectAnswers = 0;
 			this.yourPokemon = null;
 			this.opponentsPokemon = null;
 			var chargedMove;
@@ -25,25 +23,28 @@ var InterfaceMaster = (function () {
 			this.questionAnswers = {}
 
 			// Show useRecc toggle if previously set
-			if(window.localStorage.getItem("useOnlyReccomendedMoveset") == "false"){
-				$(".check.quiz-reccomended-moveset").removeClass("on");
+			if(window.localStorage.getItem("quiz_omt_useOnlyReccomendedMoveset") == "false"){
 				useOnlyReccomendedMoveset = false;
+				updateReccomendedMovesetCheckbox()
 			}
 
 			this.init = function(){
+				this.category = 'overall'
+				this.cp = '1500'
+				this.cup = 'all'
+				
 				if(! get){
-					this.displayRankings("overall","1500","all");
+					this.displayRankings(this.category,this.cp,this.cup);
 				} else{
 					this.loadGetData();
 				}
 
 				$(".format-select").on("change", selectFormat);
 				$(".top-ranking-select").on("change", selectTopRankings);
-				$("body").on("click", ".quiz-check-btn", checkAnswer);
 				$("body").on("click", ".quiz-next-btn", nextQuestion);
 				$("body").on("click", ".check.quiz-reccomended-moveset", toggleUseOnlyReccomendedMoveset);
+				$("body").on("change", "#quiz-omt-guess", checkAnswer)
 
-				pokeSearch.setBattle(battle);
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -58,14 +59,25 @@ var InterfaceMaster = (function () {
 
 			function selectTopRankings(e){
 				var selectNumberTopPokemons = $(".top-ranking-select option:selected").val();
-				numberTopPokemons = selectNumberTopPokemons
+				numberTopPokemons = selectNumberTopPokemons				
+				resetQuiz()
+				self.displayRankings(self.category, self.cp, self.cup);
 			}
 
 			// Toggle use only reccomended moveset
 
-			function toggleUseOnlyReccomendedMoveset(e){
+			function toggleUseOnlyReccomendedMoveset(){
 				useOnlyReccomendedMoveset = !useOnlyReccomendedMoveset
-				window.localStorage.setItem("useOnlyReccomendedMoveset", useOnlyReccomendedMoveset)
+				window.localStorage.setItem("quiz_omt_useOnlyReccomendedMoveset", useOnlyReccomendedMoveset)
+				updateReccomendedMovesetCheckbox()
+			}
+
+			function updateReccomendedMovesetCheckbox(){
+				if(!useOnlyReccomendedMoveset){
+					$(".check.quiz-reccomended-moveset").removeClass("on");
+				}else{
+					$(".check.quiz-reccomended-moveset").addClass("on");
+				}
 			}
 
 			// Grabs ranking data from the Game Master
@@ -152,49 +164,43 @@ var InterfaceMaster = (function () {
 				data = rankings;
 				this.rankings = rankings;
 
+				// Load meta group
+				var metaKey = $(".format-select option:selected").attr("meta-group");
+
+				if(! gm.groups[metaKey]){
+					runningResults = true;
+					gm.loadGroupData(self, metaKey, data);
+					return false;
+				} else{
+					metaGroupData = gm.groups[metaKey];
+					//Add moveset field, needed to uniform to ranking list
+					metaGroupData.forEach(r => {
+						r.moveset = [r.fastMove, ...r.chargedMoves];
+					});
+				}
+
 				$(".section.white .opponents .quiz-container").html('');
 				$(".section.white .yours .quiz-container").html('');
 				$(".loading").hide();
 
-				if(numberTopPokemons == 'ALL'){
-					realNumberTopPokemons = rankings.length
-				} else {
-					realNumberTopPokemons = numberTopPokemons;
-				}
+				self.displayQuestion()
 
-				// Random index for "yours"
-				this.quizRankingIndexYours = Math.floor(Math.random() * realNumberTopPokemons);
+				// Poi chiama la funzione finale
+				self.completeRankingDisplay();
+			}
 
-				// Random index for "opponents", different from "yours"
+			this.displayQuestion = function(){
+				let questionKey;
+				//Avoid infinite loops
+				let questionsPicked = 0;
+				//Pick a new question that hasn't been correctly answered yet
 				do {
-				this.quizRankingIndexOpponents = Math.floor(Math.random() * realNumberTopPokemons);
-				} while (this.quizRankingIndexOpponents === this.quizRankingIndexYours);
-				
-				// Create your pokemon
-				this.yourPokemon = new Pokemon(rankings[this.quizRankingIndexYours].speciesId, 0, battle);
-				this.yourPokemon.initialize(true);
-
-				// Pick the fast moves
-				if(useOnlyReccomendedMoveset){
-					this.yourPokemon.selectMove("fast", rankings[this.quizRankingIndexYours].moveset[0])
-				} else {
-					// Pick among all available moves
-					fastMoveIndex = Math.floor(Math.random() * this.yourPokemon.fastMovePool.length)
-					this.yourPokemon.selectMove("fast", this.yourPokemon.fastMovePool[fastMoveIndex].moveId)
-				}
-				
-				// Create opponent's pokemon
-				this.opponentsPokemon = new Pokemon(rankings[this.quizRankingIndexOpponents].speciesId, 0, battle);
-				this.opponentsPokemon.initialize(true);
-				
-				// Pick the fast moves
-				if(useOnlyReccomendedMoveset){
-					this.opponentsPokemon.selectMove("fast", rankings[this.quizRankingIndexOpponents].moveset[0])
-				} else {
-					// Pick among all available moves
-					fastMoveIndex = Math.floor(Math.random() * this.opponentsPokemon.fastMovePool.length)
-					this.opponentsPokemon.selectMove("fast", this.opponentsPokemon.fastMovePool[fastMoveIndex].moveId)
-				}
+					self.pickQuestion()
+					questionsPicked++;
+					questionKey = getQuestionKey(this.yourPokemon, this.opponentsPokemon);
+				} while (questionKey in this.questionAnswers &&
+						 this.questionAnswers[questionKey] === true &&
+						 questionsPicked < 10000)
 
 				try {
 					self.displayRankingEntry(this.yourPokemon, true);
@@ -207,10 +213,120 @@ var InterfaceMaster = (function () {
 					console.error(this.opponentsPokemon.speciesId + " could not be displayed", err);
 				}
 				fastMoveTiming(this.yourPokemon, this.opponentsPokemon)
+				repopulateSelect(optimalTimes)
+				updateLink()
+			}
 
-				// Poi chiama la funzione finale
-				self.completeRankingDisplay();
-				numberAskedQuestions++
+			function repopulateSelect(correctAnswer) {
+				const $select = $('#quiz-omt-guess');
+				let correctAnswerString = correctAnswer.join(',');
+				if(correctAnswerString==''){
+					correctAnswerString = 'No optimal timing possible'
+				}
+
+				// Start with your predefined options
+				let options = ['1,3,5','1,4,7','1,5,9','2,5,8','2,7,12','3,8,13','4,9,14','No optimal timing possible'];
+
+				// If the correct answer isn't already in the list, add it
+				if (!options.includes(correctAnswerString)) {
+					options.push(correctAnswerString);
+				}
+
+				// Sort (keep "No optimal timing possible" at the top if desired)
+				options = options.filter(o => o !== 'No optimal timing possible').sort((a,b) => {
+					// optional: natural numeric sort by first number
+					const aFirst = parseInt(a.split(',')[0]);
+					const bFirst = parseInt(b.split(',')[0]);
+					return aFirst - bFirst;
+				});
+
+				// Add back the special option on top
+				options.unshift('No optimal timing possible');
+
+				// Clear and rebuild select
+				$select.empty();
+				$select.append('<option value="" disabled selected>-- Choose --</option>');
+				options.forEach(val => {
+					$select.append(`<option value="${val}">${val}</option>`);
+				});
+			}
+
+
+			function updateLink(){
+				const pokemon = self.yourPokemon
+				const opponent = self.opponentsPokemon
+
+				var pokeMoveStr = pokemon.generateURLMoveStr();
+
+				var battleLink = host+"battle/"+self.cp+"/"+pokemon.aliasId+"/"+opponent.aliasId+"/11/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
+
+				// Append energy settings
+				battleLink += pokemon.stats.hp + "-" + opponent.stats.hp + "/";
+
+				battleLink += "0";
+				battleLink += "-";
+				battleLink += "0";
+
+				battleLink += "/";
+				
+				
+				const newPath = battleLink; 
+				const newText = `See ${pokemon.speciesName} vs ${opponent.speciesName} matchup →`;
+				const root = $(".quiz-link-title").data("webroot");
+
+				$(".quiz-link-title")
+					.attr("href", root + newPath)
+					.text(newText);
+			}
+
+			this.pickQuestion = function(){
+				let pokemonSet;
+				let realNumberTopPokemons;
+				if(numberTopPokemons.toUpperCase() == 'META'){
+					realNumberTopPokemons = metaGroupData.length
+					pokemonSet = metaGroupData
+				}
+				else if(numberTopPokemons == 'ALL'){
+					realNumberTopPokemons = rankings.length
+					pokemonSet = this.rankings
+				} else {
+					realNumberTopPokemons = Math.min(numberTopPokemons, this.rankings.length);
+					pokemonSet = this.rankings
+				}
+				
+				// Random index for "yours"
+				this.quizRankingIndexYours = Math.floor(Math.random() * realNumberTopPokemons);
+
+				// Random index for "opponents", different from "yours"
+				do {
+				this.quizRankingIndexOpponents = Math.floor(Math.random() * realNumberTopPokemons);
+				} while (this.quizRankingIndexOpponents === this.quizRankingIndexYours);
+				
+				// Create your pokemon
+				this.yourPokemon = new Pokemon(pokemonSet[this.quizRankingIndexYours].speciesId, 0, battle);
+				this.yourPokemon.initialize(true);
+
+				// Pick the fast moves
+				if(useOnlyReccomendedMoveset){
+					this.yourPokemon.selectMove("fast", pokemonSet[this.quizRankingIndexYours].moveset[0])
+				} else {
+					// Pick among all available moves
+					fastMoveIndex = Math.floor(Math.random() * this.yourPokemon.fastMovePool.length)
+					this.yourPokemon.selectMove("fast", this.yourPokemon.fastMovePool[fastMoveIndex].moveId)
+				}
+				
+				// Create opponent's pokemon
+				this.opponentsPokemon = new Pokemon(pokemonSet[this.quizRankingIndexOpponents].speciesId, 0, battle);
+				this.opponentsPokemon.initialize(true);
+				
+				// Pick the fast moves
+				if(useOnlyReccomendedMoveset){
+					this.opponentsPokemon.selectMove("fast", pokemonSet[this.quizRankingIndexOpponents].moveset[0])
+				} else {
+					// Pick among all available moves
+					fastMoveIndex = Math.floor(Math.random() * this.opponentsPokemon.fastMovePool.length)
+					this.opponentsPokemon.selectMove("fast", this.opponentsPokemon.fastMovePool[fastMoveIndex].moveId)
+				}
 			}
 
 			this.displayRankingEntry = function(pokemon, isYours){
@@ -252,8 +368,8 @@ var InterfaceMaster = (function () {
 				$(".optimal-timing-section .timeline").html("");
 
 				var pokemon = [yourPokemon, opponentsPokemon]
-				$(".quiz-feedback-explanation .name-attacker").html(pokemon[0].speciesName);
-				$(".quiz-feedback-explanation .name-defender").html(pokemon[1].speciesName);
+				$(".quiz-feedback-container .name-attacker").html(pokemon[0].speciesName);
+				$(".quiz-feedback-container .name-defender").html(pokemon[1].speciesName);
 
 				var targetCooldown = 500;
 				var startCooldown = pokemon[0].startCooldown - 500;
@@ -348,7 +464,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Add an empty chunk at the end for a Charged Move space
-				$(".quiz-feedback-explanation p").hide();
+				$(".quiz-feedback-container p").hide();
 
 				if(targetCooldown > 0){
 					$fastItem = $('<div class="item fast throw '+pokemon[0].fastMove.type+'"></div>');
@@ -358,16 +474,16 @@ var InterfaceMaster = (function () {
 					}
 					$(".optimal-timing-section .timeline").eq(0).append($fastItem);
 
-					$(".quiz-feedback-explanation .optimal-1").html(optimalTimes[0]);
-					$(".quiz-feedback-explanation .optimal-2").html(optimalTimes[1]);
-					$(".quiz-feedback-explanation .optimal-3").html(optimalTimes[2]);
+					$(".quiz-feedback-container .optimal-1").html(optimalTimes[0]);
+					$(".quiz-feedback-container .optimal-2").html(optimalTimes[1]);
+					$(".quiz-feedback-container .optimal-3").html(optimalTimes[2]);
 
-					$(".quiz-feedback-explanation p.timing-most-optimal").show();
+					$(".quiz-feedback-container p.timing-most-optimal").show();
 				} else if(pokemon[0].startCooldown == 1000 && pokemon[1].startCooldown == 0 && pokemon[0].fastMove.cooldown == pokemon[1].fastMove.cooldown
 				&& pokemon[0].fastMove.cooldown != 500){
-					$(".quiz-feedback-explanation p.timing-offset").show();
+					$(".quiz-feedback-container p.timing-offset").show();
 				} else{
-					$(".quiz-feedback-explanation p.timing-none").show();
+					$(".quiz-feedback-container p.timing-none").show();
 				}
 
 				for(i = 0; i < opponentFastCount; i++){
@@ -460,15 +576,6 @@ var InterfaceMaster = (function () {
 						}
 					}
 				}
-
-				// Load data via existing change function
-
-				var cp = battle.getCP();
-				var category = $(".category-select option:selected").val();
-				var cup = battle.getCup().name;
-
-				$(".format-select option[value=\""+cp+"\"][cup=\""+cup+"\"]").prop("selected","selected");
-
 				self.displayRankings(category, cp, cup, null);
 			}
 
@@ -524,52 +631,69 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the cup select
 
 			function selectFormat(e){
-				var cp = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
+				self.cp = $(".format-select option:selected").val();
+				self.cup = $(".format-select option:selected").attr("cup");
 				
-				category = "overall";
-				
-				self.displayRankings(category, cp, cup);
+				self.category = "overall";
+
+				resetQuiz()
+				self.displayRankings(self.category, self.cp, self.cup);
 			}
 
-			function nextQuestion(){
+			function resetQuiz(){
+				hideAnswer()
+				self.questionAnswers = {}
+				updateScore()
+			}
+
+			function hideAnswer(){
 				$(".quiz-feedback-header").addClass("hidden")
 				$(".quiz-feedback").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
+				$(".quiz-link-title-container").addClass("hidden")
+				$(".optimal-timing-section").addClass("hidden")
 				$("details").removeAttr("open");
+			}
+
+			function nextQuestion(){
+				hideAnswer()
 				self.displayRankingData(self.rankings)
+				$("#quiz-omt-guess").val("");
 			}
 
 			function checkAnswer() {
 				var quizAnswerInputValue = $(".quiz-answer-input option:selected").val();
+				if(quizAnswerInputValue == ''){
+					return
+				}
 				result = false
 				trials++
 				if((optimalTimes.length == 0 && quizAnswerInputValue == 'No optimal timing possible') || 
 					optimalTimes.join(",") == quizAnswerInputValue){
 					result = true
 				}
-				if(result && trials == 1){
-					numberCorrectAnswers++
-				}
 				
 				// Show feedback
 				$(".quiz-feedback-header").removeClass("hidden");
+				$(".quiz-link-title-container").removeClass("hidden")
+				$(".optimal-timing-section").removeClass("hidden")
 				if(!result){
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-correct")
 						.addClass("feedback-wrong")
-						.text("❌ " + quizAnswerInputValue + " is not the correct answer, try again!");
+						.text("❌ " + quizAnswerInputValue + " is not the correct answer");
 				} else {
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-wrong")
 						.addClass("feedback-correct")
 						.text("✅ " + quizAnswerInputValue + " is the correct answer!");
-					$(".quiz-feedback-explanation").removeClass("hidden");
 				}
+				//Show answer in any case
+				$(".quiz-feedback-explanation").removeClass("hidden");
 
-				updateScore()
 				updateAnswersHistory(self.yourPokemon, self.opponentsPokemon, result)
+				updateScore()
 			}
 
 			function updateAnswersHistory(yourPokemon, opponentsPokemon, result){
@@ -577,17 +701,24 @@ var InterfaceMaster = (function () {
 				if(trials > 1){
 					result = false
 				}
-				questionKey = yourPokemon.speciesId + '|' + yourPokemon.fastMove.moveId + '|' + opponentsPokemon.speciesId + '|' + opponentsPokemon.fastMove.moveId 
+				questionKey = getQuestionKey(yourPokemon, opponentsPokemon)
 				self.questionAnswers[questionKey] = result
+			}
+
+			function getQuestionKey(yourPokemon, opponentsPokemon){
+				const questionKey = yourPokemon.speciesId + '|' + yourPokemon.fastMove.moveId + '|' + opponentsPokemon.speciesId + '|' + opponentsPokemon.fastMove.moveId 
+				return questionKey
 			}
 
 			function updateScore(){
 				// Select the quiz-score container
 				var $score = $(".quiz-score");
 
+				const answers = self.questionAnswers
+
 				// Update the current score
-				$score.children().eq(1).text(numberCorrectAnswers);
-				$score.children().eq(3).text(numberAskedQuestions);
+				$score.children().eq(1).text(Object.values(answers).filter(value => value === true).length);
+				$score.children().eq(3).text(Object.keys(answers).length);
 			}
 		};
         return object;

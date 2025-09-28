@@ -12,8 +12,6 @@ var InterfaceMaster = (function () {
 			var self = this;
 			var gm = GameMaster.getInstance();
 			var battle = new Battle();
-			var numberAskedQuestions = 0;
-			var numberCorrectAnswers = 0;
 			var chargedMove;
 			var fastMove;
 			var useOnlyReccomendedMoveset = true;
@@ -23,25 +21,27 @@ var InterfaceMaster = (function () {
 			this.questionAnswers = {}
 
 			// Show useRecc toggle if previously set
-			if(window.localStorage.getItem("useOnlyReccomendedMoveset") == "false"){
-				$(".check.quiz-reccomended-moveset").removeClass("on");
+			if(window.localStorage.getItem("quiz_mc_useOnlyReccomendedMoveset") == "false"){
 				useOnlyReccomendedMoveset = false;
+				updateReccomendedMovesetCheckbox()
 			}
 
 			this.init = function(){
+				this.category = 'overall'
+				this.cp = '1500'
+				this.cup = 'all'
+
 				if(! get){
-					this.displayRankings("overall","1500","all");
+					this.displayRankings(this.category,this.cp,this.cup);
 				} else{
 					this.loadGetData();
 				}
 
 				$(".format-select").on("change", selectFormat);
 				$(".top-ranking-select").on("change", selectTopRankings);
-				$("body").on("click", ".quiz-check-btn", checkAnswer);
+				$("body").on("change", "#quiz-mc-guess", checkAnswer)
 				$("body").on("click", ".quiz-next-btn", nextQuestion);
 				$("body").on("click", ".check.quiz-reccomended-moveset", toggleUseOnlyReccomendedMoveset);
-
-				pokeSearch.setBattle(battle);
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -57,12 +57,23 @@ var InterfaceMaster = (function () {
 			function selectTopRankings(e){
 				var selectNumberTopPokemons = $(".top-ranking-select option:selected").val();
 				numberTopPokemons = selectNumberTopPokemons
+				resetQuiz()
+				self.displayRankings(self.category, self.cp, self.cup);
 			}
 			// Toggle use only reccomended moveset
 
-			function toggleUseOnlyReccomendedMoveset(e){
+			function toggleUseOnlyReccomendedMoveset(){
 				useOnlyReccomendedMoveset = !useOnlyReccomendedMoveset
-				window.localStorage.setItem("useOnlyReccomendedMoveset", useOnlyReccomendedMoveset)
+				window.localStorage.setItem("quiz_mc_useOnlyReccomendedMoveset", useOnlyReccomendedMoveset)
+				updateReccomendedMovesetCheckbox()
+			}
+
+			function updateReccomendedMovesetCheckbox(){
+				if(!useOnlyReccomendedMoveset){
+					$(".check.quiz-reccomended-moveset").removeClass("on");
+				}else{
+					$(".check.quiz-reccomended-moveset").addClass("on");
+				}
 			}
 
 			// Grabs ranking data from the Game Master
@@ -100,36 +111,45 @@ var InterfaceMaster = (function () {
 				data = rankings;
 				this.rankings = rankings;
 
+				// Load meta group
+				var metaKey = $(".format-select option:selected").attr("meta-group");
+
+				if(! gm.groups[metaKey]){
+					runningResults = true;
+					gm.loadGroupData(self, metaKey, data);
+					return false;
+				} else{
+					metaGroupData = gm.groups[metaKey];
+					//Add moveset field, needed to uniform to ranking list
+					metaGroupData.forEach(r => {
+						r.moveset = [r.fastMove, ...r.chargedMoves];
+					});
+				}
+
 				$(".section.white > .quiz-container").html('');
 
 				$(".loading").hide();
 
-				var i = 0;
-				var rankingDisplayIncrement = 15;
-
-				if(settings.performanceMode){
-					rankingDisplayIncrement = 5;
-				}
-
-				if(numberTopPokemons == 'ALL'){
-					this.quiz_ranking_index = Math.floor(Math.random() * rankings.length);
-				} else {
-					this.quiz_ranking_index = Math.floor(Math.random() * numberTopPokemons);
-				}
-				// Mostra solo il primo elemento della lista rankings
-				try {
-					self.displayRankingEntry(rankings[this.quiz_ranking_index], this.quiz_ranking_index);
-				} catch (err) {
-					console.error(rankings[this.quiz_ranking_index].speciesId + " could not be displayed", err);
-				}
-
-
+				self.displayRankingEntry();
 				// Poi chiama la funzione finale
 				self.completeRankingDisplay();
-				numberAskedQuestions++
 			}
 
-			this.displayRankingEntry = function(r, index){
+			this.pickQuestion = function(){
+				let r;
+				//select pokemon
+				if(numberTopPokemons.toUpperCase() == 'META'){
+					this.quiz_ranking_index = Math.floor(Math.random() * metaGroupData.length);
+					r = metaGroupData[this.quiz_ranking_index];
+				} else if(numberTopPokemons.toUpperCase() == 'ALL') {
+					this.quiz_ranking_index = Math.floor(Math.random() * rankings.length);
+					r = this.rankings[this.quiz_ranking_index];
+				} else {
+					this.quiz_ranking_index = Math.floor(Math.random() * numberTopPokemons);
+					r = this.rankings[this.quiz_ranking_index];
+				}
+
+				//pick moves
 				var pokemon = new Pokemon(r.speciesId, 0, battle);
 				this.pokemon = pokemon;
 
@@ -159,7 +179,28 @@ var InterfaceMaster = (function () {
 					this.fastMove = pokemon.fastMovePool[fastMoveIndex]
 				}
 				this.chargedMove = pokemon.chargedMoves[chargedMoveIndex]
+			}
 
+			this.displayRankingEntry = function(){
+				let questionKey;
+				//Avoid infinite loops
+				let questionsPicked = 0;
+				//Pick a new question that hasn't been correctly answered yet
+				do {
+					self.pickQuestion()
+					questionsPicked++;
+					questionKey = getQuestionKey(this.pokemon, this.fastMove, this.chargedMove);
+				} while (questionKey in this.questionAnswers &&
+						 this.questionAnswers[questionKey] === true &&
+						 questionsPicked < 10000)
+				
+				// Calculate answer
+				this.numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
+				var correctAnswer = this.numberOfMoves[0]
+				// Populate the selector
+				repopulateSelect(correctAnswer)
+
+				const pokemon = this.pokemon
 				// Show the pokemon details
 				var $el = $("<div class=\"rank typed-ranking quiz " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
 					"<div class=\"pokemon-info\">" +
@@ -189,6 +230,48 @@ var InterfaceMaster = (function () {
 				$(".section.white > .quiz-container").append($el);
 
 				addHintMoveDetails()
+				updateLink()
+			}
+
+			function repopulateSelect(correctAnswer) {
+				const $select = $('#quiz-mc-guess');
+				const min = 0;
+
+				// Decide how many before and after (1 to 6 each)
+				const beforeCount = Math.min(3, Math.floor(Math.random() * 6) + 1);
+				const afterCount = Math.min(3, Math.floor(Math.random() * 6) + 1);
+
+				// Build list of numbers before and after (clamped to range)
+				const before = [];
+				for (let i = correctAnswer - 1; i >= min && before.length < beforeCount; i--) {
+					before.unshift(i); // unshift so they stay in ascending order
+				}
+
+				const after = [];
+				for (let i = correctAnswer + 1; after.length < afterCount; i++) {
+					after.push(i);
+				}
+
+				// Combine them with the correct answer in the middle
+				const allOptions = [...before, correctAnswer, ...after];
+
+				// Clear and rebuild select
+				$select.empty();
+				$select.append('<option value="" disabled selected>-- Choose --</option>');
+				allOptions.forEach(num => {
+					$select.append(`<option value="${num}">${num}</option>`);
+				});
+			}
+
+
+			function updateLink(){
+				const newPath = `rankings/${self.cup}/${self.cp}/${self.category}/${self.pokemon.speciesId}`; 
+				const newText = `See ${self.pokemon.speciesName} ranking →`;
+				const root = $(".quiz-link-title").data("webroot");
+
+				$(".quiz-link-title")
+					.attr("href", root + newPath)
+					.text(newText);
 			}
 
 			this.completeRankingDisplay = function(){
@@ -392,60 +475,73 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the cup select
 
 			function selectFormat(e){
-				var cp = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
-				var category = $(".category-select option:selected").val();
-				var sort = $(".category-select option:selected").attr("sort");
+				self.cp = $(".format-select option:selected").val();
+				self.cup = $(".format-select option:selected").attr("cup");
+				self.category = $(".category-select option:selected").val();
+				self.sort = $(".category-select option:selected").attr("sort");
 
-				if(! category){
-					category = "overall";
+				if(! self.category){
+					self.category = "overall";
 				}
 
-				if(cup == "custom"){
+				if(self.cup == "custom"){
 					window.location.href = webRoot+'custom-rankings/';
 					return;
 				}
-
-				self.displayRankings(category, cp, cup);
+ 
+				resetQuiz()
+				self.displayRankings(self.category, self.cp, self.cup);
 			}
 
-			function nextQuestion(){
+			function resetQuiz(){
+				hideAnswer()
+				self.questionAnswers = {}
+				updateScore()
+			}
+
+			function hideAnswer(){
 				$(".quiz-feedback-header").addClass("hidden")
 				$(".quiz-feedback").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
 				$(".quiz-feedback-explanation").addClass("hidden")
+				$(".quiz-link-title-container").addClass("hidden")
 				$("details").removeAttr("open");
+			}
+
+			function nextQuestion(){
+				hideAnswer()
 				self.displayRankingData(self.rankings)
+				$("#quiz-mc-guess").val("");
 			}
 
 			function checkAnswer() {
 				var quizAnswerInputValue = $(".quiz-answer-input option:selected").val();
-				var numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
-				trials++
-				result = quizAnswerInputValue == numberOfMoves[0]
-				if(result && trials == 1){
-					numberCorrectAnswers++
+				if(quizAnswerInputValue == ''){
+					return
 				}
-				
+				result = quizAnswerInputValue == self.numberOfMoves[0]
+				trials++
 				// Show feedback
 				$(".quiz-feedback-header").removeClass("hidden");
+				$(".quiz-link-title-container").removeClass("hidden")
 				if(!result){
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-correct")
 						.addClass("feedback-wrong")
-						.text("❌ " + quizAnswerInputValue + " is not the correct answer, try again!");
+						.text("❌ " + quizAnswerInputValue + " is not the correct answer");
 				} else {
 					$(".quiz-feedback")
 						.removeClass("hidden feedback-wrong")
 						.addClass("feedback-correct")
-						.text("✅ " + quizAnswerInputValue + " is the correct answer!");
-					$(".quiz-feedback-explanation").removeClass("hidden").text(
-							"The charging pattern is: " + numberOfMoves
-					);
+						.text("✅ " + quizAnswerInputValue + " is the correct answer");
 				}
+				//Show the correct answer in any case
+				$(".quiz-feedback-explanation")
+					.removeClass("hidden")
+					.html(`Charging pattern for <b>${fastMove.name}</b> into <b>${chargedMove.name}</b> is: ${self.numberOfMoves}`);
 
-				updateScore()
 				updateAnswersHistory(self.pokemon, fastMove, chargedMove, result)
+				updateScore()
 			}
 
 			function updateAnswersHistory(pokemon, fastMove, chargedMove, result){
@@ -453,17 +549,24 @@ var InterfaceMaster = (function () {
 				if(trials > 1){
 					result = false
 				}
-				questionKey = pokemon.speciesId + '|' + fastMove.moveId + '|' + chargedMove.moveId
+				const questionKey = getQuestionKey(pokemon, fastMove, chargedMove)
 				self.questionAnswers[questionKey] = result
+			}
+
+			function getQuestionKey(pokemon, fastMove, chargedMove){
+				const questionKey = pokemon.speciesId + '|' + fastMove.moveId + '|' + chargedMove.moveId
+				return questionKey
 			}
 
 			function updateScore(){
 				// Select the quiz-score container
 				var $score = $(".quiz-score");
 
+				const answers = self.questionAnswers
+
 				// Update the current score
-				$score.children().eq(1).text(numberCorrectAnswers);
-				$score.children().eq(3).text(numberAskedQuestions);
+				$score.children().eq(1).text(Object.values(answers).filter(value => value === true).length);
+				$score.children().eq(3).text(Object.keys(answers).length);
 			}
 		};
         return object;
