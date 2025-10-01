@@ -4,35 +4,6 @@
     "include": [],
     "exclude": [{
         "filterType": "id",
-        "values": ["garchomp_mega", "gardevoir_mega", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "rayquaza_mega", "salamence_mega", "swampert_mega", "tyranitar_mega"]
-    }],
-    "tierRules": {
-        "max": 11,
-        "floor": 0,
-        "tiers": [{
-            "points": 8,
-            "pokemon": ["scizor_mega","zacian_crowned_sword","zamazenta_crowned_shield"]
-        }, {
-            "points": 7,
-            "pokemon": ["aggron_mega", "eternatus", "gallade_mega", "kyurem_black", "kyurem_white","zygarde_complete"]
-        }, {
-            "points": 6,
-            "pokemon": ["charizard_mega_y", "gengar_mega"]
-        }, {
-            "points": 5,
-            "pokemon": ["blastoise_mega", "lunala", "necrozma_dusk_mane", "palkia_origin", "rhyperior"]
-        }, {
-            "points": 4,
-            "pokemon": ["dialga_origin", "heracross_mega", "ho_oh", "landorus_therian", "latias_mega", "meloetta_aria", "necrozma_dawn_wings", "solgaleo", "steelix_mega", "yveltal", "zacian_hero"]
-        }, {
-            "points": 3,
-            "pokemon": ["dialga", "giratina_altered", "kyogre", "lugia", "mewtwo", "moltres_galarian", "palkia", "urshifu_single_strike", "xerneas"]
-        }, {
-            "points": 2,
-            "pokemon": ["charizard_mega_x", "florges", "giratina_origin", "groudon", "heatran", "kangaskhan_mega", "keldeo_ordinary", "lucario_mega", "marshadow", "primarina", "reshiram", "slowbro_mega", "urshifu_rapid_strike", "zarude"]
-        }, {
-            "points": 1,
-            "pokemon": ["blaziken_mega", "dragapult", "dragonite", "enamorus_incarnate", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "kingambit", "kyurem", "melmetal", "metagross", "mew", "tapu_lele", "volcanion", "zapdos_galarian", "zekrom"]
-        }]
-    }
+        "values": ["eternatus","groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "latias_mega", "rayquaza_mega", "zacian_crowned_sword", "zamazenta_crowned_shield"]
+    }]
 }

@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-09-29 19:14:52",
+    "timestamp": "2025-10-01 22:12:39",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -143,47 +143,9 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["garchomp_mega", "gardevoir_mega", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "rayquaza_mega", "salamence_mega", "swampert_mega", "tyranitar_mega"]
+                    "values": ["eternatus", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "latias_mega", "rayquaza_mega", "zacian_crowned_sword", "zamazenta_crowned_shield"]
                 }
-            ],
-            "tierRules": {
-                "max": 11,
-                "floor": 0,
-                "tiers": [
-                    {
-                        "points": 8,
-                        "pokemon": ["scizor_mega", "zacian_crowned_sword", "zamazenta_crowned_shield"]
-                    },
-                    {
-                        "points": 7,
-                        "pokemon": ["aggron_mega", "eternatus", "gallade_mega", "kyurem_black", "kyurem_white", "zygarde_complete"]
-                    },
-                    {
-                        "points": 6,
-                        "pokemon": ["charizard_mega_y", "gengar_mega"]
-                    },
-                    {
-                        "points": 5,
-                        "pokemon": ["blastoise_mega", "lunala", "necrozma_dusk_mane", "palkia_origin", "rhyperior"]
-                    },
-                    {
-                        "points": 4,
-                        "pokemon": ["dialga_origin", "heracross_mega", "ho_oh", "landorus_therian", "latias_mega", "meloetta_aria", "necrozma_dawn_wings", "solgaleo", "steelix_mega", "yveltal", "zacian_hero"]
-                    },
-                    {
-                        "points": 3,
-                        "pokemon": ["dialga", "giratina_altered", "kyogre", "lugia", "mewtwo", "moltres_galarian", "palkia", "urshifu_single_strike", "xerneas"]
-                    },
-                    {
-                        "points": 2,
-                        "pokemon": ["charizard_mega_x", "florges", "giratina_origin", "groudon", "heatran", "kangaskhan_mega", "keldeo_ordinary", "lucario_mega", "marshadow", "primarina", "reshiram", "slowbro_mega", "urshifu_rapid_strike", "zarude"]
-                    },
-                    {
-                        "points": 1,
-                        "pokemon": ["blaziken_mega", "dragapult", "dragonite", "enamorus_incarnate", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "kingambit", "kyurem", "melmetal", "metagross", "mew", "tapu_lele", "volcanion", "zapdos_galarian", "zekrom"]
-                    }
-                ]
-            }
+            ]
         },
         {
             "name": "battlefrontierultra",
@@ -192,7 +154,39 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["feraligatr", "tentacruel", "moltres_galarian", "dusknoir", "forretress", "lickilicky", "runerigus", "talonflame", "tinkaton", "giratina_altered_shadow"]
+                    "values": []
+                }
+            ]
+        },
+        {
+            "name": "calamity",
+            "title": "Calamity Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["flying", "fire", "poison", "normal"]
+                },
+                {
+                    "filterType": "id",
+                    "values": []
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["mega", "shadow", "legendary"]
+                },
+                {
+                    "filterType": "type",
+                    "values": ["rock", "ground", "water", "electric", "steel", "dark"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["dunsparce", "lickilicky", "miltank", "altaria", "dragalge", "turtonator", "spinda", "fletchinder", "rufflet", "talonflame", "oranguru", "chansey", "blissey", "wigglytuff", "furret", "dudunsparce"]
+                },
+                {
+                    "filterType": "move",
+                    "values": ["MUD_SLAP"]
                 }
             ]
         },
@@ -1111,19 +1105,10 @@
             "showMeta": true
         },
         {
-            "title": "Battle Frontier (Aurora)",
-            "cup": "aurora",
+            "title": "Battle Frontier (Calamity)",
+            "cup": "calamity",
             "cp": 1500,
-            "meta": "aurora",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true
-        },
-        {
-            "title": "Battle Frontier (Onyx)",
-            "cup": "onyx",
-            "cp": 1500,
-            "meta": "onyx",
+            "meta": "calamity",
             "showCup": true,
             "showFormat": true,
             "showMeta": true

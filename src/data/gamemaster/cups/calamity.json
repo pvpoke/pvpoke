@@ -1,0 +1,24 @@
+{
+    "name": "calamity",
+    "title": "Calamity Cup",
+	"include": [{
+        "filterType": "type",
+        "values": ["flying","fire","poison","normal"]
+    },{
+        "filterType": "id",
+        "values": []
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega","shadow","legendary"]
+    }, {
+        "filterType": "type",
+        "values": ["rock","ground","water","electric","steel","dark"]
+    }, {
+        "filterType": "id",
+        "values": ["dunsparce","lickilicky","miltank","altaria","dragalge","turtonator","spinda","fletchinder","rufflet","talonflame","oranguru","chansey","blissey","wigglytuff","furret","dudunsparce"]
+    }, {
+        "filterType": "move",
+        "values": ["MUD_SLAP"]
+    }]
+}

@@ -87,25 +87,15 @@ $formats = array (
   ),
   6 => 
   array (
-    'title' => 'Battle Frontier (Aurora)',
-    'cup' => 'aurora',
+    'title' => 'Battle Frontier (Calamity)',
+    'cup' => 'calamity',
     'cp' => 1500,
-    'meta' => 'aurora',
+    'meta' => 'calamity',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   7 => 
-  array (
-    'title' => 'Battle Frontier (Onyx)',
-    'cup' => 'onyx',
-    'cp' => 1500,
-    'meta' => 'onyx',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  8 => 
   array (
     'title' => 'Battle Frontier (Ultra)',
     'cup' => 'battlefrontierultra',
@@ -115,7 +105,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  8 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -125,7 +115,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  9 => 
   array (
     'title' => 'Devon Metamorphosis Cup',
     'cup' => 'metamorphosis',
@@ -135,7 +125,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  10 => 
   array (
     'title' => 'Gymbreakers Pillar Cup Remix',
     'cup' => 'pillar3',
@@ -145,7 +135,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  12 => 
+  11 => 
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -155,7 +145,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  13 => 
+  12 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -165,7 +155,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  14 => 
+  13 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -175,7 +165,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  15 => 
+  14 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
