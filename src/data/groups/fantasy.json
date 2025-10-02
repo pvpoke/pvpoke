@@ -20,6 +20,11 @@
         "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
     },
     {
+        "speciesId": "carbink",
+        "fastMove": "ROCK_THROW",
+        "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
+    },
+    {
         "speciesId": "corviknight",
         "fastMove": "SAND_ATTACK",
         "chargedMoves": ["AIR_CUTTER", "IRON_HEAD"]
@@ -97,6 +102,11 @@
         "chargedMoves": ["DOUBLE_IRON_BASH", "SUPER_POWER"]
     },
     {
+        "speciesId": "perrserker",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["CLOSE_COMBAT", "TRAILBLAZE"]
+    },
+    {
         "speciesId": "registeel",
         "fastMove": "LOCK_ON",
         "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
@@ -160,13 +170,9 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "perrserker",
+        "speciesId": "giratina_altered_shadow",
         "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["CLOSE_COMBAT", "TRAILBLAZE"]
-    },
-    {
-        "speciesId": "carbink",
-        "fastMove": "ROCK_THROW",
-        "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
+        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"],
+        "shadowType": "shadow"
     }
 ]
