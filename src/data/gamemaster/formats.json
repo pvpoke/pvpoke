@@ -1,19 +1,5 @@
 [
 	{
-		"title": "Master Premier",
-		"cup": "premier",
-		"cp": 10000,
-		"meta": "premiermaster",
-		"showCup": true,
-		"showFormat": false,
-		"showMeta": true,
-		"hideRankings": true,
-		"rules": [
-			"No CP limit.",
-			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
-		]
-	},
-	{
 		"title": "P!P Championship Series",
 		"cup": "championshipseries",
 		"cp": 1500,
@@ -48,6 +34,19 @@
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.",
 			"The following Pokémon will not be allowed: Gligar, Galarian Stunfisk"
+		]
+	},
+	{
+		"title": "Master Premier",
+		"cup": "premier",
+		"cp": 10000,
+		"meta": "premiermaster",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"No CP limit.",
+			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
 		]
 	},
 	{

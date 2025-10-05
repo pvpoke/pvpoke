@@ -3,22 +3,6 @@
 $formats = array (
   0 => 
   array (
-    'title' => 'Master Premier',
-    'cup' => 'premier',
-    'cp' => 10000,
-    'meta' => 'premiermaster',
-    'showCup' => true,
-    'showFormat' => false,
-    'showMeta' => true,
-    'hideRankings' => true,
-    'rules' => 
-    array (
-      0 => 'No CP limit.',
-      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
-    ),
-  ),
-  1 => 
-  array (
     'title' => 'P!P Championship Series',
     'cup' => 'championshipseries',
     'cp' => 1500,
@@ -28,7 +12,7 @@ $formats = array (
     'showMeta' => true,
     'hideRankings' => true,
   ),
-  2 => 
+  1 => 
   array (
     'title' => 'Fantasy Cup',
     'cup' => 'fantasy',
@@ -43,7 +27,7 @@ $formats = array (
       1 => 'Only Dragon-, Steel-, and Fairy-type Pokémon are eligible.',
     ),
   ),
-  3 => 
+  2 => 
   array (
     'title' => 'Jungle Cup',
     'cup' => 'jungle',
@@ -57,6 +41,21 @@ $formats = array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
       1 => 'Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.',
       2 => 'The following Pokémon will not be allowed: Gligar, Galarian Stunfisk',
+    ),
+  ),
+  3 => 
+  array (
+    'title' => 'Master Premier',
+    'cup' => 'premier',
+    'cp' => 10000,
+    'meta' => 'premiermaster',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'No CP limit.',
+      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
   4 => 

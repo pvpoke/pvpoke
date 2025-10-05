@@ -19885,7 +19885,7 @@
             "hp": 190
         },
         "types": ["steel", "psychic"],
-        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER"],
+        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER", "SHADOW_CLAW"],
         "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
         "defaultIVs": {
             "cp500": [5, 9, 15, 15],
@@ -19894,7 +19894,7 @@
         },
         "level25CP": 2386,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["METEOR_MASH"],
+        "eliteMoves": ["METEOR_MASH", "SHADOW_CLAW"],
         "searchPriority": 4,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
@@ -19914,7 +19914,7 @@
             "hp": 190
         },
         "types": ["steel", "psychic"],
-        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER"],
+        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER", "SHADOW_CLAW"],
         "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
         "defaultIVs": {
             "cp500": [4, 8, 14, 14],
@@ -19923,7 +19923,7 @@
         },
         "level25CP": 2386,
         "tags": ["shadoweligible", "mega"],
-        "eliteMoves": ["METEOR_MASH"],
+        "eliteMoves": ["METEOR_MASH", "SHADOW_CLAW"],
         "searchPriority": 4,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
@@ -19943,7 +19943,7 @@
             "hp": 190
         },
         "types": ["steel", "psychic"],
-        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER"],
+        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER", "SHADOW_CLAW"],
         "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
         "defaultIVs": {
             "cp500": [5, 9, 15, 15],
@@ -19951,7 +19951,7 @@
             "cp2500": [24, 5, 14, 15]
         },
         "tags": ["shadow"],
-        "eliteMoves": ["METEOR_MASH"],
+        "eliteMoves": ["METEOR_MASH", "SHADOW_CLAW"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
