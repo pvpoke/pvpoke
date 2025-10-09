@@ -110,6 +110,11 @@
         "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
     },
     {
+        "speciesId": "florges",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["TRAILBLAZE", "CHILLING_WATER"]
+    },
+    {
         "speciesId": "forretress",
         "fastMove": "BUG_BITE",
         "chargedMoves": ["ROCK_TOMB", "SAND_TOMB"]
@@ -219,10 +224,5 @@
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
-    },
-    {
-        "speciesId": "florges",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["MOONBLAST", "CHILLING_WATER"]
     }
 ]

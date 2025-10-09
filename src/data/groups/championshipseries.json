@@ -90,6 +90,11 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "florges",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["CHILLING_WATER", "TRAILBLAZE"]
+    },
+    {
         "speciesId": "forretress",
         "fastMove": "BUG_BITE",
         "chargedMoves": ["ROCK_TOMB", "SAND_TOMB"]
@@ -212,8 +217,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "florges",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["MOONBLAST", "CHILLING_WATER"]
+        "speciesId": "clodsire",
+        "fastMove": "POISON_STING",
+        "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
     }
 ]
