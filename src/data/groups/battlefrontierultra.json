@@ -3,14 +3,6 @@
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
 }, {
-    "speciesId": "bellibolt",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["PARABOLIC_CHARGE","ZAP_CANNON"]
-}, {
-    "speciesId": "bellibolt",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["PARABOLIC_CHARGE","ZAP_CANNON"]
-}, {
     "speciesId": "blastoise",
     "fastMove": "ROLLOUT",
     "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
@@ -31,18 +23,6 @@
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
 }, {
-    "speciesId": "corviknight",
-    "fastMove": "SAND_ATTACK",
-    "chargedMoves": ["AIR_CUTTER", "PAYBACK"]
-}, {
-    "speciesId": "cradily",
-    "fastMove": "ACID",
-    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
-}, {
-    "speciesId": "cradily",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
-}, {
     "speciesId": "cresselia",
     "fastMove": "CONFUSION",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -56,14 +36,6 @@
     "fastMove": "POISON_STING",
     "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
     "shadowType": "shadow"
-}, {
-    "speciesId": "dusknoir",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["SHADOW_PUNCH", "DYNAMIC_PUNCH"]
-}, {
-    "speciesId": "dusknoir_shadow",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["SHADOW_PUNCH", "DYNAMIC_PUNCH"]
 }, {
     "speciesId": "empoleon",
     "fastMove": "METAL_SOUND",
@@ -80,10 +52,6 @@
     "speciesId": "feraligatr_shadow",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
-}, {
-    "speciesId": "florges",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["CHILLING_WATER","MOONBLAST"]
 }, {
     "speciesId": "forretress",
     "fastMove": "BUG_BITE",
