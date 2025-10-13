@@ -94,6 +94,12 @@
         "chargedMoves": ["ROCK_TOMB", "SAND_TOMB"]
     },
     {
+        "speciesId": "forretress_shadow",
+        "fastMove": "BUG_BITE",
+        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "furret",
         "fastMove": "SUCKER_PUNCH",
         "chargedMoves": ["SWIFT", "TRAILBLAZE"]
@@ -125,6 +131,11 @@
         "chargedMoves": ["BRUTAL_SWING", "SLUDGE_BOMB"]
     },
     {
+        "speciesId": "lapras",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
+    },
+    {
         "speciesId": "marowak_shadow",
         "fastMove": "MUD_SLAP",
         "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
@@ -134,11 +145,6 @@
         "speciesId": "moltres_galarian",
         "fastMove": "SUCKER_PUNCH",
         "chargedMoves": ["FLY", "BRAVE_BIRD"]
-    },
-    {
-        "speciesId": "moltres_galarian",
-        "fastMove": "SUCKER_PUNCH",
-        "chargedMoves": ["FLY", "PAYBACK"]
     },
     {
         "speciesId": "murkrow",
@@ -198,16 +204,5 @@
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
-    },
-    {
-        "speciesId": "forretress_shadow",
-        "fastMove": "BUG_BITE",
-        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "lapras",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
     }
 ]
