@@ -10,19 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Fantasy Cup",
-		"cup": "fantasy",
-		"cp": 1500,
-		"meta": "fantasy",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "Jungle Cup",
 		"cup": "jungle",
 		"cp": 1500,
@@ -47,6 +34,19 @@
 		"rules": [
 			"No CP limit.",
 			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
+		]
+	},
+	{
+		"title": "Halloween Cup",
+		"cup": "halloween",
+		"cp": 1500,
+		"meta": "halloween",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Poison-, Bug-, Ghost-, Dark-, and Fairy-type Pokémon are eligible."
 		]
 	},
 	{

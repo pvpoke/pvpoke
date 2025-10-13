@@ -39,7 +39,7 @@
     {
         "speciesId": "clodsire",
         "fastMove": "POISON_STING",
-        "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE"]
+        "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
     },
     {
         "speciesId": "corsola_galarian",
@@ -65,12 +65,6 @@
         "speciesId": "diggersby",
         "fastMove": "QUICK_ATTACK",
         "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
-    },
-    {
-        "speciesId": "drapion_shadow",
-        "fastMove": "POISON_STING",
-        "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "dusclops",
@@ -131,11 +125,6 @@
         "chargedMoves": ["BRUTAL_SWING", "SLUDGE_BOMB"]
     },
     {
-        "speciesId": "lanturn",
-        "fastMove": "WATER_GUN",
-        "chargedMoves": ["SURF", "THUNDERBOLT"]
-    },
-    {
         "speciesId": "marowak_shadow",
         "fastMove": "MUD_SLAP",
         "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
@@ -155,12 +144,6 @@
         "speciesId": "murkrow",
         "fastMove": "PECK",
         "chargedMoves": ["DRILL_PECK", "FOUL_PLAY"]
-    },
-    {
-        "speciesId": "murkrow_shadow",
-        "fastMove": "PECK",
-        "chargedMoves": ["DRILL_PECK", "FOUL_PLAY"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "primeape",
@@ -217,8 +200,14 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "clodsire",
-        "fastMove": "POISON_STING",
-        "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+        "speciesId": "forretress_shadow",
+        "fastMove": "BUG_BITE",
+        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "lapras",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
     }
 ]
