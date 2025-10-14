@@ -38530,7 +38530,7 @@
         "released": true,
         "family": {
             "id": "FAMILY_APPLIN",
-            "evolutions": ["flapple", "appletun"]
+            "evolutions": ["flapple", "appletun", "dipplin"]
         }
     },
     {
@@ -43436,7 +43436,8 @@
         "released": true,
         "family": {
             "id": "FAMILY_APPLIN",
-            "parent": "applin"
+            "parent": "applin",
+            "evolutions": ["hydrapple"]
         }
     },
     {
