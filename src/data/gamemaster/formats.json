@@ -37,6 +37,19 @@
 		]
 	},
 	{
+		"title": "Great League Remix",
+		"cup": "remix",
+		"cp": 1500,
+		"meta": "remix",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"The following Pokémon will not be allowed: Blastoise, Primeape, Marowak, Azumarill, Dunsparce, Scizor, Galarian Corsola, Altaria, Cradily, Dusclops, Empoleon, Bastiodon, Gastrodon, Togekiss, Stunfisk, Talonflame, Dedenne, Corviknight, Annihilape"
+		]
+	},
+	{
 		"title": "Halloween Cup",
 		"cup": "halloween",
 		"cp": 1500,
