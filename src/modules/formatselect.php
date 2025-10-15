@@ -18,6 +18,11 @@
 				(formats[i].hideRankings || formats[i].cup == "custom")){
 				showFormat = false;
 			}
+
+			if(interfaceMaster.context == "quiz" && 
+				(formats[i].hideRankings || formats[i].cup == "custom")){
+				showFormat = false;
+			}
 			
 
 			if(showFormat){
