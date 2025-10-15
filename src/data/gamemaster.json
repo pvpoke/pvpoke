@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-10-15 01:00:24",
+    "timestamp": "2025-10-15 17:51:28",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -1106,10 +1106,9 @@
             "cup": "halloween",
             "cp": 1500,
             "meta": "halloween",
-            "showCup": false,
-            "showFormat": false,
-            "showMeta": false,
-            "hideRankings": true,
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Poison-,  Bug-,  Ghost-,  Dark-,  and Fairy-type Pokémon are eligible."]
         },
         {

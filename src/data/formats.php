@@ -64,10 +64,9 @@ $formats = array (
     'cup' => 'halloween',
     'cp' => 1500,
     'meta' => 'halloween',
-    'showCup' => false,
-    'showFormat' => false,
-    'showMeta' => false,
-    'hideRankings' => true,
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
     'rules' => 
     array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
