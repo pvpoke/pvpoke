@@ -1,10 +1,5 @@
 [
     {
-        "speciesId": "amoonguss",
-        "fastMove": "ASTONISH",
-        "chargedMoves": ["GRASS_KNOT", "FOUL_PLAY"]
-    },
-    {
         "speciesId": "carbink",
         "fastMove": "ROCK_THROW",
         "chargedMoves": ["POWER_GEM", "MOONBLAST"]
@@ -19,11 +14,6 @@
         "speciesId": "charjabug",
         "fastMove": "VOLT_SWITCH",
         "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
-    },
-    {
-        "speciesId": "chesnaught",
-        "fastMove": "VINE_WHIP",
-        "chargedMoves": ["FRENZY_PLANT", "SUPER_POWER"]
     },
     {
         "speciesId": "claydol",
@@ -148,20 +138,9 @@
         "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
     },
     {
-        "speciesId": "grumpig",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_BALL"]
-    },
-    {
         "speciesId": "guzzlord",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["BRUTAL_SWING", "SLUDGE_BOMB"]
-    },
-    {
-        "speciesId": "gyarados_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "jellicent",
@@ -169,24 +148,9 @@
         "chargedMoves": ["SURF", "SHADOW_BALL"]
     },
     {
-        "speciesId": "jirachi",
-        "fastMove": "CONFUSION",
-        "chargedMoves": ["DOOM_DESIRE", "AURA_SPHERE"]
-    },
-    {
         "speciesId": "kingdra",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["SWIFT", "OUTRAGE"]
-    },
-    {
-        "speciesId": "kommo_o",
-        "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["CLANGING_SCALES", "UPPER_HAND"]
-    },
-    {
-        "speciesId": "lanturn",
-        "fastMove": "WATER_GUN",
-        "chargedMoves": ["SURF", "THUNDERBOLT"]
     },
     {
         "speciesId": "lapras",
@@ -199,14 +163,20 @@
         "chargedMoves": ["SPARKLING_ARIA", "SKULL_BASH"]
     },
     {
-        "speciesId": "lickitung",
-        "fastMove": "LICK",
-        "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
-    },
-    {
         "speciesId": "malamar",
         "fastMove": "PSYWAVE",
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
+    },
+    {
+        "speciesId": "metang",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["PSYSHOCK", "GYRO_BALL"]
+    },
+    {
+        "speciesId": "metang_shadow",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["PSYSHOCK", "GYRO_BALL"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "moltres_galarian",
@@ -224,11 +194,6 @@
         "chargedMoves": ["DRILL_PECK", "FOUL_PLAY"]
     },
     {
-        "speciesId": "oranguru",
-        "fastMove": "CONFUSION",
-        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
-    },
-    {
         "speciesId": "pangoro",
         "fastMove": "KARATE_CHOP",
         "chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
@@ -238,11 +203,6 @@
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
         "shadowType": "shadow"
-    },
-    {
-        "speciesId": "regidrago",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["DRAGON_ENERGY", "HYPER_BEAM"]
     },
     {
         "speciesId": "sableye_shadow",
@@ -255,11 +215,6 @@
         "fastMove": "THUNDER_FANG",
         "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"],
         "shadowType": "shadow"
-    },
-    {
-        "speciesId": "swalot",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["SLUDGE", "ICE_BEAM"]
     },
     {
         "speciesId": "tinkaton",
@@ -277,25 +232,9 @@
         "chargedMoves": ["BRUTAL_SWING", "DRAGON_CLAW"]
     },
     {
-        "speciesId": "venusaur",
-        "fastMove": "VINE_WHIP",
-        "chargedMoves": ["FRENZY_PLANT", "SLUDGE"]
-    },
-    {
-        "speciesId": "venusaur_shadow",
-        "fastMove": "VINE_WHIP",
-        "chargedMoves": ["FRENZY_PLANT", "SLUDGE"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "weezing_galarian",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["SLUDGE", "BRUTAL_SWING"]
-    },
-    {
-        "speciesId": "weezing_galarian_shadow",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["SLUDGE", "BRUTAL_SWING"],
+        "speciesId": "typhlosion_shadow",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
         "shadowType": "shadow"
     },
     {
@@ -304,41 +243,28 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "zweilous",
+        "speciesId": "fearow",
+        "fastMove": "PECK",
+        "chargedMoves": ["DRILL_PECK", "DRILL_RUN"]
+    },
+    {
+        "speciesId": "sandslash_alolan",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
+    },
+    {
+        "speciesId": "dusknoir",
+        "fastMove": "ASTONISH",
+        "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_PUNCH"]
+    },
+    {
+        "speciesId": "quagsire",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"]
+    },
+    {
+        "speciesId": "regidrago",
         "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BODY_SLAM", "DARK_PULSE"]
-    },
-    {
-        "speciesId": "typhlosion_shadow",
-        "fastMove": "INCINERATE",
-        "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "torterra",
-        "fastMove": "MUD_SLAP",
-        "chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
-    },
-    {
-        "speciesId": "nidoqueen",
-        "fastMove": "MUD_SLAP",
-        "chargedMoves": ["STONE_EDGE", "POISON_FANG"]
-    },
-    {
-        "speciesId": "nidoqueen_shadow",
-        "fastMove": "MUD_SLAP",
-        "chargedMoves": ["STONE_EDGE", "POISON_FANG"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "metang",
-        "fastMove": "FURY_CUTTER",
-        "chargedMoves": ["PSYSHOCK", "GYRO_BALL"]
-    },
-    {
-        "speciesId": "metang_shadow",
-        "fastMove": "FURY_CUTTER",
-        "chargedMoves": ["PSYSHOCK", "GYRO_BALL"],
-        "shadowType": "shadow"
+        "chargedMoves": ["DRAGON_ENERGY", "HYPER_BEAM"]
     }
 ]

@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-10-15 17:51:28",
+    "timestamp": "2025-10-17 20:56:17",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -143,7 +143,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["eternatus", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "latias_mega", "rayquaza_mega", "zacian_crowned_sword", "zamazenta_crowned_shield", "metagross_mega", "palkia_origin", "groudon", "dialga_origin", "florges", "salamence_mega"]
+                    "values": ["eternatus", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "latias_mega", "rayquaza_mega", "zacian_crowned_sword", "zamazenta_crowned_shield", "metagross_mega", "kyurem_white", "palkia_origin", "reshiram", "swampert_mega", "groudon", "dialga_origin", "florges", "lugia", "necrozma_dusk_mane"]
                 }
             ]
         },
@@ -154,7 +154,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["bellibolt", "florges", "cradily", "corviknight", "dusknoir"]
+                    "values": ["togekiss", "bellibolt", "forretress", "moltres_galarian", "gastrodon", "lapras", "weezing_galarian"]
                 }
             ]
         },
