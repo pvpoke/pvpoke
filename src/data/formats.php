@@ -3,22 +3,6 @@
 $formats = array (
   0 => 
   array (
-    'title' => 'Master Premier',
-    'cup' => 'premier',
-    'cp' => 10000,
-    'meta' => 'premiermaster',
-    'showCup' => true,
-    'showFormat' => false,
-    'showMeta' => true,
-    'hideRankings' => true,
-    'rules' => 
-    array (
-      0 => 'No CP limit.',
-      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
-    ),
-  ),
-  1 => 
-  array (
     'title' => 'P!P Championship Series',
     'cup' => 'championshipseries',
     'cp' => 1500,
@@ -28,22 +12,7 @@ $formats = array (
     'showMeta' => true,
     'hideRankings' => true,
   ),
-  2 => 
-  array (
-    'title' => 'Fantasy Cup',
-    'cup' => 'fantasy',
-    'cp' => 1500,
-    'meta' => 'fantasy',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Dragon-, Steel-, and Fairy-type Pokémon are eligible.',
-    ),
-  ),
-  3 => 
+  1 => 
   array (
     'title' => 'Jungle Cup',
     'cup' => 'jungle',
@@ -59,7 +28,52 @@ $formats = array (
       2 => 'The following Pokémon will not be allowed: Gligar, Galarian Stunfisk',
     ),
   ),
+  2 => 
+  array (
+    'title' => 'Master Premier',
+    'cup' => 'premier',
+    'cp' => 10000,
+    'meta' => 'premiermaster',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'No CP limit.',
+      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
+    ),
+  ),
+  3 => 
+  array (
+    'title' => 'Great League Remix',
+    'cup' => 'remix',
+    'cp' => 1500,
+    'meta' => 'remix',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'The following Pokémon will not be allowed: Blastoise, Primeape, Marowak, Azumarill, Dunsparce, Scizor, Galarian Corsola, Altaria, Cradily, Dusclops, Empoleon, Bastiodon, Gastrodon, Togekiss, Stunfisk, Talonflame, Dedenne, Corviknight, Annihilape',
+    ),
+  ),
   4 => 
+  array (
+    'title' => 'Halloween Cup',
+    'cup' => 'halloween',
+    'cp' => 1500,
+    'meta' => 'halloween',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Poison-, Bug-, Ghost-, Dark-, and Fairy-type Pokémon are eligible.',
+    ),
+  ),
+  5 => 
   array (
     'title' => 'Mega Master League',
     'cup' => 'mega',
@@ -75,7 +89,7 @@ $formats = array (
       1 => 'Mega-Evolved Pokémon are allowed.',
     ),
   ),
-  5 => 
+  6 => 
   array (
     'title' => 'LAIC 2025 Championship Series Cup',
     'cup' => 'laic2025',
@@ -85,22 +99,12 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
-  array (
-    'title' => 'Battle Frontier (Aurora)',
-    'cup' => 'aurora',
-    'cp' => 1500,
-    'meta' => 'aurora',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
   7 => 
   array (
-    'title' => 'Battle Frontier (Onyx)',
-    'cup' => 'onyx',
+    'title' => 'Battle Frontier (Calamity)',
+    'cup' => 'calamity',
     'cp' => 1500,
-    'meta' => 'onyx',
+    'meta' => 'calamity',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,

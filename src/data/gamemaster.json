@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-09-27 15:37:13",
+    "timestamp": "2025-10-17 20:56:17",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -143,47 +143,9 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["garchomp_mega", "gardevoir_mega", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "rayquaza_mega", "salamence_mega", "swampert_mega", "tyranitar_mega"]
+                    "values": ["eternatus", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "latias_mega", "rayquaza_mega", "zacian_crowned_sword", "zamazenta_crowned_shield", "metagross_mega", "kyurem_white", "palkia_origin", "reshiram", "swampert_mega", "groudon", "dialga_origin", "florges", "lugia", "necrozma_dusk_mane"]
                 }
-            ],
-            "tierRules": {
-                "max": 11,
-                "floor": 0,
-                "tiers": [
-                    {
-                        "points": 8,
-                        "pokemon": ["scizor_mega", "zacian_crowned_sword", "zamazenta_crowned_shield"]
-                    },
-                    {
-                        "points": 7,
-                        "pokemon": ["aggron_mega", "eternatus", "gallade_mega", "kyurem_black", "kyurem_white", "zygarde_complete"]
-                    },
-                    {
-                        "points": 6,
-                        "pokemon": ["charizard_mega_y", "gengar_mega"]
-                    },
-                    {
-                        "points": 5,
-                        "pokemon": ["blastoise_mega", "lunala", "necrozma_dusk_mane", "palkia_origin", "rhyperior"]
-                    },
-                    {
-                        "points": 4,
-                        "pokemon": ["dialga_origin", "heracross_mega", "ho_oh", "landorus_therian", "latias_mega", "meloetta_aria", "necrozma_dawn_wings", "solgaleo", "steelix_mega", "yveltal", "zacian_hero"]
-                    },
-                    {
-                        "points": 3,
-                        "pokemon": ["dialga", "giratina_altered", "kyogre", "lugia", "mewtwo", "moltres_galarian", "palkia", "urshifu_single_strike", "xerneas"]
-                    },
-                    {
-                        "points": 2,
-                        "pokemon": ["charizard_mega_x", "florges", "giratina_origin", "groudon", "heatran", "kangaskhan_mega", "keldeo_ordinary", "lucario_mega", "marshadow", "primarina", "reshiram", "slowbro_mega", "urshifu_rapid_strike", "zarude"]
-                    },
-                    {
-                        "points": 1,
-                        "pokemon": ["blaziken_mega", "dragapult", "dragonite", "enamorus_incarnate", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "kingambit", "kyurem", "melmetal", "metagross", "mew", "tapu_lele", "volcanion", "zapdos_galarian", "zekrom"]
-                    }
-                ]
-            }
+            ]
         },
         {
             "name": "battlefrontierultra",
@@ -192,7 +154,39 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["feraligatr", "tentacruel", "moltres_galarian", "dusknoir", "forretress", "lickilicky", "runerigus", "talonflame", "tinkaton", "giratina_altered_shadow"]
+                    "values": ["togekiss", "bellibolt", "forretress", "moltres_galarian", "gastrodon", "lapras", "weezing_galarian"]
+                }
+            ]
+        },
+        {
+            "name": "calamity",
+            "title": "Calamity Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["flying", "fire", "poison", "normal"]
+                },
+                {
+                    "filterType": "id",
+                    "values": []
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["mega", "shadow", "legendary"]
+                },
+                {
+                    "filterType": "type",
+                    "values": ["rock", "ground", "water", "electric", "steel", "dark"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["dunsparce", "lickilicky", "miltank", "altaria", "dragalge", "turtonator", "spinda", "fletchinder", "rufflet", "talonflame", "oranguru", "chansey", "blissey", "wigglytuff", "furret", "dudunsparce"]
+                },
+                {
+                    "filterType": "move",
+                    "values": ["MUD_SLAP"]
                 }
             ]
         },
@@ -430,6 +424,24 @@
             "name": "gobattleleague",
             "title": "GO Battle League",
             "include": [],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["mega"]
+                }
+            ],
+            "partySize": 3,
+            "presetOnly": true
+        },
+        {
+            "name": "halloween",
+            "title": "Halloween Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["poison", "ghost", "bug", "dark", "fairy"]
+                }
+            ],
             "exclude": [
                 {
                     "filterType": "tag",
@@ -737,7 +749,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["blastoise", "wigglytuff", "marowak", "weezing_galarian", "lapras", "feraligatr", "azumarill", "jumpluff", "sableye", "cradily", "gastrodon", "drapion", "serperior", "mandibuzz", "talonflame", "malamar", "golisopod", "morpeko_full_belly", "annihilape", "clodsire"],
+                    "values": ["blastoise", "primeape", "marowak", "azumarill", "dunsparce", "scizor", "corsola_galarian", "altaria", "cradily", "dusclops", "empoleon", "bastiodon", "gastrodon", "togekiss", "stunfisk", "talonflame", "dedenne", "corviknight", "annihilape"],
                     "leagues": [1500]
                 },
                 {
@@ -1050,17 +1062,6 @@
     ],
     "formats": [
         {
-            "title": "Master Premier",
-            "cup": "premier",
-            "cp": 10000,
-            "meta": "premiermaster",
-            "showCup": true,
-            "showFormat": false,
-            "showMeta": true,
-            "hideRankings": true,
-            "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
-        },
-        {
             "title": "P!P Championship Series",
             "cup": "championshipseries",
             "cp": 1500,
@@ -1071,16 +1072,6 @@
             "hideRankings": true
         },
         {
-            "title": "Fantasy Cup",
-            "cup": "fantasy",
-            "cp": 1500,
-            "meta": "fantasy",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Dragon-,  Steel-,  and Fairy-type Pokémon are eligible."]
-        },
-        {
             "title": "Jungle Cup",
             "cup": "jungle",
             "cp": 1500,
@@ -1089,6 +1080,36 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Grass-,  Electric-,  Poison-,  Ground-,  Flying-,  Bug-,  and Dark-type Pokémon are eligible.", "The following Pokémon will not be allowed: Gligar,  Galarian Stunfisk"]
+        },
+        {
+            "title": "Master Premier",
+            "cup": "premier",
+            "cp": 10000,
+            "meta": "premiermaster",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
+        },
+        {
+            "title": "Great League Remix",
+            "cup": "remix",
+            "cp": 1500,
+            "meta": "remix",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "The following Pokémon will not be allowed: Blastoise,  Primeape,  Marowak,  Azumarill,  Dunsparce,  Scizor,  Galarian Corsola,  Altaria,  Cradily,  Dusclops,  Empoleon,  Bastiodon,  Gastrodon,  Togekiss,  Stunfisk,  Talonflame,  Dedenne,  Corviknight,  Annihilape"]
+        },
+        {
+            "title": "Halloween Cup",
+            "cup": "halloween",
+            "cp": 1500,
+            "meta": "halloween",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Poison-,  Bug-,  Ghost-,  Dark-,  and Fairy-type Pokémon are eligible."]
         },
         {
             "title": "Mega Master League",
@@ -1111,19 +1132,10 @@
             "showMeta": true
         },
         {
-            "title": "Battle Frontier (Aurora)",
-            "cup": "aurora",
+            "title": "Battle Frontier (Calamity)",
+            "cup": "calamity",
             "cp": 1500,
-            "meta": "aurora",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true
-        },
-        {
-            "title": "Battle Frontier (Onyx)",
-            "cup": "onyx",
-            "cp": 1500,
-            "meta": "onyx",
+            "meta": "calamity",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
@@ -21158,7 +21170,7 @@
                 "hp": 190
             },
             "types": ["steel", "psychic"],
-            "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER"],
+            "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER", "SHADOW_CLAW"],
             "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
             "defaultIVs": {
                 "cp500": [5, 9, 15, 15],
@@ -21167,7 +21179,7 @@
             },
             "level25CP": 2386,
             "tags": ["shadoweligible"],
-            "eliteMoves": ["METEOR_MASH"],
+            "eliteMoves": ["METEOR_MASH", "SHADOW_CLAW"],
             "searchPriority": 4,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
@@ -21187,7 +21199,7 @@
                 "hp": 190
             },
             "types": ["steel", "psychic"],
-            "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER"],
+            "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER", "SHADOW_CLAW"],
             "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
             "defaultIVs": {
                 "cp500": [4, 8, 14, 14],
@@ -21196,7 +21208,7 @@
             },
             "level25CP": 2386,
             "tags": ["shadoweligible", "mega"],
-            "eliteMoves": ["METEOR_MASH"],
+            "eliteMoves": ["METEOR_MASH", "SHADOW_CLAW"],
             "searchPriority": 4,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
@@ -21216,7 +21228,7 @@
                 "hp": 190
             },
             "types": ["steel", "psychic"],
-            "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER"],
+            "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT", "FURY_CUTTER", "SHADOW_CLAW"],
             "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
             "defaultIVs": {
                 "cp500": [5, 9, 15, 15],
@@ -21224,7 +21236,7 @@
                 "cp2500": [24, 5, 14, 15]
             },
             "tags": ["shadow"],
-            "eliteMoves": ["METEOR_MASH"],
+            "eliteMoves": ["METEOR_MASH", "SHADOW_CLAW"],
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true,
@@ -30809,7 +30821,7 @@
                 "hp": 242
             },
             "types": ["psychic", "none"],
-            "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
+            "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT", "CHARM"],
             "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "THUNDER", "PSYSHOCK"],
             "defaultIVs": {
                 "cp500": [6.5, 4, 15, 13],
@@ -30824,7 +30836,8 @@
                 "parent": "duosion"
             },
             "level25CP": 1806,
-            "tags": ["shadoweligible"]
+            "tags": ["shadoweligible"],
+            "eliteMoves": ["CHARM"]
         },
         {
             "dex": 579,
@@ -30836,7 +30849,7 @@
                 "hp": 242
             },
             "types": ["psychic", "none"],
-            "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
+            "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT", "CHARM"],
             "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "THUNDER", "PSYSHOCK"],
             "defaultIVs": {
                 "cp500": [6.5, 4, 15, 13],
@@ -30850,7 +30863,8 @@
                 "id": "FAMILY_SOLOSIS",
                 "parent": "duosion_shadow"
             },
-            "tags": ["shadow"]
+            "tags": ["shadow"],
+            "eliteMoves": ["CHARM"]
         },
         {
             "dex": 580,
@@ -39801,7 +39815,7 @@
             "released": true,
             "family": {
                 "id": "FAMILY_APPLIN",
-                "evolutions": ["flapple", "appletun"]
+                "evolutions": ["flapple", "appletun", "dipplin"]
             }
         },
         {
@@ -41061,7 +41075,11 @@
             },
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
-            "released": false
+            "released": true,
+            "family": {
+                "id": "FAMILY_DURALUDON",
+                "evolutions": ["archaludon"]
+            }
         },
         {
             "dex": 885,
@@ -44634,6 +44652,401 @@
             "buddyDistance": 20,
             "thirdMoveCost": 100000,
             "released": false
+        },
+        {
+            "speciesId": "walking_wake",
+            "speciesName": "Walking Wake",
+            "dex": 1009,
+            "types": ["water", "dragon"],
+            "baseStats": {
+                "atk": 233,
+                "def": 171,
+                "hp": 203
+            },
+            "defaultIVs": {
+                "cp500": [6, 9, 15, 13],
+                "cp1500": [18, 4, 14, 7],
+                "cp2500": [29.5, 4, 14, 14]
+            },
+            "fastMoves": ["SPLASH"],
+            "chargedMoves": ["STRUGGLE"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "nicknames": ["wake"],
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "iron_leaves",
+            "speciesName": "Iron Leaves",
+            "dex": 1010,
+            "types": ["grass", "psychic"],
+            "baseStats": {
+                "atk": 236,
+                "def": 194,
+                "hp": 189
+            },
+            "defaultIVs": {
+                "cp500": [6, 4, 7, 14],
+                "cp1500": [17, 4, 15, 14],
+                "cp2500": [28.5, 4, 13, 13]
+            },
+            "fastMoves": ["SPLASH"],
+            "chargedMoves": ["STRUGGLE"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "dex": 1011,
+            "speciesName": "Dipplin",
+            "speciesId": "dipplin",
+            "baseStats": {
+                "atk": 173,
+                "def": 184,
+                "hp": 190
+            },
+            "types": ["grass", "dragon"],
+            "fastMoves": ["BULLET_SEED", "DRAGON_TAIL", "ROLLOUT"],
+            "chargedMoves": ["DRAGON_PULSE", "OUTRAGE", "SEED_BOMB"],
+            "defaultIVs": {
+                "cp500": [8, 4, 14, 14],
+                "cp1500": [23.5, 4, 15, 15],
+                "cp2500": [49, 4, 15, 15],
+                "cp2500l40": [40, 15, 15, 15]
+            },
+            "buddyDistance": 5,
+            "thirdMoveCost": 75000,
+            "released": true,
+            "family": {
+                "id": "FAMILY_APPLIN",
+                "parent": "applin",
+                "evolutions": ["hydrapple"]
+            }
+        },
+        {
+            "dex": 1012,
+            "speciesName": "Poltchageist",
+            "speciesId": "poltchageist",
+            "baseStats": {
+                "atk": 134,
+                "def": 96,
+                "hp": 120
+            },
+            "types": ["grass", "ghost"],
+            "fastMoves": ["ASTONISH", "MAGICAL_LEAF"],
+            "chargedMoves": ["SHADOW_BALL", "ENERGY_BALL", "POLTERGEIST"],
+            "defaultIVs": {
+                "cp500": [16.5, 6, 15, 13],
+                "cp1500": [50, 15, 15, 15],
+                "cp2500": [50, 15, 15, 15]
+            },
+            "buddyDistance": 3,
+            "thirdMoveCost": 50000,
+            "released": false,
+            "family": {
+                "id": "FAMILY_SINISTCHA",
+                "parent": "sinistcha"
+            }
+        },
+        {
+            "dex": 1013,
+            "speciesName": "Sinistcha",
+            "speciesId": "sinistcha",
+            "baseStats": {
+                "atk": 225,
+                "def": 191,
+                "hp": 174
+            },
+            "types": ["grass", "ghost"],
+            "fastMoves": ["ASTONISH", "MAGICAL_LEAF"],
+            "chargedMoves": ["SHADOW_BALL", "ENERGY_BALL", "POLTERGEIST"],
+            "defaultIVs": {
+                "cp500": [6.5, 4, 13, 11],
+                "cp1500": [18.5, 5, 15, 15],
+                "cp2500": [32, 5, 15, 13]
+            },
+            "buddyDistance": 3,
+            "thirdMoveCost": 50000,
+            "released": false,
+            "family": {
+                "id": "FAMILY_SINISTCHA",
+                "evolutions": ["poltchageist"]
+            }
+        },
+        {
+            "speciesId": "okidogi",
+            "speciesName": "Okidogi",
+            "dex": 1014,
+            "types": ["poison", "fighting"],
+            "baseStats": {
+                "atk": 220,
+                "def": 191,
+                "hp": 186
+            },
+            "defaultIVs": {
+                "cp500": [6.5, 4, 6, 14],
+                "cp1500": [18.5, 5, 14, 13],
+                "cp2500": [31.5, 5, 14, 14]
+            },
+            "fastMoves": ["POISON_JAB", "FORCE_PALM"],
+            "chargedMoves": ["SUPER_POWER", "UPPER_HAND", "SLUDGE_BOMB"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "munkidori",
+            "speciesName": "Munkidori",
+            "dex": 1015,
+            "types": ["poison", "psychic"],
+            "baseStats": {
+                "atk": 238,
+                "def": 157,
+                "hp": 186
+            },
+            "defaultIVs": {
+                "cp500": [6.5, 7, 10, 11],
+                "cp1500": [19, 6, 15, 5],
+                "cp2500": [33.5, 5, 13, 8]
+            },
+            "fastMoves": ["POISON_JAB", "CONFUSION"],
+            "chargedMoves": ["SLUDGE_BOMB", "FUTURE_SIGHT", "PSYCHIC"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "fezandipiti",
+            "speciesName": "Fezandipiti",
+            "dex": 1016,
+            "types": ["poison", "fairy"],
+            "baseStats": {
+                "atk": 169,
+                "def": 208,
+                "hp": 186
+            },
+            "defaultIVs": {
+                "cp500": [8, 4, 6, 9],
+                "cp1500": [23, 5, 12, 13],
+                "cp2500": [48, 4, 10, 14],
+                "cp2500l40": [40, 15, 15, 15]
+            },
+            "fastMoves": ["POISON_JAB", "CHARM"],
+            "chargedMoves": ["SLUDGE_BOMB", "MOONBLAST", "DISARMING_VOICE"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "ogerpon",
+            "speciesName": "Ogerpon",
+            "dex": 1017,
+            "types": ["grass", "none"],
+            "baseStats": {
+                "atk": 219,
+                "def": 178,
+                "hp": 173
+            },
+            "defaultIVs": {
+                "cp500": [7, 5, 6, 9],
+                "cp1500": [20.5, 4, 6, 11],
+                "cp2500": [37, 4, 11, 13]
+            },
+            "fastMoves": ["VINE_WHIP", "MAGICAL_LEAF", "DOUBLE_KICK"],
+            "chargedMoves": ["POWER_WHIP", "GRASS_KNOT", "PLAY_ROUGH"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "dex": 1018,
+            "speciesName": "Archaludon",
+            "speciesId": "archaludon",
+            "baseStats": {
+                "atk": 250,
+                "def": 215,
+                "hp": 207
+            },
+            "types": ["steel", "dragon"],
+            "fastMoves": ["DRAGON_TAIL", "METAL_CLAW"],
+            "chargedMoves": ["FLASH_CANNON", "DRAGON_CLAW", "HYPER_BEAM"],
+            "defaultIVs": {
+                "cp500": [5, 13, 15, 14],
+                "cp1500": [14.5, 6, 15, 15],
+                "cp2500": [24.5, 4, 15, 13]
+            },
+            "buddyDistance": 5,
+            "thirdMoveCost": 75000,
+            "released": false,
+            "family": {
+                "id": "FAMILY_DURALUDON",
+                "parent": "duraludon"
+            }
+        },
+        {
+            "dex": 1019,
+            "speciesName": "Hydrapple",
+            "speciesId": "hydrapple",
+            "baseStats": {
+                "atk": 216,
+                "def": 186,
+                "hp": 235
+            },
+            "types": ["grass", "dragon"],
+            "fastMoves": ["BULLET_SEED", "DRAGON_TAIL", "ROLLOUT"],
+            "chargedMoves": ["DRAGON_PULSE", "OUTRAGE", "SEED_BOMB"],
+            "defaultIVs": {
+                "cp500": [6, 4, 14, 8],
+                "cp1500": [17, 6, 15, 12],
+                "cp2500": [28.5, 5, 12, 15]
+            },
+            "buddyDistance": 5,
+            "thirdMoveCost": 75000,
+            "released": true,
+            "family": {
+                "id": "FAMILY_APPLIN",
+                "parent": "dipplin"
+            }
+        },
+        {
+            "speciesId": "gouging_fire",
+            "speciesName": "Gouging Fire",
+            "dex": 1020,
+            "types": ["fire", "dragon"],
+            "baseStats": {
+                "atk": 205,
+                "def": 208,
+                "hp": 213
+            },
+            "defaultIVs": {
+                "cp500": [6, 13, 8, 15],
+                "cp1500": [18, 4, 12, 12],
+                "cp2500": [29.5, 4, 15, 15]
+            },
+            "fastMoves": ["SPLASH"],
+            "chargedMoves": ["STRUGGLE"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "raging_bolt",
+            "speciesName": "Raging Bolt",
+            "dex": 1021,
+            "types": ["electric", "dragon"],
+            "baseStats": {
+                "atk": 235,
+                "def": 165,
+                "hp": 245
+            },
+            "defaultIVs": {
+                "cp500": [5.5, 15, 13, 11],
+                "cp1500": [16.5, 5, 11, 11],
+                "cp2500": [27, 5, 13, 15]
+            },
+            "fastMoves": ["SPLASH"],
+            "chargedMoves": ["STRUGGLE"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "iron_boulder",
+            "speciesName": "Iron Boulder",
+            "dex": 1022,
+            "types": ["rock", "psychic"],
+            "baseStats": {
+                "atk": 227,
+                "def": 195,
+                "hp": 189
+            },
+            "defaultIVs": {
+                "cp500": [6, 8, 12, 14],
+                "cp1500": [18, 4, 5, 15],
+                "cp2500": [30, 4, 9, 11]
+            },
+            "fastMoves": ["SPLASH"],
+            "chargedMoves": ["STRUGGLE"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "iron_crown",
+            "speciesName": "Iron Crown",
+            "dex": 1023,
+            "types": ["steel", "psychic"],
+            "baseStats": {
+                "atk": 221,
+                "def": 200,
+                "hp": 189
+            },
+            "defaultIVs": {
+                "cp500": [6, 9, 14, 14],
+                "cp1500": [18, 7, 14, 7],
+                "cp2500": [30.5, 5, 11, 10]
+            },
+            "fastMoves": ["SPLASH"],
+            "chargedMoves": ["STRUGGLE"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "terapagos",
+            "speciesName": "Terapagos",
+            "dex": 1024,
+            "types": ["normal", "none"],
+            "baseStats": {
+                "atk": 126,
+                "def": 165,
+                "hp": 207
+            },
+            "defaultIVs": {
+                "cp500": [11, 4, 12, 10],
+                "cp1500": [35, 4, 14, 14],
+                "cp2500": [50, 15, 15, 15]
+            },
+            "fastMoves": ["SPLASH"],
+            "chargedMoves": ["STRUGGLE"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["legendary"]
+        },
+        {
+            "speciesId": "pecharunt",
+            "speciesName": "Pecharunt",
+            "dex": 1025,
+            "types": ["poison", "ghost"],
+            "baseStats": {
+                "atk": 164,
+                "def": 248,
+                "hp": 186
+            },
+            "defaultIVs": {
+                "cp500": [7.5, 4, 10, 13],
+                "cp1500": [21.5, 6, 15, 15],
+                "cp2500": [43, 4, 14, 15],
+                "cp2500l40": [39.5, 12, 14, 14]
+            },
+            "fastMoves": ["ASTONISH"],
+            "chargedMoves": ["SHADOW_BALL", "GUNK_SHOT", "POLTERGEIST"],
+            "buddyDistance": 20,
+            "thirdMoveCost": 100000,
+            "released": false,
+            "tags": ["mythical"],
+            "levelFloor": 15
         }
     ],
     "moves": [

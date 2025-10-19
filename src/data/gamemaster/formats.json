@@ -1,19 +1,5 @@
 [
 	{
-		"title": "Master Premier",
-		"cup": "premier",
-		"cp": 10000,
-		"meta": "premiermaster",
-		"showCup": true,
-		"showFormat": false,
-		"showMeta": true,
-		"hideRankings": true,
-		"rules": [
-			"No CP limit.",
-			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
-		]
-	},
-	{
 		"title": "P!P Championship Series",
 		"cup": "championshipseries",
 		"cp": 1500,
@@ -22,19 +8,6 @@
 		"showFormat": true,
 		"showMeta": true,
 		"hideRankings": true
-	},
-	{
-		"title": "Fantasy Cup",
-		"cup": "fantasy",
-		"cp": 1500,
-		"meta": "fantasy",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
-		]
 	},
 	{
 		"title": "Jungle Cup",
@@ -48,6 +21,45 @@
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.",
 			"The following Pokémon will not be allowed: Gligar, Galarian Stunfisk"
+		]
+	},
+	{
+		"title": "Master Premier",
+		"cup": "premier",
+		"cp": 10000,
+		"meta": "premiermaster",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"No CP limit.",
+			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
+		]
+	},
+	{
+		"title": "Great League Remix",
+		"cup": "remix",
+		"cp": 1500,
+		"meta": "remix",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"The following Pokémon will not be allowed: Blastoise, Primeape, Marowak, Azumarill, Dunsparce, Scizor, Galarian Corsola, Altaria, Cradily, Dusclops, Empoleon, Bastiodon, Gastrodon, Togekiss, Stunfisk, Talonflame, Dedenne, Corviknight, Annihilape"
+		]
+	},
+	{
+		"title": "Halloween Cup",
+		"cup": "halloween",
+		"cp": 1500,
+		"meta": "halloween",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Poison-, Bug-, Ghost-, Dark-, and Fairy-type Pokémon are eligible."
 		]
 	},
 	{
@@ -74,19 +86,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Aurora)",
-		"cup": "aurora",
+		"title": "Battle Frontier (Calamity)",
+		"cup": "calamity",
 		"cp": 1500,
-		"meta": "aurora",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Onyx)",
-		"cup": "onyx",
-		"cp": 1500,
-		"meta": "onyx",
+		"meta": "calamity",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

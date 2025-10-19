@@ -1083,7 +1083,7 @@ function Battle(){
 				// Don't shield early PUP's, Acid Sprays, or similar moves
 				if( (! sandbox) && move.buffs && move.selfBuffing){
 					if( (move.buffTarget == "self" && move.buffs[0] > 0) ||
-					move.buffTarget == "opponent" ){
+					(move.buffTarget == "opponent" && move.buffs[1] < 0)){
 						useShield = shieldDecision.value;
 					}
 

@@ -739,7 +739,7 @@ var InterfaceMaster = (function () {
                             if(selectedMove.energy > 0){
                                 currentPokemon.chargedMoves = newPokemon.chargedMoves;
                             } else{
-                                currentPokemon.fastdMoves = newPokemon.fastMoves;
+                                currentPokemon.fastMoves = newPokemon.fastMoves;
                             }
                         }
                     });
