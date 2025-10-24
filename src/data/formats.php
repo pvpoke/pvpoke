@@ -14,22 +14,6 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Jungle Cup',
-    'cup' => 'jungle',
-    'cp' => 1500,
-    'meta' => 'jungle',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.',
-      2 => 'The following Pokémon will not be allowed: Gligar, Galarian Stunfisk',
-    ),
-  ),
-  2 => 
-  array (
     'title' => 'Master Premier',
     'cup' => 'premier',
     'cp' => 10000,
@@ -43,7 +27,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  3 => 
+  2 => 
   array (
     'title' => 'Great League Remix',
     'cup' => 'remix',
@@ -58,7 +42,7 @@ $formats = array (
       1 => 'The following Pokémon will not be allowed: Blastoise, Primeape, Marowak, Azumarill, Dunsparce, Scizor, Galarian Corsola, Altaria, Cradily, Dusclops, Empoleon, Bastiodon, Gastrodon, Togekiss, Stunfisk, Talonflame, Dedenne, Corviknight, Annihilape',
     ),
   ),
-  4 => 
+  3 => 
   array (
     'title' => 'Halloween Cup',
     'cup' => 'halloween',
@@ -71,6 +55,22 @@ $formats = array (
     array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
       1 => 'Only Poison-, Bug-, Ghost-, Dark-, and Fairy-type Pokémon are eligible.',
+    ),
+  ),
+  4 => 
+  array (
+    'title' => 'Jungle Cup',
+    'cup' => 'jungle',
+    'cp' => 1500,
+    'meta' => 'jungle',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.',
+      2 => 'The following Pokémon will not be allowed: Gligar, Galarian Stunfisk',
     ),
   ),
   5 => 
