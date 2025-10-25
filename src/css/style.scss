@@ -71,28 +71,72 @@ $color-off-black:#111;
 $color-stat-buff:#f1841c;
 $color-stat-debuff:#0158d0;
 
-// ===================================
-// QUIZ STYLING
-// ===================================
 
-.quiz-button {
-    position: relative;
-    display: block;
-    font-size: 12px;
-    border-radius: 30px;
-    border: 2px solid #000;
-    padding: 10px 12px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #000;
-    background: #f9a01b;
-    background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-    background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-    background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
+/* MIXINS */
+
+@mixin transition($property, $duration, $ease, $delay){
+    -webkit-transition: $property $duration $ease $delay;
+    -moz-transition: $property $duration $ease $delay;
+    -o-transition: $property $duration $ease $delay;
+    transition: $property $duration $ease $delay;
+}
+
+@mixin transform($property){
+	-moz-transform: $property;
+	-webkit-transform: $property;
+	-o-transform: $property;
+	-ms-transform: $property;
+	transform: $property;
+}
+
+@mixin gradient($light, $dark){
+	background: $dark; /* Old browsers */
+	background: -moz-linear-gradient(top, $light 30%, $dark 99%) !important; /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, $light 30%,$dark 99%) !important; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, $light 30%,$dark 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin gradient-button {
+  margin: 0;
+  position: relative;
+  display: block;
+  font-size: 12px;
+  border-radius: 30px;
+  border: 2px solid #000;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  background: #f9a01b;
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%);
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%);
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%);
+}
+
+@mixin archetype-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/move-archetype-icons.png");
+  background-repeat: no-repeat;
+  margin-left: 5px;
+}
+
+/* QUIZ STYLING */
+
+.button.quiz-button {
+  @include gradient-button;
+}
+
+.button.quiz-next-btn {
+  @include gradient-button;
+  margin: 0;
 }
 
 .rankings-container {
   > .rank.quiz {
+    cursor: default;
+
     &:hover {
       border-left: 20px solid rgba(0, 0, 0, 0.1);
     }
@@ -100,20 +144,19 @@ $color-stat-debuff:#0158d0;
 }
 
 .top-ranking-select {
-	max-width: 35%;
-	min-width: 150px;
-	margin-bottom: 5px;
-	font-size: 16px;
-	font-size: 18px;
-	width: auto;
-	background: none;
-	font-weight: bold;
-	max-width: 250px;
+  max-width: 250px;
+  min-width: 150px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  width: auto;
+  background: none;
+  font-weight: bold;
 }
 
-.quiz-link-title-container{
+.quiz-link-title-container {
   text-align: center;
 }
+
 .quiz-link-title {
   font-size: 14px;
   font-weight: bold;
@@ -126,12 +169,12 @@ $color-stat-debuff:#0158d0;
 
 .quiz-question {
   display: flex;
-  justify-content: space-between; // space between text and controls
-  align-items: center;            // vertical alignment
-  gap: 1rem;                      // spacing between elements
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 
   .question-text {
-    flex: 1; // take all available space
+    flex: 1;
     font-size: 14px;
   }
 
@@ -157,22 +200,6 @@ $color-stat-debuff:#0158d0;
   max-height: 600px;
 }
 
-.feedback-wrong {
-  color: red;
-}
-
-.feedback-correct {
-  color: green;
-}
-
-.hidden {
-  display: none !important;
-}
-
-// ===================================
-// RANKING STYLING
-// ===================================
-
 .quiz-header {
   font-weight: bold;
   padding: 5px 0px;
@@ -180,34 +207,11 @@ $color-stat-debuff:#0158d0;
   margin-top: 8px;
 }
 
-// ===================================
-// NEW ADDITIONS
-// ===================================
-
-.versus-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  font-weight: bold;
+.quiz-checks {
+  font-size: 14px;
 }
 
-.quiz-next-btn {
-  margin: 0 !important;
-  position: relative !important;
-  display: block !important;
-  font-size: 12px !important;
-  border-radius: 30px !important;
-  border: 2px solid #000 !important;
-  padding: 10px 12px !important;
-  cursor: pointer !important;
-  text-decoration: none !important;
-  color: #000 !important;
-  background: #f9a01b !important;
-  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
-}
+/* QUIZ ANSWERS & FEEDBACK */
 
 .quiz-answer-input {
   flex: 1;
@@ -223,6 +227,26 @@ $color-stat-debuff:#0158d0;
   flex-wrap: wrap;
 }
 
+.feedback-wrong {
+  color: red;
+}
+
+.feedback-correct {
+  color: green;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.versus-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .quiz-feedback {
   font-size: 14px;
 }
@@ -232,20 +256,18 @@ $color-stat-debuff:#0158d0;
   flex-direction: column;
   gap: 8px;
 
-  .battle-results {
-    .battle-details {
-      .optimal-timing-section {
-        max-width: 340px;
-        margin: 0;
+  .battle-results .battle-details {
+    .optimal-timing-section {
+      max-width: 340px;
+      margin: 0;
 
-        .optimal-timing-timeline {
-          margin: 0em auto 0 auto;
-        }
+      .optimal-timing-timeline {
+        margin: 0 auto;
       }
+    }
 
-      p {
-        margin-top: 0px;
-      }
+    p {
+      margin-top: 0;
     }
   }
 
@@ -270,25 +292,23 @@ $color-stat-debuff:#0158d0;
   flex: 1;
 }
 
+.quiz-feedback-container-inner {
+  display: flex;
+}
+
 .quiz-feedback-explanation {
   font-size: 14px;
 
-  .battle-results {
-    .battle-details {
-      .optimal-timing-section {
-        max-width: 340px;
-        margin: 0;
-      }
+  .battle-results .battle-details {
+    .optimal-timing-section {
+      max-width: 340px;
+      margin: 0;
+    }
 
-      p {
-        margin-top: 0px;
-      }
+    p {
+      margin-top: 0;
     }
   }
-}
-
-.quiz-feedback-container-inner {
-  display: flex;
 }
 
 .quiz.battle-details {
@@ -298,237 +318,159 @@ $color-stat-debuff:#0158d0;
   align-items: center;
 }
 
+/* HINTS & DETAILS */
+
 .quiz-hints {
   margin-top: 8px;
 }
 
 .quiz-hints-container {
-  .details {
-    .detail-section {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 5px;
-      border-radius: 8px;
-      box-sizing: border-box;
-      margin-top: 5px;
+  .details .detail-section {
+    background: rgba(255, 255, 255, 0.8);
+	padding: 5px;
+	border-radius: 8px;
+	box-sizing: border-box;
+	margin-top: 5px;
 
-      &.float {
-        width: 49.5%;
+    &.float {
+      width: 49.5%;
 
-        &.margin {
-          margin-right: 1%;
-        }
-      }
-
-      &.overall,
-      &.stats,
-      &.typing {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-
-        .rating-container {
-          text-align: center;
-          padding: 5px;
-        }
+      &.margin {
+        margin-right: 1%;
       }
     }
-  }
-}
 
-.rank {
-  .details {
-    .detail-section {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 5px;
-      border-radius: 8px;
-      box-sizing: border-box;
-      margin-top: 5px;
+    &.overall,
+    &.stats,
+    &.typing {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .rating-container {
+        text-align: center;
+        padding: 5px;
+      }
     }
   }
 }
 
 .quiz-omt-hints-container {
-  .details {
-    .detail-section {
-      &.float {
-        width: 100% !important;
-      }
+  .details .detail-section {
+    &.float {
+      width: 100% !important;
     }
   }
 }
 
-// ===================================
-// MOVES & HINTS STYLING
-// ===================================
+/* ===================================
+   MOVES & MOVESETS
+   =================================== */
 
-.quiz-hints-container {
-  .details {
-    .detail-section {
-      .moveset {
-        &.show-stats {
-          .name-container {
-            border-bottom: 1px solid;
+.quiz-hints-container .details .detail-section,
+.rank .details .detail-section {
+  .moveset {
+    .name-container {
+        float: none;
+		padding-bottom: 3px;
+		margin-bottom: 3px;
+		justify-content: space-between;
+		align-items: baseline;
+		font-size: 14px;
 
-            &.stats-container {
-              display: flex;
-            }
-          }
-        }
+      &.stats-container {
+        border: none !important;
+        margin: 0;
+        padding: 0;
+        display: none;
+        overflow: hidden;
 
-        .name-container {
-		    float: none;
-			padding-bottom: 3px;
-			margin-bottom: 3px;
-			justify-content: space-between;
-			align-items: baseline;
-			font-size: 14px;
-
-          &.stats-container {
-            border: none;
-			margin: 0;
-			padding: 0;
-			display: none;
-			overflow: hidden;
-
-            &.move-effect {
-              div {
-                margin: 5px 5px 0 0;
-              }
-            }
-          }
-        }
-
-        .stats-container {
-          font-size: 12px;
-          justify-content: space-between;
-        }
-
-        .archetype {
-          display: flex;
-          align-items: center;
-          margin-top: 2px;
-          font-size: 12px;
-
-          .name,
-          .icon {
-            display: block;
-          }
-
-          .icon {
-            width: 16px;
-            height: 16px;
-            background-image: url("../img/move-archetype-icons.png");
-            background-repeat: no-repeat;
-            margin-left: 5px;
-
-            &.spam {
-              background-position: -16px 0;
-            }
-
-            &.self-debuff {
-              background-position: -32px 0;
-            }
-
-            &.debuff {
-              background-position: -48px 0;
-            }
-
-            &.boost {
-              background-position: -64px 0;
-            }
-
-            &.high-energy {
-              background-position: -80px 0;
-            }
-
-            &.general {
-              background-position: -96px 0;
-            }
-
-            &.low-quality {
-              border-radius: 16px;
-              background: #000;
-              color: #fff;
-              text-align: center;
-              font-weight: bold;
-
-              &:before {
-                content: "x";
-              }
-            }
-          }
+        &.move-effect div {
+          margin: 5px 5px 0 0;
         }
       }
     }
-  }
-}
 
-// ===================================
-// RANK STYLING
-// ===================================
+    &.show-stats .name-container {
+      border-bottom: 1px solid;
 
-.rank {
-  .details {
-    .detail-section {
-      .moveset {
-        .name-container {
-          float: none;
-          padding-bottom: 3px;
-        }
-
-        .archetype {
-          .icon {
-            display: block;
-          }
-        }
+      &.stats-container {
+        display: flex;
       }
     }
-  }
 
-  &.typed-ranking.quiz {
-    .pokemon-info {
-      flex: 1;
+    .stats-container {
+      font-size: 12px;
+      justify-content: space-between;
+    }
+
+    .archetype {
       display: flex;
-      flex-wrap: nowrap;
       align-items: center;
-      min-width: 0;
+      margin-top: 2px;
+      font-size: 12px;
+
+      .name,
+      .icon {
+        display: block;
+      }
+
+      .icon {
+        @include archetype-icon;
+
+        &.spam { background-position: -16px 0; }
+        &.self-debuff { background-position: -32px 0; }
+        &.debuff { background-position: -48px 0; }
+        &.boost { background-position: -64px 0; }
+        &.high-energy { background-position: -80px 0; }
+        &.general { background-position: -96px 0; }
+        
+        &.low-quality {
+          border-radius: 16px;
+          background: #000;
+          color: #fff;
+          text-align: center;
+          font-weight: bold;
+
+          &:before {
+            content: "x";
+          }
+        }
+      }
     }
   }
 }
 
-// ===================================
-// POKEMON INFO & MOVES
-// ===================================
+/* POKEMON & RANKING INFO */
 
 .rank {
   &.typed-ranking {
     .pokemon-info {
+      .name-container .quiz-moves-container {
+        padding-top: 6px;
+        font-size: 14px;
+
+        .quiz-move {
+          padding: 1px 0;
+        }
+      }
+    }
+
+    &.quiz .pokemon-info {
       flex: 1;
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
       min-width: 0;
-
-      .name-container {
-        .quiz-moves-container {
-          padding-top: 6px;
-          font-size: 14px;
-
-          .quiz-move {
-            padding: 1px 0;
-          }
-        }
-      }
     }
   }
 }
 
-// ===================================
-// RANKING FILTERS
-// ===================================
+/* RANKING FILTERS */
 
-.quiz-ranking-filters {
+.quiz-ranking-filters,
+.ranking-filters {
   .ranking-filter {
     padding-right: 20px;
     box-sizing: border-box;
@@ -558,15 +500,7 @@ $color-stat-debuff:#0158d0;
       padding: 5px 8px;
       min-width: 100px;
     }
-  }
-}
 
-// ===================================
-// RANKING FILTERS CONTINUED
-// ===================================
-
-.quiz-ranking-filters {
-  .ranking-filter {
     .flex {
       justify-content: space-between;
     }
@@ -576,60 +510,6 @@ $color-stat-debuff:#0158d0;
       display: none;
     }
   }
-}
-
-// Support for possible alternate class
-.ranking-filters {
-  .ranking-filter {
-    .flex {
-      justify-content: space-between;
-    }
-  }
-}
-
-// ===================================
-// QUIZ CHECKS
-// ===================================
-
-.quiz-checks {
-  font-size: 14px;
-}
-
-// ===================================
-// RANKINGS CONTAINER ADJUSTMENTS
-// ===================================
-
-.rankings-container {
-  > .rank.quiz {
-    cursor: default;
-  }
-}
-
-/* END MY PART */
-
-
-/* MIXINS */
-
-@mixin transition($property, $duration, $ease, $delay){
-    -webkit-transition: $property $duration $ease $delay;
-    -moz-transition: $property $duration $ease $delay;
-    -o-transition: $property $duration $ease $delay;
-    transition: $property $duration $ease $delay;
-}
-
-@mixin transform($property){
-	-moz-transform: $property;
-	-webkit-transform: $property;
-	-o-transform: $property;
-	-ms-transform: $property;
-	transform: $property;
-}
-
-@mixin gradient($light, $dark){
-	background: $dark; /* Old browsers */
-	background: -moz-linear-gradient(top, $light 30%, $dark 99%) !important; /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, $light 30%,$dark 99%) !important; /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, $light 30%,$dark 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 /* STRUCTURE */
@@ -5896,7 +5776,6 @@ a.pokebattler{
 		}
 		}
 	}
-	/* END MY PART */
 
 	.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1){
 		top: 0%;
