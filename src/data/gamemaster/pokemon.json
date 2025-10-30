@@ -40991,7 +40991,7 @@
             "hp": 155
         },
         "types": ["bug", "none"],
-        "fastMoves": ["BUG_BITE", "COUNTER"],
+        "fastMoves": ["BUG_BITE", "COUNTER", "SHADOW_CLAW"],
         "chargedMoves": ["X_SCISSOR", "GRASS_KNOT", "LUNGE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [11, 6, 15, 15],

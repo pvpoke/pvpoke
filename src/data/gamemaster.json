@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-10-24 18:57:35",
+    "timestamp": "2025-10-30 22:40:24",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -42276,7 +42276,7 @@
                 "hp": 155
             },
             "types": ["bug", "none"],
-            "fastMoves": ["BUG_BITE", "COUNTER"],
+            "fastMoves": ["BUG_BITE", "COUNTER", "SHADOW_CLAW"],
             "chargedMoves": ["X_SCISSOR", "GRASS_KNOT", "LUNGE", "ROCK_TOMB"],
             "defaultIVs": {
                 "cp500": [11, 6, 15, 15],
