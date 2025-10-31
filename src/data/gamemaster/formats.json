@@ -10,20 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Jungle Cup",
-		"cup": "jungle",
-		"cp": 1500,
-		"meta": "jungle",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.",
-			"The following Pokémon will not be allowed: Gligar, Galarian Stunfisk"
-		]
-	},
-	{
 		"title": "Master Premier",
 		"cup": "premier",
 		"cp": 10000,
@@ -60,6 +46,20 @@
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Poison-, Bug-, Ghost-, Dark-, and Fairy-type Pokémon are eligible."
+		]
+	},
+	{
+		"title": "Jungle Cup",
+		"cup": "jungle",
+		"cp": 1500,
+		"meta": "jungle",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.",
+			"The following Pokémon will not be allowed: Gligar, Galarian Stunfisk"
 		]
 	},
 	{

@@ -28717,7 +28717,9 @@
         "family": {
             "id": "FAMILY_YAMASK",
             "evolutions": ["cofagrigus"]
-        }
+        },
+        "level25CP": 542,
+        "tags": ["shadoweligible"]
     },
     {
         "dex": 562,
@@ -28746,6 +28748,32 @@
         }
     },
     {
+        "dex": 562,
+        "speciesId": "yamask_shadow",
+        "speciesName": "Yamask (Shadow)",
+        "baseStats": {
+            "atk": 95,
+            "def": 141,
+            "hp": 116
+        },
+        "types": ["ghost", "none"],
+        "fastMoves": ["ASTONISH", "ZEN_HEADBUTT"],
+        "chargedMoves": ["SHADOW_BALL", "DARK_PULSE", "OMINOUS_WIND"],
+        "defaultIVs": {
+            "cp500": [20, 4, 12, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_YAMASK",
+            "evolutions": ["cofagrigus_shadow"]
+        },
+        "tags": ["shadow"]
+    },
+    {
         "dex": 563,
         "speciesId": "cofagrigus",
         "speciesName": "Cofagrigus",
@@ -28770,7 +28798,37 @@
             "id": "FAMILY_YAMASK",
             "parent": "yamask"
         },
-        "nicknames": ["coffin"]
+        "nicknames": ["coffin"],
+        "level25CP": 1375,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 563,
+        "speciesId": "cofagrigus_shadow",
+        "speciesName": "Cofagrigus (Shadow)",
+        "baseStats": {
+            "atk": 163,
+            "def": 237,
+            "hp": 151
+        },
+        "types": ["ghost", "none"],
+        "fastMoves": ["ASTONISH", "ZEN_HEADBUTT", "SHADOW_CLAW"],
+        "chargedMoves": ["SHADOW_BALL", "DARK_PULSE", "PSYCHIC"],
+        "defaultIVs": {
+            "cp500": [8.5, 4, 11, 9],
+            "cp1500": [24.5, 6, 13, 14],
+            "cp2500": [49.5, 12, 12, 15],
+            "cp2500l40": [40, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_YAMASK",
+            "parent": "yamask_shadow"
+        },
+        "nicknames": ["coffin"],
+        "tags": ["shadow"]
     },
     {
         "dex": 564,
@@ -34109,7 +34167,35 @@
         "family": {
             "id": "FAMILY_PHANTUMP",
             "evolutions": ["trevenant"]
-        }
+        },
+        "level25CP": 632,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 708,
+        "speciesName": "Phantump (Shadow)",
+        "speciesId": "phantump_shadow",
+        "baseStats": {
+            "atk": 125,
+            "def": 103,
+            "hp": 125
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["ASTONISH", "TACKLE"],
+        "chargedMoves": ["SEED_BOMB", "SHADOW_BALL", "FOUL_PLAY"],
+        "defaultIVs": {
+            "cp500": [17, 4, 15, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_PHANTUMP",
+            "evolutions": ["trevenant_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 709,
@@ -34136,7 +34222,37 @@
         "family": {
             "id": "FAMILY_PHANTUMP",
             "parent": "phantump"
-        }
+        },
+        "level25CP": 1565,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 709,
+        "speciesName": "Trevenant (Shadow)",
+        "speciesId": "trevenant_shadow",
+        "baseStats": {
+            "atk": 201,
+            "def": 154,
+            "hp": 198
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["SHADOW_CLAW", "SUCKER_PUNCH"],
+        "chargedMoves": ["SEED_BOMB", "SHADOW_BALL", "FOUL_PLAY"],
+        "defaultIVs": {
+            "cp500": [7.5, 4, 8, 15],
+            "cp1500": [22, 3, 13, 12],
+            "cp2500": [43.5, 4, 14, 10],
+            "cp2500l40": [39.5, 12, 14, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "searchPriority": 6,
+        "family": {
+            "id": "FAMILY_PHANTUMP",
+            "parent": "phantump_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 710,
@@ -40875,7 +40991,7 @@
             "hp": 155
         },
         "types": ["bug", "none"],
-        "fastMoves": ["BUG_BITE", "COUNTER"],
+        "fastMoves": ["BUG_BITE", "COUNTER", "SHADOW_CLAW"],
         "chargedMoves": ["X_SCISSOR", "GRASS_KNOT", "LUNGE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [11, 6, 15, 15],
@@ -43459,7 +43575,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SINISTCHA",
             "parent": "sinistcha"
@@ -43488,7 +43604,8 @@
         "family": {
             "id": "FAMILY_SINISTCHA",
             "evolutions": ["poltchageist"]
-        }
+        },
+        "levelFloor": 20
     },
     {
         "speciesId": "okidogi",

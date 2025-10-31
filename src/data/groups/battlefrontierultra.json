@@ -23,6 +23,14 @@
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
 }, {
+    "speciesId": "cradily",
+    "fastMove": "ACID",
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
+}, {
+    "speciesId": "cradily",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
+}, {
     "speciesId": "cresselia",
     "fastMove": "CONFUSION",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -37,21 +45,13 @@
     "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "empoleon",
-    "fastMove": "METAL_SOUND",
-    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+    "speciesId": "gastrodon",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
 }, {
-    "speciesId": "empoleon_shadow",
-    "fastMove": "METAL_SOUND",
-    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-}, {
-    "speciesId": "feraligatr",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
-}, {
-    "speciesId": "feraligatr_shadow",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
+    "speciesId": "gastrodon",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["BODY_SLAM", "WATER_PULSE"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "DRAGON_BREATH",
@@ -80,6 +80,14 @@
     "speciesId": "kyurem",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["GLACIATE", "DRAGON_CLAW"]
+}, {
+    "speciesId": "lapras",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
+}, {
+    "speciesId": "lapras_shadow",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
 }, {
     "speciesId": "malamar",
     "fastMove": "PSYWAVE",
@@ -169,6 +177,14 @@
     "speciesId": "virizion",
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
+}, {
+    "speciesId": "weezing_galarian",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["BRUTAL_SWING", "SLUDGE"]
+}, {
+    "speciesId": "weezing_galarian_shadow",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["BRUTAL_SWING", "SLUDGE"]
 }, {
     "speciesId": "zygarde_complete",
     "fastMove": "DRAGON_TAIL",
