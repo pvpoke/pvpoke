@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-10-30 22:40:24",
+    "timestamp": "2025-11-06 23:46:42",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -143,7 +143,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["eternatus", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "latias_mega", "rayquaza_mega", "zacian_crowned_sword", "zamazenta_crowned_shield", "metagross_mega", "landorus_therian", "kyurem_white", "salamence_mega", "zekrom", "palkia_origin", "reshiram", "swampert_mega", "kyurem_black", "metagross"]
+                    "values": ["eternatus", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "latias_mega", "rayquaza_mega", "zacian_crowned_sword", "zamazenta_crowned_shield", "metagross_mega", "dialga_origin", "palkia_origin", "reshiram", "necrozma_dusk_mane", "landorus_therian", "groudon", "florges", "scizor_mega", "lugia"]
                 }
             ]
         },
@@ -154,7 +154,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["florges", "togekiss", "corviknight", "bellibolt", "forretress", "moltres_galarian", "dusknoir", "feraligatr", "empoleon"]
+                    "values": ["lapras", "gastrodon", "florges", "zygarde_complete", "jellicent", "bellibolt", "regidrago", "moltres_galarian", "empoleon"]
                 }
             ]
         },
@@ -1072,26 +1072,6 @@
             "hideRankings": true
         },
         {
-            "title": "Master Premier",
-            "cup": "premier",
-            "cp": 10000,
-            "meta": "premiermaster",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
-        },
-        {
-            "title": "Great League Remix",
-            "cup": "remix",
-            "cp": 1500,
-            "meta": "remix",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "The following Pokémon will not be allowed: Blastoise,  Primeape,  Marowak,  Azumarill,  Dunsparce,  Scizor,  Galarian Corsola,  Altaria,  Cradily,  Dusclops,  Empoleon,  Bastiodon,  Gastrodon,  Togekiss,  Stunfisk,  Talonflame,  Dedenne,  Corviknight,  Annihilape"]
-        },
-        {
             "title": "Halloween Cup",
             "cup": "halloween",
             "cp": 1500,
@@ -1116,10 +1096,9 @@
             "cup": "mega",
             "cp": 10000,
             "meta": "mega",
-            "showCup": false,
-            "showFormat": false,
-            "showMeta": false,
-            "hideRankings": true,
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
             "rules": ["No CP limit.", "Mega-Evolved Pokémon are allowed."]
         },
         {
@@ -21212,7 +21191,7 @@
             "searchPriority": 4,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_BELDUM",
                 "parent": "metang"
@@ -31548,8 +31527,7 @@
                 "parent": "joltik"
             },
             "level25CP": 1330,
-            "tags": ["shadoweligible"],
-            "nicknames": ["spooder"]
+            "tags": ["shadoweligible"]
         },
         {
             "dex": 596,
@@ -31576,8 +31554,7 @@
                 "id": "FAMILY_JOLTIK",
                 "parent": "joltik_shadow"
             },
-            "tags": ["shadow"],
-            "nicknames": ["spooder"]
+            "tags": ["shadow"]
         },
         {
             "dex": 597,
@@ -42260,7 +42237,7 @@
             },
             "buddyDistance": 1,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_TAROUNTULA",
                 "evolutions": ["spidops"]
@@ -42285,11 +42262,12 @@
             },
             "buddyDistance": 1,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_TAROUNTULA",
                 "parent": "tarountula"
-            }
+            },
+            "searchPriority": 2
         },
         {
             "dex": 919,
@@ -44885,7 +44863,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_SINISTCHA",
                 "evolutions": ["poltchageist"]

@@ -10,32 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Master Premier",
-		"cup": "premier",
-		"cp": 10000,
-		"meta": "premiermaster",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"No CP limit.",
-			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
-		]
-	},
-	{
-		"title": "Great League Remix",
-		"cup": "remix",
-		"cp": 1500,
-		"meta": "remix",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"The following Pokémon will not be allowed: Blastoise, Primeape, Marowak, Azumarill, Dunsparce, Scizor, Galarian Corsola, Altaria, Cradily, Dusclops, Empoleon, Bastiodon, Gastrodon, Togekiss, Stunfisk, Talonflame, Dedenne, Corviknight, Annihilape"
-		]
-	},
-	{
 		"title": "Halloween Cup",
 		"cup": "halloween",
 		"cp": 1500,
@@ -67,10 +41,9 @@
 		"cup": "mega",
 		"cp": 10000,
 		"meta": "mega",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": false,
-		"hideRankings": true,
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
 		"rules": [
 			"No CP limit.",
 			"Mega-Evolved Pokémon are allowed."

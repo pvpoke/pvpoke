@@ -19927,7 +19927,7 @@
         "searchPriority": 4,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_BELDUM",
             "parent": "metang"
@@ -30263,8 +30263,7 @@
             "parent": "joltik"
         },
         "level25CP": 1330,
-        "tags": ["shadoweligible"],
-        "nicknames": ["spooder"]
+        "tags": ["shadoweligible"]
     },
     {
         "dex": 596,
@@ -30291,8 +30290,7 @@
             "id": "FAMILY_JOLTIK",
             "parent": "joltik_shadow"
         },
-        "tags": ["shadow"],
-        "nicknames": ["spooder"]
+        "tags": ["shadow"]
     },
     {
         "dex": 597,
@@ -40975,7 +40973,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_TAROUNTULA",
             "evolutions": ["spidops"]
@@ -41000,11 +40998,12 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_TAROUNTULA",
             "parent": "tarountula"
-        }
+        },
+        "searchPriority": 2
     },
     {
         "dex": 919,
@@ -43600,7 +43599,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SINISTCHA",
             "evolutions": ["poltchageist"]

@@ -35,6 +35,11 @@
         "chargedMoves": ["FLAMETHROWER", "DYNAMAX_CANNON"]
     },
     {
+        "speciesId": "florges",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["MOONBLAST", "CHILLING_WATER"]
+    },
+    {
         "speciesId": "gallade_mega",
         "fastMove": "CONFUSION",
         "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE"]
@@ -215,8 +220,8 @@
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
     },
     {
-        "speciesId": "florges",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["MOONBLAST", "CHILLING_WATER"]
+        "speciesId": "metagross_mega",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
     }
 ]
