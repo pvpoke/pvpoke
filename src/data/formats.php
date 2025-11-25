@@ -14,90 +14,15 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Mega Master League',
-    'cup' => 'mega',
-    'cp' => 10000,
-    'meta' => 'mega',
+    'title' => 'EUIC 2026 Championship Series Cup',
+    'cup' => 'euic2026',
+    'cp' => 1500,
+    'meta' => 'euic2026',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'No CP limit.',
-      1 => 'Mega-Evolved Pokémon are allowed.',
-    ),
   ),
   2 => 
-  array (
-    'title' => 'LAIC 2025 Championship Series Cup',
-    'cup' => 'laic2025',
-    'cp' => 1500,
-    'meta' => 'laic2025',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  3 => 
-  array (
-    'title' => 'Battle Frontier (Calamity)',
-    'cup' => 'calamity',
-    'cp' => 1500,
-    'meta' => 'calamity',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  4 => 
-  array (
-    'title' => 'Battle Frontier (Ultra)',
-    'cup' => 'battlefrontierultra',
-    'cp' => 2500,
-    'meta' => 'ultra',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  5 => 
-  array (
-    'title' => 'Battle Frontier (Master)',
-    'cup' => 'battlefrontiermaster',
-    'cp' => 10000,
-    'meta' => 'battlefrontiermaster',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  6 => 
-  array (
-    'title' => 'Devon Metamorphosis Cup',
-    'cup' => 'metamorphosis',
-    'cp' => 1500,
-    'meta' => 'metamorphosis',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  7 => 
-  array (
-    'title' => 'Gymbreakers Pillar Cup Remix',
-    'cup' => 'pillar3',
-    'cp' => 1500,
-    'meta' => 'pillar3',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  8 => 
-  array (
-    'title' => 'Zygarden Chrono Meta',
-    'cup' => 'chrono',
-    'cp' => 1500,
-    'meta' => 'chrono',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  9 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -107,7 +32,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  10 => 
+  3 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -117,7 +42,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  11 => 
+  4 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
