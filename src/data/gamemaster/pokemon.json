@@ -35259,7 +35259,8 @@
         },
         "types": ["normal", "flying"],
         "fastMoves": ["PECK", "ROCK_SMASH", "BULLET_SEED"],
-        "chargedMoves": ["DRILL_PECK", "ROCK_BLAST", "FLASH_CANNON"],
+        "chargedMoves": ["DRILL_PECK", "ROCK_BLAST", "FLASH_CANNON", "BEAK_BLAST"],
+        "eliteMoves": ["BEAK_BLAST"],
         "defaultIVs": {
             "cp500": [7, 4, 15, 14],
             "cp1500": [20.5, 5, 14, 14],
@@ -35286,7 +35287,8 @@
         },
         "types": ["normal", "flying"],
         "fastMoves": ["PECK", "ROCK_SMASH", "BULLET_SEED"],
-        "chargedMoves": ["DRILL_PECK", "ROCK_BLAST", "FLASH_CANNON"],
+        "chargedMoves": ["DRILL_PECK", "ROCK_BLAST", "FLASH_CANNON", "BEAK_BLAST"],
+        "eliteMoves": ["BEAK_BLAST"],
         "defaultIVs": {
             "cp500": [7, 4, 15, 14],
             "cp1500": [20.5, 5, 14, 14],
