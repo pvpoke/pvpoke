@@ -25356,7 +25356,32 @@
             "cp2500": [24, 10, 11, 13]
         },
         "levelFloor": 15,
-        "tags": ["mythical", "untradeable"],
+        "tags": ["mythical", "untradeable", "shadoweligible"],
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true,
+        "level25CP": 2346
+    },
+    {
+        "dex": 491,
+        "speciesName": "Darkrai (Shadow)",
+        "speciesId": "darkrai_shadow",
+        "baseStats": {
+            "atk": 285,
+            "def": 198,
+            "hp": 172
+        },
+        "types": ["dark", "none"],
+        "fastMoves": ["FEINT_ATTACK", "SNARL"],
+        "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST", "SHADOW_BALL", "SLUDGE_BOMB"],
+        "eliteMoves": ["SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp500": [5, 10, 13, 15],
+            "cp1500": [1, 0, 0, 0],
+            "cp2500": [24, 10, 11, 13]
+        },
+        "levelFloor": 15,
+        "tags": ["mythical", "untradeable", "shadow"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -39169,7 +39194,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_IMPIDIMP",
             "evolutions": ["morgrem"]
@@ -39195,7 +39220,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_IMPIDIMP",
             "parent": "impidimp",
@@ -39221,7 +39246,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_IMPIDIMP",
             "parent": "morgrem"

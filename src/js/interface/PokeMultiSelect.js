@@ -683,7 +683,7 @@ function PokeMultiSelect(element){
 
 	// Convert the current Pokemon list into exportable and savable JSON
 
-	this.convertListToJSON = function(){
+	this.convertListToJSON = function(isTeamSheet = false){
 		var arr = [];
 
 		for(var i = 0; i < pokemonList.length; i++){
@@ -701,9 +701,16 @@ function PokeMultiSelect(element){
 				obj.shadowType = pokemonList[i].shadowType;
 			}
 
-			if(pokemon.isCustom){
-				obj.level = pokemon.level;
-				obj.ivs = [pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp];
+			if(pokemonList[i].isCustom){
+				obj.level = pokemonList[i].level;
+				obj.ivs = [pokemonList[i].ivs.atk, pokemonList[i].ivs.def, pokemonList[i].ivs.hp];
+			}
+
+			if(isTeamSheet){
+				obj.cp = pokemonList[i].cp;
+				obj.hp = pokemonList[i].stats.hp;
+				obj.bestBuddy = pokemonList[i].level > 50;
+				obj.isShadow = pokemonList[i].shadowType == "shadow";
 			}
 
 			arr.push(obj);
@@ -1018,6 +1025,14 @@ function PokeMultiSelect(element){
 			e.preventDefault();
 
 			$(".modal .list-text").html(self.convertListToJSON());
+		});
+
+		// Display export with team sheet data
+
+		$(".modal a.team-sheet").on("click", function(e){
+			e.preventDefault();
+
+			$(".modal .list-text").html(self.convertListToJSON(true));
 		});
 	});
 

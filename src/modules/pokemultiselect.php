@@ -143,6 +143,10 @@
 	<textarea class="list-text" type="text"></textarea>
 	<div class="export-options">
 		<div class="copy">Copy</div>
+
+		<a class="team-sheet" href="#">Team Sheet Export</a>
+		
+
 		<a class="json" href="#">JSON Export</a>
 	</div>
 

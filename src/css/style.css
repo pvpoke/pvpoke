@@ -4691,8 +4691,8 @@ a.rating:hover:after {
   display: flex;
   justify-content: space-between;
 }
-.modal .list-export .export-options a.json,
-.modal .search-string-window .export-options a.json {
+.modal .list-export .export-options a,
+.modal .search-string-window .export-options a {
   font-size: 12px;
 }
 .modal .save-list input {
