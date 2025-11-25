@@ -32130,8 +32130,8 @@
         },
         "types": ["water", "fighting"],
         "fastMoves": ["POISON_JAB", "LOW_KICK"],
-        "chargedMoves": ["AQUA_JET", "CLOSE_COMBAT", "HYDRO_PUMP", "X_SCISSOR", "SACRED_SWORD"],
-        "eliteMoves": ["SACRED_SWORD"],
+        "chargedMoves": ["AQUA_JET", "CLOSE_COMBAT", "HYDRO_PUMP", "X_SCISSOR", "SECRET_SWORD"],
+        "eliteMoves": ["SECRET_SWORD"],
         "defaultIVs": {
             "cp500": [5, 14, 11, 15],
             "cp1500": [14.5, 12, 12, 13],
@@ -32140,7 +32140,8 @@
         "tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true,
+        "searchPriority": 2
     },
     {
         "dex": 648,
