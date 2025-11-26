@@ -223,7 +223,7 @@ if(! isset($OG_IMAGE)){
 	<?php  if(true): // Removing this but saving code for future use ?>
 		<?php if(strpos($_SERVER['REQUEST_URI'], 'precious-paths') == false): ?>
 			<div class="header-ticker">
-				<a href="https://pvpoke.com/new-season-2026/rankings/">Preview next season</a>
+				<a href="https://pvpoke.com/precious-paths/rankings/">Preview next season</a>
 			</div>
 		<?php else: ?>
 			<div class="header-ticker old-version">
