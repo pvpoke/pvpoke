@@ -19126,6 +19126,7 @@
         "types": ["dark", "none"],
         "fastMoves": ["PSYCHO_CUT", "SNARL"],
         "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER", "PAYBACK", "BRUTAL_SWING"],
+        "eliteMoves": ["BRUTAL_SWING"],
         "defaultIVs": {
             "cp500": [7.5, 4, 13, 11],
             "cp1500": [22, 4, 14, 11],
@@ -33656,7 +33657,8 @@
         "family": {
             "id": "FAMILY_SKRELP",
             "parent": "skrelp"
-        }
+        },
+        "searchPriority": 4
     },
     {
         "dex": 692,
@@ -34039,7 +34041,7 @@
             "cp1500": [30, 6, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 12,
+        "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
