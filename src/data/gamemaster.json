@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-11-25 21:13:14",
+    "timestamp": "2025-11-26 20:38:12",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -20370,6 +20370,7 @@
             "types": ["dark", "none"],
             "fastMoves": ["PSYCHO_CUT", "SNARL"],
             "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER", "PAYBACK", "BRUTAL_SWING"],
+            "eliteMoves": ["BRUTAL_SWING"],
             "defaultIVs": {
                 "cp500": [7.5, 4, 13, 11],
                 "cp1500": [22, 4, 14, 11],
