@@ -221,7 +221,7 @@ if(! isset($OG_IMAGE)){
 <body <?php if($_SETTINGS->colorblindMode == 1): ?>class="colorblind"<?php endif; ?>>
 
 	<?php  if(true): // Removing this but saving code for future use ?>
-		<?php if(strpos($_SERVER['REQUEST_URI'], 'new-season-2026') == false): ?>
+		<?php if(strpos($_SERVER['REQUEST_URI'], 'precious-paths') == false): ?>
 			<div class="header-ticker">
 				<a href="https://pvpoke.com/new-season-2026/rankings/">Preview next season</a>
 			</div>
