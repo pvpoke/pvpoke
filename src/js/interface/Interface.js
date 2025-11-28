@@ -31,7 +31,9 @@ var InterfaceMaster = (function () {
 			this.context = "battle";
 			this.battleMode = "single";
 			this.matrixMode = "battle";
-
+			var currentSortCol = null;
+			var currentSortOrder = "asc";
+			
 			var sandbox = false;
 			var actions = [];
 			var sandboxPokemon;
@@ -96,6 +98,7 @@ var InterfaceMaster = (function () {
 				$(".multi-battle-sort").on("click", sortMultiBattleResults);
 				$(".battle-results.matrix .ranking-categories a").on("click", selectMatrixMode);
 				$(".battle-results.matrix select.breakpoint-mode").on("change", selectMatrixBreakpointMode);
+				$(".matrix-table").on("click", "th.col-sort", handleMatrixSort);
 				$("body").on("click", ".battle-results.matrix a.difference", jumpToMatrixColumn);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
@@ -1347,7 +1350,7 @@ var InterfaceMaster = (function () {
 				// Add matrix table headings for all Pokemon on the right side
 
 				for(var n = 0; n < team.length; n++){
-					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"<br>"+ team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + "</span></th>");
+					$row.find("tr").append("<th class=\"name-small col-sort\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"<br>"+ team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + "</span></th>");
 
 					csv += team[n].speciesName+" "+team[n].generateMovesetStr() + " " + team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + ',';
 				}
@@ -1356,9 +1359,9 @@ var InterfaceMaster = (function () {
 
 				csv +='Wins,Losses,Draws,';
 
-				$row.find("tr").append("<th class=\"name-small\">Record (W/L/D)</th>");
+				$row.find("tr").append("<th id=\"col-record\" class=\"name-small col-sort\" data-col=\"X\">Record (W/L/D)</th>");
 
-				$row.find("tr").append("<th class=\"name-small\">Average</th>");
+				$row.find("tr").append("<th class=\"name-small col-sort\">Average</th>");
 
 				csv +='Average';
 				csv += '\n';
@@ -1636,6 +1639,81 @@ var InterfaceMaster = (function () {
 				$(".button.download-csv").attr("download", filename);
 			}
 
+			// Event handler for sorting the matrix-table
+			
+			function handleMatrixSort() {
+				const th = $(this);
+				const table = th.closest("table");
+				const tbody = table.find("tbody");
+				const colIndex = th.index();
+			
+				// Get all rows as an array
+				const rows = tbody.find("tr").toArray();
+			
+				// Determine ascending/descending
+				const ascending = !th.data("asc");
+				th.data("asc", ascending);
+			
+				rows.sort((a, b) => {
+					const A = parseFloat($(a).children().eq(colIndex).text()) || 0;
+					const B = parseFloat($(b).children().eq(colIndex).text()) || 0;
+			
+					return ascending ? A - B : B - A;
+				});
+			
+				// Re-attach rows
+				tbody.append(rows);
+			}
+												
+			function handleRecordSort(colIndex, order) {
+				const tbody = $(".matrix-table tbody");
+				const rows = tbody.find("tr").get();
+			
+				function parseRecord(str) {
+					const parts = str.split("/");
+					const W = parseInt(parts[0]) || 0;
+					const L = parseInt(parts[1]) || 0;
+					const D = parseInt(parts[2]) || 0;
+					return 3*W + 1*D + 0*L;
+				}
+			
+				rows.sort(function(a, b) {
+					const A = $(a).find("td").eq(colIndex).text().trim();
+					const B = $(b).find("td").eq(colIndex).text().trim();
+			
+					const scoreA = parseRecord(A);
+					const scoreB = parseRecord(B);
+			
+					return order === "asc" ? scoreA - scoreB : scoreB - scoreA;
+				});
+			
+				tbody.empty().append(rows);
+			}
+						
+			function handleStandardSort(colIndex, order) {
+				const tbody = $(".matrix-table tbody");
+				const rows = tbody.find("tr").get();
+			
+				rows.sort(function(a, b) {
+					const A = $(a).find("td").eq(colIndex).text().trim();
+					const B = $(b).find("td").eq(colIndex).text().trim();
+			
+					const numA = parseFloat(A);
+					const numB = parseFloat(B);
+			
+					let result;
+					if (!isNaN(numA) && !isNaN(numB)) {
+						result = numA - numB;
+					} else {
+						result = A.localeCompare(B);
+					}
+			
+					return order === "asc" ? result : -result;
+				});
+			
+				tbody.empty().append(rows);
+			}
+						
 			// Event handler for changing the battle mode
 
 			function selectMatrixMode(e){
