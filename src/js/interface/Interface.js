@@ -1642,78 +1642,32 @@ var InterfaceMaster = (function () {
 			// Event handler for sorting the matrix-table
 			
 			function handleMatrixSort() {
-				const th = $(this);
+				const th = $(this); 
 				const table = th.closest("table");
 				const tbody = table.find("tbody");
 				const colIndex = th.index();
-			
+
+				//Reset the attribute
+			    table.find("th").not(th).removeAttr("data-asc");
+
 				// Get all rows as an array
 				const rows = tbody.find("tr").toArray();
 			
-				// Determine ascending/descending
-				const ascending = !th.data("asc");
+				// Determine ascending/descending (returns true on first click)
+				let ascending = !th.data("asc");
 				th.data("asc", ascending);
+				th.attr("data-asc", ascending)
 			
 				rows.sort((a, b) => {
-					const A = parseFloat($(a).children().eq(colIndex).text()) || 0;
-					const B = parseFloat($(b).children().eq(colIndex).text()) || 0;
-			
+					const A = parseFloat($(a).children().eq(colIndex).text());
+					const B = parseFloat($(b).children().eq(colIndex).text());
 					return ascending ? A - B : B - A;
 				});
 			
 				// Re-attach rows
 				tbody.append(rows);
 			}
-												
-			function handleRecordSort(colIndex, order) {
-				const tbody = $(".matrix-table tbody");
-				const rows = tbody.find("tr").get();
-			
-				function parseRecord(str) {
-					const parts = str.split("/");
-					const W = parseInt(parts[0]) || 0;
-					const L = parseInt(parts[1]) || 0;
-					const D = parseInt(parts[2]) || 0;
-					return 3*W + 1*D + 0*L;
-				}
-			
-				rows.sort(function(a, b) {
-					const A = $(a).find("td").eq(colIndex).text().trim();
-					const B = $(b).find("td").eq(colIndex).text().trim();
-			
-					const scoreA = parseRecord(A);
-					const scoreB = parseRecord(B);
-			
-					return order === "asc" ? scoreA - scoreB : scoreB - scoreA;
-				});
-			
-				tbody.empty().append(rows);
-			}
-						
-			function handleStandardSort(colIndex, order) {
-				const tbody = $(".matrix-table tbody");
-				const rows = tbody.find("tr").get();
-			
-				rows.sort(function(a, b) {
-					const A = $(a).find("td").eq(colIndex).text().trim();
-					const B = $(b).find("td").eq(colIndex).text().trim();
-			
-					const numA = parseFloat(A);
-					const numB = parseFloat(B);
-			
-					let result;
-					if (!isNaN(numA) && !isNaN(numB)) {
-						result = numA - numB;
-					} else {
-						result = A.localeCompare(B);
-					}
-			
-					return order === "asc" ? result : -result;
-				});
-			
-				tbody.empty().append(rows);
-			}
-						
+
 			// Event handler for changing the battle mode
 
 			function selectMatrixMode(e){
