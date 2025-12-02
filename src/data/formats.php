@@ -24,6 +24,66 @@ $formats = array (
   ),
   2 => 
   array (
+    'title' => 'Battle Frontier (Calamity)',
+    'cup' => 'calamity',
+    'cp' => 1500,
+    'meta' => 'calamity',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  3 => 
+  array (
+    'title' => 'Battle Frontier (Ultra)',
+    'cup' => 'battlefrontierultra',
+    'cp' => 2500,
+    'meta' => 'ultra',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  4 => 
+  array (
+    'title' => 'Battle Frontier (Master)',
+    'cup' => 'battlefrontiermaster',
+    'cp' => 10000,
+    'meta' => 'battlefrontiermaster',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  5 => 
+  array (
+    'title' => 'Devon Metamorphosis Cup',
+    'cup' => 'metamorphosis',
+    'cp' => 1500,
+    'meta' => 'metamorphosis',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  6 => 
+  array (
+    'title' => 'Gymbreakers Pillar Cup Remix',
+    'cup' => 'pillar3',
+    'cp' => 1500,
+    'meta' => 'pillar3',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  7 => 
+  array (
+    'title' => 'Zygarden Chrono Meta',
+    'cup' => 'chrono',
+    'cp' => 1500,
+    'meta' => 'chrono',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  8 => 
+  array (
     'title' => 'Little Cup',
     'cup' => 'little',
     'cp' => 500,
@@ -32,7 +92,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  3 => 
+  9 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -42,7 +102,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  4 => 
+  10 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

@@ -41516,7 +41516,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_NACLI",
             "evolutions": ["naclstack"]
@@ -41541,7 +41541,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_NACLI",
             "parent": "nacli",
@@ -41567,7 +41567,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_NACLI",
             "parent": "naclstack"
