@@ -27,7 +27,7 @@
     {
         "speciesId": "kyogre",
         "fastMove": "WATERFALL",
-        "chargedMoves": ["SURF", "ORIGIN_PULSE"]
+        "chargedMoves": ["AVALANCHE", "ORIGIN_PULSE"]
     },
     {
         "speciesId": "kyurem_black",
@@ -120,6 +120,11 @@
         "chargedMoves": ["PSYSHOCK", "NATURES_MADNESS"]
     },
     {
+        "speciesId": "togekiss",
+        "fastMove": "PECK",
+        "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"]
+    },
+    {
         "speciesId": "xerneas",
         "fastMove": "GEOMANCY",
         "chargedMoves": ["CLOSE_COMBAT", "MOONBLAST"]
@@ -163,10 +168,5 @@
         "speciesId": "zygarde_complete",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
-    },
-    {
-        "speciesId": "togekiss",
-        "fastMove": "PECK",
-        "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"]
     }
 ]
