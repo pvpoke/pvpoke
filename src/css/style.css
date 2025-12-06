@@ -4101,6 +4101,31 @@ a.download-csv {
   left: 18px;
 }
 
+th.col-sort {
+  cursor: pointer;
+  padding-right: 20px;
+  position: relative;
+}
+
+th.col-sort::after {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: hidden;
+}
+
+th.col-sort[data-asc="true"]::after {
+  content: "▴";
+  visibility: visible;
+}
+
+th.col-sort[data-asc="false"]::after {
+  content: "▾";
+  visibility: visible;
+}
+
+
 a.rating, .rating-container .rating, .summary .rating,
 .stats-table .rating, .train-table .rating {
   display: flex;
