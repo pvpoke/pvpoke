@@ -1,0 +1,21 @@
+{
+    "name": "euic2026",
+    "title": "EUIC 2026 Championship Series Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["normal","dark","bug","dragon"]
+    },{
+        "filterType": "id",
+        "values": ["froslass","froslass_shadow","politoed","politoed_shadow","seaking","milotic","milotic_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "values": ["steel","flying","fighting"]
+    },{
+        "filterType": "id",
+        "values": ["araquanid","crustle","morpeko_full_belly","turtonator","wigglytuff","morgrem", "ribombee","chansey","diggersby"]
+    },{
+        "filterType": "tag",
+        "values": ["mega","legendary","mythical","ultrabeast"]
+    }]
+}

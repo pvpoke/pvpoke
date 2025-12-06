@@ -14,25 +14,26 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Mega Master League',
-    'cup' => 'mega',
-    'cp' => 10000,
-    'meta' => 'mega',
+    'title' => 'Scroll Cup',
+    'cup' => 'scroll',
+    'cp' => 1500,
+    'meta' => 'scroll',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
     'rules' => 
     array (
-      0 => 'No CP limit.',
-      1 => 'Mega-Evolved Pokémon are allowed.',
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Water-, Fighting-, and Dark-type Pokémon are eligible.',
+      2 => 'The following Pokémon will not be allowed: Primarina',
     ),
   ),
   2 => 
   array (
-    'title' => 'LAIC 2025 Championship Series Cup',
-    'cup' => 'laic2025',
+    'title' => 'EUIC 2026 Championship Series Cup',
+    'cup' => 'euic2026',
     'cp' => 1500,
-    'meta' => 'laic2025',
+    'meta' => 'euic2026',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
