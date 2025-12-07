@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-12-03 22:27:25",
+    "timestamp": "2025-12-07 00:22:38",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -502,6 +502,29 @@
             "presetOnly": true
         },
         {
+            "name": "holiday",
+            "title": "Holiday Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["grass", "normal", "ice", "ghost", "flying", "electric"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["mega"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["smeargle", "articuno", "celebi", "ho_oh", "hoopa", "lugia", "moltres", "rayquaza", "regice", "regieleki", "regigigas", "shaymin", "shaymin_sky", "zapdos", "morpeko_full_belly"],
+                    "leagues": [500]
+                }
+            ],
+            "partySize": 3,
+            "presetOnly": true
+        },
+        {
             "name": "illusion",
             "title": "illusionT",
             "restrictedPicks": 1,
@@ -651,6 +674,36 @@
                 {
                     "filterType": "id",
                     "values": ["sandslash_alolan", "sandshrew_alolan", "corsola_galarian", "corviknight", "jellicent", "lapras", "kingdra", "ninetales_alolan", "honedge", "doublade", "aegislash_shield", "aegislash_blade"]
+                }
+            ]
+        },
+        {
+            "name": "laic2025remix",
+            "title": "Gymbreakers LAIC 2025 Remix",
+            "link": "https://discord.gg/Gymbreakers",
+            "league": 1500,
+            "include": [
+                {
+                    "filterType": "id",
+                    "values": ["barbaracle", "crustle", "dudunsparce", "feraligatr", "milotic"]
+                },
+                {
+                    "filterType": "type",
+                    "values": ["dragon", "flying", "ghost", "ice", "psychic"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "type",
+                    "values": ["dark", "rock"]
+                },
+                {
+                    "filterType": "tag",
+                    "values": ["mega", "legendary", "mythical", "shadow", "ultrabeast"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["sandslash_alolan", "sandshrew_alolan", "corsola_galarian", "corviknight", "jellicent", "kingdra", "ninetales_alolan", "honedge", "doublade", "aegislash_shield", "aegislash_blade", "oranguru", "runerigus", "walrein", "dewgong"]
                 }
             ]
         },
@@ -1110,6 +1163,16 @@
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Water-,  Fighting-,  and Dark-type Pokémon are eligible.", "The following Pokémon will not be allowed: Primarina"]
         },
         {
+            "title": "Holiday Cup",
+            "cup": "holiday",
+            "cp": 1500,
+            "meta": "holiday",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Grass-,  Electric-,  Ice-,  Flying-,  and Ghost-type Pokémon are eligible."]
+        },
+        {
             "title": "EUIC 2026 Championship Series Cup",
             "cup": "euic2026",
             "cp": 1500,
@@ -1155,10 +1218,10 @@
             "showMeta": true
         },
         {
-            "title": "Gymbreakers Pillar Cup Remix",
-            "cup": "pillar3",
+            "title": "Gymbreakers LAIC 2025 Remix",
+            "cup": "laic2025remix",
             "cp": 1500,
-            "meta": "pillar3",
+            "meta": "laic2025remix",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
