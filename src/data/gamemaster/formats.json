@@ -10,23 +10,37 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Mega Master League",
-		"cup": "mega",
-		"cp": 10000,
-		"meta": "mega",
+		"title": "Scroll Cup",
+		"cup": "scroll",
+		"cp": 1500,
+		"meta": "scroll",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
-			"No CP limit.",
-			"Mega-Evolved Pokémon are allowed."
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Water-, Fighting-, and Dark-type Pokémon are eligible.",
+			"The following Pokémon will not be allowed: Primarina"
 		]
 	},
 	{
-		"title": "LAIC 2025 Championship Series Cup",
-		"cup": "laic2025",
+		"title": "Holiday Cup",
+		"cup": "holiday",
 		"cp": 1500,
-		"meta": "laic2025",
+		"meta": "holiday",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
+		]
+	},
+	{
+		"title": "EUIC 2026 Championship Series Cup",
+		"cup": "euic2026",
+		"cp": 1500,
+		"meta": "euic2026",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
@@ -68,10 +82,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Gymbreakers Pillar Cup Remix",
-		"cup": "pillar3",
+		"title": "Gymbreakers LAIC 2025 Remix",
+		"cup": "laic2025remix",
 		"cp": 1500,
-		"meta": "pillar3",
+		"meta": "laic2025remix",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
