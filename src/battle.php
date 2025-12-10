@@ -388,10 +388,10 @@ require_once 'header.php';
 				<a href="#" data="attack">Attack</a>
 			</div>
 
-			<p class="battle">Explore battle results against this group of Pokemon.</p>
-			<p class="breakpoint">Explore move damage dealt to this group of Pokemon.</p>
-			<p class="bulkpoint">Explore move damage received from this group.</p>
-			<p class="attack">Explore Attack stat differential against this group of Pokemon to analyze <a href="<?php echo $WEB_ROOT; ?>attack-cmp-chart/all/1500/" target="_blank">Charged Move Priority</a>.</p>
+			<p class="battle">Explore battle results against this group of Pokemon. Select a column to sort.</p>
+			<p class="breakpoint">Explore move damage dealt to this group of Pokemon.  Select a column to sort.</p>
+			<p class="bulkpoint">Explore move damage received from this group.  Select a column to sort.</p>
+			<p class="attack">Explore Attack stat differential against this group of Pokemon to analyze <a href="<?php echo $WEB_ROOT; ?>attack-cmp-chart/all/1500/" target="_blank">Charged Move Priority</a>. Select a column to sort.</p>
 
 			<select class="breakpoint-mode">
 				<option value="fast">Fast Move</option>
