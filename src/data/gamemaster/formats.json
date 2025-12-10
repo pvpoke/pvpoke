@@ -24,6 +24,19 @@
 		]
 	},
 	{
+		"title": "Holiday Cup",
+		"cup": "holiday",
+		"cp": 1500,
+		"meta": "holiday",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
+		]
+	},
+	{
 		"title": "EUIC 2026 Championship Series Cup",
 		"cup": "euic2026",
 		"cp": 1500,
@@ -69,10 +82,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Gymbreakers Pillar Cup Remix",
-		"cup": "pillar3",
+		"title": "Gymbreakers LAIC 2025 Remix",
+		"cup": "laic2025remix",
 		"cp": 1500,
-		"meta": "pillar3",
+		"meta": "laic2025remix",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
