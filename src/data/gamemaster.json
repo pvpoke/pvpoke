@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-12-08 18:04:50",
+    "timestamp": "2025-12-13 17:37:37",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -768,6 +768,43 @@
             "excludeLowPokemon": 1
         },
         {
+            "name": "nettle",
+            "title": "Devon Nettle Cup",
+            "link": "https://devon.gg/nettle-cup",
+            "include": [
+                {
+                    "filterType": "id",
+                    "values": ["empoleon", "empoleon_shadow", "escavalier", "pawniard", "perrserker", "tinkaton"]
+                },
+                {
+                    "filterType": "type",
+                    "name": "Type",
+                    "values": ["bug", "dark", "electric", "fairy", "fighting", "grass", "normal", "poison", "rock", "water"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "type",
+                    "name": "Type",
+                    "values": ["dragon", "fire", "flying", "ghost", "ground", "ice", "psychic", "steel"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["clodsire", "cradily", "cradily_shadow", "dachsbun", "nidoqueen", "nidoqueen_shadow", "wigglytuff"]
+                },
+                {
+                    "filterType": "tag",
+                    "name": "Tag",
+                    "values": ["mega"]
+                }
+            ],
+            "overrides": [],
+            "league": 1500,
+            "useDefaultMovesets": 1,
+            "levelCap": 50,
+            "excludeLowPokemon": 1
+        },
+        {
             "name": "onyx",
             "title": "Onyx Cup",
             "include": [
@@ -1209,10 +1246,10 @@
             "showMeta": true
         },
         {
-            "title": "Devon Metamorphosis Cup",
-            "cup": "metamorphosis",
+            "title": "Devon Nettle Cup",
+            "cup": "nettle",
             "cp": 1500,
-            "meta": "metamorphosis",
+            "meta": "nettle",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
