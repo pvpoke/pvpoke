@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-12-13 17:37:37",
+    "timestamp": "2025-12-15 00:52:07",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -1200,7 +1200,7 @@
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Water-,  Fighting-,  and Dark-type Pokémon are eligible.", "The following Pokémon will not be allowed: Primarina"]
         },
         {
-            "title": "Holiday Cup",
+            "title": "Holiday Cup (Great League)",
             "cup": "holiday",
             "cp": 1500,
             "meta": "holiday",
@@ -1208,6 +1208,16 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Grass-,  Electric-,  Ice-,  Flying-,  and Ghost-type Pokémon are eligible."]
+        },
+        {
+            "title": "Holiday Cup (Ultra League)",
+            "cup": "holiday",
+            "cp": 2500,
+            "meta": "holidayultra",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 2, 500 CP to enter.", "Only Normal-,  Grass-,  Electric-,  Ice-,  Flying-,  and Ghost-type Pokémon are eligible."]
         },
         {
             "title": "EUIC 2026 Championship Series Cup",

@@ -24,7 +24,7 @@
 		]
 	},
 	{
-		"title": "Holiday Cup",
+		"title": "Holiday Cup (Great League)",
 		"cup": "holiday",
 		"cp": 1500,
 		"meta": "holiday",
@@ -33,6 +33,19 @@
 		"showMeta": true,
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
+		]
+	},
+	{
+		"title": "Holiday Cup (Ultra League)",
+		"cup": "holiday",
+		"cp": 2500,
+		"meta": "holidayultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 2,500 CP to enter.",
 			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
 		]
 	},
