@@ -14,22 +14,6 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Scroll Cup',
-    'cup' => 'scroll',
-    'cp' => 1500,
-    'meta' => 'scroll',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Water-, Fighting-, and Dark-type Pokémon are eligible.',
-      2 => 'The following Pokémon will not be allowed: Primarina',
-    ),
-  ),
-  2 => 
-  array (
     'title' => 'Holiday Cup (Great League)',
     'cup' => 'holiday',
     'cp' => 1500,
@@ -43,7 +27,7 @@ $formats = array (
       1 => 'Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible.',
     ),
   ),
-  3 => 
+  2 => 
   array (
     'title' => 'Holiday Cup (Ultra League)',
     'cup' => 'holiday',
@@ -56,6 +40,22 @@ $formats = array (
     array (
       0 => 'Pokémon must be at or below 2,500 CP to enter.',
       1 => 'Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible.',
+    ),
+  ),
+  3 => 
+  array (
+    'title' => 'Sunshine Cup',
+    'cup' => 'sunshine',
+    'cp' => 1500,
+    'meta' => 'sunshine',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.',
+      2 => 'The following Pokémon will not be allowed: Charizard',
     ),
   ),
   4 => 

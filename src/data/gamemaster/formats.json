@@ -10,20 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Scroll Cup",
-		"cup": "scroll",
-		"cp": 1500,
-		"meta": "scroll",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Water-, Fighting-, and Dark-type Pokémon are eligible.",
-			"The following Pokémon will not be allowed: Primarina"
-		]
-	},
-	{
 		"title": "Holiday Cup (Great League)",
 		"cup": "holiday",
 		"cp": 1500,
@@ -47,6 +33,20 @@
 		"rules": [
 			"Pokémon must be at or below 2,500 CP to enter.",
 			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
+		]
+	},
+	{
+		"title": "Sunshine Cup",
+		"cup": "sunshine",
+		"cp": 1500,
+		"meta": "sunshine",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.",
+			"The following Pokémon will not be allowed: Charizard"
 		]
 	},
 	{

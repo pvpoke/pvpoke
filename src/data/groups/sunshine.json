@@ -1,15 +1,5 @@
 [
     {
-        "speciesId": "abomasnow",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["ICY_WIND", "ENERGY_BALL"]
-    },
-    {
-        "speciesId": "bibarel",
-        "fastMove": "ROLLOUT",
-        "chargedMoves": ["SURF", "HYPER_FANG"]
-    },
-    {
         "speciesId": "clodsire",
         "fastMove": "POISON_STING",
         "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
@@ -28,11 +18,6 @@
         "speciesId": "dunsparce",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
-    },
-    {
-        "speciesId": "flygon",
-        "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["SCORCHING_SANDS", "DRAGON_CLAW"]
     },
     {
         "speciesId": "furret",
@@ -67,9 +52,20 @@
         "chargedMoves": ["ROCK_TOMB", "OVERHEAT"]
     },
     {
-        "speciesId": "pidgeot",
-        "fastMove": "GUST",
-        "chargedMoves": ["AIR_CUTTER", "BRAVE_BIRD"]
+        "speciesId": "marowak_shadow",
+        "fastMove": "MUD_SLAP",
+        "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "miltank",
+        "fastMove": "ROLLOUT",
+        "chargedMoves": ["BODY_SLAM", "ICE_BEAM"]
+    },
+    {
+        "speciesId": "toucannon",
+        "fastMove": "PECK",
+        "chargedMoves": ["BEAK_BLAST", "DRILL_PECK"]
     },
     {
         "speciesId": "piloswine",
@@ -100,24 +96,80 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "whiscash",
+        "speciesId": "swampert",
         "fastMove": "MUD_SHOT",
-        "chargedMoves": ["MUD_BOMB", "SCALD"]
+        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
     },
     {
-        "speciesId": "miltank",
-        "fastMove": "ROLLOUT",
-        "chargedMoves": ["BODY_SLAM", "ICE_BEAM"]
-    },
-    {
-        "speciesId": "ferrothorn",
-        "fastMove": "BULLET_SEED",
-        "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
-    },
-    {
-        "speciesId": "marowak_shadow",
-        "fastMove": "MUD_SLAP",
-        "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
+        "speciesId": "talonflame_shadow",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["FLAME_CHARGE", "FLY"],
         "shadowType": "shadow"
+    },
+    {
+        "speciesId": "coalossal",
+        "fastMove": "FIRE_SPIN",
+        "chargedMoves": ["ROCK_SLIDE", "FLAME_CHARGE"]
+    },
+    {
+        "speciesId": "drampa",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SWIFT", "DRAGON_PULSE"]
+    },
+    {
+        "speciesId": "gliscor",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"]
+    },
+    {
+        "speciesId": "blaziken",
+        "fastMove": "EMBER",
+        "chargedMoves": ["AURA_SPHERE", "BLAST_BURN"]
+    },
+    {
+        "speciesId": "blaziken_shadow",
+        "fastMove": "EMBER",
+        "chargedMoves": ["AURA_SPHERE", "BLAST_BURN"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "turtonator",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["BRUTAL_SWING", "DRAGON_CLAW"]
+    },
+    {
+        "speciesId": "lickilicky",
+        "fastMove": "ROLLOUT",
+        "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
+    },
+    {
+        "speciesId": "oranguru",
+        "fastMove": "CONFUSION",
+        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
+    },
+    {
+        "speciesId": "claydol",
+        "fastMove": "MUD_SLAP",
+        "chargedMoves": ["ROCK_TOMB", "ICE_BEAM"]
+    },
+    {
+        "speciesId": "dartrix",
+        "fastMove": "PECK",
+        "chargedMoves": ["BRAVE_BIRD", "SEED_BOMB"]
+    },
+    {
+        "speciesId": "wigglytuff",
+        "fastMove": "CHARM",
+        "chargedMoves": ["ICY_WIND", "SWIFT"]
+    },
+    {
+        "speciesId": "ludicolo",
+        "fastMove": "ASTONISH",
+        "chargedMoves": ["WEATHER_BALL_WATER", "LEAF_STORM"]
+    },
+    {
+        "speciesId": "skeledirge",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["TORCH_SONG", "SHADOW_BALL"]
     }
 ]
