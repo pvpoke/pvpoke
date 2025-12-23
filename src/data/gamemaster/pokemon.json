@@ -38593,7 +38593,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_ROLYCOLY",
             "evolutions": ["carkol"]
@@ -38609,7 +38609,7 @@
             "hp": 190
         },
         "types": ["rock", "fire"],
-        "fastMoves": ["SMACK_DOWN", "INCINERATE"],
+        "fastMoves": ["SMACK_DOWN"],
         "chargedMoves": ["ROCK_BLAST", "ROCK_SLIDE", "FLAME_CHARGE"],
         "defaultIVs": {
             "cp500": [13, 4, 12, 8],
@@ -38619,7 +38619,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_ROLYCOLY",
             "parent": "boltund",
@@ -38636,7 +38636,7 @@
             "hp": 242
         },
         "types": ["rock", "fire"],
-        "fastMoves": ["SMACK_DOWN", "INCINERATE"],
+        "fastMoves": ["SMACK_DOWN", "FIRE_SPIN"],
         "chargedMoves": ["ROCK_BLAST", "ROCK_SLIDE", "FLAME_CHARGE"],
         "defaultIVs": {
             "cp500": [8, 6, 15, 14],
@@ -38646,7 +38646,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_ROLYCOLY",
             "parent": "rolycoly"

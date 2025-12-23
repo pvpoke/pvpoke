@@ -2168,6 +2168,21 @@
         "turns": 1
     },
     {
+        "moveId": "MIND_BLOWN",
+        "name": "Mind Blown",
+        "abbreviation": "MdB",
+        "type": "fire",
+        "power": 90,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -4],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff",
+        "turns": 1
+    },
+    {
         "moveId": "MIRROR_COAT",
         "name": "Mirror Coat",
         "abbreviation": "MrC",
