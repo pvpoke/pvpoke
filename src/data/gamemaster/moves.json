@@ -2177,7 +2177,7 @@
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [0, -4],
-        "buffTarget": "opponent",
+        "buffTarget": "self",
         "buffApplyChance": "1",
         "archetype": "Debuff",
         "turns": 1

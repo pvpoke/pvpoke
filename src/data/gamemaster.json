@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-12-23 19:45:41",
+    "timestamp": "2025-12-28 17:35:35",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -1188,16 +1188,6 @@
             "showFormat": true,
             "showMeta": true,
             "hideRankings": true
-        },
-        {
-            "title": "Holiday Cup (Great League)",
-            "cup": "holiday",
-            "cp": 1500,
-            "meta": "holiday",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Grass-,  Electric-,  Ice-,  Flying-,  and Ghost-type Pokémon are eligible."]
         },
         {
             "title": "Holiday Cup (Ultra League)",
@@ -39173,13 +39163,14 @@
             },
             "types": ["fire", "ghost"],
             "fastMoves": ["INCINERATE", "ASTONISH"],
-            "chargedMoves": ["MYSTICAL_FIRE", "SHADOW_BALL", "OVERHEAT"],
+            "chargedMoves": ["MYSTICAL_FIRE", "SHADOW_BALL", "OVERHEAT", "MIND_BLOWN"],
+            "eliteMoves": ["MIND_BLOWN"],
             "defaultIVs": {
                 "cp500": [6, 4, 9, 5],
                 "cp1500": [16.5, 5, 15, 13],
                 "cp2500": [27.5, 5, 14, 14]
             },
-            "tags": ["ultrabeast"],
+            "tags": ["ultrabeast", "include1500", "include2500", "include10000"],
             "buddyDistance": 20,
             "thirdMoveCost": 100000,
             "released": true
@@ -47471,7 +47462,7 @@
             "energyGain": 0,
             "cooldown": 500,
             "buffs": [0, -4],
-            "buffTarget": "opponent",
+            "buffTarget": "self",
             "buffApplyChance": "1",
             "archetype": "Debuff",
             "turns": 1

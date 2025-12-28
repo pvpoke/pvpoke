@@ -37791,13 +37791,14 @@
         },
         "types": ["fire", "ghost"],
         "fastMoves": ["INCINERATE", "ASTONISH"],
-        "chargedMoves": ["MYSTICAL_FIRE", "SHADOW_BALL", "OVERHEAT"],
+        "chargedMoves": ["MYSTICAL_FIRE", "SHADOW_BALL", "OVERHEAT", "MIND_BLOWN"],
+        "eliteMoves": ["MIND_BLOWN"],
         "defaultIVs": {
             "cp500": [6, 4, 9, 5],
             "cp1500": [16.5, 5, 15, 13],
             "cp2500": [27.5, 5, 14, 14]
         },
-        "tags": ["ultrabeast"],
+        "tags": ["ultrabeast", "include1500", "include2500", "include10000"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
