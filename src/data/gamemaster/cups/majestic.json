@@ -1,0 +1,21 @@
+{
+    "name": "majestic",
+    "title": "Majestic Cup",
+	"include": [{
+        "filterType": "type",
+        "values": ["fairy","ice","psychic","ghost","water","normal"]
+    },{
+        "filterType": "id",
+        "values": []
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "type",
+        "values": ["dark","none","electric","rock","steel","fire"]
+    }, {
+        "filterType": "id",
+        "values": ["azumarill","oranguru","fearow","toucannon","trumbeak","dodrio","rufflet","toxapex","ninetales_alolan","sealeo","dewgong","wigglytuff","walrein","jellicent","araquanid","girafarig"]
+    }]
+}

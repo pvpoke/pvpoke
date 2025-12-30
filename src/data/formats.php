@@ -55,20 +55,20 @@ $formats = array (
   ),
   4 => 
   array (
-    'title' => 'Battle Frontier (Calamity)',
-    'cup' => 'calamity',
+    'title' => 'Battle Frontier (Majestic)',
+    'cup' => 'majestic',
     'cp' => 1500,
-    'meta' => 'calamity',
+    'meta' => 'majestic',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   5 => 
   array (
-    'title' => 'Battle Frontier (Ultra)',
-    'cup' => 'battlefrontierultra',
+    'title' => 'Battle Frontier (Crucible)',
+    'cup' => 'crucible',
     'cp' => 2500,
-    'meta' => 'ultra',
+    'meta' => 'crucible',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
