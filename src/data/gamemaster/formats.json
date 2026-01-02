@@ -64,6 +64,16 @@
 		"showMeta": true
 	},
 	{
+		"title": "Battle Frontier (Great)",
+		"cup": "battlefrontiergreat",
+		"cp": 1500,
+		"meta": "great",
+		"showCup": false,
+		"showFormat": true,
+		"showMeta": false,
+		"hideRankings": true
+	},
+	{
 		"title": "Battle Frontier (Master)",
 		"cup": "battlefrontiermaster",
 		"cp": 10000,

@@ -75,6 +75,17 @@ $formats = array (
   ),
   6 => 
   array (
+    'title' => 'Battle Frontier (Great)',
+    'cup' => 'battlefrontiergreat',
+    'cp' => 1500,
+    'meta' => 'great',
+    'showCup' => false,
+    'showFormat' => true,
+    'showMeta' => false,
+    'hideRankings' => true,
+  ),
+  7 => 
+  array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
     'cp' => 10000,
@@ -83,7 +94,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Devon Nettle Cup',
     'cup' => 'nettle',
@@ -93,7 +104,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  9 => 
   array (
     'title' => 'Gymbreakers LAIC 2025 Remix',
     'cup' => 'laic2025remix',
@@ -103,7 +114,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  10 => 
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -113,7 +124,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  11 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -123,7 +134,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  11 => 
+  12 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -133,7 +144,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  13 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

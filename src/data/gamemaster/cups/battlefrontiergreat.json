@@ -2,16 +2,19 @@
     "name": "battlefrontiergreat",
     "title": "Battle Frontier (Great)",
     "include": [],
-    "exclude": [],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }],
     "tierRules": {
         "max": 2,
         "floor": 0,
         "tiers": [{
             "points": 2,
-            "pokemon": []
+            "pokemon": ["cradily","furret"]
         }, {
             "points": 1,
-            "pokemon": []
+            "pokemon": ["altaria","annihilape","azumarill","corsola_galarian","corviknight","empoleon","florges","gastrodon","jellicent","marowak","primeape","sableye","scizor","talonflame","wigglytuff"]
         }]
     },
     "allowSameSpecies": true

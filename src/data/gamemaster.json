@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-12-31 22:18:51",
+    "timestamp": "2026-01-02 22:11:43",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -115,18 +115,23 @@
             "name": "battlefrontiergreat",
             "title": "Battle Frontier (Great)",
             "include": [],
-            "exclude": [],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["mega"]
+                }
+            ],
             "tierRules": {
                 "max": 2,
                 "floor": 0,
                 "tiers": [
                     {
                         "points": 2,
-                        "pokemon": []
+                        "pokemon": ["cradily", "furret"]
                     },
                     {
                         "points": 1,
-                        "pokemon": []
+                        "pokemon": ["altaria", "annihilape", "azumarill", "corsola_galarian", "corviknight", "empoleon", "florges", "gastrodon", "jellicent", "marowak", "primeape", "sableye", "scizor", "talonflame", "wigglytuff"]
                     }
                 ]
             },
@@ -1287,6 +1292,16 @@
             "showCup": true,
             "showFormat": true,
             "showMeta": true
+        },
+        {
+            "title": "Battle Frontier (Great)",
+            "cup": "battlefrontiergreat",
+            "cp": 1500,
+            "meta": "great",
+            "showCup": false,
+            "showFormat": true,
+            "showMeta": false,
+            "hideRankings": true
         },
         {
             "title": "Battle Frontier (Master)",
