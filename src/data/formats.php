@@ -14,21 +14,6 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Holiday Cup (Ultra League)',
-    'cup' => 'holiday',
-    'cp' => 2500,
-    'meta' => 'holidayultra',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 2,500 CP to enter.',
-      1 => 'Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible.',
-    ),
-  ),
-  2 => 
-  array (
     'title' => 'Sunshine Cup',
     'cup' => 'sunshine',
     'cp' => 1500,
@@ -41,6 +26,21 @@ $formats = array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
       1 => 'Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.',
       2 => 'The following Pokémon will not be allowed: Charizard',
+    ),
+  ),
+  2 => 
+  array (
+    'title' => 'Retro Cup',
+    'cup' => 'retro',
+    'cp' => 1500,
+    'meta' => 'retro',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Dark-, Steel-, and Fairy-type Pokémon are not eligible.',
     ),
   ),
   3 => 

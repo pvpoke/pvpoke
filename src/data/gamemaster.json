@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-01-02 22:22:25",
+    "timestamp": "2026-01-06 16:06:24",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -1247,16 +1247,6 @@
             "hideRankings": true
         },
         {
-            "title": "Holiday Cup (Ultra League)",
-            "cup": "holiday",
-            "cp": 2500,
-            "meta": "holidayultra",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 2, 500 CP to enter.", "Only Normal-,  Grass-,  Electric-,  Ice-,  Flying-,  and Ghost-type Pokémon are eligible."]
-        },
-        {
             "title": "Sunshine Cup",
             "cup": "sunshine",
             "cp": 1500,
@@ -1265,6 +1255,16 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Fire-,  Grass-,  and Ground-type Pokémon are eligible.", "The following Pokémon will not be allowed: Charizard"]
+        },
+        {
+            "title": "Retro Cup",
+            "cup": "retro",
+            "cp": 1500,
+            "meta": "retro",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Dark-,  Steel-,  and Fairy-type Pokémon are not eligible."]
         },
         {
             "title": "EUIC 2026 Championship Series Cup",
@@ -43415,7 +43415,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 75000,
-            "released": false
+            "released": true
         },
         {
             "dex": 951,

@@ -10,19 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Holiday Cup (Ultra League)",
-		"cup": "holiday",
-		"cp": 2500,
-		"meta": "holidayultra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 2,500 CP to enter.",
-			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "Sunshine Cup",
 		"cup": "sunshine",
 		"cp": 1500,
@@ -34,6 +21,19 @@
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.",
 			"The following Pokémon will not be allowed: Charizard"
+		]
+	},
+	{
+		"title": "Retro Cup",
+		"cup": "retro",
+		"cp": 1500,
+		"meta": "retro",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Dark-, Steel-, and Fairy-type Pokémon are not eligible."
 		]
 	},
 	{
