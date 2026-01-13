@@ -41719,7 +41719,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_WATTREL",
             "evolutions": ["kilowattrel"]
@@ -41745,7 +41745,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_WATTREL",
             "parent": "wattrel"
