@@ -38,11 +38,6 @@
         "chargedMoves": ["MOONBLAST", "CHILLING_WATER"]
     },
     {
-        "speciesId": "garchomp",
-        "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["BREAKING_SWIPE", "EARTH_POWER"]
-    },
-    {
         "speciesId": "gholdengo",
         "fastMove": "HEX",
         "chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
@@ -63,15 +58,15 @@
         "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
     },
     {
+        "speciesId": "gyarados",
+        "fastMove": "WATERFALL",
+        "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+    },
+    {
         "speciesId": "gyarados_shadow",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
         "shadowType": "shadow"
-    },
-    {
-        "speciesId": "kommo_o",
-        "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["CLANGING_SCALES", "UPPER_HAND"]
     },
     {
         "speciesId": "lapras",
@@ -97,6 +92,11 @@
     {
         "speciesId": "primarina",
         "fastMove": "CHARM",
+        "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
+    },
+    {
+        "speciesId": "primarina",
+        "fastMove": "WATERFALL",
         "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
     },
     {
@@ -168,13 +168,23 @@
         "chargedMoves": ["FRENZY_PLANT", "SLUDGE"]
     },
     {
-        "speciesId": "gyarados",
-        "fastMove": "WATERFALL",
-        "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+        "speciesId": "avalugg_hisuian",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["ROCK_SLIDE", "ICY_WIND"]
     },
     {
-        "speciesId": "primarina",
-        "fastMove": "WATERFALL",
-        "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
+        "speciesId": "cetitan",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["AVALANCHE", "SUPER_POWER"]
+    },
+    {
+        "speciesId": "tyranitar",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
+    },
+    {
+        "speciesId": "hydreigon",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "FLY"]
     }
 ]
