@@ -231,5 +231,25 @@
         "speciesId": "weezing_galarian",
         "fastMove": "FAIRY_WIND",
         "chargedMoves": ["BRUTAL_SWING", "SLUDGE"]
+    },
+    {
+        "speciesId": "grumpig",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_BALL"]
+    },
+    {
+        "speciesId": "turtonator",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["BRUTAL_SWING", "DRAGON_CLAW"]
+    },
+    {
+        "speciesId": "oranguru",
+        "fastMove": "CONFUSION",
+        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
+    },
+    {
+        "speciesId": "ampharos",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
     }
 ]
