@@ -937,6 +937,21 @@
         "turns": 1
     },
     {
+        "moveId": "DRUM_BEATING",
+        "name": "Drum Beating",
+        "abbreviation": "DrB",
+        "type": "grass",
+        "power": 60,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff Spam",
+        "turns": 1
+    },
+    {
         "moveId": "DYNAMAX_CANNON",
         "name": "Dynamax Cannon",
         "abbreviation": "DyC",
