@@ -37,6 +37,11 @@
         "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
     },
     {
+        "speciesId": "blaziken",
+        "fastMove": "EMBER",
+        "chargedMoves": ["AURA_SPHERE", "BLAST_BURN"]
+    },
+    {
         "speciesId": "charjabug",
         "fastMove": "VOLT_SWITCH",
         "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
@@ -148,6 +153,12 @@
         "chargedMoves": ["SWIFT", "OUTRAGE"]
     },
     {
+        "speciesId": "kingdra_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SWIFT", "OUTRAGE"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "lapras",
         "fastMove": "PSYWAVE",
         "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
@@ -156,6 +167,11 @@
         "speciesId": "lapras",
         "fastMove": "PSYWAVE",
         "chargedMoves": ["SPARKLING_ARIA", "SKULL_BASH"]
+    },
+    {
+        "speciesId": "magcargo",
+        "fastMove": "EMBER",
+        "chargedMoves": ["ROCK_TOMB", "OVERHEAT"]
     },
     {
         "speciesId": "oranguru",
@@ -179,24 +195,13 @@
         "chargedMoves": ["FLY", "BRAVE_BIRD"]
     },
     {
-        "speciesId": "kingdra_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SWIFT", "OUTRAGE"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "turtonator",
         "fastMove": "INCINERATE",
         "chargedMoves": ["BRUTAL_SWING", "DRAGON_CLAW"]
     },
     {
-        "speciesId": "magcargo",
-        "fastMove": "EMBER",
-        "chargedMoves": ["ROCK_TOMB", "OVERHEAT"]
-    },
-    {
-        "speciesId": "blaziken",
-        "fastMove": "EMBER",
-        "chargedMoves": ["AURA_SPHERE", "BLAST_BURN"]
+        "speciesId": "lunatone",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["WEATHER_BALL_ICE", "ROCK_SLIDE"]
     }
 ]

@@ -16,6 +16,16 @@
         "chargedMoves": ["AVALANCHE", "BODY_SLAM"]
     },
     {
+        "speciesId": "avalugg_hisuian",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["ROCK_SLIDE", "ICY_WIND"]
+    },
+    {
+        "speciesId": "cetitan",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["AVALANCHE", "SUPER_POWER"]
+    },
+    {
         "speciesId": "dragonite_shadow",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER"],
@@ -67,6 +77,11 @@
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
         "shadowType": "shadow"
+    },
+    {
+        "speciesId": "hydreigon",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "FLY"]
     },
     {
         "speciesId": "lapras",
@@ -152,6 +167,11 @@
         "chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
     },
     {
+        "speciesId": "tyranitar",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
+    },
+    {
         "speciesId": "ursaluna",
         "fastMove": "TACKLE",
         "chargedMoves": ["SWIFT", "HIGH_HORSEPOWER"]
@@ -168,23 +188,8 @@
         "chargedMoves": ["FRENZY_PLANT", "SLUDGE"]
     },
     {
-        "speciesId": "avalugg_hisuian",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["ROCK_SLIDE", "ICY_WIND"]
-    },
-    {
-        "speciesId": "cetitan",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["AVALANCHE", "SUPER_POWER"]
-    },
-    {
-        "speciesId": "tyranitar",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
-    },
-    {
-        "speciesId": "hydreigon",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BRUTAL_SWING", "FLY"]
+        "speciesId": "empoleon",
+        "fastMove": "METAL_SOUND",
+        "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
     }
 ]

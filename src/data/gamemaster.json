@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-01-15 20:08:02",
+    "timestamp": "2026-01-17 15:51:44",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -39391,7 +39391,8 @@
             },
             "types": ["grass", "none"],
             "fastMoves": ["SCRATCH", "RAZOR_LEAF"],
-            "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT", "EARTH_POWER"],
+            "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT", "EARTH_POWER", "DRUM_BEATING", "FRENZY_PLANT"],
+            "eliteMoves": ["FRENZY_PLANT"],
             "defaultIVs": {
                 "cp500": [6, 4, 4, 7],
                 "cp1500": [16.5, 5, 15, 13],
