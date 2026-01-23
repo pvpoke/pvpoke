@@ -5104,7 +5104,9 @@
         "family": {
             "id": "FAMILY_PONYTA",
             "evolutions": ["rapidash"]
-        }
+        },
+        "level25CP": 1000,
+        "tags": ["shadoweligible"]
     },
     {
         "dex": 77,
@@ -5133,6 +5135,33 @@
         }
     },
     {
+        "dex": 77,
+        "speciesName": "Ponyta (Shadow)",
+        "speciesId": "ponyta_shadow",
+        "baseStats": {
+            "atk": 170,
+            "def": 127,
+            "hp": 137
+        },
+        "types": ["fire", "none"],
+        "fastMoves": ["EMBER", "TACKLE"],
+        "chargedMoves": ["FIRE_BLAST", "FLAME_CHARGE", "FLAME_WHEEL", "STOMP"],
+        "defaultIVs": {
+            "cp500": [11, 5, 15, 12],
+            "cp1500": [36, 4, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "eliteMoves": ["FIRE_BLAST"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_PONYTA",
+            "evolutions": ["rapidash_shadow"]
+        },
+        "tags": ["shadow"]
+    },
+    {
         "dex": 78,
         "speciesName": "Rapidash",
         "speciesId": "rapidash",
@@ -5158,7 +5187,9 @@
         "family": {
             "id": "FAMILY_PONYTA",
             "parent": "ponyta"
-        }
+        },
+        "level25CP": 1500,
+        "tags": ["shadoweligible"]
     },
     {
         "dex": 78,
@@ -5188,6 +5219,35 @@
             "parent": "ponyta_galarian"
         },
         "nicknames": ["gdash"]
+    },
+    {
+        "dex": 78,
+        "speciesName": "Rapidash (Shadow)",
+        "speciesId": "rapidash_shadow",
+        "baseStats": {
+            "atk": 207,
+            "def": 162,
+            "hp": 163
+        },
+        "types": ["fire", "none"],
+        "fastMoves": ["EMBER", "FIRE_SPIN", "LOW_KICK", "INCINERATE"],
+        "chargedMoves": ["DRILL_RUN", "FIRE_BLAST", "HEAT_WAVE", "FLAME_CHARGE", "SCORCHING_SANDS", "WILD_CHARGE"],
+        "defaultIVs": {
+            "cp500": [7.5, 9, 14, 14],
+            "cp1500": [22.5, 4, 14, 15],
+            "cp2500": [46, 4, 13, 14],
+            "cp2500l40": [40, 15, 15, 15]
+        },
+        "eliteMoves": ["EMBER", "WILD_CHARGE"],
+        "searchPriority": 5,
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_PONYTA",
+            "parent": "ponyta_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 79,
@@ -8649,7 +8709,36 @@
         "family": {
             "id": "FAMILY_KABUTO",
             "evolutions": ["kabutops"]
-        }
+        },
+        "level25CP": 789,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 140,
+        "speciesName": "Kabuto (Shadow)",
+        "speciesId": "kabuto_shadow",
+        "baseStats": {
+            "atk": 148,
+            "def": 140,
+            "hp": 102
+        },
+        "types": ["rock", "water"],
+        "fastMoves": ["MUD_SHOT", "SCRATCH"],
+        "chargedMoves": ["ANCIENT_POWER", "AQUA_JET", "ROCK_TOMB"],
+        "defaultIVs": {
+            "cp500": [14, 4, 14, 11],
+            "cp1500": [49, 13, 15, 13],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_KABUTO",
+            "evolutions": ["kabutops_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 141,
@@ -8675,7 +8764,36 @@
         "family": {
             "id": "FAMILY_KABUTO",
             "parent": "kabuto"
-        }
+        },
+        "level25CP": 1666,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 141,
+        "speciesName": "Kabutops (Shadow)",
+        "speciesId": "kabutops_shadow",
+        "baseStats": {
+            "atk": 220,
+            "def": 186,
+            "hp": 155
+        },
+        "types": ["rock", "water"],
+        "fastMoves": ["FURY_CUTTER", "MUD_SHOT", "ROCK_SMASH", "WATERFALL"],
+        "chargedMoves": ["ANCIENT_POWER", "STONE_EDGE", "WATER_PULSE"],
+        "defaultIVs": {
+            "cp500": [7, 4, 12, 14],
+            "cp1500": [20.5, 4, 12, 14],
+            "cp2500": [37.5, 5, 15, 14]
+        },
+        "eliteMoves": ["FURY_CUTTER"],
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_KABUTO",
+            "parent": "kabuto_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 142,
@@ -31912,6 +32030,28 @@
     },
     {
         "dex": 642,
+        "speciesId": "thundurus_incarnate_shadow",
+        "speciesName": "Thundurus (Incarnate) (Shadow)",
+        "baseStats": {
+            "atk": 266,
+            "def": 164,
+            "hp": 188
+        },
+        "types": ["electric", "flying"],
+        "fastMoves": ["ASTONISH", "THUNDER_SHOCK"],
+        "chargedMoves": ["CRUNCH", "THUNDER", "BRICK_BREAK", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp500": [6, 4, 4, 4],
+            "cp1500": [16.5, 7, 12, 10],
+            "cp2500": [27.5, 5, 14, 9]
+        },
+        "tags": ["legendary", "shadow"],
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true
+    },
+    {
+        "dex": 642,
         "speciesId": "thundurus_therian",
         "speciesName": "Thundurus (Therian)",
         "baseStats": {
@@ -31929,28 +32069,6 @@
             "cp2500": [25, 6, 12, 12]
         },
         "tags": ["legendary"],
-        "buddyDistance": 20,
-        "thirdMoveCost": 100000,
-        "released": true
-    },
-    {
-        "dex": 642,
-        "speciesId": "thundurus_incarnate_shadow",
-        "speciesName": "Thundurus (Incarnate) (Shadow)",
-        "baseStats": {
-            "atk": 266,
-            "def": 164,
-            "hp": 188
-        },
-        "types": ["electric", "flying"],
-        "fastMoves": ["ASTONISH", "THUNDER_SHOCK"],
-        "chargedMoves": ["CRUNCH", "THUNDER", "BRICK_BREAK", "THUNDER_PUNCH"],
-        "defaultIVs": {
-            "cp500": [6, 4, 4, 4],
-            "cp1500": [16.5, 7, 12, 10],
-            "cp2500": [27.5, 5, 14, 9]
-        },
-        "tags": ["legendary", "shadow"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
