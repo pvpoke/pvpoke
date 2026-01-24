@@ -96,10 +96,10 @@ $formats = array (
   ),
   8 => 
   array (
-    'title' => 'Devon Nettle Cup',
-    'cup' => 'nettle',
+    'title' => 'Devon Amor Cup',
+    'cup' => 'amor',
     'cp' => 1500,
-    'meta' => 'nettle',
+    'meta' => 'amor',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,

@@ -11,10 +11,10 @@
         "floor": 0,
         "tiers": [{
             "points": 2,
-            "pokemon": ["cradily"]
+            "pokemon": ["furret"]
         }, {
             "points": 1,
-            "pokemon": ["blastoise","charjabug","clefable","clodsire","corsola_galarian","dusknoir","empoleon","feraligatr","florges","forretress","furret","gastrodon","gourgeist","guzzlord","jellicent","lapras","lickilicky","malamar","moltres_galarian","ninetales_alolan","steelix","stunfisk","tinkaton"]
+            "pokemon": ["altaria","azumarill","blastoise","corviknight","cradily","dusknoir","empoleon","gourgeist_average","gourgeist_large","gourgeist_small","gourgeist_super","jellicent","lapras","marowak","moltres_galarian","ninetales_alolan","scizor","steelix","stunfisk","talonflame","tinkaton","wigglytuff"]
         }]
     },
     "allowSameSpecies": true

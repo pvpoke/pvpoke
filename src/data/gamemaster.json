@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-01-23 17:10:59",
+    "timestamp": "2026-01-24 03:31:16",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -45,6 +45,30 @@
                     "values": ["mega"]
                 }
             ]
+        },
+        {
+            "name": "amor",
+            "title": "Amor Cup",
+            "link": "https://devon.gg",
+            "include": [
+                {
+                    "filterType": "id",
+                    "name": "Species",
+                    "values": ["ariados", "armarouge", "audino", "bewear", "bisharp", "blaziken", "blaziken_shadow", "bruxish", "buzzwole", "camerupt", "camerupt_shadow", "castform_sunny", "centiskorch", "charizard", "charizard_shadow", "cherrim_sunny", "chimecho", "clefable", "crobat", "crobat_shadow", "crustle", "crustle_shadow", "darmanitan_standard", "darmanitan_standard_shadow", "deoxys_defense", "druddigon", "electrode", "electrode_hisuian", "electrode_shadow", "espeon", "frosmoth", "gallade", "gallade_shadow", "gardevoir", "gardevoir_shadow", "heatmor", "incineroar", "krookodile", "latias", "latias_shadow", "latios", "latios_shadow", "leavanny", "ledian", "lickitung", "lopunny", "lucario", "lurantis", "magcargo", "magmar", "magmar_shadow", "magmortar", "magmortar_shadow", "medicham", "mesprit", "mew", "milotic", "miltank", "moltres", "moltres_shadow", "nidoking", "nidoking_shadow", "nidoqueen", "nidoqueen_shadow", "pawniard", "rapidash_galarian", "rotom", "rotom_fan", "rotom_frost", "rotom_heat", "rotom_mow", "rotom_wash", "scolipede", "scolipede_shadow", "scrafty", "seaking", "simisear", "skeledirge", "slowbro", "slowbro_galarian", "slowbro_shadow", "slowking", "slowking_galarian", "slowking_shadow", "slowpoke", "slowpoke_shadow", "slurpuff", "snorlax", "snorlax_shadow", "solrock", "spinda", "swoobat", "sylveon", "talonflame", "talonflame_shadow", "tatsugiri_curly", "tatsugiri_droopy", "tatsugiri_stretchy", "tinkaton", "tinkatuff", "turtonator", "tyrantrum", "tyrantrum_shadow", "umbreon", "vileplume", "vileplume_shadow", "wormadam_trash", "wugtrio"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "move",
+                    "name": "Move",
+                    "values": ["charm", "incinerate", "mud_slap", "smack_down"]
+                }
+            ],
+            "overrides": [],
+            "league": 1500,
+            "useDefaultMovesets": 1,
+            "excludeLowPokemon": 1,
+            "cup": "amor"
         },
         {
             "name": "ascension",
@@ -127,11 +151,11 @@
                 "tiers": [
                     {
                         "points": 2,
-                        "pokemon": ["cradily"]
+                        "pokemon": ["furret"]
                     },
                     {
                         "points": 1,
-                        "pokemon": ["blastoise", "charjabug", "clefable", "clodsire", "corsola_galarian", "dusknoir", "empoleon", "feraligatr", "florges", "forretress", "furret", "gastrodon", "gourgeist", "guzzlord", "jellicent", "lapras", "lickilicky", "malamar", "moltres_galarian", "ninetales_alolan", "steelix", "stunfisk", "tinkaton"]
+                        "pokemon": ["altaria", "azumarill", "blastoise", "corviknight", "cradily", "dusknoir", "empoleon", "gourgeist_average", "gourgeist_large", "gourgeist_small", "gourgeist_super", "jellicent", "lapras", "marowak", "moltres_galarian", "ninetales_alolan", "scizor", "steelix", "stunfisk", "talonflame", "tinkaton", "wigglytuff"]
                     }
                 ]
             },
@@ -1314,10 +1338,10 @@
             "showMeta": true
         },
         {
-            "title": "Devon Nettle Cup",
-            "cup": "nettle",
+            "title": "Devon Amor Cup",
+            "cup": "amor",
             "cp": 1500,
-            "meta": "nettle",
+            "meta": "amor",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
