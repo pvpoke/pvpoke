@@ -42887,7 +42887,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_GLIMMET",
             "evolutions": ["glimmora"]
@@ -42912,7 +42912,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_GLIMMET",
             "parent": "glimmet"
