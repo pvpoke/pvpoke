@@ -102,6 +102,11 @@
         "chargedMoves": ["SURF", "SHADOW_BALL"]
     },
     {
+        "speciesId": "lapras",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
+    },
+    {
         "speciesId": "lickilicky",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
@@ -130,7 +135,7 @@
     {
         "speciesId": "ninetales_alolan",
         "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+        "chargedMoves": ["WEATHER_BALL_ICE", "CHILLING_WATER"]
     },
     {
         "speciesId": "scizor_shadow",
@@ -164,10 +169,5 @@
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
-    },
-    {
-        "speciesId": "lapras",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
     }
 ]

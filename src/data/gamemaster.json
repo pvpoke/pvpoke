@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-01-28 16:43:46",
+    "timestamp": "2026-01-30 17:06:03",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -1279,16 +1279,6 @@
             "showFormat": false,
             "showMeta": true,
             "hideRankings": true,
-            "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
-        },
-        {
-            "title": "Ultra Premier Cup",
-            "cup": "premier",
-            "cp": 2500,
-            "meta": "premierultra",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
             "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
         },
         {
@@ -4018,7 +4008,7 @@
             },
             "types": ["fire", "none"],
             "fastMoves": ["EMBER", "FEINT_ATTACK", "FIRE_SPIN"],
-            "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "HEAT_WAVE", "OVERHEAT", "PSYSHOCK", "SOLAR_BEAM", "WEATHER_BALL_FIRE", "SCORCHING_SANDS"],
+            "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "HEAT_WAVE", "OVERHEAT", "PSYSHOCK", "SOLAR_BEAM", "WEATHER_BALL_FIRE", "SCORCHING_SANDS", "ENERGY_BALL"],
             "defaultIVs": {
                 "cp500": [8.5, 4, 15, 4],
                 "cp1500": [24.5, 4, 15, 14],
@@ -4027,7 +4017,7 @@
             },
             "level25CP": 1382,
             "tags": ["shadoweligible"],
-            "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER"],
+            "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER", "ENERGY_BALL"],
             "searchPriority": 3,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
@@ -4049,7 +4039,8 @@
             },
             "types": ["ice", "fairy"],
             "fastMoves": ["FEINT_ATTACK", "POWDER_SNOW", "CHARM"],
-            "chargedMoves": ["BLIZZARD", "DAZZLING_GLEAM", "ICE_BEAM", "PSYSHOCK", "WEATHER_BALL_ICE"],
+            "chargedMoves": ["BLIZZARD", "DAZZLING_GLEAM", "ICE_BEAM", "PSYSHOCK", "WEATHER_BALL_ICE", "CHILLING_WATER"],
+            "eliteMoves": ["CHILLING_WATER"],
             "tags": ["alolan", "shadoweligible"],
             "defaultIVs": {
                 "cp500": [8, 8, 14, 15],
@@ -4079,7 +4070,8 @@
             },
             "types": ["ice", "fairy"],
             "fastMoves": ["FEINT_ATTACK", "POWDER_SNOW", "CHARM"],
-            "chargedMoves": ["BLIZZARD", "DAZZLING_GLEAM", "ICE_BEAM", "PSYSHOCK", "WEATHER_BALL_ICE"],
+            "chargedMoves": ["BLIZZARD", "DAZZLING_GLEAM", "ICE_BEAM", "PSYSHOCK", "WEATHER_BALL_ICE", "CHILLING_WATER"],
+            "eliteMoves": ["CHILLING_WATER"],
             "tags": ["alolan", "shadow"],
             "defaultIVs": {
                 "cp500": [8, 8, 14, 15],
@@ -4108,7 +4100,7 @@
             },
             "types": ["fire", "none"],
             "fastMoves": ["EMBER", "FEINT_ATTACK", "FIRE_SPIN"],
-            "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "HEAT_WAVE", "OVERHEAT", "PSYSHOCK", "SOLAR_BEAM", "WEATHER_BALL_FIRE", "SCORCHING_SANDS"],
+            "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "HEAT_WAVE", "OVERHEAT", "PSYSHOCK", "SOLAR_BEAM", "WEATHER_BALL_FIRE", "SCORCHING_SANDS", "ENERGY_BALL"],
             "defaultIVs": {
                 "cp500": [8.5, 4, 15, 4],
                 "cp1500": [24.5, 4, 15, 14],
@@ -4116,7 +4108,7 @@
                 "cp2500l40": [40, 15, 15, 15]
             },
             "tags": ["shadow"],
-            "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER"],
+            "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER", "ENERGY_BALL"],
             "searchPriority": 6,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
