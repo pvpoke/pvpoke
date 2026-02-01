@@ -1,142 +1,230 @@
 {
     "properties": {
-        "lastUpdated": "September 26,  2025",
-        "totalPerformers": 4878,
-        "totalTeams": 1626
+        "lastUpdated": "February 1,  2026",
+        "totalPerformers": 12564,
+        "totalTeams": 4188
     },
     "performers": [
         {
-            "pokemon": "palkia_origin DB+AT/FiB",
-            "individualScore": 132.28,
-            "teamScore": 542.5,
-            "games": 153,
-            "usageTrend": [0, 2.71, 7.23, 21.83, 1.33, 4.05, 0, 0, 2.03, 18.49]
+            "pokemon": "xerneas Geo+CC/T",
+            "individualScore": 114.46,
+            "teamScore": 568.82,
+            "games": 392,
+            "usageTrend": [7.73, 11.5, 9.06, 0, 0, 0, 0, 0, 8, 11.4]
         },
         {
-            "pokemon": "groudon DT+FiP/PrB",
-            "individualScore": 115.25,
-            "teamScore": 537.08,
-            "games": 119
+            "pokemon": "lunala SC+M/SB",
+            "individualScore": 120,
+            "teamScore": 563.5,
+            "games": 237
         },
         {
-            "pokemon": "zamazenta_crowned_shield IF+BB/CC",
-            "individualScore": 122.33,
-            "teamScore": 508.53,
-            "games": 356,
-            "usageTrend": [19.75, 25.96, 35.54, 24.88, 23.33, 20.81, 27.05, 20, 25.61, 20.83]
+            "pokemon": "reshiram DB+FuF/SE",
+            "individualScore": 119.26,
+            "teamScore": 553.41,
+            "games": 204
         },
         {
-            "pokemon": "zacian_crowned_sword MC+BB/CC",
-            "individualScore": 114.35,
-            "teamScore": 508.05,
-            "games": 648,
-            "usageTrend": [19.75, 20.54, 30.32, 30.05, 37, 35.14, 40.98, 36.92, 39.84, 51.04]
+            "pokemon": "zekrom DB+FuB/O",
+            "individualScore": 119.39,
+            "teamScore": 549.69,
+            "games": 325
+        },
+        {
+            "pokemon": "kyurem_white DB+FuF/IBu",
+            "individualScore": 154.38,
+            "teamScore": 539.09,
+            "games": 525,
+            "usageTrend": [4.11, 6.25, 8.46, 17.97, 8.14, 3.64, 1.3, 3.41, 1.71, 6.99]
+        },
+        {
+            "pokemon": "reshiram DB+DM/FuF",
+            "individualScore": 115.73,
+            "teamScore": 537.71,
+            "games": 258
+        },
+        {
+            "pokemon": "metagross SC+Eq/MM",
+            "individualScore": 101.91,
+            "teamScore": 533.98,
+            "games": 357
+        },
+        {
+            "pokemon": "tyranitar DB+BrS/SE",
+            "individualScore": 81.43,
+            "teamScore": 533.35,
+            "games": 136
+        },
+        {
+            "pokemon": "xerneas Geo+CC/M",
+            "individualScore": 120.45,
+            "teamScore": 517.69,
+            "games": 210
         },
         {
             "pokemon": "palkia_origin DB+AT/SpR",
-            "individualScore": 142.01,
-            "teamScore": 501.28,
-            "games": 736,
-            "usageTrend": [43.13, 36.94, 56.43, 46.95, 40.67, 49.73, 49.59, 50.77, 39.84, 45.31]
+            "individualScore": 128.67,
+            "teamScore": 502.83,
+            "games": 2291,
+            "usageTrend": [62.8, 57.75, 52.76, 55.47, 56.4, 46.36, 55.84, 37.5, 62.29, 65.81]
         },
         {
-            "pokemon": "landorus_therian MS+SE/SSt",
-            "individualScore": 95.48,
-            "teamScore": 493.09,
-            "games": 137
+            "pokemon": "zacian_crowned_sword MC+BB/CC",
+            "individualScore": 117.52,
+            "teamScore": 498.24,
+            "games": 1353,
+            "usageTrend": [39.13, 34.5, 31.69, 41.02, 51.74, 47.27, 52.6, 40.91, 46, 38.24]
+        },
+        {
+            "pokemon": "zamazenta_crowned_shield IF+BB/CC",
+            "individualScore": 110.84,
+            "teamScore": 488.49,
+            "games": 774,
+            "usageTrend": [17.15, 12.25, 14.57, 17.97, 13.37, 15.45, 16.23, 14.77, 17.43, 16.18]
         },
         {
             "pokemon": "dialga_origin DB+IH/ROT",
-            "individualScore": 118.88,
-            "teamScore": 491.78,
-            "games": 237,
-            "usageTrend": [8.25, 9.08, 14.26, 9.39, 21.33, 17.03, 18.44, 14.62, 17.89, 8.59]
+            "individualScore": 117.92,
+            "teamScore": 478.09,
+            "games": 527,
+            "usageTrend": [15.22, 16.75, 19.88, 12.5, 20.35, 15, 14.94, 18.18, 11.14, 8.82]
         },
         {
             "pokemon": "ho_oh I+BrB/SF",
-            "individualScore": 103.29,
-            "teamScore": 470,
-            "games": 394,
-            "usageTrend": [27.13, 30.41, 23.9, 25.82, 24.67, 22.7, 16.39, 26.92, 23.17, 20.83]
+            "individualScore": 106.88,
+            "teamScore": 477.26,
+            "games": 1013,
+            "usageTrend": [22.22, 26, 26.18, 22.66, 25.58, 25, 22.08, 26.14, 22, 23.9]
         },
         {
-            "pokemon": "kyogre W+OP/S",
-            "individualScore": 110.97,
-            "teamScore": 468.72,
-            "games": 220,
-            "usageTrend": [8.75, 11.15, 6.22, 9.86, 14.67, 20.54, 25, 15.38, 9.76, 10.68]
+            "pokemon": "landorus_therian MS+SE/SSt",
+            "individualScore": 103.26,
+            "teamScore": 466.72,
+            "games": 243
         },
         {
             "pokemon": "kyurem_black SC+FSh/FuB",
-            "individualScore": 80.74,
-            "teamScore": 467.44,
-            "games": 196,
-            "usageTrend": [13.63, 22.61, 14.26, 14.08, 10.33, 11.08, 10.66, 10, 13.82, 8.85]
+            "individualScore": 82.2,
+            "teamScore": 466.25,
+            "games": 475,
+            "usageTrend": [12.08, 10.75, 12.2, 10.55, 10.47, 12.27, 11.04, 11.36, 10.57, 11.76]
         },
         {
             "pokemon": "palkia_origin DT+AT/SpR",
-            "individualScore": 104.36,
-            "teamScore": 463.27,
-            "games": 128
+            "individualScore": 104.33,
+            "teamScore": 464.34,
+            "games": 288
         },
         {
             "pokemon": "rhyperior MSl+BkS/RW",
-            "individualScore": 94.47,
-            "teamScore": 459.07,
-            "games": 275,
-            "usageTrend": [23.75, 23.73, 17.67, 16.43, 16.67, 20.27, 15.57, 15.38, 14.63, 17.45]
+            "individualScore": 111.82,
+            "teamScore": 462.87,
+            "games": 778,
+            "usageTrend": [17.39, 18.75, 16.34, 21.09, 19.77, 18.64, 17.53, 20.45, 17.14, 15.44]
+        },
+        {
+            "pokemon": "necrozma_dusk_mane SC+DP/Stl",
+            "individualScore": 139.99,
+            "teamScore": 454.27,
+            "games": 135
+        },
+        {
+            "pokemon": "kyurem_white IF+FuF/IBu",
+            "individualScore": 79.01,
+            "teamScore": 449.06,
+            "games": 123
         }
     ],
     "teams": [
         {
-            "team": "reshiram DB/Cr/FuF|palkia_origin DB/AT/FiB|zamazenta_crowned_shield IF/BB/GI",
-            "teamScore": 556.71,
+            "team": "palkia_origin DB/AT/SpR|metagross SC/Eq/MM|primarina Ch/DV/HC",
+            "teamScore": 610.26,
+            "games": 61
+        },
+        {
+            "team": "zekrom DB/FuB/O|palkia_origin DB/AT/SpR|zamazenta_crowned_shield IF/BB/CC",
+            "teamScore": 607.62,
+            "games": 26
+        },
+        {
+            "team": "reshiram DB/FuF/SE|palkia_origin DB/AT/SpR|zamazenta_crowned_shield IF/BB/CC",
+            "teamScore": 600.19,
             "games": 21
         },
         {
-            "team": "zacian_crowned_sword MC/BB/CC|palkia_origin DB/AT/FiB|reshiram DB/FuF/SE",
-            "teamScore": 552.82,
-            "games": 67
+            "team": "zekrom DB/FuB/O|lunala SC/M/SB|zamazenta_crowned_shield IF/BB/CC",
+            "teamScore": 592.5,
+            "games": 28
         },
         {
-            "team": "zacian_crowned_sword MC/BB/CC|giratina_origin SC/DgP/SB|necrozma_dawn_wings SC/IH/MoG",
-            "teamScore": 549.32,
-            "games": 22
+            "team": "xerneas Geo/CC/T|palkia_origin DB/AT/SpR|tyranitar DB/BrS/SE",
+            "teamScore": 591.9,
+            "games": 21
         },
         {
-            "team": "groudon DT/FiP/PrB|palkia_origin DB/AT/SpR|zacian_crowned_sword MC/BB/CC",
-            "teamScore": 539.94,
-            "games": 16
+            "team": "kyurem_white DB/FuF/IBu|kyogre W/Av/S|xerneas Geo/CC/T",
+            "teamScore": 587.83,
+            "games": 30
         },
         {
-            "team": "palkia_origin DB/AT/SpR|zacian_crowned_sword MC/BB/CC|zamazenta_crowned_shield IF/BB/CC",
-            "teamScore": 538.75,
-            "games": 60
+            "team": "xerneas Geo/CC/T|lunala SC/M/SB|palkia_origin DB/AT/SpR",
+            "teamScore": 585.87,
+            "games": 68
         },
         {
-            "team": "palkia_origin DB/AT/FiB|reshiram DB/Cr/FuF|zamazenta_crowned_shield IF/BB/GI",
-            "teamScore": 522.77,
+            "team": "palkia_origin DB/AT/SpR|reshiram DB/FuF/SE|zacian_crowned_sword MC/BB/CC",
+            "teamScore": 581.22,
+            "games": 63
+        },
+        {
+            "team": "zacian_crowned_sword MC/BB/CC|palkia_origin DB/AT/SpR|zekrom DB/FuB/O",
+            "teamScore": 574.21,
             "games": 39
         },
         {
-            "team": "zamazenta_crowned_shield IF/BB/CC|reshiram DB/DM/FuF|zekrom DB/FuB/O",
-            "teamScore": 511.18,
-            "games": 17
+            "team": "xerneas Geo/CC/T|giratina_origin SC/DgP/SB|palkia_origin DB/AT/SpR",
+            "teamScore": 571.87,
+            "games": 47
         },
         {
-            "team": "zamazenta_crowned_shield IF/BB/CC|kyurem_black SC/FSh/FuB|palkia_origin DB/AT/SpR",
-            "teamScore": 500.75,
-            "games": 55
+            "team": "kyurem_white DB/FuF/IBu|ho_oh I/BrB/Eq|xerneas Geo/CC/T",
+            "teamScore": 569.04,
+            "games": 73
         },
         {
-            "team": "palkia_origin DB/AT/SpR|dialga_origin DB/IH/ROT|zamazenta_crowned_shield IF/BB/CC",
-            "teamScore": 494.43,
-            "games": 46
+            "team": "zacian_crowned_sword MC/BB/CC|lunala SC/M/SB|palkia_origin DB/AT/SpR",
+            "teamScore": 565.61,
+            "games": 41
+        },
+        {
+            "team": "kyurem_white DB/FuF/IBu|reshiram DB/DM/FuF|xerneas Geo/CC/T",
+            "teamScore": 563.67,
+            "games": 58
+        },
+        {
+            "team": "zacian_crowned_sword MC/BB/CC|metagross SC/Eq/MM|palkia_origin DB/AT/SpR",
+            "teamScore": 540,
+            "games": 25
+        },
+        {
+            "team": "zacian_crowned_sword MC/BB/CC|palkia_origin DB/AT/SpR|tyranitar DB/BrS/SE",
+            "teamScore": 539.39,
+            "games": 56
+        },
+        {
+            "team": "kyurem_white DB/FuF/IBu|necrozma_dawn_wings SC/DP/MoG|zacian_crowned_sword MC/BB/CC",
+            "teamScore": 503.58,
+            "games": 38
+        },
+        {
+            "team": "zacian_crowned_sword MC/BB/CC|kyurem_black DT/FSh/FuB|palkia_origin DB/AT/SpR",
+            "teamScore": 498.3,
+            "games": 27
         },
         {
             "team": "palkia_origin DB/AT/SpR|ho_oh I/BrB/SF|zacian_crowned_sword MC/BB/CC",
-            "teamScore": 483.02,
-            "games": 55
+            "teamScore": 494.07,
+            "games": 147
         }
     ]
 }
