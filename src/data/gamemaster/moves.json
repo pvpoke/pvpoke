@@ -38,30 +38,6 @@
         "turns": 1
     },
     {
-        "moveId": "AEGISLASH_CHARGE_AIR_SLASH",
-        "name": "Air Slash",
-        "abbreviation": "AS",
-        "type": "flying",
-        "power": 0,
-        "energy": 0,
-        "energyGain": 6,
-        "cooldown": 1500,
-        "archetype": "Low Quality",
-        "turns": 3
-    },
-    {
-        "moveId": "AEGISLASH_CHARGE_PSYCHO_CUT",
-        "name": "Psycho Cut",
-        "abbreviation": "PC",
-        "type": "psychic",
-        "power": 0,
-        "energy": 0,
-        "energyGain": 6,
-        "cooldown": 1000,
-        "archetype": "Low Quality",
-        "turns": 2
-    },
-    {
         "moveId": "AERIAL_ACE",
         "name": "Aerial Ace",
         "type": "flying",
@@ -110,6 +86,19 @@
         "cooldown": 1500,
         "archetype": "General",
         "turns": 3
+    },
+    {
+        "moveId": "AEGISLASH_CHARGE_AIR_SLASH",
+        "name": "Air Slash",
+        "abbreviation": "AS",
+        "type": "flying",
+        "power": 0,
+        "energy": 0,
+        "energyGain": 6,
+        "cooldown": 1500,
+        "archetype": "Low Quality",
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "ANCIENT_POWER",
@@ -1511,7 +1500,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_DARK",
@@ -1522,7 +1512,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_DRAGON",
@@ -1533,7 +1524,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_ELECTRIC",
@@ -1544,7 +1536,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_FIGHTING",
@@ -1555,7 +1548,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_FIRE",
@@ -1566,7 +1560,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_FLYING",
@@ -1577,7 +1572,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_GHOST",
@@ -1588,7 +1584,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_GRASS",
@@ -1599,7 +1596,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_GROUND",
@@ -1610,12 +1608,25 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_ICE",
         "name": "Hidden Power (Ice)",
         "type": "ice",
+        "power": 9,
+        "energy": 0,
+        "energyGain": 8,
+        "cooldown": 1500,
+        "archetype": "Low Quality",
+        "turns": 3,
+        "unlisted": true
+    },
+    {
+        "moveId": "HIDDEN_POWER_NORMAL",
+        "name": "Hidden Power",
+        "type": "normal",
         "power": 9,
         "energy": 0,
         "energyGain": 8,
@@ -1632,7 +1643,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_PSYCHIC",
@@ -1643,7 +1655,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_ROCK",
@@ -1654,7 +1667,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_STEEL",
@@ -1665,7 +1679,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIDDEN_POWER_WATER",
@@ -1676,7 +1691,8 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Low Quality",
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "HIGH_HORSEPOWER",
@@ -2726,6 +2742,19 @@
         "turns": 2
     },
     {
+        "moveId": "AEGISLASH_CHARGE_PSYCHO_CUT",
+        "name": "Psycho Cut",
+        "abbreviation": "PC",
+        "type": "psychic",
+        "power": 0,
+        "energy": 0,
+        "energyGain": 6,
+        "cooldown": 1000,
+        "archetype": "Low Quality",
+        "turns": 2,
+        "unlisted": true
+    },
+    {
         "moveId": "PSYSHOCK",
         "name": "Psyshock",
         "abbreviation": "Psh",
@@ -3684,7 +3713,8 @@
         "energy": 0,
         "energyGain": 0,
         "cooldown": 1500,
-        "turns": 3
+        "turns": 3,
+        "unlisted": true
     },
     {
         "moveId": "TRIPLE_AXEL",
@@ -3833,7 +3863,8 @@
         "energyGain": 4,
         "cooldown": 1000,
         "archetype": "Low Quality",
-        "turns": 2
+        "turns": 2,
+        "unlisted": true
     },
     {
         "moveId": "WATER_PULSE",

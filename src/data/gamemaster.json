@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-02-02 00:23:34",
+    "timestamp": "2026-02-02 16:51:59",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -1452,6 +1452,7 @@
         }
     ],
     "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh", "bidoof", "bibarel", "cacnea", "cacturne", "lugia", "voltorb", "electrode", "chikorita", "bayleef", "meganium", "cyndaquil", "quilava", "typhlosion", "totodile", "croconaw", "feraligatr", "whismur", "loudred", "exploud", "hippopotas", "hippowdon", "rattata_alolan", "raticate_alolan", "sandshrew_alolan", "sandslash_alolan", "exeggutor_alolan", "sudowoodo", "girafarig", "numel", "camerupt", "latias", "exeggutor_alolan", "marowak_alolan", "geodude", "graveler", "golem", "shinx", "luxio", "luxray", "purrloin", "liepard", "latios", "foongus", "amoonguss", "patrat", "watchog", "ducklett", "swanna", "ursaluna", "diglett_alolan", "dugtrio_alolan", "onix", "steelix", "natu", "xatu", "wailmer", "wailord", "golett", "golurk", "vulpix_alolan", "ninetales_alolan", "spoink", "grumpig", "blitzle", "zebstrika", "joltik", "galvantula", "registeel", "salamence_mega", "aggron_mega", "manectric_mega", "gardevoir_mega", "latios_mega", "latias_mega", "grimer_alolan", "muk_alolan", "phanpy", "donphan", "treecko", "grovyle", "sceptile", "sceptile_mega", "torchic", "combusken", "blaziken", "blaziken_mega", "drifloon", "drifblim", "regice", "regirock", "throh", "sawk", "geodude_alolan", "graveler_alolan", "golem_alolan", "ledyba", "ledian", "hitmontop", "glameow", "purugly", "gible", "gabite", "garchomp", "regigigas", "gastly", "haunter", "gengar", "rhyhorn", "rhydon", "rhyperior", "barboach", "whiscash", "cranidos", "rampardos", "shieldon", "bastiodon", "drilbur", "excadrill", "litwick", "lampent", "chandelure", "sneasel_hisuian", "sneasler", "kyogre", "corphish", "crawdaunt", "snorunt", "glalie", "froslass", "chimchar", "monferno", "infernape", "piplup", "prinplup", "empoleon", "croagunk", "toxicroak", "dwebble", "crustle", "ferroseed", "ferrothorn", "tentacool", "tentacruel", "groudon", "pidgey", "pidgeotto", "pidgeot", "darumaka", "darmanitan_standard", "gothita", "gothorita", "gothitelle", "solosis", "duosion", "reuniclus", "pidove", "tranquill", "unfezant", "cresselia", "archen", "archeops", "tirtouga", "carracosta", "timburr", "gurdurr", "conkeldurr", "weezing_galarian", "heatran", "mankey", "primeape", "annihilape", "caterpie", "metapod", "butterfree", "roggenrola", "boldore", "gigalith", "venipede", "whirlipede", "scolipede", "karrablast", "escavalier", "shelmet", "accelgor", "zigzagoon_galarian", "linoone_galarian", "obstagoon", "palkia", "taillow", "swellow", "snivy", "servine", "serperior", "tepig", "pignite", "emboar", "oshawott", "dewott", "samurott", "trubbish", "garbodor", "bunnelby", "diggersby", "slakoth", "vigoroth", "slaking", "dialga", "inkay", "malamar", "tyrunt", "tyrantrum", "amaura", "aurorus", "giratina_altered", "staryu", "starmie", "fletchling", "fletchinder", "talonflame", "pikipek", "trumbeak", "toucannon", "grubbin", "charjabug", "vikavolt", "qwilfish", "swablu", "altaria", "baltoy", "claydol", "deino", "zweilous", "hydreigon", "tornadus_incarnate", "feebas", "milotic", "yamask", "cofagrigus", "phantump", "trevenant", "darkrai", "thundurus_incarnate", "froakie", "frogadier", "greninja", "chespin", "quilladin", "chesnaught", "fennekin", "braixen", "delphox", "ponyta", "rapidash", "kabuto", "kabutops"],
+    "greatLeagueIneligible": ["mewtwo", "mewtwo_armored", "giratina_altered", "groudon", "kyogre", "palkia", "dialga", "cobalion", "terrakion", "virizion", "tornadus_therian", "tornadus_therian_xl", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "solgaleo", "lunala", "keldeo_ordinary", "kyogre_primal", "groudon_primal", "zygarde_complete", "enamorus_therian", "enamorus_incarnate", "dialga_origin", "palkia_origin", "necrozma", "necrozma_dawn_wings", "necrozma_dusk_mane", "marshadow", "kyurem_black", "kyurem_white", "zacian_crowned_sword", "zamazenta_crowned_shield", "eternatus", "sinistcha", "keldeo_resolute"],
     "pokemon": [
         {
             "dex": 1,
@@ -45800,30 +45801,6 @@
             "turns": 1
         },
         {
-            "moveId": "AEGISLASH_CHARGE_AIR_SLASH",
-            "name": "Air Slash",
-            "abbreviation": "AS",
-            "type": "flying",
-            "power": 0,
-            "energy": 0,
-            "energyGain": 6,
-            "cooldown": 1500,
-            "archetype": "Low Quality",
-            "turns": 3
-        },
-        {
-            "moveId": "AEGISLASH_CHARGE_PSYCHO_CUT",
-            "name": "Psycho Cut",
-            "abbreviation": "PC",
-            "type": "psychic",
-            "power": 0,
-            "energy": 0,
-            "energyGain": 6,
-            "cooldown": 1000,
-            "archetype": "Low Quality",
-            "turns": 2
-        },
-        {
             "moveId": "AERIAL_ACE",
             "name": "Aerial Ace",
             "type": "flying",
@@ -45872,6 +45849,19 @@
             "cooldown": 1500,
             "archetype": "General",
             "turns": 3
+        },
+        {
+            "moveId": "AEGISLASH_CHARGE_AIR_SLASH",
+            "name": "Air Slash",
+            "abbreviation": "AS",
+            "type": "flying",
+            "power": 0,
+            "energy": 0,
+            "energyGain": 6,
+            "cooldown": 1500,
+            "archetype": "Low Quality",
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "ANCIENT_POWER",
@@ -47273,7 +47263,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_DARK",
@@ -47284,7 +47275,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_DRAGON",
@@ -47295,7 +47287,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_ELECTRIC",
@@ -47306,7 +47299,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_FIGHTING",
@@ -47317,7 +47311,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_FIRE",
@@ -47328,7 +47323,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_FLYING",
@@ -47339,7 +47335,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_GHOST",
@@ -47350,7 +47347,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_GRASS",
@@ -47361,7 +47359,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_GROUND",
@@ -47372,12 +47371,25 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_ICE",
             "name": "Hidden Power (Ice)",
             "type": "ice",
+            "power": 9,
+            "energy": 0,
+            "energyGain": 8,
+            "cooldown": 1500,
+            "archetype": "Low Quality",
+            "turns": 3,
+            "unlisted": true
+        },
+        {
+            "moveId": "HIDDEN_POWER_NORMAL",
+            "name": "Hidden Power",
+            "type": "normal",
             "power": 9,
             "energy": 0,
             "energyGain": 8,
@@ -47394,7 +47406,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_PSYCHIC",
@@ -47405,7 +47418,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_ROCK",
@@ -47416,7 +47430,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_STEEL",
@@ -47427,7 +47442,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIDDEN_POWER_WATER",
@@ -47438,7 +47454,8 @@
             "energyGain": 8,
             "cooldown": 1500,
             "archetype": "Low Quality",
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "HIGH_HORSEPOWER",
@@ -48488,6 +48505,19 @@
             "turns": 2
         },
         {
+            "moveId": "AEGISLASH_CHARGE_PSYCHO_CUT",
+            "name": "Psycho Cut",
+            "abbreviation": "PC",
+            "type": "psychic",
+            "power": 0,
+            "energy": 0,
+            "energyGain": 6,
+            "cooldown": 1000,
+            "archetype": "Low Quality",
+            "turns": 2,
+            "unlisted": true
+        },
+        {
             "moveId": "PSYSHOCK",
             "name": "Psyshock",
             "abbreviation": "Psh",
@@ -49446,7 +49476,8 @@
             "energy": 0,
             "energyGain": 0,
             "cooldown": 1500,
-            "turns": 3
+            "turns": 3,
+            "unlisted": true
         },
         {
             "moveId": "TRIPLE_AXEL",
@@ -49595,7 +49626,8 @@
             "energyGain": 4,
             "cooldown": 1000,
             "archetype": "Low Quality",
-            "turns": 2
+            "turns": 2,
+            "unlisted": true
         },
         {
             "moveId": "WATER_PULSE",

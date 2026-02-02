@@ -30,6 +30,11 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < gm.data.moves.length; i++){
 					var move = gm.data.moves[i];
+					
+					if(move?.unlisted){
+						continue;
+					}
+
 					var $option = $("<option type=\""+move.type+"\" value=\""+move.moveId+"\">"+move.name+"</option>");
 
 					if(move.energyGain > 0){
@@ -56,6 +61,10 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < gm.data.moves.length; i++){
 					var move = gm.data.moves[i];
+
+					if(move?.unlisted){
+						continue;
+					}
 
 					var category = "";
 					var type = move.type.charAt(0).toUpperCase() + move.type.slice(1);
@@ -137,20 +146,7 @@ var InterfaceMaster = (function () {
 
 					var valid = true;
 
-					if(move.moveId.indexOf("HIDDEN_POWER") > -1){
-						if(move.moveId == "HIDDEN_POWER_BUG"){
-							obj.name = "Hidden Power"
-							obj.type = "normal";
-						} else{
-							valid = false;
-						}
-					}
-
-					if((move.moveId == "TRANSFORM") || (move.moveId.indexOf("BLASTOISE") > -1) ){
-						valid = false;
-					}
-
-					if(move.moveId.indexOf("AEGISLASH_CHARGE") > -1){
+					if(move?.unlisted){
 						valid = false;
 					}
 

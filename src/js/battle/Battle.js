@@ -88,10 +88,7 @@ function Battle(){
 			poke.initialize(cp);
 		}
 
-		if(poke.formChange && poke.activeFormId != poke.startFormId){
-			poke.reset();
-		}
-
+		poke.reset();
 		poke.index = index;
 		pokemon[index] = poke;
 
@@ -1904,7 +1901,6 @@ function Battle(){
 	// Output debug log to console, debugMode must be set to true to collect logs
 
 	this.debug = function(){
-
 		for(var i = 0; i < decisionLog.length; i++){
 			var log = decisionLog[i];
 
