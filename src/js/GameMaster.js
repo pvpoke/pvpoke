@@ -1289,32 +1289,34 @@ var GameMaster = (function () {
 					if(allowed){
 
 						// If data is available, force "best" moveset
+						pokemon.weightModifier = 1;
 
-						if((rankingData)&&(overrides)){
+						// Set Pokemon moveset from existing rankings
+						if(rankingData){
+							let r = rankingData.find(ranking => rankingData.speciesId == pokemon.speciesId);
 
-							// Find Pokemon in existing rankings
-							for(var n = 0; n < rankingData.length; n++){
-								if(pokemon.speciesId == rankingData[n].speciesId){
+							if(r){
+								// Sort by uses
+								var fastMoves = r.moves.fastMoves;
+								var chargedMoves = r.moves.chargedMoves;
 
-									// Sort by uses
-									var fastMoves = rankingData[n].moves.fastMoves;
-									var chargedMoves = rankingData[n].moves.chargedMoves;
+								fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+								chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
-									fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-									chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+								pokemon.selectMove("fast", fastMoves[0].moveId);
+								pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
 
-									pokemon.selectMove("fast", fastMoves[0].moveId);
-									pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
+								
 
-									pokemon.weightModifier = 1;
-
-									if(chargedMoves.length > 1){
-										pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
-									}
-
-									object.overrideMoveset(pokemon, battle.getCP(), battle.getCup().name, overrides);
+								if(chargedMoves.length > 1){
+									pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
 								}
 							}
+						}
+
+						// Set Pokemon moveset from overrides
+						if(overrides){
+							object.overrideMoveset(pokemon, battle.getCP(), battle.getCup().name, overrides);
 						}
 
 						pokemonList.push(pokemon);
