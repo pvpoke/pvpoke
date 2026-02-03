@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-02-03 16:48:23",
+    "timestamp": "2026-02-03 17:32:55",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -3432,7 +3432,7 @@
                 "cp2500": [47.5, 4, 12, 15],
                 "cp2500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 9,
+            "searchPriority": 4,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,
@@ -3576,7 +3576,7 @@
             "tags": ["shadoweligible"],
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "searchPriority": 2,
+            "searchPriority": 1,
             "released": true,
             "family": {
                 "id": "FAMILY_NIDORAN_FEMALE",
@@ -3604,7 +3604,7 @@
             "tags": ["shadow"],
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "searchPriority": 2,
+            "searchPriority": null,
             "released": true,
             "family": {
                 "id": "FAMILY_NIDORAN_FEMALE",
@@ -3632,7 +3632,7 @@
             },
             "tags": ["shadoweligible"],
             "level25CP": 1519,
-            "searchPriority": 2,
+            "searchPriority": 3,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,
@@ -4049,7 +4049,7 @@
                 "cp2500": [47.5, 13, 15, 14],
                 "cp2500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 5,
+            "searchPriority": 8,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,
@@ -7323,7 +7323,7 @@
                 "cp1500": [20, 4, 15, 15],
                 "cp2500": [37, 4, 15, 15]
             },
-            "searchPriority": 6,
+            "searchPriority": 2,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,
@@ -11349,7 +11349,7 @@
                 "id": "FAMILY_TOTODILE",
                 "parent": "croconaw"
             },
-            "searchPriority": 8
+            "searchPriority": 3
         },
         {
             "dex": 160,
@@ -11378,7 +11378,7 @@
                 "id": "FAMILY_TOTODILE",
                 "parent": "croconaw_shadow"
             },
-            "searchPriority": 8
+            "searchPriority": 3
         },
         {
             "dex": 161,
@@ -11422,7 +11422,7 @@
                 "cp1500": [34.5, 4, 14, 13],
                 "cp2500": [50, 15, 15, 15]
             },
-            "searchPriority": 3,
+            "searchPriority": 10,
             "buddyDistance": 1,
             "thirdMoveCost": 10000,
             "released": true,
@@ -12143,7 +12143,7 @@
                 "cp1500": [19.5, 4, 14, 12],
                 "cp2500": [35, 4, 12, 15]
             },
-            "searchPriority": 3,
+            "searchPriority": 4,
             "level25CP": 1760,
             "tags": ["shadoweligible"],
             "eliteMoves": ["DRAGON_PULSE"],
@@ -12337,7 +12337,7 @@
                 "cp1500": [26, 5, 15, 13],
                 "cp2500": [50, 15, 15, 15]
             },
-            "searchPriority": 8,
+            "searchPriority": 2,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true,
@@ -12365,7 +12365,7 @@
                 "cp1500": [26, 5, 15, 13],
                 "cp2500": [50, 15, 15, 15]
             },
-            "searchPriority": 8,
+            "searchPriority": 2,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true,
@@ -13315,7 +13315,7 @@
             },
             "level25CP": 1383,
             "tags": ["shadoweligible"],
-            "searchPriority": 2,
+            "searchPriority": 7,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true,
@@ -13343,7 +13343,7 @@
                 "cp2500l40": [40, 15, 15, 15]
             },
             "tags": ["shadow"],
-            "searchPriority": 2,
+            "searchPriority": 7,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true,
@@ -13769,7 +13769,7 @@
                 "cp2500": [31, 4, 15, 14]
             },
             "tags": ["shadow"],
-            "searchPriority": 11,
+            "searchPriority": 8,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true,
@@ -14286,7 +14286,7 @@
                 "cp2500": [50, 15, 15, 15],
                 "cp1500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 6,
+            "searchPriority": 5,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true
@@ -16580,7 +16580,8 @@
             "family": {
                 "id": "FAMILY_LOTAD",
                 "parent": "lombre"
-            }
+            },
+            "searchPriority": 5
         },
         {
             "dex": 273,
@@ -17856,7 +17857,7 @@
             },
             "level25CP": 858,
             "tags": ["shadoweligible"],
-            "searchPriority": 10,
+            "searchPriority": 7,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true
@@ -17903,7 +17904,7 @@
                 "cp1500l40": [40, 15, 15, 15]
             },
             "tags": ["shadow"],
-            "searchPriority": 9,
+            "searchPriority": 7,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true
@@ -24356,7 +24357,7 @@
                 "cp2500": [50, 4, 14, 13],
                 "cp2500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 5,
+            "searchPriority": 3,
             "level25CP": 1430,
             "tags": ["shadoweligible"],
             "buddyDistance": 3,
@@ -24385,7 +24386,7 @@
                 "cp2500": [50, 4, 14, 13],
                 "cp2500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 5,
+            "searchPriority": 3,
             "tags": ["shadow"],
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
@@ -25554,7 +25555,7 @@
                 "cp2500l40": [40, 15, 15, 15]
             },
             "eliteMoves": ["BODY_SLAM"],
-            "searchPriority": 6,
+            "searchPriority": 10,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,
@@ -26266,7 +26267,7 @@
                 "cp1500": [27.5, 4, 14, 14],
                 "cp2500": [50, 15, 15, 15]
             },
-            "searchPriority": 7,
+            "searchPriority": 2,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,
@@ -26295,7 +26296,7 @@
                 "cp1500": [27.5, 4, 14, 14],
                 "cp2500": [50, 15, 15, 15]
             },
-            "searchPriority": 7,
+            "searchPriority": 2,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,
@@ -31964,7 +31965,7 @@
                 "cp2500": [47, 13, 14, 15],
                 "cp2500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 4,
+            "searchPriority": 2,
             "buddyDistance": 3,
             "thirdMoveCost": 75000,
             "released": true,
@@ -31993,7 +31994,7 @@
                 "cp2500": [47, 13, 14, 15],
                 "cp2500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 4,
+            "searchPriority": 2,
             "buddyDistance": 3,
             "thirdMoveCost": 75000,
             "released": true,
@@ -32649,7 +32650,7 @@
                 "cp1500": [26, 5, 15, 13],
                 "cp2500": [50, 15, 15, 15]
             },
-            "searchPriority": 6,
+            "searchPriority": 9,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true,
@@ -34868,7 +34869,7 @@
                 "cp1500": [17, 6, 13, 14],
                 "cp2500": [28.5, 4, 13, 15]
             },
-            "searchPriority": 2,
+            "searchPriority": 8,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,
@@ -35890,7 +35891,7 @@
                 "cp1500": [30, 6, 15, 15],
                 "cp2500": [50, 15, 15, 15]
             },
-            "searchPriority": 6,
+            "searchPriority": 4,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true
@@ -36335,7 +36336,7 @@
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true,
-            "searchPriority": 2,
+            "searchPriority": 7,
             "family": {
                 "id": "FAMILY_PUMPKABOO",
                 "parent": "pumpkaboo_super"
@@ -38269,7 +38270,7 @@
                 "cp2500": [29, 5, 13, 15]
             },
             "nicknames": ["pod"],
-            "searchPriority": 8,
+            "searchPriority": 6,
             "buddyDistance": 1,
             "thirdMoveCost": 10000,
             "released": true,
@@ -40096,7 +40097,7 @@
                 "id": "FAMILY_ROOKIDEE",
                 "parent": "corvisquire"
             },
-            "searchPriority": 5
+            "searchPriority": 8
         },
         {
             "dex": 824,
@@ -42669,7 +42670,7 @@
                 "cp1500": [18.5, 4, 13, 11],
                 "cp2500": [30.5, 6, 15, 13]
             },
-            "searchPriority": 5,
+            "searchPriority": 6,
             "nicknames": ["dirge"],
             "buddyDistance": 3,
             "thirdMoveCost": 10000,
@@ -44639,7 +44640,8 @@
                 "parent": "primeape"
             },
             "level25CP": 2037,
-            "tags": ["shadoweligible"]
+            "tags": ["shadoweligible"],
+            "searchPriority": 6
         },
         {
             "dex": 979,
@@ -44667,7 +44669,8 @@
                 "id": "FAMILY_MANKEY",
                 "parent": "primeape_shadow"
             },
-            "tags": ["shadow"]
+            "tags": ["shadow"],
+            "searchPriority": 7
         },
         {
             "dex": 980,
