@@ -10,30 +10,26 @@
         "chargedMoves": ["LUNGE", "MEGAHORN"]
     },
     {
-        "speciesId": "charjabug",
+        "speciesId": "beedrill",
         "fastMove": "BUG_BITE",
-        "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+        "chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
     },
     {
-        "speciesId": "delcatty",
-        "fastMove": "CHARM",
-        "chargedMoves": ["WILD_CHARGE", "DISARMING_VOICE"]
+        "speciesId": "beedrill_shadow",
+        "fastMove": "BUG_BITE",
+        "chargedMoves": ["X_SCISSOR", "DRILL_RUN"],
+        "shadowType": "shadow"
     },
     {
-        "speciesId": "dragonair",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["AQUA_TAIL", "DRAGON_PULSE"]
+        "speciesId": "dragalge",
+        "fastMove": "DRAGON_TAIL",
+        "chargedMoves": ["AQUA_TAIL", "OUTRAGE"]
     },
     {
         "speciesId": "dragonair_shadow",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["WRAP", "AQUA_TAIL"],
         "shadowType": "shadow"
-    },
-    {
-        "speciesId": "drampa",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SWIFT", "FLY"]
     },
     {
         "speciesId": "drapion_shadow",
@@ -57,14 +53,14 @@
         "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
     },
     {
-        "speciesId": "golisopod",
-        "fastMove": "FURY_CUTTER",
-        "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
+        "speciesId": "froslass",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
     },
     {
-        "speciesId": "goodra",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["AQUA_TAIL", "THUNDER_PUNCH"]
+        "speciesId": "froslass",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
     },
     {
         "speciesId": "grimmsnarl",
@@ -83,14 +79,14 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "kleavor",
-        "fastMove": "FURY_CUTTER",
-        "chargedMoves": ["X_SCISSOR", "ROCK_SLIDE"]
-    },
-    {
         "speciesId": "lickilicky",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "malamar",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
     },
     {
         "speciesId": "milotic",
@@ -119,6 +115,11 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "samurott_hisuian",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["SACRED_SWORD", "ICY_WIND"]
+    },
+    {
         "speciesId": "seaking",
         "fastMove": "PECK",
         "chargedMoves": ["ICY_WIND", "MEGAHORN"]
@@ -144,28 +145,13 @@
         "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
     },
     {
-        "speciesId": "vigoroth",
-        "fastMove": "COUNTER",
-        "chargedMoves": ["BODY_SLAM", "ROCK_SLIDE"]
-    },
-    {
         "speciesId": "zweilous",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["BODY_SLAM", "DRAGON_PULSE"]
     },
     {
-        "speciesId": "dragalge",
-        "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["AQUA_TAIL", "OUTRAGE"]
-    },
-    {
-        "speciesId": "froslass",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
-    },
-    {
-        "speciesId": "galvantula",
-        "fastMove": "FURY_CUTTER",
-        "chargedMoves": ["DISCHARGE", "LUNGE"]
+        "speciesId": "furret",
+        "fastMove": "QUICK_ATTACK",
+        "chargedMoves": ["SWIFT", "BRICK_BREAK"]
     }
 ]
