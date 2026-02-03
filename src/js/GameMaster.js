@@ -1293,7 +1293,7 @@ var GameMaster = (function () {
 
 						// Set Pokemon moveset from existing rankings
 						if(rankingData){
-							let r = rankingData.find(ranking => rankingData.speciesId == pokemon.speciesId);
+							let r = rankingData.find(ranking => ranking.speciesId == pokemon.speciesId);
 
 							if(r){
 								// Sort by uses
