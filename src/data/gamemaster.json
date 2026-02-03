@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-02-02 17:31:35",
+    "timestamp": "2026-02-03 16:48:23",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -44438,7 +44438,7 @@
             },
             "types": ["flying", "fighting"],
             "fastMoves": ["WING_ATTACK", "DOUBLE_KICK"],
-            "chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD", "CLOSE_COMBAT"],
+            "chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD", "UPPER_HAND"],
             "defaultIVs": {
                 "cp500": [7, 4, 12, 8],
                 "cp1500": [20, 4, 15, 14],
@@ -44446,7 +44446,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 75000,
-            "released": false
+            "released": true
         },
         {
             "dex": 974,
