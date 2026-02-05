@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-02-03 17:32:55",
+    "timestamp": "2026-02-05 17:56:51",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -42512,8 +42512,8 @@
                 "hp": 179
             },
             "types": ["fairy", "flying"],
-            "fastMoves": ["ASTONISH", "ZEN_HEADBUTT", "FAIRY_WIND"],
-            "chargedMoves": ["DAZZLING_GLEAM", "FLY", "GRASS_KNOT"],
+            "fastMoves": ["ASTONISH", "EXTRASENSORY", "FAIRY_WIND"],
+            "chargedMoves": ["MOONBLAST", "FLY", "EARTH_POWER", "MYSTICAL_FIRE"],
             "defaultIVs": {
                 "cp500": [5.5, 14, 10, 15],
                 "cp1500": [16.5, 4, 9, 11],
