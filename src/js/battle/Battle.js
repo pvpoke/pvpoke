@@ -87,7 +87,7 @@ function Battle(){
 		if(initialize){
 			poke.initialize(cp);
 		}
-
+		
 		poke.reset();
 		poke.index = index;
 		pokemon[index] = poke;
@@ -998,6 +998,8 @@ function Battle(){
 						// Reset the outgoing Pokemon's buffs and debuffs
 						poke.statBuffs = [0,0];
 						poke.startStatBuffs = [0,0];
+						poke.setStartHp(poke.hp);
+						poke.setStartEnergy(poke.energy);
 
 						// Revert current Pokemon to original form
 						if(poke.formChange && poke.activeFormId != poke.originalFormId){
