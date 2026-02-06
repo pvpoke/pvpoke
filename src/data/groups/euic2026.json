@@ -63,6 +63,11 @@
         "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
     },
     {
+        "speciesId": "furret",
+        "fastMove": "QUICK_ATTACK",
+        "chargedMoves": ["SWIFT", "BRICK_BREAK"]
+    },
+    {
         "speciesId": "grimmsnarl",
         "fastMove": "SUCKER_PUNCH",
         "chargedMoves": ["FOUL_PLAY", "PLAY_ROUGH"]
@@ -150,8 +155,13 @@
         "chargedMoves": ["BODY_SLAM", "DRAGON_PULSE"]
     },
     {
-        "speciesId": "furret",
-        "fastMove": "QUICK_ATTACK",
-        "chargedMoves": ["SWIFT", "BRICK_BREAK"]
+        "speciesId": "vigoroth",
+        "fastMove": "COUNTER",
+        "chargedMoves": ["BODY_SLAM", "BRICK_BREAK"]
+    },
+    {
+        "speciesId": "golisopod",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
     }
 ]
