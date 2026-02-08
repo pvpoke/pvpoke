@@ -96,6 +96,422 @@ $color-stat-debuff:#0158d0;
 	background: linear-gradient(to bottom, $light 30%,$dark 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+@mixin gradient-button {
+  margin: 0;
+  position: relative;
+  display: block;
+  font-size: 12px;
+  border-radius: 30px;
+  border: 2px solid #000;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  background: #f9a01b;
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%);
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%);
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%);
+}
+
+@mixin archetype-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/move-archetype-icons.png");
+  background-repeat: no-repeat;
+  margin-left: 5px;
+}
+
+/* QUIZ STYLING */
+
+.button.quiz-button {
+  @include gradient-button;
+}
+
+.button.quiz-next-btn {
+  @include gradient-button;
+  margin: 0;
+}
+
+.rankings-container {
+  > .rank.quiz {
+    cursor: default;
+
+    &:hover {
+      border-left: 20px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.top-ranking-select {
+  max-width: 250px;
+  min-width: 150px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  width: auto;
+  background: none;
+  font-weight: bold;
+}
+
+.quiz-link-title-container {
+  text-align: center;
+}
+
+.quiz-link-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#quiz .back-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quiz-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  .question-text {
+    flex: 1;
+    font-size: 14px;
+  }
+
+  .answer-input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.quiz-score {
+  justify-content: right;
+  align-items: center;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.quiz-select-container {
+  display: flex;
+}
+
+.quiz-container {
+  max-height: 600px;
+}
+
+.quiz-header {
+  font-weight: bold;
+  padding: 5px 0px;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.quiz-checks {
+  font-size: 14px;
+}
+
+/* QUIZ ANSWERS & FEEDBACK */
+
+.quiz-answer-input {
+  flex: 1;
+}
+
+.quiz-answer-input-container {
+  display: flex;
+  gap: 20px;
+}
+
+.quiz-omt-match-container {
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feedback-wrong {
+  color: red;
+}
+
+.feedback-correct {
+  color: green;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.versus-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quiz-feedback {
+  font-size: 14px;
+}
+
+.quiz-feedback-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .battle-results .battle-details {
+    .optimal-timing-section {
+      max-width: 340px;
+      margin: 0;
+
+      .optimal-timing-timeline {
+        margin: 0 auto;
+      }
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  .optimal-timing-section {
+    max-width: 340px;
+    margin: 0;
+  }
+
+  .optimal-1,
+  .optimal-2,
+  .optimal-3 {
+    float: none;
+    margin-top: 10px;
+  }
+}
+
+.quiz-feedback-container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex: 1;
+}
+
+.quiz-feedback-container-inner {
+  display: flex;
+}
+
+.quiz-feedback-explanation {
+  font-size: 14px;
+
+  .battle-results .battle-details {
+    .optimal-timing-section {
+      max-width: 340px;
+      margin: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+.quiz.battle-details {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HINTS & DETAILS */
+
+.quiz-hints {
+  margin-top: 8px;
+}
+
+.quiz-hints-container {
+  .details .detail-section {
+    background: rgba(255, 255, 255, 0.8);
+	padding: 5px;
+	border-radius: 8px;
+	box-sizing: border-box;
+	margin-top: 5px;
+
+    &.float {
+      width: 49.5%;
+
+      &.margin {
+        margin-right: 1%;
+      }
+    }
+
+    &.overall,
+    &.stats,
+    &.typing {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .rating-container {
+        text-align: center;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+.quiz-omt-hints-container {
+  .details .detail-section {
+    &.float {
+      width: 100% !important;
+    }
+  }
+}
+
+/* ===================================
+   MOVES & MOVESETS
+   =================================== */
+
+.quiz-hints-container .details .detail-section,
+.rank .details .detail-section {
+  .moveset {
+    .name-container {
+        float: none;
+		padding-bottom: 3px;
+		margin-bottom: 3px;
+		justify-content: space-between;
+		align-items: baseline;
+		font-size: 14px;
+
+      &.stats-container {
+        border: none !important;
+        margin: 0;
+        padding: 0;
+        display: none;
+        overflow: hidden;
+
+        &.move-effect div {
+          margin: 5px 5px 0 0;
+        }
+      }
+    }
+
+    &.show-stats .name-container {
+      border-bottom: 1px solid;
+
+      &.stats-container {
+        display: flex;
+      }
+    }
+
+    .stats-container {
+      font-size: 12px;
+      justify-content: space-between;
+    }
+
+    .archetype {
+      display: flex;
+      align-items: center;
+      margin-top: 2px;
+      font-size: 12px;
+
+      .name,
+      .icon {
+        display: block;
+      }
+
+      .icon {
+        @include archetype-icon;
+
+        &.spam { background-position: -16px 0; }
+        &.self-debuff { background-position: -32px 0; }
+        &.debuff { background-position: -48px 0; }
+        &.boost { background-position: -64px 0; }
+        &.high-energy { background-position: -80px 0; }
+        &.general { background-position: -96px 0; }
+        
+        &.low-quality {
+          border-radius: 16px;
+          background: #000;
+          color: #fff;
+          text-align: center;
+          font-weight: bold;
+
+          &:before {
+            content: "x";
+          }
+        }
+      }
+    }
+  }
+}
+
+/* POKEMON & RANKING INFO */
+
+.rank {
+  &.typed-ranking {
+    .pokemon-info {
+      .name-container .quiz-moves-container {
+        padding-top: 6px;
+        font-size: 14px;
+
+        .quiz-move {
+          padding: 1px 0;
+        }
+      }
+    }
+
+    &.quiz .pokemon-info {
+      flex: 1;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      min-width: 0;
+    }
+  }
+}
+
+/* RANKING FILTERS */
+
+.quiz-ranking-filters,
+.ranking-filters {
+  .ranking-filter {
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    h4 {
+      margin: 0 0 5px 0;
+      font-size: 12px;
+    }
+
+    select {
+      max-width: 100%;
+
+      optgroup {
+        font-weight: normal;
+      }
+    }
+
+    .sort-button {
+      background: none !important;
+      font-size: 14px;
+      text-align: left;
+      margin: 0;
+      padding: 5px 8px;
+      min-width: 100px;
+    }
+
+    .flex {
+      justify-content: space-between;
+    }
+
+    a.format-rules {
+      font-size: 12px;
+      display: none;
+    }
+  }
+}
+
 /* STRUCTURE */
 
 html{
@@ -5319,6 +5735,75 @@ a.pokebattler{
 
 
 @media only screen and (max-width: 468px) {
+
+	.top-ranking-select {
+  		font-size: 16px;
+  	}
+
+	.versus-text {
+		width: 100%;
+	}
+
+	.quiz-select-container {
+		flex-direction: column;
+		max-width: 60%;
+	}
+
+	.quiz-next-btn-container {
+		padding-top: 0;
+	}
+
+	.quiz-feedback-container {
+		gap: 4px;
+		margin-top: 8px;
+
+		&-inner {
+		flex-direction: column;
+		}
+	}
+
+	.quiz-feedback-explanation,
+	.quiz-feedback,
+	.quiz-question {
+		& .question-text {
+		font-size: 14px;
+		}
+	}
+
+	.quiz-answer-input-container {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.quiz-feedback-explanation {
+		.battle-results {
+		.battle-details {
+			p {
+			font-size: 12px;
+			margin-top: 0;
+			}
+		}
+		}
+	}
+
+	.quiz-question {
+		flex-direction: column;
+	}
+
+	.quiz-omt-match-container {
+		gap: 0;
+	}
+
+	.quiz-hints-container {
+		.details {
+		.detail-section {
+			&.float {
+			float: none;
+			width: 100%;
+			}
+		}
+		}
+	}
 
 	.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1){
 		top: 0%;
