@@ -12,12 +12,12 @@
     {
         "speciesId": "beedrill",
         "fastMove": "BUG_BITE",
-        "chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
+        "chargedMoves": ["X_SCISSOR", "FELL_STINGER"]
     },
     {
         "speciesId": "beedrill_shadow",
         "fastMove": "BUG_BITE",
-        "chargedMoves": ["X_SCISSOR", "DRILL_RUN"],
+        "chargedMoves": ["X_SCISSOR", "FELL_STINGER"],
         "shadowType": "shadow"
     },
     {
@@ -58,14 +58,14 @@
         "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
     },
     {
-        "speciesId": "froslass",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
-    },
-    {
         "speciesId": "furret",
         "fastMove": "QUICK_ATTACK",
         "chargedMoves": ["SWIFT", "BRICK_BREAK"]
+    },
+    {
+        "speciesId": "golisopod",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
     },
     {
         "speciesId": "grimmsnarl",
@@ -150,18 +150,13 @@
         "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
     },
     {
-        "speciesId": "zweilous",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BODY_SLAM", "DRAGON_PULSE"]
-    },
-    {
         "speciesId": "vigoroth",
         "fastMove": "COUNTER",
         "chargedMoves": ["BODY_SLAM", "BRICK_BREAK"]
     },
     {
-        "speciesId": "golisopod",
-        "fastMove": "FURY_CUTTER",
-        "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
+        "speciesId": "zweilous",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BODY_SLAM", "DRAGON_PULSE"]
     }
 ]
