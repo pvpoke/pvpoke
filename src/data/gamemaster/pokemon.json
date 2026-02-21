@@ -9332,6 +9332,34 @@
         "nicknames": ["dnite"]
     },
     {
+        "dex": 149,
+        "speciesName": "Dragonite (Mega)",
+        "speciesId": "dragonite_mega",
+        "baseStats": {
+            "atk": 299,
+            "def": 255,
+            "hp": 209
+        },
+        "types": ["dragon", "flying"],
+        "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL", "STEEL_WING"],
+        "chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE", "SUPER_POWER", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp500": [4, 12, 15, 15],
+            "cp1500": [11.5, 4, 8, 12],
+            "cp2500": [19, 4, 9, 15]
+        },
+        "level25CP": 3079,
+        "tags": ["shadoweligible", "mega"],
+        "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_DRATINI",
+            "parent": "dragonair"
+        }
+    },
+    {
         "dex": 150,
         "speciesName": "Mewtwo",
         "speciesId": "mewtwo",

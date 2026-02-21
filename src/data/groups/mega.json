@@ -112,7 +112,7 @@
     {
         "speciesId": "lucario_mega",
         "fastMove": "FORCE_PALM",
-        "chargedMoves": ["AURA_SPHERE", "SHADOW_BALL"]
+        "chargedMoves": ["AURA_SPHERE", "METEOR_MASH"]
     },
     {
         "speciesId": "lugia",
@@ -131,7 +131,12 @@
     },
     {
         "speciesId": "metagross",
-        "fastMove": "BULLET_PUNCH",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "metagross_mega",
+        "fastMove": "SHADOW_CLAW",
         "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
     },
     {
@@ -186,7 +191,7 @@
     },
     {
         "speciesId": "tyranitar_mega",
-        "fastMove": "SMACK_DOWN",
+        "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
     },
     {
@@ -220,8 +225,13 @@
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
     },
     {
-        "speciesId": "metagross_mega",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
+        "speciesId": "dragonite_mega",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["THUNDER_PUNCH", "DRAGON_CLAW"]
+    },
+    {
+        "speciesId": "blaziken_mega",
+        "fastMove": "EMBER",
+        "chargedMoves": ["AURA_SPHERE", "BLAST_BURN"]
     }
 ]

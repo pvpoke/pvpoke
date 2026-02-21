@@ -37,6 +37,19 @@
 		]
 	},
 	{
+		"title": "Mega Master League",
+		"cup": "mega",
+		"cp": 10000,
+		"meta": "mega",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"No CP limit.",
+			"Mega-Evolved Pokémon are allowed."
+		]
+	},
+	{
 		"title": "Battle Frontier (Majestic)",
 		"cup": "majestic",
 		"cp": 1500,
