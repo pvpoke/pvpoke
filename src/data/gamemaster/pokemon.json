@@ -4629,7 +4629,7 @@
         "tags": ["shadoweligible", "mega"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_BELLSPROUT",
             "parent": "weepinbell"
@@ -34000,7 +34000,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_INKAY",
             "parent": "inkay"
