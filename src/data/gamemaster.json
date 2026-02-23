@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-02-22 16:24:44",
+    "timestamp": "2026-02-23 17:13:47",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -151,7 +151,7 @@
                 "tiers": [
                     {
                         "points": 1,
-                        "pokemon": ["altaria", "annihilape", "blastoise", "charjabug", "clefable", "clodsire", "corsola_galarian", "corviknight", "cradily", "empoleon", "feraligatr", "florges", "forretress", "furret", "gastrodon", "guzzlord", "jellicent", "lickilicky", "ludicolo", "malamar", "marowak", "moltres_galarian", "ninetales_alolan", "primeape", "steelix", "talonflame", "wigglytuff"]
+                        "pokemon": ["altaria", "azumarill", "blastoise", "charjabug", "clefable", "corviknight", "cradily", "empoleon", "furret", "gastrodon", "gourgeist_average", "gourgeist_large", "gourgeist_small", "gourgeist_super", "jellicent", "lapras", "ludicolo", "malamar", "marowak", "moltres_galarian", "ninetales_alolan", "scizor", "steelix", "stunfisk"]
                     }
                 ]
             },
@@ -1309,6 +1309,16 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["No CP limit.", "Mega-Evolved Pokémon are allowed."]
+        },
+        {
+            "title": "EUIC 2026 Championship Series Cup",
+            "cup": "euic2026",
+            "cp": 1500,
+            "meta": "euic2026",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Bug-,  Dark-,  Normal-,  and Dragon-type Pokémon are eligible.", "Fighting-,  Flying-,  and Steel-type Pokémon are not eligible.", "Legendary Pokémon,  Mythical Pokémon,  Mega Pokémon,  and Ultra Beasts are not eligible.", "The following Pokémon will be allowed: Seaking,  Politoed,  Milotic,  and Froslass.", "The following Pokémon will not be allowed: Wigglytuff,  CHansey,  Crustle,  Diggersby,  Ribombee,  Araquanid,  Turtonator,  Morgrem,  Morpeko"]
         },
         {
             "title": "Battle Frontier (Majestic)",

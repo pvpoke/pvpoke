@@ -60,6 +60,25 @@ $formats = array (
   ),
   4 => 
   array (
+    'title' => 'EUIC 2026 Championship Series Cup',
+    'cup' => 'euic2026',
+    'cp' => 1500,
+    'meta' => 'euic2026',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Bug-, Dark-, Normal-, and Dragon-type Pokémon are eligible.',
+      2 => 'Fighting-, Flying-, and Steel-type Pokémon are not eligible.',
+      3 => 'Legendary Pokémon, Mythical Pokémon, Mega Pokémon, and Ultra Beasts are not eligible.',
+      4 => 'The following Pokémon will be allowed: Seaking, Politoed, Milotic, and Froslass.',
+      5 => 'The following Pokémon will not be allowed: Wigglytuff, CHansey, Crustle, Diggersby, Ribombee, Araquanid, Turtonator, Morgrem, Morpeko',
+    ),
+  ),
+  5 => 
+  array (
     'title' => 'Battle Frontier (Majestic)',
     'cup' => 'majestic',
     'cp' => 1500,
@@ -68,7 +87,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  5 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (Crucible)',
     'cup' => 'crucible',
@@ -78,7 +97,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Battle Frontier (Great)',
     'cup' => 'battlefrontiergreat',
@@ -89,7 +108,7 @@ $formats = array (
     'showMeta' => false,
     'hideRankings' => true,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -99,7 +118,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  9 => 
   array (
     'title' => 'Devon Amor Cup',
     'cup' => 'amor',
@@ -109,7 +128,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  10 => 
   array (
     'title' => 'Gymbreakers LAIC 2025 Remix',
     'cup' => 'laic2025remix',
@@ -119,7 +138,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  11 => 
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -129,7 +148,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  12 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -139,7 +158,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  13 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -149,7 +168,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  14 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
