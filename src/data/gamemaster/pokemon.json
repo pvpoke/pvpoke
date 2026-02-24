@@ -17233,7 +17233,7 @@
             "cp2500": [28, 4, 12, 15]
         },
         "level25CP": 1295,
-        "tags": ["shadoweligible", "include1500", "mega"],
+        "tags": ["shadoweligible", "mega"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -17259,7 +17259,7 @@
             "cp1500": [25.5, 4, 12, 15],
             "cp2500": [50, 15, 15, 15]
         },
-        "tags": ["shadoweligible", "shadow"],
+        "tags": ["shadoweligible", "shadow", "include1500"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
