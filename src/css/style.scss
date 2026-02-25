@@ -162,8 +162,8 @@ header{
     z-index: 25;
     width: 100%;
     box-shadow: rgba(0,0,0,0.3) 0px 0px 6px;
-	top: 0;
-	//top:28px;
+	//top: 0;
+	top:37px;
 
 	.header-wrap{
 		max-width:800px;
@@ -277,7 +277,7 @@ header{
 	display: flex;
     justify-content: center;
     background: #4b8f56;
-    padding: 3px;
+    padding: 6px;
 	width: 100%;
 	position: fixed;
 	z-index: 25;
@@ -353,9 +353,9 @@ footer{
 #main{
 	max-width:800px;
 	margin: auto;
-	padding:60px 10px 10px 10px;
+	//padding:60px 10px 10px 10px;
     border-radius: 12px;
-	//padding: 90px 10px 10px 10px;
+	padding: 100px 10px 10px 10px;
 
 	& > h1{
 		margin:0;
@@ -5389,13 +5389,13 @@ a.pokebattler{
 			position: fixed;
 		    width: 100%;
 		    margin: 0 -10px;
-		    top: 37px;
+		    //top: 37px;
 			height: calc(100% - 37px);
 			padding: 8px 8px;
     		box-sizing: border-box;
 			box-shadow: 0px 5px 5px rgba(0,0,0,0.4);
 			overflow-y: auto;
-			//top: 65px;
+			top: 74px;
 
 			a{
 				padding: 9px 8px 9px 38px;
@@ -5482,10 +5482,6 @@ a.pokebattler{
 	.header-ticker{
 		position: fixed;
 		z-index: 50;
-
-		a{
-			font-size: 11px;
-		}
 	}
 
 	body{
