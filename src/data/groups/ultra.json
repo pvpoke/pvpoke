@@ -21,6 +21,11 @@
         "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
     },
     {
+        "speciesId": "clefable",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["METEOR_MASH", "MOONBLAST"]
+    },
+    {
         "speciesId": "cobalion",
         "fastMove": "DOUBLE_KICK",
         "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
@@ -37,7 +42,7 @@
     },
     {
         "speciesId": "cresselia",
-        "fastMove": "CONFUSION",
+        "fastMove": "PSYCHO_CUT",
         "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
     },
     {
@@ -85,11 +90,6 @@
         "chargedMoves": ["MOONBLAST", "CHILLING_WATER"]
     },
     {
-        "speciesId": "forretress",
-        "fastMove": "VOLT_SWITCH",
-        "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
-    },
-    {
         "speciesId": "gastrodon",
         "fastMove": "MUD_SLAP",
         "chargedMoves": ["BODY_SLAM", "WATER_PULSE"]
@@ -98,6 +98,11 @@
         "speciesId": "giratina_altered",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER"]
+    },
+    {
+        "speciesId": "giratina_altered",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
     },
     {
         "speciesId": "golisopod",
@@ -196,11 +201,6 @@
         "chargedMoves": ["DRAGON_ENERGY", "VICE_GRIP"]
     },
     {
-        "speciesId": "runerigus",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["ROCK_TOMB", "SHADOW_BALL"]
-    },
-    {
         "speciesId": "scizor_shadow",
         "fastMove": "BULLET_PUNCH",
         "chargedMoves": ["NIGHT_SLASH", "TRAILBLAZE"],
@@ -232,11 +232,6 @@
         "chargedMoves": ["SCALD", "PAYBACK"]
     },
     {
-        "speciesId": "tinkaton",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["PLAY_ROUGH", "BULLDOZE"]
-    },
-    {
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["AURA_SPHERE", "PSYSHOCK"]
@@ -245,17 +240,6 @@
         "speciesId": "virizion",
         "fastMove": "DOUBLE_KICK",
         "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
-    },
-    {
-        "speciesId": "walrein",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
-    },
-    {
-        "speciesId": "walrein_shadow",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "weezing_galarian",
@@ -268,18 +252,14 @@
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
     },
     {
-        "speciesId": "giratina_altered",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
+        "speciesId": "ampharos",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
     },
     {
-        "speciesId": "clefable",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["METEOR_MASH", "MOONBLAST"]
-    },
-    {
-        "speciesId": "trevenant",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["SHADOW_BALL", "SEED_BOMB"]
+        "speciesId": "ampharos_shadow",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"],
+        "shadowType": "shadow"
     }
 ]

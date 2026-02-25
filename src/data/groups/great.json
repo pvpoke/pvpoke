@@ -31,6 +31,11 @@
         "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
     },
     {
+        "speciesId": "clefable",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["MOONBLAST", "METEOR_MASH"]
+    },
+    {
         "speciesId": "clodsire",
         "fastMove": "POISON_STING",
         "chargedMoves": ["STONE_EDGE", "EARTHQUAKE"]
@@ -171,11 +176,6 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "sealeo",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["SURF", "BODY_SLAM"]
-    },
-    {
         "speciesId": "sealeo_shadow",
         "fastMove": "POWDER_SNOW",
         "chargedMoves": ["SURF", "BODY_SLAM"],
@@ -204,18 +204,68 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "togekiss",
+        "fastMove": "PECK",
+        "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
+    },
+    {
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "clefable",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["MOONBLAST", "METEOR_MASH"]
+        "speciesId": "medicham",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
     },
     {
-        "speciesId": "togekiss",
-        "fastMove": "PECK",
-        "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
+        "speciesId": "drapion_shadow",
+        "fastMove": "POISON_STING",
+        "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "forretress_shadow",
+        "fastMove": "BUG_BITE",
+        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "noctowl",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
+    },
+    {
+        "speciesId": "gligar_shadow",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["NIGHT_SLASH", "DIG"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "cresselia",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+    },
+    {
+        "speciesId": "stunfisk_galarian",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "quagsire_shadow",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "swampert",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "swampert_shadow",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+        "shadowType": "shadow"
     }
 ]
