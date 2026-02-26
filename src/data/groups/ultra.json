@@ -1,13 +1,24 @@
 [
     {
+        "speciesId": "ampharos",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
+    },
+    {
+        "speciesId": "ampharos_shadow",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "annihilape",
-        "fastMove": "COUNTER",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
     },
     {
         "speciesId": "annihilape_shadow",
-        "fastMove": "COUNTER",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"],
         "shadowType": "shadow"
     },
     {
@@ -252,14 +263,8 @@
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
     },
     {
-        "speciesId": "ampharos",
-        "fastMove": "VOLT_SWITCH",
-        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
-    },
-    {
-        "speciesId": "ampharos_shadow",
-        "fastMove": "VOLT_SWITCH",
-        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"],
-        "shadowType": "shadow"
+        "speciesId": "articuno",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["ICY_WIND", "HURRICANE"]
     }
 ]
