@@ -44,6 +44,8 @@ var InterfaceMaster = (function () {
 
 				pokeSearch.setBattle(battle);
 
+				gm.loadRankingData(self, "overall", cp, "all");
+
 				$(".league-select").on("change", selectLeague);
 				$(".battle-btn").on("click", generateResults);
 				$(".damage-viz-sort").on("click", toggleSort);
@@ -59,6 +61,8 @@ var InterfaceMaster = (function () {
 
 				battle.setCP(cp);
 				battle.setLevelCap(levelCap);
+
+				gm.loadRankingData(self, "overall", cp, "all");
 
 				multiSelectors[0].setCP(cp);
 
