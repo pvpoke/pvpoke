@@ -257,6 +257,7 @@ if(! isset($OG_IMAGE)){
 								<a class="nav-great" href="<?php echo $WEB_ROOT; ?>battle/">Single Battle</a>
 								<a class="nav-ultra" href="<?php echo $WEB_ROOT; ?>battle/multi/">Multi Battle</a>
 								<a class="nav-master" href="<?php echo $WEB_ROOT; ?>battle/matrix/">Matrix Battle</a>
+								<a href="<?php echo $WEB_ROOT; ?>damage-visualizer/">Damage Visualizer</a>
 							</div>
 						</div>
 					</div>

@@ -5315,6 +5315,147 @@ a.pokebattler{
 
 }
 
+/* DAMAGE VISUALIZER */
+
+.poke-select-container.damage-viz{
+	.poke.single{
+		display: block;
+
+		.hp.bar-back,
+		.move-bars,
+		.random,
+		.options .shield-section,
+		.options .shadow-section,
+		.options .toggle,
+		.options .toggle-content,
+		.custom-ranking-options{
+			display: none;
+		}
+
+		a.swap{
+			display: none;
+		}
+	}
+
+	.poke.multi{
+		.multi-battle-options{
+			display: none;
+		}
+
+		.options{
+			.shield-section, .shield-picker{
+				display: none;
+			}
+
+			.toggle, .toggle-content{
+				display: none;
+			}
+		}
+	}
+}
+
+.damage-viz-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 10px;
+
+	.section-title{
+		margin: 0;
+	}
+
+	.damage-viz-sort{
+		font-size: 13px;
+		padding: 5px 12px;
+	}
+}
+
+.damage-viz-container{
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 8px;
+
+	@media only screen and (min-width: 420px){
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media only screen and (min-width: 768px){
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.damage-card{
+	padding: 8px 10px;
+	border-radius: 8px;
+
+	.card-header{
+		border-radius: 4px;
+		padding: 4px 8px;
+		margin-bottom: 6px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.pokemon-name{
+			font-weight: bold;
+			font-size: 14px;
+		}
+
+		.pokemon-hp{
+			font-size: 12px;
+			opacity: 0.8;
+		}
+	}
+
+	.move-damage-row{
+		margin-bottom: 6px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		.move-info{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 3px;
+
+			.move-name{
+				padding: 2px 8px;
+				border-radius: 4px;
+				font-size: 12px;
+			}
+
+			.damage-values{
+				display: flex;
+				gap: 8px;
+				align-items: center;
+				font-size: 13px;
+			}
+
+			.damage-number{
+				font-weight: bold;
+			}
+
+			.damage-percent{
+				color: #888;
+			}
+		}
+
+		.hp.bar-back{
+			margin-top: 0;
+			height: 16px;
+			border-width: 2px;
+
+			.bar[color="red"]{
+				background-color: #e03030;
+			}
+		}
+	}
+}
+
 /* RESPONSIVE */
 
 

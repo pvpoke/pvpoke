@@ -325,14 +325,10 @@ b {
   padding: 10px 20px;
   box-sizing: border-box;
   max-width: 400px;
-  background: #003462;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #285e85 30%, #003462 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #285e85 30%, #003462 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #285e85 30%, #003462 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #003462; /* Old browsers */
+  background: -moz-linear-gradient(top, #285e85 30%, #003462 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #285e85 30%, #003462 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #285e85 30%, #003462 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .home a.button .btn-icon {
   width: 30px;
@@ -1050,14 +1046,12 @@ b {
   border-radius: 0px;
   height: 22px;
   margin-bottom: 0;
-  -moz-appearance: textfield;
-  /* Firefox */
+  -moz-appearance: textfield; /* Firefox */
 }
 .fields .ivs input::-webkit-outer-spin-button, .fields .ivs input::-webkit-inner-spin-button {
   /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
-  margin: 0;
-  /* <-- Apparently some margin are still there even though it's hidden */
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 .fields .ivs input:focus {
   outline: none;
@@ -1234,7 +1228,7 @@ b {
   transition: border 0.2s ease-out 0s;
 }
 .move-bars .move-bar.active {
-  border: 2px solid black;
+  border: 2px solid rgb(0, 0, 0);
 }
 .move-bars .move-bar .label {
   position: relative;
@@ -1421,24 +1415,16 @@ select.large {
   cursor: pointer;
   text-decoration: none;
   color: #000;
-  background: #f9a01b;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #f9a01b; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .button[disabled] {
-  background: #909aa3;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #909aa3 30%, #909aa3 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #909aa3 30%, #909aa3 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #909aa3 30%, #909aa3 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #909aa3; /* Old browsers */
+  background: -moz-linear-gradient(top, #909aa3 30%, #909aa3 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #909aa3 30%, #909aa3 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #909aa3 30%, #909aa3 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border: 2px solid rgba(0, 0, 0, 0.2);
   pointer-events: none;
 }
@@ -1600,14 +1586,10 @@ select.large {
   float: left;
 }
 .check.on span {
-  background: #f9a01b;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #f9a01b; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .check:hover:not(.on) span {
   background: #555;
@@ -1642,14 +1624,10 @@ select.large {
 .battle-results .timeline-container.sandbox-mode .item.charged:hover,
 .battle-results .timeline-container.sandbox-mode .item.interaction:hover,
 .battle-results .timeline-container.sandbox-mode .item.fast:not(.disabled):hover {
-  background: #f9a01b;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #f9a01b; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border-color: #f9a01b;
 }
 .battle-results .timeline-container.sandbox-mode .item.disabled {
@@ -1698,19 +1676,13 @@ select.large {
   margin-bottom: 5px;
   float: right;
   overflow: hidden;
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently
-  supported by Chrome and Opera */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+supported by Chrome and Opera */
 }
 .battle-results .sandbox-btn-container .sandbox-btn span {
   position: relative;
@@ -1792,7 +1764,7 @@ select.large {
   margin-top: 10px;
   margin-bottom: 10px;
   color: #f9fdff;
-  background: url("../img/histogram-icon.png") no-repeat 8px center, #3e5eac !important;
+  background: url("../img/histogram-icon.png") no-repeat 8px center, rgb(62, 94, 172) !important;
   padding-left: 30px;
 }
 .battle-results .summary {
@@ -2175,8 +2147,7 @@ a.download-csv {
   background: none;
 }
 .rating-table thead th {
-  position: -webkit-sticky;
-  /* for Safari */
+  position: -webkit-sticky; /* for Safari */
   position: sticky;
   top: 0;
   background: #444;
@@ -2186,8 +2157,7 @@ a.download-csv {
   z-index: 11;
 }
 .rating-table tbody th {
-  position: -webkit-sticky;
-  /* for Safari */
+  position: -webkit-sticky; /* for Safari */
   position: sticky;
   left: 0;
   background: #fcfcfc;
@@ -2357,28 +2327,20 @@ a.download-csv {
   background-image: url("../img/move_buff.png") !important;
   background-position: center 0% !important;
   background-repeat: no-repeat !important;
-  -webkit-animation: BUFF_ANIMATION 1.5s infinite;
-  /* Safari 4+ */
-  -moz-animation: BUFF_ANIMATION 1.5s infinite;
-  /* Fx 5+ */
-  -o-animation: BUFF_ANIMATION 1.5s infinite;
-  /* Opera 12+ */
-  animation: BUFF_ANIMATION 1.5s infinite;
-  /* IE 10+, Fx 29+ */
+  -webkit-animation: BUFF_ANIMATION 1.5s infinite; /* Safari 4+ */
+  -moz-animation: BUFF_ANIMATION 1.5s infinite; /* Fx 5+ */
+  -o-animation: BUFF_ANIMATION 1.5s infinite; /* Opera 12+ */
+  animation: BUFF_ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
   animation-timing-function: linear;
 }
 .timeline .item-container .item.debuff {
   background-image: url("../img/move_debuff.png") !important;
   background-position: center 50% !important;
   background-repeat: no-repeat !important;
-  -webkit-animation: DEBUFF_ANIMATION 1.5s infinite;
-  /* Safari 4+ */
-  -moz-animation: DEBUFF_ANIMATION 1.5s infinite;
-  /* Fx 5+ */
-  -o-animation: DEBUFF_ANIMATION 1.5s infinite;
-  /* Opera 12+ */
-  animation: DEBUFF_ANIMATION 1.5s infinite;
-  /* IE 10+, Fx 29+ */
+  -webkit-animation: DEBUFF_ANIMATION 1.5s infinite; /* Safari 4+ */
+  -moz-animation: DEBUFF_ANIMATION 1.5s infinite; /* Fx 5+ */
+  -o-animation: DEBUFF_ANIMATION 1.5s infinite; /* Opera 12+ */
+  animation: DEBUFF_ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
   animation-timing-function: linear;
 }
 .timeline .item-container .item.switchAvailable {
@@ -2445,19 +2407,13 @@ a.download-csv {
 }
 .stats-table.sortable-table .label {
   cursor: pointer;
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently
-  supported by Chrome and Opera */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+supported by Chrome and Opera */
 }
 .stats-table .status-effect-description {
   font-size: 12px;
@@ -2713,19 +2669,6 @@ a.download-csv {
   height: 17px;
   background-image: url("../img/notes-icon.png");
 }
-.rank .rating-container {
-  /*a{
-  	display:inline-block;
-  	width:32px;
-  	height:28px;
-  	background-image:url('../img/eye.png');
-  	background-repeat: no-repeat;
-  	background-position: 0 center;
-  	margin-right:10px;
-  	float:right;
-  	opacity: .5;
-  }*/
-}
 .rank .rating-container .rating {
   float: right;
   color: #fff6d4;
@@ -2741,6 +2684,19 @@ a.download-csv {
 .rank .rating-container .rating span {
   margin-left: 0;
   margin-right: 6px;
+}
+.rank .rating-container {
+  /*a{
+  	display:inline-block;
+  	width:32px;
+  	height:28px;
+  	background-image:url('../img/eye.png');
+  	background-repeat: no-repeat;
+  	background-position: 0 center;
+  	margin-right:10px;
+  	float:right;
+  	opacity: .5;
+  }*/
 }
 .rank .moves {
   display: block;
@@ -3131,15 +3087,15 @@ a.download-csv {
 .rank .details .detail-section .moveset .archetype .icon.general {
   background-position: -96px 0;
 }
+.rank .details .detail-section .moveset .archetype .icon.low-quality:before {
+  content: "x";
+}
 .rank .details .detail-section .moveset .archetype .icon.low-quality {
   border-radius: 16px;
   background: #000;
   color: #fff;
   text-align: center;
   font-weight: bold;
-}
-.rank .details .detail-section .moveset .archetype .icon.low-quality:before {
-  content: "x";
 }
 .rank .details .detail-section .ranking-header.stat-toggle {
   text-align: right;
@@ -3165,10 +3121,10 @@ a.download-csv {
   border-left: 10px solid rgba(0, 0, 0, 0.1);
 }
 .rank .details .detail-section .rank.selected {
-  border-left: 10px solid black;
+  border-left: 10px solid rgb(0, 0, 0);
 }
 .rank .details .detail-section .rank.recommended {
-  border-left: 10px solid black;
+  border-left: 10px solid rgb(0, 0, 0);
   margin: 20px 0 10px 0;
   font-size: 12px;
 }
@@ -3486,7 +3442,7 @@ a.download-csv {
   width: auto;
 }
 .modal .search-traits-selector .traits > div.selected {
-  border: 2px solid black;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .modal .sort-group .center .button {
@@ -3617,14 +3573,10 @@ th.col-sort[data-asc=false]::after {
 }
 
 .rankings-container .limited-rank {
-  background: #f9a01b;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #f9a01b; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .rankings-container .limited-rank .name-container {
   color: #000;
@@ -3950,7 +3902,7 @@ th.col-sort[data-asc=false]::after {
 }
 .article h3.article-header,
 .article .tip {
-  background: #62728b;
+  background: rgb(98, 114, 139);
   padding: 10px;
   border-radius: 8px;
   color: #f9fdff;
@@ -4117,7 +4069,7 @@ th.col-sort[data-asc=false]::after {
   font-weight: normal;
   font-size: 12px;
   text-align: left;
-  color: #b5b5b5;
+  color: rgb(181, 181, 181);
   padding-right: 0;
 }
 
@@ -4219,7 +4171,7 @@ a.rating.loss i, .rating-container .rating.loss i, .summary .rating.loss i,
 }
 a.rating.tie, .rating-container .rating.tie, .summary .rating.tie,
 .stats-table .rating.tie, .train-table .rating.tie {
-  background-color: #968cb6 !important;
+  background-color: rgb(150, 140, 182) !important;
   color: #f2f2f2;
 }
 a.rating.tie span, .rating-container .rating.tie span, .summary .rating.tie span,
@@ -4649,207 +4601,135 @@ a.pokebattler {
 
 /* TYPE COLORS */
 .bug {
-  background: #aec92c;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #9bc231 30%, #aec92c 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #9bc231 30%, #aec92c 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #9bc231 30%, #aec92c 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #aec92c; /* Old browsers */
+  background: -moz-linear-gradient(top, #9bc231 30%, #aec92c 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #9bc231 30%, #aec92c 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #9bc231 30%, #aec92c 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .dark {
-  background: #6e7681;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #52505e 30%, #6e7681 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #52505e 30%, #6e7681 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #52505e 30%, #6e7681 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #6e7681; /* Old browsers */
+  background: -moz-linear-gradient(top, #52505e 30%, #6e7681 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #52505e 30%, #6e7681 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #52505e 30%, #6e7681 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .dragon {
-  background: #067fc4;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #1065b6 30%, #067fc4 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #1065b6 30%, #067fc4 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #1065b6 30%, #067fc4 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #067fc4; /* Old browsers */
+  background: -moz-linear-gradient(top, #1065b6 30%, #067fc4 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #1065b6 30%, #067fc4 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #1065b6 30%, #067fc4 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .electric {
-  background: #fedf6b;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #f3d43e 30%, #fedf6b 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #f3d43e 30%, #fedf6b 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #f3d43e 30%, #fedf6b 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #fedf6b; /* Old browsers */
+  background: -moz-linear-gradient(top, #f3d43e 30%, #fedf6b 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f3d43e 30%, #fedf6b 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f3d43e 30%, #fedf6b 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .fairy {
-  background: #f6a7e8;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #eb8de1 30%, #f6a7e8 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #eb8de1 30%, #f6a7e8 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #eb8de1 30%, #f6a7e8 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #f6a7e8; /* Old browsers */
+  background: -moz-linear-gradient(top, #eb8de1 30%, #f6a7e8 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eb8de1 30%, #f6a7e8 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #eb8de1 30%, #f6a7e8 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .fighting {
-  background: #e34448;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #ce3d64 30%, #e34448 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ce3d64 30%, #e34448 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ce3d64 30%, #e34448 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #e34448; /* Old browsers */
+  background: -moz-linear-gradient(top, #ce3d64 30%, #e34448 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ce3d64 30%, #e34448 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ce3d64 30%, #e34448 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .fire {
-  background: #feb04b;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #fe9d59 30%, #feb04b 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #fe9d59 30%, #feb04b 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #fe9d59 30%, #feb04b 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #feb04b; /* Old browsers */
+  background: -moz-linear-gradient(top, #fe9d59 30%, #feb04b 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fe9d59 30%, #feb04b 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fe9d59 30%, #feb04b 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .flying {
-  background: #a7c1f2;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #91a8de 30%, #a7c1f2 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #91a8de 30%, #a7c1f2 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #91a8de 30%, #a7c1f2 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #a7c1f2; /* Old browsers */
+  background: -moz-linear-gradient(top, #91a8de 30%, #a7c1f2 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #91a8de 30%, #a7c1f2 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #91a8de 30%, #a7c1f2 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .ghost {
-  background: #7571d0;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #5069ac 30%, #7571d0 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #5069ac 30%, #7571d0 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #5069ac 30%, #7571d0 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #7571d0; /* Old browsers */
+  background: -moz-linear-gradient(top, #5069ac 30%, #7571d0 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #5069ac 30%, #7571d0 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #5069ac 30%, #7571d0 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .grass {
-  background: #59c079;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #5fbb50 30%, #59c079 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #5fbb50 30%, #59c079 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #5fbb50 30%, #59c079 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #59c079; /* Old browsers */
+  background: -moz-linear-gradient(top, #5fbb50 30%, #59c079 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #5fbb50 30%, #59c079 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #5fbb50 30%, #59c079 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .ground {
-  background: #d2976b;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #d87b40 30%, #d2976b 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #d87b40 30%, #d2976b 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #d87b40 30%, #d2976b 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #d2976b; /* Old browsers */
+  background: -moz-linear-gradient(top, #d87b40 30%, #d2976b 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d87b40 30%, #d2976b 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d87b40 30%, #d2976b 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .ice {
-  background: #94ddd6;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #74d3bd 30%, #94ddd6 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #74d3bd 30%, #94ddd6 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #74d3bd 30%, #94ddd6 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #94ddd6; /* Old browsers */
+  background: -moz-linear-gradient(top, #74d3bd 30%, #94ddd6 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #74d3bd 30%, #94ddd6 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #74d3bd 30%, #94ddd6 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .normal {
-  background: #a3a49e;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #909aa3 30%, #a3a49e 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #909aa3 30%, #a3a49e 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #909aa3 30%, #a3a49e 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #a3a49e; /* Old browsers */
+  background: -moz-linear-gradient(top, #909aa3 30%, #a3a49e 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #909aa3 30%, #a3a49e 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #909aa3 30%, #a3a49e 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .poison {
-  background: #a662c7;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #c662d6 30%, #a662c7 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #c662d6 30%, #a662c7 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #c662d6 30%, #a662c7 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #a662c7; /* Old browsers */
+  background: -moz-linear-gradient(top, #c662d6 30%, #a662c7 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c662d6 30%, #a662c7 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c662d6 30%, #a662c7 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .psychic {
-  background: #fda194;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #f2726f 30%, #fda194 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #f2726f 30%, #fda194 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #f2726f 30%, #fda194 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #fda194; /* Old browsers */
+  background: -moz-linear-gradient(top, #f2726f 30%, #fda194 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f2726f 30%, #fda194 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f2726f 30%, #fda194 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .rock {
-  background: #d7cd90;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #c7b98c 30%, #d7cd90 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #c7b98c 30%, #d7cd90 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #c7b98c 30%, #d7cd90 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #d7cd90; /* Old browsers */
+  background: -moz-linear-gradient(top, #c7b98c 30%, #d7cd90 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c7b98c 30%, #d7cd90 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c7b98c 30%, #d7cd90 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .steel {
-  background: #5aafb4;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #50879c 30%, #5aafb4 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #50879c 30%, #5aafb4 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #50879c 30%, #5aafb4 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #5aafb4; /* Old browsers */
+  background: -moz-linear-gradient(top, #50879c 30%, #5aafb4 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #50879c 30%, #5aafb4 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #50879c 30%, #5aafb4 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .water {
-  background: #6ac7e9;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #4f91db 30%, #6ac7e9 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #4f91db 30%, #6ac7e9 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #4f91db 30%, #6ac7e9 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #6ac7e9; /* Old browsers */
+  background: -moz-linear-gradient(top, #4f91db 30%, #6ac7e9 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #4f91db 30%, #6ac7e9 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #4f91db 30%, #6ac7e9 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-.dark, .dragon, .ghost {
+.dark > .name-container, .dragon > .name-container, .ghost > .name-container {
   color: #f9fdff;
 }
-.dark > .name-container, .dragon > .name-container, .ghost > .name-container {
+.dark, .dragon, .ghost {
   color: #f9fdff;
 }
 .dark option, .dragon option, .ghost option {
@@ -4969,33 +4849,145 @@ a.pokebattler {
   border-color: #4f91db !important;
 }
 
+/* DAMAGE VISUALIZER */
+.poke-select-container.damage-viz .poke.single {
+  display: block;
+}
+.poke-select-container.damage-viz .poke.single .hp.bar-back,
+.poke-select-container.damage-viz .poke.single .move-bars,
+.poke-select-container.damage-viz .poke.single .random,
+.poke-select-container.damage-viz .poke.single .options .shield-section,
+.poke-select-container.damage-viz .poke.single .options .shadow-section,
+.poke-select-container.damage-viz .poke.single .options .toggle,
+.poke-select-container.damage-viz .poke.single .options .toggle-content,
+.poke-select-container.damage-viz .poke.single .custom-ranking-options {
+  display: none;
+}
+.poke-select-container.damage-viz .poke.single a.swap {
+  display: none;
+}
+.poke-select-container.damage-viz .poke.multi .multi-battle-options {
+  display: none;
+}
+.poke-select-container.damage-viz .poke.multi .options .shield-section, .poke-select-container.damage-viz .poke.multi .options .shield-picker {
+  display: none;
+}
+.poke-select-container.damage-viz .poke.multi .options .toggle, .poke-select-container.damage-viz .poke.multi .options .toggle-content {
+  display: none;
+}
+
+.damage-viz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.damage-viz-header .section-title {
+  margin: 0;
+}
+.damage-viz-header .damage-viz-sort {
+  font-size: 13px;
+  padding: 5px 12px;
+}
+
+.damage-viz-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+@media only screen and (min-width: 420px) {
+  .damage-viz-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .damage-viz-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.damage-card {
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.damage-card .card-header {
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.damage-card .card-header .pokemon-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+.damage-card .card-header .pokemon-hp {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.damage-card .move-damage-row {
+  margin-bottom: 6px;
+}
+.damage-card .move-damage-row:last-child {
+  margin-bottom: 0;
+}
+.damage-card .move-damage-row .move-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+.damage-card .move-damage-row .move-info .move-name {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.damage-card .move-damage-row .move-info .damage-values {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+.damage-card .move-damage-row .move-info .damage-number {
+  font-weight: bold;
+}
+.damage-card .move-damage-row .move-info .damage-percent {
+  color: #888;
+}
+.damage-card .move-damage-row .hp.bar-back {
+  margin-top: 0;
+  height: 16px;
+  border-width: 2px;
+}
+.damage-card .move-damage-row .hp.bar-back .bar[color=red] {
+  background-color: #e03030;
+}
+
 /* RESPONSIVE */
 @media only screen and (max-width: 468px) {
   .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1) {
     top: 0%;
     left: 44%;
   }
-
   .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(2) {
     top: 87%;
     left: 43%;
   }
-
   .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(3) {
     top: 25%;
     left: 74%;
   }
-
   .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(4) {
     top: 72%;
     left: 72%;
   }
-
   .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(5) {
     top: 25%;
     left: 10%;
   }
-
   .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(6) {
     top: 72%;
     left: 7%;
@@ -5005,15 +4997,12 @@ a.pokebattler {
   .mobile {
     display: block;
   }
-
   .desktop {
     display: none !important;
   }
-
   .header-ticker {
     z-index: 50;
   }
-
   header {
     z-index: 50;
     padding: 3px 10px;
@@ -5112,28 +5101,22 @@ a.pokebattler {
     font-size: 18px;
     padding-left: 38px;
   }
-
   .header-ticker {
     position: fixed;
     z-index: 50;
   }
-
   body {
     background-position: center top;
   }
-
   #main > h1 {
     font-size: 26px;
   }
-
   .tooltip.sandbox {
     display: none !important;
   }
-
   .stats-table.sortable-table {
     font-size: 14px;
   }
-
   .poke {
     width: 49%;
   }
@@ -5149,11 +5132,9 @@ a.pokebattler {
   .poke a.search-info {
     display: none;
   }
-
   .modal .poke {
     width: 100%;
   }
-
   .rank .details .detail-section.float {
     float: none;
     width: 100%;
@@ -5173,12 +5154,10 @@ a.pokebattler {
   .rank .rating-container .rating {
     width: auto !important;
   }
-
   .modal .search-traits-selector .traits > div,
-.similar-pokemon a, .partner-pokemon a {
+  .similar-pokemon a, .partner-pokemon a {
     font-size: 12px;
   }
-
   .histograms {
     display: block;
   }
@@ -5187,32 +5166,27 @@ a.pokebattler {
     max-width: 600px;
     margin: 20px auto;
   }
-
   .flex .col-3 {
     flex-basis: 25%;
   }
   .flex .col-9 {
     flex-basis: 75%;
   }
-
   .league-select,
-.format-select,
-.cup-select,
-.category-select {
+  .format-select,
+  .cup-select,
+  .category-select {
     max-width: 48%;
     margin-bottom: 5px;
     font-size: 16px;
   }
-
   .ranking-categories a {
     font-size: 14px;
     padding: 5px;
   }
-
   .rank .details .detail-section .moveset .name-container.stats-container > div {
     min-width: auto !important;
   }
-
   .traits > div {
     font-size: 12px;
   }
@@ -5528,7 +5502,7 @@ a.pokebattler {
 }
 .train-table td.team-score .score {
   background-image: url("../img/starburst_red.png");
-  background-color: #3466ae;
+  background-color: rgb(52, 102, 174);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: 4px center;
@@ -5753,7 +5727,7 @@ a.pokebattler {
 .cmp-legend .legend-square {
   width: 20px;
   height: 20px;
-  background: #70379f;
+  background: rgb(112, 55, 159);
   margin-right: 5px;
 }
 .cmp-legend .legend-square.light {
@@ -5906,14 +5880,6 @@ a.feed-subscribe {
   justify-content: space-between;
   border-radius: 12px;
   border: 1px solid #000;
-  background: #003462;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #285e85 30%, #003462 99%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #285e85 30%, #003462 99%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #285e85 30%, #003462 99%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .feed .news-item .news-info a .link-text {
   text-decoration: underline;
@@ -5921,6 +5887,12 @@ a.feed-subscribe {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 145px;
+}
+.feed .news-item .news-info a {
+  background: #003462; /* Old browsers */
+  background: -moz-linear-gradient(top, #285e85 30%, #003462 99%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #285e85 30%, #003462 99%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #285e85 30%, #003462 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .latest-section {
@@ -6048,46 +6020,37 @@ a.feed-subscribe {
     -o-transition: background-color 0s ease-out 0s;
     transition: background-color 0s ease-out 0s;
   }
-
   .rank .details .detail-section.overall .rating-container .ranking-header {
     font-size: 16px;
   }
-
   .rank .details .detail-section .weaknesses .type div:nth-of-type(2),
-.rank .details .detail-section .resistances .type div:nth-of-type(2) {
+  .rank .details .detail-section .resistances .type div:nth-of-type(2) {
     font-size: 16px;
     line-height: 16px;
   }
-
   .rankings-container {
     max-height: 1000px;
   }
   .rankings-container.pokebox-list {
     max-height: 600px;
   }
-
   .table-container {
     overflow-x: auto;
   }
-
   .article .threats-table .name,
-.article .alternatives-table .name,
-.article .meta-table .name {
+  .article .alternatives-table .name,
+  .article .meta-table .name {
     font-size: 16px;
   }
-
   a.download-csv {
     display: inline-block;
   }
-
   .battle-results.matrix .table-container {
     max-height: 800px;
   }
-
   .analysis-container .table-container {
     max-height: 600px;
   }
-
   .train-table td.poke-name {
     padding: 8px 4px;
     width: 200px;
@@ -6100,20 +6063,19 @@ a.feed-subscribe {
     display: table-cell;
   }
   .train-table td.individual-score,
-.train-table td.team-score,
-.train-table td.usage {
+  .train-table td.team-score,
+  .train-table td.usage {
     font-size: 20px;
     padding: 4px 20px 4px 0;
   }
   .train-table td.individual-score .rating,
-.train-table td.team-score .rating,
-.train-table td.usage .rating {
+  .train-table td.team-score .rating,
+  .train-table td.usage .rating {
     min-width: 90px;
   }
   .train-table span.usage-value {
     width: 55px;
   }
-
   .analysis-container .format-select {
     max-width: 100%;
   }
@@ -6537,17 +6499,14 @@ iframe#bh-div {
     width: 100%;
     z-index: 25;
   }
-
   #nitro-header-mobile {
     display: block;
     margin: 0 auto;
   }
-
   #nitro-body-mobile {
     display: block;
     margin-top: 30px;
   }
-
   .mobile-ad-container {
     display: block;
     width: 320px;
@@ -6558,12 +6517,10 @@ iframe#bh-div {
   #nitro-header-desktop {
     display: block;
   }
-
   #nitro-body-desktop {
     display: block;
     margin-top: 30px;
   }
-
   .desktop-ad-container {
     display: block;
     width: 728px;
@@ -6581,7 +6538,6 @@ iframe#bh-div {
     top: 95px;
     left: 20px;
   }
-
   #nitro-sidebar-right {
     display: block;
     position: fixed;
@@ -6596,7 +6552,6 @@ iframe#bh-div {
     top: 95px;
     left: 20px;
   }
-
   #nitro-sidebar-right-300 {
     display: block;
     position: fixed;
@@ -6609,7 +6564,6 @@ iframe#bh-div {
   .background {
     display: none;
   }
-
   .scorecard-print .section {
     display: none !important;
   }
@@ -6620,7 +6574,7 @@ iframe#bh-div {
     display: none !important;
   }
   .scorecard-print .toggle,
-.scorecard-print .toggle-content {
+  .scorecard-print .toggle-content {
     display: none !important;
   }
   .scorecard-print .toggle-content:nth-of-type(1) {
@@ -6662,7 +6616,6 @@ iframe#bh-div {
     background: rgba(0, 0, 0, 0.07);
     -webkit-print-color-adjust: exact;
   }
-
   .table-container {
     overflow-x: auto;
   }

@@ -63,6 +63,8 @@ RewriteRule ^attack-cmp-chart/([a-zA-Z0-9-]+)/(\d+)/([a-zA-Z_]+).*$ attack-cmp-c
 RewriteRule ^attack-cmp-chart/([a-zA-Z0-9-]+)/(\d+).*$ attack-cmp-chart.php?cup=$1&cp=$2 [L,QSA]
 RewriteRule attack-cmp-chart.?$ attack-cmp-chart.php [L,QSA]
 
+RewriteRule damage-visualizer.?$ damage-visualizer.php [L,QSA]
+
 RewriteRule train/editor.?$ train/editor.php [L,QSA]
 
 RewriteRule ^gm-editor/pokemon/([a-zA-Z0-9_]+).*$ gm-editor/pokemon.php?p=$1 [L,QSA]
