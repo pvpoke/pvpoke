@@ -3,6 +3,16 @@
 $formats = array (
   0 => 
   array (
+    'title' => 'Kanto Cup',
+    'cup' => 'kanto',
+    'cp' => 1500,
+    'meta' => 'kanto',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  1 => 
+  array (
     'title' => 'Little Cup',
     'cup' => 'little',
     'cp' => 500,
@@ -11,7 +21,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  1 => 
+  2 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -21,7 +31,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  2 => 
+  3 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
