@@ -24,47 +24,13 @@
 		]
 	},
 	{
-		"title": "Love Cup",
-		"cup": "love",
+		"title": "Kanto Cup",
+		"cup": "kanto",
 		"cp": 1500,
-		"meta": "love",
+		"meta": "kanto",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only red- or pink-colored Pokémon are eligible."
-		]
-	},
-	{
-		"title": "Mega Master League",
-		"cup": "mega",
-		"cp": 10000,
-		"meta": "mega",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"No CP limit.",
-			"Mega-Evolved Pokémon are allowed."
-		]
-	},
-	{
-		"title": "EUIC 2026 Championship Series Cup",
-		"cup": "euic2026",
-		"cp": 1500,
-		"meta": "euic2026",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Bug-, Dark-, Normal-, and Dragon-type Pokémon are eligible.",
-			"Fighting-, Flying-, and Steel-type Pokémon are not eligible.",
-			"Legendary Pokémon, Mythical Pokémon, Mega Pokémon, and Ultra Beasts are not eligible.",
-			"The following Pokémon will be allowed: Seaking, Politoed, Milotic, and Froslass.",
-			"The following Pokémon will not be allowed: Wigglytuff, CHansey, Crustle, Diggersby, Ribombee, Araquanid, Turtonator, Morgrem, Morpeko"
-		]
+		"showMeta": true
 	},
 	{
 		"title": "Battle Frontier (Majestic)",

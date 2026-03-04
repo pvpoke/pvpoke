@@ -110,16 +110,6 @@
         "chargedMoves": ["PSYCHIC_FANGS", "IRON_HEAD"]
     },
     {
-        "speciesId": "tapu_bulu",
-        "fastMove": "BULLET_SEED",
-        "chargedMoves": ["GRASS_KNOT", "NATURES_MADNESS"]
-    },
-    {
-        "speciesId": "tapu_lele",
-        "fastMove": "ASTONISH",
-        "chargedMoves": ["PSYSHOCK", "NATURES_MADNESS"]
-    },
-    {
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"]
@@ -168,5 +158,20 @@
         "speciesId": "zygarde_complete",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "kyogre",
+        "fastMove": "WATERFALL",
+        "chargedMoves": ["AVALANCHE", "THUNDER"]
+    },
+    {
+        "speciesId": "tyranitar",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
+    },
+    {
+        "speciesId": "marshadow",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["CLOSE_COMBAT", "ICE_PUNCH"]
     }
 ]
