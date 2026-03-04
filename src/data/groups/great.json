@@ -11,8 +11,8 @@
     },
     {
         "speciesId": "annihilape_shadow",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"],
+        "fastMove": "COUNTER",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
         "shadowType": "shadow"
     },
     {
@@ -96,7 +96,7 @@
     {
         "speciesId": "florges",
         "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["TRAILBLAZE", "CHILLING_WATER"]
+        "chargedMoves": ["DISARMING_VOICE", "CHILLING_WATER"]
     },
     {
         "speciesId": "forretress",
@@ -144,11 +144,6 @@
         "speciesId": "lickilicky",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
-    },
-    {
-        "speciesId": "ludicolo",
-        "fastMove": "ASTONISH",
-        "chargedMoves": ["WEATHER_BALL_WATER", "LEAF_STORM"]
     },
     {
         "speciesId": "malamar",
@@ -215,12 +210,6 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "sealeo_shadow",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["SURF", "BODY_SLAM"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "steelix",
         "fastMove": "THUNDER_FANG",
         "chargedMoves": ["CRUNCH", "PSYCHIC_FANGS"],
@@ -267,5 +256,16 @@
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
+    },
+    {
+        "speciesId": "walrein",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "walrein_shadow",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"],
+        "shadowType": "shadow"
     }
 ]

@@ -3,6 +3,33 @@
 $formats = array (
   0 => 
   array (
+    'title' => 'P!P Championship Series',
+    'cup' => 'championshipseries',
+    'cp' => 1500,
+    'meta' => 'championshipseries',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'hideRankings' => true,
+  ),
+  1 => 
+  array (
+    'title' => 'Master Premier Cup',
+    'cup' => 'premier',
+    'cp' => 10000,
+    'meta' => 'premiermaster',
+    'showCup' => true,
+    'showFormat' => false,
+    'showMeta' => true,
+    'hideRankings' => true,
+    'rules' => 
+    array (
+      0 => 'No CP limit.',
+      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
+    ),
+  ),
+  2 => 
+  array (
     'title' => 'Kanto Cup',
     'cup' => 'kanto',
     'cp' => 1500,
@@ -11,7 +38,78 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  1 => 
+  3 => 
+  array (
+    'title' => 'Battle Frontier (Majestic)',
+    'cup' => 'majestic',
+    'cp' => 1500,
+    'meta' => 'majestic',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  4 => 
+  array (
+    'title' => 'Battle Frontier (Crucible)',
+    'cup' => 'crucible',
+    'cp' => 2500,
+    'meta' => 'crucible',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  5 => 
+  array (
+    'title' => 'Battle Frontier (Great)',
+    'cup' => 'battlefrontiergreat',
+    'cp' => 1500,
+    'meta' => 'great',
+    'showCup' => false,
+    'showFormat' => true,
+    'showMeta' => false,
+    'hideRankings' => true,
+  ),
+  6 => 
+  array (
+    'title' => 'Battle Frontier (Master)',
+    'cup' => 'battlefrontiermaster',
+    'cp' => 10000,
+    'meta' => 'battlefrontiermaster',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  7 => 
+  array (
+    'title' => 'Devon Amor Cup',
+    'cup' => 'amor',
+    'cp' => 1500,
+    'meta' => 'amor',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  8 => 
+  array (
+    'title' => 'Gymbreakers LAIC 2025 Remix',
+    'cup' => 'laic2025remix',
+    'cp' => 1500,
+    'meta' => 'laic2025remix',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  9 => 
+  array (
+    'title' => 'Zygarden Chrono Meta',
+    'cup' => 'chrono',
+    'cp' => 1500,
+    'meta' => 'chrono',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  10 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -21,7 +119,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  2 => 
+  11 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -31,7 +129,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  3 => 
+  12 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

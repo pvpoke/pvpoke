@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-03-02 00:17:10",
+    "timestamp": "2026-03-04 01:00:36",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -1309,10 +1309,95 @@
     ],
     "formats": [
         {
+            "title": "P!P Championship Series",
+            "cup": "championshipseries",
+            "cp": 1500,
+            "meta": "championshipseries",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "hideRankings": true
+        },
+        {
+            "title": "Master Premier Cup",
+            "cup": "premier",
+            "cp": 10000,
+            "meta": "premiermaster",
+            "showCup": true,
+            "showFormat": false,
+            "showMeta": true,
+            "hideRankings": true,
+            "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
+        },
+        {
             "title": "Kanto Cup",
             "cup": "kanto",
             "cp": 1500,
             "meta": "kanto",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Battle Frontier (Majestic)",
+            "cup": "majestic",
+            "cp": 1500,
+            "meta": "majestic",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Battle Frontier (Crucible)",
+            "cup": "crucible",
+            "cp": 2500,
+            "meta": "crucible",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Battle Frontier (Great)",
+            "cup": "battlefrontiergreat",
+            "cp": 1500,
+            "meta": "great",
+            "showCup": false,
+            "showFormat": true,
+            "showMeta": false,
+            "hideRankings": true
+        },
+        {
+            "title": "Battle Frontier (Master)",
+            "cup": "battlefrontiermaster",
+            "cp": 10000,
+            "meta": "battlefrontiermaster",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Devon Amor Cup",
+            "cup": "amor",
+            "cp": 1500,
+            "meta": "amor",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Gymbreakers LAIC 2025 Remix",
+            "cup": "laic2025remix",
+            "cp": 1500,
+            "meta": "laic2025remix",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Zygarden Chrono Meta",
+            "cup": "chrono",
+            "cp": 1500,
+            "meta": "chrono",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
@@ -47262,7 +47347,7 @@
             "name": "Heat Wave",
             "type": "fire",
             "power": 75,
-            "energy": 50,
+            "energy": 45,
             "energyGain": 0,
             "cooldown": 500,
             "archetype": "General",
@@ -49595,7 +49680,7 @@
             "name": "Volt Tackle",
             "type": "electric",
             "power": 90,
-            "energy": 45,
+            "energy": 40,
             "energyGain": 0,
             "cooldown": 500,
             "buffs": [0, -1],
@@ -49624,7 +49709,7 @@
             "type": "water",
             "power": 11,
             "energy": 0,
-            "energyGain": 9,
+            "energyGain": 10,
             "cooldown": 1500,
             "archetype": "Heavy Damage",
             "turns": 3

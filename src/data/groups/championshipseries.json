@@ -112,11 +112,6 @@
         "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
     },
     {
-        "speciesId": "ludicolo",
-        "fastMove": "ASTONISH",
-        "chargedMoves": ["WEATHER_BALL_WATER", "LEAF_STORM"]
-    },
-    {
         "speciesId": "malamar",
         "fastMove": "PSYWAVE",
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
@@ -169,5 +164,33 @@
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
+    },
+    {
+        "speciesId": "altaria_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "florges",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["CHILLING_WATER", "DISARMING_VOICE"]
+    },
+    {
+        "speciesId": "walrein",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "walrein_shadow",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "malamar_shadow",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"],
+        "shadowType": "shadow"
     }
 ]
