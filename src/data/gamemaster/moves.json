@@ -2765,6 +2765,17 @@
         "turns": 1
     },
     {
+        "moveId": "PYRO_BALL",
+        "name": "Pyro Ball",
+        "type": "fire",
+        "power": 75,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "Spam/Bait",
+        "turns": 1
+    },
+    {
         "moveId": "QUICK_ATTACK",
         "name": "Quick Attack",
         "type": "normal",

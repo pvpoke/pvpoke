@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-03-04 01:00:36",
+    "timestamp": "2026-03-04 01:25:12",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -48659,6 +48659,17 @@
             "energyGain": 4,
             "cooldown": 500,
             "archetype": "Fast Charge",
+            "turns": 1
+        },
+        {
+            "moveId": "PYRO_BALL",
+            "name": "Pyro Ball",
+            "type": "fire",
+            "power": 75,
+            "energy": 40,
+            "energyGain": 0,
+            "cooldown": 500,
+            "archetype": "Spam/Bait",
             "turns": 1
         },
         {
