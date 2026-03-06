@@ -30,7 +30,25 @@
 		"meta": "kanto",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": true
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Pokémon with a Pokédex number between #001 and #151 are eligible."
+		]
+	},
+	{
+		"title": "Spring Cup",
+		"cup": "spring",
+		"cp": 1500,
+		"meta": "spring",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Water-, Grass-, and Fairy-type Pokémon are eligible.",
+			"The following Pokemon are not allowed: Jumpluff, Roserade, Toxapex"
+		]
 	},
 	{
 		"title": "Battle Frontier (Majestic)",
