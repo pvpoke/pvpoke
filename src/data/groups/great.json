@@ -253,11 +253,6 @@
         "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
     },
     {
-        "speciesId": "wigglytuff",
-        "fastMove": "CHARM",
-        "chargedMoves": ["ICY_WIND", "SWIFT"]
-    },
-    {
         "speciesId": "walrein",
         "fastMove": "POWDER_SNOW",
         "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
@@ -266,6 +261,22 @@
         "speciesId": "walrein_shadow",
         "fastMove": "POWDER_SNOW",
         "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "wigglytuff",
+        "fastMove": "CHARM",
+        "chargedMoves": ["ICY_WIND", "SWIFT"]
+    },
+    {
+        "speciesId": "shelgon",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["TWISTER", "FLAMETHROWER"]
+    },
+    {
+        "speciesId": "shelgon_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["TWISTER", "FLAMETHROWER"],
         "shadowType": "shadow"
     }
 ]

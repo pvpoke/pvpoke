@@ -5,6 +5,12 @@
         "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"]
     },
     {
+        "speciesId": "altaria_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "annihilape_shadow",
         "fastMove": "COUNTER",
         "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
@@ -72,6 +78,11 @@
         "chargedMoves": ["CHILLING_WATER", "TRAILBLAZE"]
     },
     {
+        "speciesId": "florges",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["CHILLING_WATER", "DISARMING_VOICE"]
+    },
+    {
         "speciesId": "forretress",
         "fastMove": "BUG_BITE",
         "chargedMoves": ["ROCK_TOMB", "SAND_TOMB"]
@@ -115,6 +126,12 @@
         "speciesId": "malamar",
         "fastMove": "PSYWAVE",
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
+    },
+    {
+        "speciesId": "malamar_shadow",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "marowak_shadow",
@@ -161,22 +178,6 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "wigglytuff",
-        "fastMove": "CHARM",
-        "chargedMoves": ["ICY_WIND", "SWIFT"]
-    },
-    {
-        "speciesId": "altaria_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "florges",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["CHILLING_WATER", "DISARMING_VOICE"]
-    },
-    {
         "speciesId": "walrein",
         "fastMove": "POWDER_SNOW",
         "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
@@ -188,9 +189,19 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "malamar_shadow",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"],
+        "speciesId": "wigglytuff",
+        "fastMove": "CHARM",
+        "chargedMoves": ["ICY_WIND", "SWIFT"]
+    },
+    {
+        "speciesId": "shelgon",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["TWISTER", "FLAMETHROWER"]
+    },
+    {
+        "speciesId": "shelgon_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["TWISTER", "FLAMETHROWER"],
         "shadowType": "shadow"
     }
 ]
