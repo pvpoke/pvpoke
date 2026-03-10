@@ -102,10 +102,10 @@ $formats = array (
   ),
   8 => 
   array (
-    'title' => 'Devon Amor Cup',
-    'cup' => 'amor',
+    'title' => 'Devon Equinox Cup',
+    'cup' => 'equinox',
     'cp' => 1500,
-    'meta' => 'amor',
+    'meta' => 'equinox',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,

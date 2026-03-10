@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-03-06 20:03:45",
+    "timestamp": "2026-03-10 01:13:57",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -397,6 +397,46 @@
             "exclude": [],
             "partySize": 3,
             "presetOnly": true
+        },
+        {
+            "name": "equinox",
+            "title": "Equinox Cup",
+            "link": "https://devon.gg",
+            "include": [
+                {
+                    "filterType": "type",
+                    "name": "Type",
+                    "values": ["fire", "flying", "grass", "ground", "normal"]
+                },
+                {
+                    "filterType": "id",
+                    "name": "Species",
+                    "values": ["wailmer", "wailmer_shadow", "wailord", "wailord_shadow"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "type",
+                    "name": "Type",
+                    "values": ["electric", "rock"]
+                },
+                {
+                    "filterType": "tag",
+                    "name": "Tag",
+                    "values": ["mega"]
+                },
+                {
+                    "filterType": "id",
+                    "name": "Species",
+                    "values": ["altaria", "dudunsparce", "dunsparce", "lickilicky", "miltank", "piloswine", "whimsicott", "wigglytuff"]
+                }
+            ],
+            "overrides": [],
+            "league": 1500,
+            "useDefaultMovesets": 1,
+            "levelCap": 50,
+            "excludeLowPokemon": 1,
+            "cup": "equinox"
         },
         {
             "name": "euic2026",
@@ -1387,10 +1427,10 @@
             "showMeta": true
         },
         {
-            "title": "Devon Amor Cup",
-            "cup": "amor",
+            "title": "Devon Equinox Cup",
+            "cup": "equinox",
             "cp": 1500,
-            "meta": "amor",
+            "meta": "equinox",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
