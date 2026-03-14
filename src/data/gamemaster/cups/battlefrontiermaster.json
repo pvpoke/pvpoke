@@ -4,6 +4,28 @@
     "include": [],
     "exclude": [{
         "filterType": "id",
-        "values": ["eternatus","zacian_crowned_sword", "zamazenta_crowned_shield","dialga_origin","palkia_origin","necrozma_dawn_wings","necrozma_dusk_mane","kyurem_black","kyurem_white","kyogre_primal","groudon_primal","rayquaza_mega","garchomp_mega","lucario_mega","gallade_mega","latias_mega","latios_mega","blaziken_mega","swampert_mega","gardevoir_mega","aggron_mega","salamence_mega","metagross_mega","charizard_mega_y","blastoise_mega","gengar_mega","gyarados_mega","steelix_mega","scizor_mega","heracross_mega","tyranitar_mega","zygarde_complete"]
-    }]
+        "values": ["dragonite_mega","garchomp_mega","groudon_primal","gyarados_mega","heracross_mega","kyogre_primal","latias_mega","latios_mega","metagross_mega","rayquaza_mega","salamence_mega","tyranitar_mega"]
+    }],
+    "restrictedPicks": 1,
+    "restrictedPokemon": ["eternatus","palkia_origin","swampert_mega","zacian_crowned_sword","zamazenta_crowned_shield"],
+    "tierRules": {
+        "max": 11,
+        "floor": 0,
+        "tiers": [{
+            "points": 5,
+            "pokemon": ["eternatus","palkia_origin","swampert_mega","zacian_crowned_sword","zamazenta_crowned_shield"]
+        }, {
+            "points": 4,
+            "pokemon":["aggron_mega","charizard_mega_y","gallade_mega","gardevoir_mega","kyurem_black","kyurem_white","scizor_mega","zygarde_complete"]
+        }, {
+            "points": 3,
+            "pokemon": ["blastoise_mega","blaziken_mega","dialga_origin","gengar_mega","groudon","kyogre","landorus_therian","lucario_mega","lunala","marshadow","meloetta_aria","metagross","steelix_mega","xerneas","yveltal"]
+        }, {
+            "points": 2,
+            "pokemon": ["dialga","florges","giratina_origin","ho_oh","keldeo_ordinary","keldeo_resolute","lugia","mewtwo","necrozma_dawn_wings","necrozma_dusk_mane","palkia","primarina","reshiram","rhyperior","solgaleo","tyranitar","zekrom"]
+        }, {
+            "points": 1,
+            "pokemon": ["charizard_mega_x","garchomp","giratina_altered","gyarados","heatran","kangaskhan_mega","kyurem","melmetal","moltres","moltres_galarian","slowbro_mega","tapu_lele","urshifu_rapid_strike","urshifu_single_strike","volcanion","zacian_hero","zarude"]
+        }]
+    }
 }

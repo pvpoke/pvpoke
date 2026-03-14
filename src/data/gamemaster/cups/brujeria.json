@@ -1,0 +1,21 @@
+{
+    "name": "brujeria",
+    "title": "Brujería Cup",
+	"include": [{
+        "filterType": "type",
+        "values": ["bug","electric","grass","poison","psychic"]
+    },{
+        "filterType": "id",
+        "values": ["banette","delphox","houndstone","misdreavus","mismagius","polteageist","azelf","mesprit","uxie"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega","shadow","legendary","ultrabeast"]
+    }, {
+        "filterType": "type",
+        "values": ["dark","fire","ground","rock","steel"]
+    }, {
+        "filterType": "id",
+        "values": ["abomasnow","amoonguss","araquanid","bellibolt","charjabug","dhelmise","dragalge","golbat","gourgeist_average","gourgeist_large","gourgeist_small","gourgeist_super","jumpluff","lanturn","ledian","nidorina","oranguru","orbeetle","pachirisu","pumpkaboo_average","pumpkaboo_large","pumpkaboo_small","pumpkaboo_super","rotom","rotom_fan","rotom_frost","rotom_mow","rotom_wash","slowking_galarian","smoochum","spidops","swalot","toxapex","toxtricity","vespiquen","vikavolt"]
+    }]
+}

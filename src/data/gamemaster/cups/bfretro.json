@@ -1,0 +1,17 @@
+{
+	"name": "bfretro",
+	"title": "UL Retro Cup",
+	"include": [],
+	"exclude": [{
+		"filterType": "type",
+		"values": ["dark", "fairy", "steel"]
+	}, {
+		"filterType": "tag",
+		"values": ["mega"]
+	},{
+		"filterType": "id",
+		"values": ["bellibolt","cradily","cresselia","dusknoir","giratina_altered","jellicent","lapras","lickilicky","mewtwo_armored","oranguru","regidrago","zygarde_complete"]
+	}],
+	"partySize": 3,
+	"presetOnly": true
+}

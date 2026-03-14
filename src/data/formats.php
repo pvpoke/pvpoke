@@ -61,34 +61,33 @@ $formats = array (
   ),
   4 => 
   array (
-    'title' => 'Battle Frontier (Majestic)',
-    'cup' => 'majestic',
+    'title' => 'Battle Frontier (Bayou Cup)',
+    'cup' => 'bayou',
     'cp' => 1500,
-    'meta' => 'majestic',
+    'meta' => 'bayou',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   5 => 
   array (
-    'title' => 'Battle Frontier (Crucible)',
-    'cup' => 'crucible',
-    'cp' => 2500,
-    'meta' => 'crucible',
+    'title' => 'Battle Frontier (Brujería Cup)',
+    'cup' => 'brujeria',
+    'cp' => 1500,
+    'meta' => 'brujeria',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   6 => 
   array (
-    'title' => 'Battle Frontier (Great)',
-    'cup' => 'battlefrontiergreat',
-    'cp' => 1500,
-    'meta' => 'great',
-    'showCup' => false,
+    'title' => 'Battle Frontier (UL Retro)',
+    'cup' => 'bfretro',
+    'cp' => 2500,
+    'meta' => 'bfretro',
+    'showCup' => true,
     'showFormat' => true,
-    'showMeta' => false,
-    'hideRankings' => true,
+    'showMeta' => true,
   ),
   7 => 
   array (

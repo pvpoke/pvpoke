@@ -1,0 +1,15 @@
+{
+    "name": "bayou",
+    "title": "Bayou Cup",
+	"include": [{
+        "filterType": "type",
+        "values": ["bug","ghost","grass","poison","water"]
+   }], 
+   "exclude": [{
+    "filterType": "tag",
+    "values": ["mega","legendary","mythical","ultrabeast"]
+   }, {
+    "filterType": "id",
+    "values": ["aegislash_shield","araquanid","charjabug","clodsire","corsola_galarian","cradily","crustle","dragalge","drapion","dusclops","dusknoir","empoleon","forretress","jellicent","kingdra","lapras","lanturn","mantine","overqwil","qwilfish_hisuian","sableye","scizor","spidops","spiritomb","toxapex","toxtricity","walrein","wormadam_trash"]
+   }]
+}

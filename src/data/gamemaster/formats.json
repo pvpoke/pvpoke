@@ -51,32 +51,31 @@
 		]
 	},
 	{
-		"title": "Battle Frontier (Majestic)",
-		"cup": "majestic",
+		"title": "Battle Frontier (Bayou Cup)",
+		"cup": "bayou",
 		"cp": 1500,
-		"meta": "majestic",
+		"meta": "bayou",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Crucible)",
-		"cup": "crucible",
+		"title": "Battle Frontier (Brujería Cup)",
+		"cup": "brujeria",
+		"cp": 1500,
+		"meta": "brujeria",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (UL Retro)",
+		"cup": "bfretro",
 		"cp": 2500,
-		"meta": "crucible",
+		"meta": "bfretro",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Great)",
-		"cup": "battlefrontiergreat",
-		"cp": 1500,
-		"meta": "great",
-		"showCup": false,
-		"showFormat": true,
-		"showMeta": false,
-		"hideRankings": true
 	},
 	{
 		"title": "Battle Frontier (Master)",

@@ -38501,7 +38501,8 @@
         },
         "types": ["fire", "none"],
         "fastMoves": ["TACKLE", "FIRE_SPIN"],
-        "chargedMoves": ["FLAME_CHARGE", "FLAMETHROWER", "FOCUS_BLAST"],
+        "chargedMoves": ["FLAME_CHARGE", "FLAMETHROWER", "FOCUS_BLAST", "PYRO_BALL", "BLAST_BURN"],
+        "eliteMoves": ["BLAST_BURN"],
         "defaultIVs": {
             "cp500": [6.5, 4, 11, 4],
             "cp1500": [18.5, 4, 10, 14],
