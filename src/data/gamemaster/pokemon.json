@@ -37530,8 +37530,8 @@
             "hp": 146
         },
         "types": ["ghost", "fairy"],
-        "fastMoves": ["SHADOW_CLAW", "CHARM"],
-        "chargedMoves": ["SHADOW_SNEAK", "PLAY_ROUGH", "SHADOW_BALL"],
+        "fastMoves": ["SHADOW_CLAW", "HEX"],
+        "chargedMoves": ["SHADOW_SNEAK", "PLAY_ROUGH", "THUNDER"],
         "defaultIVs": {
             "cp500": [8.5, 4, 12, 14],
             "cp1500": [25, 5, 13, 15],
@@ -38747,7 +38747,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_BLIPBUG",
             "evolutions": ["dottler"]
@@ -38772,7 +38772,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_BLIPBUG",
             "parent": "blipbug",
@@ -38789,8 +38789,8 @@
             "hp": 155
         },
         "types": ["bug", "psychic"],
-        "fastMoves": ["STRUGGLE_BUG", "CONFUSION"],
-        "chargedMoves": ["BUG_BUZZ", "PSYCHIC"],
+        "fastMoves": ["STRUGGLE_BUG", "CONFUSION", "PSYCHO_CUT"],
+        "chargedMoves": ["BUG_BUZZ", "PSYCHIC", "PSYSHOCK"],
         "defaultIVs": {
             "cp500": [8.5, 5, 14, 13],
             "cp1500": [25.5, 4, 10, 14],
@@ -38799,7 +38799,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_BLIPBUG",
             "parent": "dottler"

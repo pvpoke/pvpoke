@@ -24,19 +24,6 @@
 		]
 	},
 	{
-		"title": "Kanto Cup",
-		"cup": "kanto",
-		"cp": 1500,
-		"meta": "kanto",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Pokémon with a Pokédex number between #001 and #151 are eligible."
-		]
-	},
-	{
 		"title": "Spring Cup",
 		"cup": "spring",
 		"cp": 1500,
@@ -48,6 +35,19 @@
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Water-, Grass-, and Fairy-type Pokémon are eligible.",
 			"The following Pokemon are not allowed: Jumpluff, Roserade, Toxapex"
+		]
+	},
+	{
+		"title": "Jungle Cup",
+		"cup": "jungle",
+		"cp": 1500,
+		"meta": "jungle",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible."
 		]
 	},
 	{
