@@ -5354,19 +5354,10 @@ a.pokebattler{
 	}
 }
 
-.damage-viz-header{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 10px;
-	margin-bottom: 10px;
-
-	.section-title{
-		margin: 0;
-	}
-
+.damage-viz-results{
 	.damage-viz-sort{
+		display: block;
+		margin-left: auto;
 		font-size: 13px;
 		padding: 5px 12px;
 	}
@@ -5375,7 +5366,7 @@ a.pokebattler{
 .damage-viz-container{
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 8px;
+	gap: 12px;
 
 	@media only screen and (min-width: 420px){
 		grid-template-columns: repeat(2, 1fr);
@@ -5387,16 +5378,21 @@ a.pokebattler{
 }
 
 .damage-card{
+	border: 1px solid rgba(0,0,0,.1);
+	cursor: pointer;
 	padding: 8px 10px;
 	border-radius: 8px;
+	cursor: pointer;
 
 	.card-header{
 		border-radius: 4px;
 		padding: 4px 8px;
 		margin-bottom: 6px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+
+		.pokemon-label{
+			display: flex;
+			align-items: center;
+		}
 
 		.pokemon-name{
 			font-weight: bold;
@@ -5406,6 +5402,23 @@ a.pokebattler{
 		.pokemon-hp{
 			font-size: 12px;
 			opacity: 0.8;
+		}
+
+		.battle-link{
+			display: inline-block;
+			width: 20px;
+			height: 16px;
+			background-image: url('../img/eye.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			opacity: 0.5;
+			margin-left: 4px;
+			vertical-align: middle;
+
+			&:hover{
+				opacity: 1;
+			}
 		}
 	}
 
@@ -5437,10 +5450,14 @@ a.pokebattler{
 
 			.damage-number{
 				font-weight: bold;
+				min-width: 30px;
+				text-align: right;
 			}
 
 			.damage-percent{
 				color: #888;
+				min-width: 45px;
+				text-align: right;
 			}
 		}
 

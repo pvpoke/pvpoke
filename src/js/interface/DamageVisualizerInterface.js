@@ -17,6 +17,8 @@ var InterfaceMaster = (function () {
 			var results = [];
 			var sortDirection = -1; // -1 = most damage first
 			var showIVs = false;
+			var attackerPokeStr = "";
+			var attackerMoveStr = "";
 
 			this.context = "damagevisualizer";
 
@@ -50,6 +52,7 @@ var InterfaceMaster = (function () {
 				$(".battle-btn").on("click", generateResults);
 				$(".damage-viz-sort").on("click", toggleSort);
 				$("body").on("click", ".check", function(){ $(this).toggleClass("on"); });
+				$("body").on("click", ".damage-card", function(){ window.open($(this).attr("battle-link"), "_blank"); });
 			};
 
 			// Required by GameMaster ranking data callback
@@ -91,6 +94,10 @@ var InterfaceMaster = (function () {
 				// Set attacker in battle so damage calculations work
 				battle.setNewPokemon(attacker, 0, false);
 
+				// Store attacker URL strings for battle links
+				attackerPokeStr = attacker.generateURLPokeStr();
+				attackerMoveStr = attacker.generateURLMoveStr();
+
 				// Ensure attacker charged moves have STAB set
 				for(var m = 0; m < attacker.chargedMoves.length; m++){
 					attacker.chargedMoves[m].stab = attacker.getStab(attacker.chargedMoves[m]);
@@ -99,6 +106,7 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < opponents.length; i++){
 					var defender = new Pokemon(opponents[i].speciesId, 1, battle);
 					defender.initialize(cp);
+					defender.selectRecommendedMoveset();
 
 					// Apply IVs from the multiselect if specified
 					if(opponents[i].ivs){
@@ -145,7 +153,9 @@ var InterfaceMaster = (function () {
 						level: defender.level,
 						ivs: defender.ivs,
 						moveResults: moveResults,
-						maxDamagePercent: maxPercent
+						maxDamagePercent: maxPercent,
+						opPokeStr: defender.generateURLPokeStr(),
+						opMoveStr: defender.generateURLMoveStr()
 					});
 				}
 
@@ -181,14 +191,18 @@ var InterfaceMaster = (function () {
 					var r = results[i];
 					var typeClass = r.types[0];
 
-					html += '<div class="damage-card">';
+					var battleLink = host + "battle/" + battle.getCP(true) + "/" + attackerPokeStr + "/" + r.opPokeStr + "/11/" + attackerMoveStr + "/" + r.opMoveStr + "/";
+
+					html += '<div class="damage-card rank" data="' + r.pokemon.speciesId + '" battle-link="' + battleLink + '">';
 					html += '<div class="card-header ' + typeClass + '">';
+					html += '<div class="pokemon-label"><span class="number">#' + (i+1) + '</span>';
 					html += '<span class="pokemon-name">' + r.speciesName + '</span>';
-					html += '<span class="pokemon-hp">';
+					html += '<a class="battle-link" target="_blank" href="' + battleLink + '"></a></div>';
+					html += '<div class="pokemon-hp">';
 					if(showIVs && r.level && r.ivs){
-						html += 'Lv' + r.level + ' ' + r.ivs.atk + '/' + r.ivs.def + '/' + r.ivs.hp + ' &middot; ';
+						html += 'Lvl ' + r.level + ' ' + r.ivs.atk + '/' + r.ivs.def + '/' + r.ivs.hp + ' &middot; ';
 					}
-					html += r.hp + ' HP</span>';
+					html += r.hp + ' HP</div>';
 					html += '</div>';
 
 					for(var m = 0; m < r.moveResults.length; m++){

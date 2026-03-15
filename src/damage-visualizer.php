@@ -30,11 +30,13 @@ require_once 'header.php';
 </div>
 
 <div class="section white damage-viz-results hide">
-	<div class="damage-viz-header">
-		<h3 class="section-title">Results</h3>
-		<button class="damage-viz-sort button">Sort: Most Damage &#9660;</button>
+	<h3 class="section-title">Results</h3>
+	<div class="poke-search-container">
+		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+		<a href="#" class="search-info">i</a>
+		<button class="damage-viz-sort">Sort: Most Damage &#9660;</button>
 	</div>
-	<div class="damage-viz-container"></div>
+	<div class="damage-viz-container rankings-container"></div>
 </div>
 
 <?php require_once 'modules/search-string-help.php'; ?>
