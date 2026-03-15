@@ -6,9 +6,6 @@
 		"values": ["normal", "grass", "electric", "poison", "ground", "flying", "bug", "dark"]
 	}],
 	"exclude": [{
-		"filterType": "id",
-		"values": ["gligar", "stunfisk_galarian"]
-	}, {
 		"filterType": "tag",
 		"values": ["mega"]
 	}],

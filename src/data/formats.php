@@ -30,85 +30,66 @@ $formats = array (
   ),
   2 => 
   array (
-    'title' => 'Love Cup',
-    'cup' => 'love',
+    'title' => 'Spring Cup',
+    'cup' => 'spring',
     'cp' => 1500,
-    'meta' => 'love',
+    'meta' => 'spring',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
     'rules' => 
     array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only red- or pink-colored Pokémon are eligible.',
+      1 => 'Only Water-, Grass-, and Fairy-type Pokémon are eligible.',
+      2 => 'The following Pokemon are not allowed: Jumpluff, Roserade, Toxapex',
     ),
   ),
   3 => 
   array (
-    'title' => 'Mega Master League',
-    'cup' => 'mega',
-    'cp' => 10000,
-    'meta' => 'mega',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'No CP limit.',
-      1 => 'Mega-Evolved Pokémon are allowed.',
-    ),
-  ),
-  4 => 
-  array (
-    'title' => 'EUIC 2026 Championship Series Cup',
-    'cup' => 'euic2026',
+    'title' => 'Jungle Cup',
+    'cup' => 'jungle',
     'cp' => 1500,
-    'meta' => 'euic2026',
+    'meta' => 'jungle',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
     'rules' => 
     array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Bug-, Dark-, Normal-, and Dragon-type Pokémon are eligible.',
-      2 => 'Fighting-, Flying-, and Steel-type Pokémon are not eligible.',
-      3 => 'Legendary Pokémon, Mythical Pokémon, Mega Pokémon, and Ultra Beasts are not eligible.',
-      4 => 'The following Pokémon will be allowed: Seaking, Politoed, Milotic, and Froslass.',
-      5 => 'The following Pokémon will not be allowed: Wigglytuff, CHansey, Crustle, Diggersby, Ribombee, Araquanid, Turtonator, Morgrem, Morpeko',
+      1 => 'Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.',
     ),
+  ),
+  4 => 
+  array (
+    'title' => 'Battle Frontier (Bayou Cup)',
+    'cup' => 'bayou',
+    'cp' => 1500,
+    'meta' => 'bayou',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
   ),
   5 => 
   array (
-    'title' => 'Battle Frontier (Majestic)',
-    'cup' => 'majestic',
+    'title' => 'Battle Frontier (Brujería Cup)',
+    'cup' => 'brujeria',
     'cp' => 1500,
-    'meta' => 'majestic',
+    'meta' => 'brujeria',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   6 => 
   array (
-    'title' => 'Battle Frontier (Crucible)',
-    'cup' => 'crucible',
+    'title' => 'Battle Frontier (UL Retro)',
+    'cup' => 'bfretro',
     'cp' => 2500,
-    'meta' => 'crucible',
+    'meta' => 'bfretro',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   7 => 
-  array (
-    'title' => 'Battle Frontier (Great)',
-    'cup' => 'battlefrontiergreat',
-    'cp' => 1500,
-    'meta' => 'great',
-    'showCup' => false,
-    'showFormat' => true,
-    'showMeta' => false,
-    'hideRankings' => true,
-  ),
-  8 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -118,17 +99,17 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  8 => 
   array (
-    'title' => 'Devon Amor Cup',
-    'cup' => 'amor',
+    'title' => 'Devon Equinox Cup',
+    'cup' => 'equinox',
     'cp' => 1500,
-    'meta' => 'amor',
+    'meta' => 'equinox',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  9 => 
   array (
     'title' => 'Gymbreakers LAIC 2025 Remix',
     'cup' => 'laic2025remix',
@@ -138,7 +119,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  10 => 
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -148,7 +129,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  12 => 
+  11 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -158,7 +139,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  12 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -168,7 +149,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  14 => 
+  13 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

@@ -24,75 +24,58 @@
 		]
 	},
 	{
-		"title": "Love Cup",
-		"cup": "love",
+		"title": "Spring Cup",
+		"cup": "spring",
 		"cp": 1500,
-		"meta": "love",
+		"meta": "spring",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only red- or pink-colored Pokémon are eligible."
+			"Only Water-, Grass-, and Fairy-type Pokémon are eligible.",
+			"The following Pokemon are not allowed: Jumpluff, Roserade, Toxapex"
 		]
 	},
 	{
-		"title": "Mega Master League",
-		"cup": "mega",
-		"cp": 10000,
-		"meta": "mega",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"No CP limit.",
-			"Mega-Evolved Pokémon are allowed."
-		]
-	},
-	{
-		"title": "EUIC 2026 Championship Series Cup",
-		"cup": "euic2026",
+		"title": "Jungle Cup",
+		"cup": "jungle",
 		"cp": 1500,
-		"meta": "euic2026",
+		"meta": "jungle",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Bug-, Dark-, Normal-, and Dragon-type Pokémon are eligible.",
-			"Fighting-, Flying-, and Steel-type Pokémon are not eligible.",
-			"Legendary Pokémon, Mythical Pokémon, Mega Pokémon, and Ultra Beasts are not eligible.",
-			"The following Pokémon will be allowed: Seaking, Politoed, Milotic, and Froslass.",
-			"The following Pokémon will not be allowed: Wigglytuff, CHansey, Crustle, Diggersby, Ribombee, Araquanid, Turtonator, Morgrem, Morpeko"
+			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible."
 		]
 	},
 	{
-		"title": "Battle Frontier (Majestic)",
-		"cup": "majestic",
+		"title": "Battle Frontier (Bayou Cup)",
+		"cup": "bayou",
 		"cp": 1500,
-		"meta": "majestic",
+		"meta": "bayou",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Crucible)",
-		"cup": "crucible",
+		"title": "Battle Frontier (Brujería Cup)",
+		"cup": "brujeria",
+		"cp": 1500,
+		"meta": "brujeria",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (UL Retro)",
+		"cup": "bfretro",
 		"cp": 2500,
-		"meta": "crucible",
+		"meta": "bfretro",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Great)",
-		"cup": "battlefrontiergreat",
-		"cp": 1500,
-		"meta": "great",
-		"showCup": false,
-		"showFormat": true,
-		"showMeta": false,
-		"hideRankings": true
 	},
 	{
 		"title": "Battle Frontier (Master)",
@@ -104,10 +87,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Devon Amor Cup",
-		"cup": "amor",
+		"title": "Devon Equinox Cup",
+		"cup": "equinox",
 		"cp": 1500,
-		"meta": "amor",
+		"meta": "equinox",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

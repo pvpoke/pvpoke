@@ -1,0 +1,65 @@
+{
+  "name": "equinox",
+  "title": "Equinox Cup",
+  "link": "https://devon.gg",
+  "include": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "fire",
+        "flying",
+        "grass",
+        "ground",
+        "normal"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "wailmer",
+        "wailmer_shadow",
+        "wailord",
+        "wailord_shadow"
+      ]
+    }
+  ],
+  "exclude": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "electric",
+        "rock"
+      ]
+    },
+    {
+      "filterType": "tag",
+      "name": "Tag",
+      "values": [
+        "mega"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "altaria",
+        "dudunsparce",
+        "dunsparce",
+        "lickilicky",
+        "miltank",
+        "piloswine",
+        "whimsicott",
+        "wigglytuff"
+      ]
+    }
+  ],
+  "overrides": [],
+  "league": 1500,
+  "useDefaultMovesets": 1,
+  "levelCap": 50,
+  "excludeLowPokemon": 1,
+  "cup": "equinox"
+}
