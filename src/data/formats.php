@@ -71,10 +71,10 @@ $formats = array (
   ),
   5 => 
   array (
-    'title' => 'Battle Frontier (Brujería Cup)',
-    'cup' => 'brujeria',
+    'title' => 'Battle Frontier (Spellcraft Cup)',
+    'cup' => 'spellcraft',
     'cp' => 1500,
-    'meta' => 'brujeria',
+    'meta' => 'spellcraft',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,

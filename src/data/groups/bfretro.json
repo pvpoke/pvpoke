@@ -168,6 +168,11 @@
         "chargedMoves": ["HYDRO_CANNON", "MEGAHORN"]
     },
     {
+        "speciesId": "slowbro",
+        "fastMove": "CONFUSION",
+        "chargedMoves": ["DRAIN_PUNCH","SURF"]
+    },
+    {
         "speciesId": "slowking_galarian",
         "fastMove": "ACID",
         "chargedMoves": ["PSYSHOCK","SHADOW_BALL"]
