@@ -75,16 +75,11 @@
     {
         "speciesId": "florges",
         "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["CHILLING_WATER", "TRAILBLAZE"]
-    },
-    {
-        "speciesId": "florges",
-        "fastMove": "FAIRY_WIND",
         "chargedMoves": ["CHILLING_WATER", "DISARMING_VOICE"]
     },
     {
         "speciesId": "forretress",
-        "fastMove": "BUG_BITE",
+        "fastMove": "VOLT_SWITCH",
         "chargedMoves": ["ROCK_TOMB", "SAND_TOMB"]
     },
     {
@@ -156,6 +151,17 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "shelgon",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["TWISTER", "FLAMETHROWER"]
+    },
+    {
+        "speciesId": "shelgon_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["TWISTER", "FLAMETHROWER"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "steelix",
         "fastMove": "THUNDER_FANG",
         "chargedMoves": ["CRUNCH", "PSYCHIC_FANGS"],
@@ -194,14 +200,20 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "shelgon",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["TWISTER", "FLAMETHROWER"]
+        "speciesId": "forretress_shadow",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
+        "shadowType": "shadow"
     },
     {
-        "speciesId": "shelgon_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["TWISTER", "FLAMETHROWER"],
+        "speciesId": "politoed",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["WEATHER_BALL_WATER", "ICE_BEAM"]
+    },
+    {
+        "speciesId": "politoed_shadow",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["WEATHER_BALL_WATER", "ICE_BEAM"],
         "shadowType": "shadow"
     }
 ]
