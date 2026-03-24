@@ -1,23 +1,21 @@
 {
-	"name": "aurora",
-	"title": "Battle Frontier (Aurora)",
+    "name": "aurora",
+    "title": "Aurora Cup",
 	"include": [],
-	"exclude": [{
+    "exclude": [{
         "filterType": "tag",
         "values": ["mega"]
     }, {
-    	"filterType": "type",
-    	"name": "Type",
-    	"values": ["poison","steel","fire"]
+        "filterType": "type",
+        "values": ["fire","poison","steel"]
     }, {
-    	"filterType": "moveType",
-    	"name": "Move Type",
-    	"values": ["poison","steel","fire"]
-    },{
-        "filterType": "move",
-        "values":["hidden_power_water"]
-    },{
         "filterType": "id",
-        "values": ["carbink","chansey","articuno_galarian","zapdos_galarian","moltres_galarian","pachirisu"]
+        "values": ["carbink","chansey","pachirisu","zapdos_galarian","moltres_galarian","articuno_galarian","jumpluff","araquanid","corsola_galarian","bellibolt","dedenne","morpeko_full_belly","wigglytuff"]
+    }, {
+        "filterType": "moveType",
+        "values": ["fire","poison","steel"]
+    }, {
+        "filterType": "move",
+        "values": ["HIDDEN_POWER_WATER"]
     }]
 }

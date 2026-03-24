@@ -6,19 +6,19 @@
         "values": ["poison","ghost","steel","dark","psychic"]
     },{
         "filterType": "id",
-        "values": ["ampharos","furret","gallade","staraptor","fearow","farfetchd_galarian","electrode"]
+        "values": ["ampharos","gallade","farfetchd_galarian","electrode"]
     }],
     "exclude": [{
         "filterType": "type",
-        "values": ["ground","electric","fire","dragon","fighting"]
+        "values": ["ground","electric","fire","dragon","fighting","flying"]
     },{
         "filterType": "id",
-        "values": ["registeel","bastiodon","probopass","weezing_galarian","sableye","skarmory","klefki","mandibuzz","vullaby","bombirdier","moltres_galarian","golbat","umbreon","overqwil","empoleon","greninja","jellicent","drapion","sandslash_alolan","toxapex","grimer_alolan","honchkrow","murkrow","stunky","celesteela","tentacruel","raticate_alolan","forretress","grimer","genesect","mawile","malamar","spiritomb"]
+        "values": ["registeel","bastiodon","probopass","weezing_galarian","sableye","klefki","umbreon","overqwil","empoleon","greninja","jellicent","drapion","sandslash_alolan","toxapex","grimer_alolan","stunky","tentacruel","raticate_alolan","forretress","grimer","genesect","mawile","malamar","spiritomb","corsola_galarian","cursola","dusknoir","grumpig","thievul","mightyena","amoonguss","dusclops","tinkatuff","tinkaton","cacturne","swalot"]
     },{
         "filterType": "tag",
         "values": ["mega","shadow"]
     },{
         "filterType": "move",
-        "values": ["counter"]
+        "values": ["counter", "mud_slap"]
     }]
 }
