@@ -1,0 +1,118 @@
+[
+    {
+        "speciesId": "galvantula",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["LUNGE", "CROSS_POISON"]
+    },
+    {
+        "speciesId": "galvantula_shadow",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["LUNGE", "CROSS_POISON"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "galvantula",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["LUNGE", "ENERGY_BALL"]
+    },
+    {
+        "speciesId": "electrode_hisuian",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": ["ENERGY_BALL", "SWIFT"]
+    },
+    {
+        "speciesId": "rotom",
+        "fastMove": "ASTONISH",
+        "chargedMoves": ["THUNDERBOLT", "OMINOUS_WIND"]
+    },
+    {
+        "speciesId": "toxtricity",
+        "fastMove": "ACID",
+        "chargedMoves": ["WILD_CHARGE", "POWER_UP_PUNCH"]
+    },
+    {
+        "speciesId": "bellibolt",
+        "fastMove": "SUCKER_PUNCH",
+        "chargedMoves": ["ZAP_CANNON", "PARABOLIC_CHARGE"]
+    },
+    {
+        "speciesId": "minun",
+        "fastMove": "QUICK_ATTACK",
+        "chargedMoves": ["SWIFT", "GRASS_KNOT"]
+    },
+    {
+        "speciesId": "plusle",
+        "fastMove": "QUICK_ATTACK",
+        "chargedMoves": ["SWIFT", "GRASS_KNOT"]
+    },
+    {
+        "speciesId": "raikou",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": ["SHADOW_BALL", "AURA_SPHERE"]
+    },
+    {
+        "speciesId": "pawmot",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["BRICK_BREAK", "CLOSE_COMBAT"]
+    },
+    {
+        "speciesId": "lanturn",
+        "fastMove": "WATER_GUN",
+        "chargedMoves": ["SURF", "THUNDERBOLT"]
+    },
+    {
+        "speciesId": "magnezone_shadow",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "ampharos",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
+    },
+    {
+        "speciesId": "golem_alolan",
+        "fastMove": "ROLLOUT",
+        "chargedMoves": ["STONE_EDGE", "ROCK_BLAST"]
+    },
+    {
+        "speciesId": "graveler_alolan",
+        "fastMove": "ROCK_THROW",
+        "chargedMoves": ["STONE_EDGE", "ROCK_BLAST"]
+    },
+    {
+        "speciesId": "eelektross",
+        "fastMove": "ACID",
+        "chargedMoves": ["CRUNCH", "LIQUIDATION"]
+    },
+    {
+        "speciesId": "emolga",
+        "fastMove": "QUICK_ATTACK",
+        "chargedMoves": ["ACROBATICS", "DISCHARGE"]
+    },
+    {
+        "speciesId": "zapdos_shadow",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": ["DRILL_PECK", "HEAT_WAVE"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "luxray_shadow",
+        "fastMove": "HIDDEN_POWER_GROUND",
+        "chargedMoves": ["WILD_CHARGE", "PSYCHIC_FANGS"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "luxray_shadow",
+        "fastMove": "HIDDEN_POWER_FIRE",
+        "chargedMoves": ["WILD_CHARGE", "PSYCHIC_FANGS"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "electivire_shadow",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["ICE_PUNCH", "FLAMETHROWER"],
+        "shadowType": "shadow"
+    }
+]
