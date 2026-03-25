@@ -980,9 +980,14 @@ var GameMaster = (function () {
 		// Load and return ranking data JSON
 
 		object.loadRankingData = function(caller, category, league, cup){
-
 			var key = cup + "" + category + "" + league;
+			var cupData = object.getCupById(cup);
 
+			// Allow duplicate cups to point to existing cup data
+			if(cupData?.rankingAlias){
+				cup = cupData?.rankingAlias;
+			}
+			
 			if(! object.rankings[key]){
 				var file = webRoot+"data/rankings/"+cup+"/"+category+"/"+"rankings-"+league+".json?v="+siteVersion;
 

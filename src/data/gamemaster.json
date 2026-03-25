@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-03-25 01:55:42",
+    "timestamp": "2026-03-25 02:08:24",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -144,6 +144,7 @@
         {
             "name": "championshipseries",
             "title": "P!P Championship Series",
+            "rankingAlias": "all",
             "include": [],
             "exclude": [
                 {
@@ -278,6 +279,7 @@
         {
             "name": "gobattleleague",
             "title": "GO Battle League",
+            "rankingAlias": "all",
             "include": [],
             "exclude": [
                 {
