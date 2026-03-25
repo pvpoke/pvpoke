@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-03-24 02:09:40",
+    "timestamp": "2026-03-25 01:55:42",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -274,6 +274,19 @@
             "levelCap": 50,
             "excludeLowPokemon": 1,
             "cup": "equinox"
+        },
+        {
+            "name": "gobattleleague",
+            "title": "GO Battle League",
+            "include": [],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["mega"]
+                }
+            ],
+            "partySize": 3,
+            "presetOnly": true
         },
         {
             "name": "jungle",
