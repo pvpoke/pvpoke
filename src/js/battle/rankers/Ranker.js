@@ -57,12 +57,26 @@ var RankerMaster = (function () {
         pokemonList = pokeList.map(function (runPoke) {
           var p = new Pokemon(runPoke.speciesId, runPoke.index || 0, battle);
           p.initialize(battle.getCP());
+          p.selectMove("fast", runPoke.fastMoveId);
+			for (var i = 0; i < runPoke.chargedMoveIds.length; i++) {
+				p.selectMove("charged", runPoke.chargedMoveIds[i], i);
+			}
+          if (runPoke.weightModifier !== undefined) {
+            p.weightModifier = runPoke.weightModifier;
+          }
           return p;
         });
 
         targets = targetList.map(function (runPoke) {
           var p = new Pokemon(runPoke.speciesId, runPoke.index || 0, battle);
           p.initialize(battle.getCP());
+          p.selectMove("fast", runPoke.fastMoveId);
+            for (var i = 0; i < runPoke.chargedMoveIds.length; i++) {
+              p.selectMove("charged", runPoke.chargedMoveIds[i], i);
+            }
+          if (runPoke.weightModifier !== undefined) {
+            p.weightModifier = runPoke.weightModifier;
+          }
           return p;
         });
       };
@@ -182,11 +196,27 @@ var RankerMaster = (function () {
                 rankingData: rankingData,
                 overrides: overrides,
                 scenario: scenario,
-                speciesIds: pokemonList.map(function (p) {
-                  return p.speciesId;
+                pokemonList: pokemonList.map(function (p) {
+                  return {
+                    speciesId: p.speciesId,
+                    index: 0,
+                    fastMoveId: p.fastMove ? p.fastMove.moveId : null,
+                    chargedMoveIds: p.chargedMoves.map(function (m) {
+                      return m.moveId;
+                    }),
+                    weightModifier: p.weightModifier || 1,
+                  };
                 }),
-                targetIds: targets.map(function (p) {
-                  return p.speciesId;
+                targetList: targets.map(function (p) {
+                  return {
+                    speciesId: p.speciesId,
+                    index: 0,
+                    fastMoveId: p.fastMove ? p.fastMove.moveId : null,
+                    chargedMoveIds: p.chargedMoves.map(function (m) {
+                      return m.moveId;
+                    }),
+                    weightModifier: p.weightModifier || 1,
+                  };
                 }),
                 gmData: GameMaster.getInstance().data,
                 webRoot: webRoot,

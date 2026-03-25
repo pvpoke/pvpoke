@@ -83,9 +83,9 @@ onmessage = function(event){
 			ranker.setBattleCup(data.cup);
 			ranker.setWebRoot(data.webRoot);
 
-			// Set pokemon lists and targets by species IDs
-			var pokeListMsg = (data.speciesIds || []).map(function(id, idx){ return {speciesId: id, index: idx}; });
-			var targetListMsg = (data.targetIds || []).map(function(id, idx){ return {speciesId: id, index: idx}; });
+			// Set pokemon lists with full Pokemon data including movesets and weight modifiers
+			var pokeListMsg = data.pokemonList || [];
+			var targetListMsg = data.targetList || [];
 			ranker.setPokemonLists(pokeListMsg, targetListMsg);
 
 			var result = ranker.rank(data.cp, data.scenario);
@@ -99,7 +99,7 @@ onmessage = function(event){
 					league: data.cp
 				}
 			});
-		} catch (err){
+		} catch(err) {
 			console.error('Worker error in runScenario:', err);
 			postMessage({type: 'error', error: err.toString()});
 		}
