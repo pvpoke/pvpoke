@@ -95,8 +95,41 @@ var InterfaceMaster = (function () {
 
 			// Run simulation
 
+			function setRankerProgress(status, completed, total){
+				$("#ranker-progress-container").show();
+				$("#ranker-progress-status").text(status);
+				if(total > 0){
+					var pct = Math.round((completed/total) * 100);
+					$("#ranker-progress-bar").css("width", pct + "%");
+					$("#ranker-progress-text").text(completed + " / " + total + " scenarios (" + pct + "%)");
+				} else {
+					$("#ranker-progress-bar").css("width", "0%");
+					$("#ranker-progress-text").text("0 / 0 scenarios");
+				}
+			}
+
 			function startRanker(){
-				ranker.rankLoop(battle.getCP(), battle.getCup());
+				$(".simulate").prop("disabled", true);
+				setRankerProgress("Initializing ranker...", 0, 0);
+
+				ranker.setWorkerMode(true);
+				ranker.setWorkerOptions({ pool: (navigator.hardwareConcurrency || 2), workerURL: webRoot + 'js/battle/rankers/RankerWorker.js' });
+				ranker.rankLoop(battle.getCP(), battle.getCup(), function(result){
+					setRankerProgress("Ranker complete", 1, 1);
+					$(".simulate").prop("disabled", false);
+					console.log("Ranker completed", result);
+				}, null, {
+					useWorker: true,
+					workerURL: webRoot + 'js/battle/rankers/RankerWorker.js',
+					onProgress: function(completed, total, scenarioSlug){
+						setRankerProgress("Running scenario: " + scenarioSlug, completed, total);
+					},
+					onError: function(err){
+						setRankerProgress("Error: " + err, 0, 0);
+						$(".simulate").prop("disabled", false);
+						console.error(err);
+					}
+				});
 			}
 		};
 

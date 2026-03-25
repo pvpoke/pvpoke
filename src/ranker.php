@@ -9,7 +9,15 @@
 
 	<button class="button simulate">Simulate</button>
 
-	<div class="output"></div>
+	<div class="output">
+		<div id="ranker-progress-container" style="margin-top:15px; display:none;">
+			<div id="ranker-progress-status" style="margin-bottom:8px;">Ready to run.</div>
+			<div id="ranker-progress-bar-wrap" style="height:20px; background:#eee; border-radius:4px; overflow:hidden;">
+				<div id="ranker-progress-bar" style="width:0%; height:100%; background:#2b8cff;"></div>
+			</div>
+			<div id="ranker-progress-text" style="margin-top:5px;">0 / 0 scenarios</div>
+		</div>
+	</div>
 </div>
 
 <?php require_once 'modules/scripts/battle-scripts.php'; ?>
