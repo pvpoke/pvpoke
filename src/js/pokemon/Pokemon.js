@@ -4,7 +4,7 @@
 * The main Pokemon class used to represent individual Pokemon in battle
 */
 
-function Pokemon(id, i, b, d){
+export function Pokemon(id, i, b, d){
 	var gm = GameMaster.getInstance();
 	var data;
 	var battle = b;

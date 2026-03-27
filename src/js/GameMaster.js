@@ -1792,3 +1792,5 @@ var GameMaster = (function () {
         }
     };
 })();
+
+module.exports = { GameMaster }

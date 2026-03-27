@@ -1,0 +1,24 @@
+{
+  "name": "node-sea-boilerplate",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "author": "rundezv",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.25.6",
+    "npm-run-all2": "^8.0.4",
+    "postject": "^1.0.0-alpha.6"
+  },
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:bundle": "esbuild src/index.js --outfile=dist/index.cjs --bundle --platform=node --format=cjs --minify",
+    "build:blob": "node --experimental-sea-config sea-config.json",
+    "build:exe": "node -e \"fs.copyFileSync(process.execPath, 'dist/index.exe')\"",
+    "build:inject": "postject dist/index.exe NODE_SEA_BLOB dist/index.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2",
+    "build:clean": "run-p build:clean:*",
+    "build:clean:blob": "node -e \"fs.rmSync('dist/index.blob', {recursive: true})\"",
+    "build:clean:cjs": "node -e \"fs.rmSync('dist/index.cjs', {recursive: true})\""
+  }
+}
