@@ -11,6 +11,11 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "annihilape",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
+    },
+    {
         "speciesId": "azumarill",
         "fastMove": "BUBBLE",
         "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
@@ -73,6 +78,12 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "forretress_shadow",
+        "fastMove": "BUG_BITE",
+        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "furret",
         "fastMove": "SUCKER_PUNCH",
         "chargedMoves": ["SWIFT", "TRAILBLAZE"]
@@ -129,6 +140,17 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "quagsire_shadow",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "shelgon",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["TWISTER", "FLAMETHROWER"]
+    },
+    {
         "speciesId": "steelix",
         "fastMove": "THUNDER_FANG",
         "chargedMoves": ["CRUNCH", "PSYCHIC_FANGS"],
@@ -140,34 +162,19 @@
         "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
     },
     {
-        "speciesId": "talonflame",
-        "fastMove": "INCINERATE",
-        "chargedMoves": ["FLY", "FLAME_CHARGE"]
-    },
-    {
-        "speciesId": "wigglytuff",
-        "fastMove": "CHARM",
-        "chargedMoves": ["ICY_WIND", "SWIFT"]
-    },
-    {
-        "speciesId": "annihilape",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
-    },
-    {
         "speciesId": "stunfisk_galarian",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
     },
     {
+        "speciesId": "talonflame",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["FLY", "FLAME_CHARGE"]
+    },
+    {
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
-    },
-    {
-        "speciesId": "shelgon",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["TWISTER", "FLAMETHROWER"]
     },
     {
         "speciesId": "weezing_galarian_shadow",
@@ -176,15 +183,13 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "quagsire_shadow",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
-        "shadowType": "shadow"
+        "speciesId": "wigglytuff",
+        "fastMove": "CHARM",
+        "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "forretress_shadow",
-        "fastMove": "BUG_BITE",
-        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
-        "shadowType": "shadow"
+        "speciesId": "cradily",
+        "fastMove": "ACID",
+        "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
     }
 ]
