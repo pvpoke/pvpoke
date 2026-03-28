@@ -44090,7 +44090,7 @@
         "released": true,
         "family": {
             "id": "FAMILY_SINISTCHA",
-            "parent": "sinistcha"
+            "evolutions": ["sinistcha"]
         }
     },
     {
@@ -44115,7 +44115,7 @@
         "released": true,
         "family": {
             "id": "FAMILY_SINISTCHA",
-            "evolutions": ["poltchageist"]
+            "parent": "poltchageist"
         },
         "levelFloor": 20
     },
