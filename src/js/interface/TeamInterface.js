@@ -1414,21 +1414,9 @@ var InterfaceMaster = (function () {
 					var cup = battle.getCup().name;
 
 					var pokes = multiSelectors[0].getPokemonList();
-					var moveStrs = [];
 					var teamStr = "team-builder/"+cup+"/"+cp+"/";
+					teamStr += encodeURIComponent(multiSelectors[0].generateURLMoveString());
 
-					for(var i = 0; i < pokes.length; i++){
-
-						var poke = pokes[i];
-
-						moveStrs.push(poke.generateURLMoveStr());
-
-						teamStr += pokes[i].generateURLPokeStr("team-builder");
-
-						if(i < pokes.length - 1){
-							teamStr += "%2C";
-						}
-					}
 
 					// Add move strings to URL
 
@@ -1458,15 +1446,7 @@ var InterfaceMaster = (function () {
 					}
 
 					var url = webRoot+teamStr;
-
-					// No guarantee the user will have selected 3 Pokemon, so need to account for all possibilities
-
-					var data = {cup: cup, cp: cp};
-
-					for(var i = 0; i < pokes.length; i++){
-						data["p"+(i+1)] = pokes[i].speciesId;
-						data["m"+(i+1)] = moveStrs[i];
-					}
+					var data = {cup: cup, cp: cp + "", t: multiSelectors[0].generateURLMoveString()};
 
 					window.history.pushState(data, "Team Builder", url);
 

@@ -397,7 +397,7 @@ var RankerMaster = (function () {
 				pokemon.startStatBuffs = settings.startStatBuffs;
 
 				if(settings.bait != defaultSettings.bait || settings.startCooldown != defaultSettings.startCooldown ||
-					settings.optimizeMoveTiming != defaultSettings.optimizeMoveTiming || settings.startStatBuffs != defaultSettings.startStatBuffs){
+					settings.optimizeMoveTiming != defaultSettings.optimizeMoveTiming || settings.startStatBuffs[0] != defaultSettings.startStatBuffs[0] || settings.startStatBuffs[1] != defaultSettings.startStatBuffs[1]){
 					pokemon.isCustom = true;
 				}
 			}

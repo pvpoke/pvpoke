@@ -799,6 +799,17 @@ function PokeMultiSelect(element){
 		self.updateListDisplay();
 	}
 
+	// Return URL string for all Pokemon in the group
+	this.generateURLMoveString = function(){
+		let moveStrs = [];
+
+		pokemonList.forEach(pokemon => {
+			moveStrs.push(pokemon.generateURLPokeStr("team-builder"));
+		});
+
+		return moveStrs.join(",");
+	}
+
 	// Calculate a team's cliffhanger points, returns object with current points, maximum allowed, and tiers
 
 	this.calculateCliffhangerPoints = function(){
