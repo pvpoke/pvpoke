@@ -53,6 +53,8 @@ require_once 'header.php';
 			<span class="btn-label">Update</span>
 		</span>
 	</button>
+	<button class="matrix-session-btn button hide">Export Session JSON</button>
+	<button class="matrix-session-import-btn button hide">Import Session JSON</button>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 
 	<div class="battle-results single">

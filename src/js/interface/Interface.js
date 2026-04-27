@@ -53,6 +53,13 @@ var InterfaceMaster = (function () {
 
 			var isLoadingPreset = false; // Flag that lets the sim know if it should wait for a preset list to finish loading
 			var getDataLoaded = false // Flag that tells the interface if it has already loaded variables passed through the url
+			var matrixSessionStorageKey = "battleMatrixSession:v1";
+			var matrixStoragePersistedKey = "battleMatrixStoragePersisted";
+			var matrixSessionType = "pvpoke-matrix-session";
+			var matrixSessionVersion = 1;
+			var matrixSessionSaveTimeout = false;
+			var isRestoringMatrixSession = false;
+			var matrixStoragePersistenceRequested = false;
 
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
@@ -78,6 +85,7 @@ var InterfaceMaster = (function () {
 				$(".poke-select-container .poke.multi").each(function(index, value){
 					var selector = new PokeMultiSelect($(this));
 					selector.init(data.pokemon, battle);
+					selector.setUpdateCallback(scheduleMatrixSessionSave);
 
 					multiSelectors.push(selector);
 				});
@@ -100,6 +108,12 @@ var InterfaceMaster = (function () {
 				$(".battle-results.matrix select.breakpoint-mode").on("change", selectMatrixBreakpointMode);
 				$(".matrix-table").on("click", "th.col-sort", handleMatrixSort);
 				$("body").on("click", ".battle-results.matrix a.difference", jumpToMatrixColumn);
+				$("body").on("click", ".matrix-session-btn", downloadMatrixSessionExport);
+				$("body").on("click", ".matrix-session-import-btn", openMatrixSessionImport);
+				$("body").on("click", ".modal .list-export a.matrix-session", downloadMatrixSessionExport);
+				$("body").on("change", ".modal .matrix-session-import .matrix-session-file", loadMatrixSessionFile);
+				$("body").on("click", ".modal .matrix-session-import .button.import", importMatrixSessionFromModal);
+				$("body").on("click", ".modal .matrix-session-import .button.clear", clearMatrixSessionFromModal);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
 				$("body").on("click", ".check", checkBox);
@@ -1302,6 +1316,261 @@ var InterfaceMaster = (function () {
 
 			// Process both groups of Pokemon through the team ranker
 
+			function safeGetLocalStorage(key){
+				try{
+					return window.localStorage.getItem(key);
+				} catch(e){
+					return null;
+				}
+			}
+
+			function safeSetLocalStorage(key, value){
+				try{
+					window.localStorage.setItem(key, value);
+					return true;
+				} catch(e){
+					console.log("Unable to save matrix session", e);
+					return false;
+				}
+			}
+
+			function safeRemoveLocalStorage(key){
+				try{
+					window.localStorage.removeItem(key);
+				} catch(e){
+					console.log("Unable to clear matrix session", e);
+				}
+			}
+
+			function requestMatrixStoragePersistence(){
+				if(matrixStoragePersistenceRequested){
+					return;
+				}
+
+				matrixStoragePersistenceRequested = true;
+
+				if(navigator.storage && navigator.storage.persist){
+					navigator.storage.persist().then(function(granted){
+						safeSetLocalStorage(matrixStoragePersistedKey, granted ? "granted" : "denied");
+					}).catch(function(){
+						safeSetLocalStorage(matrixStoragePersistedKey, "denied");
+					});
+				} else{
+					safeSetLocalStorage(matrixStoragePersistedKey, "unsupported");
+				}
+			}
+
+			function generateMatrixSession(){
+				return {
+					type: matrixSessionType,
+					version: matrixSessionVersion,
+					savedAt: new Date().toISOString(),
+					cp: battle.getCP(true),
+					cup: battle.getCup().name,
+					matrixMode: self.matrixMode,
+					breakpointMode: $(".battle-results.matrix .breakpoint-mode option:selected").val(),
+					groups: [
+						multiSelectors[0].exportSessionData(),
+						multiSelectors[1].exportSessionData()
+					]
+				};
+			}
+
+			function scheduleMatrixSessionSave(){
+				if(self.battleMode != "matrix" || isRestoringMatrixSession){
+					return;
+				}
+
+				if(matrixSessionSaveTimeout){
+					clearTimeout(matrixSessionSaveTimeout);
+				}
+
+				matrixSessionSaveTimeout = setTimeout(function(){
+					saveMatrixSession();
+				}, 250);
+			}
+
+			function saveMatrixSession(){
+				if(self.battleMode != "matrix" || isRestoringMatrixSession){
+					return false;
+				}
+
+				matrixSessionSaveTimeout = false;
+
+				return safeSetLocalStorage(matrixSessionStorageKey, JSON.stringify(generateMatrixSession()));
+			}
+
+			function hasExplicitMatrixStateParams(){
+				if(! get){
+					return false;
+				}
+
+				for(var key in get){
+					if(get.hasOwnProperty(key) && key != "mode"){
+						return true;
+					}
+				}
+
+				return false;
+			}
+
+			function shouldAutoRestoreMatrixSession(){
+				return self.battleMode == "matrix" && ! hasExplicitMatrixStateParams();
+			}
+
+			function restoreMatrixSessionFromStorage(){
+				var storedSession = safeGetLocalStorage(matrixSessionStorageKey);
+
+				if(! storedSession){
+					return false;
+				}
+
+				try{
+					return restoreMatrixSession(JSON.parse(storedSession), true);
+				} catch(e){
+					console.log("Unable to restore matrix session", e);
+					return false;
+				}
+			}
+
+			function restoreMatrixSession(data, fromAutosave){
+				fromAutosave = typeof fromAutosave !== 'undefined' ? fromAutosave : false;
+
+				if(! data || data.type != matrixSessionType || data.version != matrixSessionVersion || ! Array.isArray(data.groups)){
+					return false;
+				}
+
+				isRestoringMatrixSession = true;
+
+				try{
+					if(data.cp){
+						var cpParts = data.cp.toString().split("-");
+						var cp = cpParts[0];
+						var levelCap = cpParts.length > 1 ? cpParts[1] : false;
+						var $leagueOption = levelCap ? $(".league-select option[value=\""+cp+"\"][level-cap=\""+levelCap+"\"]") : $(".league-select option[value=\""+cp+"\"]").first();
+
+						if($leagueOption.length > 0){
+							$leagueOption.prop("selected", "selected");
+							$(".league-select").trigger("change");
+						}
+					}
+
+					if(data.cup){
+						battle.setCup(data.cup);
+						$(".cup-select option[value=\""+data.cup+"\"][cp=\""+battle.getCP()+"\"]").prop("selected", "selected");
+					}
+
+					for(var i = 0; i < Math.min(data.groups.length, multiSelectors.length); i++){
+						multiSelectors[i].importSessionData(data.groups[i]);
+					}
+
+					if(data.matrixMode){
+						self.matrixMode = data.matrixMode;
+						$(".battle-results.matrix .ranking-categories a").removeClass("selected");
+						$(".battle-results.matrix .ranking-categories a[data=\""+data.matrixMode+"\"]").addClass("selected");
+					}
+
+					if(data.breakpointMode){
+						$(".battle-results.matrix select.breakpoint-mode option[value=\""+data.breakpointMode+"\"]").prop("selected", "selected");
+					}
+				} finally{
+					isRestoringMatrixSession = false;
+				}
+
+				if(! fromAutosave){
+					saveMatrixSession();
+				}
+
+				return true;
+			}
+
+			function generateMatrixSessionFilename(){
+				var date = new Date().toISOString().split("T")[0];
+				var cup = battle.getCup().name || "all";
+
+				return "pvpoke-matrix-session-" + cup + "-" + battle.getCP(true) + "-" + date + ".json";
+			}
+
+			function downloadMatrixSessionExport(e){
+				e.preventDefault();
+
+				saveMatrixSession();
+				var filedata = new Blob([JSON.stringify(generateMatrixSession(), null, 2)], { type: "application/json"});
+				var url = window.URL.createObjectURL(filedata);
+				var link = document.createElement("a");
+
+				link.href = url;
+				link.download = generateMatrixSessionFilename();
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+				window.URL.revokeObjectURL(url);
+			}
+
+			function openMatrixSessionImport(e){
+				e.preventDefault();
+
+				modalWindow("Import Matrix Session", $(".matrix-session-import").eq(0));
+				$(".modal .matrix-session-text").val("");
+				$(".modal .matrix-session-file").val("");
+			}
+
+			function importMatrixSessionText(text){
+				try{
+					var data = JSON.parse(text);
+
+					if(restoreMatrixSession(data, false)){
+						closeModalWindow();
+						$(".battle-btn").trigger("click");
+					} else{
+						modalWindow("Import Error", $("<p>This doesn't look like a Matrix Battle session export.</p>"));
+					}
+				} catch(err){
+					modalWindow("Import Error", $("<p>This session couldn't be read. Check that the exported JSON is complete.</p>"));
+				}
+			}
+
+			function loadMatrixSessionFile(e){
+				var file = e.target.files[0];
+
+				if(! file){
+					return;
+				}
+
+				var reader = new FileReader();
+
+				reader.onload = function(event){
+					var text = event.target.result;
+					$(".modal .matrix-session-text").val(text);
+					importMatrixSessionText(text);
+				};
+
+				reader.onerror = function(){
+					modalWindow("Import Error", $("<p>This session file couldn't be read.</p>"));
+				};
+
+				reader.readAsText(file);
+			}
+
+			function importMatrixSessionFromModal(e){
+				var text = $(".modal .matrix-session-text").val();
+
+				importMatrixSessionText(text);
+			}
+
+			function clearMatrixSessionFromModal(e){
+				if(matrixSessionSaveTimeout){
+					clearTimeout(matrixSessionSaveTimeout);
+					matrixSessionSaveTimeout = false;
+				}
+
+				safeRemoveLocalStorage(matrixSessionStorageKey);
+				$(".modal .matrix-session-text").val("");
+				$(".modal .matrix-session-file").val("");
+			}
+
+			// Process both groups of Pokemon through the team ranker
+
 			this.generateMatrixResults = function(){
 
 				// Appply settings from multiSelectors
@@ -1323,6 +1592,8 @@ var InterfaceMaster = (function () {
 
 				// Run battles through the ranker
 
+				saveMatrixSession();
+
 				var data = ranker.rank(team, battle.getCP(true), battle.getCup(), [], "matrix");
 				matrixResults = data.rankings;
 				self.displayMatrixResults(matrixResults);
@@ -1337,6 +1608,9 @@ var InterfaceMaster = (function () {
 			// Process both groups of Pokemon through the team ranker
 
 			this.displayMatrixResults = function(rankings){
+				if(! rankings){
+					return;
+				}
 
 				var team = multiSelectors[1].getPokemonList();
 				var targets = multiSelectors[0].getPokemonList();
@@ -1679,6 +1953,7 @@ var InterfaceMaster = (function () {
 				$(e.target).addClass("selected");
 
 				self.displayMatrixResults(matrixResults);
+				scheduleMatrixSessionSave();
 			}
 
 			// Event handler for changing the battle mode
@@ -1687,6 +1962,7 @@ var InterfaceMaster = (function () {
 				e.preventDefault();
 
 				self.displayMatrixResults(matrixResults);
+				scheduleMatrixSessionSave();
 			}
 
 
@@ -2147,6 +2423,12 @@ var InterfaceMaster = (function () {
 					$(".sandbox-btn").trigger("click");
 				}
 
+				var restoredMatrixSession = false;
+
+				if(shouldAutoRestoreMatrixSession()){
+					restoredMatrixSession = restoreMatrixSessionFromStorage();
+				}
+
 				settingGetParams = false;
 
 				// Auto run the battle
@@ -2158,7 +2440,9 @@ var InterfaceMaster = (function () {
 				}
 
 
-				if(! isLoadingPreset){
+				if(restoredMatrixSession && self.battleMode == "matrix"){
+					$(".battle-btn").trigger("click");
+				} else if(! isLoadingPreset){
 					$(".battle-btn").trigger("click");
 				} else{
 					// Oh yeah, this is top level programming right here
@@ -2294,6 +2578,7 @@ var InterfaceMaster = (function () {
 				updateMultiBattleMetas();
 
 				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
+				scheduleMatrixSessionSave();
 			}
 
 			// Event handler for changing the battle mode
@@ -2315,6 +2600,8 @@ var InterfaceMaster = (function () {
 				$(".poke-select-container").addClass(self.battleMode);
 
 				$(".battle-results").hide();
+				$(".matrix-session-btn").toggle(self.battleMode == "matrix");
+				$(".matrix-session-import-btn").toggle(self.battleMode == "matrix");
 
 				if(self.battleMode == "single"){
 					if(pokeSelectors[0].getPokemon()){
@@ -2331,6 +2618,7 @@ var InterfaceMaster = (function () {
 
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
+					requestMatrixStoragePersistence();
 
 					window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
 
@@ -2369,6 +2657,10 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < multiSelectors.length; i++){
 					multiSelectors[i].setShields(1);
+				}
+
+				if(self.battleMode == "matrix" && ! settingGetParams && currentMode != "multi"){
+					restoreMatrixSessionFromStorage();
 				}
 			}
 
