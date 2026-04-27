@@ -1332,6 +1332,24 @@ var InterfaceMaster = (function () {
 				gtag('event', 'Lookup', {
 				  'category' : 'Matrix'
 				});
+
+				// Create URL for up to 8v8 matrix battles
+				let url = host + 'battle/matrix/';
+				let urlData = { cp: battle.getCP(), mode: "matrix" };
+
+				if(team.length + targets.length <= 16){
+					url += battle.getCP() + "/";
+
+					let matrix1 = encodeURIComponent(multiSelectors[0].generateURLMoveStr());
+					let matrix2 = encodeURIComponent(multiSelectors[1].generateURLMoveStr());
+
+					url += m1 + "/" + m2;
+
+					urlData["matrix1"] = matrix1;
+					urlData["matrix2"] = matrix2;
+				}
+
+				window.history.pushState(urlData, "Matrix Battle", url);
 			}
 
 			// Process both groups of Pokemon through the team ranker
@@ -1801,6 +1819,8 @@ var InterfaceMaster = (function () {
 				var multiBattleSettings = getDefaultMultiBattleSettings();
 
 				// Cycle through parameters and set them
+
+				console.log(get);
 
 				for(var key in get){
 
@@ -2332,7 +2352,10 @@ var InterfaceMaster = (function () {
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
 
-					window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+					if(! settingGetParams){
+						window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+					}
+					
 
 					// Update document title and favicon
 					document.title = "Matrix | PvPoke";

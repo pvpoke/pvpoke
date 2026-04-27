@@ -1415,7 +1415,7 @@ var InterfaceMaster = (function () {
 
 					var pokes = multiSelectors[0].getPokemonList();
 					var teamStr = "team-builder/"+cup+"/"+cp+"/";
-					teamStr += encodeURIComponent(multiSelectors[0].generateURLMoveString());
+					teamStr += encodeURIComponent(multiSelectors[0].generateURLMoveStr());
 
 
 					// Add move strings to URL
@@ -1446,7 +1446,7 @@ var InterfaceMaster = (function () {
 					}
 
 					var url = webRoot+teamStr;
-					var data = {cup: cup, cp: cp + "", t: multiSelectors[0].generateURLMoveString()};
+					var data = {cup: cup, cp: cp + "", t: multiSelectors[0].generateURLMoveStr()};
 
 					window.history.pushState(data, "Team Builder", url);
 

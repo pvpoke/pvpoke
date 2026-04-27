@@ -800,7 +800,7 @@ function PokeMultiSelect(element){
 	}
 
 	// Return URL string for all Pokemon in the group
-	this.generateURLMoveString = function(){
+	this.generateURLMoveStr = function(){
 		let moveStrs = [];
 
 		pokemonList.forEach(pokemon => {
