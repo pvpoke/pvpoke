@@ -685,13 +685,7 @@ function PokeMultiSelect(element){
 		multiSettings.levelCap = levelCap;
 	}
 
-	// Convert the current Pokemon list into exportable and savable JSON
-
-	this.convertListToJSON = function(isTeamSheet = false){
-		return JSON.stringify(self.exportPokemonList(isTeamSheet, false));
-	}
-
-	// Convert the current Pokemon list into structured session data
+	// Convert the current Pokemon list into reusable structured data
 
 	this.exportPokemonList = function(isTeamSheet = false, includeSessionFields = false){
 		var arr = [];
@@ -739,10 +733,49 @@ function PokeMultiSelect(element){
 		return arr;
 	}
 
-	// Populate the current Pokemon list from structured session data
+	// Convert the current Pokemon list into exportable and savable JSON
+
+	this.convertListToJSON = function(isTeamSheet = false){
+		return JSON.stringify(self.exportPokemonList(isTeamSheet, false));
+	}
+
+	// Normalize supported JSON import shapes into a Pokemon array
+
+	function getPokemonImportData(data){
+		if(Array.isArray(data)){
+			return data;
+		}
+
+		if(data && Array.isArray(data.pokemon)){
+			return data.pokemon;
+		}
+
+		return false;
+	}
+
+	// Import either structured JSON or CSV text
+
+	this.importListText = function(text){
+		try{
+			var data = getPokemonImportData(JSON.parse(text));
+
+			if(data){
+				return self.importPokemonList(data);
+			}
+		} catch(err){
+		}
+
+		self.quickFillCSV(text);
+
+		return true;
+	}
+
+	// Populate the current Pokemon list from structured data
 
 	this.importPokemonList = function(data){
-		if(! Array.isArray(data)){
+		data = getPokemonImportData(data);
+
+		if(! data){
 			return false;
 		}
 
@@ -766,7 +799,7 @@ function PokeMultiSelect(element){
 					continue;
 				}
 
-				poke.initialize(battle.getCP());
+				poke.initialize(battle.getCP(), multiSettings.defaultIVs);
 
 				if(item.fastMove){
 					poke.selectMove("fast", item.fastMove);
@@ -1112,7 +1145,6 @@ function PokeMultiSelect(element){
 		var csv = self.convertListToCSV();
 
 		$(".modal .list-text").html(csv);
-		$(".modal .list-export a.matrix-session").toggle(interface.battleMode == "matrix");
 
 
 		// Copy list text
@@ -1129,17 +1161,7 @@ function PokeMultiSelect(element){
 		$(".modal .button.import").on("click", function(e){
 			var data = $(".modal textarea.list-text").val();
 
-			try{
-				var json = JSON.parse(data);
-
-				if(Array.isArray(json)){
-					self.importPokemonList(json);
-				} else{
-					self.quickFillCSV(data);
-				}
-			} catch(err){
-				self.quickFillCSV(data);
-			}
+			self.importListText(data);
 
 			closeModalWindow();
 		});

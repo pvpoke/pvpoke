@@ -1827,6 +1827,25 @@ select.large{
 	}
 }
 
+.section.battle .matrix-session-actions{
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin: -2px auto 14px auto;
+
+	&.hide{
+		display: none;
+	}
+
+	.button{
+		font-size: 14px;
+		margin: 0;
+		padding: 8px 14px;
+	}
+}
+
 .pokebox{
 	a.open-pokebox{
 		display:block;
@@ -5081,12 +5100,15 @@ a.rating{
 	}
 
 	.list-export,
-	.search-string-window{
+	.search-string-window,
+	.matrix-session-import{
 
 		.list-text,
-		.team-string-text{
+		.team-string-text,
+		.matrix-session-text{
 			width:100%;
 			height:200px;
+			box-sizing:border-box;
 		}
 
 		.copy{
@@ -5106,10 +5128,32 @@ a.rating{
 
 		.export-options{
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: space-between;
+			gap: 8px 12px;
 
 			a{
 				font-size: 12px;
+			}
+		}
+
+		.matrix-session-file{
+			width:100%;
+			margin:5px 0 10px 0;
+		}
+
+		.matrix-session-import-actions{
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 10px;
+
+			.button{
+				margin: 10px 0 0 0;
+
+				&.clear{
+					background:#ddd !important;
+					border-color:#777;
+				}
 			}
 		}
 	}

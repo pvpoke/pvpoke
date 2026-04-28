@@ -54,12 +54,11 @@ var InterfaceMaster = (function () {
 			var isLoadingPreset = false; // Flag that lets the sim know if it should wait for a preset list to finish loading
 			var getDataLoaded = false // Flag that tells the interface if it has already loaded variables passed through the url
 			var matrixSessionStorageKey = "battleMatrixSession:v1";
-			var matrixStoragePersistedKey = "battleMatrixStoragePersisted";
 			var matrixSessionType = "pvpoke-matrix-session";
 			var matrixSessionVersion = 1;
+			var matrixSessionTTLMs = 180 * 24 * 60 * 60 * 1000;
 			var matrixSessionSaveTimeout = false;
 			var isRestoringMatrixSession = false;
-			var matrixStoragePersistenceRequested = false;
 
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
@@ -110,7 +109,6 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".battle-results.matrix a.difference", jumpToMatrixColumn);
 				$("body").on("click", ".matrix-session-btn", downloadMatrixSessionExport);
 				$("body").on("click", ".matrix-session-import-btn", openMatrixSessionImport);
-				$("body").on("click", ".modal .list-export a.matrix-session", downloadMatrixSessionExport);
 				$("body").on("change", ".modal .matrix-session-import .matrix-session-file", loadMatrixSessionFile);
 				$("body").on("click", ".modal .matrix-session-import .button.import", importMatrixSessionFromModal);
 				$("body").on("click", ".modal .matrix-session-import .button.clear", clearMatrixSessionFromModal);
@@ -1342,29 +1340,14 @@ var InterfaceMaster = (function () {
 				}
 			}
 
-			function requestMatrixStoragePersistence(){
-				if(matrixStoragePersistenceRequested){
-					return;
-				}
-
-				matrixStoragePersistenceRequested = true;
-
-				if(navigator.storage && navigator.storage.persist){
-					navigator.storage.persist().then(function(granted){
-						safeSetLocalStorage(matrixStoragePersistedKey, granted ? "granted" : "denied");
-					}).catch(function(){
-						safeSetLocalStorage(matrixStoragePersistedKey, "denied");
-					});
-				} else{
-					safeSetLocalStorage(matrixStoragePersistedKey, "unsupported");
-				}
-			}
-
 			function generateMatrixSession(){
+				var now = new Date();
+
 				return {
 					type: matrixSessionType,
 					version: matrixSessionVersion,
-					savedAt: new Date().toISOString(),
+					savedAt: now.toISOString(),
+					expiresAt: new Date(now.getTime() + matrixSessionTTLMs).toISOString(),
 					cp: battle.getCP(true),
 					cup: battle.getCup().name,
 					matrixMode: self.matrixMode,
@@ -1400,6 +1383,20 @@ var InterfaceMaster = (function () {
 				return safeSetLocalStorage(matrixSessionStorageKey, JSON.stringify(generateMatrixSession()));
 			}
 
+			function isMatrixSessionExpired(data){
+				var expiresAt = data.expiresAt ? new Date(data.expiresAt).getTime() : false;
+
+				if(! expiresAt && data.savedAt){
+					expiresAt = new Date(data.savedAt).getTime() + matrixSessionTTLMs;
+				}
+
+				return expiresAt && expiresAt <= Date.now();
+			}
+
+			function isValidMatrixSession(data){
+				return data && data.type == matrixSessionType && data.version == matrixSessionVersion && Array.isArray(data.groups) && ! isMatrixSessionExpired(data);
+			}
+
 			function hasExplicitMatrixStateParams(){
 				if(! get){
 					return false;
@@ -1426,9 +1423,17 @@ var InterfaceMaster = (function () {
 				}
 
 				try{
-					return restoreMatrixSession(JSON.parse(storedSession), true);
+					var data = JSON.parse(storedSession);
+
+					if(! isValidMatrixSession(data)){
+						safeRemoveLocalStorage(matrixSessionStorageKey);
+						return false;
+					}
+
+					return restoreMatrixSession(data, true);
 				} catch(e){
 					console.log("Unable to restore matrix session", e);
+					safeRemoveLocalStorage(matrixSessionStorageKey);
 					return false;
 				}
 			}
@@ -1436,7 +1441,7 @@ var InterfaceMaster = (function () {
 			function restoreMatrixSession(data, fromAutosave){
 				fromAutosave = typeof fromAutosave !== 'undefined' ? fromAutosave : false;
 
-				if(! data || data.type != matrixSessionType || data.version != matrixSessionVersion || ! Array.isArray(data.groups)){
+				if(! isValidMatrixSession(data)){
 					return false;
 				}
 
@@ -2600,8 +2605,7 @@ var InterfaceMaster = (function () {
 				$(".poke-select-container").addClass(self.battleMode);
 
 				$(".battle-results").hide();
-				$(".matrix-session-btn").toggle(self.battleMode == "matrix");
-				$(".matrix-session-import-btn").toggle(self.battleMode == "matrix");
+				$(".matrix-session-actions").toggleClass("hide", self.battleMode != "matrix");
 
 				if(self.battleMode == "single"){
 					if(pokeSelectors[0].getPokemon()){
@@ -2618,7 +2622,6 @@ var InterfaceMaster = (function () {
 
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
-					requestMatrixStoragePersistence();
 
 					window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
 

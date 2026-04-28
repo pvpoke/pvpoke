@@ -1508,6 +1508,23 @@ select.large {
   transition: background-color 0s ease-out 0s;
 }
 
+.section.battle .matrix-session-actions {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: -2px auto 14px auto;
+}
+.section.battle .matrix-session-actions.hide {
+  display: none;
+}
+.section.battle .matrix-session-actions .button {
+  font-size: 14px;
+  margin: 0;
+  padding: 8px 14px;
+}
+
 .pokebox a.open-pokebox {
   display: block;
   border: 1px solid #000;
@@ -4523,13 +4540,20 @@ a.rating:hover:after {
 }
 .modal .list-export .list-text,
 .modal .list-export .team-string-text,
+.modal .list-export .matrix-session-text,
 .modal .search-string-window .list-text,
-.modal .search-string-window .team-string-text {
+.modal .search-string-window .team-string-text,
+.modal .search-string-window .matrix-session-text,
+.modal .matrix-session-import .list-text,
+.modal .matrix-session-import .team-string-text,
+.modal .matrix-session-import .matrix-session-text {
   width: 100%;
   height: 200px;
+  box-sizing: border-box;
 }
 .modal .list-export .copy,
-.modal .search-string-window .copy {
+.modal .search-string-window .copy,
+.modal .matrix-session-import .copy {
   display: inline-block;
   cursor: pointer;
   font-weight: bold;
@@ -4540,17 +4564,46 @@ a.rating:hover:after {
   margin: 5px 0;
 }
 .modal .list-export .search-string-options .check,
-.modal .search-string-window .search-string-options .check {
+.modal .search-string-window .search-string-options .check,
+.modal .matrix-session-import .search-string-options .check {
   margin-right: 10px;
 }
 .modal .list-export .export-options,
-.modal .search-string-window .export-options {
+.modal .search-string-window .export-options,
+.modal .matrix-session-import .export-options {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 8px 12px;
 }
 .modal .list-export .export-options a,
-.modal .search-string-window .export-options a {
+.modal .search-string-window .export-options a,
+.modal .matrix-session-import .export-options a {
   font-size: 12px;
+}
+.modal .list-export .matrix-session-file,
+.modal .search-string-window .matrix-session-file,
+.modal .matrix-session-import .matrix-session-file {
+  width: 100%;
+  margin: 5px 0 10px 0;
+}
+.modal .list-export .matrix-session-import-actions,
+.modal .search-string-window .matrix-session-import-actions,
+.modal .matrix-session-import .matrix-session-import-actions {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.modal .list-export .matrix-session-import-actions .button,
+.modal .search-string-window .matrix-session-import-actions .button,
+.modal .matrix-session-import .matrix-session-import-actions .button {
+  margin: 10px 0 0 0;
+}
+.modal .list-export .matrix-session-import-actions .button.clear,
+.modal .search-string-window .matrix-session-import-actions .button.clear,
+.modal .matrix-session-import .matrix-session-import-actions .button.clear {
+  background: #ddd !important;
+  border-color: #777;
 }
 .modal .save-list input {
   font-size: 18px;

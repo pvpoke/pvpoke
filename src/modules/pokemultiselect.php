@@ -148,8 +148,6 @@
 		
 
 		<a class="json" href="#">JSON Export</a>
-
-		<a class="matrix-session" href="#">Download Full Matrix Session</a>
 	</div>
 
 	<div class="center">
@@ -163,7 +161,7 @@
 	<p>You can also paste the JSON below.</p>
 	<textarea class="matrix-session-text" type="text"></textarea>
 
-	<div class="center flex">
+	<div class="center flex matrix-session-import-actions">
 		<div class="button import">Import Session</div>
 		<div class="button clear">Clear Saved Session</div>
 	</div>
