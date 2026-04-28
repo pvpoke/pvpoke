@@ -1360,13 +1360,11 @@ var InterfaceMaster = (function () {
 			}
 
 			function scheduleMatrixSessionSave(){
-				if(self.battleMode != "matrix" || isRestoringMatrixSession){
+				if(! canSaveMatrixSession()){
 					return;
 				}
 
-				if(matrixSessionSaveTimeout){
-					clearTimeout(matrixSessionSaveTimeout);
-				}
+				clearMatrixSessionSaveTimeout();
 
 				matrixSessionSaveTimeout = setTimeout(function(){
 					saveMatrixSession();
@@ -1374,7 +1372,7 @@ var InterfaceMaster = (function () {
 			}
 
 			function saveMatrixSession(){
-				if(self.battleMode != "matrix" || isRestoringMatrixSession){
+				if(! canSaveMatrixSession()){
 					return false;
 				}
 
@@ -1383,14 +1381,38 @@ var InterfaceMaster = (function () {
 				return safeSetLocalStorage(matrixSessionStorageKey, JSON.stringify(generateMatrixSession()));
 			}
 
-			function isMatrixSessionExpired(data){
-				var expiresAt = data.expiresAt ? new Date(data.expiresAt).getTime() : false;
+			function canSaveMatrixSession(){
+				return self.battleMode == "matrix" && ! isRestoringMatrixSession;
+			}
 
-				if(! expiresAt && data.savedAt){
-					expiresAt = new Date(data.savedAt).getTime() + matrixSessionTTLMs;
+			function clearMatrixSessionSaveTimeout(){
+				if(matrixSessionSaveTimeout){
+					clearTimeout(matrixSessionSaveTimeout);
+					matrixSessionSaveTimeout = false;
 				}
+			}
+
+			function parseMatrixSession(json){
+				try{
+					return JSON.parse(json);
+				} catch(e){
+					console.log("Unable to parse matrix session", e);
+					return false;
+				}
+			}
+
+			function isMatrixSessionExpired(data){
+				var expiresAt = getMatrixSessionExpiresAt(data);
 
 				return expiresAt && expiresAt <= Date.now();
+			}
+
+			function getMatrixSessionExpiresAt(data){
+				if(data.expiresAt){
+					return new Date(data.expiresAt).getTime();
+				}
+
+				return data.savedAt ? new Date(data.savedAt).getTime() + matrixSessionTTLMs : false;
 			}
 
 			function isValidMatrixSession(data){
@@ -1422,20 +1444,15 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
-				try{
-					var data = JSON.parse(storedSession);
+				var data = parseMatrixSession(storedSession);
+				var canRestore = isValidMatrixSession(data);
 
-					if(! isValidMatrixSession(data)){
-						safeRemoveLocalStorage(matrixSessionStorageKey);
-						return false;
-					}
-
-					return restoreMatrixSession(data, true);
-				} catch(e){
-					console.log("Unable to restore matrix session", e);
+				if(! canRestore){
 					safeRemoveLocalStorage(matrixSessionStorageKey);
 					return false;
 				}
+
+				return restoreMatrixSession(data, true);
 			}
 
 			function restoreMatrixSession(data, fromAutosave){
@@ -1448,36 +1465,11 @@ var InterfaceMaster = (function () {
 				isRestoringMatrixSession = true;
 
 				try{
-					if(data.cp){
-						var cpParts = data.cp.toString().split("-");
-						var cp = cpParts[0];
-						var levelCap = cpParts.length > 1 ? cpParts[1] : false;
-						var $leagueOption = levelCap ? $(".league-select option[value=\""+cp+"\"][level-cap=\""+levelCap+"\"]") : $(".league-select option[value=\""+cp+"\"]").first();
-
-						if($leagueOption.length > 0){
-							$leagueOption.prop("selected", "selected");
-							$(".league-select").trigger("change");
-						}
-					}
-
-					if(data.cup){
-						battle.setCup(data.cup);
-						$(".cup-select option[value=\""+data.cup+"\"][cp=\""+battle.getCP()+"\"]").prop("selected", "selected");
-					}
-
-					for(var i = 0; i < Math.min(data.groups.length, multiSelectors.length); i++){
-						multiSelectors[i].importSessionData(data.groups[i]);
-					}
-
-					if(data.matrixMode){
-						self.matrixMode = data.matrixMode;
-						$(".battle-results.matrix .ranking-categories a").removeClass("selected");
-						$(".battle-results.matrix .ranking-categories a[data=\""+data.matrixMode+"\"]").addClass("selected");
-					}
-
-					if(data.breakpointMode){
-						$(".battle-results.matrix select.breakpoint-mode option[value=\""+data.breakpointMode+"\"]").prop("selected", "selected");
-					}
+					selectMatrixSessionLeague(data.cp);
+					selectMatrixSessionCup(data.cup);
+					importMatrixSessionGroups(data.groups);
+					selectMatrixMode(data.matrixMode);
+					selectMatrixBreakpointMode(data.breakpointMode);
 				} finally{
 					isRestoringMatrixSession = false;
 				}
@@ -1487,6 +1479,53 @@ var InterfaceMaster = (function () {
 				}
 
 				return true;
+			}
+
+			function selectMatrixSessionLeague(cpValue){
+				if(! cpValue){
+					return;
+				}
+
+				var cpParts = cpValue.toString().split("-");
+				var cp = cpParts[0];
+				var levelCap = cpParts.length > 1 ? cpParts[1] : false;
+				var $leagueOption = levelCap ? $(".league-select option[value=\""+cp+"\"][level-cap=\""+levelCap+"\"]") : $(".league-select option[value=\""+cp+"\"]").first();
+
+				if($leagueOption.length > 0){
+					$leagueOption.prop("selected", "selected");
+					$(".league-select").trigger("change");
+				}
+			}
+
+			function selectMatrixSessionCup(cup){
+				if(! cup){
+					return;
+				}
+
+				battle.setCup(cup);
+				$(".cup-select option[value=\""+cup+"\"][cp=\""+battle.getCP()+"\"]").prop("selected", "selected");
+			}
+
+			function importMatrixSessionGroups(groups){
+				for(var i = 0; i < Math.min(groups.length, multiSelectors.length); i++){
+					multiSelectors[i].importSessionData(groups[i]);
+				}
+			}
+
+			function selectMatrixMode(matrixMode){
+				if(! matrixMode){
+					return;
+				}
+
+				self.matrixMode = matrixMode;
+				$(".battle-results.matrix .ranking-categories a").removeClass("selected");
+				$(".battle-results.matrix .ranking-categories a[data=\""+matrixMode+"\"]").addClass("selected");
+			}
+
+			function selectMatrixBreakpointMode(breakpointMode){
+				if(breakpointMode){
+					$(".battle-results.matrix select.breakpoint-mode option[value=\""+breakpointMode+"\"]").prop("selected", "selected");
+				}
 			}
 
 			function generateMatrixSessionFilename(){
@@ -1521,18 +1560,20 @@ var InterfaceMaster = (function () {
 			}
 
 			function importMatrixSessionText(text){
-				try{
-					var data = JSON.parse(text);
+				var data = parseMatrixSession(text);
 
-					if(restoreMatrixSession(data, false)){
-						closeModalWindow();
-						$(".battle-btn").trigger("click");
-					} else{
-						modalWindow("Import Error", $("<p>This doesn't look like a Matrix Battle session export.</p>"));
-					}
-				} catch(err){
+				if(! data){
 					modalWindow("Import Error", $("<p>This session couldn't be read. Check that the exported JSON is complete.</p>"));
+					return;
 				}
+
+				if(! restoreMatrixSession(data, false)){
+					modalWindow("Import Error", $("<p>This doesn't look like a Matrix Battle session export.</p>"));
+					return;
+				}
+
+				closeModalWindow();
+				$(".battle-btn").trigger("click");
 			}
 
 			function loadMatrixSessionFile(e){
@@ -1564,11 +1605,7 @@ var InterfaceMaster = (function () {
 			}
 
 			function clearMatrixSessionFromModal(e){
-				if(matrixSessionSaveTimeout){
-					clearTimeout(matrixSessionSaveTimeout);
-					matrixSessionSaveTimeout = false;
-				}
-
+				clearMatrixSessionSaveTimeout();
 				safeRemoveLocalStorage(matrixSessionStorageKey);
 				$(".modal .matrix-session-text").val("");
 				$(".modal .matrix-session-file").val("");
