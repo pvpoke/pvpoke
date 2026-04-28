@@ -51,6 +51,9 @@ let InterfaceMaster = (function () {
 				});
 
 				multiSelector.setUpdateCallback(self.displayRankingData);
+				multiSelector.enablePersistence("attackChartCustomGroupSelector:v1", {
+					restore: ! get
+				});
 			};
 
 			// Grabs ranking data from the Game Master

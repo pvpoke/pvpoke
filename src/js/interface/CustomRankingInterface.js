@@ -74,10 +74,12 @@ function interfaceObject(){
 		customMetaSelector = new PokeMultiSelect($(".poke.multi").eq(0));
 		customMetaSelector.init(data.pokemon, battle);
 		customMetaSelector.setContext("customrankings");
+		customMetaSelector.enablePersistence("customRankingsMetaSelector:v1");
 
 		overrideSelector = new PokeMultiSelect($(".poke.multi").eq(1));
 		overrideSelector.init(data.pokemon, battle);
 		overrideSelector.setContext("customrankingsoverrides");
+		overrideSelector.enablePersistence("customRankingsOverridesSelector:v1");
 
 		// Fill the advanced cup dropdown with cups from the gamemaster
 		$(".cup-select").html("");

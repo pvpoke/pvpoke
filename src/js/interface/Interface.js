@@ -84,7 +84,16 @@ var InterfaceMaster = (function () {
 				$(".poke-select-container .poke.multi").each(function(index, value){
 					var selector = new PokeMultiSelect($(this));
 					selector.init(data.pokemon, battle);
-					selector.setUpdateCallback(scheduleMatrixSessionSave);
+					selector.addUpdateCallback(scheduleMatrixSessionSave);
+
+					if(index == 0){
+						selector.enablePersistence("battleMultiSelector:v1", {
+							restore: ! get,
+							shouldSave: function(){
+								return self.battleMode == "multi";
+							}
+						});
+					}
 
 					multiSelectors.push(selector);
 				});

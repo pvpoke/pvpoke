@@ -32,11 +32,16 @@ function PokeMultiSelect(element){
 
 	var showMoveCounts = false;
 	
-	let updateCallback; // A callback function which is run any time the Pokemon list is updated
+	var updateCallbacks = []; // Callback functions run any time the Pokemon list is updated
+	var persistenceSaveTimeout = false;
+	var isRestoringPersistedState = false;
+	var multiSelectPersistenceType = "pvpoke-multi-select";
+	var multiSelectPersistenceVersion = 1;
+	var multiSelectPersistenceTTLMs = 180 * 24 * 60 * 60 * 1000;
 
 	function notifyUpdate(){
-		if(typeof updateCallback === "function"){
-			updateCallback();
+		for(var i = 0; i < updateCallbacks.length; i++){
+			updateCallbacks[i]();
 		}
 	}
 
@@ -1536,6 +1541,112 @@ function PokeMultiSelect(element){
 		return true;
 	}
 
+	// Enable reusable localStorage autosave/restore for this selector
+
+	this.enablePersistence = function(key, options){
+		options = options || {};
+
+		var restore = options.restore !== false;
+		var shouldSave = typeof options.shouldSave === "function" ? options.shouldSave : function(){
+			return true;
+		};
+
+		self.addUpdateCallback(function(){
+			schedulePersistedStateSave(key, shouldSave);
+		});
+
+		if(restore){
+			restorePersistedState(key);
+		}
+	}
+
+	function schedulePersistedStateSave(key, shouldSave){
+		if(isRestoringPersistedState || ! shouldSave()){
+			return;
+		}
+
+		clearTimeout(persistenceSaveTimeout);
+
+		persistenceSaveTimeout = setTimeout(function(){
+			savePersistedState(key);
+		}, 500);
+	}
+
+	function savePersistedState(key){
+		var now = new Date();
+		var payload = {
+			type: multiSelectPersistenceType,
+			version: multiSelectPersistenceVersion,
+			savedAt: now.toISOString(),
+			expiresAt: new Date(now.getTime() + multiSelectPersistenceTTLMs).toISOString(),
+			data: self.exportSessionData()
+		};
+
+		try{
+			window.localStorage.setItem(key, JSON.stringify(payload));
+		} catch(e){
+			console.log("Unable to save multi-select state", e);
+		}
+	}
+
+	function restorePersistedState(key){
+		var state = getPersistedState(key);
+
+		if(! state){
+			return false;
+		}
+
+		isRestoringPersistedState = true;
+
+		try{
+			self.importSessionData(state.data);
+		} finally{
+			isRestoringPersistedState = false;
+		}
+
+		return true;
+	}
+
+	function getPersistedState(key){
+		var state = parsePersistedState(key);
+
+		if(isValidPersistedState(state)){
+			return state;
+		}
+
+		removePersistedState(key);
+
+		return false;
+	}
+
+	function parsePersistedState(key){
+		try{
+			var data = JSON.parse(window.localStorage.getItem(key));
+			return data;
+		} catch(e){
+			return false;
+		}
+	}
+
+	function isValidPersistedState(state){
+		return state
+			&& state.type == multiSelectPersistenceType
+			&& state.version == multiSelectPersistenceVersion
+			&& state.data
+			&& ! isPersistedStateExpired(state);
+	}
+
+	function isPersistedStateExpired(state){
+		return state.expiresAt && Date.parse(state.expiresAt) <= Date.now();
+	}
+
+	function removePersistedState(key){
+		try{
+			window.localStorage.removeItem(key);
+		} catch(e){
+		}
+	}
+
 	function selectQuickFillOption(group){
 		var option = $el.find(".quick-fill-select option[value='"+group+"']").length > 0 ? group : "new";
 
@@ -1573,8 +1684,13 @@ function PokeMultiSelect(element){
 
 	// Set the callback function for when the Pokemon list is updated
 	this.setUpdateCallback = function(callback){
+		updateCallbacks = [];
+		self.addUpdateCallback(callback);
+	}
+
+	this.addUpdateCallback = function(callback){
 		if(typeof callback === "function"){
-			updateCallback = callback;
+			updateCallbacks.push(callback);
 		}
 	}
 
