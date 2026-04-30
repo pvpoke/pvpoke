@@ -2840,6 +2840,12 @@ var InterfaceMaster = (function () {
 					settingGetParams = false;
 
 					restoreMatrixShareFromPayload(matrixSharePayload).then(function(restored){
+						// Strip the share hash from the URL so refresh/back-nav don't re-restore
+						if(get && get[matrixShareParam]){
+							delete get[matrixShareParam];
+						}
+						window.history.replaceState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+
 						if(restored && self.battleMode == "matrix"){
 							$(".battle-btn").trigger("click");
 						}
