@@ -1827,6 +1827,36 @@ select.large{
 	}
 }
 
+.section.league-select-container .matrix-session-actions{
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 6px;
+	margin: 8px 0 0 auto;
+
+	&.hide{
+		display: none;
+	}
+
+	.button{
+		@include gradient(#f9fdff, #e8f0f7);
+
+		border: 1px solid $color-blue-dark;
+		color: $color-blue-dark;
+		font-size: 12px;
+		font-weight: bold;
+		line-height: 16px;
+		margin: 0;
+		padding: 4px 10px;
+	}
+
+	.matrix-session-clear-btn{
+		border-color: #777;
+		color: #555;
+	}
+}
+
 .section.battle{
 	.battle-action-bar{
 		clear: both;
@@ -1843,34 +1873,6 @@ select.large{
 		margin: 0 auto;
 		min-width: 140px;
 		justify-content: center;
-	}
-
-	.matrix-session-actions{
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 8px;
-		width: 100%;
-
-		&.hide{
-			display: none;
-		}
-
-		.button{
-			@include gradient(#f9fdff, #e8f0f7);
-
-			border-color: $color-blue-dark;
-			color: $color-blue-dark;
-			font-size: 13px;
-			font-weight: bold;
-			margin: 0;
-			padding: 6px 12px;
-		}
-
-		.matrix-session-clear-btn{
-			border-color: #777;
-			color: #555;
-		}
 	}
 }
 
@@ -7164,14 +7166,21 @@ a.feed-subscribe{
 		}
 
 		.battle-btn,
-		.update-btn,
-		.matrix-session-actions .button{
+		.update-btn{
 			box-sizing: border-box;
 			width: 100%;
 		}
+	}
 
-		.matrix-session-actions{
-			flex-direction: column;
+	.section.league-select-container .matrix-session-actions{
+		justify-content: stretch;
+
+		.button{
+			box-sizing: border-box;
+			flex: 1 1 0;
+			min-width: 0;
+			padding-left: 6px;
+			padding-right: 6px;
 		}
 	}
 

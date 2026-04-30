@@ -31,6 +31,11 @@ require_once 'header.php';
 	<p class="description single">Select two Pokemon from any league to fight a simulated battle. Customize movesets, levels, IV's, and shields.</p>
 	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups against a group of Pokemon.</p>
 	<p class="description matrix hide">Battle two groups of Pokemon against each other and see a matrix of the results. Use this to explore mass matchups or compare different Pokemon, movesets, or IV's. You can change how the matrix results display on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>
+	<div class="matrix-session-actions hide">
+		<button class="matrix-session-btn button">Export Matrix</button>
+		<button class="matrix-session-import-btn button">Import Matrix</button>
+		<button class="matrix-session-clear-btn button">Clear Matrix</button>
+	</div>
 </div>
 
 <div class="section poke-select-container single">
@@ -54,11 +59,6 @@ require_once 'header.php';
 				<span class="btn-label">Update</span>
 			</span>
 		</button>
-		<div class="matrix-session-actions hide">
-			<button class="matrix-session-btn button">Export Matrix</button>
-			<button class="matrix-session-import-btn button">Import Matrix</button>
-			<button class="matrix-session-clear-btn button">Clear Matrix</button>
-		</div>
 	</div>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 
