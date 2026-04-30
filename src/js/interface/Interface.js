@@ -59,6 +59,7 @@ var InterfaceMaster = (function () {
 			var matrixSessionTTLMs = 180 * 24 * 60 * 60 * 1000;
 			var matrixSessionSaveTimeout = false;
 			var isRestoringMatrixSession = false;
+			var matrixSessionImportActionLocked = false;
 
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
@@ -120,8 +121,8 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".matrix-session-import-btn", openMatrixSessionImport);
 				$("body").on("click", ".matrix-session-clear-btn", clearMatrixSession);
 				$("body").on("change", ".modal .matrix-session-import .matrix-session-file", loadMatrixSessionFile);
-				$("body").on("click", ".modal .matrix-session-import .button.import", importMatrixSessionFromModal);
-				$("body").on("click", ".modal .matrix-session-import .button.clear", clearMatrixSessionFromModal);
+				$("body").on("click touchend pointerup", ".modal .matrix-session-import .button.import", importMatrixSessionFromModal);
+				$("body").on("click touchend pointerup", ".modal .matrix-session-import .button.clear", clearMatrixSessionFromModal);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
 				$("body").on("click", ".check", checkBox);
@@ -1625,8 +1626,8 @@ var InterfaceMaster = (function () {
 			function bindMatrixSessionImportModal(){
 				var $modal = $(".modal .matrix-session-import").last().closest(".modal");
 
-				$modal.find(".button.import").off("click.matrixSessionImport").on("click.matrixSessionImport", importMatrixSessionFromModal);
-				$modal.find(".button.clear").off("click.matrixSessionClear").on("click.matrixSessionClear", clearMatrixSessionFromModal);
+				$modal.find(".button.import").off(".matrixSessionImport").on("click.matrixSessionImport touchend.matrixSessionImport pointerup.matrixSessionImport", importMatrixSessionFromModal);
+				$modal.find(".button.clear").off(".matrixSessionClear").on("click.matrixSessionClear touchend.matrixSessionClear pointerup.matrixSessionClear", clearMatrixSessionFromModal);
 			}
 
 			function importMatrixSessionText(text){
@@ -1637,12 +1638,24 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
-				if(! restoreMatrixSession(data, false)){
+				if(! isValidMatrixSession(data)){
 					modalWindow("Import Error", $("<p>This doesn't look like a Matrix Battle session export.</p>"));
 					return false;
 				}
 
 				closeMatrixSessionImportModal();
+
+				try{
+					if(! restoreMatrixSession(data, false)){
+						modalWindow("Import Error", $("<p>This Matrix Battle session couldn't be restored.</p>"));
+						return false;
+					}
+				} catch(e){
+					console.log("Unable to restore matrix session", e);
+					modalWindow("Import Error", $("<p>This Matrix Battle session couldn't be restored.</p>"));
+					return false;
+				}
+
 				$(".battle-btn").trigger("click");
 				setTimeout(closeMatrixSessionImportModal, 0);
 				return true;
@@ -1687,9 +1700,20 @@ var InterfaceMaster = (function () {
 			function importMatrixSessionFromModal(e){
 				e.preventDefault();
 				e.stopPropagation();
+
+				if(matrixSessionImportActionLocked){
+					return false;
+				}
+
+				matrixSessionImportActionLocked = true;
+				setTimeout(function(){
+					matrixSessionImportActionLocked = false;
+				}, 500);
+
 				var text = $(".modal .matrix-session-text").val();
 
 				importMatrixSessionText(text);
+				return false;
 			}
 
 			function clearMatrixSessionFromModal(e){
