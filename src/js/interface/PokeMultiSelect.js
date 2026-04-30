@@ -705,8 +705,8 @@ function PokeMultiSelect(element){
 	function exportPokemonData(pokemon, isTeamSheet, includeSessionFields){
 		var obj = {
 			speciesId: pokemon.speciesId,
-			fastMove: pokemon.fastMove.moveId,
-			chargedMoves: pokemon.chargedMoves.map(move => move.moveId)
+			fastMove: pokemon.fastMove ? pokemon.fastMove.moveId : false,
+			chargedMoves: pokemon.chargedMoves.filter(move => move).map(move => move.moveId)
 		};
 
 		addWhen(obj, "shadowType", pokemon.shadowType, pokemon.shadowType != "normal");

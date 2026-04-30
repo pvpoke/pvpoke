@@ -1397,7 +1397,12 @@ var InterfaceMaster = (function () {
 
 				matrixSessionSaveTimeout = false;
 
-				return safeSetLocalStorage(matrixSessionStorageKey, JSON.stringify(generateMatrixSession()));
+				try{
+					return safeSetLocalStorage(matrixSessionStorageKey, JSON.stringify(generateMatrixSession()));
+				} catch(e){
+					console.log("Unable to generate matrix session", e);
+					return false;
+				}
 			}
 
 			function canSaveMatrixSession(){
@@ -1528,20 +1533,40 @@ var InterfaceMaster = (function () {
 				isRestoringMatrixSession = true;
 
 				try{
-					selectMatrixSessionLeague(data.format.cp);
-					selectMatrixSessionCup(data.format.cup);
-					importMatrixSessionGroups(data.matrixGroups);
-					selectMatrixMode(data.display.matrixMode);
-					selectMatrixBreakpointMode(data.display.breakpointMode);
+					restoreMatrixSessionFormat(data.format);
+
+					if(! importMatrixSessionGroups(data.matrixGroups)){
+						return false;
+					}
+
+					restoreMatrixSessionDisplay(data.display);
 				} finally{
 					isRestoringMatrixSession = false;
 				}
 
-				if(! fromAutosave){
-					saveMatrixSession();
+				if(! fromAutosave && ! saveMatrixSession()){
+					console.log("Matrix session restored without updating localStorage.");
 				}
 
 				return true;
+			}
+
+			function restoreMatrixSessionFormat(format){
+				try{
+					selectMatrixSessionLeague(format.cp);
+					selectMatrixSessionCup(format.cup);
+				} catch(e){
+					console.log("Unable to restore matrix format", e);
+				}
+			}
+
+			function restoreMatrixSessionDisplay(display){
+				try{
+					selectMatrixMode(display.matrixMode);
+					selectMatrixBreakpointMode(display.breakpointMode);
+				} catch(e){
+					console.log("Unable to restore matrix display settings", e);
+				}
 			}
 
 			function selectMatrixSessionLeague(cpValue){
@@ -1570,8 +1595,12 @@ var InterfaceMaster = (function () {
 			}
 
 			function importMatrixSessionGroups(groups){
-				multiSelectors[0].importSessionData(groups.subjects);
-				multiSelectors[1].importSessionData(groups.targets);
+				try{
+					return multiSelectors[0].importSessionData(groups.subjects) && multiSelectors[1].importSessionData(groups.targets);
+				} catch(e){
+					console.log("Unable to restore matrix groups", e);
+					return false;
+				}
 			}
 
 			function selectMatrixMode(matrixMode){
