@@ -1620,6 +1620,17 @@ select.large {
   border-radius: 8px;
 }
 
+.matrix-share-link-container {
+  margin: 18px auto 12px;
+}
+.matrix-share-link-container .share-link {
+  max-width: 100%;
+}
+.matrix-share-link-container input {
+  width: min(68vw, 520px);
+  max-width: 100%;
+}
+
 .continue-container {
   margin: 15px auto;
 }

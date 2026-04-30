@@ -57,6 +57,7 @@ var InterfaceMaster = (function () {
 			var matrixSessionType = "pvpoke-matrix-session";
 			var matrixSessionVersion = 1;
 			var matrixSessionTTLMs = 180 * 24 * 60 * 60 * 1000;
+			var matrixShareParam = "share";
 			var matrixSessionSaveTimeout = false;
 			var isRestoringMatrixSession = false;
 			var matrixSessionImportActionLocked = false;
@@ -1378,6 +1379,153 @@ var InterfaceMaster = (function () {
 				};
 			}
 
+			function generateMatrixShareSession(){
+				var session = generateMatrixSession();
+
+				session.metadata = {
+					source: "pvpoke-share-link",
+					feature: "battle-matrix",
+					sharedAt: new Date().toISOString()
+				};
+
+				return session;
+			}
+
+			function generateMatrixShareLink(){
+				return encodeMatrixSharePayload(generateMatrixShareSession()).then(function(payload){
+					return host + "battle/matrix/#" + matrixShareParam + "=" + payload;
+				});
+			}
+
+			function updateMatrixShareLink(){
+				var $input = $(".battle-results.matrix .share-link input");
+
+				if($input.length < 1){
+					return;
+				}
+
+				$input.val("Generating share link...");
+
+				generateMatrixShareLink().then(function(link){
+					$input.val(link);
+				}).catch(function(e){
+					console.log("Unable to generate matrix share link", e);
+					$input.val("");
+				});
+			}
+
+			function encodeMatrixSharePayload(data){
+				var text = JSON.stringify(data);
+
+				if(! window.CompressionStream){
+					return Promise.resolve("j" + encodeBase64Url(text));
+				}
+
+				try{
+					var stream = new Blob([text]).stream().pipeThrough(new CompressionStream("gzip"));
+
+					return new Response(stream).arrayBuffer().then(function(buffer){
+						return "g" + encodeBytesBase64Url(new Uint8Array(buffer));
+					}).catch(function(){
+						return "j" + encodeBase64Url(text);
+					});
+				} catch(e){
+					return Promise.resolve("j" + encodeBase64Url(text));
+				}
+			}
+
+			function decodeMatrixSharePayload(payload){
+				if(! payload || payload.length < 2){
+					return Promise.reject("Missing matrix share payload");
+				}
+
+				var mode = payload.charAt(0);
+				var data = payload.substring(1);
+
+				if(mode == "j"){
+					return Promise.resolve(decodeBase64Url(data));
+				}
+
+				if(mode == "g" && window.DecompressionStream){
+					try{
+						var bytes = decodeBytesBase64Url(data);
+						var stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+
+						return new Response(stream).text();
+					} catch(e){
+						return Promise.reject(e);
+					}
+				}
+
+				return Promise.reject("This browser can't read compressed Matrix share links.");
+			}
+
+			function encodeBase64Url(text){
+				return encodeBytesBase64Url(stringToUtf8Bytes(text));
+			}
+
+			function decodeBase64Url(data){
+				var bytes = decodeBytesBase64Url(data);
+
+				return utf8BytesToString(bytes);
+			}
+
+			function encodeBytesBase64Url(bytes){
+				var binary = "";
+
+				for(var i = 0; i < bytes.length; i++){
+					binary += String.fromCharCode(bytes[i]);
+				}
+
+				return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+			}
+
+			function decodeBytesBase64Url(data){
+				var base64 = data.replace(/-/g, "+").replace(/_/g, "/");
+
+				while(base64.length % 4){
+					base64 += "=";
+				}
+
+				var binary = atob(base64);
+				var bytes = new Uint8Array(binary.length);
+
+				for(var i = 0; i < binary.length; i++){
+					bytes[i] = binary.charCodeAt(i);
+				}
+
+				return bytes;
+			}
+
+			function stringToUtf8Bytes(text){
+				if(window.TextEncoder){
+					return new TextEncoder().encode(text);
+				}
+
+				var encoded = unescape(encodeURIComponent(text));
+				var bytes = new Uint8Array(encoded.length);
+
+				for(var i = 0; i < encoded.length; i++){
+					bytes[i] = encoded.charCodeAt(i);
+				}
+
+				return bytes;
+			}
+
+			function utf8BytesToString(bytes){
+				if(window.TextDecoder){
+					return new TextDecoder("utf-8").decode(bytes);
+				}
+
+				var encoded = "";
+
+				for(var i = 0; i < bytes.length; i++){
+					encoded += String.fromCharCode(bytes[i]);
+				}
+
+				return decodeURIComponent(escape(encoded));
+			}
+
 			function scheduleMatrixSessionSave(){
 				if(! canSaveMatrixSession()){
 					return;
@@ -1489,7 +1637,11 @@ var InterfaceMaster = (function () {
 
 			function hasExplicitMatrixStateParams(){
 				if(! get){
-					return false;
+					if(getMatrixSharePayload()){
+						get = {mode: "matrix"};
+					} else{
+						return false;
+					}
 				}
 
 				for(var key in get){
@@ -1502,7 +1654,49 @@ var InterfaceMaster = (function () {
 			}
 
 			function shouldAutoRestoreMatrixSession(){
-				return self.battleMode == "matrix" && ! hasExplicitMatrixStateParams();
+				return self.battleMode == "matrix" && ! hasExplicitMatrixStateParams() && ! getMatrixSharePayload();
+			}
+
+			function getMatrixSharePayload(){
+				if(get && get[matrixShareParam]){
+					return get[matrixShareParam];
+				}
+
+				if(! window.location.hash){
+					return false;
+				}
+
+				var hash = window.location.hash.substring(1);
+				var params = hash.split("&");
+
+				for(var i = 0; i < params.length; i++){
+					var parts = params[i].split("=");
+
+					if(decodeURIComponent(parts[0]) == matrixShareParam){
+						return decodeURIComponent(parts.slice(1).join("="));
+					}
+				}
+
+				return false;
+			}
+
+			function restoreMatrixShareFromPayload(payload){
+				return decodeMatrixSharePayload(payload).then(function(text){
+					var data = normalizeMatrixSession(JSON.parse(text));
+
+					if(! isValidMatrixSession(data)){
+						return false;
+					}
+
+					if(self.battleMode != "matrix"){
+						$(".mode-select a[data=\"matrix\"]").trigger("click");
+					}
+
+					return restoreMatrixSession(data, false);
+				}).catch(function(e){
+					console.log("Unable to restore matrix share link", e);
+					return false;
+				});
 			}
 
 			function restoreMatrixSessionFromStorage(){
@@ -1801,6 +1995,7 @@ var InterfaceMaster = (function () {
 				// Run battles through the ranker
 
 				saveMatrixSession();
+				updateMatrixShareLink();
 
 				var data = ranker.rank(team, battle.getCP(true), battle.getCup(), [], "matrix");
 				matrixResults = data.rankings;
@@ -2277,7 +2472,11 @@ var InterfaceMaster = (function () {
 			this.loadGetData = function(){
 
 				if(! get){
-					return false;
+					if(getMatrixSharePayload()){
+						get = {mode: "matrix"};
+					} else{
+						return false;
+					}
 				}
 
 				settingGetParams = true;
@@ -2541,6 +2740,9 @@ var InterfaceMaster = (function () {
 								$(".mode-select a[data=\""+val+"\"]").trigger("click");
 								break;
 
+							case "share":
+								break;
+
 							case "cup":
 								$(".cup-select option[value=\""+val+"\"][cp=\""+battle.getCP()+"\"]").prop("selected","selected");
 
@@ -2631,9 +2833,20 @@ var InterfaceMaster = (function () {
 					$(".sandbox-btn").trigger("click");
 				}
 
+				var matrixSharePayload = getMatrixSharePayload();
 				var restoredMatrixSession = false;
 
-				if(shouldAutoRestoreMatrixSession()){
+				if(matrixSharePayload){
+					settingGetParams = false;
+
+					restoreMatrixShareFromPayload(matrixSharePayload).then(function(restored){
+						if(restored && self.battleMode == "matrix"){
+							$(".battle-btn").trigger("click");
+						}
+					});
+
+					return;
+				} else if(shouldAutoRestoreMatrixSession()){
 					restoredMatrixSession = restoreMatrixSessionFromStorage();
 				}
 
@@ -2826,7 +3039,9 @@ var InterfaceMaster = (function () {
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
 
-					window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+					if(! settingGetParams){
+						window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+					}
 
 					// Update document title and favicon
 					document.title = "Matrix | PvPoke";

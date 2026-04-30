@@ -410,6 +410,13 @@ require_once 'header.php';
 				<table class="matrix-table rating-table" cellspacing="0">
 				</table>
 			</div>
+			<div class="share-link-container matrix-share-link-container">
+				<p>Share this matrix:</p>
+				<div class="share-link">
+					<input type="text" value="" readonly>
+					<div class="copy">Copy</div>
+				</div>
+			</div>
 			<a href="#" class="button download-csv">Export to CSV</a>
 		</div>
 	</div>

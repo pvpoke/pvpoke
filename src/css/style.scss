@@ -1947,6 +1947,19 @@ select.large{
 	}
 }
 
+.matrix-share-link-container{
+	margin: 18px auto 12px;
+
+	.share-link{
+		max-width: 100%;
+	}
+
+	input{
+		width: min(68vw, 520px);
+		max-width: 100%;
+	}
+}
+
 .continue-container{
 	margin:15px auto;
 
