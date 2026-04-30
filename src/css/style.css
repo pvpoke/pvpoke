@@ -1549,6 +1549,10 @@ select.large {
   margin: 0;
   padding: 6px 12px;
 }
+.section.battle .matrix-session-actions .matrix-session-clear-btn {
+  border-color: #777;
+  color: #555;
+}
 
 .pokebox a.open-pokebox {
   display: block;

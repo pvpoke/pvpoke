@@ -118,6 +118,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".battle-results.matrix a.difference", jumpToMatrixColumn);
 				$("body").on("click", ".matrix-session-btn", downloadMatrixSessionExport);
 				$("body").on("click", ".matrix-session-import-btn", openMatrixSessionImport);
+				$("body").on("click", ".matrix-session-clear-btn", clearMatrixSession);
 				$("body").on("change", ".modal .matrix-session-import .matrix-session-file", loadMatrixSessionFile);
 				$("body").on("click", ".modal .matrix-session-import .button.import", importMatrixSessionFromModal);
 				$("body").on("click", ".modal .matrix-session-import .button.clear", clearMatrixSessionFromModal);
@@ -1563,7 +1564,7 @@ var InterfaceMaster = (function () {
 			function openMatrixSessionImport(e){
 				e.preventDefault();
 
-				modalWindow("Import Matrix Session", $(".matrix-session-import").eq(0));
+				modalWindow("Import Matrix", $(".matrix-session-import").eq(0));
 				$(".modal .matrix-session-text").val("");
 				$(".modal .matrix-session-file").val("");
 			}
@@ -1614,10 +1615,34 @@ var InterfaceMaster = (function () {
 			}
 
 			function clearMatrixSessionFromModal(e){
-				clearMatrixSessionSaveTimeout();
-				safeRemoveLocalStorage(matrixSessionStorageKey);
+				e.preventDefault();
+				clearSavedMatrixSession();
 				$(".modal .matrix-session-text").val("");
 				$(".modal .matrix-session-file").val("");
+			}
+
+			function clearMatrixSession(e){
+				e.preventDefault();
+				clearSavedMatrixSession();
+				isRestoringMatrixSession = true;
+
+				try{
+					for(var i = 0; i < multiSelectors.length; i++){
+						multiSelectors[i].clearSelection();
+					}
+				} finally{
+					isRestoringMatrixSession = false;
+				}
+
+				matrixResults = false;
+				$(".matrix-table").html("");
+				$(".battle-results.matrix").hide();
+				clearSavedMatrixSession();
+			}
+
+			function clearSavedMatrixSession(){
+				clearMatrixSessionSaveTimeout();
+				safeRemoveLocalStorage(matrixSessionStorageKey);
 			}
 
 			// Process both groups of Pokemon through the team ranker

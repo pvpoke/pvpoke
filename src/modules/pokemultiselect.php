@@ -162,8 +162,8 @@
 	<textarea class="matrix-session-text" type="text"></textarea>
 
 	<div class="center flex matrix-session-import-actions">
-		<div class="button import">Import Session</div>
-		<div class="button clear">Clear Saved Session</div>
+		<div class="button import">Import Matrix</div>
+		<div class="button clear">Clear Saved Matrix</div>
 	</div>
 </div>
 

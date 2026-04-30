@@ -1263,17 +1263,20 @@ function PokeMultiSelect(element){
 		modalWindow("Clear Custom Group", $(".multi-clear-confirm").first());
 
 		$(".modal .yes").click(function(e){
-			pokemonList = [];
-			self.updateListDisplay();
-			$el.find(".quick-fill-select option[value='new']").prop("selected", "selected");
-
-			$el.find(".save-as").hide();
-			$el.find(".save-custom").show();
-			$el.find(".delete-btn").hide();
-
+			clearCurrentSelection();
 			closeModalWindow();
 		});
 	});
+
+	function clearCurrentSelection(){
+		pokemonList = [];
+		self.updateListDisplay();
+		$el.find(".quick-fill-select option[value='new']").prop("selected", "selected");
+
+		$el.find(".save-as").hide();
+		$el.find(".save-custom").show();
+		$el.find(".delete-btn").hide();
+	}
 
 	// Select an option from the form section
 
@@ -1680,6 +1683,10 @@ function PokeMultiSelect(element){
 	// Return the single pokeselector
 	this.getPokeSelector = function(){
 		return pokeSelector;
+	}
+
+	this.clearSelection = function(){
+		clearCurrentSelection();
 	}
 
 	// Set the callback function for when the Pokemon list is updated

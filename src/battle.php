@@ -55,8 +55,9 @@ require_once 'header.php';
 			</span>
 		</button>
 		<div class="matrix-session-actions hide">
-			<button class="matrix-session-btn button">Export Session</button>
-			<button class="matrix-session-import-btn button">Import Session</button>
+			<button class="matrix-session-btn button">Export Matrix</button>
+			<button class="matrix-session-import-btn button">Import Matrix</button>
+			<button class="matrix-session-clear-btn button">Clear Matrix</button>
 		</div>
 	</div>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
