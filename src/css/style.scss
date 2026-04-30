@@ -1827,6 +1827,25 @@ select.large{
 	}
 }
 
+.section.battle{
+	.battle-action-bar{
+		clear: both;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 7px;
+		margin: 4px auto 16px auto;
+		max-width: 360px;
+	}
+
+	.battle-btn,
+	.update-btn{
+		margin: 0 auto;
+		min-width: 140px;
+		justify-content: center;
+	}
+}
+
 .section.league-select-container .matrix-session-actions{
 	clear: both;
 	display: flex;
@@ -1844,6 +1863,7 @@ select.large{
 
 		border: 1px solid $color-blue-dark;
 		color: $color-blue-dark;
+		display: inline-block;
 		font-size: 12px;
 		font-weight: bold;
 		line-height: 16px;
@@ -1854,25 +1874,6 @@ select.large{
 	.matrix-session-clear-btn{
 		border-color: #777;
 		color: #555;
-	}
-}
-
-.section.battle{
-	.battle-action-bar{
-		clear: both;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 7px;
-		margin: 4px auto 16px auto;
-		max-width: 360px;
-	}
-
-	.battle-btn,
-	.update-btn{
-		margin: 0 auto;
-		min-width: 140px;
-		justify-content: center;
 	}
 }
 

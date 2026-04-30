@@ -1530,6 +1530,7 @@ select.large {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border: 1px solid #3b5163;
   color: #3b5163;
+  display: inline-block;
   font-size: 12px;
   font-weight: bold;
   line-height: 16px;
