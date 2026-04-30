@@ -1635,13 +1635,14 @@ var InterfaceMaster = (function () {
 
 				closeMatrixSessionImportModal();
 				$(".battle-btn").trigger("click");
+				setTimeout(closeMatrixSessionImportModal, 0);
 			}
 
 			function closeMatrixSessionImportModal(){
-				var $modal = $(".modal .matrix-session-import").last().closest(".modal");
+				var $modals = $(".modal .matrix-session-import").closest(".modal");
 
-				if($modal.length > 0){
-					$modal.remove();
+				if($modals.length > 0){
+					$modals.remove();
 					return;
 				}
 
