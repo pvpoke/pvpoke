@@ -1633,8 +1633,19 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				closeModalWindow();
+				closeMatrixSessionImportModal();
 				$(".battle-btn").trigger("click");
+			}
+
+			function closeMatrixSessionImportModal(){
+				var $modal = $(".modal .matrix-session-import").last().closest(".modal");
+
+				if($modal.length > 0){
+					$modal.remove();
+					return;
+				}
+
+				closeModalWindow();
 			}
 
 			function loadMatrixSessionFile(e){
@@ -1660,6 +1671,7 @@ var InterfaceMaster = (function () {
 			}
 
 			function importMatrixSessionFromModal(e){
+				e.preventDefault();
 				var text = $(".modal .matrix-session-text").val();
 
 				importMatrixSessionText(text);
