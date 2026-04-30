@@ -1507,10 +1507,12 @@ function PokeMultiSelect(element){
 
 	this.exportSessionData = function(){
 		return {
-			selectedGroup: selectedGroup,
-			selectedGroupType: selectedGroupType,
-			filterMode: filterMode,
-			settings: {
+			selection: {
+				selectedGroup: selectedGroup,
+				selectedGroupType: selectedGroupType,
+				filterMode: filterMode
+			},
+			battleSettings: {
 				shields: multiSettings.shields,
 				ivs: multiSettings.ivs,
 				bait: multiSettings.bait,
@@ -1532,16 +1534,34 @@ function PokeMultiSelect(element){
 			return false;
 		}
 
-		applyImportValue(data, "filterMode", value => self.setFilterMode(value));
-		applyImportValue(data, "settings", value => self.setSettings(value));
+		data = normalizeSessionData(data);
+
+		applyImportValue(data.selection, "filterMode", value => self.setFilterMode(value));
+		applyImportValue(data, "battleSettings", value => self.setSettings(value));
 
 		self.importPokemonList(data.pokemon || []);
 
-		selectedGroup = data.selectedGroup || "new";
-		selectedGroupType = data.selectedGroupType || "";
+		selectedGroup = data.selection.selectedGroup || "new";
+		selectedGroupType = data.selection.selectedGroupType || "";
 		selectQuickFillOption(selectedGroup);
 
 		return true;
+	}
+
+	function normalizeSessionData(data){
+		if(data.selection && data.battleSettings){
+			return data;
+		}
+
+		return {
+			selection: {
+				selectedGroup: data.selectedGroup,
+				selectedGroupType: data.selectedGroupType,
+				filterMode: data.filterMode
+			},
+			battleSettings: data.settings,
+			pokemon: data.pokemon
+		};
 	}
 
 	// Enable reusable localStorage autosave/restore for this selector

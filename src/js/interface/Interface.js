@@ -1356,16 +1356,24 @@ var InterfaceMaster = (function () {
 				return {
 					type: matrixSessionType,
 					version: matrixSessionVersion,
-					savedAt: now.toISOString(),
-					expiresAt: new Date(now.getTime() + matrixSessionTTLMs).toISOString(),
-					cp: battle.getCP(true),
-					cup: battle.getCup().name,
-					matrixMode: self.matrixMode,
-					breakpointMode: $(".battle-results.matrix .breakpoint-mode option:selected").val(),
-					groups: [
-						multiSelectors[0].exportSessionData(),
-						multiSelectors[1].exportSessionData()
-					]
+					metadata: {
+						source: "pvpoke",
+						feature: "battle-matrix",
+						savedAt: now.toISOString(),
+						expiresAt: new Date(now.getTime() + matrixSessionTTLMs).toISOString()
+					},
+					format: {
+						cp: battle.getCP(true),
+						cup: battle.getCup().name
+					},
+					display: {
+						matrixMode: self.matrixMode,
+						breakpointMode: $(".battle-results.matrix .breakpoint-mode option:selected").val()
+					},
+					matrixGroups: {
+						subjects: multiSelectors[0].exportSessionData(),
+						targets: multiSelectors[1].exportSessionData()
+					}
 				};
 			}
 
@@ -1404,11 +1412,44 @@ var InterfaceMaster = (function () {
 
 			function parseMatrixSession(json){
 				try{
-					return JSON.parse(json);
+					return normalizeMatrixSession(JSON.parse(json));
 				} catch(e){
 					console.log("Unable to parse matrix session", e);
 					return false;
 				}
+			}
+
+			function normalizeMatrixSession(data){
+				if(! data || data.type != matrixSessionType){
+					return data;
+				}
+
+				if(data.matrixGroups){
+					return data;
+				}
+
+				return {
+					type: data.type,
+					version: data.version,
+					metadata: {
+						source: "pvpoke",
+						feature: "battle-matrix",
+						savedAt: data.savedAt,
+						expiresAt: data.expiresAt
+					},
+					format: {
+						cp: data.cp,
+						cup: data.cup
+					},
+					display: {
+						matrixMode: data.matrixMode,
+						breakpointMode: data.breakpointMode
+					},
+					matrixGroups: {
+						subjects: data.groups ? data.groups[0] : false,
+						targets: data.groups ? data.groups[1] : false
+					}
+				};
 			}
 
 			function isMatrixSessionExpired(data){
@@ -1418,15 +1459,26 @@ var InterfaceMaster = (function () {
 			}
 
 			function getMatrixSessionExpiresAt(data){
-				if(data.expiresAt){
-					return new Date(data.expiresAt).getTime();
+				var metadata = data.metadata || {};
+
+				if(metadata.expiresAt){
+					return new Date(metadata.expiresAt).getTime();
 				}
 
-				return data.savedAt ? new Date(data.savedAt).getTime() + matrixSessionTTLMs : false;
+				return metadata.savedAt ? new Date(metadata.savedAt).getTime() + matrixSessionTTLMs : false;
 			}
 
 			function isValidMatrixSession(data){
-				return data && data.type == matrixSessionType && data.version == matrixSessionVersion && Array.isArray(data.groups) && ! isMatrixSessionExpired(data);
+				return data
+					&& data.type == matrixSessionType
+					&& data.version == matrixSessionVersion
+					&& data.metadata
+					&& data.format
+					&& data.display
+					&& data.matrixGroups
+					&& data.matrixGroups.subjects
+					&& data.matrixGroups.targets
+					&& ! isMatrixSessionExpired(data);
 			}
 
 			function hasExplicitMatrixStateParams(){
@@ -1475,11 +1527,11 @@ var InterfaceMaster = (function () {
 				isRestoringMatrixSession = true;
 
 				try{
-					selectMatrixSessionLeague(data.cp);
-					selectMatrixSessionCup(data.cup);
-					importMatrixSessionGroups(data.groups);
-					selectMatrixMode(data.matrixMode);
-					selectMatrixBreakpointMode(data.breakpointMode);
+					selectMatrixSessionLeague(data.format.cp);
+					selectMatrixSessionCup(data.format.cup);
+					importMatrixSessionGroups(data.matrixGroups);
+					selectMatrixMode(data.display.matrixMode);
+					selectMatrixBreakpointMode(data.display.breakpointMode);
 				} finally{
 					isRestoringMatrixSession = false;
 				}
@@ -1517,9 +1569,8 @@ var InterfaceMaster = (function () {
 			}
 
 			function importMatrixSessionGroups(groups){
-				for(var i = 0; i < Math.min(groups.length, multiSelectors.length); i++){
-					multiSelectors[i].importSessionData(groups[i]);
-				}
+				multiSelectors[0].importSessionData(groups.subjects);
+				multiSelectors[1].importSessionData(groups.targets);
 			}
 
 			function selectMatrixMode(matrixMode){
