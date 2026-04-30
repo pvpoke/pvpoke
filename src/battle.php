@@ -41,21 +41,23 @@ require_once 'header.php';
 </div>
 
 <div class="section battle">
-	<button class="battle-btn button">
-		<span class="btn-content-wrap">
-			<span class="btn-icon btn-icon-battle"></span>
-			<span class="btn-label">Battle</span>
-		</span>
-	</button>
-	<button class="update-btn button">
-		<span class="btn-content-wrap">
-			<span class="btn-icon btn-icon-battle"></span>
-			<span class="btn-label">Update</span>
-		</span>
-	</button>
-	<div class="matrix-session-actions hide">
-		<button class="matrix-session-btn button">Export Session</button>
-		<button class="matrix-session-import-btn button">Import Session</button>
+	<div class="battle-action-bar">
+		<button class="battle-btn button">
+			<span class="btn-content-wrap">
+				<span class="btn-icon btn-icon-battle"></span>
+				<span class="btn-label">Battle</span>
+			</span>
+		</button>
+		<button class="update-btn button">
+			<span class="btn-content-wrap">
+				<span class="btn-icon btn-icon-battle"></span>
+				<span class="btn-label">Update</span>
+			</span>
+		</button>
+		<div class="matrix-session-actions hide">
+			<button class="matrix-session-btn button">Export Session</button>
+			<button class="matrix-session-import-btn button">Import Session</button>
+		</div>
 	</div>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 

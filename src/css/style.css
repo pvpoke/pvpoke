@@ -1508,21 +1508,46 @@ select.large {
   transition: background-color 0s ease-out 0s;
 }
 
-.section.battle .matrix-session-actions {
+.section.battle .battle-action-bar {
   clear: both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  margin: 4px auto 16px auto;
+  max-width: 360px;
+}
+.section.battle .battle-btn,
+.section.battle .update-btn {
+  margin: 0 auto;
+  min-width: 140px;
+  justify-content: center;
+}
+.section.battle .matrix-session-actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin: -2px auto 14px auto;
+  gap: 8px;
+  width: 100%;
 }
 .section.battle .matrix-session-actions.hide {
   display: none;
 }
 .section.battle .matrix-session-actions .button {
-  font-size: 14px;
+  background: #f9fdff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f9fdff 30%, #e8f0f7 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f9fdff 30%, #e8f0f7 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f9fdff 30%, #e8f0f7 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border-color: #3b5163;
+  color: #3b5163;
+  font-size: 13px;
+  font-weight: bold;
   margin: 0;
-  padding: 8px 14px;
+  padding: 6px 12px;
 }
 
 .pokebox a.open-pokebox {
@@ -4590,6 +4615,7 @@ a.rating:hover:after {
 .modal .list-export .matrix-session-import-actions,
 .modal .search-string-window .matrix-session-import-actions,
 .modal .matrix-session-import .matrix-session-import-actions {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
@@ -6554,6 +6580,28 @@ a.feed-subscribe {
 @media only screen and (max-width: 480px) {
   #dev-panel {
     display: none;
+  }
+  .section.battle .battle-action-bar {
+    align-items: stretch;
+    margin-top: 8px;
+    max-width: 280px;
+    width: 100%;
+  }
+  .section.battle .battle-btn,
+  .section.battle .update-btn,
+  .section.battle .matrix-session-actions .button {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .section.battle .matrix-session-actions {
+    flex-direction: column;
+  }
+  .modal .matrix-session-import .matrix-session-import-actions {
+    flex-direction: column;
+  }
+  .modal .matrix-session-import .matrix-session-import-actions .button {
+    box-sizing: border-box;
+    width: 100%;
   }
 }
 /* Ad styling and display */
