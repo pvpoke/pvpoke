@@ -1615,6 +1615,7 @@ var InterfaceMaster = (function () {
 			function openMatrixSessionImport(e){
 				e.preventDefault();
 
+				closeMatrixSessionImportModal();
 				modalWindow("Import Matrix", $(".matrix-session-import").eq(0));
 				$(".modal .matrix-session-text").val("");
 				$(".modal .matrix-session-file").val("");
@@ -1625,17 +1626,18 @@ var InterfaceMaster = (function () {
 
 				if(! data){
 					modalWindow("Import Error", $("<p>This session couldn't be read. Check that the exported JSON is complete.</p>"));
-					return;
+					return false;
 				}
 
 				if(! restoreMatrixSession(data, false)){
 					modalWindow("Import Error", $("<p>This doesn't look like a Matrix Battle session export.</p>"));
-					return;
+					return false;
 				}
 
 				closeMatrixSessionImportModal();
 				$(".battle-btn").trigger("click");
 				setTimeout(closeMatrixSessionImportModal, 0);
+				return true;
 			}
 
 			function closeMatrixSessionImportModal(){
@@ -1661,7 +1663,10 @@ var InterfaceMaster = (function () {
 				reader.onload = function(event){
 					var text = event.target.result;
 					$(".modal .matrix-session-text").val(text);
-					importMatrixSessionText(text);
+
+					if(importMatrixSessionText(text)){
+						setTimeout(closeMatrixSessionImportModal, 0);
+					}
 				};
 
 				reader.onerror = function(){
