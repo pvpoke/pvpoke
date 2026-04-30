@@ -1619,6 +1619,14 @@ var InterfaceMaster = (function () {
 				modalWindow("Import Matrix", $(".matrix-session-import").eq(0));
 				$(".modal .matrix-session-text").val("");
 				$(".modal .matrix-session-file").val("");
+				bindMatrixSessionImportModal();
+			}
+
+			function bindMatrixSessionImportModal(){
+				var $modal = $(".modal .matrix-session-import").last().closest(".modal");
+
+				$modal.find(".button.import").off("click.matrixSessionImport").on("click.matrixSessionImport", importMatrixSessionFromModal);
+				$modal.find(".button.clear").off("click.matrixSessionClear").on("click.matrixSessionClear", clearMatrixSessionFromModal);
 			}
 
 			function importMatrixSessionText(text){
@@ -1678,6 +1686,7 @@ var InterfaceMaster = (function () {
 
 			function importMatrixSessionFromModal(e){
 				e.preventDefault();
+				e.stopPropagation();
 				var text = $(".modal .matrix-session-text").val();
 
 				importMatrixSessionText(text);
@@ -1685,6 +1694,7 @@ var InterfaceMaster = (function () {
 
 			function clearMatrixSessionFromModal(e){
 				e.preventDefault();
+				e.stopPropagation();
 				clearSavedMatrixSession();
 				$(".modal .matrix-session-text").val("");
 				$(".modal .matrix-session-file").val("");
