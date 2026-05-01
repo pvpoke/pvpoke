@@ -31,6 +31,8 @@ function PokeMultiSelect(element){
 	var cliffhangerMode = false;
 
 	var showMoveCounts = false;
+
+	var isCustom = true;
 	
 	let updateCallback; // A callback function which is run any time the Pokemon list is updated
 
@@ -182,6 +184,8 @@ function PokeMultiSelect(element){
 			if(scrollToBottom){
 				$el.find(".rankings-container").scrollTop($el.find(".rankings-container").eq(0).prop("scrollHeight"));
 			}
+
+			isCustom = true;
 		});
 
 		// Add this Pokemon and other IV spreads
@@ -251,6 +255,8 @@ function PokeMultiSelect(element){
 
 			self.updateListDisplay();
 
+			isCustom = true;
+
 		});
 
 		// Add a copy of this Pokemon to the multiselector
@@ -299,6 +305,8 @@ function PokeMultiSelect(element){
 
 			self.updateListDisplay();
 
+			isCustom = true;
+
 		});
 
 		// Add Pokemon and all matching Pokemon from Pokebox
@@ -321,6 +329,8 @@ function PokeMultiSelect(element){
 
 			// Add multiple IV spreads of the same Pokemon
 			pokebox.loadPokebox(false, self.addPokemonFromPokebox, pokemon.speciesId);
+
+			isCustom = true;
 
 		});
 
@@ -348,6 +358,8 @@ function PokeMultiSelect(element){
 		$el.find(".check.show-ivs").addClass("on");
 
 		self.updateListDisplay();
+
+		isCustom = true;
 	}
 
 
@@ -898,15 +910,21 @@ function PokeMultiSelect(element){
 		self.updateListDisplay();
 	}
 
-	// Return URL string for all Pokemon in the group
+	// Return URL string containing the selected group name, or a custom list of all Pokemon in the group
 	this.generateURLMoveStr = function(){
-		let moveStrs = [];
 
-		pokemonList.forEach(pokemon => {
-			moveStrs.push(pokemon.generateURLPokeStr("team-builder"));
-		});
+		if(isCustom){
+			let moveStrs = [];
 
-		return moveStrs.join(",");
+			pokemonList.forEach(pokemon => {
+				moveStrs.push(pokemon.generateURLPokeStr("team-builder"));
+			});
+
+			return moveStrs.join(",");
+		} else{
+			return $el.find(".quick-fill-select option:selected").val();
+		}
+
 	}
 
 	// Calculate a team's cliffhanger points, returns object with current points, maximum allowed, and tiers
@@ -1007,6 +1025,8 @@ function PokeMultiSelect(element){
 			pokemonList.splice(selectedIndex, 1);
 			self.updateListDisplay();
 			closeModalWindow();
+
+			isCustom = true;
 		});
 	});
 
@@ -1039,6 +1059,8 @@ function PokeMultiSelect(element){
 			$el.find(".save-as").show();
 			$el.find(".save-custom").hide();
 			$el.find(".delete-btn").hide();
+
+			isCustom = false;
 		}
 
 		// Create a new group
@@ -1053,6 +1075,8 @@ function PokeMultiSelect(element){
 			$el.find(".save-as").hide();
 			$el.find(".save-custom").show();
 			$el.find(".delete-btn").hide();
+
+			isCustom = true;
 		}
 
 		// Populate from a custom group
@@ -1066,6 +1090,8 @@ function PokeMultiSelect(element){
 			$el.find(".save-as").hide();
 			$el.find(".save-custom").show();
 			$el.find(".delete-btn").show();
+
+			isCustom = true;
 		}
 
 		// Populate from the rankings
@@ -1091,6 +1117,8 @@ function PokeMultiSelect(element){
 
 				self.quickFillCSV(csv);
 			}
+
+			isCustom = false;
 		}
 
 		selectedGroup = val;
@@ -1174,6 +1202,8 @@ function PokeMultiSelect(element){
 			self.saveCustomList($(".modal input.list-name").val(), true);
 
 			closeModalWindow();
+
+			isCustom = true;
 		}
 	});
 
@@ -1285,6 +1315,8 @@ function PokeMultiSelect(element){
 			showIVs = true;
 			$el.find(".check.show-ivs").addClass("on");
 		}
+
+		isCustom = true;
 
 		self.updateListDisplay();
 	});
@@ -1426,6 +1458,13 @@ function PokeMultiSelect(element){
 		$el.find(".quick-fill-select").trigger("change");
 	}
 
+	// Return whether or not a quick fill select option exists in the default cups dropdown
+	this.groupExists = function(id){
+		let $group = $el.find(".quick-fill-select option[value='"+id+"']:not([type='custom'])");
+
+		return $group.length > 0;
+	}
+
 	// Return the single pokeselector
 	this.getPokeSelector = function(){
 		return pokeSelector;
@@ -1436,6 +1475,11 @@ function PokeMultiSelect(element){
 		if(typeof callback === "function"){
 			updateCallback = callback;
 		}
+	}
+
+	// Returns whether this selector is using a preselected group or custom
+	this.isCustomGroup = function(){
+		return isCustom;
 	}
 
 	// Open the search string generation window

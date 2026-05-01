@@ -429,7 +429,7 @@ require_once 'header.php';
 				<input type="text" value="" readonly>
 				<div class="copy">Copy</div>
 			</div>
-			<p>Matrix Battle links are currently only supported for up to 16 Pokemon (8v8).</p>
+			<p>Matrix Battle links are currently only supported for up to 16 custom Pokemon (8v8).</p>
 		</div>
 	</div>
 </div>

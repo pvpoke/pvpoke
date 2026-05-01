@@ -1337,7 +1337,10 @@ var InterfaceMaster = (function () {
 				let url = host + 'battle/matrix/';
 				let urlData = { cp: battle.getCP(), mode: "matrix" };
 
-				if(team.length + targets.length <= 16){
+				let teamCount = multiSelectors[1].isCustomGroup() ? team.length : 0;
+				let targetCount = multiSelectors[0].isCustomGroup() ? targets.length : 0;
+
+				if(teamCount + targetCount <= 16){
 					url += battle.getCP() + "/";
 
 					let matrix1 = encodeURIComponent(multiSelectors[0].generateURLMoveStr());
@@ -2152,11 +2155,15 @@ var InterfaceMaster = (function () {
 
 							case "matrix1":
 							case "matrix2":
-								if(key == "matrix1"){
-									multiSelectors[0].quickFillURLParam(val);
-								} else if(key == "matrix2"){
-									multiSelectors[1].quickFillURLParam(val);
+								let targetMultiSelector = (key == "matrix1") ? multiSelectors[0] : multiSelectors[1];
+
+								// Load group by id or load Pokemon by URL parameter list
+								if(targetMultiSelector.groupExists(val)){
+									targetMultiSelector.selectGroup(val);
+								} else{
+									targetMultiSelector.quickFillURLParam(val);
 								}
+								
 							break;
 
 						}
