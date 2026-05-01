@@ -421,6 +421,17 @@ require_once 'header.php';
 			</div>
 		</div>
 	</div>
+
+	<div class="battle-results matrix">
+		<div class="share-link-container">
+			<p>Share this matrix:</p>
+			<div class="share-link">
+				<input type="text" value="" readonly>
+				<div class="copy">Copy</div>
+			</div>
+			<p>Matrix Battle links are currently only supported for up to 16 custom Pokemon (8v8).</p>
+		</div>
+	</div>
 </div>
 
 <!--Sandbox forms-->
