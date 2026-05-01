@@ -98,13 +98,18 @@ var InterfaceMaster = (function () {
 
 						switch(key){
 							case "t":
-								// Set max team size to length of list, if option exists
-								var list = val.split(",");
+								// Load group by id or load Pokemon by URL parameter list
+								if(multiSelectors[0].groupExists(val)){
+									multiSelectors[0].selectGroup(val);
+								} else{
+									// Set max team size to length of list, if option exists
+									var list = val.split(",");
 
-								$(".team-size-select option[value="+list.length+"]").prop("selected", "selected");
-								$(".team-size-select").trigger("change");
+									$(".team-size-select option[value="+list.length+"]").prop("selected", "selected");
+									$(".team-size-select").trigger("change");
 
-								multiSelectors[0].quickFillURLParam(val);
+									multiSelectors[0].quickFillURLParam(val);
+								}
 								break;
 
 							case "cp":
