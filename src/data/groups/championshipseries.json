@@ -118,6 +118,22 @@
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
     },
     {
+        "speciesId": "malamar_shadow",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "medicham",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
+    },
+    {
+        "speciesId": "quagsire",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"]
+    },
+    {
         "speciesId": "quagsire_shadow",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
@@ -145,9 +161,25 @@
         "chargedMoves": ["FLY", "FLAME_CHARGE"]
     },
     {
+        "speciesId": "talonflame_shadow",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["FLAME_CHARGE", "FLY"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "tinkaton",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["GIGATON_HAMMER", "BULLDOZE"]
+    },
+    {
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
+    },
+    {
+        "speciesId": "umbreon",
+        "fastMove": "SNARL",
+        "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
     },
     {
         "speciesId": "weezing_galarian_shadow",
@@ -161,30 +193,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "talonflame_shadow",
-        "fastMove": "INCINERATE",
-        "chargedMoves": ["FLAME_CHARGE", "FLY"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "malamar_shadow",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "quagsire",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"]
-    },
-    {
-        "speciesId": "medicham",
-        "fastMove": "PSYCHO_CUT",
-        "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
-    },
-    {
-        "speciesId": "tinkaton",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["GIGATON_HAMMER", "BULLDOZE"]
+        "speciesId": "aegislash_shield",
+        "fastMove": "AEGISLASH_CHARGE_PSYCHO_CUT",
+        "chargedMoves": ["SHADOW_BALL", "GYRO_BALL"]
     }
 ]

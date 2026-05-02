@@ -24,20 +24,6 @@
 		]
 	},
 	{
-		"title": "Spring Cup",
-		"cup": "spring",
-		"cp": 1500,
-		"meta": "spring",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Water-, Grass-, and Fairy-type Pokémon are eligible.",
-			"The following Pokemon are not allowed: Jumpluff, Roserade, Toxapex"
-		]
-	},
-	{
 		"title": "Fantasy Cup",
 		"cup": "fantasy",
 		"cp": 1500,
@@ -48,6 +34,19 @@
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
+		]
+	},
+	{
+		"title": "Jungle Cup",
+		"cup": "jungle",
+		"cp": 1500,
+		"meta": "jungle",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible."
 		]
 	},
 	{
@@ -115,6 +114,15 @@
 		"cup": "maelstrom",
 		"cp": 1500,
 		"meta": "maelstrom",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Devon Cosy Cup",
+		"cup": "cosy",
+		"cp": 1500,
+		"meta": "cosy",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

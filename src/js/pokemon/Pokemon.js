@@ -422,9 +422,9 @@ function Pokemon(id, i, b, d){
         this.hp = this.stats.hp;
         this.startHp = this.hp;
 
-        this.cp = self.calculateCP();
+	        this.cp = self.calculateCP();
 
-		self.isCustom = true;
+			self.isCustom = true;
 	}
 
 	// Generate an array of IV combinations sorted by stat
@@ -2459,7 +2459,7 @@ function Pokemon(id, i, b, d){
 	}
 
 	this.replaceMove = function(moveType, oldMoveId, newMoveId){
-		if(moveType == "fast"){
+		if(moveType == "fast" && self.fastMove){
 			if(self.fastMove.moveId == oldMoveId){
 				self.selectMove(moveType, newMoveId, 0, true);
 			}

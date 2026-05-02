@@ -30,22 +30,6 @@ $formats = array (
   ),
   2 => 
   array (
-    'title' => 'Spring Cup',
-    'cup' => 'spring',
-    'cp' => 1500,
-    'meta' => 'spring',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Water-, Grass-, and Fairy-type Pokémon are eligible.',
-      2 => 'The following Pokemon are not allowed: Jumpluff, Roserade, Toxapex',
-    ),
-  ),
-  3 => 
-  array (
     'title' => 'Fantasy Cup',
     'cup' => 'fantasy',
     'cp' => 1500,
@@ -57,6 +41,21 @@ $formats = array (
     array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
       1 => 'Only Dragon-, Steel-, and Fairy-type Pokémon are eligible.',
+    ),
+  ),
+  3 => 
+  array (
+    'title' => 'Jungle Cup',
+    'cup' => 'jungle',
+    'cp' => 1500,
+    'meta' => 'jungle',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.',
     ),
   ),
   4 => 
@@ -138,6 +137,16 @@ $formats = array (
   ),
   11 => 
   array (
+    'title' => 'Devon Cosy Cup',
+    'cup' => 'cosy',
+    'cp' => 1500,
+    'meta' => 'cosy',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  12 =>
+  array (
     'title' => 'Gymbreakers LAIC 2025 Remix',
     'cup' => 'laic2025remix',
     'cp' => 1500,
@@ -146,7 +155,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  12 => 
+  13 =>
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -156,7 +165,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  13 => 
+  14 =>
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -166,7 +175,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  14 => 
+  15 =>
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -176,7 +185,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  15 => 
+  16 =>
   array (
     'title' => 'Custom',
     'cup' => 'custom',

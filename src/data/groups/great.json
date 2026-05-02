@@ -56,6 +56,11 @@
         "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
     },
     {
+        "speciesId": "diggersby",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+    },
+    {
         "speciesId": "drapion_shadow",
         "fastMove": "POISON_STING",
         "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
@@ -242,6 +247,11 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "tinkaton",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["GIGATON_HAMMER", "BULLDOZE"]
+    },
+    {
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
@@ -263,13 +273,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "tinkaton",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["GIGATON_HAMMER", "BULLDOZE"]
-    },
-    {
-        "speciesId": "diggersby",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+        "speciesId": "aegislash_shield",
+        "fastMove": "AEGISLASH_CHARGE_PSYCHO_CUT",
+        "chargedMoves": ["SHADOW_BALL", "GYRO_BALL"]
     }
 ]

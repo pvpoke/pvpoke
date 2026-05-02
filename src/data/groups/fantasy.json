@@ -51,6 +51,12 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "empoleon_shadow",
+        "fastMove": "WATERFALL",
+        "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "excadrill",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
@@ -80,6 +86,12 @@
         "speciesId": "forretress_shadow",
         "fastMove": "VOLT_SWITCH",
         "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "giratina_altered_shadow",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"],
         "shadowType": "shadow"
     },
     {
@@ -182,15 +194,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "empoleon_shadow",
-        "fastMove": "WATERFALL",
-        "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "giratina_altered_shadow",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"],
-        "shadowType": "shadow"
+        "speciesId": "orthworm",
+        "fastMove": "MUD_SLAP",
+        "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
     }
 ]

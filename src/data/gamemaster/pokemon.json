@@ -9304,6 +9304,34 @@
     },
     {
         "dex": 149,
+        "speciesName": "Dragonite (Mega)",
+        "speciesId": "dragonite_mega",
+        "baseStats": {
+            "atk": 299,
+            "def": 255,
+            "hp": 209
+        },
+        "types": ["dragon", "flying"],
+        "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL", "STEEL_WING"],
+        "chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE", "SUPER_POWER", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp500": [4, 12, 15, 15],
+            "cp1500": [11.5, 4, 8, 12],
+            "cp2500": [19, 4, 9, 15]
+        },
+        "level25CP": 3079,
+        "tags": ["shadoweligible", "mega"],
+        "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_DRATINI",
+            "parent": "dragonair"
+        }
+    },
+    {
+        "dex": 149,
         "speciesName": "Dragonite (Shadow)",
         "speciesId": "dragonite_shadow",
         "baseStats": {
@@ -9330,34 +9358,6 @@
             "parent": "dragonair_shadow"
         },
         "nicknames": ["dnite"]
-    },
-    {
-        "dex": 149,
-        "speciesName": "Dragonite (Mega)",
-        "speciesId": "dragonite_mega",
-        "baseStats": {
-            "atk": 299,
-            "def": 255,
-            "hp": 209
-        },
-        "types": ["dragon", "flying"],
-        "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL", "STEEL_WING"],
-        "chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE", "SUPER_POWER", "THUNDER_PUNCH"],
-        "defaultIVs": {
-            "cp500": [4, 12, 15, 15],
-            "cp1500": [11.5, 4, 8, 12],
-            "cp2500": [19, 4, 9, 15]
-        },
-        "level25CP": 3079,
-        "tags": ["shadoweligible", "mega"],
-        "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
-        "buddyDistance": 5,
-        "thirdMoveCost": 75000,
-        "released": true,
-        "family": {
-            "id": "FAMILY_DRATINI",
-            "parent": "dragonair"
-        }
     },
     {
         "dex": 150,
@@ -31872,7 +31872,8 @@
             "id": "FAMILY_DEINO",
             "parent": "zweilous_shadow"
         },
-        "tags": ["shadow"]
+        "tags": ["shadow"],
+        "searchPriority": 2
     },
     {
         "dex": 636,
@@ -32197,11 +32198,12 @@
             "cp1500": [15, 10, 13, 14],
             "cp2500": [26, 5, 8, 11]
         },
-        "tags": ["legendary"],
+        "tags": ["legendary", "shadoweligible"],
         "searchPriority": 2,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": true
+        "released": true,
+        "level25CP": 2249
     },
     {
         "dex": 645,
@@ -32223,6 +32225,29 @@
         },
         "tags": ["legendary"],
         "searchPriority": 4,
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true
+    },
+    {
+        "dex": 645,
+        "speciesId": "landorus_incarnate_shadow",
+        "speciesName": "Landorus (Incarnate) (Shadow)",
+        "baseStats": {
+            "atk": 261,
+            "def": 182,
+            "hp": 205
+        },
+        "types": ["ground", "flying"],
+        "fastMoves": ["MUD_SHOT", "ROCK_THROW"],
+        "chargedMoves": ["EARTH_POWER", "OUTRAGE", "ROCK_SLIDE", "FOCUS_BLAST"],
+        "defaultIVs": {
+            "cp500": [5.5, 6, 8, 5],
+            "cp1500": [15, 10, 13, 14],
+            "cp2500": [26, 5, 8, 11]
+        },
+        "tags": ["legendary", "shadow"],
+        "searchPriority": 2,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -34213,7 +34238,35 @@
         "family": {
             "id": "FAMILY_HELIOPTILE",
             "evolutions": ["heliolisk"]
-        }
+        },
+        "level25CP": 510,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 694,
+        "speciesName": "Helioptile (Shadow)",
+        "speciesId": "helioptile_shadow",
+        "baseStats": {
+            "atk": 115,
+            "def": 78,
+            "hp": 127
+        },
+        "types": ["electric", "normal"],
+        "fastMoves": ["QUICK_ATTACK", "THUNDER_SHOCK"],
+        "chargedMoves": ["PARABOLIC_CHARGE", "BULLDOZE", "THUNDERBOLT"],
+        "defaultIVs": {
+            "cp500": [20.5, 4, 15, 14],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_HELIOPTILE",
+            "evolutions": ["heliolisk_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 695,
@@ -34239,7 +34292,36 @@
         "family": {
             "id": "FAMILY_HELIOPTILE",
             "parent": "helioptile"
-        }
+        },
+        "level25CP": 1591,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 695,
+        "speciesName": "Heliolisk (Shadow)",
+        "speciesId": "heliolisk_shadow",
+        "baseStats": {
+            "atk": 219,
+            "def": 168,
+            "hp": 158
+        },
+        "types": ["electric", "normal"],
+        "fastMoves": ["QUICK_ATTACK", "VOLT_SWITCH", "MUD_SLAP"],
+        "chargedMoves": ["PARABOLIC_CHARGE", "BULLDOZE", "THUNDERBOLT", "GRASS_KNOT", "BREAKING_SWIPE"],
+        "defaultIVs": {
+            "cp500": [7.5, 4, 8, 8],
+            "cp1500": [21.5, 4, 13, 12],
+            "cp2500": [40.5, 5, 14, 15],
+            "cp2500l40": [38.5, 12, 14, 14]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_HELIOPTILE",
+            "parent": "helioptile_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 696,
@@ -36480,7 +36562,35 @@
         "family": {
             "id": "FAMILY_DEWPIDER",
             "evolutions": ["araquanid"]
-        }
+        },
+        "level25CP": 374,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 751,
+        "speciesName": "Dewpider (Shadow)",
+        "speciesId": "dewpider_shadow",
+        "baseStats": {
+            "atk": 72,
+            "def": 117,
+            "hp": 116
+        },
+        "types": ["water", "bug"],
+        "fastMoves": ["INFESTATION", "BUG_BITE"],
+        "chargedMoves": ["WATER_PULSE", "BUBBLE_BEAM", "MIRROR_COAT"],
+        "defaultIVs": {
+            "cp500": [28.5, 4, 14, 12],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_DEWPIDER",
+            "evolutions": ["araquanid_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 752,
@@ -36506,7 +36616,36 @@
         "family": {
             "id": "FAMILY_DEWPIDER",
             "parent": "dewpider"
-        }
+        },
+        "level25CP": 1081,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 752,
+        "speciesName": "Araquanid (Shadow)",
+        "speciesId": "araquanid_shadow",
+        "baseStats": {
+            "atk": 126,
+            "def": 219,
+            "hp": 169
+        },
+        "types": ["water", "bug"],
+        "fastMoves": ["INFESTATION", "BUG_BITE"],
+        "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM", "MIRROR_COAT", "WATER_PULSE"],
+        "defaultIVs": {
+            "cp500": [10.5, 4, 14, 12],
+            "cp1500": [32, 5, 15, 14],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "searchPriority": 3,
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_DEWPIDER",
+            "parent": "dewpider_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 753,
@@ -36607,7 +36746,35 @@
         "family": {
             "id": "FAMILY_MORELULL",
             "parent": "morelull"
-        }
+        },
+        "level25CP": 1108,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 756,
+        "speciesName": "Shiinotic (Shadow)",
+        "speciesId": "shiinotic_shadow",
+        "baseStats": {
+            "atk": 154,
+            "def": 168,
+            "hp": 155
+        },
+        "types": ["grass", "fairy"],
+        "fastMoves": ["ASTONISH"],
+        "chargedMoves": ["MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp500": [10, 5, 15, 15],
+            "cp1500": [31, 4, 14, 12],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_MORELULL",
+            "parent": "morelull"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 757,
@@ -36685,7 +36852,36 @@
         "family": {
             "id": "FAMILY_STUFFUL",
             "evolutions": ["bewear"]
-        }
+        },
+        "level25CP": 775,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 759,
+        "speciesName": "Stufful (Shadow)",
+        "speciesId": "stufful_shadow",
+        "baseStats": {
+            "atk": 136,
+            "def": 95,
+            "hp": 172
+        },
+        "types": ["normal", "fighting"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN"],
+        "chargedMoves": ["SUPER_POWER", "BRICK_BREAK", "STOMP"],
+        "defaultIVs": {
+            "cp500": [14, 4, 15, 14],
+            "cp1500": [49.5, 13, 15, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_STUFFUL",
+            "evolutions": ["bewear_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 760,
@@ -36711,7 +36907,36 @@
         "family": {
             "id": "FAMILY_STUFFUL",
             "parent": "stufful"
-        }
+        },
+        "level25CP": 1930,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 760,
+        "speciesName": "Bewear (Shadow)",
+        "speciesId": "bewear_shadow",
+        "baseStats": {
+            "atk": 226,
+            "def": 141,
+            "hp": 260
+        },
+        "types": ["normal", "fighting"],
+        "fastMoves": ["TACKLE", "LOW_KICK", "SHADOW_CLAW"],
+        "chargedMoves": ["SUPER_POWER", "PAYBACK", "STOMP", "DRAIN_PUNCH"],
+        "eliteMoves": ["DRAIN_PUNCH"],
+        "defaultIVs": {
+            "cp500": [6, 9, 14, 15],
+            "cp1500": [17.5, 6, 15, 14],
+            "cp2500": [29.5, 4, 14, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_STUFFUL",
+            "parent": "stufful_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 761,
@@ -37575,7 +37800,7 @@
             "cp2500": [50, 13, 15, 15],
             "cp2500l40": [40, 15, 15, 15]
         },
-          "formChange": {
+        "formChange": {
             "type": "set",
             "trigger": "none",
             "resetOnSwitch": false
@@ -42996,7 +43221,8 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "levelFloor": 20,
+        "released": true
     },
     {
         "dex": 969,
