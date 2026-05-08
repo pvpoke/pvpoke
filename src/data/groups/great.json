@@ -1,5 +1,10 @@
 [
     {
+        "speciesId": "aegislash_shield",
+        "fastMove": "AEGISLASH_CHARGE_PSYCHO_CUT",
+        "chargedMoves": ["SHADOW_BALL", "GYRO_BALL"]
+    },
+    {
         "speciesId": "altaria",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"]
@@ -178,12 +183,12 @@
     {
         "speciesId": "quagsire",
         "fastMove": "MUD_SHOT",
-        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"]
+        "chargedMoves": ["AQUA_TAIL", "MUD_BOMB"]
     },
     {
         "speciesId": "quagsire_shadow",
         "fastMove": "MUD_SHOT",
-        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
+        "chargedMoves": ["AQUA_TAIL", "MUD_BOMB"],
         "shadowType": "shadow"
     },
     {
@@ -273,8 +278,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "aegislash_shield",
-        "fastMove": "AEGISLASH_CHARGE_PSYCHO_CUT",
-        "chargedMoves": ["SHADOW_BALL", "GYRO_BALL"]
+        "speciesId": "oinkologne_female",
+        "fastMove": "MUD_SLAP",
+        "chargedMoves": ["BODY_SLAM", "TRAILBLAZE"]
     }
 ]

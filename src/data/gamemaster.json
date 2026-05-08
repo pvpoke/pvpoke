@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-04-30 02:56:27",
+    "timestamp": "2026-05-08 15:17:12",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -42432,8 +42432,9 @@
                 "hp": 242
             },
             "types": ["normal", "none"],
-            "fastMoves": ["TACKLE", "TAKE_DOWN"],
+            "fastMoves": ["TACKLE", "TAKE_DOWN", "MUD_SLAP"],
             "chargedMoves": ["DIG", "BODY_SLAM", "TRAILBLAZE"],
+            "eliteMoves": ["MUD_SLAP"],
             "defaultIVs": {
                 "cp500": [7.5, 4, 10, 5],
                 "cp1500": [21.5, 4, 11, 15],
@@ -42458,8 +42459,9 @@
                 "hp": 251
             },
             "types": ["normal", "none"],
-            "fastMoves": ["TACKLE", "TAKE_DOWN"],
+            "fastMoves": ["TACKLE", "TAKE_DOWN", "MUD_SLAP"],
             "chargedMoves": ["DIG", "BODY_SLAM", "TRAILBLAZE"],
+            "eliteMoves": ["MUD_SLAP"],
             "defaultIVs": {
                 "cp500": [7.5, 7, 14, 15],
                 "cp1500": [22.5, 4, 14, 14],
@@ -42469,7 +42471,7 @@
             "buddyDistance": 1,
             "thirdMoveCost": 10000,
             "released": true,
-            "searchPriority": 2,
+            "searchPriority": 4,
             "family": {
                 "id": "FAMILY_LECHONK",
                 "parent": "lechonk"
