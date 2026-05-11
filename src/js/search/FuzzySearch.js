@@ -22,22 +22,6 @@ var FuzzySearch = new function(){
 		return value.trim();
 	}
 
-	this.tokenize = function(value){
-		value = self.normalize(value);
-
-		if(value == ""){
-			return [];
-		}
-
-		return value.split(" ");
-	}
-
-	this.getEditDistance = function(a, b, maxDistance){
-		a = self.normalize(a);
-		b = self.normalize(b);
-		return getEditDistance(a, b, maxDistance);
-	}
-
 	this.getPokemonNameSearchText = function(pokemon){
 		var signature = getPokemonSearchSignature(pokemon);
 
@@ -60,7 +44,7 @@ var FuzzySearch = new function(){
 			}
 		}
 
-		pokemon._search = {
+		var searchCache = {
 			signature: signature,
 			name: name,
 			compactName: getCompactText(name),
@@ -69,9 +53,16 @@ var FuzzySearch = new function(){
 			compactNicknames: compactNicknames
 		};
 
+		Object.defineProperty(pokemon, "_search", {
+			value: searchCache,
+			writable: true,
+			configurable: true
+		});
+
 		return pokemon._search;
 	}
 
+	// Typo-tolerant plus prefix-aware matching: exact, compact, prefix, token prefix, nickname, and edit-distance variants.
 	this.getPokemonNameMatch = function(param, pokemon){
 		var query = self.normalize(param);
 
@@ -114,8 +105,25 @@ var FuzzySearch = new function(){
 			return createMatch(false, Number.MAX_VALUE, null);
 		}
 
-		var candidates = [searchText.name, searchText.compactName];
-		candidates = candidates.concat(searchText.tokens, searchText.nicknames, searchText.compactNicknames);
+		var seen = {};
+		var candidates = [];
+
+		function addCandidate(str){
+			if(str && str != "" && !seen[str]){
+				seen[str] = true;
+				candidates.push(str);
+			}
+		}
+
+		addCandidate(searchText.name);
+		addCandidate(searchText.compactName);
+		for(var i = 0; i < searchText.tokens.length; i++){
+			addCandidate(searchText.tokens[i]);
+		}
+		for(var i = 0; i < searchText.nicknames.length; i++){
+			addCandidate(searchText.nicknames[i]);
+			addCandidate(searchText.compactNicknames[i]);
+		}
 
 		var bestDistance = maxDistance + 1;
 

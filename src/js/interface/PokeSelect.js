@@ -1057,26 +1057,23 @@ function PokeSelect(element, i){
 		}
 
 		var idToSelect;
-		var fuzzyMatches = [];
 
+		// Pass 1: exact-style matches — species name prefix, dex number, nickname prefix
 		for(var i = 0; i < searchArr.length; i++){
 			var pokeName = searchArr[i].speciesName;
 
-			// Name search
 			if(pokeName.startsWith(searchStr)){
 				idToSelect = searchArr[i].speciesId;
 				break;
 			}
 
-			// Dex search
 			if(searchArr[i].dex == searchStr){
 				idToSelect = searchArr[i].speciesId;
 				break;
 			}
 
-			// Nickname search
 			if(searchArr[i].nicknames){
-				let nicknameMatched = false;
+				var nicknameMatched = false;
 
 				for(var n = 0; n < searchArr[i].nicknames.length; n++){
 					if(searchArr[i].nicknames[n].startsWith(searchStr)){
@@ -1089,10 +1086,14 @@ function PokeSelect(element, i){
 				if(nicknameMatched){
 					break;
 				}
-
 			}
+		}
 
-			if(typeof FuzzySearch !== "undefined"){
+		// Pass 2: fuzzy matching, only when no exact-style match was found
+		if(!idToSelect && typeof FuzzySearch !== "undefined"){
+			var fuzzyMatches = [];
+
+			for(var i = 0; i < searchArr.length; i++){
 				var match = FuzzySearch.getPokemonNameMatch(searchStr, searchArr[i]);
 
 				if(match.matched){
@@ -1103,25 +1104,24 @@ function PokeSelect(element, i){
 				}
 			}
 
-		}
+			if(fuzzyMatches.length > 0){
+				fuzzyMatches.sort(function(a, b){
+					if(a.match.score != b.match.score){
+						return a.match.score - b.match.score;
+					}
 
-		if(! idToSelect && fuzzyMatches.length > 0){
-			fuzzyMatches.sort(function(a, b){
-				if(a.match.score != b.match.score){
-					return a.match.score - b.match.score;
-				}
+					if(a.pokemon.priority != b.pokemon.priority){
+						return b.pokemon.priority - a.pokemon.priority;
+					}
 
-				if(a.pokemon.priority != b.pokemon.priority){
-					return b.pokemon.priority - a.pokemon.priority;
-				}
+					var nameA = a.pokemon.displayName || a.pokemon.speciesName;
+					var nameB = b.pokemon.displayName || b.pokemon.speciesName;
 
-				var nameA = a.pokemon.displayName || a.pokemon.speciesName;
-				var nameB = b.pokemon.displayName || b.pokemon.speciesName;
+					return nameA > nameB ? 1 : (nameB > nameA ? -1 : 0);
+				});
 
-				return nameA > nameB ? 1 : (nameB > nameA ? -1 : 0);
-			});
-
-			idToSelect = fuzzyMatches[0].pokemon.speciesId;
+				idToSelect = fuzzyMatches[0].pokemon.speciesId;
+			}
 		}
 
 		var idAlreadySelected = false;
