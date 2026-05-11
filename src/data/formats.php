@@ -145,7 +145,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  12 => 
+  12 =>
   array (
     'title' => 'Gymbreakers LAIC 2025 Remix',
     'cup' => 'laic2025remix',
@@ -155,7 +155,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  13 => 
+  13 =>
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -165,7 +165,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  14 => 
+  14 =>
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -175,7 +175,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  15 => 
+  15 =>
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -185,7 +185,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  16 => 
+  16 =>
   array (
     'title' => 'Custom',
     'cup' => 'custom',

@@ -155,6 +155,18 @@
 	</div>
 </div>
 
+<div class="matrix-session-import hide">
+	<p>Upload a Matrix Battle session JSON file to continue where you left off.</p>
+	<input class="matrix-session-file" type="file" accept="application/json,.json" />
+	<p>You can also paste the JSON below.</p>
+	<textarea class="matrix-session-text" type="text"></textarea>
+
+	<div class="center flex matrix-session-import-actions">
+		<button type="button" class="button import">Import Matrix</button>
+		<button type="button" class="button clear">Clear Saved Matrix</button>
+	</div>
+</div>
+
 <div class="save-list hide">
 	<input class="list-name" placeholder="Custom group name" />
 	<p>This will save your custom group to a cookie on your device. Use the import/export option to transfer this group between devices.</p>

@@ -422,9 +422,9 @@ function Pokemon(id, i, b, d){
         this.hp = this.stats.hp;
         this.startHp = this.hp;
 
-        this.cp = self.calculateCP();
-		
-		self.isCustom = true;
+	        this.cp = self.calculateCP();
+
+			self.isCustom = true;
 	}
 
 	// Generate an array of IV combinations sorted by stat

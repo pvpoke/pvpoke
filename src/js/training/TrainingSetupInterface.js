@@ -42,6 +42,10 @@ var InterfaceMaster = (function () {
 			var featuredTeam = null;
 
 			var multiSelectors = [];
+			var multiSelectorPersistenceKeys = [
+				"trainingSetupPlayerSelector:v1",
+				"trainingSetupOpponentSelector:v1"
+			];
 
 			this.init = function(){
 				var data = gm.data;
@@ -52,6 +56,7 @@ var InterfaceMaster = (function () {
 
 					multiSelector.init(data.pokemon, battle);
 					multiSelector.setMaxPokemonCount(partySize);
+					multiSelector.enablePersistence(multiSelectorPersistenceKeys[i]);
 					multiSelectors.push(multiSelector);
 				}
 

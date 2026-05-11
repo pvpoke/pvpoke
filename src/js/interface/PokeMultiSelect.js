@@ -34,7 +34,18 @@ function PokeMultiSelect(element){
 
 	var isCustom = true;
 	
-	let updateCallback; // A callback function which is run any time the Pokemon list is updated
+	var updateCallbacks = []; // Callback functions run any time the Pokemon list is updated
+	var persistenceSaveTimeout = false;
+	var isRestoringPersistedState = false;
+	var multiSelectPersistenceType = "pvpoke-multi-select";
+	var multiSelectPersistenceVersion = 1;
+	var multiSelectPersistenceTTLMs = 180 * 24 * 60 * 60 * 1000;
+
+	function notifyUpdate(){
+		for(var i = 0; i < updateCallbacks.length; i++){
+			updateCallbacks[i]();
+		}
+	}
 
 	// Show move counts if previously set
 	if(window.localStorage.getItem("rankingsShowMoveCounts") == "true"){
@@ -517,9 +528,7 @@ function PokeMultiSelect(element){
 			$el.find(".pokebox").show();
 		}
 
-		if(typeof updateCallback === "function"){
-			updateCallback();
-		}
+		notifyUpdate();
 
 	}
 
@@ -792,42 +801,193 @@ function PokeMultiSelect(element){
 		multiSettings.levelCap = levelCap;
 	}
 
-	// Convert the current Pokemon list into exportable and savable JSON
+	// Convert the current Pokemon list into reusable structured data
 
-	this.convertListToJSON = function(isTeamSheet = false){
+	this.exportPokemonList = function(isTeamSheet = false, includeSessionFields = false){
 		var arr = [];
 
 		for(var i = 0; i < pokemonList.length; i++){
-			var obj = {
-				speciesId: pokemonList[i].speciesId,
-				fastMove: pokemonList[i].fastMove.moveId,
-				chargedMoves: []
-			};
-
-			for(var n = 0; n < pokemonList[i].chargedMoves.length; n++){
-				obj.chargedMoves.push(pokemonList[i].chargedMoves[n].moveId);
-			}
-
-			if(pokemonList[i].shadowType != "normal"){
-				obj.shadowType = pokemonList[i].shadowType;
-			}
-
-			if(pokemonList[i].isCustom){
-				obj.level = pokemonList[i].level;
-				obj.ivs = [pokemonList[i].ivs.atk, pokemonList[i].ivs.def, pokemonList[i].ivs.hp];
-			}
-
-			if(isTeamSheet){
-				obj.cp = pokemonList[i].cp;
-				obj.hp = pokemonList[i].stats.hp;
-				obj.bestBuddy = pokemonList[i].level > 50;
-				obj.isShadow = pokemonList[i].shadowType == "shadow";
-			}
-
-			arr.push(obj);
+			arr.push(exportPokemonData(pokemonList[i], isTeamSheet, includeSessionFields));
 		}
 
-		return JSON.stringify(arr);
+		return arr;
+	}
+
+	function exportPokemonData(pokemon, isTeamSheet, includeSessionFields){
+		var obj = {
+			speciesId: pokemon.speciesId,
+			fastMove: pokemon.fastMove ? pokemon.fastMove.moveId : false,
+			chargedMoves: pokemon.chargedMoves.filter(move => move).map(move => move.moveId)
+		};
+
+		addWhen(obj, "shadowType", pokemon.shadowType, pokemon.shadowType != "normal");
+		addWhen(obj, "level", pokemon.level, pokemon.isCustom || includeSessionFields);
+		addWhen(obj, "ivs", [pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp], pokemon.isCustom || includeSessionFields);
+
+		if(includeSessionFields){
+			addSessionExportFields(obj, pokemon);
+		}
+
+		if(isTeamSheet){
+			addTeamSheetExportFields(obj, pokemon);
+		}
+
+		return obj;
+	}
+
+	function addWhen(obj, key, value, condition){
+		if(condition){
+			obj[key] = value;
+		}
+	}
+
+	function addSessionExportFields(obj, pokemon){
+		obj.isCustom = pokemon.isCustom;
+		obj.shadowType = pokemon.shadowType;
+		obj.baitShields = pokemon.baitShields;
+		obj.optimizeMoveTiming = pokemon.optimizeMoveTiming;
+		obj.startCooldown = pokemon.startCooldown;
+		obj.startStatBuffs = pokemon.startStatBuffs;
+		obj.startingShields = pokemon.startingShields;
+	}
+
+	function addTeamSheetExportFields(obj, pokemon){
+		obj.cp = pokemon.cp;
+		obj.hp = pokemon.stats.hp;
+		obj.bestBuddy = pokemon.level > 50;
+		obj.isShadow = pokemon.shadowType == "shadow";
+	}
+
+	// Convert the current Pokemon list into exportable and savable JSON
+
+	this.convertListToJSON = function(isTeamSheet = false){
+		return JSON.stringify(self.exportPokemonList(isTeamSheet, false));
+	}
+
+	// Normalize supported JSON import shapes into a Pokemon array
+
+	function getPokemonImportData(data){
+		if(Array.isArray(data)){
+			return data;
+		}
+
+		if(data && Array.isArray(data.pokemon)){
+			return data.pokemon;
+		}
+
+		return false;
+	}
+
+	// Import either structured JSON or CSV text
+
+	this.importListText = function(text){
+		try{
+			var data = getPokemonImportData(JSON.parse(text));
+
+			if(data){
+				return self.importPokemonList(data);
+			}
+		} catch(err){
+		}
+
+		self.quickFillCSV(text);
+
+		return true;
+	}
+
+	// Populate the current Pokemon list from structured data
+
+	this.importPokemonList = function(data){
+		data = getPokemonImportData(data);
+
+		if(! data){
+			return false;
+		}
+
+		pokemonList = [];
+
+		for(var i = 0; i < data.length; i++){
+			if(pokemonList.length >= maxPokemonCount){
+				break;
+			}
+
+			var poke = createPokemonFromImportData(data[i]);
+
+			if(poke){
+				pokemonList.push(poke);
+			}
+		}
+
+		self.updateListDisplay();
+
+		return true;
+	}
+
+	function createPokemonFromImportData(item){
+		if(! item || ! item.speciesId){
+			return false;
+		}
+
+		try{
+			var poke = new Pokemon(item.speciesId, 1, battle);
+
+			if(! poke || ! poke.initialize){
+				return false;
+			}
+
+			poke.initialize(battle.getCP(), multiSettings.defaultIVs);
+			applyImportedPokemonFields(poke, item);
+
+			return poke;
+		} catch(e){
+			console.log("Unable to import Pokemon", item, e);
+			return false;
+		}
+	}
+
+	function applyImportedPokemonFields(poke, item){
+		applyImportValue(item, "fastMove", value => poke.selectMove("fast", value));
+		applyImportedChargedMoves(poke, item.chargedMoves);
+		applyImportValue(item, "shadowType", value => poke.setShadowType(value));
+		applyImportedIVs(poke, item.ivs);
+		applyImportValue(item, "level", value => poke.setLevel(value));
+		applyImportedStartBuffs(poke, item.startStatBuffs);
+		applyImportValue(item, "baitShields", value => poke.baitShields = parseInt(value));
+		applyImportValue(item, "optimizeMoveTiming", value => poke.optimizeMoveTiming = value == true || value == 1);
+		applyImportValue(item, "startCooldown", value => poke.startCooldown = parseInt(value));
+		applyImportValue(item, "startingShields", value => poke.setShields(value));
+		applyImportValue(item, "isCustom", value => poke.isCustom = value == true || value == 1);
+	}
+
+	function applyImportValue(item, key, callback){
+		if(item[key] !== undefined){
+			callback(item[key]);
+		}
+	}
+
+	function applyImportedChargedMoves(poke, chargedMoves){
+		if(! Array.isArray(chargedMoves)){
+			return;
+		}
+
+		for(var i = 0; i < 2; i++){
+			var moveId = chargedMoves[i];
+			poke.selectMove("charged", moveId || "none", moveId ? i : 0);
+		}
+	}
+
+	function applyImportedIVs(poke, ivs){
+		if(Array.isArray(ivs) && ivs.length >= 3){
+			poke.setIV("atk", ivs[0]);
+			poke.setIV("def", ivs[1]);
+			poke.setIV("hp", ivs[2]);
+		}
+	}
+
+	function applyImportedStartBuffs(poke, startStatBuffs){
+		if(Array.isArray(startStatBuffs) && startStatBuffs.length >= 2){
+			poke.setStartBuffs([parseInt(startStatBuffs[0]), parseInt(startStatBuffs[1])]);
+		}
 	}
 
 	// Convert the current Pokemon list into exportable and savable JSON
@@ -981,6 +1141,8 @@ function PokeMultiSelect(element){
 			var metaGroup = $(this).find("option:selected").attr("meta-group"+battle.getCP());
 			self.selectGroup(metaGroup);
 		}
+
+		notifyUpdate();
 	});
 
 	// Click the add new Pokemon button
@@ -1152,7 +1314,7 @@ function PokeMultiSelect(element){
 		$(".modal .button.import").on("click", function(e){
 			var data = $(".modal textarea.list-text").val();
 
-			self.quickFillCSV(data);
+			self.importListText(data);
 
 			closeModalWindow();
 		});
@@ -1241,17 +1403,20 @@ function PokeMultiSelect(element){
 		modalWindow("Clear Custom Group", $(".multi-clear-confirm").first());
 
 		$(".modal .yes").click(function(e){
-			pokemonList = [];
-			self.updateListDisplay();
-			$el.find(".quick-fill-select option[value='new']").prop("selected", "selected");
-
-			$el.find(".save-as").hide();
-			$el.find(".save-custom").show();
-			$el.find(".delete-btn").hide();
-
+			clearCurrentSelection();
 			closeModalWindow();
 		});
 	});
+
+	function clearCurrentSelection(){
+		pokemonList = [];
+		self.updateListDisplay();
+		$el.find(".quick-fill-select option[value='new']").prop("selected", "selected");
+
+		$el.find(".save-as").hide();
+		$el.find(".save-custom").show();
+		$el.find(".delete-btn").hide();
+	}
 
 	// Select an option from the form section
 
@@ -1266,6 +1431,7 @@ function PokeMultiSelect(element){
 		var value = parseInt($(e.target).closest(".option").attr("value"));
 
 		multiSettings.shields = value;
+		notifyUpdate();
 	});
 
 	// Change IV settings
@@ -1325,12 +1491,14 @@ function PokeMultiSelect(element){
 
 	$el.find(".bait-picker .option").on("click", function(e){
 		multiSettings.bait = parseInt($(e.target).attr("value"));
+		notifyUpdate();
 	});
 
 	// Change level cap
 
 	$el.find(".pokemon-level-cap-select").on("change", function(e){
 		multiSettings.levelCap = parseInt($el.find(".pokemon-level-cap-select option:selected").val());
+		notifyUpdate();
 	});
 
 	// Show or hide IV's
@@ -1434,6 +1602,222 @@ function PokeMultiSelect(element){
 		}
 	}
 
+	// Set option settings from a session object
+
+	this.setSettings = function(obj){
+		if(! obj){
+			return;
+		}
+
+		applyImportValue(obj, "shields", value => self.setShields(parseInt(value)));
+		applyImportValue(obj, "ivs", value => multiSettings.ivs = value);
+		applyImportValue(obj, "bait", value => self.setBaitSetting(parseInt(value)));
+		applyImportValue(obj, "levelCap", value => multiSettings.levelCap = parseInt(value));
+		applyImportValue(obj, "startHp", value => updateInput("input.start-hp", parseFloat(value) * 100));
+		applyImportValue(obj, "startEnergy", value => updateInput("input.start-energy", parseInt(value)));
+		applyStartStatBuffSettings(obj.startStatBuffs);
+		toggleCheckWhenChanged(".check.switch-delay", obj.startCooldown, multiSettings.startCooldown, parseInt);
+		toggleCheckWhenChanged(".check.optimize-timing", obj.optimizeMoveTiming, multiSettings.optimizeMoveTiming, normalizeBoolean);
+
+		notifyUpdate();
+	}
+
+	function updateInput(selector, value){
+		$el.find(selector).val(value);
+		$el.find(selector).trigger("change");
+	}
+
+	function applyStartStatBuffSettings(startStatBuffs){
+		if(Array.isArray(startStatBuffs) && startStatBuffs.length >= 2){
+			$el.find("input.stat-mod").eq(0).val(parseInt(startStatBuffs[0]));
+			$el.find("input.stat-mod").eq(1).val(parseInt(startStatBuffs[1]));
+			$el.find("input.stat-mod").trigger("change");
+		}
+	}
+
+	function toggleCheckWhenChanged(selector, value, currentValue, normalize){
+		if(value !== undefined && currentValue != normalize(value)){
+			$el.find(selector).trigger("click");
+		}
+	}
+
+	function normalizeBoolean(value){
+		return value == true || value == 1;
+	}
+
+	// Export this selector's Matrix session state
+
+	this.exportSessionData = function(){
+		return {
+			selection: {
+				selectedGroup: selectedGroup,
+				selectedGroupType: selectedGroupType,
+				filterMode: filterMode
+			},
+			battleSettings: {
+				shields: multiSettings.shields,
+				ivs: multiSettings.ivs,
+				bait: multiSettings.bait,
+				levelCap: multiSettings.levelCap,
+				startHp: multiSettings.startHp,
+				startEnergy: multiSettings.startEnergy,
+				startCooldown: multiSettings.startCooldown,
+				optimizeMoveTiming: multiSettings.optimizeMoveTiming,
+				startStatBuffs: multiSettings.startStatBuffs
+			},
+			pokemon: self.exportPokemonList(false, true)
+		};
+	}
+
+	// Import this selector's Matrix session state
+
+	this.importSessionData = function(data){
+		if(! data){
+			return false;
+		}
+
+		data = normalizeSessionData(data);
+
+		applyImportValue(data.selection, "filterMode", value => self.setFilterMode(value));
+		applyImportValue(data, "battleSettings", value => self.setSettings(value));
+
+		self.importPokemonList(data.pokemon || []);
+
+		selectedGroup = data.selection.selectedGroup || "new";
+		selectedGroupType = data.selection.selectedGroupType || "";
+		selectQuickFillOption(selectedGroup);
+
+		return true;
+	}
+
+	function normalizeSessionData(data){
+		if(data.selection && data.battleSettings){
+			return data;
+		}
+
+		return {
+			selection: {
+				selectedGroup: data.selectedGroup,
+				selectedGroupType: data.selectedGroupType,
+				filterMode: data.filterMode
+			},
+			battleSettings: data.settings,
+			pokemon: data.pokemon
+		};
+	}
+
+	// Enable reusable localStorage autosave/restore for this selector
+
+	this.enablePersistence = function(key, options){
+		options = options || {};
+
+		var restore = options.restore !== false;
+		var shouldSave = typeof options.shouldSave === "function" ? options.shouldSave : function(){
+			return true;
+		};
+
+		self.addUpdateCallback(function(){
+			schedulePersistedStateSave(key, shouldSave);
+		});
+
+		if(restore){
+			restorePersistedState(key);
+		}
+	}
+
+	function schedulePersistedStateSave(key, shouldSave){
+		if(isRestoringPersistedState || ! shouldSave()){
+			return;
+		}
+
+		clearTimeout(persistenceSaveTimeout);
+
+		persistenceSaveTimeout = setTimeout(function(){
+			savePersistedState(key);
+		}, 500);
+	}
+
+	function savePersistedState(key){
+		var now = new Date();
+		var payload = {
+			type: multiSelectPersistenceType,
+			version: multiSelectPersistenceVersion,
+			savedAt: now.toISOString(),
+			expiresAt: new Date(now.getTime() + multiSelectPersistenceTTLMs).toISOString(),
+			data: self.exportSessionData()
+		};
+
+		try{
+			window.localStorage.setItem(key, JSON.stringify(payload));
+		} catch(e){
+			console.log("Unable to save multi-select state", e);
+		}
+	}
+
+	function restorePersistedState(key){
+		var state = getPersistedState(key);
+
+		if(! state){
+			return false;
+		}
+
+		isRestoringPersistedState = true;
+
+		try{
+			self.importSessionData(state.data);
+		} finally{
+			isRestoringPersistedState = false;
+		}
+
+		return true;
+	}
+
+	function getPersistedState(key){
+		var state = parsePersistedState(key);
+
+		if(isValidPersistedState(state)){
+			return state;
+		}
+
+		removePersistedState(key);
+
+		return false;
+	}
+
+	function parsePersistedState(key){
+		try{
+			var data = JSON.parse(window.localStorage.getItem(key));
+			return data;
+		} catch(e){
+			return false;
+		}
+	}
+
+	function isValidPersistedState(state){
+		return state
+			&& state.type == multiSelectPersistenceType
+			&& state.version == multiSelectPersistenceVersion
+			&& state.data
+			&& ! isPersistedStateExpired(state);
+	}
+
+	function isPersistedStateExpired(state){
+		return state.expiresAt && Date.parse(state.expiresAt) <= Date.now();
+	}
+
+	function removePersistedState(key){
+		try{
+			window.localStorage.removeItem(key);
+		} catch(e){
+		}
+	}
+
+	function selectQuickFillOption(group){
+		var option = $el.find(".quick-fill-select option[value='"+group+"']").length > 0 ? group : "new";
+
+		$el.find(".quick-fill-select option[value='"+option+"']").prop("selected", "selected");
+	}
+
 	// Set the context for this multiselector
 
 	this.setContext = function(val){
@@ -1470,10 +1854,19 @@ function PokeMultiSelect(element){
 		return pokeSelector;
 	}
 
+	this.clearSelection = function(){
+		clearCurrentSelection();
+	}
+
 	// Set the callback function for when the Pokemon list is updated
 	this.setUpdateCallback = function(callback){
+		updateCallbacks = [];
+		self.addUpdateCallback(callback);
+	}
+
+	this.addUpdateCallback = function(callback){
 		if(typeof callback === "function"){
-			updateCallback = callback;
+			updateCallbacks.push(callback);
 		}
 	}
 
@@ -1705,6 +2098,8 @@ function PokeMultiSelect(element){
 		if($el.find(".start-hp").val() == ''){
 			multiSettings.startHp = 1;
 		}
+
+		notifyUpdate();
 	});
 
 	// Enter starting energy
@@ -1723,6 +2118,8 @@ function PokeMultiSelect(element){
 		if($el.find(".start-energy").val() == ''){
 			multiSettings.startEnergy = 0;
 		}
+
+		notifyUpdate();
 	});
 
 	// Turn switch delay on or off
@@ -1731,12 +2128,14 @@ function PokeMultiSelect(element){
 		// Cooldown decreases at the start of the battle step, so a start value of 1000 will result in a 500 ms delay
 		multiSettings.startCooldown = multiSettings.startCooldown == 0 ? multiSettings.startCooldown = 1000 : multiSettings.startCooldown = 0;
 		console.log(multiSettings.startCooldown);
+		notifyUpdate();
 	});
 
 	// Turn move optimization on or off
 
 	$el.find(".check.optimize-timing").on("click", function(e){
 		multiSettings.optimizeMoveTiming = (! multiSettings.optimizeMoveTiming);
+		notifyUpdate();
 	});
 
 	// Change stat modifier options
@@ -1799,6 +2198,8 @@ function PokeMultiSelect(element){
 		} else if(adjustmentDef < 1){
 			$el.find(".adjustment.defense .value").addClass("buff");
 		}
+
+		notifyUpdate();
 	});
 
 	// Returns a region based on dex number

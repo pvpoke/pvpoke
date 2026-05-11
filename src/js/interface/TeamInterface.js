@@ -25,6 +25,13 @@ var InterfaceMaster = (function () {
 			var counterTeam;
 			var self = this;
 			var runningResults = false;
+			var multiSelectorPersistenceKeys = [
+				"teamBuilderTeamSelector:v1",
+				"teamBuilderCustomThreatsSelector:v1",
+				"teamBuilderCustomAlternativesSelector:v1",
+				"teamBuilderExcludeAlternativesSelector:v1",
+				"teamBuilderExcludeThreatsSelector:v1"
+			];
 
 			var histograms = [];
 
@@ -46,6 +53,12 @@ var InterfaceMaster = (function () {
 
 				multiSelectors[0].setMaxPokemonCount(6);
 				multiSelectors[0].setContext("team");
+
+				for(var i = 0; i < multiSelectors.length; i++){
+					multiSelectors[i].enablePersistence(multiSelectorPersistenceKeys[i], {
+						restore: ! get
+					});
+				}
 
 
 				$(".format-select").on("change", selectFormat);

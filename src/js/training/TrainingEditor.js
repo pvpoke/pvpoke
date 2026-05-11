@@ -26,6 +26,7 @@ var InterfaceMaster = (function () {
 				multiSelector = new PokeMultiSelect($(".poke.multi"));
 				multiSelector.init(gm.data.pokemon, battle);
 				multiSelector.setMaxPokemonCount(partySize);
+				multiSelector.enablePersistence("trainingEditorTeamSelector:v1");
 
 				// Hide the CP and advanced IV's section of the pokeSelector
 				$(".poke.single h3.cp, .poke.single .advanced-section").hide();
