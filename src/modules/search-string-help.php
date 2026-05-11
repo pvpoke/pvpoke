@@ -1,5 +1,6 @@
 <div class="sandbox-search-strings article hide">
 	<p>You can use the following search formats to filter Pokemon:</p>
+	<p>Pokemon name searches tolerate minor typos.</p>
 	<table cellspacing="0">
 		<tr>
 			<td><strong>Pokemon Name</strong></td>

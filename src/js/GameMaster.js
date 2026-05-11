@@ -1339,9 +1339,13 @@ var GameMaster = (function () {
 		object.generatePokemonListFromSearchString = function(str, battle){
 
 
+			if(! battle){
+				battle = new Battle();
+			}
+
 			// Break the search string up into queries
 			var queries = str.toLowerCase().split(/\s*,\s*/);
-			var searchKey = queries.join() + battle.getCP() + battle.getCup().name;
+			var searchKey = "fuzzy-v1|" + queries.join() + battle.getCP() + battle.getCup().name;
 
 			// don't bother searching if any of the terms are empty
 			// as all pokemon will be valid
@@ -1363,10 +1367,6 @@ var GameMaster = (function () {
 			var metaKey = $(".format-select option:selected").first().attr("meta-group");
 			let rankingKey = battle.getCup().name + "overall" + battle.getCP();
 
-			if(! battle){
-				battle = new Battle();
-			}
-
 			for(var i = 0; i < queries.length; i++){
 				var query = queries[i];
 
@@ -1385,6 +1385,7 @@ var GameMaster = (function () {
 						var param = params[j];
 						var isNot = false;
 						var valid = false;
+						var skipPlainNameSearch = false;
 
 						if(param.length == 0){
 							if(params.length == 1){
@@ -1401,6 +1402,7 @@ var GameMaster = (function () {
 						// Evolution family search
 						if((param.charAt(0) == "+")&&(param.length > 2)){
 							param = param.substr(1, param.length-1);
+							skipPlainNameSearch = true;
 
 							var searchPokemon = object.getPokemonById(param);
 
@@ -1472,11 +1474,6 @@ var GameMaster = (function () {
 								}
 							}
 						} else{
-							// Name search
-							if(pokemon.speciesName.toLowerCase().startsWith(param)){
-								valid = true;
-							}
-
 							// Type search
 							if(pokemon.types.indexOf(param) > -1){
 								valid = true;
@@ -1623,6 +1620,11 @@ var GameMaster = (function () {
 									}
 								}
 							}
+
+							// Name and nickname search
+							if(! valid && ! skipPlainNameSearch && ! isStructuredPokemonSearchParam(param, types, tags, regions)){
+								valid = matchesPokemonNameParam(param, pokemon, isNot);
+							}
 						}
 
 						if(((valid)&&(!isNot))||((!valid)&&(isNot))){
@@ -1638,6 +1640,53 @@ var GameMaster = (function () {
 
 			object.searchStringCache[searchKey] = results
 			return results;
+		}
+
+		function matchesPokemonNameParam(param, pokemon, isNot){
+			var nicknames = pokemon.nicknames || [];
+
+			if(isNot){
+				return pokemon.speciesName.toLowerCase().startsWith(param) || nicknames.indexOf(param) > -1;
+			}
+
+			if(typeof FuzzySearch !== "undefined"){
+				return FuzzySearch.getPokemonNameMatch(param, pokemon).matched;
+			}
+
+			return pokemon.speciesName.toLowerCase().startsWith(param) || nicknames.indexOf(param) > -1;
+		}
+
+		function isStructuredPokemonSearchParam(param, types, tags, regions){
+			// Keep this guard aligned with the structured searches above. It only controls
+			// when fuzzy name matching is allowed, so its patterns are intentionally
+			// stricter than some legacy inline checks like param.indexOf("k") > -1.
+			var exactTerms = ["meta", "xl", "hundo", "4*", "notes"];
+			var structuredLists = [
+				types,
+				tags,
+				object.data.pokemonTraits.pros,
+				object.data.pokemonTraits.cons
+			];
+			var structuredPatterns = [
+				/^\d+$/,
+				/^\d+k$/,
+				/^\d+km$/,
+				/^\d+pts?$/
+			];
+
+			var matchesListTerm = structuredLists.some(function(list){
+				return list.indexOf(param) > -1;
+			});
+
+			var matchesPattern = structuredPatterns.some(function(pattern){
+				return pattern.test(param);
+			});
+
+			var matchesRegion = regions.some(function(region){
+				return param == region.string || param == region.name;
+			});
+
+			return exactTerms.indexOf(param) > -1 || matchesListTerm || matchesPattern || matchesRegion;
 		}
 
 		// Generate a list of moves given a search string
