@@ -53,16 +53,11 @@ var FuzzySearch = new function(){
 			compactNicknames: compactNicknames
 		};
 
-		Object.defineProperty(pokemon, "_search", {
-			value: searchCache,
-			writable: true,
-			configurable: true
-		});
+		pokemon._search = searchCache;
 
 		return pokemon._search;
 	}
 
-	// Typo-tolerant plus prefix-aware matching: exact, compact, prefix, token prefix, nickname, and edit-distance variants.
 	this.getPokemonNameMatch = function(param, pokemon){
 		var query = self.normalize(param);
 

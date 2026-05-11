@@ -1073,7 +1073,7 @@ function PokeSelect(element, i){
 			}
 
 			if(searchArr[i].nicknames){
-				var nicknameMatched = false;
+				let nicknameMatched = false;
 
 				for(var n = 0; n < searchArr[i].nicknames.length; n++){
 					if(searchArr[i].nicknames[n].startsWith(searchStr)){

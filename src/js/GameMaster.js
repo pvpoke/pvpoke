@@ -1507,23 +1507,17 @@ var GameMaster = (function () {
 							}
 
 							// Move cost search
-							if(param.indexOf("k") > -1){
-								if(/^\d+k$/.test(param)){
-									matchedStructured = true;
-								}
-								var arr = param.split("k");
-								if(pokemon.thirdMoveCost == parseInt(arr[0]) * 1000){
+							if(/^\d+k$/.test(param)){
+								matchedStructured = true;
+								if(pokemon.thirdMoveCost == parseInt(param) * 1000){
 									valid = true;
 								}
 							}
 
 							// Buddy distance search
-							if(param.indexOf("km") > -1){
-								if(/^\d+km$/.test(param)){
-									matchedStructured = true;
-								}
-								var arr = param.split("km");
-								if(pokemon.buddyDistance == parseInt(arr[0])){
+							if(/^\d+km$/.test(param)){
+								matchedStructured = true;
+								if(pokemon.buddyDistance == parseInt(param)){
 									valid = true;
 								}
 							}
@@ -1562,15 +1556,9 @@ var GameMaster = (function () {
 							}
 
 							// Point/tier search
-							if((param.indexOf("pt") > -1)||(param.indexOf("pts") > -1)){
-								if(/^\d+pts?$/.test(param)){
-									matchedStructured = true;
-								}
-								var val = param.replace("pt","");
-								val = param.replace("pts","");
-								val = parseInt(val);
-
-								if(object.getPokemonTier(pokemon.speciesId, pokemon.getBattle().getCup()) == val){
+							if(/^\d+pts?$/.test(param)){
+								matchedStructured = true;
+								if(object.getPokemonTier(pokemon.speciesId, pokemon.getBattle().getCup()) == parseInt(param)){
 									valid = true;
 								}
 							}
