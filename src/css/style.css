@@ -5333,6 +5333,12 @@ a.pokebattler {
 .custom-rankings .filters .filter[type=moveType] .field-section.move-type {
   display: block;
 }
+.custom-rankings .filters .dex-range-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
 .custom-rankings .advanced .flex-section {
   display: flex;
 }

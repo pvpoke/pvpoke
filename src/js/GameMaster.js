@@ -1208,9 +1208,19 @@ var GameMaster = (function () {
 									break;
 
 								case "dex":
-									if((pokemon.dex >= filter.values[0])&&(pokemon.dex <= filter.values[1])){
-										filtersMatched++;
+									// Assess multiple ranges in two-value increments
+									for(let k = 0; k < filter.values.length; k+=2){
+										// Catch if no value range exists
+										if(k + 1 >= filter.values.length){
+											break;
+										}
+
+										if(pokemon.dex >= filter.values[k] && pokemon.dex <= filter.values[k+1]){
+											filtersMatched++;
+											break;
+										}
 									}
+
 									break;
 
 								case "tag":
