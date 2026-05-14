@@ -42848,7 +42848,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_FLITTLE",
             "evolutions": ["espathra"]
@@ -42874,7 +42874,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_FLITTLE",
             "parent": "flittle"
