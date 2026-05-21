@@ -24,32 +24,6 @@
 		]
 	},
 	{
-		"title": "Fantasy Cup",
-		"cup": "fantasy",
-		"cp": 1500,
-		"meta": "fantasy",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
-		]
-	},
-	{
-		"title": "Jungle Cup",
-		"cup": "jungle",
-		"cp": 1500,
-		"meta": "jungle",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "NAIC 2026 Championship Series Cup",
 		"cup": "naic2026",
 		"cp": 1500,

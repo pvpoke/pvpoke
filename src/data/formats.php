@@ -30,36 +30,6 @@ $formats = array (
   ),
   2 => 
   array (
-    'title' => 'Fantasy Cup',
-    'cup' => 'fantasy',
-    'cp' => 1500,
-    'meta' => 'fantasy',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Dragon-, Steel-, and Fairy-type Pokémon are eligible.',
-    ),
-  ),
-  3 => 
-  array (
-    'title' => 'Jungle Cup',
-    'cup' => 'jungle',
-    'cp' => 1500,
-    'meta' => 'jungle',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.',
-    ),
-  ),
-  4 => 
-  array (
     'title' => 'NAIC 2026 Championship Series Cup',
     'cup' => 'naic2026',
     'cp' => 1500,
@@ -75,7 +45,7 @@ $formats = array (
       3 => 'The following Pokemon are not allowed: Araquanid, Carbink, Chansey, Chinchou, Claydol, Clefable, Cresselia, Dedenne, Diggersby, Farfetch\'d, Gastrodon, Golisopod, Greedent, Jellicent, Lanturn, Lickilicky, Lickitung, Lugia, Medicham, Oranguru, Poliwrath',
     ),
   ),
-  5 => 
+  3 => 
   array (
     'title' => 'Battle Frontier (Bayou Cup)',
     'cup' => 'bayou',
@@ -85,7 +55,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  4 => 
   array (
     'title' => 'Battle Frontier (Spellcraft Cup)',
     'cup' => 'spellcraft',
@@ -95,7 +65,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  5 => 
   array (
     'title' => 'Battle Frontier (UL Retro)',
     'cup' => 'bfretro',
@@ -105,7 +75,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -115,7 +85,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  7 => 
   array (
     'title' => 'Devon Equinox Cup',
     'cup' => 'equinox',
@@ -125,7 +95,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  8 => 
   array (
     'title' => 'Devon Maelstrom Cup',
     'cup' => 'maelstrom',
@@ -135,7 +105,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  9 => 
   array (
     'title' => 'Devon Cosy Cup',
     'cup' => 'cosy',
@@ -145,7 +115,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  12 => 
+  10 => 
   array (
     'title' => 'Gymbreakers LAIC 2025 Remix',
     'cup' => 'laic2025remix',
@@ -155,7 +125,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  13 => 
+  11 => 
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -165,7 +135,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  14 => 
+  12 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -175,7 +145,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  15 => 
+  13 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -185,7 +155,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  16 => 
+  14 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
