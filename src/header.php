@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.37.3';
+$SITE_VERSION = '1.37.3.1';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -223,7 +223,7 @@ if(! isset($OG_IMAGE)){
 	<?php  if(true): // Removing this but saving code for future use ?>
 		<?php if(strpos($_SERVER['REQUEST_URI'], 'forever-forward') == false): ?>
 			<div class="header-ticker">
-				<a href="https://pvpoke.com/memories/rankings/">Preview next season</a>
+				<a href="https://pvpoke.com/forever-forward/rankings/">Preview next season</a>
 			</div>
 		<?php else: ?>
 			<div class="header-ticker old-version">
