@@ -165,9 +165,20 @@
         "chargedMoves": ["AURA_WHEEL_ELECTRIC", "PSYCHIC_FANGS"]
     },
     {
+        "speciesId": "ninetales",
+        "fastMove": "EMBER",
+        "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"]
+    },
+    {
         "speciesId": "ninetales_alolan",
         "fastMove": "POWDER_SNOW",
         "chargedMoves": ["WEATHER_BALL_ICE", "CHILLING_WATER"]
+    },
+    {
+        "speciesId": "ninetales_shadow",
+        "fastMove": "EMBER",
+        "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "quagsire",
@@ -261,14 +272,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "ninetales",
-        "fastMove": "EMBER",
-        "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"]
-    },
-    {
-        "speciesId": "ninetales_shadow",
-        "fastMove": "EMBER",
-        "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"],
-        "shadowType": "shadow"
+        "speciesId": "dewgong",
+        "fastMove": "ICE_SHARD",
+        "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
     }
 ]
