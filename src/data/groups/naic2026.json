@@ -7,25 +7,11 @@
         "ivs": [4, 15, 13]
     },
     {
-        "speciesId": "barbaracle",
-        "fastMove": "FURY_CUTTER",
-        "chargedMoves": ["CROSS_CHOP", "STONE_EDGE"],
-        "level": 20.5,
-        "ivs": [6, 15, 15]
-    },
-    {
         "speciesId": "blastoise",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"],
         "level": 23,
         "ivs": [4, 8, 15]
-    },
-    {
-        "speciesId": "castform",
-        "fastMove": "HEX",
-        "chargedMoves": ["WEATHER_BALL_ROCK", "ENERGY_BALL"],
-        "level": 39.5,
-        "ivs": [4, 15, 14]
     },
     {
         "speciesId": "dewott",
@@ -37,16 +23,9 @@
     {
         "speciesId": "dubwool",
         "fastMove": "DOUBLE_KICK",
-        "chargedMoves": ["BODY_SLAM", "WILD_CHARGE"],
+        "chargedMoves": ["BODY_SLAM", "PAYBACK"],
         "level": 25.5,
         "ivs": [5, 14, 14]
-    },
-    {
-        "speciesId": "dunsparce",
-        "fastMove": "ROLLOUT",
-        "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"],
-        "level": 37.5,
-        "ivs": [4, 15, 13]
     },
     {
         "speciesId": "feraligatr",
@@ -64,21 +43,6 @@
         "ivs": [5, 11, 14]
     },
     {
-        "speciesId": "florges",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["TRAILBLAZE", "DISARMING_VOICE"],
-        "level": 17,
-        "ivs": [6, 13, 14]
-    },
-    {
-        "speciesId": "gallade_shadow",
-        "fastMove": "PSYCHO_CUT",
-        "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE"],
-        "shadowType": "shadow",
-        "level": 18,
-        "ivs": [4, 9, 15]
-    },
-    {
         "speciesId": "grumpig",
         "fastMove": "PSYWAVE",
         "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_BALL"],
@@ -92,14 +56,6 @@
         "shadowType": "shadow",
         "level": 23.5,
         "ivs": [4, 15, 15]
-    },
-    {
-        "speciesId": "gyarados_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
-        "shadowType": "shadow",
-        "level": 16.5,
-        "ivs": [4, 14, 7]
     },
     {
         "speciesId": "hypno",
@@ -119,24 +75,17 @@
     {
         "speciesId": "kingdra",
         "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SWIFT", "OUTRAGE"],
+        "chargedMoves": ["SWIFT", "SURF"],
         "level": 21,
         "ivs": [5, 15, 12]
     },
     {
         "speciesId": "kingdra_shadow",
         "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SWIFT", "OUTRAGE"],
+        "chargedMoves": ["SWIFT", "SURF"],
         "shadowType": "shadow",
         "level": 21,
         "ivs": [5, 15, 12]
-    },
-    {
-        "speciesId": "lapras",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["SPARKLING_ARIA", "SKULL_BASH"],
-        "level": 21.5,
-        "ivs": [4, 11, 12]
     },
     {
         "speciesId": "linoone",
@@ -144,20 +93,6 @@
         "chargedMoves": ["SWIFT", "GRASS_KNOT"],
         "level": 38.5,
         "ivs": [4, 15, 11]
-    },
-    {
-        "speciesId": "lunatone",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["WEATHER_BALL_ICE", "ROCK_SLIDE"],
-        "level": 24,
-        "ivs": [4, 13, 15]
-    },
-    {
-        "speciesId": "mew",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["WILD_CHARGE", "PSYSHOCK"],
-        "level": 16.5,
-        "ivs": [12, 10, 14]
     },
     {
         "speciesId": "miltank",
@@ -188,84 +123,39 @@
         "ivs": [4, 14, 14]
     },
     {
-        "speciesId": "orbeetle",
-        "fastMove": "CONFUSION",
-        "chargedMoves": ["PSYSHOCK", "BUG_BUZZ"],
-        "level": 25.5,
-        "ivs": [4, 10, 14]
-    },
-    {
         "speciesId": "quagsire",
         "fastMove": "MUD_SHOT",
-        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
+        "chargedMoves": ["AQUA_TAIL", "MUD_BOMB"],
         "level": 28.5,
         "ivs": [4, 15, 10]
     },
     {
         "speciesId": "quagsire_shadow",
         "fastMove": "MUD_SHOT",
-        "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
+        "chargedMoves": ["AQUA_TAIL", "MUD_BOMB"],
         "shadowType": "shadow",
         "level": 28.5,
         "ivs": [4, 15, 10]
     },
     {
-        "speciesId": "raichu_alolan",
-        "fastMove": "THUNDER_SHOCK",
-        "chargedMoves": ["WILD_CHARGE", "TRAILBLAZE"],
-        "level": 24,
-        "ivs": [6, 14, 15]
-    },
-    {
         "speciesId": "samurott",
         "fastMove": "FURY_CUTTER",
         "chargedMoves": ["HYDRO_CANNON", "MEGAHORN"],
+        "shadowType": "shadow",
         "level": 19.5,
         "ivs": [5, 14, 15]
     },
     {
-        "speciesId": "slowking_galarian",
-        "fastMove": "ACID",
-        "chargedMoves": ["PSYSHOCK", "SHADOW_BALL"],
-        "level": 20.5,
-        "ivs": [4, 15, 13]
-    },
-    {
-        "speciesId": "swampert_shadow",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
-        "shadowType": "shadow",
-        "level": 18.5,
-        "ivs": [6, 15, 12]
-    },
-    {
-        "speciesId": "tentacruel",
-        "fastMove": "ACID",
-        "chargedMoves": ["SCALD", "PAYBACK"],
-        "level": 23,
-        "ivs": [4, 15, 15]
-    },
-    {
         "speciesId": "togekiss",
         "fastMove": "PECK",
-        "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"],
+        "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"],
         "level": 16.5,
         "ivs": [4, 15, 15]
     },
     {
-        "speciesId": "toucannon_shadow",
+        "speciesId": "toucannon",
         "fastMove": "PECK",
-        "chargedMoves": ["BEAK_BLAST", "DRILL_PECK"],
-        "shadowType": "shadow",
-        "level": 20.5,
-        "ivs": [5, 14, 14]
-    },
-    {
-        "speciesId": "uxie",
-        "fastMove": "CONFUSION",
-        "chargedMoves": ["SWIFT", "THUNDER"],
-        "level": 22,
-        "ivs": [7, 11, 14]
+        "chargedMoves": ["BEAK_BLAST", "DRILL_PECK"]
     },
     {
         "speciesId": "weezing_galarian",
@@ -281,5 +171,60 @@
         "shadowType": "shadow",
         "level": 24.5,
         "ivs": [4, 14, 13]
+    },
+    {
+        "speciesId": "pidgeot",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["TWISTER", "BRAVE_BIRD"]
+    },
+    {
+        "speciesId": "mantine",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["TWISTER", "WATER_PULSE"]
+    },
+    {
+        "speciesId": "pelipper",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+    },
+    {
+        "speciesId": "slowking_galarian",
+        "fastMove": "ACID",
+        "chargedMoves": ["PSYSHOCK", "SHADOW_BALL"]
+    },
+    {
+        "speciesId": "orbeetle",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": ["PSYSHOCK", "BUG_BUZZ"]
+    },
+    {
+        "speciesId": "lumineon",
+        "fastMove": "GUST",
+        "chargedMoves": ["AQUA_TAIL", "SILVER_WIND"]
+    },
+    {
+        "speciesId": "aromatisse",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["PSYSHOCK", "MOONBLAST"]
+    },
+    {
+        "speciesId": "sylveon",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["PSYSHOCK", "SHADOW_BALL"]
+    },
+    {
+        "speciesId": "kecleon",
+        "fastMove": "SUCKER_PUNCH",
+        "chargedMoves": ["THUNDER_PUNCH", "DYNAMIC_PUNCH"]
+    },
+    {
+        "speciesId": "qwilfish",
+        "fastMove": "POISON_STING",
+        "chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
+    },
+    {
+        "speciesId": "seaking",
+        "fastMove": "PECK",
+        "chargedMoves": ["DRILL_RUN", "MEGAHORN"]
     }
 ]
