@@ -233,5 +233,15 @@
         "speciesId": "blaziken_mega",
         "fastMove": "EMBER",
         "chargedMoves": ["AURA_SPHERE", "BLAST_BURN"]
+    },
+    {
+        "speciesId": "mewtwo_mega_x",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": ["PSYSTRIKE", "SHADOW_BALL"]
+    },
+    {
+        "speciesId": "mewtwo_mega_y",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": ["PSYSTRIKE", "SHADOW_BALL"]
     }
 ]
