@@ -38558,15 +38558,18 @@
         },
         "types": ["electric", "none"],
         "fastMoves": ["SPARK", "VOLT_SWITCH"],
-        "chargedMoves": ["THUNDER_PUNCH", "DISCHARGE", "WILD_CHARGE"],
+        "chargedMoves": ["THUNDER_PUNCH", "DISCHARGE", "WILD_CHARGE", "PLASMA_FISTS"],
         "defaultIVs": {
-            "cp500": [5.5, 9, 14, 15],
-            "cp1500": [16, 5, 14, 15],
-            "cp2500": [27, 4, 10, 15]
+            "cp500": [5.5, 12, 11, 12],
+            "cp1500": [15.5, 11, 15, 13],
+            "cp2500": [26.5, 11, 11, 10]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true,
+        "levelFloor": 15,
+        "tags": ["mythical", "untradeable"],
+        "searchPriority": 2
     },
     {
         "dex": 808,
