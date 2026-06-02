@@ -56,6 +56,11 @@
         "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
     },
     {
+        "speciesId": "dewgong",
+        "fastMove": "ICE_SHARD",
+        "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+    },
+    {
         "speciesId": "diggersby",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
@@ -272,8 +277,13 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "dewgong",
-        "fastMove": "ICE_SHARD",
-        "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        "speciesId": "pelipper",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+    },
+    {
+        "speciesId": "lumineon",
+        "fastMove": "GUST",
+        "chargedMoves": ["AQUA_TAIL", "SILVER_WIND"]
     }
 ]
