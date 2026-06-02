@@ -47,6 +47,56 @@ $formats = array (
   ),
   3 => 
   array (
+    'title' => 'Battle Frontier (Bayou Cup)',
+    'cup' => 'bayou',
+    'cp' => 1500,
+    'meta' => 'bayou',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  4 => 
+  array (
+    'title' => 'Battle Frontier (Spellcraft Cup)',
+    'cup' => 'spellcraft',
+    'cp' => 1500,
+    'meta' => 'spellcraft',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  5 => 
+  array (
+    'title' => 'Battle Frontier (UL Retro)',
+    'cup' => 'bfretro',
+    'cp' => 2500,
+    'meta' => 'bfretro',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  6 => 
+  array (
+    'title' => 'Battle Frontier (Master)',
+    'cup' => 'battlefrontiermaster',
+    'cp' => 10000,
+    'meta' => 'battlefrontiermaster',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  7 => 
+  array (
+    'title' => 'Devon Cosy Cup',
+    'cup' => 'cosy',
+    'cp' => 1500,
+    'meta' => 'cosy',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  8 => 
+  array (
     'title' => 'Little Cup',
     'cup' => 'little',
     'cp' => 500,
@@ -55,7 +105,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  4 => 
+  9 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -65,7 +115,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  5 => 
+  10 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

@@ -39,6 +39,51 @@
 		]
 	},
 	{
+		"title": "Battle Frontier (Bayou Cup)",
+		"cup": "bayou",
+		"cp": 1500,
+		"meta": "bayou",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Spellcraft Cup)",
+		"cup": "spellcraft",
+		"cp": 1500,
+		"meta": "spellcraft",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (UL Retro)",
+		"cup": "bfretro",
+		"cp": 2500,
+		"meta": "bfretro",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Master)",
+		"cup": "battlefrontiermaster",
+		"cp": 10000,
+		"meta": "battlefrontiermaster",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Devon Cosy Cup",
+		"cup": "cosy",
+		"cp": 1500,
+		"meta": "cosy",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "Little Cup",
 		"cup": "little",
 		"cp": 500,
