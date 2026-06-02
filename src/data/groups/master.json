@@ -30,6 +30,11 @@
         "chargedMoves": ["AVALANCHE", "ORIGIN_PULSE"]
     },
     {
+        "speciesId": "kyogre",
+        "fastMove": "WATERFALL",
+        "chargedMoves": ["AVALANCHE", "THUNDER"]
+    },
+    {
         "speciesId": "kyurem_black",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["FREEZE_SHOCK", "FUSION_BOLT"]
@@ -55,9 +60,14 @@
         "chargedMoves": ["SHADOW_BALL", "MOONBLAST"]
     },
     {
+        "speciesId": "marshadow",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["CLOSE_COMBAT", "ICE_PUNCH"]
+    },
+    {
         "speciesId": "melmetal",
         "fastMove": "THUNDER_SHOCK",
-        "chargedMoves": ["DOUBLE_IRON_BASH", "THUNDERBOLT"]
+        "chargedMoves": ["DOUBLE_IRON_BASH", "DYNAMIC_PUNCH"]
     },
     {
         "speciesId": "meloetta_aria",
@@ -91,7 +101,7 @@
     },
     {
         "speciesId": "primarina",
-        "fastMove": "CHARM",
+        "fastMove": "WATERFALL",
         "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
     },
     {
@@ -102,7 +112,7 @@
     {
         "speciesId": "rhyperior",
         "fastMove": "MUD_SLAP",
-        "chargedMoves": ["BREAKING_SWIPE", "ROCK_WRECKER"]
+        "chargedMoves": ["DRILL_RUN", "ROCK_WRECKER"]
     },
     {
         "speciesId": "solgaleo",
@@ -113,6 +123,11 @@
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"]
+    },
+    {
+        "speciesId": "tyranitar",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
     },
     {
         "speciesId": "xerneas",
@@ -158,20 +173,5 @@
         "speciesId": "zygarde_complete",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
-    },
-    {
-        "speciesId": "kyogre",
-        "fastMove": "WATERFALL",
-        "chargedMoves": ["AVALANCHE", "THUNDER"]
-    },
-    {
-        "speciesId": "tyranitar",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
-    },
-    {
-        "speciesId": "marshadow",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["CLOSE_COMBAT", "ICE_PUNCH"]
     }
 ]

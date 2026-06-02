@@ -47,96 +47,6 @@ $formats = array (
   ),
   3 => 
   array (
-    'title' => 'Battle Frontier (Bayou Cup)',
-    'cup' => 'bayou',
-    'cp' => 1500,
-    'meta' => 'bayou',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  4 => 
-  array (
-    'title' => 'Battle Frontier (Spellcraft Cup)',
-    'cup' => 'spellcraft',
-    'cp' => 1500,
-    'meta' => 'spellcraft',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  5 => 
-  array (
-    'title' => 'Battle Frontier (UL Retro)',
-    'cup' => 'bfretro',
-    'cp' => 2500,
-    'meta' => 'bfretro',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  6 => 
-  array (
-    'title' => 'Battle Frontier (Master)',
-    'cup' => 'battlefrontiermaster',
-    'cp' => 10000,
-    'meta' => 'battlefrontiermaster',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  7 => 
-  array (
-    'title' => 'Devon Equinox Cup',
-    'cup' => 'equinox',
-    'cp' => 1500,
-    'meta' => 'equinox',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  8 => 
-  array (
-    'title' => 'Devon Maelstrom Cup',
-    'cup' => 'maelstrom',
-    'cp' => 1500,
-    'meta' => 'maelstrom',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  9 => 
-  array (
-    'title' => 'Devon Cosy Cup',
-    'cup' => 'cosy',
-    'cp' => 1500,
-    'meta' => 'cosy',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  10 => 
-  array (
-    'title' => 'Gymbreakers LAIC 2025 Remix',
-    'cup' => 'laic2025remix',
-    'cp' => 1500,
-    'meta' => 'laic2025remix',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  11 => 
-  array (
-    'title' => 'Zygarden Chrono Meta',
-    'cup' => 'chrono',
-    'cp' => 1500,
-    'meta' => 'chrono',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  12 => 
-  array (
     'title' => 'Little Cup',
     'cup' => 'little',
     'cp' => 500,
@@ -145,7 +55,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  4 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -155,7 +65,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  14 => 
+  5 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

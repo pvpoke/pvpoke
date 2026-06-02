@@ -53,12 +53,18 @@
     {
         "speciesId": "dartrix",
         "fastMove": "PECK",
-        "chargedMoves": ["BRAVE_BIRD", "SEED_BOMB"]
+        "chargedMoves": ["BRAVE_BIRD", "ENERGY_BALL"]
     },
     {
         "speciesId": "diggersby",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+    },
+    {
+        "speciesId": "dusknoir_shadow",
+        "fastMove": "ASTONISH",
+        "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_PUNCH"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "empoleon",
@@ -108,6 +114,16 @@
         "chargedMoves": ["SURF", "SHADOW_BALL"]
     },
     {
+        "speciesId": "jumpluff",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["ENERGY_BALL", "ACROBATICS"]
+    },
+    {
+        "speciesId": "kingdra",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SURF", "SWIFT"]
+    },
+    {
         "speciesId": "lickilicky",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
@@ -122,6 +138,17 @@
         "speciesId": "medicham",
         "fastMove": "PSYCHO_CUT",
         "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
+    },
+    {
+        "speciesId": "ninetales",
+        "fastMove": "EMBER",
+        "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"]
+    },
+    {
+        "speciesId": "ninetales_shadow",
+        "fastMove": "EMBER",
+        "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "quagsire",
@@ -144,11 +171,6 @@
         "speciesId": "sealeo",
         "fastMove": "POWDER_SNOW",
         "chargedMoves": ["SURF", "BODY_SLAM"]
-    },
-    {
-        "speciesId": "shelgon",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["TWISTER", "FLAMETHROWER"]
     },
     {
         "speciesId": "steelix",
@@ -194,9 +216,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "dusknoir_shadow",
-        "fastMove": "ASTONISH",
-        "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_PUNCH"],
-        "shadowType": "shadow"
+        "speciesId": "dewgong",
+        "fastMove": "ICE_SHARD",
+        "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
     }
 ]
