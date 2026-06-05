@@ -2531,18 +2531,6 @@
         "turns": 1
     },
     {
-        "moveId": "PLASMA_FISTS",
-        "name": "Plasma Fists",
-        "type": "electric",
-        "power": 60,
-        "energy": 35,
-        "energyGain": 0,
-        "cooldown": 500,
-        "archetype": "Spam/Bait",
-        "turns": 1,
-        "abbreviation": "PlF"
-    },
-    {
         "moveId": "PLAY_ROUGH",
         "name": "Play Rough",
         "type": "fairy",

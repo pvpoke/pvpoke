@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-06-02 22:33:47",
+    "timestamp": "2026-06-05 16:40:07",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -47770,18 +47770,6 @@
             "cooldown": 500,
             "archetype": "Nuke",
             "turns": 1
-        },
-        {
-            "moveId": "PLASMA_FISTS",
-            "name": "Plasma Fists",
-            "type": "electric",
-            "power": 60,
-            "energy": 35,
-            "energyGain": 0,
-            "cooldown": 500,
-            "archetype": "Spam/Bait",
-            "turns": 1,
-            "abbreviation": "PlF"
         },
         {
             "moveId": "PLAY_ROUGH",
