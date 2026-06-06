@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-06-05 16:40:07",
+    "timestamp": "2026-06-06 03:27:40",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -206,6 +206,46 @@
             "exclude": []
         },
         {
+            "name": "equinox",
+            "title": "Equinox Cup",
+            "link": "https://devon.gg",
+            "include": [
+                {
+                    "filterType": "type",
+                    "name": "Type",
+                    "values": ["fire", "flying", "grass", "ground", "normal"]
+                },
+                {
+                    "filterType": "id",
+                    "name": "Species",
+                    "values": ["wailmer", "wailmer_shadow", "wailord", "wailord_shadow"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "type",
+                    "name": "Type",
+                    "values": ["electric", "rock"]
+                },
+                {
+                    "filterType": "tag",
+                    "name": "Tag",
+                    "values": ["mega"]
+                },
+                {
+                    "filterType": "id",
+                    "name": "Species",
+                    "values": ["altaria", "dudunsparce", "dunsparce", "lickilicky", "miltank", "piloswine", "whimsicott", "wigglytuff"]
+                }
+            ],
+            "overrides": [],
+            "league": 1500,
+            "useDefaultMovesets": 1,
+            "levelCap": 50,
+            "excludeLowPokemon": 1,
+            "cup": "equinox"
+        },
+        {
             "name": "gobattleleague",
             "title": "GO Battle League",
             "rankingAlias": "all",
@@ -388,6 +428,15 @@
             "cup": "battlefrontiermaster",
             "cp": 10000,
             "meta": "battlefrontiermaster",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Devon Equinox Cup",
+            "cup": "equinox",
+            "cp": 1500,
+            "meta": "equinox",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
