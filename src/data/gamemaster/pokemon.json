@@ -6449,12 +6449,40 @@
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [39, 12, 13, 14]
         },
+        "tags": ["shadoweligible"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
         "family": {
             "id": "FAMILY_KRABBY",
             "evolutions": ["kingler"]
+        }
+    },
+    {
+        "dex": 98,
+        "speciesName": "Krabby (Shadow)",
+        "speciesId": "krabby_shadow",
+        "baseStats": {
+            "atk": 181,
+            "def": 124,
+            "hp": 102
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["BUBBLE", "MUD_SHOT"],
+        "chargedMoves": ["BUBBLE_BEAM", "VICE_GRIP", "WATER_PULSE", "RAZOR_SHELL"],
+        "defaultIVs": {
+            "cp500": [12, 4, 12, 15],
+            "cp1500": [42, 4, 15, 13],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [39, 12, 13, 14]
+        },
+        "tags": ["shadow"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_KRABBY",
+            "evolutions": ["kingler_shadow"]
         }
     },
     {
@@ -6474,6 +6502,7 @@
             "cp1500": [19.5, 5, 15, 12],
             "cp2500": [35, 4, 15, 13]
         },
+        "tags": ["shadoweligible"],
         "eliteMoves": ["MUD_SHOT"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
@@ -6481,6 +6510,33 @@
         "family": {
             "id": "FAMILY_KRABBY",
             "parent": "krabby"
+        }
+    },
+    {
+        "dex": 99,
+        "speciesName": "Kingler (Shadow)",
+        "speciesId": "kingler_shadow",
+        "baseStats": {
+            "atk": 240,
+            "def": 181,
+            "hp": 146
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["BUBBLE", "METAL_CLAW", "MUD_SHOT"],
+        "chargedMoves": ["VICE_GRIP", "WATER_PULSE", "X_SCISSOR", "CRABHAMMER", "RAZOR_SHELL"],
+        "defaultIVs": {
+            "cp500": [6.5, 11, 14, 15],
+            "cp1500": [19.5, 5, 15, 12],
+            "cp2500": [35, 4, 15, 13]
+        },
+        "tags": ["shadow"],
+        "eliteMoves": ["MUD_SHOT"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_KRABBY",
+            "parent": "krabby_shadow"
         }
     },
     {
