@@ -14,61 +14,63 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Scroll Cup',
-    'cup' => 'scroll',
-    'cp' => 1500,
-    'meta' => 'scroll',
+    'title' => 'Master Premier Cup',
+    'cup' => 'premier',
+    'cp' => 10000,
+    'meta' => 'premiermaster',
     'showCup' => true,
-    'showFormat' => true,
+    'showFormat' => false,
     'showMeta' => true,
+    'hideRankings' => true,
     'rules' => 
     array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Water-, Fighting-, and Dark-type Pokémon are eligible.',
-      2 => 'The following Pokémon will not be allowed: Primarina',
+      0 => 'No CP limit.',
+      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
   2 => 
   array (
-    'title' => 'Holiday Cup',
-    'cup' => 'holiday',
+    'title' => 'NAIC 2026 Championship Series Cup',
+    'cup' => 'naic2026',
     'cp' => 1500,
-    'meta' => 'holiday',
+    'meta' => 'naic2026',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
     'rules' => 
     array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible.',
+      1 => 'Only Fairy-, Normal-, Psychic- and Water-type Pokémon are eligible.',
+      2 => 'The following types are not allowed: Dark, Grass, Steel',
+      3 => 'The following Pokemon are not allowed: Araquanid, Carbink, Chansey, Chinchou, Claydol, Clefable, Cresselia, Dedenne, Diggersby, Farfetch\'d, Gastrodon, Golisopod, Greedent, Jellicent, Lanturn, Lickilicky, Lickitung, Lugia, Medicham, Oranguru, Poliwrath',
     ),
   ),
   3 => 
   array (
-    'title' => 'EUIC 2026 Championship Series Cup',
-    'cup' => 'euic2026',
+    'title' => 'Battle Frontier (Bayou Cup)',
+    'cup' => 'bayou',
     'cp' => 1500,
-    'meta' => 'euic2026',
+    'meta' => 'bayou',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   4 => 
   array (
-    'title' => 'Battle Frontier (Calamity)',
-    'cup' => 'calamity',
+    'title' => 'Battle Frontier (Spellcraft Cup)',
+    'cup' => 'spellcraft',
     'cp' => 1500,
-    'meta' => 'calamity',
+    'meta' => 'spellcraft',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   5 => 
   array (
-    'title' => 'Battle Frontier (Ultra)',
-    'cup' => 'battlefrontierultra',
+    'title' => 'Battle Frontier (UL Retro)',
+    'cup' => 'bfretro',
     'cp' => 2500,
-    'meta' => 'ultra',
+    'meta' => 'bfretro',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
@@ -85,35 +87,25 @@ $formats = array (
   ),
   7 => 
   array (
-    'title' => 'Devon Metamorphosis Cup',
-    'cup' => 'metamorphosis',
+    'title' => 'Devon Equinox Cup',
+    'cup' => 'equinox',
     'cp' => 1500,
-    'meta' => 'metamorphosis',
+    'meta' => 'equinox',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   8 => 
   array (
-    'title' => 'Gymbreakers LAIC 2025 Remix',
-    'cup' => 'laic2025remix',
+    'title' => 'Devon Cosy Cup',
+    'cup' => 'cosy',
     'cp' => 1500,
-    'meta' => 'laic2025remix',
+    'meta' => 'cosy',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   9 => 
-  array (
-    'title' => 'Zygarden Chrono Meta',
-    'cup' => 'chrono',
-    'cp' => 1500,
-    'meta' => 'chrono',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  10 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -123,7 +115,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  11 => 
+  10 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -133,7 +125,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  11 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

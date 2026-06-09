@@ -1,0 +1,49 @@
+{
+    "name": "maelstrom",
+    "title": "Maelstrom Cup",
+    "link": "https://devon.gg",
+    "cup": "maelstrom",
+    "include": [],
+    "exclude": [
+        {
+            "filterType": "id",
+            "name": "Species",
+            "values": [
+                "aegislash_shield",
+                "altaria",
+                "annihilape",
+                "araquanid",
+                "azumarill",
+                "carbink",
+                "corsola_galarian",
+                "corviknight",
+                "doublade",
+                "empoleon",
+                "florges",
+                "forretress",
+                "furret",
+                "gastrodon",
+                "guzzlord",
+                "jellicent",
+                "lickilicky",
+                "marowak",
+                "quagsire",
+                "scizor",
+                "stunfisk",
+                "tinkaton",
+                "wigglytuff"
+            ]
+        },
+        {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": [
+                "mega"
+            ]
+        }
+    ],
+    "overrides": [],
+    "league": 1500,
+    "useDefaultMovesets": 1,
+    "excludeLowPokemon": 1
+}

@@ -10,55 +10,57 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Scroll Cup",
-		"cup": "scroll",
+		"title": "Master Premier Cup",
+		"cup": "premier",
+		"cp": 10000,
+		"meta": "premiermaster",
+		"showCup": true,
+		"showFormat": false,
+		"showMeta": true,
+		"hideRankings": true,
+		"rules": [
+			"No CP limit.",
+			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
+		]
+	},
+	{
+		"title": "NAIC 2026 Championship Series Cup",
+		"cup": "naic2026",
 		"cp": 1500,
-		"meta": "scroll",
+		"meta": "naic2026",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Water-, Fighting-, and Dark-type Pokémon are eligible.",
-			"The following Pokémon will not be allowed: Primarina"
+			"Only Fairy-, Normal-, Psychic- and Water-type Pokémon are eligible.",
+			"The following types are not allowed: Dark, Grass, Steel",
+			"The following Pokemon are not allowed: Araquanid, Carbink, Chansey, Chinchou, Claydol, Clefable, Cresselia, Dedenne, Diggersby, Farfetch'd, Gastrodon, Golisopod, Greedent, Jellicent, Lanturn, Lickilicky, Lickitung, Lugia, Medicham, Oranguru, Poliwrath"
 		]
 	},
 	{
-		"title": "Holiday Cup",
-		"cup": "holiday",
+		"title": "Battle Frontier (Bayou Cup)",
+		"cup": "bayou",
 		"cp": 1500,
-		"meta": "holiday",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
-		]
-	},
-	{
-		"title": "EUIC 2026 Championship Series Cup",
-		"cup": "euic2026",
-		"cp": 1500,
-		"meta": "euic2026",
+		"meta": "bayou",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Calamity)",
-		"cup": "calamity",
+		"title": "Battle Frontier (Spellcraft Cup)",
+		"cup": "spellcraft",
 		"cp": 1500,
-		"meta": "calamity",
+		"meta": "spellcraft",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Ultra)",
-		"cup": "battlefrontierultra",
+		"title": "Battle Frontier (UL Retro)",
+		"cup": "bfretro",
 		"cp": 2500,
-		"meta": "ultra",
+		"meta": "bfretro",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
@@ -73,28 +75,19 @@
 		"showMeta": true
 	},
 	{
-		"title": "Devon Metamorphosis Cup",
-		"cup": "metamorphosis",
+		"title": "Devon Equinox Cup",
+		"cup": "equinox",
 		"cp": 1500,
-		"meta": "metamorphosis",
+		"meta": "equinox",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Gymbreakers LAIC 2025 Remix",
-		"cup": "laic2025remix",
+		"title": "Devon Cosy Cup",
+		"cup": "cosy",
 		"cp": 1500,
-		"meta": "laic2025remix",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Zygarden Chrono Meta",
-		"cup": "chrono",
-		"cp": 1500,
-		"meta": "chrono",
+		"meta": "cosy",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

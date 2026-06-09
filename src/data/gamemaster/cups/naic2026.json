@@ -1,0 +1,24 @@
+{
+    "name": "naic2026",
+    "title": "NAIC 2026 Championship Series Cup",
+    "include": [
+        {
+            "filterType": "type",
+            "values": ["fairy", "normal", "psychic", "water"]
+        }
+    ],
+    "exclude": [
+        {
+            "filterType": "tag",
+            "values": ["mega"]
+        },
+        {
+            "filterType": "type",
+            "values": ["dark", "grass", "steel"]
+        },
+        {
+            "filterType": "id",
+            "values": ["araquanid", "carbink", "chansey", "chinchou", "claydol", "clefable", "cresselia", "dedenne", "diggersby", "farfetchd", "furret", "gastrodon", "golisopod", "greedent", "jellicent", "lanturn", "lickilicky", "lickitung", "lugia", "medicham", "oranguru", "poliwrath", "rotom_wash", "toxapex", "wigglytuff"]
+        }
+    ]
+}

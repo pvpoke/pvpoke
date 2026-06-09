@@ -87,11 +87,14 @@ function Battle(){
 		if(initialize){
 			poke.initialize(cp);
 		}
-
-		if(poke.formChange && poke.activeFormId != poke.startFormId){
+		
+		if(mode == "simulate"){
 			poke.reset();
+		} else if (mode == "emulate" && turns > 1){
+			poke.reset(true);
+			console.log(poke.statBuffs);
 		}
-
+		
 		poke.index = index;
 		pokemon[index] = poke;
 
@@ -1001,9 +1004,11 @@ function Battle(){
 						// Reset the outgoing Pokemon's buffs and debuffs
 						poke.statBuffs = [0,0];
 						poke.startStatBuffs = [0,0];
+						poke.setStartHp(poke.hp);
+						poke.setStartEnergy(poke.energy);
 
 						// Revert current Pokemon to original form
-						if(poke.formChange && poke.activeFormId != poke.originalFormId){
+						if(poke.formChange && poke.activeFormId != poke.originalFormId && poke.formChange?.resetOnSwitch){
 							poke.startFormId = poke.originalFormId;
 							poke.changeForm(poke.originalFormId);
 						}
@@ -1029,6 +1034,7 @@ function Battle(){
 
 		let attackerChangedForm = false;
 		let defenderChangedForm = false;
+		let defenderUsedShield = false;
 
 		// Apply pre-attack form changes
 		if(attacker.formChange && attacker.formChange.trigger == "activate_charged" && attacker.activeFormId != attacker.formChange.alternativeFormId
@@ -1170,13 +1176,14 @@ function Battle(){
 				}
 
 				if(useShield){
-					var damageBlocked = damage-1;
+					let damageBlocked = damage-1;
 
 					let shieldTimelineDescriptions = [damageBlocked];
 
 					damage = 1;
 					defender.shields--;
 					roundShieldUsed = true;
+					defenderUsedShield = true;
 
 					// Apply form changes
 					if(defender.formChange && defender.formChange.trigger == "activate_shield" && defender.activeFormId != defender.formChange.alternativeFormId){
@@ -1251,6 +1258,37 @@ function Battle(){
 					if((defender.hp <= damage)&&(players[0].getSwitchTimer() == 0)&&(players[1].getSwitchTimer()==0)){
 						attacker.battleStats.switchAdvantages++;
 					}
+				}
+			}
+
+			// Special event for Mimikyu, copying shield functionality
+			if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.formChange.effect == "protect" && ! defenderUsedShield){''
+				let damageBlocked = damage-1;
+				let shieldTimelineDescriptions = [damageBlocked, "Form Change", "-1 Defense"];
+
+				damage = 1;
+				roundShieldUsed = true;
+
+				timeline.push(new TimelineEvent("shieldSpecial", "Disguise Busted", defender.index, time+8500, turns, shieldTimelineDescriptions));
+
+				if(mode == "emulate"){
+					turnMessages.push({ index: defender.index, str: "Blocked!"});
+					
+					if(defender.formChange.alternativeFormId == "mimikyu_busted"){
+						turnMessages.push({ index: defender.index, str: "Mimikyu's disguise was busted!"});
+					}
+				}
+
+				self.logDecision(defender, "'s disguise was busted");
+
+				// If a shield has already been used, add time so events don't visually overlap
+
+				if((usePriority)&&(roundChargedMoveUsed > 0)&&(roundShieldUsed > 0)){
+					displayTime = time;
+				}
+
+				if(roundChargedMoveUsed == 0){
+					time+=chargedMinigameTime;
 				}
 			}
 
@@ -1511,6 +1549,26 @@ function Battle(){
 
 		if(attackerChangedForm){
 			timelineDescriptions.push("Form Change");
+		}
+
+		// Apply post-attack form changes to defender
+		if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.activeFormId != defender.formChange.alternativeFormId
+			&& move.energy > 0 && ! defenderUsedShield){
+
+			defender.changeForm(defender.formChange.alternativeFormId);
+
+			self.logDecision(defender, " has changed forms into " + defender.activeFormId);
+
+			if(mode == "emulate"){
+				self.pushAnimation(defender.index, "formchange", defender.activeFormId);
+			}
+
+			defenderChangedForm = true;
+		}
+
+
+		if(defenderChangedForm){
+			//timelineDescriptions.push("Form Change");
 		}
 
 		timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, timelineDescriptions));
@@ -1904,7 +1962,6 @@ function Battle(){
 	// Output debug log to console, debugMode must be set to true to collect logs
 
 	this.debug = function(){
-
 		for(var i = 0; i < decisionLog.length; i++){
 			var log = decisionLog[i];
 

@@ -31,7 +31,9 @@ var InterfaceMaster = (function () {
 			this.context = "battle";
 			this.battleMode = "single";
 			this.matrixMode = "battle";
-
+			var currentSortCol = null;
+			var currentSortOrder = "asc";
+			
 			var sandbox = false;
 			var actions = [];
 			var sandboxPokemon;
@@ -96,6 +98,7 @@ var InterfaceMaster = (function () {
 				$(".multi-battle-sort").on("click", sortMultiBattleResults);
 				$(".battle-results.matrix .ranking-categories a").on("click", selectMatrixMode);
 				$(".battle-results.matrix select.breakpoint-mode").on("change", selectMatrixBreakpointMode);
+				$(".matrix-table").on("click", "th.col-sort", handleMatrixSort);
 				$("body").on("click", ".battle-results.matrix a.difference", jumpToMatrixColumn);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
@@ -1329,6 +1332,40 @@ var InterfaceMaster = (function () {
 				gtag('event', 'Lookup', {
 				  'category' : 'Matrix'
 				});
+
+				// Create URL for up to 8v8 matrix battles
+				let url = host + 'battle/matrix/';
+				let urlData = { cp: battle.getCP(), mode: "matrix" };
+
+				let teamCount = multiSelectors[1].isCustomGroup() ? team.length : 0;
+				let targetCount = multiSelectors[0].isCustomGroup() ? targets.length : 0;
+
+				if(teamCount + targetCount <= 16){
+					url += battle.getCP() + "/";
+
+					let matrix1 = encodeURIComponent(multiSelectors[0].generateURLMoveStr());
+					let matrix2 = encodeURIComponent(multiSelectors[1].generateURLMoveStr());
+
+					url += matrix1 + "/" + matrix2;
+
+					urlData["matrix1"] = matrix1;
+					urlData["matrix2"] = matrix2;
+
+					let teamShields = multiSelectors[0].getSettings().shields;
+					let targetShields = multiSelectors[1].getSettings().shields;
+					let urlShieldStr = teamShields + "" + targetShields;
+					urlData["s"] = urlShieldStr;
+					url += "/" + urlShieldStr + "/";
+
+					$(".battle-results.matrix .share-link").show();
+					$(".battle-results.matrix .share-link input").val(url);
+				} else{
+					$(".battle-results.matrix .share-link").hide();
+				}
+
+				window.history.pushState(urlData, "Matrix Battle", url);
+
+
 			}
 
 			// Process both groups of Pokemon through the team ranker
@@ -1347,7 +1384,7 @@ var InterfaceMaster = (function () {
 				// Add matrix table headings for all Pokemon on the right side
 
 				for(var n = 0; n < team.length; n++){
-					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"<br>"+ team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + "</span></th>");
+					$row.find("tr").append("<th class=\"name-small col-sort\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"<br>"+ team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + "</span></th>");
 
 					csv += team[n].speciesName+" "+team[n].generateMovesetStr() + " " + team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + ',';
 				}
@@ -1356,9 +1393,9 @@ var InterfaceMaster = (function () {
 
 				csv +='Wins,Losses,Draws,';
 
-				$row.find("tr").append("<th class=\"name-small\">Record (W/L/D)</th>");
+				$row.find("tr").append("<th id=\"col-record\" class=\"name-small col-sort\" data-col=\"X\">Record (W/L/D)</th>");
 
-				$row.find("tr").append("<th class=\"name-small\">Average</th>");
+				$row.find("tr").append("<th class=\"name-small col-sort\">Average</th>");
 
 				csv +='Average';
 				csv += '\n';
@@ -1634,6 +1671,35 @@ var InterfaceMaster = (function () {
 
 				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
 				$(".button.download-csv").attr("download", filename);
+			}
+
+			// Event handler for sorting the matrix-table
+			
+			function handleMatrixSort() {
+				const th = $(this); 
+				const table = th.closest("table");
+				const tbody = table.find("tbody");
+				const colIndex = th.index();
+
+				//Reset the attribute
+			    table.find("th").not(th).removeAttr("data-asc");
+
+				// Get all rows as an array
+				const rows = tbody.find("tr").toArray();
+			
+				// Determine ascending/descending (returns true on first click)
+				let ascending = !th.data("asc");
+				th.data("asc", ascending);
+				th.attr("data-asc", ascending)
+			
+				rows.sort((a, b) => {
+					const A = parseFloat($(a).children().eq(colIndex).text());
+					const B = parseFloat($(b).children().eq(colIndex).text());
+					return ascending ? A - B : B - A;
+				});
+			
+				// Re-attach rows
+				tbody.append(rows);
 			}
 
 			// Event handler for changing the battle mode
@@ -1924,14 +1990,15 @@ var InterfaceMaster = (function () {
 							case "s":
 								var arr = val.split('');
 
-								for(var i = 0; i < Math.min(arr.length, 2); i++){
-
-									if((i == 0)||((i == 1)&&(self.battleMode == "single"))){
-										pokeSelectors[i].setShields(arr[i]);
-									} else if((i == 1)&&(self.battleMode == "multi")){
-										multiSelectors[0].setShields(arr[i]);
-									}
-
+								if(self.battleMode == "single"){
+									pokeSelectors[0].setShields(arr[0]);
+									pokeSelectors[1].setShields(arr[1]);
+								} else if(self.battleMode == "multi"){
+									pokeSelectors[0].setShields(arr[0]);
+									multiSelectors[0].setShields(arr[1]);
+								} else if(self.battleMode == "matrix"){
+									multiSelectors[0].setShields(arr[0]);
+									multiSelectors[1].setShields(arr[1]);
 								}
 								break;
 
@@ -2084,6 +2151,19 @@ var InterfaceMaster = (function () {
 
 							case "timing":
 								multiBattleSettings.optimizeMoveTiming = parseInt(val) == 1;
+							break;
+
+							case "matrix1":
+							case "matrix2":
+								let targetMultiSelector = (key == "matrix1") ? multiSelectors[0] : multiSelectors[1];
+
+								// Load group by id or load Pokemon by URL parameter list
+								if(targetMultiSelector.groupExists(val)){
+									targetMultiSelector.selectGroup(val);
+								} else{
+									targetMultiSelector.quickFillURLParam(val);
+								}
+								
 							break;
 
 						}
@@ -2300,7 +2380,10 @@ var InterfaceMaster = (function () {
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
 
-					window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+					if(! settingGetParams){
+						window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+					}
+					
 
 					// Update document title and favicon
 					document.title = "Matrix | PvPoke";
@@ -2313,7 +2396,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Load default meta group when switching to Multi Battle
-				if((self.battleMode == "multi") && (! settingGetParams)){
+				if(self.battleMode == "multi" && ! settingGetParams){
 					updateMultiBattleMetas();
 				}
 
@@ -2331,12 +2414,14 @@ var InterfaceMaster = (function () {
 
 				// Reset all selectors to 1 shield
 
-				for(var i = 0; i < pokeSelectors.length; i++){
-					pokeSelectors[i].setShields(1);
-				}
+				if(! settingGetParams){
+					for(var i = 0; i < pokeSelectors.length; i++){
+						pokeSelectors[i].setShields(1);
+					}
 
-				for(var i = 0; i < multiSelectors.length; i++){
-					multiSelectors[i].setShields(1);
+					for(var i = 0; i < multiSelectors.length; i++){
+						multiSelectors[i].setShields(1);
+					}
 				}
 			}
 
@@ -2541,7 +2626,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				if($(this).hasClass("shield")){
+				if($(this).hasClass("shield") || $(this).hasClass("shieldSpecial")){
 					let values = $(this).attr("values").split(',');
 
 					$tooltip.find(".details").html(values[0] + " blocked");

@@ -233,6 +233,24 @@ class ActionLogic {
 			}
 		}
 
+		// If opponent is Mimikyu or has similar mechanic, throw fastest Charged Attack ASAP
+		if(opponent.formChange && opponent?.formChange?.effect == "protect" && opponent.shields == 0){
+			if(poke.energy >= poke.fastestChargedMove.energy && ! poke.fastestChargedMove.selfDebuffing){
+				let moveIndex = poke.chargedMoves.indexOf(poke.fastestChargedMove);
+
+				battle.logDecision(poke, " uses " + poke.fastestChargedMove.name + " to break opponent's ability as soon as possible.");
+
+				action = new TimelineAction(
+					"charged",
+					poke.index,
+					turns,
+					moveIndex,
+					{shielded: false, buffs: false, priority: poke.priority});
+
+				return action;
+			}
+		}
+
 		// Optimize move timing to reduce free turns
 		if(poke.optimizeMoveTiming){
 			var targetCooldown = 500; // Look to throw moves when opponent is at this cooldown or lower

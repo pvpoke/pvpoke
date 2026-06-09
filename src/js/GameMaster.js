@@ -980,9 +980,14 @@ var GameMaster = (function () {
 		// Load and return ranking data JSON
 
 		object.loadRankingData = function(caller, category, league, cup){
-
 			var key = cup + "" + category + "" + league;
+			var cupData = object.getCupById(cup);
 
+			// Allow duplicate cups to point to existing cup data
+			if(cupData?.rankingAlias){
+				cup = cupData?.rankingAlias;
+			}
+			
 			if(! object.rankings[key]){
 				var file = webRoot+"data/rankings/"+cup+"/"+category+"/"+"rankings-"+league+".json?v="+siteVersion;
 
@@ -1132,7 +1137,7 @@ var GameMaster = (function () {
 				minStats = 0;
 			}
 
-			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","cobalion","terrakion","virizion","tornadus_therian","tornadus_therian_xl", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "solgaleo", "lunala", "keldeo_ordinary", "kyogre_primal", "groudon_primal", "zygarde_complete", "enamorus_therian", "enamorus_incarnate", "dialga_origin", "palkia_origin", "necrozma", "necrozma_dawn_wings", "necrozma_dusk_mane", "marshadow", "kyurem_black", "kyurem_white", "zacian_crowned_sword", "zamazenta_crowned_shield", "eternatus", "sinistcha", "keldeo_resolute"];
+			var bannedList = object.data.greatLeagueIneligible;
 
 			// Aggregate filters
 
@@ -1151,9 +1156,10 @@ var GameMaster = (function () {
 				var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
 
 				if(stats >= minStats || battle.getCup().includeLowStatProduct ||
-				 ( battle.getCP() == 1500 &&
-				 pokemon.hasTag("include1500")) || ( battle.getCP() == 2500 &&
-				 pokemon.hasTag("include2500")) || pokemon.hasTag("mega") ){
+				 ( battle.getCP() == 1500 && pokemon.hasTag("include1500"))
+				 	|| ( battle.getCP() == 2500 && pokemon.hasTag("include2500")) 
+					|| ( battle.getCP() == 10000 && pokemon.hasTag("include10000")) 
+					|| pokemon.hasTag("mega") ){
 					// Today is the day
 					if(! pokemon.released){
 						continue;
@@ -1202,9 +1208,19 @@ var GameMaster = (function () {
 									break;
 
 								case "dex":
-									if((pokemon.dex >= filter.values[0])&&(pokemon.dex <= filter.values[1])){
-										filtersMatched++;
+									// Assess multiple ranges in two-value increments
+									for(let k = 0; k < filter.values.length; k+=2){
+										// Catch if no value range exists
+										if(k + 1 >= filter.values.length){
+											break;
+										}
+
+										if(pokemon.dex >= filter.values[k] && pokemon.dex <= filter.values[k+1]){
+											filtersMatched++;
+											break;
+										}
 									}
+
 									break;
 
 								case "tag":
@@ -1288,32 +1304,34 @@ var GameMaster = (function () {
 					if(allowed){
 
 						// If data is available, force "best" moveset
+						pokemon.weightModifier = 1;
 
-						if((rankingData)&&(overrides)){
+						// Set Pokemon moveset from existing rankings
+						if(rankingData){
+							let r = rankingData.find(ranking => ranking.speciesId == pokemon.speciesId);
 
-							// Find Pokemon in existing rankings
-							for(var n = 0; n < rankingData.length; n++){
-								if(pokemon.speciesId == rankingData[n].speciesId){
+							if(r){
+								// Sort by uses
+								var fastMoves = r.moves.fastMoves;
+								var chargedMoves = r.moves.chargedMoves;
 
-									// Sort by uses
-									var fastMoves = rankingData[n].moves.fastMoves;
-									var chargedMoves = rankingData[n].moves.chargedMoves;
+								fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+								chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
-									fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-									chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+								pokemon.selectMove("fast", fastMoves[0].moveId);
+								pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
 
-									pokemon.selectMove("fast", fastMoves[0].moveId);
-									pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
+								
 
-									pokemon.weightModifier = 1;
-
-									if(chargedMoves.length > 1){
-										pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
-									}
-
-									object.overrideMoveset(pokemon, battle.getCP(), battle.getCup().name, overrides);
+								if(chargedMoves.length > 1){
+									pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
 								}
 							}
+						}
+
+						// Set Pokemon moveset from overrides
+						if(overrides){
+							object.overrideMoveset(pokemon, battle.getCP(), battle.getCup().name, overrides);
 						}
 
 						pokemonList.push(pokemon);

@@ -98,100 +98,18 @@ var InterfaceMaster = (function () {
 
 						switch(key){
 							case "t":
-								// Add each team member to the multi-selector
-								var list = val.split(",");
-								var pokeList = [];
+								// Load group by id or load Pokemon by URL parameter list
+								if(multiSelectors[0].groupExists(val)){
+									multiSelectors[0].selectGroup(val);
+								} else{
+									// Set max team size to length of list, if option exists
+									var list = val.split(",");
 
-								// Set max team size to length of list, if option exists
-								$(".team-size-select option[value="+list.length+"]").prop("selected", "selected");
-								$(".team-size-select").trigger("change");
+									$(".team-size-select option[value="+list.length+"]").prop("selected", "selected");
+									$(".team-size-select").trigger("change");
 
-								for(var i = 0; i < list.length; i++){
-									var arr = list[i].split('-');
-									var pokemon = new Pokemon(arr[0], 0, battle);
-
-									pokemon.initialize(battle.getCP());
-
-									if(arr.length >= 8){
-										pokemon.setIV("atk", arr[2]);
-										pokemon.setIV("def", arr[3]);
-										pokemon.setIV("hp", arr[4]);
-										pokemon.setLevel(arr[1]);
-									}
-
-									// Check string for other parameters
-									for(var n = 0; n < arr.length; n++){
-										switch(arr[n]){
-											case "shadow":
-											case "purified":
-												pokemon.setShadowType(arr[n]);
-												break;
-										}
-									}
-
-									// Split out the move string and select moves
-
-									if(list[i].split("-m-").length > 1){
-										var moveStr = list[i].split("-m-")[1];
-
-										arr = moveStr.split("-");
-
-										// Search string for any custom moves to add
-										var customFastMove = false;
-
-										for(var n = 0; n < arr.length; n++){
-											if(arr[n].match('([A-Z_]+)')){
-												var move = gm.getMoveById(arr[n]);
-												var movePool = (move.energyGain > 0) ? pokemon.fastMovePool : pokemon.chargedMovePool;
-												var moveType = (move.energyGain > 0) ? "fast" : "charged";
-												var moveIndex = n-1;
-
-												if(moveType == "fast"){
-													customFastMove = true;
-												}
-
-												pokemon.addNewMove(arr[n], movePool, true, moveType, moveIndex);
-											}
-										}
-
-										if(! customFastMove){
-											pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId, 0);
-										}
-
-										for(var n = 1; n < arr.length; n++){
-											// Don't set this move if already set as a custom move
-
-											if(arr[n].match('([A-Z_]+)')){
-												continue;
-											}
-
-											var moveId = "none";
-
-											if(arr[n] > 0){
-												moveId = pokemon.chargedMovePool[arr[n]-1].moveId;
-											}
-
-											if(moveId != "none"){
-												pokemon.selectMove("charged", moveId, n-1);
-											} else{
-												if((arr[1] == "0")&&(arr[2] == "0")){
-													pokemon.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
-												} else{
-													pokemon.selectMove("charged", moveId, n-1);
-												}
-											}
-
-										}
-									} else{
-										// Auto select moves if none are specified
-										pokemon.autoSelectMoves();
-									}
-
-
-									pokeList.push(pokemon);
+									multiSelectors[0].quickFillURLParam(val);
 								}
-
-								multiSelectors[0].setPokemonList(pokeList);
 								break;
 
 							case "cp":
@@ -598,7 +516,6 @@ var InterfaceMaster = (function () {
 
 						for(var n = 0; n < metaGroup.length; n++){
 							var searchId = metaGroup[n].speciesId;
-							searchId = searchId.replace("_shadow","");
 							searchId = searchId.replace("_xs","");
 							searchId = searchId.replace("_xl","");
 
@@ -683,8 +600,6 @@ var InterfaceMaster = (function () {
 
 					// Reduce remaining points by the cost of remaining picks so incompatible tiers aren't suggested
 					remainingPoints -= (remainingPicks - 1) * cliffObj.floor;
-
-					console.log("remaining points:" + remainingPoints);
 
 					// Add ineligible tiers to the exclusion list
 					for(var i = 0; i < tiers.length; i++){
@@ -1417,21 +1332,9 @@ var InterfaceMaster = (function () {
 					var cup = battle.getCup().name;
 
 					var pokes = multiSelectors[0].getPokemonList();
-					var moveStrs = [];
 					var teamStr = "team-builder/"+cup+"/"+cp+"/";
+					teamStr += encodeURIComponent(multiSelectors[0].generateURLMoveStr());
 
-					for(var i = 0; i < pokes.length; i++){
-
-						var poke = pokes[i];
-
-						moveStrs.push(poke.generateURLMoveStr());
-
-						teamStr += pokes[i].generateURLPokeStr("team-builder");
-
-						if(i < pokes.length - 1){
-							teamStr += "%2C";
-						}
-					}
 
 					// Add move strings to URL
 
@@ -1461,15 +1364,7 @@ var InterfaceMaster = (function () {
 					}
 
 					var url = webRoot+teamStr;
-
-					// No guarantee the user will have selected 3 Pokemon, so need to account for all possibilities
-
-					var data = {cup: cup, cp: cp};
-
-					for(var i = 0; i < pokes.length; i++){
-						data["p"+(i+1)] = pokes[i].speciesId;
-						data["m"+(i+1)] = moveStrs[i];
-					}
+					var data = {cup: cup, cp: cp + "", t: multiSelectors[0].generateURLMoveStr()};
 
 					window.history.pushState(data, "Team Builder", url);
 

@@ -116,6 +116,17 @@
 			  });
 		}
 
+		// disable mousewheel on a input number field when in focus
+		// (to prevent Chromium browsers change the value when scrolling)
+		$('body').on('focus', 'input[type=number]', function (e) {
+		$(this).on('wheel.disableScroll', function (e) {
+			e.preventDefault()
+		})
+		})
+		$('body').on('blur', 'input[type=number]', function (e) {
+		$(this).off('wheel.disableScroll')
+		})
+
 		<?php if($performGroupMigration) : ?>
 			// One-time custom group migration from cookies to localstorage
 

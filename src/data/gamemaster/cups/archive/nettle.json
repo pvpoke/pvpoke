@@ -1,0 +1,75 @@
+{
+  "name": "nettle",
+  "title": "Devon Nettle Cup",
+  "link": "https://devon.gg/nettle-cup",
+  "include": [
+    {
+      "filterType": "id",
+      "values": [
+        "empoleon",
+        "empoleon_shadow",
+        "escavalier",
+        "pawniard",
+        "perrserker",
+        "tinkaton"
+      ]
+    },
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "bug",
+        "dark",
+        "electric",
+        "fairy",
+        "fighting",
+        "grass",
+        "normal",
+        "poison",
+        "rock",
+        "water"
+      ]
+    }
+  ],
+  "exclude": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "dragon",
+        "fire",
+        "flying",
+        "ghost",
+        "ground",
+        "ice",
+        "psychic",
+        "steel"
+      ]
+    },
+    {
+      "filterType": "id",
+      "values": [
+        "clodsire",
+        "cradily",
+        "cradily_shadow",
+        "dachsbun",
+        "nidoqueen",
+        "nidoqueen_shadow",
+        "wigglytuff"
+      ]
+    },
+    {
+      "filterType": "tag",
+      "name": "Tag",
+      "values": [
+        "mega"
+      ]
+    }
+  ],
+  "overrides": [],
+  "league": 1500,
+  "useDefaultMovesets": 1,
+  "levelCap": 50,
+  "excludeLowPokemon": 1
+}
+

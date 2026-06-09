@@ -30,6 +30,11 @@
         "chargedMoves": ["AVALANCHE", "ORIGIN_PULSE"]
     },
     {
+        "speciesId": "kyogre",
+        "fastMove": "WATERFALL",
+        "chargedMoves": ["AVALANCHE", "THUNDER"]
+    },
+    {
         "speciesId": "kyurem_black",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["FREEZE_SHOCK", "FUSION_BOLT"]
@@ -55,9 +60,14 @@
         "chargedMoves": ["SHADOW_BALL", "MOONBLAST"]
     },
     {
+        "speciesId": "marshadow",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["CLOSE_COMBAT", "ICE_PUNCH"]
+    },
+    {
         "speciesId": "melmetal",
         "fastMove": "THUNDER_SHOCK",
-        "chargedMoves": ["DOUBLE_IRON_BASH", "THUNDERBOLT"]
+        "chargedMoves": ["DOUBLE_IRON_BASH", "DYNAMIC_PUNCH"]
     },
     {
         "speciesId": "meloetta_aria",
@@ -91,7 +101,7 @@
     },
     {
         "speciesId": "primarina",
-        "fastMove": "CHARM",
+        "fastMove": "WATERFALL",
         "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
     },
     {
@@ -102,7 +112,7 @@
     {
         "speciesId": "rhyperior",
         "fastMove": "MUD_SLAP",
-        "chargedMoves": ["BREAKING_SWIPE", "ROCK_WRECKER"]
+        "chargedMoves": ["DRILL_RUN", "ROCK_WRECKER"]
     },
     {
         "speciesId": "solgaleo",
@@ -110,19 +120,14 @@
         "chargedMoves": ["PSYCHIC_FANGS", "IRON_HEAD"]
     },
     {
-        "speciesId": "tapu_bulu",
-        "fastMove": "BULLET_SEED",
-        "chargedMoves": ["GRASS_KNOT", "NATURES_MADNESS"]
-    },
-    {
-        "speciesId": "tapu_lele",
-        "fastMove": "ASTONISH",
-        "chargedMoves": ["PSYSHOCK", "NATURES_MADNESS"]
-    },
-    {
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"]
+    },
+    {
+        "speciesId": "tyranitar",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
     },
     {
         "speciesId": "xerneas",
