@@ -87,16 +87,6 @@ $formats = array (
   ),
   7 => 
   array (
-    'title' => 'Devon Equinox Cup',
-    'cup' => 'equinox',
-    'cp' => 1500,
-    'meta' => 'equinox',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  8 => 
-  array (
     'title' => 'Devon Cosy Cup',
     'cup' => 'cosy',
     'cp' => 1500,
@@ -105,7 +95,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  8 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -115,7 +105,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  10 => 
+  9 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -125,7 +115,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  11 => 
+  10 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

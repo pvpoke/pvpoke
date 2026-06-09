@@ -16,11 +16,6 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "annihilape",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
-    },
-    {
         "speciesId": "azumarill",
         "fastMove": "BUBBLE",
         "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
@@ -51,11 +46,6 @@
         "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
     },
     {
-        "speciesId": "dartrix",
-        "fastMove": "PECK",
-        "chargedMoves": ["BRAVE_BIRD", "ENERGY_BALL"]
-    },
-    {
         "speciesId": "dewgong",
         "fastMove": "ICE_SHARD",
         "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
@@ -77,12 +67,6 @@
         "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
     },
     {
-        "speciesId": "empoleon_shadow",
-        "fastMove": "METAL_SOUND",
-        "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "feraligatr",
         "fastMove": "SHADOW_CLAW",
         "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
@@ -90,6 +74,12 @@
     {
         "speciesId": "forretress_shadow",
         "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "forretress_shadow",
+        "fastMove": "BUG_BITE",
         "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
         "shadowType": "shadow"
     },
@@ -220,9 +210,29 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "forretress_shadow",
-        "fastMove": "BUG_BITE",
-        "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"],
+        "speciesId": "annihilape",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
+    },
+    {
+        "speciesId": "primeape",
+        "fastMove": "KARATE_CHOP",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
+    },
+    {
+        "speciesId": "primeape_shadow",
+        "fastMove": "KARATE_CHOP",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
         "shadowType": "shadow"
+    },
+    {
+        "speciesId": "seaking",
+        "fastMove": "PECK",
+        "chargedMoves": ["DRILL_RUN", "ICY_WIND"]
+    },
+    {
+        "speciesId": "mantine",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["TWISTER", "WATER_PULSE"]
     }
 ]

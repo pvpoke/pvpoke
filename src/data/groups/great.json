@@ -51,11 +51,6 @@
         "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
     },
     {
-        "speciesId": "cresselia",
-        "fastMove": "PSYCHO_CUT",
-        "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
-    },
-    {
         "speciesId": "dewgong",
         "fastMove": "ICE_SHARD",
         "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
@@ -66,21 +61,9 @@
         "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
     },
     {
-        "speciesId": "drapion_shadow",
-        "fastMove": "POISON_STING",
-        "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "empoleon",
         "fastMove": "METAL_SOUND",
         "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-    },
-    {
-        "speciesId": "empoleon_shadow",
-        "fastMove": "METAL_SOUND",
-        "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "fearow",
@@ -175,11 +158,6 @@
         "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"]
     },
     {
-        "speciesId": "ninetales_alolan",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["WEATHER_BALL_ICE", "CHILLING_WATER"]
-    },
-    {
         "speciesId": "ninetales_shadow",
         "fastMove": "EMBER",
         "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"],
@@ -229,26 +207,9 @@
         "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
     },
     {
-        "speciesId": "swampert",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
-    },
-    {
-        "speciesId": "swampert_shadow",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "talonflame",
         "fastMove": "INCINERATE",
         "chargedMoves": ["FLY", "FLAME_CHARGE"]
-    },
-    {
-        "speciesId": "talonflame_shadow",
-        "fastMove": "INCINERATE",
-        "chargedMoves": ["FLAME_CHARGE", "FLY"],
-        "shadowType": "shadow"
     },
     {
         "speciesId": "tinkaton",
@@ -266,24 +227,18 @@
         "chargedMoves": ["SLUDGE", "BRUTAL_SWING"]
     },
     {
-        "speciesId": "weezing_galarian_shadow",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["SLUDGE", "BRUTAL_SWING"],
-        "shadowType": "shadow"
-    },
-    {
         "speciesId": "wigglytuff",
         "fastMove": "CHARM",
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "pelipper",
-        "fastMove": "WING_ATTACK",
-        "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        "speciesId": "seismitoad",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["EARTH_POWER", "ICY_WIND"]
     },
     {
-        "speciesId": "lumineon",
-        "fastMove": "GUST",
-        "chargedMoves": ["AQUA_TAIL", "SILVER_WIND"]
+        "speciesId": "mantine",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["TWISTER", "WATER_PULSE"]
     }
 ]
