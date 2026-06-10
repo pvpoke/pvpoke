@@ -1,0 +1,62 @@
+{
+  "name": "bastille",
+  "title": "Bastille Cup",
+  "link": "https://devon.gg/",
+  "include": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "bug",
+        "dragon",
+        "poison",
+        "steel",
+        "water"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "sandslash_alolan",
+        "stunfisk_galarian"
+      ]
+    }
+  ],
+  "exclude": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "electric",
+        "fairy",
+        "fire",
+        "flying",
+        "ground"
+      ]
+    },
+    {
+      "filterType": "tag",
+      "name": "Tag",
+      "values": [
+        "mega",
+        "shadow"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "doublade",
+        "empoleon",
+        "forretress",
+        "melmetal",
+        "metang"
+      ]
+    }
+  ],
+  "overrides": [],
+  "league": 1500,
+  "useDefaultMovesets": 1,
+  "excludeLowPokemon": 1
+}

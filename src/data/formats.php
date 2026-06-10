@@ -47,6 +47,22 @@ $formats = array (
   ),
   3 => 
   array (
+    'title' => 'Sunshine Cup',
+    'cup' => 'sunshine',
+    'cp' => 1500,
+    'meta' => 'sunshine',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.',
+      2 => 'The following Pokemon are not allowed: Charizard',
+    ),
+  ),
+  4 => 
+  array (
     'title' => 'Battle Frontier (Bayou Cup)',
     'cup' => 'bayou',
     'cp' => 1500,
@@ -55,7 +71,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  4 => 
+  5 => 
   array (
     'title' => 'Battle Frontier (Spellcraft Cup)',
     'cup' => 'spellcraft',
@@ -65,7 +81,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  5 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (UL Retro)',
     'cup' => 'bfretro',
@@ -75,7 +91,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -85,7 +101,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Devon Equinox Cup',
     'cup' => 'equinox',
@@ -95,17 +111,17 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  9 => 
   array (
-    'title' => 'Devon Cosy Cup',
-    'cup' => 'cosy',
+    'title' => 'Devon Bastille Cup',
+    'cup' => 'bastille',
     'cp' => 1500,
-    'meta' => 'cosy',
+    'meta' => 'bastille',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  10 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -115,7 +131,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  10 => 
+  11 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -125,7 +141,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  11 => 
+  12 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

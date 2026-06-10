@@ -39,6 +39,20 @@
 		]
 	},
 	{
+		"title": "Sunshine Cup",
+		"cup": "sunshine",
+		"cp": 1500,
+		"meta": "sunshine",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.",
+			"The following Pokemon are not allowed: Charizard"
+		]
+	},
+	{
 		"title": "Battle Frontier (Bayou Cup)",
 		"cup": "bayou",
 		"cp": 1500,
@@ -84,10 +98,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Devon Cosy Cup",
-		"cup": "cosy",
+		"title": "Devon Bastille Cup",
+		"cup": "bastille",
 		"cp": 1500,
-		"meta": "cosy",
+		"meta": "bastille",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
