@@ -63,6 +63,21 @@ $formats = array (
   ),
   4 => 
   array (
+    'title' => 'Mega Master League',
+    'cup' => 'mega',
+    'cp' => 10000,
+    'meta' => 'mega',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'No CP limit.',
+      1 => 'Mega Evolutions are eligible.',
+    ),
+  ),
+  5 => 
+  array (
     'title' => 'Battle Frontier (Bayou Cup)',
     'cup' => 'bayou',
     'cp' => 1500,
@@ -71,7 +86,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  5 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (Spellcraft Cup)',
     'cup' => 'spellcraft',
@@ -81,7 +96,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Battle Frontier (UL Retro)',
     'cup' => 'bfretro',
@@ -91,7 +106,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -101,7 +116,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  9 => 
   array (
     'title' => 'Devon Equinox Cup',
     'cup' => 'equinox',
@@ -111,7 +126,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  10 => 
   array (
     'title' => 'Devon Bastille Cup',
     'cup' => 'bastille',
@@ -121,7 +136,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  11 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -131,7 +146,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  11 => 
+  12 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -141,7 +156,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  13 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

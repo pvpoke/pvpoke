@@ -9425,7 +9425,7 @@
             "hp": 214
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
         "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
@@ -9435,6 +9435,7 @@
         },
         "level25CP": 2641,
         "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
+        "legacyMoves": ["COUNTER"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
@@ -9450,7 +9451,7 @@
             "hp": 214
         },
         "types": ["psychic", "fighting"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
         "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
@@ -9460,6 +9461,7 @@
         },
         "level25CP": 2641,
         "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
+        "legacyMoves": ["COUNTER"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
@@ -9475,7 +9477,7 @@
             "hp": 214
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
         "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
@@ -9485,6 +9487,7 @@
         },
         "level25CP": 2641,
         "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
+        "legacyMoves": ["COUNTER"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,

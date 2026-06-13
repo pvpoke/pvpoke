@@ -53,6 +53,19 @@
 		]
 	},
 	{
+		"title": "Mega Master League",
+		"cup": "mega",
+		"cp": 10000,
+		"meta": "mega",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"No CP limit.",
+			"Mega Evolutions are eligible."
+		]
+	},
+	{
 		"title": "Battle Frontier (Bayou Cup)",
 		"cup": "bayou",
 		"cp": 1500,
