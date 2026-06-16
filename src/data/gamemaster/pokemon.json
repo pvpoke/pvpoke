@@ -9448,16 +9448,16 @@
         "baseStats": {
             "atk": 399,
             "def": 215,
-            "hp": 214
+            "hp": 228
         },
         "types": ["psychic", "fighting"],
         "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
         "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
-            "cp500": [3.5, 7, 4, 6],
-            "cp1500": [9, 14, 11, 14],
-            "cp2500": [15, 9, 12, 15]
+            "cp500": [3, 9, 15, 14],
+            "cp1500": [9, 5, 13, 8],
+            "cp2500": [15, 4, 13, 7]
         },
         "level25CP": 2641,
         "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
@@ -9473,8 +9473,8 @@
         "speciesId": "mewtwo_mega_y",
         "baseStats": {
             "atk": 413,
-            "def": 228,
-            "hp": 214
+            "def": 223,
+            "hp": 228
         },
         "types": ["psychic", "none"],
         "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
@@ -9482,8 +9482,8 @@
         "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [3, 9, 15, 14],
-            "cp1500": [8.5, 12, 15, 11],
-            "cp2500": [14.5, 4, 9, 12]
+            "cp1500": [8.5, 6, 5, 15],
+            "cp2500": [14, 4, 7, 15]
         },
         "level25CP": 2641,
         "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
