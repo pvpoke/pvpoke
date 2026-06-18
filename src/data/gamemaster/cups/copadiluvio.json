@@ -1,0 +1,21 @@
+{
+    "name": "copadiluvio",
+    "title": "Battle Frontier (Copa Dilúvio)",
+    "include": [{
+        "filterType": "type",
+        "values": ["dark","steel","water","dragon"]
+    },{
+        "filterType": "id",
+        "values": []
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["legendary","mythical","mega","ultrabeast","shadow"]
+    }, {
+        "filterType": "type",
+        "values": ["fire","ground","electric","fighting","grass","fairy","ghost"]
+    }, {
+        "filterType": "id",
+        "values": ["aegislash_shield","araquanid","bastiodon","corviknight","doublade","durant","empoleon","escavalier","forretress","honedge","klang","mandibuzz","mantine","obstagoon","orthworm","probopass","scizor","steelix","toxapex","umbreon","vullaby","wormadam_trash"]
+    }]
+}

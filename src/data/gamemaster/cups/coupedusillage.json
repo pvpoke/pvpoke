@@ -1,0 +1,21 @@
+{
+    "name": "coupedusillage",
+    "title": "Battle Frontier (Coupe du Sillage)",
+	"include": [{
+        "filterType": "type",
+        "values": ["fairy","flying","ice","psychic","water","normal"]
+    },{
+        "filterType": "id",
+        "values": ["shaymin_land","banette_mega","giratina_altered","goodra","sceptile_mega","xurkitree"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": []
+    }, {
+        "filterType": "type",
+        "values": []
+    }, {
+        "filterType": "id",
+        "values": ["meloetta_aria","xerneas","moltres_galarian","salamence_mega","metagross","rayquaza_mega","charizard_mega_y","gallade_mega","gardevoir_mega","dragonite_mega","lunala","gyarados_mega","yveltal","kyurem_black","kyurem_white","kyogre_primal","metagross_mega","latios_mega","latias_mega","swampert_mega","zacian_crowned_sword","palkia_origin","mewtwo_mega_x","mewtwo_mega_y"]
+    }]
+}

@@ -30,23 +30,6 @@ $formats = array (
   ),
   2 => 
   array (
-    'title' => 'NAIC 2026 Championship Series Cup',
-    'cup' => 'naic2026',
-    'cp' => 1500,
-    'meta' => 'naic2026',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Fairy-, Normal-, Psychic- and Water-type Pokémon are eligible.',
-      2 => 'The following types are not allowed: Dark, Grass, Steel',
-      3 => 'The following Pokemon are not allowed: Araquanid, Carbink, Chansey, Chinchou, Claydol, Clefable, Cresselia, Dedenne, Diggersby, Farfetch\'d, Gastrodon, Golisopod, Greedent, Jellicent, Lanturn, Lickilicky, Lickitung, Lugia, Medicham, Oranguru, Poliwrath',
-    ),
-  ),
-  3 => 
-  array (
     'title' => 'Sunshine Cup',
     'cup' => 'sunshine',
     'cp' => 1500,
@@ -61,7 +44,7 @@ $formats = array (
       2 => 'The following Pokemon are not allowed: Charizard',
     ),
   ),
-  4 => 
+  3 => 
   array (
     'title' => 'Mega Master League',
     'cup' => 'mega',
@@ -76,47 +59,47 @@ $formats = array (
       1 => 'Mega Evolutions are eligible.',
     ),
   ),
+  4 => 
+  array (
+    'title' => 'Battle Frontier (Copa Dilúvio)',
+    'cup' => 'copadiluvio',
+    'cp' => 1500,
+    'meta' => 'copadiluvio',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
   5 => 
   array (
-    'title' => 'Battle Frontier (Bayou Cup)',
-    'cup' => 'bayou',
+    'title' => 'Battle Frontier (Tsuki Cup)',
+    'cup' => 'tsuki',
     'cp' => 1500,
-    'meta' => 'bayou',
+    'meta' => 'tsuki',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   6 => 
   array (
-    'title' => 'Battle Frontier (Spellcraft Cup)',
-    'cup' => 'spellcraft',
-    'cp' => 1500,
-    'meta' => 'spellcraft',
+    'title' => 'Battle Frontier (Liga Ultra)',
+    'cup' => 'ligaultra',
+    'cp' => 2500,
+    'meta' => 'ligaultra',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   7 => 
   array (
-    'title' => 'Battle Frontier (UL Retro)',
-    'cup' => 'bfretro',
-    'cp' => 2500,
-    'meta' => 'bfretro',
+    'title' => 'Battle Frontier (Coupe du Sillage)',
+    'cup' => 'coupedusillage',
+    'cp' => 10000,
+    'meta' => 'coupedusillage',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
   ),
   8 => 
-  array (
-    'title' => 'Battle Frontier (Master)',
-    'cup' => 'battlefrontiermaster',
-    'cp' => 10000,
-    'meta' => 'battlefrontiermaster',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  9 => 
   array (
     'title' => 'Devon Equinox Cup',
     'cup' => 'equinox',
@@ -126,7 +109,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  9 => 
   array (
     'title' => 'Devon Bastille Cup',
     'cup' => 'bastille',
@@ -136,7 +119,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  10 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -146,7 +129,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  11 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -156,7 +139,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  12 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

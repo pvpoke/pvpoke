@@ -44123,7 +44123,8 @@
         },
         "types": ["dragon", "ice"],
         "fastMoves": ["DRAGON_BREATH", "ICE_FANG"],
-        "chargedMoves": ["DRAGON_CLAW", "AVALANCHE", "OUTRAGE", "BLIZZARD", "ICY_WIND"],
+        "chargedMoves": ["DRAGON_CLAW", "AVALANCHE", "OUTRAGE", "BLIZZARD", "ICY_WIND", "GLAIVE_RUSH"],
+        "eliteMoves": ["GLAIVE_RUSH"],
         "defaultIVs": {
             "cp500": [5.5, 4, 9, 13],
             "cp1500": [15.5, 4, 14, 14],

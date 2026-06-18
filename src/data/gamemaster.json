@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-06-16 15:18:30",
+    "timestamp": "2026-06-18 01:53:01",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -209,6 +209,34 @@
             "levelCap": 40
         },
         {
+            "name": "copadiluvio",
+            "title": "Battle Frontier (Copa Dilúvio)",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["dark", "steel", "water", "dragon"]
+                },
+                {
+                    "filterType": "id",
+                    "values": []
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["legendary", "mythical", "mega", "ultrabeast", "shadow"]
+                },
+                {
+                    "filterType": "type",
+                    "values": ["fire", "ground", "electric", "fighting", "grass", "fairy", "ghost"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["aegislash_shield", "araquanid", "bastiodon", "corviknight", "doublade", "durant", "empoleon", "escavalier", "forretress", "honedge", "klang", "mandibuzz", "mantine", "obstagoon", "orthworm", "probopass", "scizor", "steelix", "toxapex", "umbreon", "vullaby", "wormadam_trash"]
+                }
+            ]
+        },
+        {
             "name": "cosy",
             "title": "Devon Cosy Cup",
             "link": "https://devon.gg",
@@ -236,6 +264,34 @@
             "league": 1500,
             "useDefaultMovesets": 1,
             "excludeLowPokemon": 1
+        },
+        {
+            "name": "coupedusillage",
+            "title": "Battle Frontier (Coupe du Sillage)",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["fairy", "flying", "ice", "psychic", "water", "normal"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["shaymin_land", "banette_mega", "giratina_altered", "goodra", "sceptile_mega", "xurkitree"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": []
+                },
+                {
+                    "filterType": "type",
+                    "values": []
+                },
+                {
+                    "filterType": "id",
+                    "values": ["meloetta_aria", "xerneas", "moltres_galarian", "salamence_mega", "metagross", "rayquaza_mega", "charizard_mega_y", "gallade_mega", "gardevoir_mega", "dragonite_mega", "lunala", "gyarados_mega", "yveltal", "kyurem_black", "kyurem_white", "kyogre_primal", "metagross_mega", "latios_mega", "latias_mega", "swampert_mega", "zacian_crowned_sword", "palkia_origin", "mewtwo_mega_x", "mewtwo_mega_y"]
+                }
+            ]
         },
         {
             "name": "custom",
@@ -296,6 +352,17 @@
             ],
             "partySize": 3,
             "presetOnly": true
+        },
+        {
+            "name": "ligaultra",
+            "title": "Battle Frontier (Liga Ultra)",
+            "include": [],
+            "exclude": [
+                {
+                    "filterType": "id",
+                    "values": ["bellibolt", "jellicent", "mewtwo_armored", "tinkaton", "zygarde_complete"]
+                }
+            ]
         },
         {
             "name": "little",
@@ -428,6 +495,34 @@
             ],
             "partySize": 3,
             "presetOnly": true
+        },
+        {
+            "name": "tsuki",
+            "title": "Battle Frontier (Tsuki Cup)",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["fairy", "ghost", "ice", "normal", "rock"]
+                },
+                {
+                    "filterType": "id",
+                    "values": []
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["legendary", "mythical", "mega", "ultrabeast"]
+                },
+                {
+                    "filterType": "type",
+                    "values": ["dark", "fire", "flying", "ground", "steel"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["abomasnow", "amaura", "annihilape", "aurorus", "azumarill", "bewear", "carbink", "cetoddle", "chansey", "clefable", "corsola_galarian", "cradily", "crustle", "dolliv", "drampa", "dubwool", "dudunsparce", "dunsparce", "dusknoir", "frillish", "furfrou", "furret", "girafarig", "greedent", "jellicent", "kangaskhan", "kecleon", "lapras", "lickilicky", "lickitung", "lileep", "linoone", "miltank", "naclstack", "ninetales_alolan", "oinkologne", "oinkologne_female", "oranguru", "relicanth", "spinda", "ursaring", "vigoroth", "weezing_galarian", "wigglytuff", "wyrdeer", "zangoose"]
+                }
+            ]
         }
     ],
     "formats": [
@@ -453,16 +548,6 @@
             "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
         },
         {
-            "title": "NAIC 2026 Championship Series Cup",
-            "cup": "naic2026",
-            "cp": 1500,
-            "meta": "naic2026",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Fairy-,  Normal-,  Psychic- and Water-type Pokémon are eligible.", "The following types are not allowed: Dark,  Grass,  Steel", "The following Pokemon are not allowed: Araquanid,  Carbink,  Chansey,  Chinchou,  Claydol,  Clefable,  Cresselia,  Dedenne,  Diggersby,  Farfetch'd,  Gastrodon,  Golisopod,  Greedent,  Jellicent,  Lanturn,  Lickilicky,  Lickitung,  Lugia,  Medicham,  Oranguru,  Poliwrath"]
-        },
-        {
             "title": "Sunshine Cup",
             "cup": "sunshine",
             "cp": 1500,
@@ -483,37 +568,37 @@
             "rules": ["No CP limit.", "Mega Evolutions are eligible."]
         },
         {
-            "title": "Battle Frontier (Bayou Cup)",
-            "cup": "bayou",
+            "title": "Battle Frontier (Copa Dilúvio)",
+            "cup": "copadiluvio",
             "cp": 1500,
-            "meta": "bayou",
+            "meta": "copadiluvio",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
         },
         {
-            "title": "Battle Frontier (Spellcraft Cup)",
-            "cup": "spellcraft",
+            "title": "Battle Frontier (Tsuki Cup)",
+            "cup": "tsuki",
             "cp": 1500,
-            "meta": "spellcraft",
+            "meta": "tsuki",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
         },
         {
-            "title": "Battle Frontier (UL Retro)",
-            "cup": "bfretro",
+            "title": "Battle Frontier (Liga Ultra)",
+            "cup": "ligaultra",
             "cp": 2500,
-            "meta": "bfretro",
+            "meta": "ligaultra",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
         },
         {
-            "title": "Battle Frontier (Master)",
-            "cup": "battlefrontiermaster",
+            "title": "Battle Frontier (Coupe du Sillage)",
+            "cup": "coupedusillage",
             "cp": 10000,
-            "meta": "battlefrontiermaster",
+            "meta": "coupedusillage",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
@@ -44760,7 +44845,8 @@
             },
             "types": ["dragon", "ice"],
             "fastMoves": ["DRAGON_BREATH", "ICE_FANG"],
-            "chargedMoves": ["DRAGON_CLAW", "AVALANCHE", "OUTRAGE", "BLIZZARD", "ICY_WIND"],
+            "chargedMoves": ["DRAGON_CLAW", "AVALANCHE", "OUTRAGE", "BLIZZARD", "ICY_WIND", "GLAIVE_RUSH"],
+            "eliteMoves": ["GLAIVE_RUSH"],
             "defaultIVs": {
                 "cp500": [5.5, 4, 9, 13],
                 "cp1500": [15.5, 4, 14, 14],
@@ -46833,6 +46919,21 @@
             "buffTarget": "opponent",
             "buffApplyChance": "1",
             "archetype": "Debuff",
+            "turns": 1
+        },
+        {
+            "moveId": "GLAIVE_RUSH",
+            "name": "Glaive Rush",
+            "abbreviation": "GlR",
+            "type": "dragon",
+            "power": 90,
+            "energy": 40,
+            "energyGain": 0,
+            "cooldown": 500,
+            "buffs": [0, -1],
+            "buffTarget": "self",
+            "buffApplyChance": "1",
+            "archetype": "Self-Debuff",
             "turns": 1
         },
         {

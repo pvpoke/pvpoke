@@ -1,0 +1,9 @@
+{
+    "name": "ligaultra",
+    "title": "Battle Frontier (Liga Ultra)",
+    "include": [],
+    "exclude": [{
+        "filterType": "id",
+        "values": ["bellibolt","jellicent","mewtwo_armored","tinkaton","zygarde_complete"]
+    }]
+}

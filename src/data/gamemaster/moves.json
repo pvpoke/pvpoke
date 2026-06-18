@@ -1401,6 +1401,21 @@
         "turns": 1
     },
     {
+        "moveId": "GLAIVE_RUSH",
+        "name": "Glaive Rush",
+        "abbreviation": "GlR",
+        "type": "dragon",
+        "power": 90,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Self-Debuff",
+        "turns": 1
+    },
+    {
         "moveId": "GRASS_KNOT",
         "name": "Grass Knot",
         "type": "grass",
