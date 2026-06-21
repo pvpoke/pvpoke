@@ -46,6 +46,21 @@ $formats = array (
   ),
   3 => 
   array (
+    'title' => 'Summer Cup',
+    'cup' => 'summer',
+    'cp' => 1500,
+    'meta' => 'summer',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible.',
+    ),
+  ),
+  4 => 
+  array (
     'title' => 'Mega Master League',
     'cup' => 'mega',
     'cp' => 10000,
@@ -59,7 +74,7 @@ $formats = array (
       1 => 'Mega Evolutions are eligible.',
     ),
   ),
-  4 => 
+  5 => 
   array (
     'title' => 'Battle Frontier (Copa Dilúvio)',
     'cup' => 'copadiluvio',
@@ -69,7 +84,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  5 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (Tsuki Cup)',
     'cup' => 'tsuki',
@@ -79,7 +94,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Battle Frontier (Liga Ultra)',
     'cup' => 'ligaultra',
@@ -89,7 +104,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Battle Frontier (Coupe du Sillage)',
     'cup' => 'coupedusillage',
@@ -99,7 +114,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  9 => 
   array (
     'title' => 'Devon Equinox Cup',
     'cup' => 'equinox',
@@ -109,7 +124,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  10 => 
   array (
     'title' => 'Devon Bastille Cup',
     'cup' => 'bastille',
@@ -119,7 +134,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  11 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -129,7 +144,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  11 => 
+  12 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -139,7 +154,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  13 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

@@ -40,6 +40,11 @@
         "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
     },
     {
+        "speciesId": "heracross_mega",
+        "fastMove": "FURY_CUTTER",
+        "chargedMoves": ["ROCK_TOMB", "UPPER_HAND"]
+    },
+    {
         "speciesId": "ho_oh",
         "fastMove": "INCINERATE",
         "chargedMoves": ["SACRED_FIRE", "BRAVE_BIRD"]
@@ -92,12 +97,12 @@
     {
         "speciesId": "mewtwo_mega_x",
         "fastMove": "COUNTER",
-        "chargedMoves": ["PSYSTRIKE", "SHADOW_BALL"]
+        "chargedMoves": ["PSYSTRIKE", "THUNDERBOLT"]
     },
     {
         "speciesId": "mewtwo_mega_y",
         "fastMove": "PSYCHO_CUT",
-        "chargedMoves": ["PSYSTRIKE", "SHADOW_BALL"]
+        "chargedMoves": ["PSYSTRIKE", "THUNDERBOLT"]
     },
     {
         "speciesId": "necrozma_dawn_wings",
@@ -163,10 +168,5 @@
         "speciesId": "zygarde_complete",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
-    },
-    {
-        "speciesId": "heracross_mega",
-        "fastMove": "FURY_CUTTER",
-        "chargedMoves": ["ROCK_TOMB", "UPPER_HAND"]
     }
 ]

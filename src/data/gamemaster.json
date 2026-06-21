@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-06-18 01:53:01",
+    "timestamp": "2026-06-21 15:58:22",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -475,6 +475,22 @@
             ]
         },
         {
+            "name": "summer",
+            "title": "Summer Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["normal", "grass", "fire", "water", "electric", "bug"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["mega"]
+                }
+            ]
+        },
+        {
             "name": "sunshine",
             "title": "Sunshine Cup",
             "include": [
@@ -556,6 +572,16 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Fire-,  Grass-,  and Ground-type Pokémon are eligible.", "The following Pokemon are not allowed: Charizard"]
+        },
+        {
+            "title": "Summer Cup",
+            "cup": "summer",
+            "cp": 1500,
+            "meta": "summer",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Fire-,  Water-,  Grass-,  Electric-,  and Bug-type Pokémon are eligible."]
         },
         {
             "title": "Mega Master League",
@@ -43015,91 +43041,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 75000,
-            "released": false
-        },
-        {
-            "dex": 931,
-            "speciesName": "Squawkabilly_blue",
-            "speciesId": "squawkabilly_blue",
-            "baseStats": {
-                "atk": 185,
-                "def": 105,
-                "hp": 193
-            },
-            "types": ["normal", "flying"],
-            "fastMoves": ["PECK", "AIR_SLASH"],
-            "chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD", "FLY"],
-            "defaultIVs": {
-                "cp500": [9.5, 4, 13, 14],
-                "cp1500": [28, 4, 15, 15],
-                "cp2500": [50, 15, 15, 15]
-            },
-            "buddyDistance": 3,
-            "thirdMoveCost": 75000,
-            "released": false
-        },
-        {
-            "dex": 931,
-            "speciesName": "Squawkabilly_green",
-            "speciesId": "squawkabilly_green",
-            "baseStats": {
-                "atk": 185,
-                "def": 105,
-                "hp": 193
-            },
-            "types": ["normal", "flying"],
-            "fastMoves": ["PECK", "AIR_SLASH"],
-            "chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD", "FLY"],
-            "defaultIVs": {
-                "cp500": [9.5, 4, 13, 14],
-                "cp1500": [28, 4, 15, 15],
-                "cp2500": [50, 15, 15, 15]
-            },
-            "buddyDistance": 3,
-            "thirdMoveCost": 75000,
-            "released": false
-        },
-        {
-            "dex": 931,
-            "speciesName": "Squawkabilly_white",
-            "speciesId": "squawkabilly_white",
-            "baseStats": {
-                "atk": 185,
-                "def": 105,
-                "hp": 193
-            },
-            "types": ["normal", "flying"],
-            "fastMoves": ["PECK", "AIR_SLASH"],
-            "chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD", "FLY"],
-            "defaultIVs": {
-                "cp500": [9.5, 4, 13, 14],
-                "cp1500": [28, 4, 15, 15],
-                "cp2500": [50, 15, 15, 15]
-            },
-            "buddyDistance": 3,
-            "thirdMoveCost": 75000,
-            "released": false
-        },
-        {
-            "dex": 931,
-            "speciesName": "Squawkabilly_yellow",
-            "speciesId": "squawkabilly_yellow",
-            "baseStats": {
-                "atk": 185,
-                "def": 105,
-                "hp": 193
-            },
-            "types": ["normal", "flying"],
-            "fastMoves": ["PECK", "AIR_SLASH"],
-            "chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD", "FLY"],
-            "defaultIVs": {
-                "cp500": [9.5, 4, 13, 14],
-                "cp1500": [28, 4, 15, 15],
-                "cp2500": [50, 15, 15, 15]
-            },
-            "buddyDistance": 3,
-            "thirdMoveCost": 75000,
-            "released": false
+            "released": true
         },
         {
             "dex": 932,
