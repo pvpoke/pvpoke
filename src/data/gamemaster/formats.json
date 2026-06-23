@@ -24,20 +24,6 @@
 		]
 	},
 	{
-		"title": "Sunshine Cup",
-		"cup": "sunshine",
-		"cp": 1500,
-		"meta": "sunshine",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.",
-			"The following Pokemon are not allowed: Charizard"
-		]
-	},
-	{
 		"title": "Summer Cup",
 		"cup": "summer",
 		"cp": 1500,
@@ -48,19 +34,6 @@
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible."
-		]
-	},
-	{
-		"title": "Mega Master League",
-		"cup": "mega",
-		"cp": 10000,
-		"meta": "mega",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"No CP limit.",
-			"Mega Evolutions are eligible."
 		]
 	},
 	{
