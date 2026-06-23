@@ -143,6 +143,11 @@
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
     },
     {
+        "speciesId": "mantine",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["TWISTER", "WATER_PULSE"]
+    },
+    {
         "speciesId": "medicham",
         "fastMove": "PSYCHO_CUT",
         "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
@@ -197,6 +202,11 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "seismitoad",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["EARTH_POWER", "ICY_WIND"]
+    },
+    {
         "speciesId": "stunfisk",
         "fastMove": "THUNDER_SHOCK",
         "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
@@ -232,13 +242,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "seismitoad",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["EARTH_POWER", "ICY_WIND"]
-    },
-    {
-        "speciesId": "mantine",
-        "fastMove": "WING_ATTACK",
-        "chargedMoves": ["TWISTER", "WATER_PULSE"]
+        "speciesId": "mimikyu",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["SHADOW_SNEAK", "PLAY_ROUGH"]
     }
 ]

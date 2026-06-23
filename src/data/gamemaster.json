@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-06-23 20:24:35",
+    "timestamp": "2026-06-23 23:20:31",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -191,7 +191,7 @@
                 },
                 {
                     "filterType": "id",
-                    "values": ["aegislash_blade", "aegislash_shield"]
+                    "values": ["mimikyu"]
                 }
             ]
         },
@@ -38811,7 +38811,7 @@
             "searchPriority": 4,
             "buddyDistance": 5,
             "thirdMoveCost": 50000,
-            "released": false
+            "released": true
         },
         {
             "dex": 778,
