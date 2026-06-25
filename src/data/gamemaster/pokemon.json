@@ -31221,7 +31221,36 @@
         "family": {
             "id": "FAMILY_AXEW",
             "evolutions": ["fraxure"]
-        }
+        },
+        "level25CP": 787,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 610,
+        "speciesId": "axew_shadow",
+        "speciesName": "Axew (Shadow)",
+        "baseStats": {
+            "atk": 154,
+            "def": 101,
+            "hp": 130
+        },
+        "types": ["dragon", "none"],
+        "fastMoves": ["SCRATCH", "IRON_TAIL"],
+        "chargedMoves": ["DRAGON_CLAW", "AQUA_TAIL", "DRAGON_PULSE"],
+        "defaultIVs": {
+            "cp500": [13.5, 7, 14, 15],
+            "cp1500": [49, 12, 14, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_AXEW",
+            "evolutions": ["fraxure_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 611,
@@ -31248,7 +31277,37 @@
             "id": "FAMILY_AXEW",
             "parent": "axew",
             "evolutions": ["haxorus"]
-        }
+        },
+        "level25CP": 1347,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 611,
+        "speciesId": "fraxure_shadow",
+        "speciesName": "Fraxure (Shadow)",
+        "baseStats": {
+            "atk": 212,
+            "def": 123,
+            "hp": 165
+        },
+        "types": ["dragon", "none"],
+        "fastMoves": ["DRAGON_TAIL", "IRON_TAIL"],
+        "chargedMoves": ["DRAGON_CLAW", "AQUA_TAIL", "NIGHT_SLASH"],
+        "defaultIVs": {
+            "cp500": [8.5, 4, 14, 8],
+            "cp1500": [25, 4, 14, 12],
+            "cp2500": [50, 13, 15, 14],
+            "cp2500l40": [40, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_AXEW",
+            "parent": "axew_shadow",
+            "evolutions": ["haxorus_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 612,
@@ -31275,7 +31334,37 @@
         "family": {
             "id": "FAMILY_AXEW",
             "parent": "fraxure"
-        }
+        },
+        "level25CP": 2247,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 612,
+        "speciesId": "haxorus_shadow",
+        "speciesName": "Haxorus (Shadow)",
+        "baseStats": {
+            "atk": 284,
+            "def": 172,
+            "hp": 183
+        },
+        "types": ["dragon", "none"],
+        "fastMoves": ["DRAGON_TAIL", "COUNTER"],
+        "chargedMoves": ["DRAGON_CLAW", "SURF", "NIGHT_SLASH", "EARTHQUAKE", "BREAKING_SWIPE"],
+        "eliteMoves": ["BREAKING_SWIPE"],
+        "defaultIVs": {
+            "cp500": [5.5, 4, 9, 7],
+            "cp1500": [15.5, 4, 9, 13],
+            "cp2500": [25.5, 4, 13, 13]
+        },
+        "searchPriority": 4,
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_AXEW",
+            "parent": "fraxure_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 613,
