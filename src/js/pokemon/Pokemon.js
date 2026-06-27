@@ -935,7 +935,7 @@ function Pokemon(id, i, b, d){
 		if(type == "charged" && index == 2){
 			type = "extra-charged";
 		}
-		
+
 		switch(type){
 			case "fast":
 				arr = this.fastMovePool;
@@ -1221,7 +1221,7 @@ function Pokemon(id, i, b, d){
 		}
 
 		// Don't add move if it's already in the movepool
-		if(this.knowsMove(id)){
+		if(moveType != "extra-charged" && this.knowsMove(id)){
 			// Select the move that already exists
 			if(selectNewMove){
 				self.selectMove(moveType, id, index, true)
