@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-06-25 22:17:15",
+    "timestamp": "2026-06-27 21:31:41",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -232,7 +232,7 @@
                 },
                 {
                     "filterType": "id",
-                    "values": ["aegislash_shield", "araquanid", "bastiodon", "corviknight", "doublade", "durant", "empoleon", "escavalier", "forretress", "honedge", "klang", "mandibuzz", "mantine", "obstagoon", "orthworm", "probopass", "scizor", "steelix", "toxapex", "umbreon", "vullaby", "wormadam_trash"]
+                    "values": ["araquanid", "bastiodon", "corviknight", "durant", "empoleon", "escavalier", "forretress", "klang", "mandibuzz", "mantine", "obstagoon", "orthworm", "probopass", "scizor", "steelix", "toxapex", "umbreon", "vullaby", "wormadam_trash"]
                 }
             ]
         },
@@ -275,7 +275,7 @@
                 },
                 {
                     "filterType": "id",
-                    "values": ["shaymin_land", "banette_mega", "giratina_altered", "goodra", "sceptile_mega", "xurkitree"]
+                    "values": ["shaymin_land", "banette_mega", "giratina_altered", "giratina_altered_shadow", "goodra", "sceptile_mega", "xurkitree"]
                 }
             ],
             "exclude": [
@@ -360,7 +360,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["bellibolt", "jellicent", "mewtwo_armored", "tinkaton", "zygarde_complete"]
+                    "values": ["bellibolt", "jellicent", "mewtwo_armored", "mimikyu", "tinkaton", "zygarde_complete"]
                 }
             ]
         },
@@ -536,7 +536,7 @@
                 },
                 {
                     "filterType": "id",
-                    "values": ["abomasnow", "amaura", "annihilape", "aurorus", "azumarill", "bewear", "carbink", "cetoddle", "chansey", "clefable", "corsola_galarian", "cradily", "crustle", "dolliv", "drampa", "dubwool", "dudunsparce", "dunsparce", "dusknoir", "frillish", "furfrou", "furret", "girafarig", "greedent", "jellicent", "kangaskhan", "kecleon", "lapras", "lickilicky", "lickitung", "lileep", "linoone", "miltank", "naclstack", "ninetales_alolan", "oinkologne", "oinkologne_female", "oranguru", "relicanth", "spinda", "ursaring", "vigoroth", "weezing_galarian", "wigglytuff", "wyrdeer", "zangoose"]
+                    "values": ["abomasnow", "amaura", "annihilape", "aurorus", "azumarill", "bewear", "carbink", "cetoddle", "chansey", "clefable", "corsola_galarian", "cradily", "crustle", "dolliv", "drampa", "dubwool", "dudunsparce", "dunsparce", "dusknoir", "frillish", "furfrou", "furret", "girafarig", "greedent", "jellicent", "kangaskhan", "kecleon", "lapras", "lickilicky", "lickitung", "lileep", "linoone", "miltank", "mimikyu", "naclstack", "ninetales_alolan", "oinkologne", "oinkologne_female", "oranguru", "relicanth", "spinda", "ursaring", "vigoroth", "weezing_galarian", "wigglytuff", "wyrdeer", "zangoose"]
                 }
             ]
         }
