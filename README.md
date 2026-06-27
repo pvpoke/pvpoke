@@ -83,3 +83,9 @@ I appreciate your understanding if a request is rejected. A rejection doesn’t 
 And of course, you can always fork the project and develop whatever you’d like. Thanks for reading!
 
 -Empoleon_Dynamite
+
+### Python Port
+
+mglerner has made a Python port of the PvPoke simulation engine, available here:
+
+https://github.com/mglerner/gopvpsim
