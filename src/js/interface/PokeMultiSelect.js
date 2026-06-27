@@ -386,9 +386,7 @@ function PokeMultiSelect(element){
 
 			var moveList = [pokemon.fastMove];
 
-			for(var n = 0; n < pokemon.chargedMoves.length; n++){
-				moveList.push(pokemon.chargedMoves[n]);
-			}
+			moveList = moveList.concat(pokemon.chargedMoves.filter(m => m !== null));
 
 			for(var n = 0; n < moveList.length; n++){
 				if(n > 0){
@@ -718,20 +716,13 @@ function PokeMultiSelect(element){
 
 					var moveId = "none";
 
-					if(arr[n] > 0){
+					if(n < 3){
 						moveId = pokemon.chargedMovePool[arr[n]-1].moveId;
-					}
-
-					if(moveId != "none"){
 						pokemon.selectMove("charged", moveId, n-1);
 					} else{
-						if((arr[1] == "0")&&(arr[2] == "0")){
-							pokemon.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
-						} else{
-							pokemon.selectMove("charged", moveId, n-1);
-						}
+						moveId = pokemon.extraChargedMovePool[arr[n]-1].moveId;
+						pokemon.selectMove("extra-charged", moveId, 2);
 					}
-
 				}
 			} else{
 				// Auto select moves if none are specified

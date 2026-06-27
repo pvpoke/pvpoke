@@ -287,7 +287,9 @@ var InterfaceMaster = (function () {
 						var usableChargedMoves = 0;;
 
 						for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
-							if(energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
+							let move = pokemon[event.actor].chargedMoves[n];
+
+							if(move && energy[event.actor] >= move.energy){
 								usableChargedMoves++;
 							}
 						}
@@ -732,7 +734,9 @@ var InterfaceMaster = (function () {
 
 					if(((eventType == "fast") || (eventType == "charged"))&&(turnsToChargedMove[event.actor] == 0)){
 						for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
-							if(energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
+							let move = pokemon[event.actor].chargedMoves[n];
+
+							if(move && energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
 								turnsToChargedMove[event.actor] = event.turn + pokemon[event.actor].fastMove.turns;
 							}
 						}
@@ -768,13 +772,17 @@ var InterfaceMaster = (function () {
 				$("select.breakpoint-move").append("<option value=\""+pokemon[0].fastMove.moveId+"\">"+pokemon[0].fastMove.name+"</option>");
 
 				for(var i = 0; i < pokemon[0].chargedMoves.length; i++){
-					$("select.breakpoint-move").append("<option value=\""+pokemon[0].chargedMoves[i].moveId+"\">"+pokemon[0].chargedMoves[i].name+"</option>");
+					if(pokemon[0].chargedMoves[i]){
+						$("select.breakpoint-move").append("<option value=\""+pokemon[0].chargedMoves[i].moveId+"\">"+pokemon[0].chargedMoves[i].name+"</option>");
+					}
 				}
 
 				$("select.bulkpoint-move").append("<option value=\""+pokemon[1].fastMove.moveId+"\">"+pokemon[1].fastMove.name+"</option>");
 
 				for(var i = 0; i < pokemon[1].chargedMoves.length; i++){
-					$("select.bulkpoint-move").append("<option value=\""+pokemon[1].chargedMoves[i].moveId+"\">"+pokemon[1].chargedMoves[i].name+"</option>");
+					if(pokemon[1].chargedMoves[i]){
+						$("select.bulkpoint-move").append("<option value=\""+pokemon[1].chargedMoves[i].moveId+"\">"+pokemon[1].chargedMoves[i].name+"</option>");
+					}
 				}
 
 
@@ -1971,18 +1979,15 @@ var InterfaceMaster = (function () {
 										continue;
 									}
 
-									var moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
+									var moveId;
 
-									if(moveId != "none"){
+									if(i < 3){
+										moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
 										poke.selectMove("charged", moveId, i-1);
 									} else{
-										if((arr[1] == "0")&&(arr[2] == "0")){
-											poke.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
-										} else{
-											poke.selectMove("charged", moveId, i-1);
-										}
+										moveId = $(".poke").eq(index).find(".move-select.extra-charged").find("option").eq(parseInt(arr[i])).val();
+										poke.selectMove("extra-charged", moveId, 2);
 									}
-
 								}
 
 								break;
@@ -2458,9 +2463,14 @@ var InterfaceMaster = (function () {
 				var selectorIndex = (pokeIndex == 0) ? 1 : 0;
 				var subject = pokeSelectors[pokeIndex].getPokemon();
 				var target = pokeSelectors[selectorIndex].getPokemon();
+				var move = subject.chargedMoves[moveIndex];
 				var moveIndex = 0;
 
 				if(! target){
+					return false;
+				}
+
+				if(! move){
 					return false;
 				}
 
@@ -2470,7 +2480,7 @@ var InterfaceMaster = (function () {
 					moveIndex = $(e.target).parent().find(".move-select.charged").index($(e.target));
 				}
 
-				var move = subject.chargedMoves[moveIndex];
+				
 				var effectiveness = target.typeEffectiveness[move.type];
 
 				displayDamage = DamageCalculator.damageByStats(subject, target, subject.getEffectiveStat(0, true), target.getEffectiveStat(1, true), effectiveness, move);

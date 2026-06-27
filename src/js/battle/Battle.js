@@ -1841,6 +1841,11 @@ function Battle(){
 
 		for(var i = 0; i < subject.chargedMoves.length; i++){
 			var chargedMove = subject.chargedMoves[i];
+
+			if(! chargedMove){
+				continue;
+			}
+
 			var chargedMoveTurns = 0
 			var fastMovesFromChargedMove = Math.ceil((chargedMove.energy - subject.energy) / subject.fastMove.energyGain);
 			var sequenceDamage = chargedMove.damage + (fastMovesFromChargedMove * subject.fastMove.damage);

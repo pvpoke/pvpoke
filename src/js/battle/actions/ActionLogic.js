@@ -1161,6 +1161,10 @@ class ActionLogic {
 		var fastDPT = fastDamage / attacker.fastMove.turns;
 
 		for (var i = 0; i < attacker.chargedMoves.length; i++){
+			if(! attacker.chargedMoves[i]){
+				continue;
+			}
+			
 			var chargedMove = attacker.chargedMoves[i];
 
 			if(attacker.energy + chargedMove.energy >= chargedMove.energy){

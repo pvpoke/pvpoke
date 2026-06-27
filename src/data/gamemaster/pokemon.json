@@ -9535,6 +9535,7 @@
         "types": ["psychic", "fighting"],
         "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+        "extraChargedMoves": ["DYNAMIC_PUNCH"],
         "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [3, 9, 15, 14],
@@ -9561,6 +9562,7 @@
         "types": ["psychic", "none"],
         "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+        "extraChargedMoves": ["FUTURE_SIGHT"],
         "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [3, 9, 15, 14],

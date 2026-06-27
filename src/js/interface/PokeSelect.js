@@ -181,39 +181,22 @@ function PokeSelect(element, i){
 			// Set move selects
 
 			var $fastSelect = $el.find(".move-select.fast");
+			var $extraChargedSelect = $el.find(".move-select.extra-charged");
 
 			$fastSelect.html('');
+			$extraChargedSelect.html('');
 			$el.find(".move-select.charged").html('');
 
-			if($fastSelect.html() == ''){
-				// Add content to move selects
+			// Add content to move selects
 
-				for(var i = 0; i < selectedPokemon.fastMovePool.length; i++){
-					var move = selectedPokemon.fastMovePool[i];
+			for(var i = 0; i < selectedPokemon.fastMovePool.length; i++){
+				var move = selectedPokemon.fastMovePool[i];
 
-					$fastSelect.append("<option value=\""+move.moveId+"\">"+move.displayName+"</option");
-				}
+				$fastSelect.append("<option value=\""+move.moveId+"\">"+move.displayName+"</option");
+			}
 
-				if(context != "modalcustomrankings"){
-					$fastSelect.append("<option value=\"custom\">Custom ...</option");
-				}
-
-				$el.find(".move-select.charged").each(function(index, value){
-
-					$(this).append("<option value=\"none\">None</option");
-
-					for(var i = 0; i < selectedPokemon.chargedMovePool.length; i++){
-
-						var move = selectedPokemon.chargedMovePool[i];
-
-						$(this).append("<option value=\""+move.moveId+"\">"+move.displayName+"</option");
-					}
-
-					if(context != "modalcustomrankings"){
-						$(this).append("<option value=\"custom\">Other ...</option");
-					}
-
-				});
+			if(context != "modalcustomrankings"){
+				$fastSelect.append("<option value=\"custom\">Custom ...</option");
 			}
 
 			$fastSelect.find("option[value='"+selectedPokemon.fastMove.moveId+"']").prop("selected","selected");
@@ -222,12 +205,58 @@ function PokeSelect(element, i){
 			$el.find(".add-fast-move").html("+ " + selectedPokemon.fastMove.name);
 			$el.find(".add-fast-move").attr("class","add-fast-move " + selectedPokemon.fastMove.type);
 
+			// Add content to Charged Move selects
+
+			$el.find(".move-select.charged").each(function(index, value){
+
+				$(this).append("<option value=\"none\">None</option");
+
+				for(var i = 0; i < selectedPokemon.chargedMovePool.length; i++){
+
+					var move = selectedPokemon.chargedMovePool[i];
+
+					$(this).append("<option value=\""+move.moveId+"\">"+move.displayName+"</option");
+				}
+
+				if(context != "modalcustomrankings"){
+					$(this).append("<option value=\"custom\">Other ...</option");
+				}
+
+			});
+
+			// Add content to extra Charged Move select for eligible Pokemon
+
+			if(selectedPokemon.extraChargedMovePool.length > 0 || selectedPokemon.hasTag("mega")){
+				$extraChargedSelect.css("display", "block");
+
+				$extraChargedSelect.append("<option value=\"none\">None</option");
+
+				for(var i = 0; i < selectedPokemon.extraChargedMovePool.length; i++){
+					var move = selectedPokemon.extraChargedMovePool[i];
+
+					$extraChargedSelect.append("<option value=\""+move.moveId+"\">"+move.displayName+"</option");
+				}
+
+				if(context != "modalcustomrankings"){
+					$extraChargedSelect.append("<option value=\"custom\">Custom ...</option");
+				}
+
+				if(selectedPokemon.chargedMoves[2]){
+					$extraChargedSelect.find("option[value='"+selectedPokemon.chargedMoves[2].moveId+"']").prop("selected","selected");
+					$extraChargedSelect.attr("class", "move-select extra-charged " + selectedPokemon.chargedMoves[2].type);
+				} else{
+					$extraChargedSelect.attr("class", "move-select extra-charged");
+				}
+			} else{
+				$extraChargedSelect.css("display", "none");
+			}
+
 			// Display charged moves
 
 			$el.find(".move-bar").hide();
 
 			for(var i = 0; i < $el.find(".move-select.charged").length; i++){
-				if(i < selectedPokemon.chargedMoves.length){
+				if(selectedPokemon.chargedMoves[i]){
 					var chargedMove = selectedPokemon.chargedMoves[i];
 
 					$el.find(".move-select.charged").eq(i).find("option[value='"+chargedMove.moveId+"']").prop("selected","selected");
@@ -610,18 +639,22 @@ function PokeSelect(element, i){
 		var energy = selectedPokemon.startEnergy + amount;
 		var $bar = $el.find(".move-bar").eq(index);
 
-		$bar.find(".bar").each(function(i, value){
-			var extraEnergy = energy - (selectedPokemon.chargedMoves[index].energy * i);
+		var move = selectedPokemon.chargedMoves[index];
 
-			$(this).css("height", ((extraEnergy / selectedPokemon.chargedMoves[index].energy)*105)+"%");
-		});
+		if(move){
+			$bar.find(".bar").each(function(i, value){
+				var extraEnergy = energy - (selectedPokemon.chargedMoves[index].energy * i);
 
-		//$bar.find(".bar").css("height", ((energy / selectedPokemon.chargedMoves[index].energy)*100)+"%");
+				$(this).css("height", ((extraEnergy / selectedPokemon.chargedMoves[index].energy)*105)+"%");
+			});
 
-		if(energy >= selectedPokemon.chargedMoves[index].energy){
-			$bar.addClass("active");
-		} else{
-			$bar.removeClass("active");
+			//$bar.find(".bar").css("height", ((energy / selectedPokemon.chargedMoves[index].energy)*100)+"%");
+
+			if(energy >= selectedPokemon.chargedMoves[index].energy){
+				$bar.addClass("active");
+			} else{
+				$bar.removeClass("active");
+			}
 		}
 
 		currentEnergy = energy;
@@ -942,9 +975,11 @@ function PokeSelect(element, i){
 			// Add existing move
 
 			if($(this).hasClass("fast")){
-				selectedPokemon.selectMove("fast", moveId, 0);
+				selectedPokemon.selectMove("fast", moveId);
 			} else if ($(this).hasClass("charged")){
 				selectedPokemon.selectMove("charged", moveId, moveSlotIndex);
+			} else if($(this).hasClass("extra-charged")){
+				selectedPokemon.selectMove("extra-charged", moveId, 2);
 			}
 
 			self.update();
@@ -955,7 +990,22 @@ function PokeSelect(element, i){
 
 			$(".modal .custom-move .name").html(selectedPokemon.speciesName);
 
-			var isFastMove = $(e.target).hasClass("fast");
+			var moveType;
+			var pool;
+
+			if($(e.target).hasClass("fast")){
+				moveType = "fast";
+				pool = selectedPokemon.fastMovePool;
+			} else if($(e.target).hasClass("charged")){
+				moveType = "charged";
+				pool = selectedPokemon.chargedMovePool;
+			} else if($(e.target).hasClass("extra-charged")){
+				moveType = "extra-charged";
+				pool = selectedPokemon.extraChargedMovePool;
+				moveSlotIndex = 2;
+			}
+
+			var isFastMove = moveType == "fast";
 
 			// Add moves to select option
 
@@ -1002,9 +1052,6 @@ function PokeSelect(element, i){
 
 			$(".modal").last().find(".add-move").on("click", function(e){
 				var moveId = $(".modal").last().find(".move-select option:selected").val();
-				var moveType = (isFastMove) ? "fast" : "charged";
-
-				var pool = (isFastMove) ? selectedPokemon.fastMovePool : selectedPokemon.chargedMovePool;
 
 				selectedPokemon.addNewMove(moveId, pool, true, moveType, moveSlotIndex);
 
