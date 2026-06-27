@@ -3315,6 +3315,21 @@
         "turns": 3
     },
     {
+        "moveId": "SNIPE_SHOT",
+        "name": "Snipe Shot",
+        "abbreviation": "Sni",
+        "type": "water",
+        "power": 65,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [2, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".125",
+        "archetype": "Boost Spam",
+        "turns": 1
+    },
+    {
         "moveId": "SOLAR_BEAM",
         "name": "Solar Beam",
         "abbreviation": "SoB",
