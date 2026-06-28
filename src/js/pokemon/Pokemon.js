@@ -920,6 +920,10 @@ function Pokemon(id, i, b, d){
 
 		if((usage.chargedMoves.length > 1)&&(count > 1)&&(self.speciesId != "smeargle")){
 			self.selectMove("charged", usage.chargedMoves[1].moveId, 1);
+
+			if(usage.extraChargedMoves){
+				self.selectMove("extra-charged", usage.extraChargedMoves[0].moveId, 2);
+			}
 		} else if(self.speciesId == "smeargle"){
 			self.selectMove("charged", "none", 1);
 		}
@@ -1052,6 +1056,10 @@ function Pokemon(id, i, b, d){
 					self.selectMove("charged", "none", 1);
 				}
 
+				if(r.moveset.length > 3){
+					self.selectMove("extra-charged", r.moveset[3], 2);
+				}
+
 				self.resetMoves();
 
 				// Assign overall score for reference
@@ -1084,8 +1092,9 @@ function Pokemon(id, i, b, d){
 		var chargedMoves = [];
 		var fastMoveUses = [];
 		var chargedMoveUses = [];
-		var targetArrs = [fastMoves, chargedMoves];
-		var sourceArrs = [self.fastMovePool, self.chargedMovePool];
+		var extraChargedMoveUses = [];
+		var targetArrs = [fastMoves, chargedMoves, chargedMoves];
+		var sourceArrs = [self.fastMovePool, self.chargedMovePool, self.extraChargedMovePool];
 
 		for(var i = 0; i < sourceArrs.length; i++){
 			for(var n = 0; n < sourceArrs[i].length; n++){
@@ -1155,14 +1164,22 @@ function Pokemon(id, i, b, d){
 		}
 
 		for(var i = 0; i < chargedMoves.length; i++){
-			chargedMoveUses.push({
-				moveId: chargedMoves[i].moveId,
-				uses: chargedMoves[i].uses * weightModifier
-			});
+			if(self.chargedMovePool.some(m => m.moveId == chargedMoves[i].moveId)){
+				chargedMoveUses.push({
+					moveId: chargedMoves[i].moveId,
+					uses: chargedMoves[i].uses * weightModifier
+				});
+			} else if(self.extraChargedMovePool.some(m => m.moveId == chargedMoves[i].moveId)){
+				extraChargedMoveUses.push({
+					moveId: chargedMoves[i].moveId,
+					uses: chargedMoves[i].uses * weightModifier
+				});
+			}
+
 		}
 
 		chargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-
+		extraChargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
 		// Calculate TDO for each fast move and sort
 		var total = 0;
@@ -1201,6 +1218,10 @@ function Pokemon(id, i, b, d){
 			fastMoves: fastMoveUses,
 			chargedMoves: chargedMoveUses
 		};
+
+		if(extraChargedMoveUses.length > 0){
+			results.extraChargedMoves = extraChargedMoveUses;
+		}
 
 		return results;
 	}

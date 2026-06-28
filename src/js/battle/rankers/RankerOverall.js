@@ -161,6 +161,10 @@ var RankerMaster = (function () {
 						pokemon.selectMove("charged", r.moveset[2], 1);
 					}
 
+					if(r.moveset.length > 3){
+						pokemon.selectMove("extra-charged", r.moveset[3], 2);
+					}
+
 					var consistencyScore = pokemon.calculateConsistency();
 
 					/* Let's try a different approach to calculating overall score.

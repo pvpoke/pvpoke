@@ -98,7 +98,6 @@ var RankerMaster = (function () {
 
 				// For custom rankings, exclude Pokemon with a low league overall score
 				if(cup.excludeLowPokemon && gm.rankings["alloverall"+cp]){
-					console.log(pokemonList.length);
 					var lowPokemon = gm.rankings["alloverall"+cp].filter(ranking => ranking.score < 70);
 
 					for(var i = 0; i < lowPokemon.length; i++){
@@ -109,7 +108,6 @@ var RankerMaster = (function () {
 							targets.splice(targets.findIndex(r => r.speciesId == lowPokemon[i].speciesId), 1);
 						}
 					}
-					console.log(pokemonList.length);
 				}
 
 				console.log("pokemonList [" + pokemonList.length + "] generated in: " + (Date.now() - startTime) + "ms");
@@ -379,6 +377,7 @@ var RankerMaster = (function () {
 
 					var fastMoves = [];
 					var chargedMoves = [];
+					var extraChargedMoves = [];
 
 					for(var j = 0; j < pokemon.fastMovePool.length; j++){
 						fastMoves.push({moveId: pokemon.fastMovePool[j].moveId, uses: 0});
@@ -388,24 +387,37 @@ var RankerMaster = (function () {
 						chargedMoves.push({moveId: pokemon.chargedMovePool[j].moveId, uses: 0});
 					}
 
+					for(var j = 0; j < pokemon.extraChargedMovePool.length; j++){
+						extraChargedMoves.push({moveId: pokemon.extraChargedMovePool[j].moveId, uses: 0});
+					}
+
+
 					// Assign special rating to movesets and determine best overall moveset
 
 					for(var j = 0; j < rankObj.matches.length; j++){
 						var moveUsage = rankObj.matches[j].moveUsage;
 
 						for(var k = 0; k < fastMoves.length; k++){
-							for(var l = 0; l < moveUsage.fastMoves.length; l++){
-								if(fastMoves[k].moveId == moveUsage.fastMoves[l].moveId){
-									fastMoves[k].uses += moveUsage.fastMoves[l].uses;
-								}
+							let usageEntry = moveUsage.fastMoves.find(m => m.moveId == fastMoves[k].moveId);
+
+							if(usageEntry){
+								fastMoves[k].uses += usageEntry.uses;
 							}
 						}
 
 						for(var k = 0; k < chargedMoves.length; k++){
-							for(var l = 0; l < moveUsage.chargedMoves.length; l++){
-								if(chargedMoves[k].moveId == moveUsage.chargedMoves[l].moveId){
-									chargedMoves[k].uses += moveUsage.chargedMoves[l].uses;
-								}
+							let usageEntry = moveUsage.chargedMoves.find(m => m.moveId == chargedMoves[k].moveId);
+
+							if(usageEntry){
+								chargedMoves[k].uses += usageEntry.uses;
+							}
+						}
+
+						for(var k = 0; k < extraChargedMoves.length; k++){
+							let usageEntry = moveUsage.extraChargedMoves.find(m => m.moveId == extraChargedMoves[k].moveId);
+
+							if(usageEntry){
+								extraChargedMoves[k].uses += usageEntry.uses;
 							}
 						}
 					}
@@ -414,8 +426,13 @@ var RankerMaster = (function () {
 
 					fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 					chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+					extraChargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
 					rankObj.moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
+
+					if(extraChargedMoves.length > 0){
+						rankObj.moves.extraChargedMoves = extraChargedMoves;
+					}
 
 					rankings.push(rankObj);
 				}
@@ -504,26 +521,52 @@ var RankerMaster = (function () {
 				}
 
 				// Determine final score and sort matches
+				var overrideSet = overrides.find(o => o.league = battle.getCP() && o.cup == battle.getCup().name);
 
 				for(var i = 0; i < rankCount; i++){
 
 					var pokemon = pokemonList[i];
+					var moveUsage = rankings[i].moves;
+					var moveset = [pokemon.fastMove.moveId, pokemon.chargedMoves[0].moveId];
 
 					// If data is available, take existing move use data
 
-					rankings[i].moveset = [pokemon.fastMove.moveId, pokemon.chargedMoves[0].moveId];
-
 					if(pokemon.chargedMoves[1]){
-						rankings[i].moveset.push(pokemon.chargedMoves[1].moveId);
+						moveset.push(pokemon.chargedMoves[1].moveId);
+					} else{
+						moveset.push("none");
+					}
+
+					if(pokemon.chargedMoves[2]){
+						moveset.push(pokemon.chargedMoves[2].moveId);
+					}
+
+					// Set final moveset using existing override
+					if(overrideSet){
+						var override = overrideSet.pokemon.find(p => p.speciesId == pokemon.speciesId);
+
+						if(override){
+							if(override.fastMove){
+								moveset[0] = override.fastMove;
+							}
+
+							if(override.chargedMoves){
+								for(let j = 0; j < override.chargedMoves.length; j++){
+									moveset[j+1] = override.chargedMoves[j];
+								}
+							}
+						}
 					}
 
 					if(pokemon.speciesId == "morpeko_full_belly"){
-						rankings[i].moveset[1] = "AURA_WHEEL_ELECTRIC";
+						moveset[1] = "AURA_WHEEL_ELECTRIC";
 					}
 
 					if(pokemon.speciesId == "aegislash_shield"){
-						rankings[i].moveset[0] = "AEGISLASH_CHARGE_PSYCHO_CUT";
+						moveset[0] = "AEGISLASH_CHARGE_PSYCHO_CUT";
 					}
+
+					rankings[i].moveset = moveset;
 
 					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 
@@ -690,6 +733,11 @@ var RankerMaster = (function () {
 						pokemon: values
 					})
 				}
+			}
+
+			// Clear all override data
+			this.clearMoveOverrides = function(){
+				overrides = [];
 			}
 
 			// Set the scenarios to be ranked

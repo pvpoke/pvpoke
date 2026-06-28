@@ -1314,18 +1314,20 @@ var GameMaster = (function () {
 								// Sort by uses
 								var fastMoves = r.moves.fastMoves;
 								var chargedMoves = r.moves.chargedMoves;
-
-								fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-								chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+								var extraChargedMoves = r.moves?.extraChargedMoves ? r.moves?.extraChargedMoves : [];
 
 								pokemon.selectMove("fast", fastMoves[0].moveId);
 								pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
 
-								
-
 								if(chargedMoves.length > 1){
 									pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
 								}
+
+								if(extraChargedMoves.length > 0){
+									pokemon.selectMove("extra-charged", extraChargedMoves[0].moveId, 2);
+								}
+							} else{
+								pokemon.autoSelectMoves();
 							}
 						}
 
@@ -1748,44 +1750,38 @@ var GameMaster = (function () {
 		object.overrideMoveset = function(pokemon, league, cup, overrides){
 
 			// Search eligible leagues and cups
+			var overrideSet = overrides.find(o => o.league == league && o.cup == cup);
+			
+			if(overrideSet){
+				var pokemonEntry = overrideSet.pokemon.find(p => p.speciesId == pokemon.speciesId);
 
-			for(var i = 0; i < overrides.length; i++){
+				if(pokemonEntry){
+					// Set Fast Move
 
-				if((overrides[i].league == league)&&(overrides[i].cup == cup)){
+					if(pokemonEntry.fastMove){
+						pokemon.selectMove("fast", pokemonEntry.fastMove);
+					}
 
-					// Iterate through Pokemon
+					// Set Charged Moves
 
-					var pokemonList = overrides[i].pokemon;
+					if(pokemonEntry.chargedMoves){
+						for(var j = 0; j < pokemonEntry.chargedMoves.length; j++){
+							pokemon.selectMove("charged", pokemonEntry.chargedMoves[j], j);
+						}
 
-					for(var n = 0; n < pokemonList.length; n++){
-						if(pokemonList[n].speciesId == pokemon.speciesId){
-							// Set Fast Move
-
-							if(pokemonList[n].fastMove){
-								pokemon.selectMove("fast", pokemonList[n].fastMove);
-							}
-
-							// Set Charged Moves
-
-							if(pokemonList[n].chargedMoves){
-								for(var j = 0; j < pokemonList[n].chargedMoves.length; j++){
-									pokemon.selectMove("charged", pokemonList[n].chargedMoves[j], j);
-								}
-
-								if(pokemonList[n].chargedMoves.length < 2){
-									pokemon.selectMove("charged", "none", 1);
-								}
-							}
-
-							// Set weight modifier
-							if (typeof pokemonList[n].weight !== 'undefined') {
-								pokemon.weightModifier = pokemonList[n].weight;
-							}
-							break;
+						if(pokemonEntry.chargedMoves.length < 2){
+							pokemon.selectMove("charged", "none", 1);
 						}
 					}
 
-					break;
+					if(pokemonEntry.extraChargedMoves){
+						pokemon.selectMove("extra-charged", pokemonEntry.extraChargedMoves[0], 2);
+					}
+
+					// Set weight modifier
+					if (typeof pokemonEntry.weight !== 'undefined') {
+						pokemon.weightModifier = pokemonEntry.weight;
+					}
 				}
 			}
 		}

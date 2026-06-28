@@ -267,6 +267,10 @@ var InterfaceMaster = (function () {
 			this.displayRankingEntry = function(r, index){
 				var pokemon = new Pokemon(r.speciesId, 0, battle);
 
+				if(! pokemon.speciesId){
+					return;
+				}
+
 				pokemon.initialize(true);
 				pokemon.selectMove("fast", r.moveset[0]);
 				pokemon.selectMove("charged", r.moveset[1], 0);
@@ -277,8 +281,8 @@ var InterfaceMaster = (function () {
 					pokemon.selectMove("charged", "none", 1);
 				}
 
-				if(! pokemon.speciesId){
-					return;
+				if(r.moveset.length > 3){
+					pokemon.selectMove("extra-charged", r.moveset[3], 2);
 				}
 
 				// Construct meta group from ranked Pokemon
@@ -301,6 +305,8 @@ var InterfaceMaster = (function () {
 				var moveNameStr = "";
 
 				// Put together the recommended moveset string
+				var chargedMoves = [...pokemon.chargedMovePool, ...pokemon.extraChargedMovePool];
+
 				for(var n = 0; n < r.moveset.length; n++){
 					if(n == 0){
 						for(var j = 0; j < pokemon.fastMovePool.length; j++){
@@ -312,24 +318,23 @@ var InterfaceMaster = (function () {
 							}
 						}
 					} else{
-						for(var j = 0; j < pokemon.chargedMovePool.length; j++){
-							if(r.moveset[n] == pokemon.chargedMovePool[j].moveId){
-								moveNameStr += pokemon.chargedMovePool[j].displayName;
+						var chargedMove = chargedMoves.find(m => m.moveId == r.moveset[n]);
 
-								var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, pokemon.chargedMovePool[j]);
-								var moveCount = moveCounts[0];
+						if(chargedMove){
+							moveNameStr += chargedMove.displayName;
 
-								if(moveCounts[0] > moveCounts[1]){
-									moveCount+="-";
-								}
+							var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMove);
+							var moveCount = moveCounts[0];
 
-								if(moveCounts[2] < moveCounts[1] && moveCounts[1] == moveCounts[0]){
-									moveCount+=".";
-								}
-
-								moveNameStr += "<span class=\"count\">"+moveCount+"</span>";
-								break;
+							if(moveCounts[0] > moveCounts[1]){
+								moveCount+="-";
 							}
+
+							if(moveCounts[2] < moveCounts[1] && moveCounts[1] == moveCounts[0]){
+								moveCount+=".";
+							}
+
+							moveNameStr += "<span class=\"count\">"+moveCount+"</span>";
 						}
 					}
 
@@ -818,6 +823,10 @@ var InterfaceMaster = (function () {
 					pokemon.selectMove("charged", r.moveset[2],1);
 				} else{
 					pokemon.selectMove("charged", "none", 1);
+				}
+
+				if(r.moveset.length > 3){
+					pokemon.selectMove("extra-charged", r.moveset[3], 2);
 				}
 
 				var pokeMoveStr = pokemon.generateURLMoveStr();
