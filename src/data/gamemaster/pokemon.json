@@ -13287,6 +13287,30 @@
         "released": true
     },
     {
+        "dex": 227,
+        "speciesName": "Skarmory (Mega)",
+        "speciesId": "skarmory_mega",
+        "baseStats": {
+            "atk": 273,
+            "def": 228,
+            "hp": 163
+        },
+        "types": ["steel", "flying"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING"],
+        "chargedMoves": ["BRAVE_BIRD", "FLASH_CANNON", "SKY_ATTACK"],
+        "defaultIVs": {
+            "cp500": [5, 15, 14, 13],
+            "cp1500": [14.5, 7, 14, 14],
+            "cp2500": [24.5, 4, 14, 13]
+        },
+        "searchPriority": 1,
+        "level25CP": 1267,
+        "tags": ["shadoweligible", "mega"],
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true
+    },
+    {
         "dex": 228,
         "speciesName": "Houndour",
         "speciesId": "houndour",
