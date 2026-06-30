@@ -309,18 +309,17 @@ var InterfaceMaster = (function () {
 
 				for(var n = 0; n < r.moveset.length; n++){
 					if(n == 0){
-						for(var j = 0; j < pokemon.fastMovePool.length; j++){
-							if(r.moveset[n] == pokemon.fastMovePool[j].moveId){
-								moveNameStr += pokemon.fastMovePool[j].displayName;
+						var fastMove = pokemon.fastMovePool.find(m => m.moveId == r.moveset[n]);
 
-								moveNameStr += "<span class=\"count fast\">"+(pokemon.fastMovePool[j].cooldown / 500)+"</span>";
-								break;
-							}
+						if(fastMove && typeof fastMove !== "undefined"){
+							moveNameStr += fastMove.displayName;
+
+							moveNameStr += "<span class=\"count fast\">"+(fastMove.cooldown / 500)+"</span>";
 						}
 					} else{
 						var chargedMove = chargedMoves.find(m => m.moveId == r.moveset[n]);
 
-						if(chargedMove){
+						if(chargedMove && typeof chargedMove !== "undefined"){
 							moveNameStr += chargedMove.displayName;
 
 							var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMove);
@@ -466,7 +465,7 @@ var InterfaceMaster = (function () {
 				var chargedMove1Count = Math.ceil(pokemon.chargedMoves[0].energy / pokemon.fastMove.energyGain);
 				var chargedMove2Count = 0;
 
-				if(pokemon.chargedMoves.length > 1){
+				if(pokemon.chargedMoves[1]){
 					chargedMove2Name = pokemon.chargedMoves[1].displayName;
 					chargedMove2Count = Math.ceil(pokemon.chargedMoves[1].energy / pokemon.fastMove.energyGain);
 				}

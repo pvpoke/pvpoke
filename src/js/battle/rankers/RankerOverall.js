@@ -117,6 +117,10 @@ var RankerMaster = (function () {
 							rankObj.moves.fastMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
 							rankObj.moves.chargedMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
 
+							if(rankObj.moves?.extraChargedMoves){
+								rankObj.moves.extraChargedMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
+							}
+
 							rankings.push(rankObj);
 
 						} else{
@@ -129,6 +133,10 @@ var RankerMaster = (function () {
 								rankObj.moves.fastMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
 								rankObj.moves.chargedMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
 
+								if(rankObj.moves?.extraChargedMoves){
+									rankObj.moves.extraChargedMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
+								}
+
 								for(var j = 0; j < rankObj.moves.fastMoves.length; j++){
 									rankings[n].moves.fastMoves[j].uses += rankObj.moves.fastMoves[j].uses;
 								}
@@ -136,7 +144,18 @@ var RankerMaster = (function () {
 								for(var j = 0; j < rankObj.moves.chargedMoves.length; j++){
 									rankings[n].moves.chargedMoves[j].uses += rankObj.moves.chargedMoves[j].uses;
 								}
+
+								for(var j = 0; j < rankObj.moves.extraChargedMoves.length; j++){
+									rankings[n].moves.extraChargedMoves[j].uses += rankObj.moves.extraChargedMoves[j].uses;
+								}
 							}
+						}
+
+						rankObj.moves.fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+						rankObj.moves.chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+						if(rankObj.moves.extraChargedMoves){
+							rankObj.moves.extraChargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 						}
 					}
 				}

@@ -975,7 +975,12 @@ function Pokemon(id, i, b, d){
 		// If charged move is set to none, clear 2nd charged move
 
 		if(id == "none" && (type == "charged" || type == "extra-charged")){
-			this.chargedMoves[index] = null;
+			if(this.chargedMoves.length < 3){
+				this.chargedMoves.splice(index,1);
+			} else{
+				this.chargedMoves[index] = null;
+			}
+			
 		}
 
 		// If identical charged moves are selected, select first available
@@ -1464,6 +1469,10 @@ function Pokemon(id, i, b, d){
 			var bestEffectiveness = 0;
 
 			for(var n = 0; n < self.chargedMoves.length; n++){
+				if(! self.chargedMoves[n]){
+					continue;
+				}
+				
 				var effectiveness = DamageCalculator.getEffectiveness(self.chargedMoves[n].type, [types[i].toLowerCase(), "none"]);
 				var effectivePower = ((self.chargedMoves[n].power * self.chargedMoves[n].stab * self.shadowAtkMult * effectiveness) * (self.stats.atk / targetDef));
 				var bestChargedMoveSpeed = Math.ceil(self.chargedMoves[n].energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
@@ -1505,7 +1514,7 @@ function Pokemon(id, i, b, d){
 			inflexible = true;
 		}
 
-		if(((self.chargedMoves.length == 1) || ((self.chargedMoves.length == 2) && (self.chargedMoves[0].type == self.chargedMoves[1].type))) && (! inflexible)){
+		if(((self.chargedMoves.length == 1 || ! self.chargedMoves[1]) || ((self.chargedMoves.length == 2) && (self.chargedMoves[0].type == self.chargedMoves[1].type))) && (! inflexible)){
 			cons.push({
 				trait: "Inflexible",
 				desc: "May struggle to hit multiple types."
@@ -1611,7 +1620,7 @@ function Pokemon(id, i, b, d){
 		var hasSelfDebuffingMove = false;
 
 		for(var i = 0; i < self.chargedMoves.length; i++){
-			if(self.chargedMoves[i].selfDebuffing){
+			if(self.chargedMoves[i]?.selfDebuffing){
 				hasSelfDebuffingMove = true;
 			}
 		}
@@ -1686,7 +1695,15 @@ function Pokemon(id, i, b, d){
 		}
 
 		for(var n = 0; n < pokemon.chargedMoves.length; n++){
+			if(! pokemon.chargedMoves[n]){
+				continue;
+			}
+
 			for(var j = 0; j < self.chargedMoves.length; j++){
+				if(! self.chargedMoves[j]){
+					continue;
+				}
+
 				if(pokemon.chargedMoves[n].moveId == self.chargedMoves[j].moveId){
 					similarityScore += 200;
 				} else if(pokemon.chargedMoves[n].type == self.chargedMoves[j].moveId){
@@ -2245,7 +2262,7 @@ function Pokemon(id, i, b, d){
 	this.calculateConsistency = function(){
 
 		var fastMove = self.fastMove;
-		var chargedMoves = self.chargedMoves;
+		var chargedMoves = self.chargedMoves.filter(m => m !== null);
 		var consistencyScore = 1;
 
 		// Reset move stats
