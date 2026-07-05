@@ -834,33 +834,37 @@ var InterfaceMaster = (function () {
 
 				var fastMoves = pokemon.fastMovePool;
 				var chargedMoves = pokemon.chargedMovePool;
+				var extraChargedMoves = pokemon.extraChargedMovePool;
 
-				for(var j = 0; j < fastMoves.length; j++){
-					fastMoves[j].uses = 0;
+				fastMoves.forEach(move => {
+					let uses = r.moves.fastMoves.find(m => m.moveId == move.moveId).uses;
 
-					for(var n = 0; n < r.moves.fastMoves.length; n++){
-						var move = r.moves.fastMoves[n];
+					move.uses = uses ? uses : 0;
+				});
 
-						if(move.moveId == fastMoves[j].moveId){
-							fastMoves[j].uses = move.uses;
-						}
+				chargedMoves.forEach(move => {
+					let uses = r.moves.chargedMoves.find(m => m.moveId == move.moveId).uses;
+
+					move.uses = uses ? uses : 0;
+				});
+
+				extraChargedMoves.forEach(move => {
+					if(r.moves.extraChargedMoves){
+						let uses = r.moves.extraChargedMoves.find(m => m.moveId == move.moveId).uses;
+
+						move.uses = uses ? uses : 0;
+					} else{
+						move.uses = 0;
 					}
-				}
-
-				for(var j = 0; j < chargedMoves.length; j++){
-					chargedMoves[j].uses = 0;
-
-					for(var n = 0; n < r.moves.chargedMoves.length; n++){
-						var move = r.moves.chargedMoves[n];
-
-						if(move.moveId == chargedMoves[j].moveId){
-							chargedMoves[j].uses = move.uses;
-						}
-					}
-				}
+				});
 
 				fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 				chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+				extraChargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+				if(extraChargedMoves.length > 0){
+					chargedMoves = extraChargedMoves.concat(chargedMoves);
+				}
 
 				// Buckle up, this is gonna get messy. This is the main detail HTML.
 
@@ -1070,13 +1074,17 @@ var InterfaceMaster = (function () {
 
 					// Highlight this move if it's in the recommended moveset
 
-					for(var j = 0; j < pokemon.chargedMoves.length; j++){
-						if(chargedMoves[n] == pokemon.chargedMoves[j]){
-							$moveDetails.addClass("selected");
-						}
+					if(pokemon.chargedMoves.includes(chargedMoves[n])){
+						$moveDetails.addClass("selected");
 					}
 
 					$details.find(".moveset.charged").append($moveDetails);
+
+					// Add extra margin between regular Charged Moves and extra Charged Moves
+					if(extraChargedMoves.length > 0 && chargedMoves[n] == extraChargedMoves[extraChargedMoves.length-1]){
+						$details.find(".moveset.charged").append("<hr>");
+						$moveDetails.css("margin-bottom", "10px");
+					}
 				}
 
 				// Helper variables for displaying matchups and link URL
