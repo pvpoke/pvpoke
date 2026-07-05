@@ -212,9 +212,12 @@
 				<div class="bar"></div>
 				<div class="bar-back"></div>
 			</div>
-			<div class="energy-label">
-				<div class="num">0</div>
-				<div>energy</div>
+			<div class="move-bar">
+				<div class="label">CM</div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar-back"></div>
 			</div>
 			<div class="move-bar">
 				<div class="label">CM</div>
@@ -222,6 +225,10 @@
 				<div class="bar"></div>
 				<div class="bar"></div>
 				<div class="bar-back"></div>
+			</div>
+			<div class="energy-label">
+				<div class="num">0</div>
+				<div>energy</div>
 			</div>
 		</div>
 	</div>

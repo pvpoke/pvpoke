@@ -1990,6 +1990,11 @@ var InterfaceMaster = (function () {
 									}
 								}
 
+								// Deselect 3rd charged move if none is supplied
+								if(arr.length < 4 && poke.extraChargedMovePool.length > 0){
+									poke.selectMove("extra-charged", "none", 2);
+								}
+
 								break;
 
 							case "s":

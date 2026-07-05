@@ -724,6 +724,11 @@ function PokeMultiSelect(element){
 						pokemon.selectMove("extra-charged", moveId, 2);
 					}
 				}
+
+				// Deselect 3rd charged move if none is supplied
+				if(arr.length < 4 && pokemon.extraChargedMovePool.length > 0){
+					pokemon.selectMove("extra-charged", "none", 2);
+				}
 			} else{
 				// Auto select moves if none are specified
 				pokemon.autoSelectMoves();
