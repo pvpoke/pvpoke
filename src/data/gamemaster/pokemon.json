@@ -39921,7 +39921,7 @@
             "hp": 190
         },
         "types": ["rock", "fire"],
-        "fastMoves": ["SMACK_DOWN"],
+        "fastMoves": ["SMACK_DOWN", "TACKLE"],
         "chargedMoves": ["ROCK_BLAST", "ROCK_SLIDE", "FLAME_CHARGE"],
         "defaultIVs": {
             "cp500": [13, 4, 12, 8],

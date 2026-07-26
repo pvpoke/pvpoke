@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-07-21 01:32:55",
+    "timestamp": "2026-07-27 01:52:24",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -641,6 +641,17 @@
             "showCup": true,
             "showFormat": true,
             "showMeta": true,
+            "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
+        },
+        {
+            "title": "Mega Master League",
+            "cup": "mega",
+            "cp": 10000,
+            "meta": "mega",
+            "showCup": true,
+            "showFormat": false,
+            "showMeta": true,
+            "hideRankings": true,
             "rules": ["No CP limit.", "Legendary Pokémon,  Mythical Pokémon,  and Ultra Beasts are not eligible."]
         },
         {
@@ -40728,7 +40739,7 @@
                 "hp": 190
             },
             "types": ["rock", "fire"],
-            "fastMoves": ["SMACK_DOWN"],
+            "fastMoves": ["SMACK_DOWN", "TACKLE"],
             "chargedMoves": ["ROCK_BLAST", "ROCK_SLIDE", "FLAME_CHARGE"],
             "defaultIVs": {
                 "cp500": [13, 4, 12, 8],
