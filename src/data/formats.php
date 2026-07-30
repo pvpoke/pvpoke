@@ -14,21 +14,6 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Retro Cup',
-    'cup' => 'retro',
-    'cp' => 1500,
-    'meta' => 'retro',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 2,500 CP to enter.',
-      1 => 'Dark-, Steel-, and Fairy-type Pokémon are not eligible.',
-    ),
-  ),
-  2 => 
-  array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
     'cp' => 10000,
@@ -40,6 +25,21 @@ $formats = array (
     array (
       0 => 'No CP limit.',
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
+    ),
+  ),
+  2 => 
+  array (
+    'title' => 'Weather Cup',
+    'cup' => 'weather',
+    'cp' => 1500,
+    'meta' => 'weather',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Fire-, Water-, Ice-, and Rock-type Pokémon are eligible.',
     ),
   ),
   3 => 
