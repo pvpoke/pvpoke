@@ -417,7 +417,7 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"</b></th></tr>");
+					$row = $("<tr><th class=\"name\">"+getPokemonSpriteHTML(pokemon.speciesId, pokemon.dex)+"<b>"+(count+1)+". "+pokemon.speciesName+"</b></th></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -534,7 +534,7 @@ var InterfaceMaster = (function () {
 
 					// Add results to meta table
 
-					$row = $("<tr><th class=\"name\"><b>"+pokemon.speciesName+"</b></th></tr>");
+					$row = $("<tr><th class=\"name\">"+getPokemonSpriteHTML(pokemon.speciesId, pokemon.dex)+"<b>"+pokemon.speciesName+"</b></th></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -900,7 +900,7 @@ var InterfaceMaster = (function () {
 
 					// Add results to alternatives table
 
-					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\" alias=\""+pokemon.aliasId+"\">+</div></b></th></tr>");
+					$row = $("<tr><th class=\"name\">"+getPokemonSpriteHTML(pokemon.speciesId, pokemon.dex)+"<b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\" alias=\""+pokemon.aliasId+"\">+</div></b></th></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
