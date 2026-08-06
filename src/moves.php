@@ -56,6 +56,7 @@ require_once 'header.php';
 				<td>Damage Per Energy</td>
 			</tr>
 		</table>
+		<div class="check mega-move-toggle hide"><span></span>Show Mega Moves (+)</div>
 		<input class="poke-search" context="move-search" type="text" placeholder="Search Move or Type" />
 		<div class="table-container">
 			<table class="sortable-table stats-table moves" cellpadding="0" cellspacing="0"></table>
