@@ -10,19 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Master Premier Cup",
-		"cup": "premier",
-		"cp": 10000,
-		"meta": "premiermaster",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"No CP limit.",
-			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
-		]
-	},
-	{
 		"title": "Weather Cup",
 		"cup": "weather",
 		"cp": 1500,
@@ -36,10 +23,37 @@
 		]
 	},
 	{
+		"title": "Evolution Cup",
+		"cup": "evolution",
+		"cp": 1500,
+		"meta": "evolution",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Pokémon that have evolved at least once and can evolve again will be eligible."
+		]
+	},
+	{
 		"title": "Mega Master League",
 		"cup": "mega",
 		"cp": 10000,
 		"meta": "mega",
+		"showCup": true,
+		"showFormat": false,
+		"showMeta": true,
+		"hideRankings": true,
+		"rules": [
+			"No CP limit.",
+			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
+		]
+	},
+	{
+		"title": "Master Premier Cup",
+		"cup": "premier",
+		"cp": 10000,
+		"meta": "premiermaster",
 		"showCup": true,
 		"showFormat": false,
 		"showMeta": true,
