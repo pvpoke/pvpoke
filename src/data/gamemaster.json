@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-08-07 23:49:06",
+    "timestamp": "2026-08-08 20:33:02",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -534,6 +534,27 @@
             "presetOnly": true
         },
         {
+            "name": "scroll",
+            "title": "Scroll Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["water", "fighting", "dark"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["mega"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["primarina"]
+                }
+            ],
+            "partySize": 3
+        },
+        {
             "name": "spellcraft",
             "title": "Spellcraft Cup",
             "include": [
@@ -674,6 +695,16 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Pokémon that have evolved at least once and can evolve again will be eligible."]
+        },
+        {
+            "title": "Scroll Cup",
+            "cup": "scroll",
+            "cp": 1500,
+            "meta": "scroll",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Water-,  Fighting-,  and Dark-type Pokémon are eligible."]
         },
         {
             "title": "Mega Master League",

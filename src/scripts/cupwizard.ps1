@@ -29,7 +29,7 @@ $overridesPath = Join-Path $dataPath "overrides/$cupName"
 New-Item -ItemType Directory -Path $overridesPath -Force | Out-Null
 
 # Rankings
-$rankingsPath = Join-Path $dataPath "rankings/$cupName"
+$rankingsPath = Join-Path $dataPath "rankings/rankings-$cupName"
 New-Item -ItemType Directory -Path $rankingsPath -Force | Out-Null
 
 foreach ($league in $leagues) {

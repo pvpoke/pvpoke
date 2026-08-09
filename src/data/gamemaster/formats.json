@@ -36,6 +36,19 @@
 		]
 	},
 	{
+		"title": "Scroll Cup",
+		"cup": "scroll",
+		"cp": 1500,
+		"meta": "scroll",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Water-, Fighting-, and Dark-type Pokémon are eligible."
+		]
+	},
+	{
 		"title": "Mega Master League",
 		"cup": "mega",
 		"cp": 10000,
