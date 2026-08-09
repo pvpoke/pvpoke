@@ -976,6 +976,9 @@ var InterfaceMaster = (function () {
 				// Output to table
 				var attacker = pokeSelectors[0].getPokemon();
 				var defender = pokeSelectors[1].getPokemon();
+				attacker.reset();
+				defender.reset();
+				
 				var breakpoints = attacker.calculateBreakpoints(defender, move);
 
 				$(".stats-table.breakpoints .output").html('<tr></tr>');

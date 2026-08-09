@@ -7980,6 +7980,36 @@
         "tags": ["shadow"]
     },
     {
+        "dex": 121,
+        "speciesName": "Starmie (Mega)",
+        "speciesId": "starmie_mega",
+        "baseStats": {
+            "atk": 276,
+            "def": 229,
+            "hp": 155
+        },
+        "types": ["water", "psychic"],
+        "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "QUICK_ATTACK", "TACKLE", "WATER_GUN", "PSYWAVE"],
+        "chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "POWER_GEM", "PSYBEAM", "PSYCHIC", "THUNDER", "SURF", "AQUA_JET"],
+        "legacyMoves": ["QUICK_ATTACK"],
+        "defaultIVs": {
+            "cp500": [5, 15, 15, 14],
+            "cp1500": [15, 4, 11, 12],
+            "cp2500": [24.5, 5, 14, 15]
+        },
+        "eliteMoves": ["TACKLE"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_STARYU",
+            "parent": "staryu"
+        },
+        "searchPriority": null,
+        "level25CP": 1582,
+        "tags": ["shadoweligible", "mega"]
+    },
+    {
         "dex": 122,
         "speciesName": "Mr. Mime",
         "speciesId": "mr_mime",
