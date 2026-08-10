@@ -967,7 +967,7 @@ b {
   float: none;
   flex: 1;
   padding: 5px;
-  font-size: 15px;
+  font-size: 14px;
 }
 .poke.multi .rankings-container .rank .name-container .number {
   padding-right: 5px;
@@ -992,13 +992,13 @@ b {
   margin-left: 0;
 }
 .poke.multi .rankings-container .rank .remove {
-  font-weight: bold;
   background: rgba(0, 0, 0, 0.5);
   color: #f9fdff;
   border-radius: 4px;
-  padding: 2px 6px;
+  padding: 3px 6px;
   font-size: 14px;
-  height: 20px;
+  height: 18px;
+  line-height: 16px;
 }
 .poke.multi .rankings-container .rank .remove:after {
   content: "x";
@@ -2629,6 +2629,7 @@ a.download-csv {
   font-weight: bold;
   padding: 5px 0px;
   box-sizing: border-box;
+  font-size: 14px;
 }
 .ranking-header.right {
   text-align: right;
@@ -2643,7 +2644,7 @@ a.download-csv {
   overflow-y: initial;
 }
 .rankings-container > .rank:hover, .rankings-container > .rank.selected {
-  border-left: 20px solid #222;
+  border-left: 16px solid #222;
 }
 .rankings-container.pokebox-list {
   display: flex;
@@ -2670,10 +2671,10 @@ a.download-csv {
 }
 
 .rank {
-  padding: 5px 10px;
+  padding: 3px 8px;
   border-radius: 8px;
-  margin-bottom: 5px;
-  border-left: 20px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 6px;
+  border-left: 16px solid rgba(0, 0, 0, 0.1);
   position: relative;
 }
 .rank.hide {
@@ -2685,9 +2686,9 @@ a.download-csv {
 .rank .expand-label {
   position: absolute;
   color: rgba(255, 255, 255, 0.75);
-  left: -16px;
-  font-size: 24px;
-  top: 10px;
+  left: -14px;
+  font-size: 18px;
+  top: 8px;
   width: 14px;
   text-align: center;
 }
@@ -2696,6 +2697,7 @@ a.download-csv {
 }
 .rank .name-container {
   float: left;
+  font-size: 14px;
   padding: 5px 0;
 }
 .rank .number {
@@ -2719,8 +2721,7 @@ a.download-csv {
   background-position: center;
 }
 .rank .editor-note-icon {
-  width: 21px;
-  height: 17px;
+  height: 14px;
   background-image: url("../img/notes-icon.png");
 }
 .rank .rating-container {
@@ -3173,6 +3174,8 @@ a.download-csv {
 }
 .rank .details .detail-section .rank {
   border-left: 10px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 20px 0;
+  padding: 3px 8px;
 }
 .rank .details .detail-section .rank.selected {
   border-left: 10px solid black;
@@ -3180,7 +3183,7 @@ a.download-csv {
 .rank .details .detail-section .rank.recommended {
   border-left: 10px solid black;
   margin: 20px 0 10px 0;
-  font-size: 12px;
+  font-size: 10px;
 }
 .rank .details .detail-section .footnote {
   font-size: 12px;
@@ -3231,9 +3234,9 @@ a.download-csv {
   margin: 0;
 }
 .rank .details .multi-battle-link a.button {
-  font-size: 16px;
+  font-size: 15px;
   display: inline-block;
-  margin: 0;
+  margin: 3px 0 0 0;
 }
 .rank .details h2 {
   margin: 0 0 5px 0;
@@ -3243,7 +3246,7 @@ a.download-csv {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 8px 10px;
+  padding: 7px 8px;
 }
 .rank.typed-ranking .pokemon-info {
   flex: 1;
@@ -3258,6 +3261,7 @@ a.download-csv {
   margin-top: -3px;
   margin-bottom: -3px;
   min-width: 46.5%;
+  font-size: 15px;
 }
 .rank.typed-ranking .pokemon-info .type-container {
   display: flex;
@@ -3280,7 +3284,7 @@ a.download-csv {
 }
 .rank.typed-ranking .pokemon-info .moves {
   width: 100%;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 .rank.typed-ranking > .rating-container {
   margin-left: auto;
@@ -3426,6 +3430,7 @@ a.download-csv {
   border: 2px solid rgba(0, 0, 0, 0);
   text-decoration: none;
   color: #000;
+  font-size: 14px;
 }
 .traits > div.dark, .traits > div.dragon, .traits > div.ghost, .traits > a.dark, .traits > a.dragon, .traits > a.ghost,
 .similar-pokemon .list > div.dark,
@@ -6070,7 +6075,7 @@ a.feed-subscribe {
 
   .rank .details .detail-section .weaknesses .type div:nth-of-type(2),
 .rank .details .detail-section .resistances .type div:nth-of-type(2) {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 16px;
   }
 
