@@ -153,6 +153,9 @@ require_once '../header.php';
 
                 <div class="description">Only used as a description in the rankings.</div>
             </div>
+            <div class="gm-field-wrapper charged-only">
+                <div class="check" data="mega-move"><span></span>Mega Move</div>
+            </div>
         </div>
 
         <hr>

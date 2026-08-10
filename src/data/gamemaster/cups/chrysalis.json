@@ -1,0 +1,63 @@
+{
+  "name": "chrysalis",
+  "title": "Chrysalis Cup - Devon World Championship 2026",
+  "include": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "dragon",
+        "flying",
+        "psychic"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "jellicent",
+        "marowak_alolan",
+        "marowak_alolan_shadow",
+        "primeape",
+        "primeape_shadow",
+        "seaking",
+        "togekiss",
+        "trevenant",
+        "trevenant_shadow"
+      ]
+    }
+  ],
+  "exclude": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "dark",
+        "electric",
+        "ice",
+        "steel"
+      ]
+    },
+    {
+      "filterType": "tag",
+      "name": "Tag",
+      "values": [
+        "mega"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "corsola_galarian",
+        "rapidash_galarian",
+        "togetic"
+      ]
+    }
+  ],
+  "overrides": [],
+  "league": 1500,
+  "useDefaultMovesets": 1,
+  "excludeLowPokemon": 1,
+  "link": "https://devon.gg/"
+}

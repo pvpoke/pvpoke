@@ -14,6 +14,67 @@ $formats = array (
   ),
   1 => 
   array (
+    'title' => 'Weather Cup',
+    'cup' => 'weather',
+    'cp' => 1500,
+    'meta' => 'weather',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Fire-, Water-, Ice-, and Rock-type Pokémon are eligible.',
+    ),
+  ),
+  2 => 
+  array (
+    'title' => 'Evolution Cup',
+    'cup' => 'evolution',
+    'cp' => 1500,
+    'meta' => 'evolution',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Pokémon that have evolved at least once and can evolve again will be eligible.',
+    ),
+  ),
+  3 => 
+  array (
+    'title' => 'Scroll Cup',
+    'cup' => 'scroll',
+    'cp' => 1500,
+    'meta' => 'scroll',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Water-, Fighting-, and Dark-type Pokémon are eligible.',
+    ),
+  ),
+  4 => 
+  array (
+    'title' => 'Mega Master League',
+    'cup' => 'mega',
+    'cp' => 10000,
+    'meta' => 'mega',
+    'showCup' => true,
+    'showFormat' => false,
+    'showMeta' => true,
+    'hideRankings' => true,
+    'rules' => 
+    array (
+      0 => 'No CP limit.',
+      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
+    ),
+  ),
+  5 => 
+  array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
     'cp' => 10000,
@@ -28,22 +89,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  2 => 
-  array (
-    'title' => 'Summer Cup',
-    'cup' => 'summer',
-    'cp' => 1500,
-    'meta' => 'summer',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible.',
-    ),
-  ),
-  3 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (Copa Dilúvio)',
     'cup' => 'copadiluvio',
@@ -53,7 +99,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  4 => 
+  7 => 
   array (
     'title' => 'Battle Frontier (Tsuki Cup)',
     'cup' => 'tsuki',
@@ -63,7 +109,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  5 => 
+  8 => 
   array (
     'title' => 'Battle Frontier (Liga Ultra)',
     'cup' => 'ligaultra',
@@ -73,7 +119,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  9 => 
   array (
     'title' => 'Battle Frontier (Coupe du Sillage)',
     'cup' => 'coupedusillage',
@@ -83,7 +129,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  10 => 
   array (
     'title' => 'Devon Equinox Cup',
     'cup' => 'equinox',
@@ -93,7 +139,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  11 => 
   array (
     'title' => 'Devon Bastille Cup',
     'cup' => 'bastille',
@@ -103,7 +149,17 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  12 => 
+  array (
+    'title' => 'Devon Chrysalis Cup',
+    'cup' => 'chrysalis',
+    'cp' => 1500,
+    'meta' => 'chrysalis',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+  ),
+  13 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -113,7 +169,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  10 => 
+  14 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -123,7 +179,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  11 => 
+  15 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

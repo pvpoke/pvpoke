@@ -133,7 +133,7 @@ function interfaceObject(){
 					var $filter = $(".filter.clone").clone();
 					$filter.removeClass("hide clone");
 					$filter.attr("index", i);
-					$filter.find("a.toggle .name").html(filters[i].name);
+					$filter.find("a.toggle .name").text(filters[i].name);
 					$filter.attr("type", filters[i].filterType);
 
 					$el.append($filter);

@@ -27,7 +27,8 @@ if($json === null){
 	exit("JSON cannot be decoded.");
 }
 
-$filepath = 'rankings/' . $_POST['cup'] . '/' . $_POST['category'] . '/rankings-' . $_POST['league'] . '.json';
+$cup = basename($_POST['cup']);
+$filepath = 'rankings/' . $cup . '/' . $_POST['category'] . '/rankings-' . $_POST['league'] . '.json';
 
 if(file_put_contents($filepath, $_POST['data']) !== false){
 	echo '{ "status": "Success" }';

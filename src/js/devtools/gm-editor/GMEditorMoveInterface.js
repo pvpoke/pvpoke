@@ -224,6 +224,14 @@ var InterfaceMaster = (function () {
 
                     $("#move-stat-label").html("<b>DPE: </b> " + dpe);
 
+                    // Check boxes
+                    if(selectedMove?.isMegaMove){
+                        $(".check[data='mega-move']").addClass("on");
+                    } else{
+                        $(".check[data='mega-move']").removeClass("on");
+                    }
+                    
+
                     $(".fast-only").hide();
                     $(".charged-only").show();
                 } else{
@@ -374,6 +382,7 @@ var InterfaceMaster = (function () {
                             delete selectedMove?.buffTarget;
                             delete selectedMove?.buffsSelf;
                             delete selectedMove?.buffsOpponent;
+                            delete selectedMove?.isMegaMove;
                         } else if(val == "charged"){
                             selectedMove.energyGain = 0;
                             selectedMove.energy = 50;
@@ -485,6 +494,28 @@ var InterfaceMaster = (function () {
                         $(this).blur();
                     }
                     
+                }
+            });
+
+            // Toggle check boxes
+
+            $("body").on("click", ".check", function(e){
+                $(this).toggleClass("on");
+                $(this).trigger("change");
+            });
+
+            // Event handler for changing a checkbox
+            $("#gm-editor-moves .check").on("change", function(e){
+                switch($(this).attr("data")){
+                    case "mega-move":
+                        if($(e.target).hasClass("on")){
+                            selectedMove.isMegaMove = true;
+                        } else{
+                            delete selectedMove.isMegaMove;
+                        }
+
+                        self.displaySelectedMove();
+                        break;
                 }
             });
 

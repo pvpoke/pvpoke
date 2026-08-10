@@ -1,0 +1,162 @@
+[
+    {
+        "speciesId": "altaria",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"]
+    },
+    {
+        "speciesId": "cobalion",
+        "fastMove": "DOUBLE_KICK",
+        "chargedMoves": ["SACRED_SWORD", "IRON_HEAD"]
+    },
+    {
+        "speciesId": "corviknight",
+        "fastMove": "SAND_ATTACK",
+        "chargedMoves": ["AIR_CUTTER", "PAYBACK"]
+    },
+    {
+        "speciesId": "corviknight",
+        "fastMove": "SAND_ATTACK",
+        "chargedMoves": ["AIR_CUTTER", "IRON_HEAD"]
+    },
+    {
+        "speciesId": "empoleon",
+        "fastMove": "METAL_SOUND",
+        "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+    },
+    {
+        "speciesId": "florges",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["CHILLING_WATER", "DISARMING_VOICE"]
+    },
+    {
+        "speciesId": "flygon",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["TWISTER", "SAND_TOMB"]
+    },
+    {
+        "speciesId": "flygon_shadow",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["TWISTER", "SAND_TOMB"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "forretress",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["ROCK_TOMB", "SAND_TOMB"]
+    },
+    {
+        "speciesId": "forretress_shadow",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["ROCK_TOMB", "SAND_TOMB"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "giratina_altered",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
+    },
+    {
+        "speciesId": "kingdra",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SURF", "SWIFT"]
+    },
+    {
+        "speciesId": "lucario",
+        "fastMove": "FORCE_PALM",
+        "chargedMoves": ["AURA_SPHERE", "METEOR_MASH"]
+    },
+    {
+        "speciesId": "magnezone",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"]
+    },
+    {
+        "speciesId": "melmetal",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": ["DOUBLE_IRON_BASH", "DYNAMIC_PUNCH"]
+    },
+    {
+        "speciesId": "mimikyu",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["SHADOW_SNEAK", "PLAY_ROUGH"]
+    },
+    {
+        "speciesId": "primarina",
+        "fastMove": "WATERFALL",
+        "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
+    },
+    {
+        "speciesId": "registeel",
+        "fastMove": "LOCK_ON",
+        "chargedMoves": ["FLASH_CANNON", "FOCUS_BLAST"]
+    },
+    {
+        "speciesId": "reshiram",
+        "fastMove": "FIRE_FANG",
+        "chargedMoves": ["FUSION_FLARE", "DRACO_METEOR"]
+    },
+    {
+        "speciesId": "sandslash_alolan",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
+    },
+    {
+        "speciesId": "scizor_shadow",
+        "fastMove": "BULLET_PUNCH",
+        "chargedMoves": ["NIGHT_SLASH", "TRAILBLAZE"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "steelix",
+        "fastMove": "THUNDER_FANG",
+        "chargedMoves": ["PSYCHIC_FANGS", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "stunfisk_galarian",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "tapu_fini",
+        "fastMove": "WATER_GUN",
+        "chargedMoves": ["SURF", "NATURES_MADNESS"]
+    },
+    {
+        "speciesId": "tinkaton",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["GIGATON_HAMMER", "BULLDOZE"]
+    },
+    {
+        "speciesId": "togekiss",
+        "fastMove": "PECK",
+        "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
+    },
+    {
+        "speciesId": "turtonator",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["OVERHEAT", "DRAGON_CLAW"]
+    },
+    {
+        "speciesId": "weezing_galarian",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["BRUTAL_SWING", "OVERHEAT"]
+    },
+    {
+        "speciesId": "weezing_galarian_shadow",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["BRUTAL_SWING", "OVERHEAT"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "zygarde_complete",
+        "fastMove": "DRAGON_TAIL",
+        "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "dragonite_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER"],
+        "shadowType": "shadow"
+    }
+]
