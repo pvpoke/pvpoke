@@ -1090,8 +1090,9 @@ function Battle(){
 			}
 
 			// If defender has a shield, use it
+			let canShield = defender.shields > 0;
 
-			if( ((sandbox) && (forceShields) && (defender.shields > 0)) || ((! sandbox) && (defender.shields > 0)) ){
+			if(canShield && (! sandbox || forceShields)){
 				var useShield = true;
 				var shieldWeight = 1;
 				var noShieldWeight = 1; // Used for randomized shielding decisions
