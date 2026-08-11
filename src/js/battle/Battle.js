@@ -22,6 +22,7 @@ function Battle(){
 	var turnMessages = []; // Array of messages to be displayed by the emulator for specific Pokemon
 	var turnAnimations = []; // Animations to be displayed by the front end this turn
 	var turnActions = []; // Actions to be performed this turn
+	var actionIndex = 0; // Iterator over current turnActions
 	var queuedActions = []; // Input registered from previous turns to be processed on future turns
 	var sandbox = false; // Is this automated or following user instructions?
 	var mode = "simulate"; // Simulate or emulate?
@@ -431,14 +432,15 @@ function Battle(){
 		turnActions.sort((a,b) => (a.settings.priority > b.settings.priority) ? -1 : ((b.settings.priority > a.settings.priority) ? 1 : 0));
 
 		// Process actions on this turn
+		actionIndex = 0;
 
-		for(var n = 0; n < turnActions.length; n++){
+		while(actionIndex < turnActions.length){
 			// Return here if we've reached a suspended state
 			if(phase != "neutral"){
 				return false;
 			}
 
-			var action = turnActions[n];
+			var action = turnActions[actionIndex++];
 			var poke = pokemon[action.actor];
 			var opponent = pokemon[ (action.actor == 0) ? 1 : 0 ];
 
@@ -510,7 +512,6 @@ function Battle(){
 
 			self.processAction(action, poke, opponent);
 		}
-		// Set previous turn actions and clear the current turn
 
 		previousTurnActions = turnActions;
 		turnActions = [];
@@ -913,8 +914,12 @@ function Battle(){
 				break;
 
 			case "charged":
-				var move = poke.chargedMoves[action.value];
-
+				if(typeof action.value === 'number'){
+					var move = poke.chargedMoves[action.value];
+				} else if(typeof action.value === 'string'){
+					var move = gm.getMoveById(action.value)
+				}
+				
 				// Validate this move can be used
 
 				if(poke.energy >= move.energy){
@@ -1365,8 +1370,6 @@ function Battle(){
 			displayTime += 9500;
 		}
 
-
-
 		// Apply move buffs and debuffs
 
 		var buffApplied = false;
@@ -1552,9 +1555,9 @@ function Battle(){
 			}
 
 			if(attacker.activeFormId != newFormId){
-				attacker.changeForm(newFormId);
+				self.logDecision(attacker, " has changed forms into " + newFormId);
 
-				self.logDecision(attacker, " has changed forms into " + attacker.activeFormId);
+				attacker.changeForm(newFormId);
 
 				if(mode == "emulate"){
 					self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
@@ -1572,9 +1575,34 @@ function Battle(){
 		if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.activeFormId != defender.formChange.alternativeFormId
 			&& move.energy > 0 && ! defenderUsedShield){
 
-			defender.changeForm(defender.formChange.alternativeFormId);
+			// Form specific functionality
+			switch(defender.activeFormId){
+				case "cramorant_gulping":
+					action = new TimelineAction(
+						"charged",
+						defender.index,
+						turns,
+						"GULP_MISSILE_ARROKUDA",
+						{shielded: false, buffs: false, priority: defender.priority});
 
-			self.logDecision(defender, " has changed forms into " + defender.activeFormId);
+					turnActions.splice(actionIndex + 1, 0, action);
+					break;
+
+				case "cramorant_gorging":
+					action = new TimelineAction(
+						"charged",
+						defender.index,
+						turns,
+						"GULP_MISSILE_PIKACHU",
+						{shielded: false, buffs: false, priority: defender.priority});
+					
+					turnActions.splice(actionIndex + 1, 0, action);
+					break;
+			}
+
+			self.logDecision(defender, " has changed forms into " + defender.formChange.alternativeFormId);
+
+			defender.changeForm(defender.formChange.alternativeFormId);
 
 			if(mode == "emulate"){
 				self.pushAnimation(defender.index, "formchange", defender.activeFormId);

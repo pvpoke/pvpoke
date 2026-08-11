@@ -40172,7 +40172,13 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": false,
+        "formChange": {
+            "type": "set",
+            "trigger": "charged_move_damage",
+            "alternativeFormId": "cramorant",
+            "resetOnSwitch": true
+        }
     },
     {
         "dex": 845,
@@ -40194,7 +40200,13 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": false,
+        "formChange": {
+            "type": "set",
+            "trigger": "charged_move_damage",
+            "alternativeFormId": "cramorant",
+            "resetOnSwitch": true
+        }
     },
     {
         "dex": 846,
