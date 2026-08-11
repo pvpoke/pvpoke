@@ -1533,18 +1533,35 @@ function Battle(){
 		}
 
 		// Apply post-attack form changes
-		if(attacker.formChange && attacker.formChange.trigger == "charged_move" && attacker.activeFormId != attacker.formChange.alternativeFormId
-			&& move.energy > 0 && (attacker.formChange.moveId == "ANY" || attacker.formChange.moveId == move.moveId)){
+		if(attacker.formChange && attacker.formChange.trigger == "charged_move"
+			&& move.energy > 0 && (attacker.formChange.moveId == "ANY" || attacker.formChange?.moveId == move.moveId || attacker.formChange?.moveIDs.includes(move.moveId))){
 
-			attacker.changeForm(attacker.formChange.alternativeFormId);
+			let newFormId = attacker.formChange.alternativeFormId;
 
-			self.logDecision(attacker, " has changed forms into " + attacker.activeFormId);
-
-			if(mode == "emulate"){
-				self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
+			if(newFormId == "variable"){
+				switch(attacker.speciesId){
+					case "cramorant":
+						let hp = attacker.hp / attacker.stats.hp;
+						if(hp >= 0.5){
+							newFormId = "cramorant_gulping";
+						} else{
+							newFormId = "cramorant_gorging";
+						}
+						break;
+				}
 			}
 
-			attackerChangedForm = true;
+			if(attacker.activeFormId != newFormId){
+				attacker.changeForm(newFormId);
+
+				self.logDecision(attacker, " has changed forms into " + attacker.activeFormId);
+
+				if(mode == "emulate"){
+					self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
+				}
+
+				attackerChangedForm = true;
+			}
 		}
 
 		if(attackerChangedForm){
@@ -1958,7 +1975,7 @@ function Battle(){
 
 		decisionLog.push({
 			turn: turns,
-			pokemon: pokemon,
+			pokemon: pokemon.speciesName,
 			hp: pokemon.hp,
 			string: string
 		});
@@ -1970,7 +1987,7 @@ function Battle(){
 		for(var i = 0; i < decisionLog.length; i++){
 			var log = decisionLog[i];
 
-			console.log(log.turn + "\t:\t" + log.pokemon.speciesName + "(" + log.hp + ") " + log.string);
+			console.log(log.turn + "\t:\t" + log.pokemon + "(" + log.hp + ")" + log.string);
 		}
 	}
 

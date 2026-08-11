@@ -1510,6 +1510,36 @@
         "turns": 1
     },
     {
+        "moveId": "GULP_MISSILE_ARROKUDA",
+        "name": "Gulp Missile (Arrokuda)",
+        "type": "water",
+        "power": 0,
+        "energy": 0,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff",
+        "turns": 1,
+        "unlisted": true
+    },
+    {
+        "moveId": "GULP_MISSILE_PIKACHU",
+        "name": "Gulp Missile (Pikachu)",
+        "type": "water",
+        "power": 0,
+        "energy": 0,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-2, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff",
+        "turns": 1,
+        "unlisted": true
+    },
+    {
         "moveId": "GUNK_SHOT",
         "name": "Gunk Shot",
         "type": "poison",

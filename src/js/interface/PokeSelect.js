@@ -358,7 +358,7 @@ function PokeSelect(element, i){
 			// Show alternate form CP for form changing Pokemon
 			$el.find(".form-cp-container").hide();
 
-			if(selectedPokemon.formChange){
+			if(selectedPokemon.formChange && selectedPokemon.formChange.alternativeFormId != "variable"){
 				let formId = selectedPokemon.formChange.alternativeFormId;
 				let newStats = selectedPokemon.getFormStats(formId);
 
