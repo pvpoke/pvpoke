@@ -2471,6 +2471,13 @@ var InterfaceMaster = (function () {
 				var selectorIndex = (pokeIndex == 0) ? 1 : 0;
 				var subject = pokeSelectors[pokeIndex].getPokemon();
 				var target = pokeSelectors[selectorIndex].getPokemon();
+
+				if($(e.target).is(".move-bar")){
+					moveIndex = $(e.target).parent().find(".move-bar").index($(e.target));
+				} else if($(e.target).is(".move-select.charged")){
+					moveIndex = $(e.target).parent().find(".move-select.charged").index($(e.target));
+				}
+
 				var move = subject.chargedMoves[moveIndex];
 				var moveIndex = 0;
 
@@ -2482,18 +2489,11 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
-				if($(e.target).is(".move-bar")){
-					moveIndex = $(e.target).parent().find(".move-bar").index($(e.target));
-				} else if($(e.target).is(".move-select.charged")){
-					moveIndex = $(e.target).parent().find(".move-select.charged").index($(e.target));
-				}
-
-				
 				var effectiveness = target.typeEffectiveness[move.type];
 
 				displayDamage = DamageCalculator.damageByStats(subject, target, subject.getEffectiveStat(0, true), target.getEffectiveStat(1, true), effectiveness, move);
 
-				pokeSelectors[selectorIndex].animateDamage(displayDamage)
+				pokeSelectors[selectorIndex].animateDamage(displayDamage);
 			}
 
 			// Run simulation
