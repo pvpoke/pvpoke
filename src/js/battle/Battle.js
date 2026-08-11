@@ -474,7 +474,7 @@ function Battle(){
 					}
 
 					// Check if knocked out from a priority move
-					if((usePriority)&&(poke.hp <= 0)&&(poke.faintSource == "charged")){
+					if(usePriority && poke.hp <= 0 && poke.faintSource == "charged" && ! move?.ignoresFaint){
 						action.valid = false;
 					}
 
@@ -904,6 +904,8 @@ function Battle(){
 		// Don't run this action if it's invalidated
 
 		if((! action.valid)||(action.processed)){
+
+			self.logDecision(poke, " cannot use invalid action " + action.type + " " + action.value);
 			return false;
 		}
 
@@ -1047,7 +1049,7 @@ function Battle(){
 
 		// Apply pre-attack form changes
 		if(attacker.formChange && attacker.formChange.trigger == "activate_charged" && attacker.activeFormId != attacker.formChange.alternativeFormId
-			&& move.energy > 0  && (attacker.formChange.moveId == "ANY" || attacker.formChange.moveId == move.moveId)){
+			&& move.category == "charged"  && (attacker.formChange.moveId == "ANY" || attacker.formChange.moveId == move.moveId)){
 			attacker.changeForm(attacker.formChange.alternativeFormId);
 
 			self.logDecision(attacker, " has changed forms into " + attacker.activeFormId);
@@ -1070,7 +1072,7 @@ function Battle(){
 
 		// If Charged Move
 
-		if(move.energy > 0){
+		if(move.category == "charged"){
 
 			type = "charged " + move.type;
 			attacker.energy -= move.energy;
@@ -1312,7 +1314,7 @@ function Battle(){
 				queuedActions = [];
 			}
 
-		} else{
+		} else if(move.category == "fast"){
 			// If Fast Move
 
 			if(mode == "emulate"){
@@ -1360,7 +1362,7 @@ function Battle(){
 		// Adjust display time so events don't visually overlap
 		// This was really hard for my little brain to figure out so like really don't touch it
 
-		if(move.energy > 0){
+		if(move.category == "charged"){
 			displayTime += 8500;
 
 			if((usePriority)&&(roundChargedMoveUsed > 0)&&(! roundShieldUsed)){
@@ -1404,7 +1406,7 @@ function Battle(){
 				}
 			}
 
-			if(buffRoll > 1 - move.buffApplyChance){
+			if(move.buffApplyChance == 1 || buffRoll > 1 - move.buffApplyChance){
 
 				// Gather targets for move buffs or debuffs
 				var buffTargets = [];
@@ -1541,7 +1543,7 @@ function Battle(){
 
 		// Apply post-attack form changes
 		if(attacker.formChange && attacker.formChange.trigger == "charged_move"
-			&& move.energy > 0 && (attacker.formChange.moveId == "ANY" || attacker.formChange?.moveId == move.moveId || attacker.formChange?.moveIDs.includes(move.moveId))){
+			&& move.category == "charged" && (attacker.formChange.moveId == "ANY" || attacker.formChange?.moveId == move.moveId || attacker.formChange?.moveIDs.includes(move.moveId))){
 
 			let newFormId = attacker.formChange.alternativeFormId;
 
@@ -1577,7 +1579,7 @@ function Battle(){
 
 		// Apply post-attack form changes to defender
 		if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.activeFormId != defender.formChange.alternativeFormId
-			&& move.energy > 0 && ! defenderUsedShield){
+			&& move.category == "charged" && ! defenderUsedShield){
 
 			// Form specific functionality
 			switch(defender.activeFormId){
@@ -1615,7 +1617,6 @@ function Battle(){
 			defenderChangedForm = true;
 		}
 
-
 		if(defenderChangedForm){
 			//timelineDescriptions.push("Form Change");
 		}
@@ -1624,15 +1625,7 @@ function Battle(){
 		// If a Pokemon has fainted, clear the action queue
 
 		if(defender.hp <= 0){
-
-			// Mark how this Pokemon fainted
-			var moveType = "fast";
-
-			if(move.energy > 0){
-				moveType = "charged";
-			}
-
-			defender.faintSource = moveType;
+			defender.faintSource = move.category;
 
 			if(mode == "emulate"){
 				queuedActions = [];

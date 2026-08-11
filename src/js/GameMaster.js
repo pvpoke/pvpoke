@@ -714,7 +714,7 @@ var GameMaster = (function () {
 
 			// Charged Moves
 
-			if(move.energy > 0){
+			if(move.category == "charged"){
 				var dpe = move.power / move.energy;
 
 				// Categorize by energy
@@ -824,6 +824,7 @@ var GameMaster = (function () {
 				move = {
 					moveId: m.moveId,
 					name: m.name,
+					category: m.energyGain > 0 ? "fast" : "charged",
 					displayName: m.name,
 					abbreviation: abbreviation,
 					archetype: archetype,
@@ -838,8 +839,13 @@ var GameMaster = (function () {
 					selfAttackDebuffing: false,
 					selfDefenseDebuffing: false,
 					legacy: false,
-					elite: false
+					elite: false,
+					tags: []
 				};
+
+				if(m?.category){
+					move.category = m.category;
+				}
 
 				if((move.moveId == "RETURN")||(move.moveId == "FRUSTRATION")){
 					move.legacy = true;
@@ -877,6 +883,10 @@ var GameMaster = (function () {
 
 				if(m.formChange){
 					move.formChange = JSON.parse(JSON.stringify(m.formChange));
+				}
+
+				if(m.ignoresFaint){
+					move.ignoresFaint = true;
 				}
 			} else{
 				console.error(id + " missing");
@@ -1725,9 +1735,7 @@ var GameMaster = (function () {
 						}
 
 						// Category search
-						if(param == "fast" && move.energyGain > 0){
-							valid = true;
-						} else if(param == "charged" && move.energy > 0){
+						if(move.category == param){
 							valid = true;
 						}
 

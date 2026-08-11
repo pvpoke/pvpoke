@@ -41,7 +41,7 @@ class DamageCalculator {
 		switch(attacker.activeFormId){
 			case "aegislash_shield":
 				// Calculate all Charged Attack damage using the Blade form's Attack stat
-				if(move.energy > 0){
+				if(move.category == "charged"){
 					attackStat = attacker.getFormStats("aegislash_blade").atk;
 				}
 				break;
@@ -66,7 +66,7 @@ class DamageCalculator {
 
 	static damageByStats(attacker, defender, attack, defense, effectiveness, move){
 		// For Pokemon which change forms before a charged attack, use the new form's attack stat
-		if(attacker.formChange && attacker.formChange.trigger == "activate_charged" && move.energy > 0){
+		if(attacker.formChange && attacker.formChange.trigger == "activate_charged" && move.category == "charged"){
 			attack = attacker.getFormStats(attacker.formChange.alternativeFormId).atk;
 		}
 
