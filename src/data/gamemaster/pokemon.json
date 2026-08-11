@@ -40136,6 +40136,7 @@
         "types": ["flying", "water"],
         "fastMoves": ["PECK", "WATER_GUN"],
         "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+        "extraChargedMoves": ["GULP_MISSILE_ARROKUDA", "GULP_MISSILE_PIKACHU"],
         "defaultIVs": {
             "cp500": [9, 4, 8, 11],
             "cp1500": [26, 5, 15, 13],
@@ -40165,6 +40166,7 @@
         "types": ["flying", "water"],
         "fastMoves": ["PECK", "WATER_GUN"],
         "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+        "extraChargedMoves": ["GULP_MISSILE_ARROKUDA"],
         "defaultIVs": {
             "cp500": [9, 4, 8, 11],
             "cp1500": [26, 5, 15, 13],
@@ -40193,6 +40195,7 @@
         "types": ["flying", "water"],
         "fastMoves": ["PECK", "WATER_GUN"],
         "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+        "extraChargedMoves": ["GULP_MISSILE_PIKACHU"],
         "defaultIVs": {
             "cp500": [9, 4, 8, 11],
             "cp1500": [26, 5, 15, 13],

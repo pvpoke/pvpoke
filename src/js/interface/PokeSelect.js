@@ -226,7 +226,7 @@ function PokeSelect(element, i){
 
 			// Add content to extra Charged Move select for eligible Pokemon
 
-			if(selectedPokemon.extraChargedMovePool.length > 0 || selectedPokemon.hasTag("mega")){
+			if(selectedPokemon.hasThirdChargedMove()){
 				$extraChargedSelect.css("display", "block");
 
 				$extraChargedSelect.append("<option value=\"none\">None</option");
@@ -1052,7 +1052,7 @@ function PokeSelect(element, i){
 
 			$(".modal").last().find(".add-move").on("click", function(e){
 				var moveId = $(".modal").last().find(".move-select option:selected").val();
-
+				
 				selectedPokemon.addNewMove(moveId, pool, true, moveType, moveSlotIndex);
 
 				$(".modal").last().remove();

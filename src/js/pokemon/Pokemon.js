@@ -921,7 +921,7 @@ function Pokemon(id, i, b, d){
 		if((usage.chargedMoves.length > 1)&&(count > 1)&&(self.speciesId != "smeargle")){
 			self.selectMove("charged", usage.chargedMoves[1].moveId, 1);
 
-			if(usage.extraChargedMoves){
+			if(usage.extraChargedMoves && self.hasThirdChargedMove()){
 				self.selectMove("extra-charged", usage.extraChargedMoves[0].moveId, 2);
 			}
 		} else if(self.speciesId == "smeargle"){
@@ -1061,7 +1061,7 @@ function Pokemon(id, i, b, d){
 					self.selectMove("charged", "none", 1);
 				}
 
-				if(r.moveset.length > 3){
+				if(r.moveset.length > 3 && self.hasThirdChargedMove()){
 					self.selectMove("extra-charged", r.moveset[3], 2);
 				}
 
@@ -2549,6 +2549,8 @@ function Pokemon(id, i, b, d){
 		return newStats;
 	}
 
+	// Replaces a move in a Pokemon's move pool during battle (eg Morpeko)
+
 	this.replaceMove = function(moveType, oldMoveId, newMoveId){
 		if(moveType == "fast" && self.fastMove){
 			if(self.fastMove.moveId == oldMoveId){
@@ -2560,6 +2562,12 @@ function Pokemon(id, i, b, d){
 				self.selectMove(moveType, newMoveId, moveIndex, true);
 			}
 		}
+	}
+
+	// Returns whether or not this Pokemon has access to a third charged move
+	
+	this.hasThirdChargedMove = function(){
+		return self.hasTag("mega");
 	}
 
 

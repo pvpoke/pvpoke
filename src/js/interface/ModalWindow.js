@@ -34,6 +34,11 @@ function modalWindow(header, content){
 			closeModalWindow();
 		}
 	});
+
+	// Prevent modal from closing when selecting a dropdown option that extends outside the modal window
+	$(".modal select").click(function(e){
+		setModalClosePrevention(250);
+	});
 }
 
 function setModalClosePrevention(time){

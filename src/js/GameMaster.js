@@ -1323,7 +1323,7 @@ var GameMaster = (function () {
 									pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
 								}
 
-								if(extraChargedMoves.length > 0){
+								if(extraChargedMoves.length > 0 && pokemon.hasThirdChargedMove()){
 									pokemon.selectMove("extra-charged", extraChargedMoves[0].moveId, 2);
 								}
 							} else{
@@ -1774,7 +1774,7 @@ var GameMaster = (function () {
 						}
 					}
 
-					if(pokemonEntry.extraChargedMoves){
+					if(pokemonEntry.extraChargedMoves && pokemon.hasThirdChargedMove()){
 						pokemon.selectMove("extra-charged", pokemonEntry.extraChargedMoves[0], 2);
 					}
 

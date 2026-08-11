@@ -1994,7 +1994,7 @@ var InterfaceMaster = (function () {
 								}
 
 								// Deselect 3rd charged move if none is supplied
-								if(arr.length < 4 && poke.extraChargedMovePool.length > 0){
+								if(arr.length < 4 && poke.extraChargedMovePool.length > 0 && poke.hasThirdChargedMove()){
 									poke.selectMove("extra-charged", "none", 2);
 								}
 

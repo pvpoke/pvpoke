@@ -459,7 +459,11 @@ function Battle(){
 					break;
 
 				case "charged":
-					var move = poke.chargedMoves[action.value];
+					if(typeof action.value === 'number'){
+						var move = poke.chargedMoves[action.value];
+					} else if(typeof action.value === 'string'){
+						var move = poke.extraChargedMovePool.find(m => m.moveId == action.value);
+					}
 
 					if(! move){
 						console.log("ERROR: Can't find move " + action.value);
@@ -917,7 +921,7 @@ function Battle(){
 				if(typeof action.value === 'number'){
 					var move = poke.chargedMoves[action.value];
 				} else if(typeof action.value === 'string'){
-					var move = gm.getMoveById(action.value)
+					var move = poke.extraChargedMovePool.find(m => m.moveId == action.value);
 				}
 				
 				// Validate this move can be used

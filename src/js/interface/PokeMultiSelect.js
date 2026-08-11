@@ -737,7 +737,7 @@ function PokeMultiSelect(element){
 				}
 
 				// Deselect 3rd charged move if none is supplied
-				if(arr.length < 4 && pokemon.extraChargedMovePool.length > 0){
+				if(arr.length < 4 && pokemon.extraChargedMovePool.length > 0 && pokemon.hasThirdChargedMove()){
 					pokemon.selectMove("extra-charged", "none", 2);
 				}
 			} else{
