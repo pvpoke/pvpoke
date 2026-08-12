@@ -779,6 +779,8 @@ function Pokemon(id, i, b, d){
 					}
 				}
 
+				// Behavior for Aegislash to build energy in shield mode
+
 				if(self.activeFormId == "aegislash_shield"){
 					self.activeChargedMoves.forEach(move => {
 						move.buffs = [0,0];

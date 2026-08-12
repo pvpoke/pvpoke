@@ -362,6 +362,37 @@ class ActionLogic {
 			}
 		}
 
+		// If Cramorant has not changed form, use Dive or Surf as soon as possible if other moves aren't meaningfully more effective
+		if(poke.activeFormId == "cramorant"){
+			let gulpMove = poke.activeChargedMoves.find(move => move.moveId == "DIVE" || move.moveId == "SURF");
+			let nonGulpMove = poke.activeChargedMoves.find(move => move.moveId != "DIVE" && move.moveID != "SURF");
+
+			if(gulpMove && nonGulpMove && poke.energy >= gulpMove.energy
+				&& opponent.hp > nonGulpMove.damage * 1.3 && nonGulpMove.dpe / gulpMove.dpe < 1.5){
+
+				let moveIndex = poke.chargedMoves.indexOf(gulpMove);
+				let hpToHalf = poke.hp - (Math.ceil(poke.stats.hp / 2) - 1);
+				let turnsToHalfHP = Math.ceil(hpToHalf / opponent.fastMove.damage) * opponent.fastMove.turns;
+
+				if(poke.hp / poke.stats.hp < 0.5 || turnsToHalfHP > 6){
+					battle.logDecision(poke, " uses " + gulpMove.name + " to trigger form change as soon as possible.");
+
+					action = new TimelineAction(
+						"charged",
+						poke.index,
+						turns,
+						moveIndex,
+						{shielded: false, buffs: false, priority: poke.priority});
+
+					return action;
+				} else if(turnsToHalfHP < turnsToLive){
+					// Hold Dive or Surf until hp falls below 50%
+					battle.logDecision(poke, " is waiting a short time to drop below 50% hit points.");
+					return;
+				}
+			}
+		}
+
 		// Evaluate if opponent can't be fainted in a limited number of cycles. If so, do a simpler move selection.
 
 		var bestChargedDamage = DamageCalculator.damage(poke, opponent, poke.bestChargedMove);
