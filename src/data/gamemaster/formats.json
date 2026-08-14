@@ -10,19 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Weather Cup",
-		"cup": "weather",
-		"cp": 1500,
-		"meta": "weather",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Fire-, Water-, Ice-, and Rock-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "Evolution Cup",
 		"cup": "evolution",
 		"cp": 1500,

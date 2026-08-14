@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-08-13 20:39:22",
+    "timestamp": "2026-08-14 16:38:42",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -675,16 +675,6 @@
             "showFormat": true,
             "showMeta": true,
             "hideRankings": true
-        },
-        {
-            "title": "Weather Cup",
-            "cup": "weather",
-            "cp": 1500,
-            "meta": "weather",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Fire-,  Water-,  Ice-,  and Rock-type Pokémon are eligible."]
         },
         {
             "title": "Evolution Cup",
@@ -40680,7 +40670,8 @@
             },
             "types": ["dark", "none"],
             "fastMoves": ["QUICK_ATTACK", "SNARL", "SUCKER_PUNCH"],
-            "chargedMoves": ["NIGHT_SLASH", "PLAY_ROUGH"],
+            "chargedMoves": ["NIGHT_SLASH", "PLAY_ROUGH", "ICY_WIND"],
+            "eliteMoves": ["ICY_WIND"],
             "defaultIVs": {
                 "cp500": [9, 4, 9, 11],
                 "cp1500": [26, 4, 15, 15],

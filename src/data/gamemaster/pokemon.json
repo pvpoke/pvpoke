@@ -39788,7 +39788,8 @@
         },
         "types": ["dark", "none"],
         "fastMoves": ["QUICK_ATTACK", "SNARL", "SUCKER_PUNCH"],
-        "chargedMoves": ["NIGHT_SLASH", "PLAY_ROUGH"],
+        "chargedMoves": ["NIGHT_SLASH", "PLAY_ROUGH", "ICY_WIND"],
+        "eliteMoves": ["ICY_WIND"],
         "defaultIVs": {
             "cp500": [9, 4, 9, 11],
             "cp1500": [26, 4, 15, 15],
