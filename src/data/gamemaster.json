@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-08-14 16:38:42",
+    "timestamp": "2026-08-18 07:03:52",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -41130,7 +41130,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_ARROKUDA",
                 "evolutions": ["barraskewda"]
@@ -41155,11 +41155,12 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_ARROKUDA",
                 "parent": "arrokuda"
-            }
+            },
+            "tags": ["include1500"]
         },
         {
             "dex": 848,

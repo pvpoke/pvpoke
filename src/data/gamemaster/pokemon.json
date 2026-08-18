@@ -40248,7 +40248,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_ARROKUDA",
             "evolutions": ["barraskewda"]
@@ -40273,11 +40273,12 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_ARROKUDA",
             "parent": "arrokuda"
-        }
+        },
+        "tags": ["include1500", "include2500"]
     },
     {
         "dex": 848,
