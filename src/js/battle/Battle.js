@@ -1077,20 +1077,29 @@ function Battle(){
 			type = "charged " + move.type;
 			attacker.energy -= move.energy;
 
-			if((usePriority)&&(roundChargedMoveUsed > 0)&&(roundShieldUsed == 0)){
-				time+=chargedMinigameTime;
+			let chargedMoveTime = chargedMinigameTime;
+
+			if(move.instant){
+				chargedMoveTime = 3000;
 			}
 
-			matchupDisplayTime += chargedMinigameTime;
+			if((usePriority)&&(roundChargedMoveUsed > 0)&&(roundShieldUsed == 0)){
+				time+=chargedMoveTime;
+			}
+
+			matchupDisplayTime += chargedMoveTime;
 
 			// Add tap events for display
 
-			for(var i = 0; i < 8; i++){
-				timeline.push(new TimelineEvent("tap "+move.type, "Swipe", attacker.index, time+(1000*i), turns, [i]));
+			if(! move.instant){
+				for(var i = 0; i < 8; i++){
+					timeline.push(new TimelineEvent("tap "+move.type, "Swipe", attacker.index, time+(1000*i), turns, [i]));
+				}
 			}
 
+
 			// If defender has a shield, use it
-			let canShield = defender.shields > 0;
+			let canShield = defender.shields > 0 && ! move.instant;
 
 			if(canShield && (! sandbox || forceShields)){
 				var useShield = true;
@@ -1274,7 +1283,7 @@ function Battle(){
 			}
 
 			// Special event for Mimikyu, copying shield functionality
-			if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.formChange.effect == "protect" && ! defenderUsedShield){''
+			if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.formChange.effect == "protect" && ! defenderUsedShield && ! move.instant){''
 				let damageBlocked = damage-1;
 				let shieldTimelineDescriptions = [damageBlocked, "Form Change", "-1 Defense"];
 
@@ -1366,8 +1375,13 @@ function Battle(){
 		if(move.category == "charged"){
 			displayTime += 8500;
 
-			if((usePriority)&&(roundChargedMoveUsed > 0)&&(! roundShieldUsed)){
-				displayTime += chargedMinigameTime;
+			if(usePriority && roundChargedMoveUsed > 0 && ! roundShieldUsed){
+				if(! move.instant){
+					displayTime += chargedMinigameTime;
+				} else{
+					displayTime += 3000;
+				}
+				
 			}
 		} else if(roundShieldUsed){
 			displayTime -= chargedMinigameTime;
@@ -1552,7 +1566,7 @@ function Battle(){
 				switch(attacker.speciesId){
 					case "cramorant":
 						let hp = attacker.hp / attacker.stats.hp;
-						if(hp >= 0.5){
+						if(hp > 0.5){
 							newFormId = "cramorant_gulping";
 						} else{
 							newFormId = "cramorant_gorging";

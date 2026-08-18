@@ -47,7 +47,7 @@ class DamageCalculator {
 				break;
 		}
 
-		var damage = Math.floor(power * move.stab * ( attackStat / defenseStat) * effectiveness * chargeMultiplier * 0.5 * DamageMultiplier.BONUS) + 1;
+		let damage = 1;
 
 		// Form specific special cases
 		switch(attacker.activeFormId){
@@ -56,6 +56,17 @@ class DamageCalculator {
 				if(move.energyGain > 0){
 					damage = 1;
 				}
+				break;
+		}
+
+		// Alternative damage method calculations
+		switch(move.damageMethod){
+			default:
+				damage = Math.floor(power * move.stab * ( attackStat / defenseStat) * effectiveness * chargeMultiplier * 0.5 * DamageMultiplier.BONUS) + 1;
+				break;
+
+			case "percentMaxHP":
+				damage = Math.floor((move.power / 100) * (defender.stats.hp)) + 1;
 				break;
 		}
 
@@ -70,7 +81,7 @@ class DamageCalculator {
 			attack = attacker.getFormStats(attacker.formChange.alternativeFormId).atk;
 		}
 
-		var damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * DamageMultiplier.BONUS) + 1;
+		let damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * DamageMultiplier.BONUS) + 1;
 
 		// Form specific special cases
 		switch(attacker.activeFormId){
@@ -79,6 +90,17 @@ class DamageCalculator {
 				if(move.energyGain > 0){
 					damage = 1;
 				}
+				break;
+		}
+
+		// Alternative damage method calculations
+		switch(move.damageMethod){
+			default:
+				damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * DamageMultiplier.BONUS) + 1;
+				break;
+
+			case "percentMaxHP":
+				damage = Math.floor((move.power / 100) * (defender.stats.hp)) + 1;
 				break;
 		}
 

@@ -832,6 +832,7 @@ var GameMaster = (function () {
 					power: m.power,
 					energy: m.energy,
 					energyGain: m.energyGain,
+					damageMethod: "default",
 					cooldown: m.cooldown,
 					turns: m.turns,
 					selfDebuffing: false,
@@ -840,6 +841,7 @@ var GameMaster = (function () {
 					selfDefenseDebuffing: false,
 					legacy: false,
 					elite: false,
+					instant: false,
 					tags: []
 				};
 
@@ -850,6 +852,19 @@ var GameMaster = (function () {
 				if((move.moveId == "RETURN")||(move.moveId == "FRUSTRATION")){
 					move.legacy = true;
 					move.displayName = move.displayName + "<sup>†</sup>";
+				}
+				
+
+				if(m?.damageMethod){
+					move.damageMethod = m.damageMethod;
+				}
+
+				if(m?.instant){
+					move.instant = m.instant;
+				}
+
+				if(m?.ignoresFaint){
+					move.ignoresFaint = m.ignoresFaint;
 				}
 
 				if(m.buffs){
@@ -885,8 +900,8 @@ var GameMaster = (function () {
 					move.formChange = JSON.parse(JSON.stringify(m.formChange));
 				}
 
-				if(m.ignoresFaint){
-					move.ignoresFaint = true;
+				if(m.tags){
+					move.tags = m.tags.splice();
 				}
 			} else{
 				console.error(id + " missing");
