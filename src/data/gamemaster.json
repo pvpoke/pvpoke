@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-08-18 22:55:00",
+    "timestamp": "2026-08-18 07:03:52",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -675,16 +675,6 @@
             "showFormat": true,
             "showMeta": true,
             "hideRankings": true
-        },
-        {
-            "title": "Weather Cup",
-            "cup": "weather",
-            "cp": 1500,
-            "meta": "weather",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Fire-,  Water-,  Ice-,  and Rock-type Pokémon are eligible."]
         },
         {
             "title": "Evolution Cup",
@@ -10511,7 +10501,6 @@
             "types": ["psychic", "fighting"],
             "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
             "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
-            "extraChargedMoves": ["DYNAMIC_PUNCH"],
             "tags": ["legendary", "shadoweligible", "mega"],
             "defaultIVs": {
                 "cp500": [3, 9, 15, 14],
@@ -10538,7 +10527,6 @@
             "types": ["psychic", "none"],
             "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
             "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
-            "extraChargedMoves": ["FUTURE_SIGHT"],
             "tags": ["legendary", "shadoweligible", "mega"],
             "defaultIVs": {
                 "cp500": [3, 9, 15, 14],
@@ -34006,6 +33994,35 @@
         },
         {
             "dex": 652,
+            "speciesName": "Chesnaught (Mega)",
+            "speciesId": "chesnaught_mega",
+            "baseStats": {
+                "atk": 242,
+                "def": 282,
+                "hp": 204
+            },
+            "types": ["grass", "fighting"],
+            "fastMoves": ["LOW_KICK", "SMACK_DOWN", "VINE_WHIP"],
+            "chargedMoves": ["GYRO_BALL", "ENERGY_BALL", "SUPER_POWER", "SOLAR_BEAM", "FRENZY_PLANT", "THUNDER_PUNCH"],
+            "eliteMoves": ["FRENZY_PLANT"],
+            "tags": ["starter", "shadoweligible", "mega"],
+            "defaultIVs": {
+                "cp500": [4.5, 15, 15, 14],
+                "cp1500": [13.5, 4, 14, 12],
+                "cp2500": [22.5, 4, 11, 14]
+            },
+            "searchPriority": null,
+            "buddyDistance": 3,
+            "thirdMoveCost": 10000,
+            "released": false,
+            "family": {
+                "id": "FAMILY_CHESPIN",
+                "parent": "quilladin"
+            },
+            "level25CP": 1829
+        },
+        {
+            "dex": 652,
             "speciesName": "Chesnaught (Shadow)",
             "speciesId": "chesnaught_shadow",
             "baseStats": {
@@ -34170,6 +34187,34 @@
         },
         {
             "dex": 655,
+            "speciesName": "Delphox (Mega)",
+            "speciesId": "delphox_mega",
+            "baseStats": {
+                "atk": 331,
+                "def": 235,
+                "hp": 181
+            },
+            "types": ["fire", "psychic"],
+            "fastMoves": ["SCRATCH", "FIRE_SPIN", "ZEN_HEADBUTT"],
+            "chargedMoves": ["PSYCHIC", "FLAMETHROWER", "FLAME_CHARGE", "FIRE_BLAST", "BLAST_BURN", "MYSTICAL_FIRE", "PSYSHOCK"],
+            "eliteMoves": ["BLAST_BURN"],
+            "tags": ["starter", "shadoweligible", "mega"],
+            "defaultIVs": {
+                "cp500": [4, 14, 15, 15],
+                "cp1500": [11.5, 5, 14, 9],
+                "cp2500": [19, 4, 11, 15]
+            },
+            "buddyDistance": 3,
+            "thirdMoveCost": 10000,
+            "released": false,
+            "family": {
+                "id": "FAMILY_FENNEKIN",
+                "parent": "braixen"
+            },
+            "level25CP": 1897
+        },
+        {
+            "dex": 655,
             "speciesName": "Delphox (Shadow)",
             "speciesId": "delphox_shadow",
             "baseStats": {
@@ -34326,6 +34371,35 @@
             "buddyDistance": 3,
             "thirdMoveCost": 10000,
             "released": true,
+            "family": {
+                "id": "FAMILY_FROAKIE",
+                "parent": "frogadier"
+            },
+            "level25CP": 1627
+        },
+        {
+            "dex": 658,
+            "speciesName": "Greninja (Mega)",
+            "speciesId": "greninja_mega",
+            "baseStats": {
+                "atk": 299,
+                "def": 180,
+                "hp": 176
+            },
+            "types": ["water", "dark"],
+            "fastMoves": ["FEINT_ATTACK", "BUBBLE", "WATER_SHURIKEN"],
+            "tags": ["starter", "shadoweligible", "mega"],
+            "chargedMoves": ["NIGHT_SLASH", "AERIAL_ACE", "SURF", "HYDRO_PUMP", "HYDRO_CANNON"],
+            "eliteMoves": ["HYDRO_CANNON"],
+            "defaultIVs": {
+                "cp500": [5, 9, 15, 14],
+                "cp1500": [14.5, 4, 11, 15],
+                "cp2500": [24, 5, 14, 14]
+            },
+            "searchPriority": null,
+            "buddyDistance": 3,
+            "thirdMoveCost": 10000,
+            "released": false,
             "family": {
                 "id": "FAMILY_FROAKIE",
                 "parent": "frogadier"
@@ -40596,7 +40670,8 @@
             },
             "types": ["dark", "none"],
             "fastMoves": ["QUICK_ATTACK", "SNARL", "SUCKER_PUNCH"],
-            "chargedMoves": ["NIGHT_SLASH", "PLAY_ROUGH"],
+            "chargedMoves": ["NIGHT_SLASH", "PLAY_ROUGH", "ICY_WIND"],
+            "eliteMoves": ["ICY_WIND"],
             "defaultIVs": {
                 "cp500": [9, 4, 9, 11],
                 "cp1500": [26, 4, 15, 15],
@@ -41019,7 +41094,6 @@
             "dex": 845,
             "speciesName": "Cramorant",
             "speciesId": "cramorant",
-            "originalFormId": "cramorant",
             "baseStats": {
                 "atk": 173,
                 "def": 163,
@@ -41028,7 +41102,6 @@
             "types": ["flying", "water"],
             "fastMoves": ["PECK", "WATER_GUN"],
             "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
-            "extraChargedMoves": ["GULP_MISSILE_ARROKUDA", "GULP_MISSILE_PIKACHU"],
             "defaultIVs": {
                 "cp500": [9, 4, 8, 11],
                 "cp1500": [26, 5, 15, 13],
@@ -41036,72 +41109,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": true,
-            "formChange": {
-                "type": "set",
-                "trigger": "charged_move",
-                "moveIDs": ["DIVE", "SURF"],
-                "alternativeFormId": "variable",
-                "resetOnSwitch": true
-            }
-        },
-        {
-            "dex": 845,
-            "speciesName": "Cramorant (Gulping)",
-            "speciesId": "cramorant_gulping",
-            "originalFormId": "cramorant",
-            "baseStats": {
-                "atk": 173,
-                "def": 163,
-                "hp": 172
-            },
-            "types": ["flying", "water"],
-            "fastMoves": ["PECK", "WATER_GUN"],
-            "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
-            "extraChargedMoves": ["GULP_MISSILE_ARROKUDA"],
-            "defaultIVs": {
-                "cp500": [9, 4, 8, 11],
-                "cp1500": [26, 5, 15, 13],
-                "cp2500": [50, 15, 15, 15]
-            },
-            "buddyDistance": 3,
-            "thirdMoveCost": 50000,
-            "released": false,
-            "formChange": {
-                "type": "set",
-                "trigger": "charged_move_damage",
-                "alternativeFormId": "cramorant",
-                "resetOnSwitch": true
-            }
-        },
-        {
-            "dex": 845,
-            "speciesName": "Cramorant (Gorging)",
-            "speciesId": "cramorant_gorging",
-            "originalFormId": "cramorant",
-            "baseStats": {
-                "atk": 173,
-                "def": 163,
-                "hp": 172
-            },
-            "types": ["flying", "water"],
-            "fastMoves": ["PECK", "WATER_GUN"],
-            "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
-            "extraChargedMoves": ["GULP_MISSILE_PIKACHU"],
-            "defaultIVs": {
-                "cp500": [9, 4, 8, 11],
-                "cp1500": [26, 5, 15, 13],
-                "cp2500": [50, 15, 15, 15]
-            },
-            "buddyDistance": 3,
-            "thirdMoveCost": 50000,
-            "released": false,
-            "formChange": {
-                "type": "set",
-                "trigger": "charged_move_damage",
-                "alternativeFormId": "cramorant",
-                "resetOnSwitch": true
-            }
+            "released": false
         },
         {
             "dex": 846,
@@ -41122,7 +41130,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_ARROKUDA",
                 "evolutions": ["barraskewda"]
@@ -41147,11 +41155,12 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_ARROKUDA",
                 "parent": "arrokuda"
-            }
+            },
+            "tags": ["include1500"]
         },
         {
             "dex": 848,
@@ -47669,44 +47678,6 @@
             "cooldown": 500,
             "archetype": "General",
             "turns": 1
-        },
-        {
-            "moveId": "GULP_MISSILE_ARROKUDA",
-            "name": "Gulp Missile (Arrokuda)",
-            "category": "charged",
-            "type": "water",
-            "power": 15,
-            "energy": 0,
-            "energyGain": 0,
-            "cooldown": 500,
-            "buffs": [0, -1],
-            "buffTarget": "opponent",
-            "buffApplyChance": "1",
-            "archetype": "Debuff",
-            "turns": 1,
-            "unlisted": true,
-            "ignoresFaint": true,
-            "instant": true,
-            "damageMethod": "percentMaxHP"
-        },
-        {
-            "moveId": "GULP_MISSILE_PIKACHU",
-            "name": "Gulp Missile (Pikachu)",
-            "category": "charged",
-            "type": "water",
-            "power": 15,
-            "energy": 0,
-            "energyGain": 0,
-            "cooldown": 500,
-            "buffs": [-2, 0],
-            "buffTarget": "opponent",
-            "buffApplyChance": "1",
-            "archetype": "Debuff",
-            "turns": 1,
-            "unlisted": true,
-            "ignoresFaint": true,
-            "instant": true,
-            "damageMethod": "percentMaxHP"
         },
         {
             "moveId": "GUNK_SHOT",

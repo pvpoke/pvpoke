@@ -153,6 +153,11 @@
         "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
     },
     {
+        "speciesId": "mimikyu",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["SHADOW_SNEAK", "PLAY_ROUGH"]
+    },
+    {
         "speciesId": "morpeko_full_belly",
         "fastMove": "THUNDER_SHOCK",
         "chargedMoves": ["AURA_WHEEL_ELECTRIC", "PSYCHIC_FANGS"]
@@ -242,8 +247,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "mimikyu",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["SHADOW_SNEAK", "PLAY_ROUGH"]
+        "speciesId": "thievul",
+        "fastMove": "SUCKER_PUNCH",
+        "chargedMoves": ["NIGHT_SLASH", "ICY_WIND"]
     }
 ]
