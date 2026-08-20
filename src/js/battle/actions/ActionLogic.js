@@ -957,7 +957,7 @@ class ActionLogic {
 		}
 
 		// If move is self debuffing and doesn't KO, try to stack as much as you can
-		if (finalState.moves[0].selfDebuffing) {
+		if (finalState.moves[0].selfDebuffing || opponent.speciesId == "cramorant") {
 			//var targetEnergy = poke.energy + (Math.round( (100 - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.energyGain);
 			let targetEnergy = Math.floor(100 / finalState.moves[0].energy) * finalState.moves[0].energy;
 
@@ -1218,6 +1218,23 @@ class ActionLogic {
 		// When a Pokemon is set to always bait, always return true for this value
 		if((battle.getMode() == "simulate")&&(attacker.baitShields == 2)){
 			useShield = true;
+		}
+
+		// Save shields in Aegislash shield form to protect Blade form
+
+		if(defender.activeFormId == "aegislash_shield" && move.damage * 2 < defender.hp){
+			useShield = false;
+		}
+
+		// Save shields in Cramorant gulping or gorging form to trigger Gulp Missile earlier against weak moves
+
+		if((defender.activeFormId == "cramorant_gulping" || defender.activeFormId == "cramorant_gorging") && move.damage * 2.2 < defender.hp){
+			useShield = false;
+		}
+
+		// Don't shield early Cramorant Dives or Surfs to save for later attacks
+		if(attacker.speciesId == "cramorant" && move.damage && move.damage / defender.hp < .33){
+			useShield = false;
 		}
 
 		return {

@@ -1144,8 +1144,23 @@ function Battle(){
 					}
 				}
 
-				if(defender.activeFormId == "aegislash_shield" && damage * 2 < defender.hp){
-					useShield = false;
+				if(! sandbox){
+					// Save shields in Aegislash shield form to protect Blade form
+
+					if(defender.activeFormId == "aegislash_shield" && damage * 2 < defender.hp){
+						useShield = shieldDecision.value;
+					}
+
+					// Save shields in Cramorant gulping or gorging form to trigger Gulp Missile earlier against weak moves
+
+					if((defender.activeFormId == "cramorant_gulping" || defender.activeFormId == "cramorant_gorging") && damage * 2.2 < defender.hp){
+						useShield = shieldDecision.value;
+					}
+
+					// Don't shield early Cramorant Dives or Surfs to save for later attacks
+					if(attacker.speciesId == "cramorant" && damage / defender.hp < .33){
+						useShield = shieldDecision.value;
+					}
 				}
 
 				if(decisionMethod == "random"){

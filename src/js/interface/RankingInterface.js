@@ -1058,19 +1058,48 @@ var InterfaceMaster = (function () {
 					$moveDetails.find(".name").html(chargedMoves[n].displayName);
 					$moveDetails.find(".archetype .name").html(archetype);
 					$moveDetails.find(".archetype .icon").addClass(archetypeClass);
-					$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) * 100) / 100);
+
+					switch(chargedMoves[n].damageMethod){
+						case "percentMaxHP":
+							$moveDetails.find(".damage .value").html("1 + " + chargedMoves[n].power + "% opponent's max HP");
+						break;
+
+						default:
+							$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) * 100) / 100);
+							$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) / chargedMoves[n].energy) * 100) / 100);
+					}
+					
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
-					$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) / chargedMoves[n].energy) * 100) / 100);
 					$moveDetails.attr("data", chargedMoves[n].moveId);
+
+					// Move stat effect descriptions
 
 					if(chargedMoves[n].buffs && chargedMoves[n].buffApplyChance){
 						$moveDetails.find(".move-effect").html(gm.getStatusEffectString(chargedMoves[n]));
 					}
 
-					// Add move counts
-					var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMoves[n]);
+					// Move form change descriptions
+					if(pokemon?.formChange?.trigger == "charged_move"){
+						let formChangeString = gm.getFormChangeEffectString(chargedMoves[n], pokemon);
 
-					$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]);
+						if(formChangeString != ''){
+							if($moveDetails.find(".status-effect-description").length > 0){
+								$moveDetails.find(".status-effect-description").append("<br>"+formChangeString);
+							} else{
+								$moveDetails.find(".move-effect").append("<div class=\"status-effect-description\">"+formChangeString+"</div>");
+							}
+						}
+					}
+
+					// Add move counts
+					if(chargedMoves[n].energy > 0){
+						var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMoves[n]);
+
+						$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]);
+					} else{
+						// Remove certain display elements for Charged Attacks that cost 0 energy
+						$moveDetails.find(".move-count, div.energy, div.dpe").remove();
+					}
 
 					// Highlight this move if it's in the recommended moveset
 

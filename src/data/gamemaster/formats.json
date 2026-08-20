@@ -10,19 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Evolution Cup",
-		"cup": "evolution",
-		"cp": 1500,
-		"meta": "evolution",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Pokémon that have evolved at least once and can evolve again will be eligible."
-		]
-	},
-	{
 		"title": "Scroll Cup",
 		"cup": "scroll",
 		"cp": 1500,

@@ -956,6 +956,35 @@ var GameMaster = (function () {
 			return "<div class=\"status-effect-description\">"+stringArray.join(' ')+"</div>";
 		}
 
+		// Get form change effect string for rankings move descriptions given the move and Pokemon
+
+		object.getFormChangeEffectString = function(move, pokemon){
+			if(! pokemon?.formChange){
+				return '';
+			}
+
+			let effectString = '';
+
+			switch(pokemon.speciesId){
+				case "cramorant":
+					if(move.moveId == "SURF" || move.moveId == "DIVE"){
+						effectString = "Cramorant changes form if it hasn't already, holding an Arrokuda if its current HP > 50% or a Pikachu if its current HP <= 50%. It reverts to its original form if it switches out.";
+					}
+
+					if(move.moveId == "GULP_MISSILE_ARROKUDA"){
+						effectString = "Fires when Cramorant takes an unshielded Charged Attack while holding an Arrokuda, even if Cramorant faints. It then reverts to its original form. This attack's damage doesn't interact with resistances, stats, or other multipliers.";
+					}
+
+					if(move.moveId == "GULP_MISSILE_PIKACHU"){
+						effectString = "Fires when Cramorant takes an unshielded Charged Attack while holding a Pikachu, even if Cramorant faints. It then reverts to its original form. This attack's damage doesn't interact with resistances, stats, or other multipliers.";
+					}
+					break;
+			}
+
+			return effectString;
+
+		}
+
 		// Get stats string from move for status effects
 
 		object.getStatusEffectStatString = function(stat, type){
