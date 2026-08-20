@@ -474,7 +474,7 @@ function Battle(){
 					}
 
 					// Check if knocked out from a priority move
-					if(usePriority && poke.hp <= 0 && poke.faintSource == "charged" && ! move?.ignoresFaint){
+					if(usePriority && poke.hp <= 0 && poke.faintSource == "charged" && ! move.hasTag("ignoresFaint")){
 						action.valid = false;
 					}
 
@@ -1079,7 +1079,7 @@ function Battle(){
 
 			let chargedMoveTime = chargedMinigameTime;
 
-			if(move.instant){
+			if(move.hasTag("instant")){
 				chargedMoveTime = 3000;
 			}
 
@@ -1091,7 +1091,7 @@ function Battle(){
 
 			// Add tap events for display
 
-			if(! move.instant){
+			if(! move.hasTag("instant")){
 				for(var i = 0; i < 8; i++){
 					timeline.push(new TimelineEvent("tap "+move.type, "Swipe", attacker.index, time+(1000*i), turns, [i]));
 				}
@@ -1099,7 +1099,7 @@ function Battle(){
 
 
 			// If defender has a shield, use it
-			let canShield = defender.shields > 0 && ! move.instant;
+			let canShield = defender.shields > 0 && ! move.hasTag("instant");
 
 			if(canShield && (! sandbox || forceShields)){
 				var useShield = true;
@@ -1283,7 +1283,7 @@ function Battle(){
 			}
 
 			// Special event for Mimikyu, copying shield functionality
-			if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.formChange.effect == "protect" && ! defenderUsedShield && ! move.instant){''
+			if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.formChange.effect == "protect" && ! defenderUsedShield && ! move.hasTag("instant")){''
 				let damageBlocked = damage-1;
 				let shieldTimelineDescriptions = [damageBlocked, "Form Change", "-1 Defense"];
 
@@ -1376,7 +1376,7 @@ function Battle(){
 			displayTime += 8500;
 
 			if(usePriority && roundChargedMoveUsed > 0 && ! roundShieldUsed){
-				if(! move.instant){
+				if(! move.hasTag("instant")){
 					displayTime += chargedMinigameTime;
 				} else{
 					displayTime += 3000;
@@ -1528,7 +1528,7 @@ function Battle(){
 		}
 
 
-		var timelineDescriptions = [damage, energyValue, percentDamage]
+		var timelineDescriptions = [damage, energyValue, percentDamage];
 
 		if(buffApplied){
 			var buffStr = "";
@@ -1558,7 +1558,7 @@ function Battle(){
 
 		// Apply post-attack form changes
 		if(attacker.formChange && attacker.formChange.trigger == "charged_move"
-			&& move.category == "charged" && (attacker.formChange.moveId == "ANY" || attacker.formChange?.moveId == move.moveId || attacker.formChange?.moveIDs.includes(move.moveId))){
+			&& move.category == "charged" && (attacker.formChange.moveId == "ANY" || attacker.formChange?.moveId == move.moveId || attacker.formChange?.moveIDs?.includes(move.moveId))){
 
 			let newFormId = attacker.formChange.alternativeFormId;
 
@@ -1592,11 +1592,10 @@ function Battle(){
 			timelineDescriptions.push("Form Change");
 		}
 
-		// Apply post-attack form changes to defender
-		if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.activeFormId != defender.formChange.alternativeFormId
-			&& move.category == "charged" && ! defenderUsedShield){
+		// Form specific functionality for Cramorant Gulp Missile trigger, form change is applied on Gulp Missile
+		if((defender.activeFormId == "cramorant_gulping" || defender.activeFormId == "cramorant_gorging")
+			&& move.category == "charged" && ! defenderUsedShield && ! move.hasTag("instant")){
 
-			// Form specific functionality
 			switch(defender.activeFormId){
 				case "cramorant_gulping":
 					action = new TimelineAction(
@@ -1620,6 +1619,11 @@ function Battle(){
 					turnActions.splice(actionIndex + 1, 0, action);
 					break;
 			}
+		}
+
+		// Apply post-attack form changes to defender
+		if(defender.formChange && defender.formChange.trigger == "charged_move_damage" && defender.activeFormId != defender.formChange.alternativeFormId
+			&& move.category == "charged" && ! defenderUsedShield && ! move.hasTag("instant")){
 
 			self.logDecision(defender, " has changed forms into " + defender.formChange.alternativeFormId);
 

@@ -1523,10 +1523,8 @@
         "buffApplyChance": "1",
         "archetype": "Debuff",
         "turns": 1,
-        "unlisted": true,
-        "ignoresFaint": true,
-        "instant": true,
-        "damageMethod": "percentMaxHP"
+        "damageMethod": "percentMaxHP",
+        "tags": ["instant", "ignoresFaint", "unlisted", "uneditable"]
     },
     {
         "moveId": "GULP_MISSILE_PIKACHU",
@@ -1542,10 +1540,8 @@
         "buffApplyChance": "1",
         "archetype": "Debuff",
         "turns": 1,
-        "unlisted": true,
-        "ignoresFaint": true,
-        "instant": true,
-        "damageMethod": "percentMaxHP"
+        "damageMethod": "percentMaxHP",
+        "tags": ["instant", "ignoresFaint", "uneditable"]
     },
     {
         "moveId": "GUNK_SHOT",

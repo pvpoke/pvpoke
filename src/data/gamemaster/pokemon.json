@@ -40264,7 +40264,8 @@
         "released": false,
         "formChange": {
             "type": "set",
-            "trigger": "charged_move_damage",
+            "trigger": "charged_move",
+            "moveId": "GULP_MISSILE_ARROKUDA",
             "alternativeFormId": "cramorant",
             "resetOnSwitch": true
         }
@@ -40293,7 +40294,8 @@
         "released": false,
         "formChange": {
             "type": "set",
-            "trigger": "charged_move_damage",
+            "trigger": "charged_move",
+            "moveId": "GULP_MISSILE_PIKACHU",
             "alternativeFormId": "cramorant",
             "resetOnSwitch": true
         }

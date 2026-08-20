@@ -842,7 +842,10 @@ var GameMaster = (function () {
 					legacy: false,
 					elite: false,
 					instant: false,
-					tags: []
+					tags: [],
+					hasTag: function(tag){
+						return this.tags.includes(tag);
+					}
 				};
 
 				if(m?.category){
@@ -857,14 +860,6 @@ var GameMaster = (function () {
 
 				if(m?.damageMethod){
 					move.damageMethod = m.damageMethod;
-				}
-
-				if(m?.instant){
-					move.instant = m.instant;
-				}
-
-				if(m?.ignoresFaint){
-					move.ignoresFaint = m.ignoresFaint;
 				}
 
 				if(m.buffs){
@@ -901,7 +896,7 @@ var GameMaster = (function () {
 				}
 
 				if(m.tags){
-					move.tags = m.tags.splice();
+					move.tags = [...m.tags];
 				}
 			} else{
 				console.error(id + " missing");
