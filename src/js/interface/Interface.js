@@ -278,7 +278,7 @@ var InterfaceMaster = (function () {
 
 					// Calculate whether or not can be used on this turn for sandbox mode
 
-					if(event.type.indexOf("fast") > -1){
+					if(event.type.indexOf("fast") > -1 || ! event?.editable){
 						$item.find(".item").addClass("disabled");
 					}
 

@@ -1655,7 +1655,9 @@ function Battle(){
 			//timelineDescriptions.push("Form Change");
 		}
 
-		timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, timelineDescriptions));
+		let editable = ! move.hasTag("uneditable");
+
+		timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, timelineDescriptions, editable));
 		// If a Pokemon has fainted, clear the action queue
 
 		if(defender.hp <= 0){

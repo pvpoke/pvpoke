@@ -1976,7 +1976,7 @@ select.large{
 			background-color: rgba(255, 240, 200, 0.75);
 			border: 1px solid $color-gold;
 
-			.item.charged:hover,
+			.item.charged:not(.disabled):hover,
 			.item.interaction:hover,
 			.item.fast:not(.disabled):hover{
 				@include gradient($color-gold, $color-gold-dark);

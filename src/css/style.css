@@ -1581,7 +1581,7 @@ select.large {
   background-color: rgba(255, 240, 200, 0.75);
   border: 1px solid #ffcf01;
 }
-.battle-results .timeline-container.sandbox-mode .item.charged:hover,
+.battle-results .timeline-container.sandbox-mode .item.charged:not(.disabled):hover,
 .battle-results .timeline-container.sandbox-mode .item.interaction:hover,
 .battle-results .timeline-container.sandbox-mode .item.fast:not(.disabled):hover {
   background: #f9a01b; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
