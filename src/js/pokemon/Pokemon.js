@@ -858,7 +858,6 @@ function Pokemon(id, i, b, d){
 			if(self.activeChargedMoves[0].moveId == "OBSTRUCT" && self.activeChargedMoves[0].energy - self.bestChargedMove.energy <= 5 && self.activeChargedMoves[0].dpe / self.bestChargedMove.dpe > .2){
 				self.bestChargedMove = self.activeChargedMoves[0];
 			}
-
 		} else{
 			self.bestChargedMove = null;
 		}
@@ -1627,12 +1626,12 @@ function Pokemon(id, i, b, d){
 			}
 		}
 
-		if(self.hasMove("BUBBLE_BEAM") || self.hasMove("ICY_WIND") || self.hasMove("LUNGE") || self.hasMove("SAND_TOMB") || self.hasMove("ACID_SPRAY") || hasSelfDebuffingMove){
+		if(self.hasMove("BUBBLE_BEAM") || self.hasMove("ICY_WIND") || self.hasMove("LUNGE") || self.hasMove("SAND_TOMB") || self.hasMove("ACID_SPRAY") || hasSelfDebuffingMove || self?.formChange){
 			// Only give this trait to energy driven Pokemon
 			if(self.fastMove.energyGain / self.fastMove.cooldown >= 3 / 500){
 				cons.push({
 					trait: "Technical",
-					desc: "Uses complex moves that may have a high learning curve."
+					desc: "Has complex moves or form changes that may have a high learning curve."
 				});
 			}
 		}

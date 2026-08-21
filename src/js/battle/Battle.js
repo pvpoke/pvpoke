@@ -253,7 +253,8 @@ function Battle(){
 		// Determine if charged move priority should be used
 		usePriority = false;
 
-		if(pokemon[0].stats.atk != pokemon[1].stats.atk){
+		if(pokemon[0].stats.atk != pokemon[1].stats.atk
+			|| pokemon[0].speciesId == "cramorant" && pokemon[1].speciesId == "cramorant" ){
 			usePriority = true;
 		}
 
@@ -1427,7 +1428,7 @@ function Battle(){
 				if(! move.hasTag("instant")){
 					displayTime += chargedMinigameTime;
 				} else{
-					displayTime += 3000;
+					displayTime += 2000;
 				}
 				
 			}
@@ -1654,7 +1655,7 @@ function Battle(){
 						{shielded: false, buffs: false, priority: defender.priority});
 					
 					
-					turnActions.splice(actionIndex + 1, 0, action);
+					turnActions.splice(actionIndex, 0, action);
 
 					if(mode == "emulate"){
 						turns--;
@@ -1669,7 +1670,7 @@ function Battle(){
 						"GULP_MISSILE_PIKACHU",
 						{shielded: false, buffs: false, priority: defender.priority});
 					
-					turnActions.splice(actionIndex + 1, 0, action);
+					turnActions.splice(actionIndex, 0, action);
 
 					if(mode == "emulate"){
 						turns--;

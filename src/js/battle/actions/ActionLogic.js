@@ -868,7 +868,6 @@ class ActionLogic {
 					bait = false;
 				}
 
-
 				if(bait){
 					battle.logDecision(poke, " doesn't use " + finalState.moves[0].name + " because it wants to bait");
 					return;
@@ -957,7 +956,7 @@ class ActionLogic {
 		}
 
 		// If move is self debuffing and doesn't KO, try to stack as much as you can
-		if (finalState.moves[0].selfDebuffing || opponent.speciesId == "cramorant") {
+		if (finalState.moves[0].selfDebuffing || (opponent.activeFormId == "cramorant_gulping" || opponent.activeFormId == "cramorant_gorging")) {
 			//var targetEnergy = poke.energy + (Math.round( (100 - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.energyGain);
 			let targetEnergy = Math.floor(100 / finalState.moves[0].energy) * finalState.moves[0].energy;
 
@@ -1234,6 +1233,10 @@ class ActionLogic {
 
 		// Don't shield early Cramorant Dives or Surfs to save for later attacks
 		if(attacker.speciesId == "cramorant" && move.damage && move.damage / defender.hp < .33){
+			useShield = false;
+		}
+
+		if(attacker.speciesId == "cramorant" && (move.moveId == "DIVE" || move.moveID == "SURF") && move.damage > defender.hp){
 			useShield = false;
 		}
 
