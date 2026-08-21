@@ -947,48 +947,81 @@ function Battle(){
 							turns--;
 						}
 
-						phase = "suspend_charged";
-						phaseProps = {
-							actor: poke.index,
-							move: action.value,
-							power: 1,
-							shield: false
-						};
-
-						chargeAmount = 0;
-						playerUseShield = false;
-
-						if(players[opponent.index].getAI() !== false){
-							playerUseShield = players[opponent.index].getAI().decideShield(poke, opponent, move);
-						}
-
-						// Initiate the move animation
-						setTimeout(function(){
+						// For instant moves, skip to animation and damage steps. Otherwise, perform charge up and shield decision
+						if(move.hasTag("instant")){
 							phase = "animating";
+							chargeAmount = 1;
+
 							self.dispatchUpdate({
 								type: "charged",
 								actor: poke.index,
 								moveName: move.name,
 								moveType: move.type
 							});
-						}, 6000);
 
-						// Execute this move after a set amount of time
-						setTimeout(function(){
-							self.useMove(poke, opponent, move, playerUseShield, action.settings.buffs);
+							// Execute this move after a set amount of time
+							setTimeout(function(){
+								self.useMove(poke, opponent, move, false, action.settings.buffs);
 
-							// If AI, evaluate the rest of the matchup
-							if(opponent.hp > 0){
-								if(players[1].getAI()){
-									players[1].getAI().evaluateMatchup(turns, pokemon[1], pokemon[0], players[0]);
+								// If AI, evaluate the rest of the matchup
+								if(opponent.hp > 0){
+									if(players[1].getAI()){
+										players[1].getAI().evaluateMatchup(turns, pokemon[1], pokemon[0], players[0]);
+									}
 								}
-							}
-						}, 8000);
+							}, 1000);
 
-						// Return the game to the neutral phase
-						phaseTimeout = setTimeout(function(){
-							phase = "neutral";
-						}, 10000);
+							// Return the game to the neutral phase
+							phaseTimeout = setTimeout(function(){
+								phase = "neutral";
+							}, 3000);
+
+						} else{
+							phase = "suspend_charged";
+							phaseProps = {
+								actor: poke.index,
+								move: action.value,
+								power: 1,
+								shield: false
+							};
+
+							chargeAmount = 0;
+							playerUseShield = false;
+
+							if(players[opponent.index].getAI() !== false){
+								playerUseShield = players[opponent.index].getAI().decideShield(poke, opponent, move);
+							}
+
+							// Initiate the move animation
+							setTimeout(function(){
+								phase = "animating";
+								self.dispatchUpdate({
+									type: "charged",
+									actor: poke.index,
+									moveName: move.name,
+									moveType: move.type
+								});
+							}, 6000);
+
+							// Execute this move after a set amount of time
+							setTimeout(function(){
+								self.useMove(poke, opponent, move, playerUseShield, action.settings.buffs);
+
+								// If AI, evaluate the rest of the matchup
+								if(opponent.hp > 0){
+									if(players[1].getAI()){
+										players[1].getAI().evaluateMatchup(turns, pokemon[1], pokemon[0], players[0]);
+									}
+								}
+							}, 8000);
+
+							// Return the game to the neutral phase
+							phaseTimeout = setTimeout(function(){
+								phase = "neutral";
+							}, 10000);
+						}
+
+
 
 					}
 
@@ -1619,8 +1652,13 @@ function Battle(){
 						turns,
 						"GULP_MISSILE_ARROKUDA",
 						{shielded: false, buffs: false, priority: defender.priority});
-
+					
+					
 					turnActions.splice(actionIndex + 1, 0, action);
+
+					if(mode == "emulate"){
+						turns--;
+					}
 					break;
 
 				case "cramorant_gorging":
@@ -1632,6 +1670,10 @@ function Battle(){
 						{shielded: false, buffs: false, priority: defender.priority});
 					
 					turnActions.splice(actionIndex + 1, 0, action);
+
+					if(mode == "emulate"){
+						turns--;
+					}
 					break;
 			}
 		}

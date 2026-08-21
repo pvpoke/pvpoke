@@ -156,7 +156,7 @@ var BattlerMaster = (function () {
 
 				// Handle phase change
 
-				if(phase != response.phase){
+				if(phase != response.phase || response?.moveName){
 					// Transition into this phase
 					switch(response.phase){
 						case "suspend_charged_attack":
