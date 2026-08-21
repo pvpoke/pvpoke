@@ -76,13 +76,13 @@ var InterfaceMaster = (function () {
 					var dpe = "";
 					var turns = "";
 
-					if(move.energyGain > 0){
+					if(move.category == "fast"){
 						category = "Fast Attack"
 						energy = move.energyGain;
 						turns = move.cooldown / 500;
 						dpt = Math.floor( (move.power / turns) * 100) / 100;
 						ept = Math.floor( (energy / turns) * 100) / 100;
-					} else if(move.energy > 0){
+					} else if(move.category == "charged"){
 						category = "Charged Attack";
 						energy = move.energy;
 						dpe = Math.floor( (damage / energy) * 100) / 100;
@@ -120,9 +120,9 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < gm.data.moves.length; i++){
 					var move = gm.data.moves[i];
 
-					if((mode == "fast") && (move.energy > 0)){
+					if(mode == "fast" && move.category == "charged"){
 						continue;
-					} else if((mode == "charged") && (move.energyGain > 0)){
+					} else if(mode == "charged" && move.category == "fast"){
 						continue;
 					}
 

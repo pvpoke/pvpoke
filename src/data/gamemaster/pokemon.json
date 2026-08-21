@@ -9619,6 +9619,7 @@
         "types": ["psychic", "fighting"],
         "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+        "extraChargedMoves": ["DYNAMIC_PUNCH"],
         "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [3, 9, 15, 14],
@@ -9645,6 +9646,7 @@
         "types": ["psychic", "none"],
         "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+        "extraChargedMoves": ["FUTURE_SIGHT"],
         "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [3, 9, 15, 14],
@@ -40212,6 +40214,7 @@
         "dex": 845,
         "speciesName": "Cramorant",
         "speciesId": "cramorant",
+        "originalFormId": "cramorant",
         "baseStats": {
             "atk": 173,
             "def": 163,
@@ -40220,6 +40223,38 @@
         "types": ["flying", "water"],
         "fastMoves": ["PECK", "WATER_GUN"],
         "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+        "extraChargedMoves": ["GULP_MISSILE_ARROKUDA", "GULP_MISSILE_PIKACHU"],
+        "defaultIVs": {
+            "cp500": [9, 4, 8, 11],
+            "cp1500": [26, 5, 15, 13],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "searchPriority": 4,
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "formChange": {
+            "type": "set",
+            "trigger": "charged_move",
+            "moveIDs": ["DIVE", "SURF"],
+            "alternativeFormId": "variable",
+            "resetOnSwitch": true
+        }
+    },
+    {
+        "dex": 845,
+        "speciesName": "Cramorant (Gulping)",
+        "speciesId": "cramorant_gulping",
+        "originalFormId": "cramorant",
+        "baseStats": {
+            "atk": 173,
+            "def": 163,
+            "hp": 172
+        },
+        "types": ["flying", "water"],
+        "fastMoves": ["PECK", "WATER_GUN"],
+        "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+        "extraChargedMoves": ["GULP_MISSILE_ARROKUDA"],
         "defaultIVs": {
             "cp500": [9, 4, 8, 11],
             "cp1500": [26, 5, 15, 13],
@@ -40227,7 +40262,44 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": false,
+        "formChange": {
+            "type": "set",
+            "trigger": "charged_move",
+            "moveId": "GULP_MISSILE_ARROKUDA",
+            "alternativeFormId": "cramorant",
+            "resetOnSwitch": true
+        }
+    },
+    {
+        "dex": 845,
+        "speciesName": "Cramorant (Gorging)",
+        "speciesId": "cramorant_gorging",
+        "originalFormId": "cramorant",
+        "baseStats": {
+            "atk": 173,
+            "def": 163,
+            "hp": 172
+        },
+        "types": ["flying", "water"],
+        "fastMoves": ["PECK", "WATER_GUN"],
+        "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+        "extraChargedMoves": ["GULP_MISSILE_PIKACHU"],
+        "defaultIVs": {
+            "cp500": [9, 4, 8, 11],
+            "cp1500": [26, 5, 15, 13],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false,
+        "formChange": {
+            "type": "set",
+            "trigger": "charged_move",
+            "moveId": "GULP_MISSILE_PIKACHU",
+            "alternativeFormId": "cramorant",
+            "resetOnSwitch": true
+        }
     },
     {
         "dex": 846,

@@ -242,8 +242,7 @@ var RankerMaster = (function () {
 						var alternativeScore = 500;
 
 						if(avgPokeRating > 500){
-							alternativeScore = 500 + Math.pow(avgPokeRating - 500, .75);
-							alternativeScore = avgPokeRating;
+							alternativeScore = 500 + Math.pow(avgPokeRating - 500, .85);
 							score = 500 + Math.pow(avgPokeRating - 500, .75);
 						} else{
 							score = avgPokeRating / 2;

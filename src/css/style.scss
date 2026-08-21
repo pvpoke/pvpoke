@@ -981,6 +981,10 @@ b{
 			margin-top:5px;
 		}
 
+		.move-select.extra-charged{
+			display: none;
+		}
+
 	}
 
 	.fifty-warning{
@@ -1972,7 +1976,7 @@ select.large{
 			background-color: rgba(255, 240, 200, 0.75);
 			border: 1px solid $color-gold;
 
-			.item.charged:hover,
+			.item.charged:not(.disabled):hover,
 			.item.interaction:hover,
 			.item.fast:not(.disabled):hover{
 				@include gradient($color-gold, $color-gold-dark);
@@ -5271,7 +5275,7 @@ a.pokebattler{
 .steel{ @include gradient($color-steel-dark, $color-steel-light); }
 .water{ @include gradient($color-water-dark, $color-water-light); }
 
-.dark, .dragon, .ghost {
+.dark:not(option), .dragon:not(option), .ghost:not(option) {
 	> .name-container{
 		color:$color-off-white;
 	}

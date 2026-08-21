@@ -362,6 +362,29 @@ class ActionLogic {
 			}
 		}
 
+		// If Cramorant has not changed form, use Dive or Surf as soon as possible if other moves aren't meaningfully more effective
+		if(poke.activeFormId == "cramorant"){
+			let gulpMove = poke.activeChargedMoves.find(move => move.moveId == "DIVE" || move.moveId == "SURF");
+			let nonGulpMove = poke.activeChargedMoves.find(move => move.moveId != "DIVE" && move.moveID != "SURF");
+
+			if(gulpMove && nonGulpMove && poke.energy >= gulpMove.energy
+				&& opponent.hp > nonGulpMove.damage * 1.3 && nonGulpMove.dpe / gulpMove.dpe < 1.5){
+
+				let moveIndex = poke.chargedMoves.indexOf(gulpMove);
+
+				battle.logDecision(poke, " uses " + gulpMove.name + " to trigger form change as soon as possible.");
+
+				action = new TimelineAction(
+					"charged",
+					poke.index,
+					turns,
+					moveIndex,
+					{shielded: false, buffs: false, priority: poke.priority});
+
+				return action;
+			}
+		}
+
 		// Evaluate if opponent can't be fainted in a limited number of cycles. If so, do a simpler move selection.
 
 		var bestChargedDamage = DamageCalculator.damage(poke, opponent, poke.bestChargedMove);
@@ -845,7 +868,6 @@ class ActionLogic {
 					bait = false;
 				}
 
-
 				if(bait){
 					battle.logDecision(poke, " doesn't use " + finalState.moves[0].name + " because it wants to bait");
 					return;
@@ -934,7 +956,7 @@ class ActionLogic {
 		}
 
 		// If move is self debuffing and doesn't KO, try to stack as much as you can
-		if (finalState.moves[0].selfDebuffing) {
+		if (finalState.moves[0].selfDebuffing || (opponent.activeFormId == "cramorant_gulping" || opponent.activeFormId == "cramorant_gorging")) {
 			//var targetEnergy = poke.energy + (Math.round( (100 - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.energyGain);
 			let targetEnergy = Math.floor(100 / finalState.moves[0].energy) * finalState.moves[0].energy;
 
@@ -1161,6 +1183,10 @@ class ActionLogic {
 		var fastDPT = fastDamage / attacker.fastMove.turns;
 
 		for (var i = 0; i < attacker.chargedMoves.length; i++){
+			if(! attacker.chargedMoves[i]){
+				continue;
+			}
+			
 			var chargedMove = attacker.chargedMoves[i];
 
 			if(attacker.energy + chargedMove.energy >= chargedMove.energy){
@@ -1191,6 +1217,27 @@ class ActionLogic {
 		// When a Pokemon is set to always bait, always return true for this value
 		if((battle.getMode() == "simulate")&&(attacker.baitShields == 2)){
 			useShield = true;
+		}
+
+		// Save shields in Aegislash shield form to protect Blade form
+
+		if(defender.activeFormId == "aegislash_shield" && move.damage * 2 < defender.hp){
+			useShield = false;
+		}
+
+		// Save shields in Cramorant gulping or gorging form to trigger Gulp Missile earlier against weak moves
+
+		if((defender.activeFormId == "cramorant_gulping" || defender.activeFormId == "cramorant_gorging") && move.damage * 2.2 < defender.hp){
+			useShield = false;
+		}
+
+		// Don't shield early Cramorant Dives or Surfs to save for later attacks
+		if(attacker.speciesId == "cramorant" && move.damage && move.damage / defender.hp < .33){
+			useShield = false;
+		}
+
+		if(attacker.speciesId == "cramorant" && (move.moveId == "DIVE" || move.moveID == "SURF") && move.damage > defender.hp){
+			useShield = false;
 		}
 
 		return {

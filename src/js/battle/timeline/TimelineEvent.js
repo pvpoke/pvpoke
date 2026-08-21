@@ -37,6 +37,11 @@ class TimelineEvent {
 	values;
 
 	/**
+	 * @type {Boolean}
+	 */
+	editable;
+
+	/**
 	 *
 	 * @param {TimelineEventType} type
 	 * @param {string} name
@@ -45,13 +50,13 @@ class TimelineEvent {
 	 * @param {number} turn
 	 * @param {Array<number>} [values]
 	 */
-	constructor(type, name, actor, time, turn, values) {
-		values = typeof values !== "undefined" ? values : [0];
+	constructor(type, name, actor, time, turn, values = [0], editable = true) {
 		this.type = type;
 		this.name = name;
 		this.actor = actor;
 		this.time = time;
 		this.turn = turn;
 		this.values = values; // 0 - damage, 1 - energy
+		this.editable = editable;
 	}
 }

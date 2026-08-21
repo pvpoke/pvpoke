@@ -64,6 +64,7 @@ function Pokemon(id, i, b, d){
 	this.priority = 0; // Charged move priority
 	this.fastMovePool = [];
 	this.chargedMovePool = [];
+	this.extraChargedMovePool = [];
 	this.legacyMoves = [];
 	this.eliteMoves = [];
 	this.shadowEligible = false;
@@ -241,10 +242,37 @@ function Pokemon(id, i, b, d){
 		self.legacyMoves.push("FRUSTRATION");
 	}
 
+	// Add extra Charged Moves for Mega Evolutions or other qualifying Pokemon
+	if(data.extraChargedMoves && data.extraChargedMoves.length > 0){
+		for(let i = 0; i < data.extraChargedMoves.length; i++){
+			let move = gm.getMoveById(data.extraChargedMoves[i]);
+
+			if(move){
+				move.legacy = (self.legacyMoves.indexOf(move.moveId) > -1);
+				move.elite = (self.eliteMoves.indexOf(move.moveId) > -1);
+
+				if(move.elite){
+					move.legacy = false;
+				}
+
+				move.displayName = move.name;
+
+				if(move.legacy){
+					move.displayName = move.name + "<sup>†</sup>";
+				} else if(move.elite){
+					move.displayName = move.name + "*";
+				}
+
+				this.extraChargedMovePool.push(move);
+			}
+		}
+	}
+
 	// Sort moves by ID for consistent order
 
 	self.fastMovePool.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
 	self.chargedMovePool.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
+	self.extraChargedMovePool.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
 
 	// Given a target CP, scale to CP, set actual stats, and initialize moves
 
@@ -680,13 +708,21 @@ function Pokemon(id, i, b, d){
 			this.initializeMove(this.chargedMovePool[i]);
 		}
 
+		for(var i = 0; i < this.extraChargedMovePool.length; i++){
+			this.initializeMove(this.extraChargedMovePool[i]);
+		}
+
 		// Set best charged move
 
 		self.activeChargedMoves = []; // Keep a list of charged moves sorted by energy
 
-		if(this.chargedMoves.length > 0){
+		if(this.chargedMoves.filter(m => m !== null).length > 0){
 
 			for(var i = 0; i < self.chargedMoves.length; i++){
+
+				if(! self.chargedMoves[i]){
+					continue;
+				}
 
 				/*	Each chance buff move has an incrementing buff apply meter that will deterministically apply chance buffs
 				*	once this value crosses each whole number.
@@ -742,6 +778,8 @@ function Pokemon(id, i, b, d){
 						delete self.activeChargedMoves[0].selfDebuffing;
 					}
 				}
+
+				// Behavior for Aegislash to build energy in shield mode
 
 				if(self.activeFormId == "aegislash_shield"){
 					self.activeChargedMoves.forEach(move => {
@@ -820,7 +858,6 @@ function Pokemon(id, i, b, d){
 			if(self.activeChargedMoves[0].moveId == "OBSTRUCT" && self.activeChargedMoves[0].energy - self.bestChargedMove.energy <= 5 && self.activeChargedMoves[0].dpe / self.bestChargedMove.dpe > .2){
 				self.bestChargedMove = self.activeChargedMoves[0];
 			}
-
 		} else{
 			self.bestChargedMove = null;
 		}
@@ -884,6 +921,10 @@ function Pokemon(id, i, b, d){
 
 		if((usage.chargedMoves.length > 1)&&(count > 1)&&(self.speciesId != "smeargle")){
 			self.selectMove("charged", usage.chargedMoves[1].moveId, 1);
+
+			if(usage.extraChargedMoves && self.hasThirdChargedMove()){
+				self.selectMove("extra-charged", usage.extraChargedMoves[0].moveId, 2);
+			}
 		} else if(self.speciesId == "smeargle"){
 			self.selectMove("charged", "none", 1);
 		}
@@ -891,46 +932,61 @@ function Pokemon(id, i, b, d){
 
 	// Given a type string, move id, and charged move index, set a specific move
 
-	this.selectMove = function(type, id, index, disallowCustomAddition){
+	this.selectMove = function(type, id, index = 0, disallowCustomAddition = false){
 		var moveFound = false;
-		var arr = this.fastMovePool;
-
-		if(type == "charged"){
-			arr = this.chargedMovePool;
-		}
-
-		var i = 0;
 		var move;
+		var arr;
 
-		if(index > self.chargedMoves.length){
-			index = self.chargedMoves.length;
+		if(type == "charged" && index == 2){
+			type = "extra-charged";
 		}
 
-		for(i = 0; i < arr.length; i++){
-			if(arr[i].moveId == id){
-				if(type == "fast"){
-					move = arr[i];
+		switch(type){
+			case "fast":
+				arr = this.fastMovePool;
+				move = arr.find(m => m.moveId == id);
+
+				if(move){
 					this.fastMove = move;
 					moveFound = true;
-					break;
-				} else{
-					move = arr[i];
+				}
+				break;
+
+			case "charged":
+				arr = this.chargedMovePool;
+				move = arr.find(m => m.moveId == id);
+
+				if(move){
 					this.chargedMoves[index] = move;
 					moveFound = true;
-					break;
 				}
-			}
+				break;
+
+			case "extra-charged":
+				arr = this.extraChargedMovePool;
+				move = arr.find(m => m.moveId == id);
+
+				if(move){
+					this.chargedMoves[index] = move;
+					moveFound = true;
+				}
+				break;
 		}
 
 		// If charged move is set to none, clear 2nd charged move
 
-		if((type == "charged") && (id == "none")){
-			this.chargedMoves.splice(index,1);
+		if(id == "none" && (type == "charged" || type == "extra-charged")){
+			if(this.chargedMoves.length < 3){
+				this.chargedMoves.splice(index,1);
+			} else{
+				this.chargedMoves[index] = null;
+			}
+			
 		}
 
 		// If identical charged moves are selected, select first available
 
-		if((type == "charged") && (this.chargedMoves.length > 1)){
+		if(type == "charged" && this.chargedMoves.filter(m => m !== null).length > 1){
 			var nonIndex = 0;
 
 			if(index == 0){
@@ -948,7 +1004,7 @@ function Pokemon(id, i, b, d){
 		}
 
 		// If the move wasn't found, add it to the movepool
-		if(! moveFound){
+		if(! moveFound && typeof id !== "undefined"){
 			if(! disallowCustomAddition){
 				self.addNewMove(id, arr, true, type, index);
 			} else{
@@ -1006,6 +1062,10 @@ function Pokemon(id, i, b, d){
 					self.selectMove("charged", "none", 1);
 				}
 
+				if(r.moveset.length > 3 && self.hasThirdChargedMove()){
+					self.selectMove("extra-charged", r.moveset[3], 2);
+				}
+
 				self.resetMoves();
 
 				// Assign overall score for reference
@@ -1038,8 +1098,9 @@ function Pokemon(id, i, b, d){
 		var chargedMoves = [];
 		var fastMoveUses = [];
 		var chargedMoveUses = [];
-		var targetArrs = [fastMoves, chargedMoves];
-		var sourceArrs = [self.fastMovePool, self.chargedMovePool];
+		var extraChargedMoveUses = [];
+		var targetArrs = [fastMoves, chargedMoves, chargedMoves];
+		var sourceArrs = [self.fastMovePool, self.chargedMovePool, self.extraChargedMovePool];
 
 		for(var i = 0; i < sourceArrs.length; i++){
 			for(var n = 0; n < sourceArrs[i].length; n++){
@@ -1109,14 +1170,22 @@ function Pokemon(id, i, b, d){
 		}
 
 		for(var i = 0; i < chargedMoves.length; i++){
-			chargedMoveUses.push({
-				moveId: chargedMoves[i].moveId,
-				uses: chargedMoves[i].uses * weightModifier
-			});
+			if(self.chargedMovePool.some(m => m.moveId == chargedMoves[i].moveId)){
+				chargedMoveUses.push({
+					moveId: chargedMoves[i].moveId,
+					uses: chargedMoves[i].uses * weightModifier
+				});
+			} else if(self.extraChargedMovePool.some(m => m.moveId == chargedMoves[i].moveId)){
+				extraChargedMoveUses.push({
+					moveId: chargedMoves[i].moveId,
+					uses: chargedMoves[i].uses * weightModifier
+				});
+			}
+
 		}
 
 		chargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-
+		extraChargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
 		// Calculate TDO for each fast move and sort
 		var total = 0;
@@ -1156,6 +1225,10 @@ function Pokemon(id, i, b, d){
 			chargedMoves: chargedMoveUses
 		};
 
+		if(extraChargedMoveUses.length > 0){
+			results.extraChargedMoves = extraChargedMoveUses;
+		}
+
 		return results;
 	}
 
@@ -1168,8 +1241,14 @@ function Pokemon(id, i, b, d){
 			return false;
 		}
 
+		// Force all 3rd Charged Moves into the Extra Charged Move Slot
+		if(moveType == "charged" && index == 2){
+			movepool = this.extraChargedMovePool;
+			moveType = "extra-charged";
+		}
+
 		// Don't add move if it's already in the movepool
-		if(this.knowsMove(id)){
+		if(moveType != "extra-charged" && this.knowsMove(id)){
 			// Select the move that already exists
 			if(selectNewMove){
 				self.selectMove(moveType, id, index, true)
@@ -1391,6 +1470,10 @@ function Pokemon(id, i, b, d){
 			var bestEffectiveness = 0;
 
 			for(var n = 0; n < self.chargedMoves.length; n++){
+				if(! self.chargedMoves[n]){
+					continue;
+				}
+				
 				var effectiveness = DamageCalculator.getEffectiveness(self.chargedMoves[n].type, [types[i].toLowerCase(), "none"]);
 				var effectivePower = ((self.chargedMoves[n].power * self.chargedMoves[n].stab * self.shadowAtkMult * effectiveness) * (self.stats.atk / targetDef));
 				var bestChargedMoveSpeed = Math.ceil(self.chargedMoves[n].energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
@@ -1432,7 +1515,7 @@ function Pokemon(id, i, b, d){
 			inflexible = true;
 		}
 
-		if(((self.chargedMoves.length == 1) || ((self.chargedMoves.length == 2) && (self.chargedMoves[0].type == self.chargedMoves[1].type))) && (! inflexible)){
+		if(((self.chargedMoves.length == 1 || ! self.chargedMoves[1]) || ((self.chargedMoves.length == 2) && (self.chargedMoves[0].type == self.chargedMoves[1].type))) && (! inflexible)){
 			cons.push({
 				trait: "Inflexible",
 				desc: "May struggle to hit multiple types."
@@ -1538,17 +1621,17 @@ function Pokemon(id, i, b, d){
 		var hasSelfDebuffingMove = false;
 
 		for(var i = 0; i < self.chargedMoves.length; i++){
-			if(self.chargedMoves[i].selfDebuffing){
+			if(self.chargedMoves[i]?.selfDebuffing){
 				hasSelfDebuffingMove = true;
 			}
 		}
 
-		if(self.hasMove("BUBBLE_BEAM") || self.hasMove("ICY_WIND") || self.hasMove("LUNGE") || self.hasMove("SAND_TOMB") || self.hasMove("ACID_SPRAY") || hasSelfDebuffingMove){
+		if(self.hasMove("BUBBLE_BEAM") || self.hasMove("ICY_WIND") || self.hasMove("LUNGE") || self.hasMove("SAND_TOMB") || self.hasMove("ACID_SPRAY") || hasSelfDebuffingMove || self?.formChange){
 			// Only give this trait to energy driven Pokemon
 			if(self.fastMove.energyGain / self.fastMove.cooldown >= 3 / 500){
 				cons.push({
 					trait: "Technical",
-					desc: "Uses complex moves that may have a high learning curve."
+					desc: "Has complex moves or form changes that may have a high learning curve."
 				});
 			}
 		}
@@ -1613,7 +1696,15 @@ function Pokemon(id, i, b, d){
 		}
 
 		for(var n = 0; n < pokemon.chargedMoves.length; n++){
+			if(! pokemon.chargedMoves[n]){
+				continue;
+			}
+
 			for(var j = 0; j < self.chargedMoves.length; j++){
+				if(! self.chargedMoves[j]){
+					continue;
+				}
+
 				if(pokemon.chargedMoves[n].moveId == self.chargedMoves[j].moveId){
 					similarityScore += 200;
 				} else if(pokemon.chargedMoves[n].type == self.chargedMoves[j].moveId){
@@ -1700,35 +1791,19 @@ function Pokemon(id, i, b, d){
 
 		if((self.fastMove)&&(self.fastMove.moveId == moveId)){
 			return true;
+		} else{
+			return self.chargedMoves.find(m => m?.moveId == moveId);
 		}
-
-		for(var i = 0; i < self.chargedMoves.length; i++){
-			if(self.chargedMoves[i].moveId == moveId){
-				return true;
-			}
-		}
-
-		return false;
 	}
 
 	// Return whether or not this Pokemon has a specific move in its movepool
 
 	this.knowsMove = function(moveId){
 		moveId = moveId.toUpperCase();
-
-		for(var i = 0; i < self.fastMovePool.length; i++){
-			if(self.fastMovePool[i].moveId == moveId){
-				return true;
-			}
-		}
-
-		for(var i = 0; i < self.chargedMovePool.length; i++){
-			if(self.chargedMovePool[i].moveId == moveId){
-				return true;
-			}
-		}
-
-		return false;
+		
+		return self.fastMovePool.some(m => m?.moveId == moveId)
+			|| self.chargedMovePool.some(m => m?.moveId == moveId)
+			|| self.extraChargedMovePool.some(m => m?.moveId == moveId);
 	}
 
 	// Return whether or not this Pokemon has a move of a specific type
@@ -1744,7 +1819,7 @@ function Pokemon(id, i, b, d){
 		}
 
 		for(var i = 0; i < self.chargedMovePool.length; i++){
-			if(self.chargedMovePool[i].type == type){
+			if(self.chargedMovePool[i]?.type == type){
 				return true;
 			}
 		}
@@ -1761,7 +1836,7 @@ function Pokemon(id, i, b, d){
 		}
 
 		for(var i = 0; i < self.chargedMoves.length; i++){
-			if(self.chargedMoves[i].moveId == moveId){
+			if(self.chargedMoves[i]?.moveId == moveId){
 				return self.chargedMoves[i];
 			}
 		}
@@ -1775,7 +1850,7 @@ function Pokemon(id, i, b, d){
 		var hasBuffMove = false;
 
 		for(var i = 0; i < self.chargedMoves.length; i++){
-			if((self.chargedMoves[i].buffs)&&(self.chargedMoves[i].buffApplyChance < 1)){
+			if( self.chargedMoves[i]?.buffs && self.chargedMoves[i]?.buffApplyChance < 1){
 				hasBuffMove = true;
 			}
 		}
@@ -1790,6 +1865,10 @@ function Pokemon(id, i, b, d){
 		var boostMove = false;
 
 		for(var i = 0; i < self.chargedMoves.length; i++){
+			if(! self.chargedMoves[i]){
+				continue;
+			}
+
 			if((self.chargedMoves[i].buffs)&&(self.chargedMoves[i].buffApplyChance >= 0.5)&&(! self.chargedMoves[i].selfDebuffing)){
 				boostMove = self.chargedMoves[i];
 			}
@@ -2096,6 +2175,7 @@ function Pokemon(id, i, b, d){
 		var fastMoveStr = self.fastMovePool.indexOf(self.fastMove);
 		var chargedMove1Str = self.chargedMovePool.indexOf(self.chargedMoves[0])+1;
 		var chargedMove2Str = self.chargedMovePool.indexOf(self.chargedMoves[1])+1;
+		var chargedMove3Str = self.chargedMoves[2] ? self.extraChargedMovePool.indexOf(self.chargedMoves[2])+1 : null;
 
 		// Check for any custom moves;
 
@@ -2103,19 +2183,30 @@ function Pokemon(id, i, b, d){
 			fastMoveStr = self.fastMove.moveId;
 		}
 
-		if(self.chargedMoves.length > 0){
+		if(self.chargedMoves[0]){
 			if(self.chargedMoves[0].isCustom || settings.hardMovesetLinks){
 				chargedMove1Str = self.chargedMoves[0].moveId;
 			}
 		}
 
-		if(self.chargedMoves.length > 1){
+		if(self.chargedMoves[1]){
 			if(self.chargedMoves[1].isCustom || settings.hardMovesetLinks){
 				chargedMove2Str = self.chargedMoves[1].moveId;
 			}
 		}
 
-		moveStr = fastMoveStr + "-" + chargedMove1Str + "-" + chargedMove2Str;
+		if(self.chargedMoves[2]){
+			if(self.chargedMoves[2].isCustom || settings.hardMovesetLinks){
+				chargedMove3Str = self.chargedMoves[2].moveId;
+			}
+		}
+
+		if(chargedMove3Str){
+			moveStr = fastMoveStr + "-" + chargedMove1Str + "-" + chargedMove2Str + "-" + chargedMove3Str;
+		} else{
+			moveStr = fastMoveStr + "-" + chargedMove1Str + "-" + chargedMove2Str;
+		}
+		
 
 		return moveStr;
 	}
@@ -2124,12 +2215,13 @@ function Pokemon(id, i, b, d){
 
 	this.generateMovesetStr = function(){
 		var moveAbbreviationStr = self.fastMove.abbreviation;
+		var movesToDisplay = self.chargedMoves.filter(m => m !== null);
 
-		for(var i = 0; i < self.chargedMoves.length; i++){
+		for(var i = 0; i < movesToDisplay.length; i++){
 			if(i == 0){
-				moveAbbreviationStr += "+" + self.chargedMoves[i].abbreviation;
+				moveAbbreviationStr += "+" + movesToDisplay[i].abbreviation;
 			} else{
-				moveAbbreviationStr += "/" + self.chargedMoves[i].abbreviation;
+				moveAbbreviationStr += "/" + movesToDisplay[i].abbreviation;
 			}
 		}
 
@@ -2171,7 +2263,7 @@ function Pokemon(id, i, b, d){
 	this.calculateConsistency = function(){
 
 		var fastMove = self.fastMove;
-		var chargedMoves = self.chargedMoves;
+		var chargedMoves = self.chargedMoves.filter(m => m !== null);
 		var consistencyScore = 1;
 
 		// Reset move stats
@@ -2458,6 +2550,8 @@ function Pokemon(id, i, b, d){
 		return newStats;
 	}
 
+	// Replaces a move in a Pokemon's move pool during battle (eg Morpeko)
+
 	this.replaceMove = function(moveType, oldMoveId, newMoveId){
 		if(moveType == "fast" && self.fastMove){
 			if(self.fastMove.moveId == oldMoveId){
@@ -2469,6 +2563,13 @@ function Pokemon(id, i, b, d){
 				self.selectMove(moveType, newMoveId, moveIndex, true);
 			}
 		}
+	}
+
+	// Returns whether or not this Pokemon has access to a third charged move
+	
+	this.hasThirdChargedMove = function(){
+		return false;
+		//return self.hasTag("mega");
 	}
 
 

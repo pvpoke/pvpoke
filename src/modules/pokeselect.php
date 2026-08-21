@@ -124,6 +124,7 @@
 
 			<select class="move-select charged"></select>
 			<select class="move-select charged"></select>
+			<select class="move-select extra-charged"></select>
 			<button class="auto-select">Select Recommended Moves</button>
 			<div class="legacy">* Exclusive move<br><sup>†</sup> Unobtainable move</div>
 		</div>
@@ -211,9 +212,12 @@
 				<div class="bar"></div>
 				<div class="bar-back"></div>
 			</div>
-			<div class="energy-label">
-				<div class="num">0</div>
-				<div>energy</div>
+			<div class="move-bar">
+				<div class="label">CM</div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar-back"></div>
 			</div>
 			<div class="move-bar">
 				<div class="label">CM</div>
@@ -221,6 +225,10 @@
 				<div class="bar"></div>
 				<div class="bar"></div>
 				<div class="bar-back"></div>
+			</div>
+			<div class="energy-label">
+				<div class="num">0</div>
+				<div>energy</div>
 			</div>
 		</div>
 	</div>

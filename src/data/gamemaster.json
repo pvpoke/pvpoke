@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-08-18 07:03:52",
+    "timestamp": "2026-08-21 21:27:11",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -675,16 +675,6 @@
             "showFormat": true,
             "showMeta": true,
             "hideRankings": true
-        },
-        {
-            "title": "Evolution Cup",
-            "cup": "evolution",
-            "cp": 1500,
-            "meta": "evolution",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Pokémon that have evolved at least once and can evolve again will be eligible."]
         },
         {
             "title": "Scroll Cup",
@@ -10501,6 +10491,7 @@
             "types": ["psychic", "fighting"],
             "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
             "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+            "extraChargedMoves": ["DYNAMIC_PUNCH"],
             "tags": ["legendary", "shadoweligible", "mega"],
             "defaultIVs": {
                 "cp500": [3, 9, 15, 14],
@@ -10527,6 +10518,7 @@
             "types": ["psychic", "none"],
             "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
             "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+            "extraChargedMoves": ["FUTURE_SIGHT"],
             "tags": ["legendary", "shadoweligible", "mega"],
             "defaultIVs": {
                 "cp500": [3, 9, 15, 14],
@@ -41094,6 +41086,7 @@
             "dex": 845,
             "speciesName": "Cramorant",
             "speciesId": "cramorant",
+            "originalFormId": "cramorant",
             "baseStats": {
                 "atk": 173,
                 "def": 163,
@@ -41102,6 +41095,38 @@
             "types": ["flying", "water"],
             "fastMoves": ["PECK", "WATER_GUN"],
             "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+            "extraChargedMoves": ["GULP_MISSILE_ARROKUDA", "GULP_MISSILE_PIKACHU"],
+            "defaultIVs": {
+                "cp500": [9, 4, 8, 11],
+                "cp1500": [26, 5, 15, 13],
+                "cp2500": [50, 15, 15, 15]
+            },
+            "searchPriority": 4,
+            "buddyDistance": 3,
+            "thirdMoveCost": 50000,
+            "released": true,
+            "formChange": {
+                "type": "set",
+                "trigger": "charged_move",
+                "moveIDs": ["DIVE", "SURF"],
+                "alternativeFormId": "variable",
+                "resetOnSwitch": true
+            }
+        },
+        {
+            "dex": 845,
+            "speciesName": "Cramorant (Gulping)",
+            "speciesId": "cramorant_gulping",
+            "originalFormId": "cramorant",
+            "baseStats": {
+                "atk": 173,
+                "def": 163,
+                "hp": 172
+            },
+            "types": ["flying", "water"],
+            "fastMoves": ["PECK", "WATER_GUN"],
+            "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+            "extraChargedMoves": ["GULP_MISSILE_ARROKUDA"],
             "defaultIVs": {
                 "cp500": [9, 4, 8, 11],
                 "cp1500": [26, 5, 15, 13],
@@ -41109,7 +41134,44 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": false
+            "released": false,
+            "formChange": {
+                "type": "set",
+                "trigger": "charged_move",
+                "moveId": "GULP_MISSILE_ARROKUDA",
+                "alternativeFormId": "cramorant",
+                "resetOnSwitch": true
+            }
+        },
+        {
+            "dex": 845,
+            "speciesName": "Cramorant (Gorging)",
+            "speciesId": "cramorant_gorging",
+            "originalFormId": "cramorant",
+            "baseStats": {
+                "atk": 173,
+                "def": 163,
+                "hp": 172
+            },
+            "types": ["flying", "water"],
+            "fastMoves": ["PECK", "WATER_GUN"],
+            "chargedMoves": ["FLY", "HYDRO_PUMP", "SURF", "DIVE"],
+            "extraChargedMoves": ["GULP_MISSILE_PIKACHU"],
+            "defaultIVs": {
+                "cp500": [9, 4, 8, 11],
+                "cp1500": [26, 5, 15, 13],
+                "cp2500": [50, 15, 15, 15]
+            },
+            "buddyDistance": 3,
+            "thirdMoveCost": 50000,
+            "released": false,
+            "formChange": {
+                "type": "set",
+                "trigger": "charged_move",
+                "moveId": "GULP_MISSILE_PIKACHU",
+                "alternativeFormId": "cramorant",
+                "resetOnSwitch": true
+            }
         },
         {
             "dex": 846,
@@ -41160,7 +41222,7 @@
                 "id": "FAMILY_ARROKUDA",
                 "parent": "arrokuda"
             },
-            "tags": ["include1500"]
+            "tags": ["include1500", "include2500"]
         },
         {
             "dex": 848,
@@ -47678,6 +47740,40 @@
             "cooldown": 500,
             "archetype": "General",
             "turns": 1
+        },
+        {
+            "moveId": "GULP_MISSILE_ARROKUDA",
+            "name": "Gulp Missile (Arrokuda)",
+            "category": "charged",
+            "type": "water",
+            "power": 15,
+            "energy": 0,
+            "energyGain": 0,
+            "cooldown": 500,
+            "buffs": [0, -1],
+            "buffTarget": "opponent",
+            "buffApplyChance": "1",
+            "archetype": "Debuff",
+            "turns": 1,
+            "damageMethod": "percentMaxHP",
+            "tags": ["instant", "ignoresFaint", "unlisted", "uneditable"]
+        },
+        {
+            "moveId": "GULP_MISSILE_PIKACHU",
+            "name": "Gulp Missile (Pikachu)",
+            "category": "charged",
+            "type": "water",
+            "power": 15,
+            "energy": 0,
+            "energyGain": 0,
+            "cooldown": 500,
+            "buffs": [-2, 0],
+            "buffTarget": "opponent",
+            "buffApplyChance": "1",
+            "archetype": "Debuff",
+            "turns": 1,
+            "damageMethod": "percentMaxHP",
+            "tags": ["instant", "ignoresFaint", "uneditable"]
         },
         {
             "moveId": "GUNK_SHOT",

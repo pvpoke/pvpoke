@@ -267,6 +267,10 @@ var InterfaceMaster = (function () {
 			this.displayRankingEntry = function(r, index){
 				var pokemon = new Pokemon(r.speciesId, 0, battle);
 
+				if(! pokemon.speciesId){
+					return;
+				}
+
 				pokemon.initialize(true);
 				pokemon.selectMove("fast", r.moveset[0]);
 				pokemon.selectMove("charged", r.moveset[1], 0);
@@ -277,8 +281,8 @@ var InterfaceMaster = (function () {
 					pokemon.selectMove("charged", "none", 1);
 				}
 
-				if(! pokemon.speciesId){
-					return;
+				if(r.moveset.length > 3){
+					pokemon.selectMove("extra-charged", r.moveset[3], 2);
 				}
 
 				// Construct meta group from ranked Pokemon
@@ -301,35 +305,35 @@ var InterfaceMaster = (function () {
 				var moveNameStr = "";
 
 				// Put together the recommended moveset string
+				var chargedMoves = [...pokemon.chargedMovePool, ...pokemon.extraChargedMovePool];
+
 				for(var n = 0; n < r.moveset.length; n++){
 					if(n == 0){
-						for(var j = 0; j < pokemon.fastMovePool.length; j++){
-							if(r.moveset[n] == pokemon.fastMovePool[j].moveId){
-								moveNameStr += pokemon.fastMovePool[j].displayName;
+						var fastMove = pokemon.fastMovePool.find(m => m.moveId == r.moveset[n]);
 
-								moveNameStr += "<span class=\"count fast\">"+(pokemon.fastMovePool[j].cooldown / 500)+"</span>";
-								break;
-							}
+						if(fastMove && typeof fastMove !== "undefined"){
+							moveNameStr += fastMove.displayName;
+
+							moveNameStr += "<span class=\"count fast\">"+(fastMove.cooldown / 500)+"</span>";
 						}
 					} else{
-						for(var j = 0; j < pokemon.chargedMovePool.length; j++){
-							if(r.moveset[n] == pokemon.chargedMovePool[j].moveId){
-								moveNameStr += pokemon.chargedMovePool[j].displayName;
+						var chargedMove = chargedMoves.find(m => m.moveId == r.moveset[n]);
 
-								var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, pokemon.chargedMovePool[j]);
-								var moveCount = moveCounts[0];
+						if(chargedMove && typeof chargedMove !== "undefined"){
+							moveNameStr += chargedMove.displayName;
 
-								if(moveCounts[0] > moveCounts[1]){
-									moveCount+="-";
-								}
+							var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMove);
+							var moveCount = moveCounts[0];
 
-								if(moveCounts[2] < moveCounts[1] && moveCounts[1] == moveCounts[0]){
-									moveCount+=".";
-								}
-
-								moveNameStr += "<span class=\"count\">"+moveCount+"</span>";
-								break;
+							if(moveCounts[0] > moveCounts[1]){
+								moveCount+="-";
 							}
+
+							if(moveCounts[2] < moveCounts[1] && moveCounts[1] == moveCounts[0]){
+								moveCount+=".";
+							}
+
+							moveNameStr += "<span class=\"count\">"+moveCount+"</span>";
 						}
 					}
 
@@ -461,7 +465,7 @@ var InterfaceMaster = (function () {
 				var chargedMove1Count = Math.ceil(pokemon.chargedMoves[0].energy / pokemon.fastMove.energyGain);
 				var chargedMove2Count = 0;
 
-				if(pokemon.chargedMoves.length > 1){
+				if(pokemon.chargedMoves[1]){
 					chargedMove2Name = pokemon.chargedMoves[1].displayName;
 					chargedMove2Count = Math.ceil(pokemon.chargedMoves[1].energy / pokemon.fastMove.energyGain);
 				}
@@ -820,39 +824,47 @@ var InterfaceMaster = (function () {
 					pokemon.selectMove("charged", "none", 1);
 				}
 
+				if(r.moveset.length > 3){
+					pokemon.selectMove("extra-charged", r.moveset[3], 2);
+				}
+
 				var pokeMoveStr = pokemon.generateURLMoveStr();
 
 				// Display move data
 
 				var fastMoves = pokemon.fastMovePool;
 				var chargedMoves = pokemon.chargedMovePool;
+				var extraChargedMoves = pokemon.extraChargedMovePool;
 
-				for(var j = 0; j < fastMoves.length; j++){
-					fastMoves[j].uses = 0;
+				fastMoves.forEach(move => {
+					let uses = r.moves.fastMoves.find(m => m.moveId == move.moveId).uses;
 
-					for(var n = 0; n < r.moves.fastMoves.length; n++){
-						var move = r.moves.fastMoves[n];
+					move.uses = uses ? uses : 0;
+				});
 
-						if(move.moveId == fastMoves[j].moveId){
-							fastMoves[j].uses = move.uses;
-						}
+				chargedMoves.forEach(move => {
+					let uses = r.moves.chargedMoves.find(m => m.moveId == move.moveId).uses;
+
+					move.uses = uses ? uses : 0;
+				});
+
+				extraChargedMoves.forEach(move => {
+					if(r.moves.extraChargedMoves){
+						let uses = r.moves.extraChargedMoves.find(m => m.moveId == move.moveId).uses;
+
+						move.uses = uses ? uses : 0;
+					} else{
+						move.uses = 0;
 					}
-				}
-
-				for(var j = 0; j < chargedMoves.length; j++){
-					chargedMoves[j].uses = 0;
-
-					for(var n = 0; n < r.moves.chargedMoves.length; n++){
-						var move = r.moves.chargedMoves[n];
-
-						if(move.moveId == chargedMoves[j].moveId){
-							chargedMoves[j].uses = move.uses;
-						}
-					}
-				}
+				});
 
 				fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 				chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+				extraChargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+				if(extraChargedMoves.length > 0){
+					chargedMoves = extraChargedMoves.concat(chargedMoves);
+				}
 
 				// Buckle up, this is gonna get messy. This is the main detail HTML.
 
@@ -1046,29 +1058,62 @@ var InterfaceMaster = (function () {
 					$moveDetails.find(".name").html(chargedMoves[n].displayName);
 					$moveDetails.find(".archetype .name").html(archetype);
 					$moveDetails.find(".archetype .icon").addClass(archetypeClass);
-					$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) * 100) / 100);
+
+					switch(chargedMoves[n].damageMethod){
+						case "percentMaxHP":
+							$moveDetails.find(".damage .value").html("1 + " + chargedMoves[n].power + "% opponent's max HP");
+						break;
+
+						default:
+							$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) * 100) / 100);
+							$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) / chargedMoves[n].energy) * 100) / 100);
+					}
+					
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
-					$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) / chargedMoves[n].energy) * 100) / 100);
 					$moveDetails.attr("data", chargedMoves[n].moveId);
+
+					// Move stat effect descriptions
 
 					if(chargedMoves[n].buffs && chargedMoves[n].buffApplyChance){
 						$moveDetails.find(".move-effect").html(gm.getStatusEffectString(chargedMoves[n]));
 					}
 
-					// Add move counts
-					var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMoves[n]);
+					// Move form change descriptions
+					if(pokemon?.formChange?.trigger == "charged_move"){
+						let formChangeString = gm.getFormChangeEffectString(chargedMoves[n], pokemon);
 
-					$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]);
-
-					// Highlight this move if it's in the recommended moveset
-
-					for(var j = 0; j < pokemon.chargedMoves.length; j++){
-						if(chargedMoves[n] == pokemon.chargedMoves[j]){
-							$moveDetails.addClass("selected");
+						if(formChangeString != ''){
+							if($moveDetails.find(".status-effect-description").length > 0){
+								$moveDetails.find(".status-effect-description").append("<br>"+formChangeString);
+							} else{
+								$moveDetails.find(".move-effect").append("<div class=\"status-effect-description\">"+formChangeString+"</div>");
+							}
 						}
 					}
 
+					// Add move counts
+					if(chargedMoves[n].energy > 0){
+						var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMoves[n]);
+
+						$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]);
+					} else{
+						// Remove certain display elements for Charged Attacks that cost 0 energy
+						$moveDetails.find(".move-count, div.energy, div.dpe").remove();
+					}
+
+					// Highlight this move if it's in the recommended moveset
+
+					if(pokemon.chargedMoves.includes(chargedMoves[n])){
+						$moveDetails.addClass("selected");
+					}
+
 					$details.find(".moveset.charged").append($moveDetails);
+
+					// Add extra margin between regular Charged Moves and extra Charged Moves
+					if(extraChargedMoves.length > 0 && chargedMoves[n] == extraChargedMoves[extraChargedMoves.length-1]){
+						$details.find(".moveset.charged").append("<hr>");
+						$moveDetails.css("margin-bottom", "10px");
+					}
 				}
 
 				// Helper variables for displaying matchups and link URL

@@ -355,6 +355,10 @@ function interfaceObject(){
 				pokemon.selectMove("charged", "none", 1);
 			}
 
+			if(r.moveset.length > 3){
+				pokemon.selectMove("extra-charged", r.moveset[3], 2);
+			}
+
 			list.push(pokemon);
 		}
 
@@ -599,11 +603,11 @@ function interfaceObject(){
 					cup.overrides = collateOverrides(false); // Preserve only the manual overrides for export
 					ranker.setMoveOverrides(battle.getCP(), "custom", overrides);
 				}
-
 			}
 
 			if(! data){
 				// Generate movesets
+				ranker.clearMoveOverrides();
 				ranker.setMoveSelectMode("auto");
 				ranker.setScenarioOverrides([scenario]);
 				ranker.rankLoop(battle.getCP(true), cup, self.receiveRankingData);

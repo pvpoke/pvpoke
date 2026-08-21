@@ -248,12 +248,15 @@ var InterfaceMaster = (function () {
 					// Gather offensive matchups for all charged moves
 
 					for(var n = 0; n < poke.chargedMoves.length; n++){
-						offenseArr.push(
-							{
-								name: poke.chargedMoves[n].name,
-								type: poke.chargedMoves[n].type,
-								matchups: this.getTypeEffectivenessArray([poke.chargedMoves[n].type], "offense")
-							});
+						if(poke.chargedMoves[n]){
+							offenseArr.push(
+								{
+									name: poke.chargedMoves[n].name,
+									type: poke.chargedMoves[n].type,
+									matchups: this.getTypeEffectivenessArray([poke.chargedMoves[n].type], "offense")
+								});
+						}
+
 					}
 				}
 

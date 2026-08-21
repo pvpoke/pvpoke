@@ -278,7 +278,7 @@ var InterfaceMaster = (function () {
 
 					// Calculate whether or not can be used on this turn for sandbox mode
 
-					if(event.type.indexOf("fast") > -1){
+					if(event.type.indexOf("fast") > -1 || ! event?.editable){
 						$item.find(".item").addClass("disabled");
 					}
 
@@ -287,7 +287,9 @@ var InterfaceMaster = (function () {
 						var usableChargedMoves = 0;;
 
 						for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
-							if(energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
+							let move = pokemon[event.actor].chargedMoves[n];
+
+							if(move && energy[event.actor] >= move.energy){
 								usableChargedMoves++;
 							}
 						}
@@ -619,7 +621,6 @@ var InterfaceMaster = (function () {
 			// Generate matchup details after main battle has been simulated
 
 			this.generateMatchupDetails = function(battle, bulkResults){
-
 				// Run simulations for every shield matchup
 
 				var pokemon = [];
@@ -732,7 +733,9 @@ var InterfaceMaster = (function () {
 
 					if(((eventType == "fast") || (eventType == "charged"))&&(turnsToChargedMove[event.actor] == 0)){
 						for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
-							if(energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
+							let move = pokemon[event.actor].chargedMoves[n];
+
+							if(move && energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
 								turnsToChargedMove[event.actor] = event.turn + pokemon[event.actor].fastMove.turns;
 							}
 						}
@@ -768,13 +771,17 @@ var InterfaceMaster = (function () {
 				$("select.breakpoint-move").append("<option value=\""+pokemon[0].fastMove.moveId+"\">"+pokemon[0].fastMove.name+"</option>");
 
 				for(var i = 0; i < pokemon[0].chargedMoves.length; i++){
-					$("select.breakpoint-move").append("<option value=\""+pokemon[0].chargedMoves[i].moveId+"\">"+pokemon[0].chargedMoves[i].name+"</option>");
+					if(pokemon[0].chargedMoves[i]){
+						$("select.breakpoint-move").append("<option value=\""+pokemon[0].chargedMoves[i].moveId+"\">"+pokemon[0].chargedMoves[i].name+"</option>");
+					}
 				}
 
 				$("select.bulkpoint-move").append("<option value=\""+pokemon[1].fastMove.moveId+"\">"+pokemon[1].fastMove.name+"</option>");
 
 				for(var i = 0; i < pokemon[1].chargedMoves.length; i++){
-					$("select.bulkpoint-move").append("<option value=\""+pokemon[1].chargedMoves[i].moveId+"\">"+pokemon[1].chargedMoves[i].name+"</option>");
+					if(pokemon[1].chargedMoves[i]){
+						$("select.bulkpoint-move").append("<option value=\""+pokemon[1].chargedMoves[i].moveId+"\">"+pokemon[1].chargedMoves[i].name+"</option>");
+					}
 				}
 
 
@@ -826,7 +833,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// CMP Chart link
-				let cmpChartLink = host+"attack-cmp-chart/"+battle.getCup().name+"/"+battle.getCP()+"/"+pokemon[0].aliasId+"/";
+				let cmpChartLink = host+"attack-cmp-chart/all/"+battle.getCP()+"/"+pokemon[0].aliasId+"/";
 				$(".battle-cmp-link").html(pokemon[0].speciesName + " CMP Chart");
 				$(".battle-cmp-link").attr("href", cmpChartLink);
 
@@ -1974,18 +1981,20 @@ var InterfaceMaster = (function () {
 										continue;
 									}
 
-									var moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
+									var moveId;
 
-									if(moveId != "none"){
+									if(i < 3){
+										moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
 										poke.selectMove("charged", moveId, i-1);
 									} else{
-										if((arr[1] == "0")&&(arr[2] == "0")){
-											poke.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
-										} else{
-											poke.selectMove("charged", moveId, i-1);
-										}
+										moveId = $(".poke").eq(index).find(".move-select.extra-charged").find("option").eq(parseInt(arr[i])).val();
+										poke.selectMove("extra-charged", moveId, 2);
 									}
+								}
 
+								// Deselect 3rd charged move if none is supplied
+								if(arr.length < 4 && poke.extraChargedMovePool.length > 0 && poke.hasThirdChargedMove()){
+									poke.selectMove("extra-charged", "none", 2);
 								}
 
 								break;
@@ -2461,11 +2470,6 @@ var InterfaceMaster = (function () {
 				var selectorIndex = (pokeIndex == 0) ? 1 : 0;
 				var subject = pokeSelectors[pokeIndex].getPokemon();
 				var target = pokeSelectors[selectorIndex].getPokemon();
-				var moveIndex = 0;
-
-				if(! target){
-					return false;
-				}
 
 				if($(e.target).is(".move-bar")){
 					moveIndex = $(e.target).parent().find(".move-bar").index($(e.target));
@@ -2474,11 +2478,21 @@ var InterfaceMaster = (function () {
 				}
 
 				var move = subject.chargedMoves[moveIndex];
+				var moveIndex = 0;
+
+				if(! target){
+					return false;
+				}
+
+				if(! move){
+					return false;
+				}
+
 				var effectiveness = target.typeEffectiveness[move.type];
 
 				displayDamage = DamageCalculator.damageByStats(subject, target, subject.getEffectiveStat(0, true), target.getEffectiveStat(1, true), effectiveness, move);
 
-				pokeSelectors[selectorIndex].animateDamage(displayDamage)
+				pokeSelectors[selectorIndex].animateDamage(displayDamage);
 			}
 
 			// Run simulation
@@ -2924,7 +2938,7 @@ var InterfaceMaster = (function () {
 
 				e.preventDefault();
 
-				if(! sandbox){
+				if(! sandbox || $(this).hasClass("disabled")){
 					return;
 				}
 

@@ -10,11 +10,6 @@
         "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"]
     },
     {
-        "speciesId": "annihilape",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
-    },
-    {
         "speciesId": "annihilape_shadow",
         "fastMove": "COUNTER",
         "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
@@ -128,11 +123,6 @@
         "chargedMoves": ["ENERGY_BALL", "ACROBATICS"]
     },
     {
-        "speciesId": "kingdra",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SURF", "SWIFT"]
-    },
-    {
         "speciesId": "lickilicky",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
@@ -192,7 +182,7 @@
     {
         "speciesId": "sableye_shadow",
         "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["FOUL_PLAY", "POWER_GEM"],
+        "chargedMoves": ["DRAIN_PUNCH", "POWER_GEM"],
         "shadowType": "shadow"
     },
     {
@@ -217,14 +207,14 @@
         "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
     },
     {
-        "speciesId": "stunfisk_galarian",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
-    },
-    {
         "speciesId": "talonflame",
         "fastMove": "INCINERATE",
         "chargedMoves": ["FLY", "FLAME_CHARGE"]
+    },
+    {
+        "speciesId": "thievul",
+        "fastMove": "SUCKER_PUNCH",
+        "chargedMoves": ["NIGHT_SLASH", "ICY_WIND"]
     },
     {
         "speciesId": "tinkaton",
@@ -247,8 +237,18 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "thievul",
-        "fastMove": "SUCKER_PUNCH",
-        "chargedMoves": ["NIGHT_SLASH", "ICY_WIND"]
+        "speciesId": "cramorant",
+        "fastMove": "PECK",
+        "chargedMoves": ["DIVE", "FLY"]
+    },
+    {
+        "speciesId": "primeape",
+        "fastMove": "KARATE_CHOP",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
+    },
+    {
+        "speciesId": "kingdra",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SURF", "SWIFT"]
     }
 ]

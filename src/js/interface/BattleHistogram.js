@@ -88,6 +88,10 @@ function BattleHistogram($element){
 		var moveStr = pokemon.fastMove.name;
 
 		for(var i = 0; i < pokemon.chargedMoves.length; i++){
+			if(! pokemon.chargedMoves[i]){
+				continue;
+			}
+			
 			moveStr += ", " + pokemon.chargedMoves[i].name;
 		}
 

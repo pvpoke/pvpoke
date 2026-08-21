@@ -156,7 +156,7 @@ var BattlerMaster = (function () {
 
 				// Handle phase change
 
-				if(phase != response.phase){
+				if(phase != response.phase || response?.moveName){
 					// Transition into this phase
 					switch(response.phase){
 						case "suspend_charged_attack":
@@ -196,7 +196,17 @@ var BattlerMaster = (function () {
 
 
 						case "animating":
-							$(".animate-message .text").html(activePokemon[response.actor].speciesName + " used " + response.moveName);
+							switch(response.moveName){
+								case "Gulp Missile (Arrokuda)":
+								case "Gulp Missile (Pikachu)":
+									$(".animate-message .text").html(activePokemon[response.actor].speciesName + " spits out its prey!");
+									break;
+
+								default:
+									$(".animate-message .text").html(activePokemon[response.actor].speciesName + " used " + response.moveName);
+									break;
+							}
+							
 
 							// If we're transitioning from the Charged Move minigame, submit the damage
 							if(phase == "suspend_charged_attack"){
