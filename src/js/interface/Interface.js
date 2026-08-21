@@ -621,7 +621,6 @@ var InterfaceMaster = (function () {
 			// Generate matchup details after main battle has been simulated
 
 			this.generateMatchupDetails = function(battle, bulkResults){
-
 				// Run simulations for every shield matchup
 
 				var pokemon = [];
@@ -834,7 +833,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// CMP Chart link
-				let cmpChartLink = host+"attack-cmp-chart/"+battle.getCup().name+"/"+battle.getCP()+"/"+pokemon[0].aliasId+"/";
+				let cmpChartLink = host+"attack-cmp-chart/all/"+battle.getCP()+"/"+pokemon[0].aliasId+"/";
 				$(".battle-cmp-link").html(pokemon[0].speciesName + " CMP Chart");
 				$(".battle-cmp-link").attr("href", cmpChartLink);
 
@@ -2939,7 +2938,7 @@ var InterfaceMaster = (function () {
 
 				e.preventDefault();
 
-				if(! sandbox){
+				if(! sandbox || $(this).hasClass("disabled")){
 					return;
 				}
 

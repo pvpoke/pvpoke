@@ -255,7 +255,7 @@ function PokeSelect(element, i){
 
 			$el.find(".move-bar").hide();
 
-			for(var i = 0; i < selectedPokemon.chargedMoves.length; i++){
+			for(var i = 0; i < 2; i++){
 				if(selectedPokemon.chargedMoves[i]){
 					var chargedMove = selectedPokemon.chargedMoves[i];
 

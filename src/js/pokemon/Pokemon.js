@@ -2568,7 +2568,8 @@ function Pokemon(id, i, b, d){
 	// Returns whether or not this Pokemon has access to a third charged move
 	
 	this.hasThirdChargedMove = function(){
-		return self.hasTag("mega");
+		return false;
+		//return self.hasTag("mega");
 	}
 
 
