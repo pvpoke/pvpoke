@@ -416,9 +416,7 @@ function Battle(){
 
 		// Process actions on this turn
 		actionIndex = 0;
-
-		console.log(turns, turnActions);
-
+		
 		while(actionIndex < turnActions.length){
 			// Return here if we've reached a suspended state
 			if(phase != "neutral"){
