@@ -355,9 +355,9 @@ function Battle(){
 						}
 
 						// Don't allow any inputs on the same turn that a Charged Attack resolves
-						if(queuedActions.find(action => action.type == "charged" && action.turn == turns - 1)){
+						/*if(queuedActions.find(action => action.type == "charged" && action.turn == turns - 1)){
 							valid = false;
-						}
+						}*/
 
 						if(action.type == "charged" && valid){
 							cooldownsToSet[i] += 1000;
@@ -389,7 +389,7 @@ function Battle(){
 				// Was this queued on a previous turn? See if it's eligible
 				var timeSinceActivated = (turns - action.turn) * 500;
 
-				var requiredTimeToPass = action.type == "fast" ? pokemon[action.actor].fastMove.cooldown - 500 : 500;
+				var requiredTimeToPass = action.type == "fast" ? pokemon[action.actor].fastMove.cooldown - 500 : 0;
 
 				if(timeSinceActivated >= requiredTimeToPass || (action.type == "fast" && chargedMoveLastTurn && action.turn < turns)){
 					valid = true;
@@ -527,7 +527,7 @@ function Battle(){
 			// Reset after a charged move
 
 			if(roundChargedMoveUsed){
-				poke.cooldown = 0;
+				poke.cooldown = 1000;
 			}
 		}
 
