@@ -318,6 +318,7 @@ function Battle(){
 		// Determine actions for both Pokemon
 		var actionsThisTurn = false;
 		var chargedMoveThisTurn = false;
+		var chargedMoveLastTurn = previousTurnActions.find(action => action.type == "charged");
 		var cooldownsToSet = [pokemon[0].cooldown, pokemon[1].cooldown]; // Store cooldown values to set later
 
 		if(turns > lastProcessedTurn){
@@ -328,7 +329,13 @@ function Battle(){
 				var action = self.getTurnAction(poke, opponent);
 
 				if(action){
+
+					if(chargedMoveLastTurn && action.type != "switch"){
+						continue; // Only allow 0 turn switches after a Charged Attack sequence
+					}
+
 					actionsThisTurn = true;
+
 					if(action.type == "charged"){
 						chargedMoveThisTurn = true;
 					}
@@ -360,7 +367,7 @@ function Battle(){
 						}*/
 
 						if(action.type == "charged" && valid){
-							cooldownsToSet[i] += 1000;
+							cooldownsToSet[i] += 500;
 						}
 
 						if(valid){
@@ -402,6 +409,10 @@ function Battle(){
 
 			if(action.type == "switch"){
 				valid = true;
+
+				if(chargedMoveLastTurn){
+					action.priority -= 40; // Resolve floating Fast Attacks before 0 turn swaps after a Charged Attack sequence
+				}
 			}
 
 			if(valid){
@@ -527,7 +538,7 @@ function Battle(){
 			// Reset after a charged move
 
 			if(roundChargedMoveUsed){
-				poke.cooldown = 1000;
+				poke.cooldown = 500;
 			}
 		}
 
