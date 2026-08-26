@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-08-21 21:27:11",
+    "timestamp": "2026-08-26 22:53:35",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -7622,7 +7622,7 @@
                 "cp2500": [50, 15, 15, 15]
             },
             "eliteMoves": ["TACKLE"],
-            "searchPriority": 4,
+            "searchPriority": 2,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
             "released": true,

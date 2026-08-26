@@ -16,6 +16,11 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "annihilape",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
+    },
+    {
         "speciesId": "azumarill",
         "fastMove": "BUBBLE",
         "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
@@ -124,6 +129,11 @@
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
     },
     {
+        "speciesId": "mantine",
+        "fastMove": "WING_ATTACK",
+        "chargedMoves": ["TWISTER", "WATER_PULSE"]
+    },
+    {
         "speciesId": "medicham",
         "fastMove": "PSYCHO_CUT",
         "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
@@ -137,6 +147,17 @@
         "speciesId": "ninetales_shadow",
         "fastMove": "EMBER",
         "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "primeape",
+        "fastMove": "KARATE_CHOP",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
+    },
+    {
+        "speciesId": "primeape_shadow",
+        "fastMove": "KARATE_CHOP",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
         "shadowType": "shadow"
     },
     {
@@ -155,6 +176,11 @@
         "fastMove": "SHADOW_CLAW",
         "chargedMoves": ["FOUL_PLAY", "DRAIN_PUNCH"],
         "shadowType": "shadow"
+    },
+    {
+        "speciesId": "seaking",
+        "fastMove": "PECK",
+        "chargedMoves": ["DRILL_RUN", "ICY_WIND"]
     },
     {
         "speciesId": "sealeo_shadow",
@@ -210,29 +236,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "annihilape",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
-    },
-    {
-        "speciesId": "primeape",
-        "fastMove": "KARATE_CHOP",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
-    },
-    {
-        "speciesId": "primeape_shadow",
-        "fastMove": "KARATE_CHOP",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "seaking",
-        "fastMove": "PECK",
-        "chargedMoves": ["DRILL_RUN", "ICY_WIND"]
-    },
-    {
-        "speciesId": "mantine",
-        "fastMove": "WING_ATTACK",
-        "chargedMoves": ["TWISTER", "WATER_PULSE"]
+        "speciesId": "electrode_hisuian",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": ["WILD_CHARGE", "ENERGY_BALL"]
     }
 ]
