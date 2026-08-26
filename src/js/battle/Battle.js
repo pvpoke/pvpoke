@@ -1364,7 +1364,7 @@ function Battle(){
 		}
 
 		if((move.energyGain > 0)&&(roundChargedMoveUsed)){
-			displayTime += 9500;
+			displayTime += 10000;
 		}
 
 		// Apply move buffs and debuffs
