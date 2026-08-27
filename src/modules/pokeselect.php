@@ -262,6 +262,31 @@
 	</div>
 
 	<div class="pokeselector-search-help article hide">
+		<h3>Form Shorthand</h3>
+		<p>You can use the following shorthand to select a different form of the preceding search:</p>
+		<table cellspacing="0" style="width:100%">
+			<tr>
+				<td><strong>Mega</strong></td>
+				<td>sab m</td>
+			</tr>
+			<tr>
+				<td><strong>Mega (X)</strong></td>
+				<td>zard x</td>
+			</tr>
+			<tr>
+				<td><strong>Mega (Y)</strong></td>
+				<td>zard y</td>
+			</tr>
+			<tr>
+				<td><strong>Normal</strong></td>
+				<td>zard n</td>
+			</tr>
+			<tr>
+				<td><strong>Shadow</strong></td>
+				<td>sab s</td>
+			</tr>
+		</table>
+		<h3>Keyboard Commands</h3>
 		<p>You can use the following keyboard commands when selecting a Pokemon:</p>
 		<table cellspacing="0">
 			<tr>

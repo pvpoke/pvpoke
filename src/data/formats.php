@@ -14,36 +14,50 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Scroll Cup',
-    'cup' => 'scroll',
+    'title' => 'Mega Great League',
+    'cup' => 'mega',
     'cp' => 1500,
-    'meta' => 'scroll',
+    'meta' => 'megagreat',
     'showCup' => true,
     'showFormat' => true,
     'showMeta' => true,
     'rules' => 
     array (
       0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Water-, Fighting-, and Dark-type Pokémon are eligible.',
+      1 => 'Mega Evolutions are eligible.',
     ),
   ),
   2 => 
+  array (
+    'title' => 'Mega Ultra League',
+    'cup' => 'mega',
+    'cp' => 2500,
+    'meta' => 'megaultra',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 2,500 CP to enter.',
+      1 => 'Mega Evolutions are eligible.',
+    ),
+  ),
+  3 => 
   array (
     'title' => 'Mega Master League',
     'cup' => 'mega',
     'cp' => 10000,
     'meta' => 'mega',
     'showCup' => true,
-    'showFormat' => false,
+    'showFormat' => true,
     'showMeta' => true,
-    'hideRankings' => true,
     'rules' => 
     array (
       0 => 'No CP limit.',
-      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
+      1 => 'Mega Evolutions are eligible.',
     ),
   ),
-  3 => 
+  4 => 
   array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
@@ -59,7 +73,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  4 => 
+  5 => 
   array (
     'title' => 'Battle Frontier (Copa Dilúvio)',
     'cup' => 'copadiluvio',
@@ -69,7 +83,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  5 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (Tsuki Cup)',
     'cup' => 'tsuki',
@@ -79,7 +93,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Battle Frontier (Liga Ultra)',
     'cup' => 'ligaultra',
@@ -89,7 +103,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Battle Frontier (Coupe du Sillage)',
     'cup' => 'coupedusillage',
@@ -99,7 +113,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  9 => 
   array (
     'title' => 'Devon Equinox Cup',
     'cup' => 'equinox',
@@ -109,7 +123,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  10 => 
   array (
     'title' => 'Devon Bastille Cup',
     'cup' => 'bastille',
@@ -119,7 +133,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  11 => 
   array (
     'title' => 'Devon Chrysalis Cup',
     'cup' => 'chrysalis',
@@ -129,7 +143,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  12 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -139,7 +153,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  13 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -149,7 +163,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  14 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

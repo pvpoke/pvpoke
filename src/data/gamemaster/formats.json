@@ -10,16 +10,29 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Scroll Cup",
-		"cup": "scroll",
+		"title": "Mega Great League",
+		"cup": "mega",
 		"cp": 1500,
-		"meta": "scroll",
+		"meta": "megagreat",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Water-, Fighting-, and Dark-type Pokémon are eligible."
+			"Mega Evolutions are eligible."
+		]
+	},
+	{
+		"title": "Mega Ultra League",
+		"cup": "mega",
+		"cp": 2500,
+		"meta": "megaultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 2,500 CP to enter.",
+			"Mega Evolutions are eligible."
 		]
 	},
 	{
@@ -28,12 +41,11 @@
 		"cp": 10000,
 		"meta": "mega",
 		"showCup": true,
-		"showFormat": false,
+		"showFormat": true,
 		"showMeta": true,
-		"hideRankings": true,
 		"rules": [
 			"No CP limit.",
-			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
+			"Mega Evolutions are eligible."
 		]
 	},
 	{

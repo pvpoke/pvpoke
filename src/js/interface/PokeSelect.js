@@ -1103,6 +1103,25 @@ function PokeSelect(element, i){
 			return;
 		}
 
+		// Use "sab s", "char mx", etc as shortcuts for shadow and mega pokemon
+
+		let idSuffix = null;
+		let shorthands = [
+			{ string: " m", suffix: "_mega" },
+			{ string: " x", suffix: "_mega_x" },
+			{ string: " y", suffix: "_mega_y" },
+			{ string: " s", suffix: "_shadow" },
+			{ string: " n", suffix: "" },
+		];
+
+		shorthands.forEach(shorthand => {
+			if(searchStr.endsWith(shorthand.string)){
+				idSuffix = shorthand.suffix;
+				searchStr = searchStr.substring(0, searchStr.length - shorthand.string.length);
+				return;
+			}
+		});
+
 		var idToSelect;
 
 		for(var i = 0; i < searchArr.length; i++){
@@ -1140,13 +1159,18 @@ function PokeSelect(element, i){
 
 		}
 
+		// Select mega or shadow form of top result
+		if(typeof idSuffix == "string" && idToSelect){
+			idToSelect = idToSelect.replace('_shadow', '').replace('_mega', '') + idSuffix;
+		}
+
 		var idAlreadySelected = false;
 
 		if(selectedPokemon && (idToSelect == selectedPokemon.speciesId)){
 			idAlreadySelected = true;
 		}
 
-		if((idToSelect)&&(! idAlreadySelected)){
+		if(idToSelect && ! idAlreadySelected && searchArr.find(poke => poke.speciesId == idToSelect)){
 			self.setPokemon(idToSelect);
 		}
 	}
@@ -1609,7 +1633,7 @@ function PokeSelect(element, i){
 	$el.find("a.search-info").click(function(e){
 		e.preventDefault();
 
-		modalWindow("Keyboard Commands", $el.find(".pokeselector-search-help"));
+		modalWindow("Search Tips", $el.find(".pokeselector-search-help"));
 	});
 
 	// Open the iv checker modal window
