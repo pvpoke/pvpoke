@@ -6655,7 +6655,7 @@ iframe#bh-div {
 .scorecard-print .toggle-content {
     display: none !important;
   }
-  .scorecard-print .toggle-content:nth-of-type(1) {
+  .scorecard-print .toggle-content.meta-scorecard {
     display: block !important;
   }
   .scorecard-print .article .rating-table a {
