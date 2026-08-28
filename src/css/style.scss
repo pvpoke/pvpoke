@@ -7155,7 +7155,7 @@ iframe#bh-div {
 
 	#nitro-body-mobile{
 		display: block;
-		margin-top: 30px;
+		margin: 30px 0;
 	}
 
 	.mobile-ad-container{
@@ -7172,7 +7172,7 @@ iframe#bh-div {
 
 	#nitro-body-desktop{
 		display: block;
-		margin-top: 30px;
+		margin: 40px 0;
 	}
 
 	.desktop-ad-container{
@@ -7187,7 +7187,7 @@ iframe#bh-div {
 	}
 }
 
-@media only screen and (min-width: 1190px) and (max-width:1449px) {
+@media only screen and (min-width: 1190px) and (max-width:1499px) {
 	#nitro-sidebar-left{
 		display: block;
 		position: fixed;
@@ -7203,7 +7203,17 @@ iframe#bh-div {
 	}
 }
 
-@media only screen and (min-width: 1450px) {
+@media only screen and (min-width: 1190px) and (max-width:1219px) {
+	#nitro-sidebar-left{
+		left:10px;
+	}
+
+	#nitro-sidebar-right{
+		right:10px;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
 	#nitro-sidebar-left-300{
 		display: block;
 		position: fixed;
