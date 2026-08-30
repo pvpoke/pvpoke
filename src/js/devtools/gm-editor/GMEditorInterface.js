@@ -176,6 +176,9 @@ var InterfaceMaster = (function () {
                     }
                 });
 
+                // Sort Pokemon changelog alphabetically
+                changes.sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
+
                 // Compare custom Pokemon data with original
                 data.moves.forEach(newMove => {
                     let oldMove = originaMoves.find(p => p.moveId == newMove.moveId);

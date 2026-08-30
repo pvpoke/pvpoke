@@ -714,7 +714,7 @@ var GameMaster = (function () {
 
 			// Charged Moves
 
-			if(move.category == "charged"){
+			if(move.category == "charged" || (! move?.category && move.energy > 0)){
 				var dpe = move.power / move.energy;
 
 				// Categorize by energy
