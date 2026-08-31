@@ -62,6 +62,8 @@ var RankerMaster = (function () {
 
 				var categories = ["leads","closers","switches","chargers","attackers"];
 
+				gm.loadedData = 0;
+
 				for(var i = 0; i < categories.length; i++){
 					gm.loadRankingData(self, categories[i], league, cup.name);
 				}

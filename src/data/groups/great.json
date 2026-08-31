@@ -46,6 +46,11 @@
         "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
     },
     {
+        "speciesId": "cramorant",
+        "fastMove": "PECK",
+        "chargedMoves": ["DIVE", "FLY"]
+    },
+    {
         "speciesId": "dewgong",
         "fastMove": "ICE_SHARD",
         "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
@@ -123,6 +128,11 @@
         "chargedMoves": ["ENERGY_BALL", "ACROBATICS"]
     },
     {
+        "speciesId": "kingdra",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SURF", "SWIFT"]
+    },
+    {
         "speciesId": "lickilicky",
         "fastMove": "ROLLOUT",
         "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
@@ -153,15 +163,15 @@
         "chargedMoves": ["AURA_WHEEL_ELECTRIC", "PSYCHIC_FANGS"]
     },
     {
-        "speciesId": "ninetales",
-        "fastMove": "EMBER",
-        "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"]
-    },
-    {
         "speciesId": "ninetales_shadow",
         "fastMove": "EMBER",
         "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"],
         "shadowType": "shadow"
+    },
+    {
+        "speciesId": "primeape",
+        "fastMove": "KARATE_CHOP",
+        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
     },
     {
         "speciesId": "quagsire",
@@ -237,18 +247,23 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "cramorant",
-        "fastMove": "PECK",
-        "chargedMoves": ["DIVE", "FLY"]
+        "speciesId": "dondozo",
+        "fastMove": "WATERFALL",
+        "chargedMoves": ["SURF", "OUTRAGE"]
     },
     {
-        "speciesId": "primeape",
-        "fastMove": "KARATE_CHOP",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
+        "speciesId": "marowak",
+        "fastMove": "MUD_SLAP",
+        "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"]
     },
     {
-        "speciesId": "kingdra",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SURF", "SWIFT"]
+        "speciesId": "ninetales",
+        "fastMove": "EMBER",
+        "chargedMoves": ["WEATHER_BALL_FIRE", "ENERGY_BALL"]
+    },
+    {
+        "speciesId": "electrode_hisuian",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": ["WILD_CHARGE", "ENERGY_BALL"]
     }
 ]

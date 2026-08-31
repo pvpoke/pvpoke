@@ -2618,7 +2618,7 @@
         "level25CP": 1382,
         "tags": ["shadoweligible"],
         "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER", "ENERGY_BALL"],
-        "searchPriority": 8,
+        "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -2708,7 +2708,7 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER", "ENERGY_BALL"],
-        "searchPriority": 6,
+        "searchPriority": 10,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -6750,7 +6750,7 @@
             "cp2500": [50, 15, 15, 15]
         },
         "eliteMoves": ["TACKLE"],
-        "searchPriority": 4,
+        "searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -7061,7 +7061,8 @@
             "id": "FAMILY_CUBONE",
             "parent": "cubone"
         },
-        "nicknames": ["kwak"]
+        "nicknames": ["kwak"],
+        "searchPriority": 6
     },
     {
         "dex": 105,
@@ -7148,7 +7149,7 @@
             "parent": "cubone_shadow"
         },
         "nicknames": ["kwak"],
-        "searchPriority": 6
+        "searchPriority": 5
     },
     {
         "dex": 106,

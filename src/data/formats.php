@@ -14,21 +14,6 @@ $formats = array (
   ),
   1 => 
   array (
-    'title' => 'Scroll Cup',
-    'cup' => 'scroll',
-    'cp' => 1500,
-    'meta' => 'scroll',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 1,500 CP to enter.',
-      1 => 'Only Water-, Fighting-, and Dark-type Pokémon are eligible.',
-    ),
-  ),
-  2 => 
-  array (
     'title' => 'Mega Master League',
     'cup' => 'mega',
     'cp' => 10000,
@@ -43,7 +28,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  3 => 
+  2 => 
   array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
@@ -59,77 +44,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  4 => 
-  array (
-    'title' => 'Battle Frontier (Copa Dilúvio)',
-    'cup' => 'copadiluvio',
-    'cp' => 1500,
-    'meta' => 'copadiluvio',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  5 => 
-  array (
-    'title' => 'Battle Frontier (Tsuki Cup)',
-    'cup' => 'tsuki',
-    'cp' => 1500,
-    'meta' => 'tsuki',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  6 => 
-  array (
-    'title' => 'Battle Frontier (Liga Ultra)',
-    'cup' => 'ligaultra',
-    'cp' => 2500,
-    'meta' => 'ligaultra',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  7 => 
-  array (
-    'title' => 'Battle Frontier (Coupe du Sillage)',
-    'cup' => 'coupedusillage',
-    'cp' => 10000,
-    'meta' => 'coupedusillage',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  8 => 
-  array (
-    'title' => 'Devon Equinox Cup',
-    'cup' => 'equinox',
-    'cp' => 1500,
-    'meta' => 'equinox',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  9 => 
-  array (
-    'title' => 'Devon Bastille Cup',
-    'cup' => 'bastille',
-    'cp' => 1500,
-    'meta' => 'bastille',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  10 => 
-  array (
-    'title' => 'Devon Chrysalis Cup',
-    'cup' => 'chrysalis',
-    'cp' => 1500,
-    'meta' => 'chrysalis',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  11 => 
+  3 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -139,7 +54,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  12 => 
+  4 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -149,7 +64,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  5 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
