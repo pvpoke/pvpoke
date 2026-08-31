@@ -509,7 +509,7 @@ b {
   background: #ddd;
   color: #000;
 }
-.poke input.charged, .poke select.charged {
+.poke input.move-select, .poke select.move-select {
   font-weight: bold;
 }
 .poke input.poke-search, .poke select.poke-search {

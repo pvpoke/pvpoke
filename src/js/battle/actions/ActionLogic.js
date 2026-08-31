@@ -403,15 +403,13 @@ class ActionLogic {
 			var selectedMove = poke.bestChargedMove;
 
 			if(poke.activeChargedMoves.length > 1){
-				if(poke.baitShields && opponent.shields > 0 && ! poke.activeChargedMoves[0].selfDebuffing && ActionLogic.wouldShield(battle, poke, opponent, poke.activeChargedMoves[1]).value){
-					selectedMove = poke.activeChargedMoves[0];
-				}
+				for(var i = 0; i < poke.activeChargedMoves.length; i++){
+					if(poke.bestChargedMove.selfDebuffing && (! poke.activeChargedMoves[i].selfDebuffing) && (selectedMove.dpe / poke.activeChargedMoves[i].dpe < 2)){
+						selectedMove = poke.activeChargedMoves[i];
+					}
 
-				if(poke.bestChargedMove.selfDebuffing){
-					for(var i = 0; i < poke.activeChargedMoves.length; i++){
-						if((! poke.activeChargedMoves[i].selfDebuffing) && (selectedMove.dpe / poke.activeChargedMoves[i].dpe < 2)){
-							selectedMove = poke.activeChargedMoves[i];
-						}
+					if(poke.baitShields && opponent.shields > 0 && ! poke.activeChargedMoves[0].selfDebuffing && ActionLogic.wouldShield(battle, poke, opponent, poke.activeChargedMoves[i]).value){
+						selectedMove = poke.activeChargedMoves[0];
 					}
 				}
 			}
@@ -860,30 +858,35 @@ class ActionLogic {
 
 		// If bait shields, build up to most expensive charge move in planned move list
 		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
-			if ((poke.energy < poke.activeChargedMoves[1].energy)&&(poke.activeChargedMoves[1].dpe > finalState.moves[0].dpe)) {
-				var bait = true;
+			for(var i = 1; i < poke.activeChargedMoves.length; i++){
+				if ((poke.energy < poke.activeChargedMoves[i].energy)&&(poke.activeChargedMoves[i].dpe > finalState.moves[0].dpe)) {
+					var bait = true;
 
-				// Don't go for baits if you have an effective self buffing move
-				if((poke.activeChargedMoves[1].dpe / poke.activeChargedMoves[0].dpe <= 1.5)&&(poke.activeChargedMoves[0].selfBuffing)){
-					bait = false;
-				}
+					// Don't go for baits if you have an effective self buffing move
+					if((poke.activeChargedMoves[i].dpe / poke.activeChargedMoves[0].dpe <= 1.5)&&(poke.activeChargedMoves[0].selfBuffing)){
+						bait = false;
+					}
 
-				if(bait){
-					battle.logDecision(poke, " doesn't use " + finalState.moves[0].name + " because it wants to bait");
-					return;
+					if(bait){
+						battle.logDecision(poke, " doesn't use " + finalState.moves[0].name + " because it wants to bait");
+						return;
+					}
 				}
 			}
 		}
 
 		// Don't bait if the opponent won't shield
 		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
-			var dpeRatio = (poke.activeChargedMoves[1].damage / poke.activeChargedMoves[1].energy) / (finalState.moves[0].damage / finalState.moves[0].energy);
+			for(var i = 1; i < poke.activeChargedMoves.length; i++){
+				var dpeRatio = (poke.activeChargedMoves[i].damage / poke.activeChargedMoves[i].energy) / (finalState.moves[0].damage / finalState.moves[0].energy);
 
-			if ((poke.energy >= poke.activeChargedMoves[1].energy)&&(dpeRatio > 1.5)) {
-				if(! ActionLogic.wouldShield(battle, poke, opponent, poke.activeChargedMoves[1]).value){
-					finalState.moves[0] = poke.activeChargedMoves[1];
+				if ((poke.energy >= poke.activeChargedMoves[i].energy)&&(dpeRatio > 1.5)) {
+					if(! ActionLogic.wouldShield(battle, poke, opponent, poke.activeChargedMoves[i]).value){
+						finalState.moves[0] = poke.activeChargedMoves[i];
+					}
 				}
 			}
+
 		}
 
 		// If pokemon needs boost, we cannot reorder and no moves both buff and debuff
@@ -925,9 +928,11 @@ class ActionLogic {
 
 		// Don't bait with self debuffing moves
 		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
-			if ((poke.energy >= poke.activeChargedMoves[1].energy)&&(poke.activeChargedMoves[1].dpe > finalState.moves[0].dpe)) {
-				if((finalState.moves[0].selfDebuffing)&&(! poke.activeChargedMoves[1].selfDebuffing)){
-					finalState.moves[0] = poke.activeChargedMoves[1];
+			for(var i = 1; i < poke.activeChargedMoves.length; i++){
+				if ((poke.energy >= poke.activeChargedMoves[i].energy)&&(poke.activeChargedMoves[i].dpe > finalState.moves[0].dpe)) {
+					if((finalState.moves[0].selfDebuffing)&&(! poke.activeChargedMoves[i].selfDebuffing)){
+						finalState.moves[0] = poke.activeChargedMoves[i];
+					}
 				}
 			}
 		}
@@ -936,15 +941,18 @@ class ActionLogic {
 
 		if (opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
 			// Is one self debuffing and the other non self debuffing, and will the first Charged Move
-			if((poke.activeChargedMoves[0].selfDebuffing)&&(! poke.activeChargedMoves[1].selfBuffing)){
-				// Is the Pokemon baiting or will the self debuffing move not come close to a KO?
-				if(poke.baitShields || (opponent.hp - poke.activeChargedMoves[0].damage > 10)){
-					// Is the second move close in energy and dpe?
-					if((poke.activeChargedMoves[1].energy - poke.activeChargedMoves[0].energy <= 10) && (poke.activeChargedMoves[1].dpe / poke.activeChargedMoves[0].dpe > 0.7)){
-						finalState.moves[0] = poke.activeChargedMoves[1];
+			for(var i = 1; i < poke.activeChargedMoves.length; i++){
+				if((poke.activeChargedMoves[0].selfDebuffing)&&(! poke.activeChargedMoves[i].selfDebuffing)){
+					// Is the Pokemon baiting or will the self debuffing move not come close to a KO?
+					if(poke.baitShields || (opponent.hp - poke.activeChargedMoves[0].damage > 10)){
+						// Is the second move close in energy and dpe?
+						if((poke.activeChargedMoves[i].energy - poke.activeChargedMoves[0].energy <= 10) && (poke.activeChargedMoves[i].dpe / poke.activeChargedMoves[0].dpe > 0.7)){
+							finalState.moves[0] = poke.activeChargedMoves[i];
+						}
 					}
 				}
 			}
+
 		}
 
 		// Defer self debuffing moves until after survivable Charged Moves
@@ -973,6 +981,7 @@ class ActionLogic {
 				}
 			}
 		}
+
 
 
 		// Use the final move, or a Fast Move if not enough energy

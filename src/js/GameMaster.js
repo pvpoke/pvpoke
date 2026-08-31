@@ -842,6 +842,7 @@ var GameMaster = (function () {
 					legacy: false,
 					elite: false,
 					instant: false,
+					isMegaMove: false,
 					tags: [],
 					hasTag: function(tag){
 						return this.tags.includes(tag);
@@ -897,6 +898,10 @@ var GameMaster = (function () {
 
 				if(m.tags){
 					move.tags = [...m.tags];
+				}
+
+				if(m.isMegaMove){
+					move.isMegaMove = m.isMegaMove;
 				}
 			} else{
 				console.error(id + " missing");

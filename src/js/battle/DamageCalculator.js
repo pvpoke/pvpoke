@@ -7,6 +7,7 @@ class DamageMultiplier{
 	static STAB = 1.2000000476837158203125;
 	static SHADOW_ATK = 1.2;
 	static SHADOW_DEF = 0.83333331;
+	static MEGA_BONUS = [1, 1, 1.10000002384185791015625, 1.2000000476837158203125, 1.2999999523162841796875, 1.39999997615814208984375]
 }
 
 
@@ -36,6 +37,8 @@ class DamageCalculator {
 		let power = move.power;
 		let attackStat = attacker.getEffectiveStat(0);
 		let defenseStat = defender.getEffectiveStat(1);
+		let isMegaMove = (attacker.hasTag("mega") && move?.isMegaMove);
+		let megaMultiplier = isMegaMove ? DamageMultiplier.MEGA_BONUS[attacker.megaLevel] : 1;
 
 		// Form specific special cases
 		switch(attacker.activeFormId){
@@ -62,7 +65,7 @@ class DamageCalculator {
 		// Alternative damage method calculations
 		switch(move.damageMethod){
 			default:
-				damage = Math.floor(power * move.stab * ( attackStat / defenseStat) * effectiveness * chargeMultiplier * 0.5 * DamageMultiplier.BONUS) + 1;
+				damage = Math.floor(power * move.stab * ( attackStat / defenseStat) * effectiveness * chargeMultiplier * megaMultiplier * 0.5 * DamageMultiplier.BONUS) + 1;
 				break;
 
 			case "percentMaxHP":
@@ -81,7 +84,9 @@ class DamageCalculator {
 			attack = attacker.getFormStats(attacker.formChange.alternativeFormId).atk;
 		}
 
-		let damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * DamageMultiplier.BONUS) + 1;
+		let isMegaMove = (attacker.hasTag("mega") && move?.isMegaMove);
+		let megaMultiplier = isMegaMove ? DamageMultiplier.MEGA_BONUS[attacker.megaLevel] : 1;
+		let damage = 1;
 
 		// Form specific special cases
 		switch(attacker.activeFormId){
@@ -96,7 +101,7 @@ class DamageCalculator {
 		// Alternative damage method calculations
 		switch(move.damageMethod){
 			default:
-				damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * DamageMultiplier.BONUS) + 1;
+				damage = Math.floor(move.power * move.stab * (attack/defense) * megaMultiplier * effectiveness * 0.5 * DamageMultiplier.BONUS) + 1;
 				break;
 
 			case "percentMaxHP":

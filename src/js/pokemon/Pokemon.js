@@ -60,6 +60,7 @@ function Pokemon(id, i, b, d){
 	this.levelCap = 50; // Variable level cap as determined by the battle settings
 	this.baseLevelCap = 50; // The default level cap as determined by the game master
 	this.baseLevelFloor = 1; // IV combinations won't go lower than this level
+	this.megaLevel = 0; // Determines mega evolution bonus for third charged attack
 	this.cpm = 0.840300023555755;
 	this.priority = 0; // Charged move priority
 	this.fastMovePool = [];
@@ -140,6 +141,10 @@ function Pokemon(id, i, b, d){
 
 	if(data.tags){
 		this.tags = data.tags.slice();
+
+		if(this.tags.includes("mega")){
+			this.megaLevel = 3; // Default mega level
+		}
 	}
 
 	// Set nicknames
@@ -745,83 +750,86 @@ function Pokemon(id, i, b, d){
 			self.fastestChargedMove = self.activeChargedMoves[0];
 
 			if(self.activeChargedMoves.length > 1){
+				for(var i = 1; i < self.activeChargedMoves.length; i++){
 
-				// If both moves cost the same energy and one has a buff effect, prioritize the buffing move, or the move that does more damage
+					// If both moves cost the same energy and one has a buff effect, prioritize the buffing move, or the move that does more damage
 
-				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(! self.activeChargedMoves[1].selfDebuffing)){
+					if((self.activeChargedMoves[i].energy == self.activeChargedMoves[0].energy)&&(! self.activeChargedMoves[i].selfDebuffing)){
 
-					if((self.activeChargedMoves[1].buffs)||(self.activeChargedMoves[1].damage > self.activeChargedMoves[0].damage)){
+						if((self.activeChargedMoves[i].buffs)||(self.activeChargedMoves[i].damage > self.activeChargedMoves[0].damage)){
+							var move = self.activeChargedMoves[0];
+							self.activeChargedMoves.splice(0, 1);
+							self.activeChargedMoves.push(move);
+						}
+					}
+
+					// If both moves cost the same energy and one has a guaranteed buff effect, prioritize the buffing move
+
+					if((self.activeChargedMoves[i].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[i].buffs)&&(! self.activeChargedMoves[i].selfDebuffing)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[i].buffApplyChance > self.activeChargedMoves[0].buffApplyChance)){
 						var move = self.activeChargedMoves[0];
 						self.activeChargedMoves.splice(0, 1);
 						self.activeChargedMoves.push(move);
 					}
-				}
 
-				// If both moves cost the same energy and one has a guaranteed buff effect, prioritize the buffing move
+					// The Zap Cannon Registeel clause! It will treat Focus Blast like a self debuffing move and prefer Zap Cannon shields up
 
-				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffApplyChance > self.activeChargedMoves[0].buffApplyChance)){
-					var move = self.activeChargedMoves[0];
-					self.activeChargedMoves.splice(0, 1);
-					self.activeChargedMoves.push(move);
-				}
-
-				// The Zap Cannon Registeel clause! It will treat Focus Blast like a self debuffing move and prefer Zap Cannon shields up
-
-				if((self.activeChargedMoves[0].moveId == "FOCUS_BLAST")&&(self.activeChargedMoves[1].moveId == "ZAP_CANNON")){
-					if(self.activeChargedMoves[1].dpe - self.activeChargedMoves[0].dpe > -.3){
-						self.activeChargedMoves[0].buffs = [0,0];
-						self.activeChargedMoves[0].buffTarget = "self";
-						self.activeChargedMoves[0].selfDebuffing = true;
-					} else{
-						delete self.activeChargedMoves[0].buffs;
-						delete self.activeChargedMoves[0].buffTarget;
-						delete self.activeChargedMoves[0].selfDebuffing;
+					if((self.activeChargedMoves[0].moveId == "FOCUS_BLAST")&&(self.activeChargedMoves[i].moveId == "ZAP_CANNON")){
+						if(self.activeChargedMoves[i].dpe - self.activeChargedMoves[0].dpe > -.3){
+							self.activeChargedMoves[0].buffs = [0,0];
+							self.activeChargedMoves[0].buffTarget = "self";
+							self.activeChargedMoves[0].selfDebuffing = true;
+						} else{
+							delete self.activeChargedMoves[0].buffs;
+							delete self.activeChargedMoves[0].buffTarget;
+							delete self.activeChargedMoves[0].selfDebuffing;
+						}
 					}
-				}
 
-				// Behavior for Aegislash to build energy in shield mode
+					// Behavior for Aegislash to build energy in shield mode
 
-				if(self.activeFormId == "aegislash_shield"){
-					self.activeChargedMoves.forEach(move => {
-						move.buffs = [0,0];
-						move.buffTarget = self;
-						move.selfDebuffing = true;
-					});
-				}
+					if(self.activeFormId == "aegislash_shield"){
+						self.activeChargedMoves.forEach(move => {
+							move.buffs = [0,0];
+							move.buffTarget = self;
+							move.selfDebuffing = true;
+						});
+					}
 
-				// If both moves cost similar energy and DPE and one has a buff effect, prioritize the buffing move
+					// If both moves cost similar energy and DPE and one has a buff effect, prioritize the buffing move
 
-				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(! self.activeChargedMoves[1].selfDebuffing)){
+					if((self.activeChargedMoves[i].energy - self.activeChargedMoves[0].energy <= 10)&&(! self.activeChargedMoves[i].selfDebuffing)){
 
-					if((self.activeChargedMoves[1].selfBuffing)&&(self.activeChargedMoves[0].dpe - self.activeChargedMoves[1].dpe < .3)){
+						if((self.activeChargedMoves[i].selfBuffing)&&(self.activeChargedMoves[0].dpe - self.activeChargedMoves[i].dpe < .3)){
+							var move = self.activeChargedMoves[0];
+							self.activeChargedMoves.splice(0, 1);
+							self.activeChargedMoves.push(move);
+						}
+					}
+
+					// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
+
+					if((self.activeChargedMoves[i].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[i].selfDebuffing)){
 						var move = self.activeChargedMoves[0];
 						self.activeChargedMoves.splice(0, 1);
 						self.activeChargedMoves.push(move);
 					}
-				}
 
-				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
+					// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move if the self debuffing move cannot be stacked
 
-				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[1].selfDebuffing)){
-					var move = self.activeChargedMoves[0];
-					self.activeChargedMoves.splice(0, 1);
-					self.activeChargedMoves.push(move);
-				}
+					if((self.activeChargedMoves[i].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfDebuffing)&&(self.activeChargedMoves[0].energy > 50)&&(! self.activeChargedMoves[i].selfDebuffing)){
+						var move = self.activeChargedMoves[0];
+						self.activeChargedMoves.splice(0, 1);
+						self.activeChargedMoves.push(move);
+					}
 
-				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move if the self debuffing move cannot be stacked
+					// If the second move is a close energy, self buffing move, prioritize it as the bait move
 
-				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfDebuffing)&&(self.activeChargedMoves[0].energy > 50)&&(! self.activeChargedMoves[1].selfDebuffing)){
-					var move = self.activeChargedMoves[0];
-					self.activeChargedMoves.splice(0, 1);
-					self.activeChargedMoves.push(move);
-				}
+					if(self.activeChargedMoves[i].energy - self.activeChargedMoves[0].energy <= 5 && self.activeChargedMoves[i].selfBuffing){
+						var move = self.activeChargedMoves[0];
+						self.activeChargedMoves.splice(0, 1);
+						self.activeChargedMoves.push(move);
+					}
 
-				// If the second move is a close energy, self buffing move, prioritize it as the bait move
-
-				if(self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 5 && self.activeChargedMoves[1].selfBuffing){
-					var move = self.activeChargedMoves[0];
-					self.activeChargedMoves.splice(0, 1);
-					self.activeChargedMoves.push(move);
 				}
 
 			}
@@ -2568,8 +2576,7 @@ function Pokemon(id, i, b, d){
 	// Returns whether or not this Pokemon has access to a third charged move
 	
 	this.hasThirdChargedMove = function(){
-		return false;
-		//return self.hasTag("mega");
+		return self.hasTag("mega");
 	}
 
 
