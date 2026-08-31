@@ -149,10 +149,16 @@
 				</div>
 			</div>
 			<div class="rank selected recommended">Recommended move</div>
-			<div class="footnote">
+			<div class="footnote move-legacy-key hide">
 				* Event or Elite TM exclusive<br>
 				<sup>†</sup> Unobtainable via TM<br><br>
 				<div>Move stats include same type and Shadow attack bonuses.</div>
+			</div>
+			<div class="footnote move-legacy-key move-legacy-key-mega hide">
+				* Event or Elite TM exclusive<br>
+				<sup>†</sup> Unobtainable via TM<br>
+				+ Obtained automatically on Mega Evolution <br><br>
+				<div>Move stats include same type and Mega Evolution bonuses (default Mega Level 3).</div>
 			</div>
 		</div>
 		<div class="detail-section float">

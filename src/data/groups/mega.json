@@ -7,7 +7,7 @@
     {
         "speciesId": "dragonite_mega",
         "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER"]
+        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER", "OUTRAGE_PLUS"]
     },
     {
         "speciesId": "eternatus",
@@ -96,13 +96,20 @@
     },
     {
         "speciesId": "mewtwo_mega_x",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": ["PSYSTRIKE", "THUNDERBOLT"],
+        "level": 50,
+        "ivs": [15, 15, 15]
+    },
+    {
+        "speciesId": "mewtwo_mega_x",
         "fastMove": "COUNTER",
-        "chargedMoves": ["PSYSTRIKE", "THUNDERBOLT"]
+        "chargedMoves": ["PSYSTRIKE", "THUNDERBOLT", "DYNAMIC_PUNCH_PLUS"]
     },
     {
         "speciesId": "mewtwo_mega_y",
         "fastMove": "PSYCHO_CUT",
-        "chargedMoves": ["PSYSTRIKE", "THUNDERBOLT"]
+        "chargedMoves": ["PSYSTRIKE", "THUNDERBOLT", "FUTURE_SIGHT_PLUS"]
     },
     {
         "speciesId": "necrozma_dawn_wings",

@@ -2281,8 +2281,8 @@ function Pokemon(id, i, b, d){
 			chargedMoves[i].damage = chargedMoves[i].power * chargedMoves[i].stab;
 		}
 
-		// Only calculate with two Charged Moves
-		if(chargedMoves.length == 2){
+		// Only calculate with multiple Charged Moves
+		if(chargedMoves.length > 1){
 
 			var effectivenessScenarios = [
 				[1, 1]
@@ -2301,14 +2301,24 @@ function Pokemon(id, i, b, d){
 				chargedMoves.sort((a,b) => (a.name > b.name) ? -1 : ((b.name > a.name) ? 1 : 0));
 
 				// Need to reset this number because of how movesets are generated
-				chargedMoves[0].dpe = (chargedMoves[0].damage / chargedMoves[0].energy) * effectivenessScenarios[n][0];
-				chargedMoves[1].dpe = (chargedMoves[1].damage / chargedMoves[1].energy) * effectivenessScenarios[n][1];
+				chargedMoves.forEach((move, index) => {
+					if(index < 2){
+						chargedMoves[index].dpe = (chargedMoves[index].damage / chargedMoves[index].energy) * effectivenessScenarios[n][index];
+					} else if(chargedMoves[index].type == chargedMoves[0].type){
+						chargedMoves[index].dpe = (chargedMoves[index].damage / chargedMoves[index].energy) * effectivenessScenarios[n][0];
+					} else if(chargedMoves[index].type == chargedMoves[1].type){
+						chargedMoves[index].dpe = (chargedMoves[index].damage / chargedMoves[index].energy) * effectivenessScenarios[n][1];
+					} else {
+						chargedMoves[index].dpe = chargedMoves[index].damage / chargedMoves[index].energy;
+					}
+				});
+
 				chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
 
 				// Factor in Power-Up Punch where Pokemon may be consistent spamming it
 
-				if(chargedMoves[1].moveId == "POWER_UP_PUNCH"){
-					chargedMoves[1].dpe *= 2;
+				if(chargedMoves.at(-1).moveId == "POWER_UP_PUNCH"){
+					chargedMoves.at(-1).dpe *= 2;
 					chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
 				}
 

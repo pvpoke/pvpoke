@@ -1116,6 +1116,12 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				if(pokemon.hasTag("mega") && pokemon.extraChargedMovePool.length > 0){
+					$details.find(".footnote.move-legacy-key.move-legacy-key-mega").show();
+				} else{
+					$details.find(".footnote.move-legacy-key").first().show();
+				}
+
 				// Helper variables for displaying matchups and link URL
 
 				var cp = battle.getCP();

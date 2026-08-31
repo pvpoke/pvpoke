@@ -509,9 +509,6 @@ b {
   background: #ddd;
   color: #000;
 }
-.poke input.move-select, .poke select.move-select {
-  font-weight: bold;
-}
 .poke input.poke-search, .poke select.poke-search {
   background: #c4def5;
   border: 1px solid #285e85;
