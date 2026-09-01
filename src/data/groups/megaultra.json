@@ -62,6 +62,11 @@
         "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
     },
     {
+        "speciesId": "dragonite_mega",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SUPER_POWER", "THUNDER_PUNCH", "OUTRAGE_PLUS"]
+    },
+    {
         "speciesId": "drapion_shadow",
         "fastMove": "POISON_STING",
         "chargedMoves": ["AQUA_TAIL", "CRUNCH"],
@@ -273,8 +278,8 @@
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
     },
     {
-        "speciesId": "dragonite_mega",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SUPER_POWER", "THUNDER_PUNCH", "OUTRAGE_PLUS"]
+        "speciesId": "chesnaught_mega",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER", "SEED_BOMB_PLUS"]
     }
 ]

@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-09-01 15:25:33",
+    "timestamp": "2026-09-01 18:36:39",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -10468,8 +10468,7 @@
                 "cp2500": [21.5, 8, 13, 14]
             },
             "level25CP": 2641,
-            "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
-            "legacyMoves": ["COUNTER"],
+            "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM", "COUNTER"],
             "buddyDistance": 20,
             "thirdMoveCost": 100000,
             "released": true,
@@ -34029,7 +34028,7 @@
             "searchPriority": null,
             "buddyDistance": 3,
             "thirdMoveCost": 10000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_CHESPIN",
                 "parent": "quilladin"
@@ -34222,7 +34221,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 10000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_FENNEKIN",
                 "parent": "braixen"
@@ -34416,7 +34415,7 @@
             "searchPriority": null,
             "buddyDistance": 3,
             "thirdMoveCost": 10000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_FROAKIE",
                 "parent": "frogadier"

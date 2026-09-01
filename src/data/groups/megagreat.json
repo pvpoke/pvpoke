@@ -76,6 +76,11 @@
         "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
     },
     {
+        "speciesId": "dragonite_mega",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SUPER_POWER", "THUNDER_PUNCH", "OUTRAGE_PLUS"]
+    },
+    {
         "speciesId": "electrode_hisuian",
         "fastMove": "THUNDER_SHOCK",
         "chargedMoves": ["WILD_CHARGE", "ENERGY_BALL"]
@@ -168,6 +173,11 @@
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
     },
     {
+        "speciesId": "malamar_mega",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER", "PSYBEAM_PLUS"]
+    },
+    {
         "speciesId": "mantine",
         "fastMove": "WING_ATTACK",
         "chargedMoves": ["TWISTER", "WATER_PULSE"]
@@ -213,6 +223,11 @@
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["AQUA_TAIL", "MUD_BOMB"],
         "shadowType": "shadow"
+    },
+    {
+        "speciesId": "raichu_mega_x",
+        "fastMove": "VOLT_SWITCH",
+        "chargedMoves": ["BRICK_BREAK", "TRAILBLAZE", "VOLT_TACKLE_PLUS"]
     },
     {
         "speciesId": "sableye",
@@ -282,18 +297,8 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "dragonite_mega",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SUPER_POWER", "THUNDER_PUNCH", "OUTRAGE_PLUS"]
-    },
-    {
-        "speciesId": "malamar_mega",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER", "PSYBEAM_PLUS"]
-    },
-    {
-        "speciesId": "raichu_mega_x",
-        "fastMove": "VOLT_SWITCH",
-        "chargedMoves": ["BRICK_BREAK", "TRAILBLAZE", "VOLT_TACKLE_PLUS"]
+        "speciesId": "chesnaught_mega",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER", "SEED_BOMB_PLUS"]
     }
 ]
