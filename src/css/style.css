@@ -717,6 +717,36 @@ b {
   text-decoration: underline;
   color: #003462;
 }
+.poke .poke-stats .mega-level-select {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.poke .poke-stats .mega-level-select .mega-level {
+  width: 32px;
+  height: 32px;
+  background-color: #ddd !important;
+  border-radius: 32px;
+  background-image: url("../img/mega-icon.png") !important;
+  background-position: center center !important;
+  background-size: 16px !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.poke .poke-stats .mega-level-select .mega-level.on {
+  background-color: #eb5281 !important;
+}
+.poke .poke-stats .mega-evolution-bonus {
+  display: none;
+  font-size: 12px;
+  margin: -5px 0 8px 0;
+  color: #eb5281;
+  padding: 0 12px;
+}
 .poke .poke-stats .advanced-section {
   margin-top: 15px;
 }

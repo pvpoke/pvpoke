@@ -71,6 +71,8 @@ $color-off-black:#111;
 $color-stat-buff:#f1841c;
 $color-stat-debuff:#0158d0;
 
+$color-mega: #eb5281;
+
 
 /* MIXINS */
 
@@ -904,6 +906,40 @@ b{
 				text-decoration: underline;
 				color:$color-links;
 			}
+		}
+
+		.mega-level-select{
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin: 10px 0;
+
+			.mega-level{
+				width: 32px;
+				height: 32px;
+				background-color: #ddd !important;
+				border-radius: 32px;
+				background-image:url('../img/mega-icon.png') !important;
+				background-position: center center !important;
+				background-size: 16px !important;
+				background-repeat: no-repeat !important;
+				border: 1px solid #999;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+
+				&.on{
+					background-color: $color-mega !important;
+				}
+			}
+		}
+
+		.mega-evolution-bonus{
+			display:none;
+			font-size: 12px;
+			margin: -5px 0 8px 0;
+			color: $color-mega;
+			padding: 0 12px;
 		}
 		
 		.advanced-section{

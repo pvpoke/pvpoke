@@ -7,7 +7,7 @@ class DamageMultiplier{
 	static STAB = 1.2000000476837158203125;
 	static SHADOW_ATK = 1.2;
 	static SHADOW_DEF = 0.83333331;
-	static MEGA_BONUS = [1, 1, 1.10000002384185791015625, 1.2000000476837158203125, 1.2999999523162841796875, 1.39999997615814208984375]
+	static MEGA_BONUS = [1, 1.10000002384185791015625, 1.2000000476837158203125, 1.2999999523162841796875]
 }
 
 
@@ -38,7 +38,7 @@ class DamageCalculator {
 		let attackStat = attacker.getEffectiveStat(0);
 		let defenseStat = defender.getEffectiveStat(1);
 		let isMegaMove = (attacker.hasTag("mega") && move?.isMegaMove);
-		let megaMultiplier = isMegaMove ? DamageMultiplier.MEGA_BONUS[attacker.megaLevel] : 1;
+		let megaMultiplier = isMegaMove ? DamageMultiplier.MEGA_BONUS[attacker.megaLevel - 1] : 1;
 
 		// Form specific special cases
 		switch(attacker.activeFormId){
@@ -85,7 +85,7 @@ class DamageCalculator {
 		}
 
 		let isMegaMove = (attacker.hasTag("mega") && move?.isMegaMove);
-		let megaMultiplier = isMegaMove ? DamageMultiplier.MEGA_BONUS[attacker.megaLevel] : 1;
+		let megaMultiplier = isMegaMove ? DamageMultiplier.MEGA_BONUS[attacker.megaLevel - 1] : 1;
 		let damage = 1;
 
 		// Form specific special cases

@@ -330,7 +330,7 @@ function PokeSelect(element, i){
 			// Hide Pokebox after selection
 			$el.find(".pokebox").hide();
 
-			// Show base Pokemon CP for Mega Evolutions
+			// Show base Pokemon CP for Mega Evolutions and Mega Level
 
 			if(selectedPokemon.hasTag("mega")){
 				// Get the ID of the original form
@@ -351,8 +351,27 @@ function PokeSelect(element, i){
 				$el.find(".mega-cp-container .base-name").html("Base " + basePokemon.speciesName);
 				$el.find(".mega-cp-container .mega-cp .stat").html(basePokemon.cp);
 				$el.find(".mega-cp-container").show();
+
+				// Show Mega Level
+				$el.find(".mega-level-select .button.mega-level").each(function(index, value){
+					if(selectedPokemon.megaLevel > index){
+						$(this).addClass("on");
+					} else{
+						$(this).removeClass("on");
+					}
+				});
+
+				$el.find(".mega-level-container").show();
+
+				// Show Mega Evolution Bonus
+				let bonuses = ["1", "1.1", "1.2", "1.3"];
+
+				$el.find(".mega-evolution-bonus span").html(bonuses[selectedPokemon.megaLevel - 1]);
+				$el.find(".mega-evolution-bonus").show();				
 			} else{
 				$el.find(".mega-cp-container").hide();
+				$el.find(".mega-level-container").hide();
+				$el.find(".mega-evolution-bonus").hide();
 			}
 
 			// Show alternate form CP for form changing Pokemon
@@ -1691,5 +1710,14 @@ function PokeSelect(element, i){
 
 			self.setSelectedPokemon(newForm);
 		}
+	});
+
+	// Set the Pokemon's Mega Level
+
+	$el.find(".button.mega-level").click(function(e){
+		let megaLevel = $el.find(".button.mega-level").index($(this)) + 1;
+
+		selectedPokemon.setMegaLevel(megaLevel);
+		self.update();
 	});
 }
