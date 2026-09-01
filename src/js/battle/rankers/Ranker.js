@@ -521,7 +521,7 @@ var RankerMaster = (function () {
 				}
 
 				// Determine final score and sort matches
-				var overrideSet = overrides.find(o => o.league = battle.getCP() && o.cup == battle.getCup().name);
+				var overrideSet = overrides.find(o => o.league == battle.getCP() && o.cup == battle.getCup().name);
 
 				for(var i = 0; i < rankCount; i++){
 
