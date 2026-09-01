@@ -135,7 +135,7 @@
 			<select class="move-select charged"></select>
 			<select class="move-select charged"></select>
 			<select class="move-select extra-charged"></select>
-			<div class="mega-evolution-bonus">Mega Evolution Bonus: x<span>1</span></div>
+			<div class="mega-evolution-bonus">Mega Evolve Bonus: x<span>1</span></div>
 			<button class="auto-select">Select Recommended Moves</button>
 			<div class="legacy">* Exclusive move<br><sup>†</sup> Unobtainable move</div>
 		</div>
