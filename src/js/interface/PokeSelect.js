@@ -254,6 +254,7 @@ function PokeSelect(element, i){
 			// Display charged moves
 
 			$el.find(".move-bar").hide();
+			$el.find(".move-select.charged").attr("class", "move-select charged");
 
 			for(var i = 0; i < selectedPokemon.chargedMoves.length; i++){
 				if(selectedPokemon.chargedMoves[i]){
@@ -268,7 +269,6 @@ function PokeSelect(element, i){
 					$el.find(".move-bar").eq(i).find(".bar").attr("class","bar " + chargedMove.type);
 					$el.find(".move-bar").eq(i).find(".bar-back").attr("class","bar-back " + chargedMove.type);
 				} else{
-					$el.find(".move-select.charged").eq(i).attr("class", "move-select charged");
 					$el.find(".move-select.charged").eq(i).find("option").first().prop("selected","selected");
 				}
 			}

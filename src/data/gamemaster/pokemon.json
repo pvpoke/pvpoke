@@ -18916,36 +18916,6 @@
     },
     {
         "dex": 346,
-        "speciesName": "Cradily",
-        "speciesId": "cradily_b",
-        "aliasId": "cradily",
-        "baseStats": {
-            "atk": 152,
-            "def": 194,
-            "hp": 200
-        },
-        "types": ["rock", "grass"],
-        "fastMoves": ["ACID", "INFESTATION", "BULLET_SEED"],
-        "chargedMoves": ["BULLDOZE", "GRASS_KNOT", "STONE_EDGE", "ROCK_SLIDE", "ROCK_TOMB"],
-        "defaultIVs": {
-            "cp500": [8.5, 6, 13, 15],
-            "cp1500": [25.5, 4, 14, 14],
-            "cp2500": [50, 15, 15, 15]
-        },
-        "searchPriority": 2,
-        "level25CP": 1335,
-        "tags": ["shadoweligible", "duplicate", "duplicate1500"],
-        "buddyDistance": 3,
-        "thirdMoveCost": 50000,
-        "released": true,
-        "family": {
-            "id": "FAMILY_LILEEP",
-            "parent": "lileep"
-        },
-        "nicknames": ["dily"]
-    },
-    {
-        "dex": 346,
         "speciesName": "Cradily (Shadow)",
         "speciesId": "cradily_shadow",
         "baseStats": {
