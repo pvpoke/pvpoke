@@ -141,6 +141,10 @@ function Pokemon(id, i, b, d){
 
 	if(data.tags){
 		this.tags = data.tags.slice();
+
+		if(this.tags.includes("supermega")){
+			this.megaLevel = 4;
+		}
 	}
 
 	// Set nicknames

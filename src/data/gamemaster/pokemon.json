@@ -1812,7 +1812,7 @@
             "id": "FAMILY_PIKACHU",
             "parent": "pikachu"
         },
-        "tags": ["mega"]
+        "tags": ["mega", "supermega"]
     },
     {
         "dex": 26,
@@ -1840,7 +1840,7 @@
             "id": "FAMILY_PIKACHU",
             "parent": "pikachu"
         },
-        "tags": ["mega"]
+        "tags": ["mega", "supermega"]
     },
     {
         "dex": 26,
@@ -4682,7 +4682,7 @@
             "cp2500": [26, 4, 14, 15]
         },
         "level25CP": 2192,
-        "tags": ["shadoweligible", "mega"],
+        "tags": ["shadoweligible", "mega", "supermega"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -8011,7 +8011,7 @@
         },
         "searchPriority": null,
         "level25CP": 1582,
-        "tags": ["shadoweligible", "mega"]
+        "tags": ["shadoweligible", "mega", "supermega"]
     },
     {
         "dex": 122,
@@ -9523,7 +9523,7 @@
             "cp2500": [19, 4, 9, 15]
         },
         "level25CP": 3079,
-        "tags": ["shadoweligible", "mega"],
+        "tags": ["shadoweligible", "mega", "supermega"],
         "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
@@ -9552,7 +9552,7 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
-        "searchPriority": 4,
+        "searchPriority": 7,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -9625,7 +9625,7 @@
         "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
         "extraChargedMoves": ["DYNAMIC_PUNCH_PLUS"],
-        "tags": ["legendary", "shadoweligible", "mega"],
+        "tags": ["legendary", "shadoweligible", "mega", "supermega"],
         "defaultIVs": {
             "cp500": [3, 9, 15, 14],
             "cp1500": [9, 5, 13, 8],
@@ -9652,7 +9652,7 @@
         "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
         "extraChargedMoves": ["FUTURE_SIGHT_PLUS"],
-        "tags": ["legendary", "shadoweligible", "mega"],
+        "tags": ["legendary", "shadoweligible", "mega", "supermega"],
         "defaultIVs": {
             "cp500": [3, 9, 15, 14],
             "cp1500": [8.5, 6, 5, 15],
@@ -13398,7 +13398,7 @@
         },
         "searchPriority": 1,
         "level25CP": 1267,
-        "tags": ["shadoweligible", "mega"],
+        "tags": ["shadoweligible", "mega", "supermega"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -24014,7 +24014,7 @@
             "cp2500": [46, 4, 15, 15],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 7,
+        "searchPriority": 5,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -33133,7 +33133,7 @@
         "chargedMoves": ["GYRO_BALL", "ENERGY_BALL", "SUPER_POWER", "SOLAR_BEAM", "FRENZY_PLANT", "THUNDER_PUNCH"],
         "extraChargedMoves": ["SEED_BOMB_PLUS"],
         "eliteMoves": ["FRENZY_PLANT"],
-        "tags": ["starter", "shadoweligible", "mega"],
+        "tags": ["starter", "shadoweligible", "mega", "supermega"],
         "defaultIVs": {
             "cp500": [4.5, 15, 15, 14],
             "cp1500": [13.5, 4, 14, 12],
@@ -33327,7 +33327,7 @@
         "chargedMoves": ["PSYCHIC", "FLAMETHROWER", "FLAME_CHARGE", "FIRE_BLAST", "BLAST_BURN", "MYSTICAL_FIRE", "PSYSHOCK"],
         "extraChargedMoves": ["MYSTICAL_FIRE_PLUS"],
         "eliteMoves": ["BLAST_BURN"],
-        "tags": ["starter", "shadoweligible", "mega"],
+        "tags": ["starter", "shadoweligible", "mega", "supermega"],
         "defaultIVs": {
             "cp500": [4, 14, 15, 15],
             "cp1500": [11.5, 5, 14, 9],
@@ -33517,7 +33517,7 @@
         },
         "types": ["water", "dark"],
         "fastMoves": ["FEINT_ATTACK", "BUBBLE", "WATER_SHURIKEN"],
-        "tags": ["starter", "shadoweligible", "mega"],
+        "tags": ["starter", "shadoweligible", "mega", "supermega"],
         "chargedMoves": ["NIGHT_SLASH", "AERIAL_ACE", "SURF", "HYDRO_PUMP", "HYDRO_CANNON"],
         "extraChargedMoves": ["SURF_PLUS"],
         "eliteMoves": ["HYDRO_CANNON"],
@@ -34577,7 +34577,7 @@
             "parent": "inkay"
         },
         "level25CP": 1955,
-        "tags": ["shadoweligible", "mega"]
+        "tags": ["shadoweligible", "mega", "supermega"]
     },
     {
         "dex": 687,
@@ -41052,7 +41052,7 @@
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
-        "tags": ["mega"]
+        "tags": ["mega", "supermega"]
     },
     {
         "dex": 871,
