@@ -25,7 +25,7 @@ $formats = array (
     'rules' => 
     array (
       0 => 'No CP limit.',
-      1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
+      1 => 'Mega Evolutions are eligible.',
     ),
   ),
   2 => 

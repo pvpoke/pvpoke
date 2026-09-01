@@ -255,7 +255,7 @@ function PokeSelect(element, i){
 
 			$el.find(".move-bar").hide();
 
-			for(var i = 0; i < 2; i++){
+			for(var i = 0; i < selectedPokemon.chargedMoves.length; i++){
 				if(selectedPokemon.chargedMoves[i]){
 					var chargedMove = selectedPokemon.chargedMoves[i];
 
@@ -330,7 +330,7 @@ function PokeSelect(element, i){
 			// Hide Pokebox after selection
 			$el.find(".pokebox").hide();
 
-			// Show base Pokemon CP for Mega Evolutions
+			// Show base Pokemon CP for Mega Evolutions and Mega Level
 
 			if(selectedPokemon.hasTag("mega")){
 				// Get the ID of the original form
@@ -351,8 +351,27 @@ function PokeSelect(element, i){
 				$el.find(".mega-cp-container .base-name").html("Base " + basePokemon.speciesName);
 				$el.find(".mega-cp-container .mega-cp .stat").html(basePokemon.cp);
 				$el.find(".mega-cp-container").show();
+
+				// Show Mega Level
+				$el.find(".mega-level-select .button.mega-level").each(function(index, value){
+					if(selectedPokemon.megaLevel > index){
+						$(this).addClass("on");
+					} else{
+						$(this).removeClass("on");
+					}
+				});
+
+				$el.find(".mega-level-container").show();
+
+				// Show Mega Evolution Bonus
+				let bonuses = ["1", "1.1", "1.2", "1.3"];
+
+				$el.find(".mega-evolution-bonus span").html(bonuses[selectedPokemon.megaLevel - 1]);
+				$el.find(".mega-evolution-bonus").show();				
 			} else{
 				$el.find(".mega-cp-container").hide();
+				$el.find(".mega-level-container").hide();
+				$el.find(".mega-evolution-bonus").hide();
 			}
 
 			// Show alternate form CP for form changing Pokemon
@@ -1103,6 +1122,25 @@ function PokeSelect(element, i){
 			return;
 		}
 
+		// Use "sab s", "char mx", etc as shortcuts for shadow and mega pokemon
+
+		let idSuffix = null;
+		let shorthands = [
+			{ string: " m", suffix: "_mega" },
+			{ string: " x", suffix: "_mega_x" },
+			{ string: " y", suffix: "_mega_y" },
+			{ string: " s", suffix: "_shadow" },
+			{ string: " n", suffix: "" },
+		];
+
+		shorthands.forEach(shorthand => {
+			if(searchStr.endsWith(shorthand.string)){
+				idSuffix = shorthand.suffix;
+				searchStr = searchStr.substring(0, searchStr.length - shorthand.string.length);
+				return;
+			}
+		});
+
 		var idToSelect;
 
 		for(var i = 0; i < searchArr.length; i++){
@@ -1140,13 +1178,25 @@ function PokeSelect(element, i){
 
 		}
 
+		// Select mega or shadow form of top result
+		if(typeof idSuffix == "string" && idToSelect){
+			idToSelect = idToSelect.replace('_shadow', '');
+			idToSelect = idToSelect.replace('_mega', '');
+			idToSelect = idToSelect.replace('_mega_x', '');
+			idToSelect = idToSelect.replace('_mega_y', '');
+			idToSelect = idToSelect.replace('_primal', '');
+			idToSelect = idToSelect.replace('_alolan', '');
+			idToSelect = idToSelect.replace('_galarian', '');
+			idToSelect += idSuffix;
+		}
+
 		var idAlreadySelected = false;
 
 		if(selectedPokemon && (idToSelect == selectedPokemon.speciesId)){
 			idAlreadySelected = true;
 		}
 
-		if((idToSelect)&&(! idAlreadySelected)){
+		if(idToSelect && ! idAlreadySelected && searchArr.find(poke => poke.speciesId == idToSelect)){
 			self.setPokemon(idToSelect);
 		}
 	}
@@ -1455,8 +1505,8 @@ function PokeSelect(element, i){
 			let index = $el.find(".move-bar").index($target);
 			move = selectedPokemon.chargedMoves[index];
 			moveType = "charged";
-		} else if($target.is(".move-select.charged")){
-			let index = $el.find(".move-select.charged").index($target);
+		} else if($target.is(".move-select.charged, .move-select.extra-charged")){
+			let index = $el.find(".move-select.charged, .move-select.extra-charged").index($target);
 			move = selectedPokemon.chargedMoves[index];
 			moveType = "charged";
 		} else{
@@ -1609,7 +1659,7 @@ function PokeSelect(element, i){
 	$el.find("a.search-info").click(function(e){
 		e.preventDefault();
 
-		modalWindow("Keyboard Commands", $el.find(".pokeselector-search-help"));
+		modalWindow("Search Tips", $el.find(".pokeselector-search-help"));
 	});
 
 	// Open the iv checker modal window
@@ -1660,5 +1710,14 @@ function PokeSelect(element, i){
 
 			self.setSelectedPokemon(newForm);
 		}
+	});
+
+	// Set the Pokemon's Mega Level
+
+	$el.find(".button.mega-level").click(function(e){
+		let megaLevel = $el.find(".button.mega-level").index($(this)) + 1;
+
+		selectedPokemon.setMegaLevel(megaLevel);
+		self.update();
 	});
 }

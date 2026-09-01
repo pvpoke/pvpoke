@@ -2,6 +2,7 @@
 	<div class="move-labels">
 		<div class="label">Thunderbolt</div>
 		<div class="label">Magnet Bomb</div>
+		<div class="label">Magnet Bomb</div>
 	</div>
 
 	<div class="move-bars">
@@ -11,6 +12,13 @@
 			<div class="bar"></div>
 			<div class="bar"></div>
 			<div class="bar-back electric"></div>
+		</div>
+		<div class="move-bar">
+			<div class="label">MB</div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar-back steel"></div>
 		</div>
 		<div class="move-bar">
 			<div class="label">MB</div>

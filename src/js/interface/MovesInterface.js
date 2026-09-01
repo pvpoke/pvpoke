@@ -120,9 +120,9 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < gm.data.moves.length; i++){
 					var move = gm.data.moves[i];
 
-					if(mode == "fast" && move.category == "charged"){
+					if(mode == "fast" && move?.energy > 0){
 						continue;
-					} else if(mode == "charged" && move.category == "fast"){
+					} else if(mode == "charged" && move?.energyGain > 0){
 						continue;
 					}
 

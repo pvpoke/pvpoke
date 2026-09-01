@@ -65,6 +65,10 @@
   color: #ff5115;
 }
 
+.section.battle {
+  height: auto !important;
+}
+
 .editor .poke.multi {
   float: none;
 }
@@ -627,6 +631,17 @@ a.random {
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
 }
+.battle-window .controls .move-bars .move-bar:nth-of-type(1) {
+  order: 0;
+}
+.battle-window .controls .move-bars .move-bar:nth-of-type(2) {
+  order: 2;
+}
+.battle-window .controls .move-bars .move-bar:nth-of-type(3) {
+  order: 1;
+  position: relative;
+  top: -50px;
+}
 .battle-window .controls .move-bars .move-bar .bar {
   -webkit-transition: top 0.2s ease-out 0s;
   -moz-transition: top 0.2s ease-out 0s;
@@ -647,18 +662,18 @@ a.random {
 .battle-window .controls .move-bars .move-bar.active {
   border: 3px solid #000;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-  -moz-transform: scale(1.25, 1.25);
-  -webkit-transform: scale(1.25, 1.25);
-  -o-transform: scale(1.25, 1.25);
-  -ms-transform: scale(1.25, 1.25);
-  transform: scale(1.25, 1.25);
-}
-.battle-window .controls .move-bars .move-bar.active:active {
   -moz-transform: scale(1.15, 1.15);
   -webkit-transform: scale(1.15, 1.15);
   -o-transform: scale(1.15, 1.15);
   -ms-transform: scale(1.15, 1.15);
   transform: scale(1.15, 1.15);
+}
+.battle-window .controls .move-bars .move-bar.active:active {
+  -moz-transform: scale(1.05, 1.05);
+  -webkit-transform: scale(1.05, 1.05);
+  -o-transform: scale(1.05, 1.05);
+  -ms-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 .battle-window .controls .move-labels {
   position: absolute;
@@ -679,6 +694,17 @@ a.random {
   text-transform: uppercase;
   font-size: 12px;
   padding: 1px 0;
+}
+.battle-window .controls .move-labels .label:nth-of-type(1) {
+  order: 0;
+}
+.battle-window .controls .move-labels .label:nth-of-type(2) {
+  order: 2;
+}
+.battle-window .controls .move-labels .label:nth-of-type(3) {
+  order: 1;
+  position: relative;
+  top: -50px;
 }
 .battle-window .controls .move-labels .label.active {
   color: white;

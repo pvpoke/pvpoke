@@ -64,6 +64,7 @@ var InterfaceMaster = (function () {
 				// Initialize selectors and push Pokemon data
 
 				battle = new Battle();
+				battle.setCup("mega");
 
 				pokeSearch.setBattle(battle);
 
@@ -141,7 +142,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				gm.loadRankingData(self, "overall", league, "all");
+				gm.loadRankingData(self, "overall", league, "mega");
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -2344,7 +2345,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				var cupName = "all";
+				var cupName = "mega";
 
 				if((cp == 10000)&&(levelCap == 40)){
 					cupName = "classic";

@@ -131,6 +131,7 @@ require_once 'header.php'; ?>
 					<div class="check" value="shadow"><span></span> Shadow</div>
 					<div class="check" value="shadoweligible"><span></span> Shadow Eligible</div>
 					<div class="check" value="mega"><span></span> Mega</div>
+					<div class="check" value="supermega"><span></span> Super Mega</div>
 				</div>
 			</div>
 

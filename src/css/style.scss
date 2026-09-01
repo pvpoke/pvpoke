@@ -71,6 +71,8 @@ $color-off-black:#111;
 $color-stat-buff:#f1841c;
 $color-stat-debuff:#0158d0;
 
+$color-mega: #eb5281;
+
 
 /* MIXINS */
 
@@ -663,10 +665,6 @@ b{
 			}
 		}
 
-		&.charged{
-			font-weight:bold;
-		}
-
 		&.poke-search{
 			background: $color-sky-blue;
 		    border: 1px solid $color-blue-medium;
@@ -908,6 +906,40 @@ b{
 				text-decoration: underline;
 				color:$color-links;
 			}
+		}
+
+		.mega-level-select{
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin: 10px 0;
+
+			.mega-level{
+				width: 32px;
+				height: 32px;
+				background-color: #ddd !important;
+				border-radius: 32px;
+				background-image:url('../img/mega-icon.png') !important;
+				background-position: center center !important;
+				background-size: 16px !important;
+				background-repeat: no-repeat !important;
+				border: 1px solid #999;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+
+				&.on{
+					background-color: $color-mega !important;
+				}
+			}
+		}
+
+		.mega-evolution-bonus{
+			display:none;
+			font-size: 12px;
+			margin: -5px 0 8px 0;
+			color: $color-mega;
+			padding: 0 12px;
 		}
 		
 		.advanced-section{
@@ -7155,7 +7187,7 @@ iframe#bh-div {
 
 	#nitro-body-mobile{
 		display: block;
-		margin-top: 30px;
+		margin: 30px 0;
 	}
 
 	.mobile-ad-container{
@@ -7172,7 +7204,7 @@ iframe#bh-div {
 
 	#nitro-body-desktop{
 		display: block;
-		margin-top: 30px;
+		margin: 40px 0;
 	}
 
 	.desktop-ad-container{
@@ -7187,7 +7219,7 @@ iframe#bh-div {
 	}
 }
 
-@media only screen and (min-width: 1190px) and (max-width:1449px) {
+@media only screen and (min-width: 1190px) and (max-width:1499px) {
 	#nitro-sidebar-left{
 		display: block;
 		position: fixed;
@@ -7203,7 +7235,17 @@ iframe#bh-div {
 	}
 }
 
-@media only screen and (min-width: 1450px) {
+@media only screen and (min-width: 1190px) and (max-width:1219px) {
+	#nitro-sidebar-left{
+		left:10px;
+	}
+
+	#nitro-sidebar-right{
+		right:10px;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
 	#nitro-sidebar-left-300{
 		display: block;
 		position: fixed;
