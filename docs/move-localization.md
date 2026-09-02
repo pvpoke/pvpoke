@@ -3,6 +3,11 @@
 PvPoke serves move names from static, versioned JSON files in
 `src/data/locales/moves`. The browser never calls an external API.
 
+Users can change move language from the main navigation menu or from the
+Settings page. The menu writes only the `language` property through
+`data/languageCookie.php`, preserving all other saved preferences, and reloads
+the current page so every move name is updated together.
+
 ## Source and update process
 
 The generated files use the static JSON snapshot from

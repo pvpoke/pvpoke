@@ -306,6 +306,15 @@ if(! isset($OG_IMAGE)){
 						</a>
 						<div class="submenu">
 							<div class="submenu-wrap">
+								<div class="menu-language-picker">
+									<label for="menu-language-select">Move language</label>
+									<select id="menu-language-select" aria-label="Move language">
+										<?php foreach($_LANGUAGES as $languageCode => $languageName): ?>
+											<option value="<?php echo $languageCode; ?>" <?php if($_SETTINGS->language == $languageCode) : ?>selected<?php endif; ?>><?php echo htmlspecialchars($languageName); ?></option>
+										<?php endforeach; ?>
+									</select>
+									<div class="language-change-status" aria-live="polite"></div>
+								</div>
 								<a href="<?php echo $WEB_ROOT; ?>attack-cmp-chart/">CMP Chart</a>
 								<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
 								<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
