@@ -291,6 +291,11 @@ function Pokemon(id, i, b, d){
 			self.levelCap = b.getLevelCap();
 		}
 
+		if(self.megaLevel == 4){
+			self.baseLevelCap = 52;
+			self.levelCap = 52;
+		}
+
 		var maxCP = 10000;
 
 		if(battle){
@@ -448,7 +453,6 @@ function Pokemon(id, i, b, d){
             this.setLevel(self.levelCap, false);
         }
 
-		var index = this.level - 1;
         this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
         this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
         this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
@@ -2016,6 +2020,14 @@ function Pokemon(id, i, b, d){
 
 	// Set the Pokemon's Mega Level
 	this.setMegaLevel = function(level){
+		if(battle.getCP() == 10000){
+			if(self.megaLevel != 4 && level == 4){
+				self.setLevel(52);
+			} else if(self.megaLevel == 4 && level < 4){
+				self.setLevel(50);
+			}
+		}
+
 		self.megaLevel = level;
 	}
 

@@ -342,11 +342,17 @@ function PokeSelect(element, i){
 				baseId = baseId.replace("_primal", "");
 
 				var basePokemon = new Pokemon(baseId, index, battle);
+				var basePokemonLevel = selectedPokemon.level;
+
+				if(selectedPokemon.megaLevel == 4){
+					basePokemonLevel -= 2;
+				}
+
 				basePokemon.initialize(false);
 				basePokemon.setIV("atk", selectedPokemon.ivs.atk);
 				basePokemon.setIV("def", selectedPokemon.ivs.def);
 				basePokemon.setIV("hp", selectedPokemon.ivs.hp);
-				basePokemon.setLevel(selectedPokemon.level);
+				basePokemon.setLevel(basePokemonLevel);
 
 				$el.find(".mega-cp-container .base-name").html("Base " + basePokemon.speciesName);
 				$el.find(".mega-cp-container .mega-cp .stat").html(basePokemon.cp);
@@ -363,6 +369,12 @@ function PokeSelect(element, i){
 
 				$el.find(".mega-level-container").show();
 
+				if(selectedPokemon.megaLevel == 4){
+					$el.find("h3.cp").addClass("color-mega");
+				} else{
+					$el.find("h3.cp").removeClass("color-mega");
+				}
+
 				// Show Mega Evolution Bonus
 				let bonuses = ["1", "1.1", "1.2", "1.3"];
 
@@ -372,6 +384,7 @@ function PokeSelect(element, i){
 				$el.find(".mega-cp-container").hide();
 				$el.find(".mega-level-container").hide();
 				$el.find(".mega-evolution-bonus").hide();
+				$el.find("h3.cp").removeClass("color-mega");
 			}
 
 			// Show alternate form CP for form changing Pokemon
@@ -1181,9 +1194,9 @@ function PokeSelect(element, i){
 		// Select mega or shadow form of top result
 		if(typeof idSuffix == "string" && idToSelect){
 			idToSelect = idToSelect.replace('_shadow', '');
-			idToSelect = idToSelect.replace('_mega', '');
 			idToSelect = idToSelect.replace('_mega_x', '');
 			idToSelect = idToSelect.replace('_mega_y', '');
+			idToSelect = idToSelect.replace('_mega', '');
 			idToSelect = idToSelect.replace('_primal', '');
 			idToSelect = idToSelect.replace('_alolan', '');
 			idToSelect = idToSelect.replace('_galarian', '');
@@ -1303,7 +1316,10 @@ function PokeSelect(element, i){
 		var sortStat = $el.find(".maximize-section .check-group .check.on").first().attr("value");
 		var levelCap = parseInt($el.find(".maximize-section .level-cap-group .check.on").first().attr("value"));
 
-		selectedPokemon.levelCap = levelCap;
+		if(! isNaN(levelCap)){
+			selectedPokemon.levelCap = levelCap;
+		}
+		
         selectedPokemon.maximizeStat(sortStat);
 
         selectedPokemon.isCustom = true;
