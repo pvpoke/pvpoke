@@ -12,7 +12,7 @@
     {
         "speciesId": "florges",
         "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["CHILLING_WATER", "MOONBLAST"]
+        "chargedMoves": ["CHILLING_WATER", "DISARMING_VOICE"]
     },
     {
         "speciesId": "groudon",
@@ -52,7 +52,7 @@
     {
         "speciesId": "lugia",
         "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["AEROBLAST", "FLY"]
+        "chargedMoves": ["AEROBLAST", "EARTH_POWER"]
     },
     {
         "speciesId": "lunala",
@@ -70,13 +70,8 @@
         "chargedMoves": ["DOUBLE_IRON_BASH", "DYNAMIC_PUNCH"]
     },
     {
-        "speciesId": "meloetta_aria",
-        "fastMove": "CONFUSION",
-        "chargedMoves": ["PSYSHOCK", "DAZZLING_GLEAM"]
-    },
-    {
         "speciesId": "metagross",
-        "fastMove": "BULLET_PUNCH",
+        "fastMove": "SHADOW_CLAW",
         "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
     },
     {
@@ -102,7 +97,7 @@
     {
         "speciesId": "primarina",
         "fastMove": "WATERFALL",
-        "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
+        "chargedMoves": ["MOONBLAST", "HYDRO_CANNON"]
     },
     {
         "speciesId": "reshiram",
@@ -115,19 +110,19 @@
         "chargedMoves": ["DRILL_RUN", "ROCK_WRECKER"]
     },
     {
-        "speciesId": "solgaleo",
-        "fastMove": "FIRE_SPIN",
-        "chargedMoves": ["PSYCHIC_FANGS", "IRON_HEAD"]
-    },
-    {
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["DAZZLING_GLEAM", "AURA_SPHERE"]
     },
     {
-        "speciesId": "tyranitar",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"]
+        "speciesId": "ursaluna",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["ICE_PUNCH", "HIGH_HORSEPOWER"]
+    },
+    {
+        "speciesId": "ursaluna",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["THUNDER_PUNCH", "HIGH_HORSEPOWER"]
     },
     {
         "speciesId": "xerneas",
@@ -145,11 +140,6 @@
         "chargedMoves": ["CLOSE_COMBAT", "BEHEMOTH_BLADE"]
     },
     {
-        "speciesId": "zacian_hero",
-        "fastMove": "QUICK_ATTACK",
-        "chargedMoves": ["WILD_CHARGE", "PLAY_ROUGH"]
-    },
-    {
         "speciesId": "zamazenta_crowned_shield",
         "fastMove": "METAL_CLAW",
         "chargedMoves": ["CLOSE_COMBAT", "BEHEMOTH_BASH"]
@@ -161,8 +151,8 @@
     },
     {
         "speciesId": "zarude",
-        "fastMove": "VINE_WHIP",
-        "chargedMoves": ["POWER_WHIP", "DARK_PULSE"]
+        "fastMove": "BITE",
+        "chargedMoves": ["ENERGY_BALL", "DARK_PULSE"]
     },
     {
         "speciesId": "zekrom",
@@ -172,6 +162,11 @@
     {
         "speciesId": "zygarde_complete",
         "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
+        "chargedMoves": ["CRUNCH", "BULLDOZE"]
+    },
+    {
+        "speciesId": "keldeo_resolute",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["SECRET_SWORD", "AQUA_JET"]
     }
 ]
