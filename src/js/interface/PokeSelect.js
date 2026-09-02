@@ -369,6 +369,12 @@ function PokeSelect(element, i){
 
 				$el.find(".mega-level-container").show();
 
+				if(selectedPokemon.megaLevel == 4){
+					$el.find("h3.cp").addClass("color-mega");
+				} else{
+					$el.find("h3.cp").removeClass("color-mega");
+				}
+
 				// Show Mega Evolution Bonus
 				let bonuses = ["1", "1.1", "1.2", "1.3"];
 
@@ -378,6 +384,7 @@ function PokeSelect(element, i){
 				$el.find(".mega-cp-container").hide();
 				$el.find(".mega-level-container").hide();
 				$el.find(".mega-evolution-bonus").hide();
+				$el.find("h3.cp").removeClass("color-mega");
 			}
 
 			// Show alternate form CP for form changing Pokemon

@@ -5307,6 +5307,9 @@ a.pokebattler{
 .steel{ @include gradient($color-steel-dark, $color-steel-light); }
 .water{ @include gradient($color-water-dark, $color-water-light); }
 
+
+.color-mega{ color: $color-mega; }
+
 .dark:not(option), .dragon:not(option), .ghost:not(option) {
 	> .name-container{
 		color:$color-off-white;
