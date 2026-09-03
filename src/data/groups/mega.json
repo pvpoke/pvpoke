@@ -1,5 +1,10 @@
 [
     {
+        "speciesId": "chesnaught_mega",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER", "SEED_BOMB_PLUS"]
+    },
+    {
         "speciesId": "dialga_origin",
         "fastMove": "DRAGON_BREATH",
         "chargedMoves": ["ROAR_OF_TIME", "IRON_HEAD"]
@@ -77,7 +82,7 @@
     {
         "speciesId": "lugia",
         "fastMove": "DRAGON_TAIL",
-        "chargedMoves": ["AEROBLAST", "FLY"]
+        "chargedMoves": ["AEROBLAST", "EARTH_POWER"]
     },
     {
         "speciesId": "lunala",
@@ -129,7 +134,7 @@
     {
         "speciesId": "primarina",
         "fastMove": "WATERFALL",
-        "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
+        "chargedMoves": ["MOONBLAST", "HYDRO_CANNON"]
     },
     {
         "speciesId": "rayquaza_mega",
@@ -177,8 +182,18 @@
         "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
     },
     {
-        "speciesId": "chesnaught_mega",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER", "SEED_BOMB_PLUS"]
+        "speciesId": "ursaluna",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["THUNDER_PUNCH", "HIGH_HORSEPOWER"]
+    },
+    {
+        "speciesId": "aggron_mega",
+        "fastMove": "METAL_SOUND",
+        "chargedMoves": ["BRICK_BREAK", "METEOR_BEAM"]
+    },
+    {
+        "speciesId": "delphox_mega",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["BLAST_BURN", "PSYSHOCK", "MYSTICAL_FIRE_PLUS"]
     }
 ]
