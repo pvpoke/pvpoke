@@ -104,7 +104,10 @@ var InterfaceMaster = (function () {
 					if(r.chargedMoves){
 						for(var n = 0; n < r.chargedMoves.length; n++){
 							pokemon.selectMove("charged", r.chargedMoves[n], n);
-							displayedMoves.push(pokemon.chargedMoves[n].name);
+
+							if(r.chargedMoves[n] != "none"){
+								displayedMoves.push(pokemon.chargedMoves[n].name);
+							}
 						}
 					}
 
@@ -280,10 +283,6 @@ var InterfaceMaster = (function () {
 								continue;
 
 							let override = data.find(o => o.speciesId == r.speciesId);
-
-							if(r.speciesId == "snorlax"){
-								console.log(r, override);
-							}
 
 							if(override){
 								override.fastMove = r.moveset[0];
