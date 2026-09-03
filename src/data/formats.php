@@ -14,21 +14,50 @@ $formats = array (
   ),
   1 => 
   array (
+    'title' => 'Mega Great League',
+    'cup' => 'mega',
+    'cp' => 1500,
+    'meta' => 'megagreat',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokemon must be at or below 1,500 CP to enter.',
+      1 => 'Mega Evolutions are eligible.',
+    ),
+  ),
+  2 => 
+  array (
+    'title' => 'Mega Ultra League',
+    'cup' => 'mega',
+    'cp' => 2500,
+    'meta' => 'megaultra',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokemon must be at or below 2,500 CP to enter.',
+      1 => 'Mega Evolutions are eligible.',
+    ),
+  ),
+  3 => 
+  array (
     'title' => 'Mega Master League',
     'cup' => 'mega',
     'cp' => 10000,
     'meta' => 'mega',
     'showCup' => true,
-    'showFormat' => false,
+    'showFormat' => true,
     'showMeta' => true,
-    'hideRankings' => true,
     'rules' => 
     array (
       0 => 'No CP limit.',
       1 => 'Mega Evolutions are eligible.',
     ),
   ),
-  2 => 
+  4 => 
   array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
@@ -44,7 +73,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  3 => 
+  5 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -54,7 +83,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  4 => 
+  6 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -64,7 +93,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  5 => 
+  7 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

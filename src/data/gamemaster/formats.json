@@ -10,14 +10,39 @@
 		"hideRankings": true
 	},
 	{
+		"title": "Mega Great League",
+		"cup": "mega",
+		"cp": 1500,
+		"meta": "megagreat",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokemon must be at or below 1,500 CP to enter.",
+			"Mega Evolutions are eligible."
+		]
+	},
+	{
+		"title": "Mega Ultra League",
+		"cup": "mega",
+		"cp": 2500,
+		"meta": "megaultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokemon must be at or below 2,500 CP to enter.",
+			"Mega Evolutions are eligible."
+		]
+	},
+	{
 		"title": "Mega Master League",
 		"cup": "mega",
 		"cp": 10000,
 		"meta": "mega",
 		"showCup": true,
-		"showFormat": false,
+		"showFormat": true,
 		"showMeta": true,
-		"hideRankings": true,
 		"rules": [
 			"No CP limit.",
 			"Mega Evolutions are eligible."
