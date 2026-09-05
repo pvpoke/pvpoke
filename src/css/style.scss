@@ -2660,6 +2660,8 @@ a.download-csv{
 	}
 }
 
+
+
 .timeline{
 	border-top:1px dashed #000;
 	position:relative;
@@ -3246,6 +3248,23 @@ a.download-csv{
 					display:inline-block;
 					text-transform: capitalize;
 					padding: 2px 12px;
+				}
+			}
+
+			&.move-details{
+				.ranking-header{
+					float: none;
+					width: 100%;
+					min-height: 38px;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					align-items: center;
+					gap: 15;
+				}
+
+				.mega-level-select{
+					margin: 0;
 				}
 			}
 
