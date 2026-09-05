@@ -21660,6 +21660,7 @@
             "cp1500": [19.5, 4, 14, 14],
             "cp2500": [34.5, 5, 15, 15]
         },
+        "searchPriority": 2,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -21695,6 +21696,34 @@
         "family": {
             "id": "FAMILY_STARLY",
             "parent": "staravia_shadow"
+        }
+    },
+    {
+        "dex": 398,
+        "speciesName": "Staraptor (Mega)",
+        "speciesId": "staraptor_mega",
+        "baseStats": {
+            "atk": 278,
+            "def": 207,
+            "hp": 198
+        },
+        "types": ["fighting", "flying"],
+        "fastMoves": ["QUICK_ATTACK", "WING_ATTACK", "GUST", "SAND_ATTACK"],
+        "chargedMoves": ["BRAVE_BIRD", "CLOSE_COMBAT", "HEAT_WAVE", "FLY"],
+        "eliteMoves": ["GUST"],
+        "defaultIVs": {
+            "cp500": [5, 4, 7, 9],
+            "cp1500": [13.5, 8, 15, 15],
+            "cp2500": [23, 4, 12, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false,
+        "level25CP": 1738,
+        "tags": ["shadoweligible", "mega", "supermega"],
+        "family": {
+            "id": "FAMILY_STARLY",
+            "parent": "staravia"
         }
     },
     {
@@ -43187,7 +43216,7 @@
         },
         "types": ["dark", "none"],
         "fastMoves": ["SNARL", "BITE"],
-        "chargedMoves": ["CRUNCH", "PAYBACK", "DIG"],
+        "chargedMoves": ["CRUNCH", "PSYCHIC_FANGS", "DIG"],
         "defaultIVs": {
             "cp500": [13.5, 4, 15, 14],
             "cp1500": [47.5, 12, 15, 13],
@@ -43213,7 +43242,7 @@
         },
         "types": ["dark", "none"],
         "fastMoves": ["SNARL", "BITE"],
-        "chargedMoves": ["CRUNCH", "PAYBACK", "DIG"],
+        "chargedMoves": ["CRUNCH", "PSYCHIC_FANGS", "DIG"],
         "defaultIVs": {
             "cp500": [6.5, 4, 10, 13],
             "cp1500": [18.5, 4, 15, 15],
