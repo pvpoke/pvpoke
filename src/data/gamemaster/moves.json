@@ -1527,6 +1527,7 @@
         "archetype": "Debuff",
         "turns": 1,
         "damageMethod": "percentMaxHP",
+        "unlisted": true,
         "tags": ["instant", "ignoresFaint", "unlisted", "uneditable"]
     },
     {
@@ -1544,6 +1545,7 @@
         "archetype": "Debuff",
         "turns": 1,
         "damageMethod": "percentMaxHP",
+        "unlisted": true,
         "tags": ["instant", "ignoresFaint", "uneditable"]
     },
     {

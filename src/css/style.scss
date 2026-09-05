@@ -146,6 +146,14 @@ body{
 	&.cols-3 > div{
 		flex-basis:33%;
 	}
+
+	&.flex-wrap{
+		flex-wrap: wrap;
+	}
+
+	&.hide{
+		display: none !important;
+	}
 }
 
 .hide{
@@ -908,32 +916,6 @@ b{
 			}
 		}
 
-		.mega-level-select{
-			display: flex;
-			justify-content: center;
-			gap: 10px;
-			margin: 10px 0;
-
-			.mega-level{
-				width: 32px;
-				height: 32px;
-				background-color: #ddd !important;
-				border-radius: 32px;
-				background-image:url('../img/mega-icon.png') !important;
-				background-position: center center !important;
-				background-size: 16px !important;
-				background-repeat: no-repeat !important;
-				border: 1px solid #999;
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-
-				&.on{
-					background-color: $color-mega !important;
-				}
-			}
-		}
-
 		.mega-evolution-bonus{
 			display:none;
 			font-size: 12px;
@@ -1017,6 +999,10 @@ b{
 			display: none;
 		}
 
+	}
+
+	.mega-level-select{
+		margin: 10px auto 10px auto;
 	}
 
 	.fifty-warning{
@@ -1337,6 +1323,37 @@ b{
 	      animation: BLINK_ANIMATION 2s infinite;
 	}
 
+}
+
+.mega-level-select{
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	margin: 10px 0;
+	max-width: 127px;
+
+	&.hide{
+		display: none !important;
+	}
+
+	.mega-level{
+		width: 28px;
+		height: 28px;
+		background-color: #ddd !important;
+		border-radius: 32px;
+		background-image:url('../img/mega-icon.png') !important;
+		background-position: center center !important;
+		background-size: 50% !important;
+		background-repeat: no-repeat !important;
+		border: 1px solid #999;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+
+		&.on{
+			background-color: $color-mega !important;
+		}
+	}
 }
 
 .fields{
@@ -4917,6 +4934,15 @@ a.rating{
 
 	.poke-search{
 		margin-top:15px;
+	}
+
+	.mega-move-section{
+		margin-top: 20px;
+		min-height: 28px;
+
+		.check, .mega-level-select{
+			margin: 0;
+		}
 	}
 }
 
