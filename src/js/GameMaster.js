@@ -1405,6 +1405,10 @@ var GameMaster = (function () {
 		object.generatePokemonListFromSearchString = function(str, battle){
 
 
+			if(! battle){
+				battle = new Battle();
+			}
+
 			// Break the search string up into queries
 			var queries = str.toLowerCase().split(/\s*,\s*/);
 			var searchKey = queries.join() + battle.getCP() + battle.getCup().name;
@@ -1429,10 +1433,6 @@ var GameMaster = (function () {
 			var metaKey = $(".format-select option:selected").first().attr("meta-group");
 			let rankingKey = battle.getCup().name + "overall" + battle.getCP();
 
-			if(! battle){
-				battle = new Battle();
-			}
-
 			for(var i = 0; i < queries.length; i++){
 				var query = queries[i];
 
@@ -1451,6 +1451,8 @@ var GameMaster = (function () {
 						var param = params[j];
 						var isNot = false;
 						var valid = false;
+						var skipPlainNameSearch = false;
+						var matchedStructured = false;
 
 						if(param.length == 0){
 							if(params.length == 1){
@@ -1467,6 +1469,8 @@ var GameMaster = (function () {
 						// Evolution family search
 						if((param.charAt(0) == "+")&&(param.length > 2)){
 							param = param.substr(1, param.length-1);
+							skipPlainNameSearch = true;
+							matchedStructured = true;
 
 							var searchPokemon = object.getPokemonById(param);
 
@@ -1478,6 +1482,7 @@ var GameMaster = (function () {
 						// Move search
 						if((param.charAt(0) == "@")&&(param.length > 2)){
 							param = param.substr(1, param.length-1);
+							matchedStructured = true;
 
 							// legacy move search
 							if ((param == "legacy")||(param == "special")) {
@@ -1538,19 +1543,20 @@ var GameMaster = (function () {
 								}
 							}
 						} else{
-							// Name search
-							if(pokemon.speciesName.toLowerCase().startsWith(param)){
-								valid = true;
-							}
-
 							// Type search
-							if(pokemon.types.indexOf(param) > -1){
-								valid = true;
+							if(types.indexOf(param) > -1){
+								matchedStructured = true;
+								if(pokemon.types.indexOf(param) > -1){
+									valid = true;
+								}
 							}
 
 							// Tag search
-							if((tags.indexOf(param) > -1)&&(pokemon.hasTag(param))){
-								valid = true;
+							if(tags.indexOf(param) > -1){
+								matchedStructured = true;
+								if(pokemon.hasTag(param)){
+									valid = true;
+								}
 							}
 
 							// Nickname search
@@ -1559,29 +1565,32 @@ var GameMaster = (function () {
 							}
 
 							// Dex number search
-
-							if(pokemon.dex == param){
-								valid = true;
+							if(/^\d+$/.test(param)){
+								matchedStructured = true;
+								if(pokemon.dex == param){
+									valid = true;
+								}
 							}
 
 							// Move cost search
-							if(param.indexOf("k") > -1){
-								var arr = param.split("k");
-								if(pokemon.thirdMoveCost == parseInt(arr[0]) * 1000){
+							if(/^\d+k$/.test(param)){
+								matchedStructured = true;
+								if(pokemon.thirdMoveCost == parseInt(param) * 1000){
 									valid = true;
 								}
 							}
 
 							// Buddy distance search
-							if(param.indexOf("km") > -1){
-								var arr = param.split("km");
-								if(pokemon.buddyDistance == parseInt(arr[0])){
+							if(/^\d+km$/.test(param)){
+								matchedStructured = true;
+								if(pokemon.buddyDistance == parseInt(param)){
 									valid = true;
 								}
 							}
 
 							// Hundo search
 							if((param == "hundo")||(param == "4*")){
+								matchedStructured = true;
 								pokemon.initialize(true);
 
 								if(pokemon.ivs.atk == 15 && pokemon.ivs.def == 15 && pokemon.ivs.hp == 15){
@@ -1591,6 +1600,7 @@ var GameMaster = (function () {
 
 							// New XL search, no longer a tag
 							if(param == "xl"){
+								matchedStructured = true;
 								if(pokemon.needsXLCandy()){
 									valid = true;
 								}
@@ -1599,6 +1609,7 @@ var GameMaster = (function () {
 							// Region/generation search
 							for(k = 0; k < regions.length; k++){
 								if((param == regions[k].string)||(param==regions[k].name)){
+									matchedStructured = true;
 									if((pokemon.dex >= regions[k].dexStart)&&(pokemon.dex <= regions[k].dexEnd)){
 										valid = true;
 
@@ -1611,18 +1622,16 @@ var GameMaster = (function () {
 							}
 
 							// Point/tier search
-							if((param.indexOf("pt") > -1)||(param.indexOf("pts") > -1)){
-								var val = param.replace("pt","");
-								val = param.replace("pts","");
-								val = parseInt(val);
-
-								if(object.getPokemonTier(pokemon.speciesId, pokemon.getBattle().getCup()) == val){
+							if(/^\d+pts?$/.test(param)){
+								matchedStructured = true;
+								if(object.getPokemonTier(pokemon.speciesId, pokemon.getBattle().getCup()) == parseInt(param)){
 									valid = true;
 								}
 							}
 
 							// Meta group search
 							if(param == "meta"){
+								matchedStructured = true;
 								if(object.groups[metaKey] !== undefined){
 
 									var group = object.groups[metaKey];
@@ -1640,21 +1649,22 @@ var GameMaster = (function () {
 							}
 
 							// Editor notes search on rankings page
-							
-							if(param == "notes" && window.location.href.indexOf("/rankings/") > -1){
+							if(param == "notes"){
+								matchedStructured = true;
+								if(window.location.href.indexOf("/rankings/") > -1){
+									let $rankEntries = $(".rank[has-editor-notes='true'");
+									$rankEntries.each(function(index, item){
 
-								let $rankEntries = $(".rank[has-editor-notes='true'");
-								$rankEntries.each(function(index, item){
-
-									if(pokemon.speciesId == $(item).attr("data")){
-										valid = true;
-									}
-								});
+										if(pokemon.speciesId == $(item).attr("data")){
+											valid = true;
+										}
+									});
+								}
 							}
 
 							// Trait search
-
 							if((object.data.pokemonTraits.pros.indexOf(param) > -1)||(object.data.pokemonTraits.cons.indexOf(param) > -1)){
+								matchedStructured = true;
 								pokemon.initialize(true);
 								pokemon.selectRecommendedMoveset("overall");
 								var traits = pokemon.generateTraits();
@@ -1689,6 +1699,11 @@ var GameMaster = (function () {
 									}
 								}
 							}
+
+							// Name and nickname search
+							if(!valid && !matchedStructured && !skipPlainNameSearch){
+								valid = matchesPokemonNameParam(param, pokemon, isNot);
+							}
 						}
 
 						if(((valid)&&(!isNot))||((!valid)&&(isNot))){
@@ -1706,7 +1721,22 @@ var GameMaster = (function () {
 			return results;
 		}
 
-		// Generate a list of moves given a search string
+		function matchesPokemonNameParam(param, pokemon, isNot){
+			var nicknames = pokemon.nicknames || [];
+
+			// Negated name searches intentionally use exact/prefix matching only so typos do not exclude unexpected Pokemon.
+			if(isNot){
+				return pokemon.speciesName.toLowerCase().startsWith(param) || nicknames.indexOf(param) > -1;
+			}
+
+			if(typeof FuzzySearch !== "undefined"){
+				return FuzzySearch.getPokemonNameMatch(param, pokemon).matched;
+			}
+
+			return pokemon.speciesName.toLowerCase().startsWith(param) || nicknames.indexOf(param) > -1;
+		}
+
+// Generate a list of moves given a search string
 		object.generateMoveListFromSearchString = function(str){
 
 
