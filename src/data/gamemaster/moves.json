@@ -1140,6 +1140,22 @@
         "turns": 1
     },
     {
+        "moveId": "FELL_STINGER_PLUS",
+        "name": "Fell Stinger",
+        "abbreviation": "FeS",
+        "type": "bug",
+        "power": 40,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [1, 0],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Boost Spam",
+        "turns": 1,
+        "isMegaMove": true
+    },
+    {
         "moveId": "FIRE_BLAST",
         "name": "Fire Blast",
         "abbreviation": "FiB",
