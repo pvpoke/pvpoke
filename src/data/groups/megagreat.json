@@ -5,10 +5,20 @@
         "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"]
     },
     {
+        "speciesId": "altaria_mega",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["MOONBLAST", "SKY_ATTACK"]
+    },
+    {
         "speciesId": "annihilape_shadow",
         "fastMove": "LOW_KICK",
         "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
         "shadowType": "shadow"
+    },
+    {
+        "speciesId": "audino_mega",
+        "fastMove": "CHARGE_BEAM",
+        "chargedMoves": ["BODY_SLAM", "DISARMING_VOICE"]
     },
     {
         "speciesId": "azumarill",
@@ -21,9 +31,19 @@
         "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
     },
     {
+        "speciesId": "charizard_mega_x",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"]
+    },
+    {
         "speciesId": "charjabug",
         "fastMove": "VOLT_SWITCH",
         "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+    },
+    {
+        "speciesId": "chesnaught_mega",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER", "SEED_BOMB_PLUS"]
     },
     {
         "speciesId": "clodsire",
@@ -64,6 +84,11 @@
         "speciesId": "dondozo",
         "fastMove": "WATERFALL",
         "chargedMoves": ["SURF", "OUTRAGE"]
+    },
+    {
+        "speciesId": "dragonite_mega",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["SUPER_POWER", "THUNDER_PUNCH", "OUTRAGE_PLUS"]
     },
     {
         "speciesId": "dunsparce",
@@ -146,6 +171,11 @@
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
     },
     {
+        "speciesId": "malamar_mega",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER", "PSYBEAM_PLUS"]
+    },
+    {
         "speciesId": "mantine",
         "fastMove": "WING_ATTACK",
         "chargedMoves": ["TWISTER", "WATER_PULSE"]
@@ -182,11 +212,6 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "primeape",
-        "fastMove": "KARATE_CHOP",
-        "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"]
-    },
-    {
         "speciesId": "quagsire_shadow",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["AQUA_TAIL", "MUD_BOMB"],
@@ -199,9 +224,16 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "sableye",
+        "speciesId": "sableye_mega",
         "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["FOUL_PLAY", "POWER_GEM"]
+        "chargedMoves": ["FOUL_PLAY", "DAZZLING_GLEAM"],
+        "level": 29,
+        "ivs": [4, 13, 15]
+    },
+    {
+        "speciesId": "sableye_mega",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["FOUL_PLAY", "DRAIN_PUNCH"]
     },
     {
         "speciesId": "sableye_shadow",
@@ -238,40 +270,5 @@
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
-    },
-    {
-        "speciesId": "malamar_mega",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["FOUL_PLAY", "SUPER_POWER", "PSYBEAM_PLUS"]
-    },
-    {
-        "speciesId": "sableye_mega",
-        "fastMove": "SHADOW_CLAW",
-        "chargedMoves": ["FOUL_PLAY", "POWER_GEM"]
-    },
-    {
-        "speciesId": "dragonite_mega",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SUPER_POWER", "THUNDER_PUNCH", "OUTRAGE_PLUS"]
-    },
-    {
-        "speciesId": "chesnaught_mega",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["THUNDER_PUNCH", "SUPER_POWER", "SEED_BOMB_PLUS"]
-    },
-    {
-        "speciesId": "audino_mega",
-        "fastMove": "CHARGE_BEAM",
-        "chargedMoves": ["BODY_SLAM", "DISARMING_VOICE"]
-    },
-    {
-        "speciesId": "altaria_mega",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["MOONBLAST", "SKY_ATTACK"]
-    },
-    {
-        "speciesId": "charizard_mega_x",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"]
     }
 ]
