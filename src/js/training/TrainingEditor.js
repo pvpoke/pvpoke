@@ -21,6 +21,7 @@ var InterfaceMaster = (function () {
 
 			self.init = function(){
 				battle = new Battle();
+				battle.setCup("mega");
 
 				// Init the multiselector
 				multiSelector = new PokeMultiSelect($(".poke.multi"));
