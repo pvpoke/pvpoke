@@ -59,6 +59,22 @@ $formats = array (
   ),
   4 => 
   array (
+    'title' => 'Willpower Cup',
+    'cup' => 'willpower',
+    'cp' => 1500,
+    'meta' => 'willpower',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokemon must be at or below 1,500 CP to enter.',
+      1 => 'Only Fighting-, Psychic-, and Dark-type Pokémon are eligible.',
+      2 => 'The following Pokemon are not allowed: Gardevoir, Zorua, Zoroark.',
+    ),
+  ),
+  5 => 
+  array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
     'cp' => 10000,
@@ -73,7 +89,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  5 => 
+  6 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -83,7 +99,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -93,7 +109,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
