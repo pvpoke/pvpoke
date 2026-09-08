@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-09-09 00:15:38",
+    "timestamp": "2026-09-09 01:44:57",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -30306,7 +30306,7 @@
                 "hp": 155
             },
             "types": ["dark", "none"],
-            "fastMoves": ["SHADOW_CLAW", "SNARL", "SUCKER_PUNCH"],
+            "fastMoves": ["SHADOW_CLAW", "SNARL"],
             "chargedMoves": ["FOUL_PLAY", "SLUDGE_BOMB", "FLAMETHROWER", "NIGHT_SHADE"],
             "defaultIVs": {
                 "cp500": [7.5, 4, 13, 6],
