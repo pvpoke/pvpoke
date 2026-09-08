@@ -13501,7 +13501,7 @@
             "cp1500": [14.5, 4, 11, 10],
             "cp2500": [23.5, 7, 14, 14]
         },
-        "tags": ["shadoweligible", "mega", "supermega"],
+        "tags": ["shadoweligible", "mega"],
         "level25CP": 2416,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
@@ -29763,7 +29763,7 @@
             "hp": 155
         },
         "types": ["dark", "none"],
-        "fastMoves": ["SHADOW_CLAW", "SNARL"],
+        "fastMoves": ["SHADOW_CLAW", "SNARL", "SUCKER_PUNCH"],
         "chargedMoves": ["FOUL_PLAY", "SLUDGE_BOMB", "FLAMETHROWER", "NIGHT_SHADE"],
         "defaultIVs": {
             "cp500": [7.5, 4, 13, 6],

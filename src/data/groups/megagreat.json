@@ -16,9 +16,9 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "audino_mega",
-        "fastMove": "CHARGE_BEAM",
-        "chargedMoves": ["BODY_SLAM", "DISARMING_VOICE"]
+        "speciesId": "araquanid",
+        "fastMove": "INFESTATION",
+        "chargedMoves": ["WATER_PULSE", "MIRROR_COAT"]
     },
     {
         "speciesId": "azumarill",
@@ -244,7 +244,13 @@
     {
         "speciesId": "snorlax",
         "fastMove": "PSYWAVE",
-        "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+        "chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "snorlax_shadow",
+        "fastMove": "PSYWAVE",
+        "chargedMoves": ["BODY_SLAM", "SUPER_POWER"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "stunfisk",
@@ -270,5 +276,10 @@
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
+    },
+    {
+        "speciesId": "deoxys_defense",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
     }
 ]
