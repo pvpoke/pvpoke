@@ -318,6 +318,7 @@ function Battle(){
 		// Determine actions for both Pokemon
 		var actionsThisTurn = false;
 		var chargedMoveThisTurn = false;
+		var chargedMoveLastTurn = previousTurnActions.find(action => action.type == "charged");
 		var cooldownsToSet = [pokemon[0].cooldown, pokemon[1].cooldown]; // Store cooldown values to set later
 
 		if(turns > lastProcessedTurn){
@@ -328,7 +329,13 @@ function Battle(){
 				var action = self.getTurnAction(poke, opponent);
 
 				if(action){
+
+					if(chargedMoveLastTurn && action.type != "switch"){
+						continue; // Only allow 0 turn switches after a Charged Attack sequence
+					}
+
 					actionsThisTurn = true;
+
 					if(action.type == "charged"){
 						chargedMoveThisTurn = true;
 					}
@@ -350,7 +357,17 @@ function Battle(){
 
 							if(valid){
 								cooldownsToSet[i] += poke.fastMove.cooldown;
+								timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
 							}
+						}
+
+						// Don't allow any inputs on the same turn that a Charged Attack resolves
+						/*if(queuedActions.find(action => action.type == "charged" && action.turn == turns - 1)){
+							valid = false;
+						}*/
+
+						if(action.type == "charged" && valid){
+							cooldownsToSet[i] += 500;
 						}
 
 						if(valid){
@@ -366,15 +383,7 @@ function Battle(){
 		pokemon[1].cooldown = cooldownsToSet[1];
 
 		// Check for a Charged Move this turn to apply floating Fast Moves
-		var chargedMoveQueuedThisTurn = false;
-
-		for(var i = 0; i < queuedActions.length; i++){
-			var action = queuedActions[i];
-			if(action.type == "charged"){
-				chargedMoveQueuedThisTurn = true;
-			}
-		}
-
+		var chargedMoveLastTurn = previousTurnActions.find(action => action.type == "charged");
 
 		// Take actions from the queue to be processed now
 		for(var i = 0; i < queuedActions.length; i++){
@@ -382,36 +391,16 @@ function Battle(){
 			var valid = false;
 
 			// Is there a fast move that's eligible to be processed this turn?
-			if(action.type == "fast"){
+			if(action.type == "fast" || action.type == "charged"){
 
 				// Was this queued on a previous turn? See if it's eligible
 				var timeSinceActivated = (turns - action.turn) * 500;
-				var chargedMoveLastTurn = false;
 
-				for(var n = 0; n < previousTurnActions.length; n++){
-					if(previousTurnActions[n].type == "charged"){
-						chargedMoveLastTurn = true;
-					}
-				}
+				var requiredTimeToPass = action.type == "fast" ? pokemon[action.actor].fastMove.cooldown - 500 : 0;
 
-				var requiredTimeToPass = pokemon[action.actor].fastMove.cooldown - 500;
-
-				if(timeSinceActivated >= requiredTimeToPass){
-					action.settings.priority += 20;
-					valid = true;
-				} else if(chargedMoveQueuedThisTurn){
-					action.settings.priority -= 20;
+				if(timeSinceActivated >= requiredTimeToPass || (action.type == "fast" && chargedMoveLastTurn && action.turn < turns)){
 					valid = true;
 				}
-
-				/*if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
-					action.settings.priority += 20;
-					valid = true;
-				}*/
-			}
-
-			if(action.type == "charged"){
-				valid = true;
 			}
 
 			if(action.type == "wait"){
@@ -420,6 +409,10 @@ function Battle(){
 
 			if(action.type == "switch"){
 				valid = true;
+
+				if(chargedMoveLastTurn){
+					action.priority -= 40; // Resolve floating Fast Attacks before 0 turn swaps after a Charged Attack sequence
+				}
 			}
 
 			if(valid){
@@ -434,7 +427,7 @@ function Battle(){
 
 		// Process actions on this turn
 		actionIndex = 0;
-
+		
 		while(actionIndex < turnActions.length){
 			// Return here if we've reached a suspended state
 			if(phase != "neutral"){
@@ -478,30 +471,6 @@ function Battle(){
 					if(usePriority && poke.hp <= 0 && poke.faintSource == "charged" && ! move.hasTag("ignoresFaint")){
 						action.valid = false;
 					}
-
-					// Check if knocked out by a fast move
-					var lethalFastMove = false;
-					var opponentChargedMoveThisTurn = false;
-
-					for(var j = 0; j < turnActions.length; j++){
-						if(turnActions[j].actor != action.actor){
-							if(turnActions[j].type == "fast"){
-								// Need to check if the damage has already been applied this turn
-								if(((opponent.cooldown == 0)&&(poke.hp <= pokemon[turnActions[j].actor].fastMove.damage)) || (poke.hp < 1)){
-									lethalFastMove = true;
-								}
-
-							} else if(turnActions[j].type == "charged"){
-								opponentChargedMoveThisTurn = true;
-							}
-						}
-					}
-
-					// This prevents Charged Moves from being used on the same turn as lethal Fast Moves
-					if((lethalFastMove)&&(! opponentChargedMoveThisTurn)){
-						action.valid = false;
-					}
-
 					break;
 
 				case "wait":
@@ -569,7 +538,7 @@ function Battle(){
 			// Reset after a charged move
 
 			if(roundChargedMoveUsed){
-				poke.cooldown = 0;
+				poke.cooldown = 500;
 			}
 		}
 
@@ -794,43 +763,12 @@ function Battle(){
 				action = new TimelineAction("fast", poke.index, turns, 0, {priority: poke.priority});
 			}
 
-			// Set cooldown
-
-			if((action)&&(action.type == "fast")){
-				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
-			}
-
 			// Adjust priority
 
 			if(action){
 				if(action.type == "charged"){
 					roundChargedMovesInitiated++;
 
-					// Reset all cooldowns
-					if((opponent.cooldown > 0)&&(! opponent.hasActed)){
-						action.settings.priority += 4;
-						/* if(opponent.cooldown > 0){
-							opponent.chargedMovesOnly = true;
-						}
-						// Hook an opponent's charged move if also using a charged move
-						var hookingOnLastTurn = false;
-						if(opponent.cooldown == 500){
-							// We're going to do a super hacky workaround here and credit energy early for decision making
-							hookingOnLastTurn = true;
-							opponent.energy += opponent.fastMove.energyGain;
-						}
-						opponent.cooldown = 0;
-						var a = self.getTurnAction(opponent, poke);
-						if(hookingOnLastTurn){
-							opponent.energy -= opponent.fastMove.energyGain; // Now take that energy away, sike
-						}
-						if((a)&&(a.type == "charged")){
-							queuedActions.push(a);
-						} */
-
-					}
-
-					//poke.cooldown = 0;
 					action.settings.priority += 10;
 
 					// Set additional priority by attack stat
@@ -840,7 +778,7 @@ function Battle(){
 				}
 
 				if(action.type == "switch"){
-					action.settings.priority += 15;
+					action.settings.priority += 20;
 				}
 			}
 		}
@@ -1437,7 +1375,7 @@ function Battle(){
 		}
 
 		if((move.energyGain > 0)&&(roundChargedMoveUsed)){
-			displayTime += 9500;
+			displayTime += 10000;
 		}
 
 		// Apply move buffs and debuffs

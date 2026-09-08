@@ -15,10 +15,11 @@ var InterfaceMaster = (function () {
 			var pokeSelectors = [];
 			var animating = false;
 			var self = this;
+			var gm = GameMaster.getInstance();
 
 			this.init = function(){
 
-				var data = GameMaster.getInstance().data;
+				var data = gm.data;
 
 				$(".format-select").on("change", selectFormat);
 				$(".simulate").on("click", startRanker);
@@ -41,6 +42,8 @@ var InterfaceMaster = (function () {
 						console.log(error);
 					}
 				});
+
+				gm.loadRankingData(self, "overall", 1500, "all");
 
 				self.loadGetData();
 
@@ -73,6 +76,7 @@ var InterfaceMaster = (function () {
 				}
 
 				loadOverrides();
+				gm.loadRankingData(self, "overall", cp, cup);
 
 				$("a.rankersandbox-link").attr("href", webRoot+"rankersandbox.php?cup="+cup+"&cp="+cp);
 				$("a.rankings-link").attr("href", webRoot+"rankings/"+cup+"/"+cp+"/overall/");

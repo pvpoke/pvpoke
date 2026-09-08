@@ -35,35 +35,6 @@ switch($cup){
 		$league = 'Premier';
 		break;
 
-	case "retro":
-		$league = 'Retro Cup';
-		break;
-
-	case "kanto":
-		$league = 'Kanto Cup';
-		break;
-
-	case "hisui":
-		$league = 'Hisui Cup';
-		break;
-
-	case "elementremix":
-		$league = 'Element Cup Remix';
-		break;
-
-
-	case "halloween":
-		$league = 'Halloween Cup';
-		break;
-
-	case "premierclassic":
-		$league = 'Premier Classic';
-		break;
-
-	case "Remix":
-		$league = 'Remix';
-		break;
-
 }
 
 $META_TITLE = $league . ' Top Performers';
@@ -78,8 +49,8 @@ require_once '../header.php';
 <div class="section analysis-container white">
 
 	<select class="format-select">
-		<option value="1500" cup="all" level-cap="50">Great League</option>
-		<option value="2500" cup="all" level-cap="50">Ultra League</option>
+		<option value="1500" cup="mega" level-cap="50">Great League</option>
+		<option value="2500" cup="mega" level-cap="50">Ultra League</option>
 		<option value="10000" cup="all" level-cap="50">Master League</option>
 	</select>
 

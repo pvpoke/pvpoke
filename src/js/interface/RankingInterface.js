@@ -1065,8 +1065,14 @@ var InterfaceMaster = (function () {
 						break;
 
 						default:
-							$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) * 100) / 100);
-							$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) / chargedMoves[n].energy) * 100) / 100);
+							let moveDamage = chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult;
+
+							if(chargedMoves[n]?.isMegaMove){
+								moveDamage *= 1.3;
+							}
+
+							$moveDetails.find(".damage .value").html(Math.round(moveDamage * 100) / 100);
+							$moveDetails.find(".dpe .value").html( Math.round( (moveDamage / chargedMoves[n].energy) * 100) / 100);
 					}
 					
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
@@ -1089,6 +1095,13 @@ var InterfaceMaster = (function () {
 								$moveDetails.find(".move-effect").append("<div class=\"status-effect-description\">"+formChangeString+"</div>");
 							}
 						}
+					}
+
+					// Metadata for mega move power calculations
+					if(chargedMoves[n]?.isMegaMove){
+						$moveDetails.attr("power", chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult);
+						$moveDetails.attr("energy", chargedMoves[n].energy);
+						$moveDetails.addClass("mega-move");
 					}
 
 					// Add move counts
@@ -1118,6 +1131,7 @@ var InterfaceMaster = (function () {
 
 				if(pokemon.hasTag("mega") && pokemon.extraChargedMovePool.length > 0){
 					$details.find(".footnote.move-legacy-key.move-legacy-key-mega").show();
+					$details.find(".mega-level-select").removeClass("hide");
 				} else{
 					$details.find(".footnote.move-legacy-key").first().show();
 				}
@@ -1770,6 +1784,31 @@ var InterfaceMaster = (function () {
 
 				modalWindow(format.title + " Rules", $modalContent);
 
+			});
+
+			// Recalculate Mega Move stats when Mega Level is selected
+			$("body").on("click", ".rank .mega-level-select .mega-level", function(e){
+				let $levelSelect = $(e.target).closest(".mega-level-select");
+				let $rank = $(e.target).closest(".rank");
+				let megaLevel = $levelSelect.find(".button.mega-level").index($(e.target)) + 1;
+
+				$levelSelect.find(".button.mega-level").each(function(index, value){
+					if(megaLevel > index){
+						$(this).addClass("on");
+					} else{
+						$(this).removeClass("on");
+					}
+				});
+
+				let megaMultipliers = [1, 1.1, 1.2, 1.3];
+
+				$rank.find(".move-detail-template.mega-move").each(function(index, moveDetail){
+					let power = parseFloat($(moveDetail).attr("power")) * megaMultipliers[megaLevel - 1];
+					let dpe = power / parseInt($(moveDetail).attr("energy"));
+
+					$(moveDetail).find(".damage .value").html( Math.round(power * 100) / 100);
+					$(moveDetail).find(".dpe .value").html( Math.round(dpe * 100) / 100);
+				});
 			});
 		};
 

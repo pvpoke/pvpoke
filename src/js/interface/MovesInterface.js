@@ -16,6 +16,7 @@ var InterfaceMaster = (function () {
 			var data;
 			var jumpToMove = false;
 			var showMegaMoves = false;
+			var megaLevel = 4;
 			var mode = "fast";
 			var gm = GameMaster.getInstance();
 			var table;
@@ -106,7 +107,7 @@ var InterfaceMaster = (function () {
 
 			// Grabs ranking data from the Game Master
 
-			this.displayMoves = function(){
+			this.displayMoves = function(preserveSort = false){
 
 				var data = [];
 				var headers = ["Move","Type","D"];
@@ -151,13 +152,26 @@ var InterfaceMaster = (function () {
 						valid = false;
 					}
 
+					// Adjust power for mega moves
+					if(move?.isMegaMove){
+						let megaMultipliers = [1, 1.1, 1.2, 1.3];
+
+						obj.power *= megaMultipliers[megaLevel - 1];
+						obj.power = Math.floor(obj.power * 100) / 100;
+						obj.dpe = Math.floor( (obj.power / obj.energy) * 100) / 100;
+						obj.className = "mega-move";
+					}
+
 					if(valid){
 						data.push(obj);
 					}
 				}
 
+				let defaultSort = table && preserveSort ? table.getSortColumn() : 'name';
+				let defaultSortDirection = table && preserveSort ? table.getSortDirection() : true;
+
 				table = new SortableTable($(".sortable-table.moves"), headers, data, self.tableSortCallback);
-				table.sortAndDisplayData("name", true);
+				table.sortAndDisplayData(defaultSort, defaultSortDirection);
 
 				// Filter table if search string is set
 				$(".poke-search").first().trigger("keyup");
@@ -345,9 +359,9 @@ var InterfaceMaster = (function () {
 				}
 
 				if(mode == "charged"){
-					$(".check.mega-move-toggle").removeClass("hide");
+					$(".mega-move-section").removeClass("hide");
 				} else{
-					$(".check.mega-move-toggle").addClass("hide");
+					$(".mega-move-section").addClass("hide");
 				}
 
 				self.pushHistoryState(mode);
@@ -466,8 +480,31 @@ var InterfaceMaster = (function () {
 				if($(this).hasClass("mega-move-toggle")){
 					showMegaMoves = $(this).hasClass("on");
 					$(".poke-search").first().trigger("keyup");
+
+					if(showMegaMoves){
+						$(".mega-level-select").removeClass("hide");
+					} else{
+						$(".mega-level-select").addClass("hide");
+					}
 				}
 			}
+
+			// Set mega level for mega moves in table
+
+			$(".mega-move-section .mega-level").click(function(e){
+				megaLevel = $(".mega-move-section .mega-level").index($(this)) + 1;
+
+				$(".mega-move-section .mega-level").each(function(index, value){
+					if(megaLevel > index){
+						$(this).addClass("on");
+					} else{
+						$(this).removeClass("on");
+					}
+				});
+
+				self.displayMoves(true);
+				$(".poke-search").first().trigger("keyup");
+			});
 
 		}
 

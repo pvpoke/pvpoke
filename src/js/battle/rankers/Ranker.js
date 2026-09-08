@@ -81,24 +81,26 @@ var RankerMaster = (function () {
 					targets = pokemonList;
 				} else if(moveSelectMode == "force"){
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude, rankingData, overrides);
+					let lowPokemon = [];
+					
+					if(gm.rankings["alloverall"+cp]){
+						lowPokemon = gm.rankings["alloverall"+cp].filter(ranking => ranking.score < 70);
+					}
 
 					// Filter targets from pokemonList
 					targets = [];
-
+					
 					for(var i = 0; i < pokemonList.length; i++){
-						if(cup.filterTargets){
-							if(pokemonList[i].weightModifier > 1){
-								targets.push(pokemonList[i]);
-							}
-						} else{
+						if((! cup.filterTargets) || (cup.filterTargets && lowPokemon.findIndex(p => p.speciesId == pokemonList[i].speciesId) == -1)){
 							targets.push(pokemonList[i]);
 						}
 					}
 				}
 
-				// For custom rankings, exclude Pokemon with a low league overall score
+				// For custom rankings and open leagues, exclude Pokemon with a low league overall score
 				if(cup.excludeLowPokemon && gm.rankings["alloverall"+cp]){
-					var lowPokemon = gm.rankings["alloverall"+cp].filter(ranking => ranking.score < 70);
+
+					let lowPokemon = gm.rankings["alloverall"+cp].filter(ranking => ranking.score < 70);
 
 					for(var i = 0; i < lowPokemon.length; i++){
 						if((pokemonList.findIndex(r => r.speciesId == lowPokemon[i].speciesId) > -1)){

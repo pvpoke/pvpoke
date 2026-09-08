@@ -16,7 +16,7 @@ require_once '../header.php';
 
 	<div class="override-controls flex" style="margin-bottom: 20px;">
 		<button class="new-pokemon">+ New Pokemon</button>
-		<button class="import-movesets" style="margin-left: 15px;">Import League Movesets</button>
+		<button class="patch-values" style="margin-left: 15px;">Patch Values...</button>
 		<button class="clear-weights" style="margin-left: 15px;">Clear Weights</button>
 		<button class="clear-editor-scores" style="margin-left: 15px;">Clear Editor Scores</button>
 	</div>
@@ -58,6 +58,27 @@ require_once '../header.php';
 
 	<div class="center flex">
 		<div class="button search">Search</div>
+	</div>
+</div>
+
+<div class="patch-value-wizard hide">
+	<select class="patch-format-select">
+		<option value="" disabled selected>Select source format</option>
+		<option value="1500" cup="all">Great League</option>
+		<option value="2500" cup="all">Ultra League</option>
+		<option value="10000" cup="all">Master League</option>
+	</select>
+
+	<p>Select values to import from the source format and patch into the current format. Overrides for Pokemon exclusive to the current format will be unchanged.</p>
+
+	<div class="flex gap-15">
+		<div class="check movesets"><span></span> Movesets</div>
+		<div class="check weights"><span></span> Weights</div>
+		<div class="check editor-scores"><span></span> Editor Scores</div>
+	</div>
+
+	<div class="center flex">
+		<div class="button patch" disabled>Patch</div>
 	</div>
 </div>
 

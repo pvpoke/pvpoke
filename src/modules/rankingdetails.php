@@ -132,7 +132,7 @@
 	</div><!-- end tab stats-->
 
 	<div class="detail-tab" tab="moves">
-		<div class="detail-section float margin">
+		<div class="detail-section move-details float margin">
 			<div class="ranking-header">Fast Moves</div>
 			<!--<div class="ranking-header stat-toggle"><a class="show-move-stats" href="#">Show Stats</a></div>-->
 			<div class="moveset fast show-stats clear">
@@ -158,11 +158,21 @@
 				* Event or Elite TM exclusive<br>
 				<sup>†</sup> Unobtainable via TM<br>
 				+ Obtained automatically on Mega Evolution <br><br>
-				<div>Move stats include same type and Mega Evolution bonuses (default Mega Level 3).</div>
+				<div>Move stats include same type and Mega Evolution bonuses.</div>
 			</div>
 		</div>
-		<div class="detail-section float">
-			<div class="ranking-header">Charged Moves</div>
+
+		<div class="detail-section move-details float">
+			<div class="ranking-header">
+				<div>Charged Moves</div>
+				<div class="mega-level-select hide">
+					<div class="mega-level button on"></div>
+					<div class="mega-level button on"></div>
+					<div class="mega-level button on"></div>
+					<div class="mega-level button on"></div>
+				</div>
+			</div>
+
 			<div class="moveset charged show-stats clear">
 				<div class="move-detail-template rank hide">
 					<div class="name-container flex">

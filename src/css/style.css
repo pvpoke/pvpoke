@@ -44,6 +44,12 @@ body {
 .flex.cols-3 > div {
   flex-basis: 33%;
 }
+.flex.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex.hide {
+  display: none !important;
+}
 
 .hide {
   display: none;
@@ -717,29 +723,6 @@ b {
   text-decoration: underline;
   color: #003462;
 }
-.poke .poke-stats .mega-level-select {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 10px 0;
-}
-.poke .poke-stats .mega-level-select .mega-level {
-  width: 32px;
-  height: 32px;
-  background-color: #ddd !important;
-  border-radius: 32px;
-  background-image: url("../img/mega-icon.png") !important;
-  background-position: center center !important;
-  background-size: 16px !important;
-  background-repeat: no-repeat !important;
-  border: 1px solid #999;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-.poke .poke-stats .mega-level-select .mega-level.on {
-  background-color: #eb5281 !important;
-}
 .poke .poke-stats .mega-evolution-bonus {
   display: none;
   font-size: 12px;
@@ -803,6 +786,9 @@ b {
 }
 .poke .poke-stats .move-select.extra-charged {
   display: none;
+}
+.poke .mega-level-select {
+  margin: 10px auto 10px auto;
 }
 .poke .fifty-warning {
   display: none;
@@ -1065,6 +1051,34 @@ b {
   -moz-animation: BLINK_ANIMATION 2s infinite;
   -o-animation: BLINK_ANIMATION 2s infinite;
   animation: BLINK_ANIMATION 2s infinite;
+}
+
+.mega-level-select {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+  max-width: 127px;
+}
+.mega-level-select.hide {
+  display: none !important;
+}
+.mega-level-select .mega-level {
+  width: 28px;
+  height: 28px;
+  background-color: #ddd !important;
+  border-radius: 32px;
+  background-image: url("../img/mega-icon.png") !important;
+  background-position: center center !important;
+  background-size: 50% !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.mega-level-select .mega-level.on {
+  background-color: #eb5281 !important;
 }
 
 .fields {
@@ -2881,6 +2895,19 @@ a.download-csv {
   text-transform: capitalize;
   padding: 2px 12px;
 }
+.rank .details .detail-section.move-details .ranking-header {
+  float: none;
+  width: 100%;
+  min-height: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15;
+}
+.rank .details .detail-section.move-details .mega-level-select {
+  margin: 0;
+}
 .rank .details .detail-section.traits-container, .rank .details .detail-section.similar-pokemon, .rank .details .detail-section.partner-pokemon, .rank .details .detail-section.notes-container {
   width: 100%;
 }
@@ -4396,6 +4423,13 @@ a.rating:hover:after {
 }
 .move-table-container .poke-search {
   margin-top: 15px;
+}
+.move-table-container .mega-move-section {
+  margin-top: 20px;
+  min-height: 28px;
+}
+.move-table-container .mega-move-section .check, .move-table-container .mega-move-section .mega-level-select {
+  margin: 0;
 }
 
 .move-explore-container {
