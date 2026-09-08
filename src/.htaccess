@@ -20,6 +20,7 @@ RewriteRule ^new-season-2026/(.*)$ /$1 [R,L]
 RewriteRule ^precious-paths/(.*)$ /$1 [R,L]
 RewriteRule ^memories/(.*)$ /$1 [R,L]
 RewriteRule ^forever-forward/(.*)$ /$1 [R,L]
+RewriteRule ^twilight-trails/(.*)$ /$1 [R,L]
 
 Options -Indexes
 
