@@ -25,6 +25,11 @@
         "chargedMoves": ["SACRED_FIRE", "BRAVE_BIRD"]
     },
     {
+        "speciesId": "keldeo_resolute",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["SECRET_SWORD", "AQUA_JET"]
+    },
+    {
         "speciesId": "kyogre",
         "fastMove": "WATERFALL",
         "chargedMoves": ["AVALANCHE", "ORIGIN_PULSE"]
@@ -105,9 +110,10 @@
         "chargedMoves": ["FUSION_FLARE", "DRACO_METEOR"]
     },
     {
-        "speciesId": "rhyperior",
+        "speciesId": "rhyperior_shadow",
         "fastMove": "MUD_SLAP",
-        "chargedMoves": ["DRILL_RUN", "ROCK_WRECKER"]
+        "chargedMoves": ["DRILL_RUN", "ROCK_WRECKER"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "togekiss",
@@ -141,18 +147,8 @@
     },
     {
         "speciesId": "zamazenta_crowned_shield",
-        "fastMove": "METAL_CLAW",
-        "chargedMoves": ["CLOSE_COMBAT", "BEHEMOTH_BASH"]
-    },
-    {
-        "speciesId": "zamazenta_crowned_shield",
         "fastMove": "ICE_FANG",
         "chargedMoves": ["CLOSE_COMBAT", "BEHEMOTH_BASH"]
-    },
-    {
-        "speciesId": "zarude",
-        "fastMove": "BITE",
-        "chargedMoves": ["ENERGY_BALL", "DARK_PULSE"]
     },
     {
         "speciesId": "zekrom",
@@ -163,10 +159,5 @@
         "speciesId": "zygarde_complete",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["CRUNCH", "BULLDOZE"]
-    },
-    {
-        "speciesId": "keldeo_resolute",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["SECRET_SWORD", "AQUA_JET"]
     }
 ]
