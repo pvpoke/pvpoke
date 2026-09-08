@@ -7,6 +7,8 @@ function SortableTable($element, headers, data, sortCallback){
 	var headers = headers;
 	var keyMap = []; // An array of the keys to reference by index
 	var self = this;
+	var sort;
+	var sortDirection;
 	
 	// Push keys into key map
 
@@ -59,6 +61,9 @@ function SortableTable($element, headers, data, sortCallback){
 			$row = $("<tr></tr>");
 			
 			for(var key in data[i]){
+				if(key == "className")
+					continue;
+
 				if(data[i].hasOwnProperty(key)){
 					var val = data[i][key];
 					
@@ -71,15 +76,33 @@ function SortableTable($element, headers, data, sortCallback){
 					$row.append($cell);
 				}
 			}
+
+			// Add custom classname to row
+			if(data[i].hasOwnProperty("className")){
+				$row.addClass(data[i].className);
+			}
 			
 			$el.append($row);
 		}
 		
 		// Event listeners
 		
-		$el.find(".label").click(sortClick);		
+		$el.find(".label").click(sortClick);
+		
+		sort = sortColumn;
+		sortDirection = asc;
 	}
 	
+	// Getter for current sort column
+	self.getSortColumn = function(){
+		return sort;
+	}
+
+	// Getter for current sort column
+	self.getSortDirection = function(){
+		return sortDirection;
+	}
+
 	// Sort table on headings click
 	
 	function sortClick(e){

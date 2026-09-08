@@ -26,7 +26,7 @@
 		<h3 class="cp"><span class="identifier" title="Shadow"></span> cp <span class="stat"></span></h3>
 		<div class="types"></div>
 
-				<div class="mega-level-container">
+		<div class="mega-level-container">
 			<div class="mega-level-select">
 				<div class="mega-level button"></div>
 				<div class="mega-level button"></div>

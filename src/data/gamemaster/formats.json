@@ -18,7 +18,7 @@
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
+			"Pokemon must be at or below 1,500 CP to enter.",
 			"Mega Evolutions are eligible."
 		]
 	},
@@ -31,7 +31,7 @@
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
-			"Pokémon must be at or below 2,500 CP to enter.",
+			"Pokemon must be at or below 2,500 CP to enter.",
 			"Mega Evolutions are eligible."
 		]
 	},
@@ -49,6 +49,20 @@
 		]
 	},
 	{
+		"title": "Willpower Cup",
+		"cup": "willpower",
+		"cp": 1500,
+		"meta": "willpower",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokemon must be at or below 1,500 CP to enter.",
+			"Only Fighting-, Psychic-, and Dark-type Pokémon are eligible.",
+			"The following Pokemon are not allowed: Gardevoir, Zorua, Zoroark."
+		]
+	},
+	{
 		"title": "Master Premier Cup",
 		"cup": "premier",
 		"cp": 10000,
@@ -61,69 +75,6 @@
 			"No CP limit.",
 			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
 		]
-	},
-	{
-		"title": "Battle Frontier (Copa Dilúvio)",
-		"cup": "copadiluvio",
-		"cp": 1500,
-		"meta": "copadiluvio",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Tsuki Cup)",
-		"cup": "tsuki",
-		"cp": 1500,
-		"meta": "tsuki",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Liga Ultra)",
-		"cup": "ligaultra",
-		"cp": 2500,
-		"meta": "ligaultra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Coupe du Sillage)",
-		"cup": "coupedusillage",
-		"cp": 10000,
-		"meta": "coupedusillage",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon Equinox Cup",
-		"cup": "equinox",
-		"cp": 1500,
-		"meta": "equinox",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon Bastille Cup",
-		"cup": "bastille",
-		"cp": 1500,
-		"meta": "bastille",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon Chrysalis Cup",
-		"cup": "chrysalis",
-		"cp": 1500,
-		"meta": "chrysalis",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
 	},
 	{
 		"title": "Little Cup",

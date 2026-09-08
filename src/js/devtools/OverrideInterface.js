@@ -104,7 +104,10 @@ var InterfaceMaster = (function () {
 					if(r.chargedMoves){
 						for(var n = 0; n < r.chargedMoves.length; n++){
 							pokemon.selectMove("charged", r.chargedMoves[n], n);
-							displayedMoves.push(pokemon.chargedMoves[n].name);
+
+							if(r.chargedMoves[n] != "none"){
+								displayedMoves.push(pokemon.chargedMoves[n].name);
+							}
 						}
 					}
 
@@ -255,6 +258,97 @@ var InterfaceMaster = (function () {
 				return override;
 			}
 
+			// Patch values given a source league and cup
+			this.patchOverrideValues = function(league, cup, patchMovesets, patchWeights, patchEditorScores){
+				// Load source overrides
+				$.getJSON( webRoot+"data/overrides/"+cup+"/"+league+".json?v="+siteVersion, function( source ){
+					let rankings = [];
+					let currentCup = battle.getCup();
+
+					let key = cup + "overall" + league;
+
+					if(gm.rankings[key]){
+						rankings = [gm.rankings[key]][0]; // Wrapped in an array for weird reasons
+					}
+
+					let eligiblePokemon = gm.generateFilteredPokemonList(battle, currentCup.include, currentCup.exclude);
+
+					// Patch all movesets from source rankings
+					if(patchMovesets){
+						for(let i = 0; i < rankings.length; i++){
+							let r = rankings[i];
+							let isEligible = eligiblePokemon.find(p => p.speciesId == r.speciesId);
+
+							if(! isEligible)
+								continue;
+
+							let override = data.find(o => o.speciesId == r.speciesId);
+
+							if(override){
+								override.fastMove = r.moveset[0];
+								override.chargedMoves = [];
+							} else{
+								override = {
+									speciesId: r.speciesId,
+									fastMove: r.moveset[0],
+									chargedMoves: [],
+									weight: 1
+								};
+
+								data.push(override);
+							}
+
+							for(let n = 1; n < r.moveset.length; n++){
+								override.chargedMoves.push(r.moveset[n]);
+							}
+						}
+					}
+
+					// Patch wegihts and editor scores from source overrides
+					for(let i = 0; i < source.length; i++){
+						let sourceOverride = source[i];
+						let override = data.find(o => o.speciesId == sourceOverride.speciesId);
+						let isEligible = eligiblePokemon.find(p => p.speciesId == sourceOverride.speciesId);
+
+						if(! isEligible)
+							continue;
+
+						if(! override){
+							override = {
+								speciesId: sourceOverride.speciesId,
+								fastMove: sourceOverride.fastMove ? sourceOverride.fastMove : null,
+								chargedMoves: sourceOverride.chargedMoves ? [...sourceOverride.chargedMoves] : null,
+								weight: 1
+							};
+
+							data.push(override);
+						}
+
+						if(patchWeights){
+							if(sourceOverride?.weight){
+								override.weight = sourceOverride.weight;
+							} else{
+								override.weight = 1;
+							}
+							
+						}
+
+						if(patchEditorScores){
+							if(sourceOverride?.editorScore){
+								override.editorScore = sourceOverride.editorScore;
+								override.editorNotes = sourceOverride.editorNotes;
+							} else{
+								delete override.editorScore;
+								delete override.editorNotes;
+							}
+						}
+					}
+
+					self.sortOverrideData();
+					self.displayOverrideData(data);
+				});
+			}
+
 			// Open Pokeselect on enter press for searchbar
 
 			$(".poke-search").first().keypress(function(e){
@@ -363,50 +457,38 @@ var InterfaceMaster = (function () {
 				self.displayOverrideData(data);
 			});
 
-			// Import movesets for all eligible Pokemon from the open league rankings
+			$(".patch-values").click(function(e){
+				modalWindow("Patch Values", $(".patch-value-wizard"));
 
-			$(".import-movesets").click(function(e){
-				var data = [];
+				let $wiz = $(".modal .patch-value-wizard").first();
+				let $select = $(".modal .patch-format-select").first();
 
-				var rankings = [];
-				var cup = battle.getCup();
-
-				var key = "all" + "overall" + battle.getCP();
-
-				if(gm.rankings[key]){
-					rankings = [gm.rankings[key]][0]; // Wrapped in an array for weird reasons
-				}
-
-				var eligiblePokemon = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
-
-				for(var i = 0; i < rankings.length; i++){
-					var r = rankings[i];
-					var isEligible = false;
-
-					for(var n = 0; n < eligiblePokemon.length; n++){
-						if(eligiblePokemon[n].speciesId == r.speciesId){
-							isEligible = true;
-							break;
-						}
+				gm.data.formats.forEach(format => {
+					if(format?.showMeta && ! format?.hideRankings){
+						$(".modal .patch-format-select").append("<option value='"+format.cp+"' cup='"+format.cup+"'>"+format.title+"</option>");
 					}
+				});
 
-					if(isEligible){
-						var override = {
-							speciesId: r.speciesId,
-							fastMove: r.moveset[0],
-							chargedMoves: []
-						};
+				$(".modal .patch-format-select").on("change", function(e){
+					let league = $select.find("option:selected").val();
+					let cup = $select.find("option:selected").attr("cup");
 
-						for(var n = 1; n < r.moveset.length; n++){
-							override.chargedMoves.push(r.moveset[n]);
-						}
+					gm.loadRankingData(self, "overall", league, cup);
 
-						data.push(override);
-					}
-				}
+					$wiz.find(".button.patch").removeAttr("disabled")
+				});
 
-				self.sortOverrideData();
-				self.displayOverrideData(data);
+				$(".modal .button.patch").click(function(e){
+					let league = $select.find("option:selected").val();
+					let cup = $select.find("option:selected").attr("cup");
+					let patchMovesets = $wiz.find(".check.movesets").hasClass("on");
+					let patchWeights = $wiz.find(".check.weights").hasClass("on");
+					let patchEditorScores = $wiz.find(".check.editor-scores").hasClass("on");
+
+					self.patchOverrideValues(league, cup, patchMovesets, patchWeights, patchEditorScores);
+
+					closeModalWindow();
+				});
 			});
 
 			// Copy overrides to clipboard
