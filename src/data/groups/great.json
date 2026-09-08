@@ -2,7 +2,7 @@
     {
         "speciesId": "altaria",
         "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["SKY_ATTACK", "FLAMETHROWER"]
+        "chargedMoves": ["MOONBLAST", "FLAMETHROWER"]
     },
     {
         "speciesId": "annihilape_shadow",
@@ -54,6 +54,11 @@
         "speciesId": "cramorant",
         "fastMove": "PECK",
         "chargedMoves": ["DIVE", "FLY"]
+    },
+    {
+        "speciesId": "deoxys_defense",
+        "fastMove": "LOW_KICK",
+        "chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
     },
     {
         "speciesId": "dewgong",
@@ -244,10 +249,5 @@
         "speciesId": "togekiss",
         "fastMove": "PECK",
         "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
-    },
-    {
-        "speciesId": "deoxys_defense",
-        "fastMove": "LOW_KICK",
-        "chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
     }
 ]

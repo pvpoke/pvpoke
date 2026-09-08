@@ -2,7 +2,7 @@
     {
         "speciesId": "altaria_mega",
         "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["MOONBLAST", "SKY_ATTACK"]
+        "chargedMoves": ["MOONBLAST", "FLAMETHROWER"]
     },
     {
         "speciesId": "ampharos",
@@ -30,6 +30,11 @@
         "speciesId": "blastoise",
         "fastMove": "BITE",
         "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
+    },
+    {
+        "speciesId": "charizard_mega_x",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"]
     },
     {
         "speciesId": "chesnaught_mega",
@@ -253,10 +258,5 @@
         "speciesId": "zygarde_complete",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["CRUNCH", "BULLDOZE"]
-    },
-    {
-        "speciesId": "charizard_mega_x",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BLAST_BURN", "AIR_CUTTER"]
     }
 ]
