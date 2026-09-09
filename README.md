@@ -8,6 +8,17 @@ This started as a passion project that went from “I wonder what this would loo
 
 See the [Installation](https://github.com/pvpoke/pvpoke/wiki/Installation) section of the PvPoke Wiki.
 
+## Run with Docker
+
+An alternative to running pvpoke locally is using a docker container. That way you can ignore all the steps in the Installation-Part. Instead you have these steps:
+
+1. Clone this repository.
+2. If you don't have Docker installed, install it [here](https://runnable.com/docker/getting-started/).
+3. Go into this directory with the Dockerfile in it.
+4. Run this command:
+```docker build -t pvpoke . && docker run -p 80:80 pvpoke```
+5. Open this url in your browser: [localhost/pvpoke/src](http://localhost/pvpoke/src)
+
 ## Site Structure
 
 It was about 10 minutes into development when I realized this project would be great in Angular, but that was unfortunately 5 minutes past the point I was willing to backtrack. So allow me to show you the result.
