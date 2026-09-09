@@ -27,6 +27,17 @@ if(! isset($_POST['pokemon']) || ! isset($_POST['teams'])){
 	exit();
 }
 
+// Reject requests that did not originate from this site, since this endpoint
+// has no user accounts to authorize against and would otherwise accept
+// anonymous, cross-origin submissions that could poison the training data.
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '');
+if(parse_url($origin, PHP_URL_HOST) !== $_SERVER['HTTP_HOST']){
+	$response -> result = 0;
+	$response -> error = 'Unauthorized';
+	echo json_encode($response);
+	exit();
+}
+
 require_once '../../modules/config.php';
 
 $mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
