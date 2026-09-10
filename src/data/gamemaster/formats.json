@@ -63,6 +63,23 @@
 		]
 	},
 	{
+		"title": "LAIC 2027 Championship Series Cup",
+		"cup": "laic2027",
+		"cp": 1500,
+		"meta": "laic2027",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokemon must be at or below 1,500 CP to enter.",
+			"Allowed Types: All besides those explicitly prohibited.",
+			"Allowed Categories: Shadow Pokemon, Mega Evolution and Primal Reversion Pokemon. All Mega Evolution Pokémon are eligible even if they would otherwise be prohibited by a species, typing, or category.",
+			"Prohibited Types: Dark, Fairy, Fire, Steel.",
+			"Prohibited Categories: Legendary, Mythical, Ultra Beasts.",
+			"Prohibited Pokemon: Altaria, Annihilape, Araquanid, Chansey, Clodsire, Corsola (Galarian), Dusclops, Furret, Jellicent, Kingdra, Medicham, Oranguru, Snorlax, Wobbuffet, Mega Sableye."
+		]
+	},
+	{
 		"title": "Master Premier Cup",
 		"cup": "premier",
 		"cp": 10000,

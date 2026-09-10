@@ -75,6 +75,25 @@ $formats = array (
   ),
   5 => 
   array (
+    'title' => 'LAIC 2027 Championship Series Cup',
+    'cup' => 'laic2027',
+    'cp' => 1500,
+    'meta' => 'laic2027',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokemon must be at or below 1,500 CP to enter.',
+      1 => 'Allowed Types: All besides those explicitly prohibited.',
+      2 => 'Allowed Categories: Shadow Pokemon, Mega Evolution and Primal Reversion Pokemon. All Mega Evolution Pokémon are eligible even if they would otherwise be prohibited by a species, typing, or category.',
+      3 => 'Prohibited Types: Dark, Fairy, Fire, Steel.',
+      4 => 'Prohibited Categories: Legendary, Mythical, Ultra Beasts.',
+      5 => 'Prohibited Pokemon: Altaria, Annihilape, Araquanid, Chansey, Clodsire, Corsola (Galarian), Dusclops, Furret, Jellicent, Kingdra, Medicham, Oranguru, Snorlax, Wobbuffet, Mega Sableye.',
+    ),
+  ),
+  6 => 
+  array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
     'cp' => 10000,
@@ -89,7 +108,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -99,7 +118,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -109,7 +128,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  8 => 
+  9 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

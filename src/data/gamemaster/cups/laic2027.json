@@ -1,0 +1,29 @@
+{
+    "name": "laic2027",
+    "title": "LAIC 2027 Championship Series Cup",
+    "link": "https://laic.gg/competitor_info/pokemon_go/",
+    "include": [
+        {
+            "filterType": "type",
+            "values": ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"]
+        },
+        {
+            "filterType": "id",
+            "values": ["dragonite_mega", "gyarados_mega", "raichu_mega_x", "raichu_mega_y", "scizor_mega", "mawile_mega", "greninja_mega", "swampert_mega", "abomasnow_mega", "altaria_mega", "latias_mega", "chesnaught_mega", "starmie_mega", "victreebel_mega", "venusaur_mega", "steelix_mega", "salamence_mega", "gallade_mega", "blaziken_mega", "ampharos_mega", "slowbro_mega", "tyranitar_mega", "lucario_mega", "latios_mega", "charizard_mega_x", "charizard_mega_y", "medicham_mega", "skarmory_mega", "heracross_mega", "falinks_mega", "garchomp_mega", "pidgeot_mega", "blastoise_mega", "sceptile_mega", "delphox_mega", "glalie_mega", "gengar_mega", "aggron_mega", "lopunny_mega", "kangaskhan_mega", "aerodactyl_mega", "sharpedo_mega", "pinsir_mega", "beedrill_mega", "absol_mega", "alakazam_mega", "diancie_mega", "houndoom_mega", "audino_mega", "malamar_mega", "manectric_mega", "banette_mega", "gardevoir_mega"]
+        }
+    ],
+    "exclude": [
+        {
+            "filterType": "type",
+            "values": ["dark", "fairy", "fire", "steel"]
+        },
+        {
+            "filterType": "tag",
+            "values": ["legendary", "mythical", "ultrabeast"]
+        },
+        {
+            "filterType": "id",
+            "values": ["altaria", "annihilape", "araquanid", "chansey", "clodsire", "corsola_galarian", "dusclops", "furret", "jellicent", "kingdra", "medicham", "oranguru", "snorlax", "wobbuffet", "sableye_mega"]
+        }
+    ]
+}

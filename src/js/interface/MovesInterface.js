@@ -77,13 +77,13 @@ var InterfaceMaster = (function () {
 					var dpe = "";
 					var turns = "";
 
-					if(move.category == "fast"){
+					if(move?.energyGain > 0){
 						category = "Fast Attack"
 						energy = move.energyGain;
 						turns = move.cooldown / 500;
 						dpt = Math.floor( (move.power / turns) * 100) / 100;
 						ept = Math.floor( (energy / turns) * 100) / 100;
-					} else if(move.category == "charged"){
+					} else {
 						category = "Charged Attack";
 						energy = move.energy;
 						dpe = Math.floor( (damage / energy) * 100) / 100;

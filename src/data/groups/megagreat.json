@@ -76,11 +76,6 @@
         "chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
     },
     {
-        "speciesId": "dewgong",
-        "fastMove": "ICE_SHARD",
-        "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
-    },
-    {
         "speciesId": "diggersby",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
@@ -278,8 +273,13 @@
         "chargedMoves": ["GIGATON_HAMMER", "BULLDOZE"]
     },
     {
-        "speciesId": "togekiss",
-        "fastMove": "PECK",
-        "chargedMoves": ["PSYSHOCK", "AURA_SPHERE"]
+        "speciesId": "vigoroth",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
+    },
+    {
+        "speciesId": "rillaboom",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["DRUM_BEATING", "EARTH_POWER"]
     }
 ]
