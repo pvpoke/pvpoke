@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-09-10 15:59:43",
+    "timestamp": "2026-09-10 22:49:06",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -14078,12 +14078,13 @@
             "types": ["dark", "fire"],
             "fastMoves": ["FIRE_FANG", "SNARL", "INCINERATE"],
             "chargedMoves": ["CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "FOUL_PLAY", "TRAILBLAZE"],
+            "extraChargedMoves": ["DARK_PULSE_PLUS"],
             "defaultIVs": {
                 "cp500": [5, 6, 15, 13],
                 "cp1500": [14.5, 4, 11, 10],
                 "cp2500": [23.5, 7, 14, 14]
             },
-            "tags": ["shadoweligible", "mega"],
+            "tags": ["shadoweligible", "mega", "supermega"],
             "level25CP": 2416,
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
@@ -46695,6 +46696,18 @@
             "turns": 1
         },
         {
+            "moveId": "DARK_PULSE_PLUS",
+            "name": "Dark Pulse+",
+            "type": "dark",
+            "power": 60,
+            "energy": 40,
+            "energyGain": 0,
+            "cooldown": 500,
+            "archetype": "Spam/Bait",
+            "turns": 1,
+            "isMegaMove": true
+        },
+        {
             "moveId": "DAZZLING_GLEAM",
             "name": "Dazzling Gleam",
             "type": "fairy",
@@ -47105,7 +47118,7 @@
         },
         {
             "moveId": "FELL_STINGER_PLUS",
-            "name": "Fell Stinger",
+            "name": "Fell Stinger+",
             "abbreviation": "FeS",
             "type": "bug",
             "power": 40,

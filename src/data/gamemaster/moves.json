@@ -731,6 +731,18 @@
         "turns": 1
     },
     {
+        "moveId": "DARK_PULSE_PLUS",
+        "name": "Dark Pulse+",
+        "type": "dark",
+        "power": 60,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "Spam/Bait",
+        "turns": 1,
+        "isMegaMove": true
+    },
+    {
         "moveId": "DAZZLING_GLEAM",
         "name": "Dazzling Gleam",
         "type": "fairy",
@@ -1141,7 +1153,7 @@
     },
     {
         "moveId": "FELL_STINGER_PLUS",
-        "name": "Fell Stinger",
+        "name": "Fell Stinger+",
         "abbreviation": "FeS",
         "type": "bug",
         "power": 40,
