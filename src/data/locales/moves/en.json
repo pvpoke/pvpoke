@@ -2,9 +2,9 @@
   "_meta": {
     "schemaVersion": 1,
     "locale": "en",
-    "sourceCommit": "443761c05a5960c16eb5678ee2eebb8b1533409c",
-    "currentPvPokeMoveCount": 350,
-    "nativeCurrentMoveCount": 350,
+    "sourceCommit": "3038fa25c8c3a10d5d62ee0fdc0c5ee9b09b380d",
+    "currentPvPokeMoveCount": 351,
+    "nativeCurrentMoveCount": 351,
     "fallbackMoveIds": []
   },
   "moves": {
@@ -70,6 +70,7 @@
     "CRUSH_GRIP": "Crush Grip",
     "CUT": "Cut",
     "DARK_PULSE": "Dark Pulse",
+    "DARK_PULSE_PLUS": "Dark Pulse+",
     "DARK_VOID": "Dark Void",
     "DARKEST_LARIAT": "Darkest Lariat",
     "DAZZLING_GLEAM": "Dazzling Gleam",
@@ -106,7 +107,7 @@
     "FEATHER_DANCE": "Feather Dance",
     "FEINT_ATTACK": "Feint Attack",
     "FELL_STINGER": "Fell Stinger",
-    "FELL_STINGER_PLUS": "Fell Stinger",
+    "FELL_STINGER_PLUS": "Fell Stinger+",
     "FIERY_DANCE": "Fiery Dance",
     "FIRE_BLAST": "Fire Blast",
     "FIRE_FANG": "Fire Fang",

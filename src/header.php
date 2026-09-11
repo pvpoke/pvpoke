@@ -1,6 +1,6 @@
 <?php require_once 'modules/config.php';
 require_once __DIR__ . '/modules/moveLanguages.php';
-$SITE_VERSION = '1.40.1.3';
+$SITE_VERSION = '1.40.1.6';
 $_LANGUAGES = getMoveLanguages();
 
 // This prevents caching on local testing

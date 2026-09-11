@@ -13496,12 +13496,13 @@
         "types": ["dark", "fire"],
         "fastMoves": ["FIRE_FANG", "SNARL", "INCINERATE"],
         "chargedMoves": ["CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "FOUL_PLAY", "TRAILBLAZE"],
+        "extraChargedMoves": ["DARK_PULSE_PLUS"],
         "defaultIVs": {
             "cp500": [5, 6, 15, 13],
             "cp1500": [14.5, 4, 11, 10],
             "cp2500": [23.5, 7, 14, 14]
         },
-        "tags": ["shadoweligible", "mega"],
+        "tags": ["shadoweligible", "mega", "supermega"],
         "level25CP": 2416,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
