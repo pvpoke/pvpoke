@@ -270,6 +270,45 @@ header{
 				}
 			}
 		}
+
+		.menu-language-picker{
+			padding: 8px;
+			border-bottom: 1px solid rgba(255,255,255,0.2);
+
+			label{
+				display: block;
+				margin-bottom: 5px;
+				color: $color-off-white;
+				font-size: 12px;
+				font-weight: bold;
+			}
+
+			select{
+				width: 100%;
+				min-width: 210px;
+				padding: 7px 28px 7px 8px;
+				border: 1px solid $color-sky-blue;
+				border-radius: 4px;
+				background: $color-off-white;
+				color: $color-blue-dark;
+				cursor: pointer;
+				font-size: 14px;
+				font-weight: bold;
+
+				&:disabled{
+					cursor: wait;
+					opacity: 0.7;
+				}
+			}
+		}
+
+		.language-change-status{
+			min-height: 14px;
+			margin-top: 3px;
+			color: $color-sky-blue;
+			font-size: 11px;
+			white-space: normal;
+		}
 	}
 
 	.hamburger{
@@ -5569,11 +5608,26 @@ a.pokebattler{
 			.more-parent-menu .submenu{
 				padding-left: 0;
 				display: block;
-				max-height: 350px;
+				max-height: 450px;
 
 				a{
 					font-size: 18px;
 					padding-left: 38px;
+				}
+			}
+
+			.menu-language-picker{
+				padding: 10px 20px 10px 38px;
+
+				label{
+					font-size: 16px;
+				}
+
+				select{
+					min-width: 0;
+					max-width: 320px;
+					padding: 9px;
+					font-size: 16px;
 				}
 			}
 		}

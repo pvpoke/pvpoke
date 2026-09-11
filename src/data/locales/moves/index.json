@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "defaultLocale": "en",
+  "source": {
+    "repository": "https://github.com/WatWowMap/pogo-data-api.git",
+    "commit": "3038fa25c8c3a10d5d62ee0fdc0c5ee9b09b380d",
+    "commitDate": "2026-09-09T22:39:30+00:00",
+    "rawMoveRecords": 533
+  },
+  "currentPvPokeMoveCount": 351,
+  "locales": [
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "file": "de.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "file": "en.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 351,
+      "fallbackMoveIds": []
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "file": "es.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "es-mx",
+      "name": "Español (Latinoamérica)",
+      "file": "es-mx.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "file": "fr.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "hi",
+      "name": "हिन्दी",
+      "file": "hi.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "id",
+      "name": "Bahasa Indonesia",
+      "file": "id.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "it",
+      "name": "Italiano",
+      "file": "it.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "ja",
+      "name": "日本語",
+      "file": "ja.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "ko",
+      "name": "한국어",
+      "file": "ko.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "pt-br",
+      "name": "Português (Brasil)",
+      "file": "pt-br.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "ru",
+      "name": "Русский",
+      "file": "ru.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "th",
+      "name": "ไทย",
+      "file": "th.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "tr",
+      "name": "Türkçe",
+      "file": "tr.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    },
+    {
+      "code": "zh-tw",
+      "name": "繁體中文",
+      "file": "zh-tw.json",
+      "availableMoveCount": 537,
+      "nativeCurrentMoveCount": 350,
+      "fallbackMoveIds": [
+        "SPRINGTIDE_STORM"
+      ]
+    }
+  ]
+}

@@ -1101,7 +1101,7 @@ function TrainingAI(l, p, b){
 
 			// Don't overfarm with Power-Up Punch or Acid Spray
 			for(var i = 0; i < poke.chargedMoves.length; i++){
-				if((poke.chargedMoves[i].name == "Power-Up Punch")||(poke.chargedMoves[i].name == "Acid Spray")){
+				if((poke.chargedMoves[i].moveId == "POWER_UP_PUNCH")||(poke.chargedMoves[i].moveId == "ACID_SPRAY")){
 					overfarmChance = -1;
 				}
 			}
@@ -1222,7 +1222,7 @@ function TrainingAI(l, p, b){
 			if((i == 0)&&(attacker.hp / attacker.stats.hp <= .25)){
 				moveWeight += 8;
 
-				if(moves[i].name == "Acid Spray"){
+				if(moves[i].moveId == "ACID_SPRAY"){
 					moveWeight += 12;
 				}
 			}
@@ -1238,7 +1238,7 @@ function TrainingAI(l, p, b){
 			}
 
 			// Is this move lower damage and higher energy? Definitely the other one, then
-			if((i == 1)&&(moves[i].damage < moves[0].damage)&&(moves[i].energy >= moves[0].energy)&&(moves[i].name != "Acid Spray")){
+			if((i == 1)&&(moves[i].damage < moves[0].damage)&&(moves[i].energy >= moves[0].energy)&&(moves[i].moveId != "ACID_SPRAY")){
 				moveGuessOptions[0].weight += 20;
 			}
 			moveGuessOptions.push(new DecisionOption(i, moveWeight));

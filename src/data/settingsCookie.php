@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../modules/moveLanguages.php';
+
 /*
 * Given JSON data, write to the settings cookie
 */
@@ -12,6 +14,12 @@ if(! isset($_POST)){
 	echo json_encode($response);
 	
 	exit();
+}
+
+$supportedLanguages = array_keys(getMoveLanguages());
+
+if(! isset($_POST['language']) || ! in_array($_POST['language'], $supportedLanguages, true)){
+	$_POST['language'] = 'en';
 }
 
 $data = json_encode($_POST);
