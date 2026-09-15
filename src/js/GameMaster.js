@@ -560,6 +560,10 @@ var GameMaster = (function () {
 					defaultIVs["cp1500"] = [22, 4, 14, 15];
 					defaultIVs["cp2500"] = [38, 15, 15, 15];
 					break;
+
+				case "mimikyu":
+					defaultIVs["cp1500"] = [25, 4, 14, 15];
+					break;
 			}
 
 			return defaultIVs;
