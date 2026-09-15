@@ -28,6 +28,20 @@
             "${input:leagues}"
         ],
         "problemMatcher": []
+    },
+    {
+        "label": "Copy PvPoke Src for Deployment",
+        "type": "shell",
+        "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}/scripts/copy-for-deployment.ps1",
+                "${input:deploymentCommit}"
+            ],
+            "problemMatcher": []
     }
   ],
   "inputs": [
@@ -42,6 +56,12 @@
           "type": "promptString",
           "description": "Leagues (comma-separated)",
           "default": "1500,2500,10000"
+      },
+      {
+          "id": "deploymentCommit",
+          "type": "promptString",
+          "description": "Commit to compare against",
+          "default": "HEAD"
       }
   ]
 }

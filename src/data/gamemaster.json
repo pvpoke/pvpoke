@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-09-10 22:49:06",
+    "timestamp": "2026-09-15 15:25:58",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -459,6 +459,16 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokemon must be at or below 1, 500 CP to enter.", "Only Fighting-,  Psychic-,  and Dark-type Pokémon are eligible.", "The following Pokemon are not allowed: Gardevoir,  Zorua,  Zoroark."]
+        },
+        {
+            "title": "Retro Cup",
+            "cup": "retro",
+            "cp": 1500,
+            "meta": "retro",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokemon must be at or below 1, 500 CP to enter.", "Dark-,  Steel-,  and Fairy-type Pokémon are not eligible."]
         },
         {
             "title": "LAIC 2027 Championship Series Cup",
@@ -38951,7 +38961,7 @@
             "chargedMoves": ["SHADOW_SNEAK", "PLAY_ROUGH", "THUNDER"],
             "defaultIVs": {
                 "cp500": [8.5, 4, 12, 14],
-                "cp1500": [25, 5, 13, 15],
+                "cp1500": [25, 4, 14, 15],
                 "cp2500": [50, 13, 15, 15],
                 "cp2500l40": [40, 15, 15, 15]
             },
