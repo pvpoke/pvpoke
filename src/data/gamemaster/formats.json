@@ -63,6 +63,19 @@
 		]
 	},
 	{
+		"title": "Retro Cup",
+		"cup": "retro",
+		"cp": 1500,
+		"meta": "retro",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokemon must be at or below 1,500 CP to enter.",
+			"Dark-, Steel-, and Fairy-type Pokémon are not eligible."
+		]
+	},
+	{
 		"title": "LAIC 2027 Championship Series Cup",
 		"cup": "laic2027",
 		"cp": 1500,
