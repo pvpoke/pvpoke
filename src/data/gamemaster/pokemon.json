@@ -7979,7 +7979,6 @@
             "id": "FAMILY_STARYU",
             "parent": "staryu_shadow"
         },
-        "searchPriority": 3,
         "tags": ["shadow"]
     },
     {
@@ -21713,6 +21712,7 @@
         "types": ["fighting", "flying"],
         "fastMoves": ["QUICK_ATTACK", "WING_ATTACK", "GUST", "SAND_ATTACK"],
         "chargedMoves": ["BRAVE_BIRD", "CLOSE_COMBAT", "HEAT_WAVE", "FLY"],
+        "extraChargedMoves": ["BRAVE_BIRD_PLUS"],
         "eliteMoves": ["GUST"],
         "defaultIVs": {
             "cp500": [5, 4, 7, 9],
@@ -21721,7 +21721,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "level25CP": 1738,
         "tags": ["shadoweligible", "mega", "supermega"],
         "family": {
