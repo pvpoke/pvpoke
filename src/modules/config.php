@@ -6,6 +6,6 @@ $GOOGLE_AD_CLIENT = '';
 
 $DB_NAME = 'pvpoke_training';
 $DB_HOST = 'localhost';
-$DB_USER = 'root';
-$DB_PASS = '';
+$DB_USER = getenv('DB_USER') ?: 'root';
+$DB_PASS = getenv('DB_PASS') ?: '';
 ?>
