@@ -19,11 +19,13 @@ var InterfaceMaster = (function () {
 			var performerCSV = '';
 			var teamCSV = '';
 
+			battle.setCup("mega");
+
 
 			this.init = function(){
 
 				if(! get){
-					this.loadRankings("1500","all");
+					this.loadRankings("1500","mega");
 				} else{
 					this.loadGetData();
 				}

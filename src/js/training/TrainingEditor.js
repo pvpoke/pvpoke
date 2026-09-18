@@ -33,7 +33,7 @@ var InterfaceMaster = (function () {
 
 				// Load Great League movesets by default
 
-				gm.loadRankingData(self, "overall", 1500, "all");
+				gm.loadRankingData(self, "overall", 1500, "mega");
 
 				// Event handlers
 
