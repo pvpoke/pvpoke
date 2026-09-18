@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-09-15 15:25:58",
+    "timestamp": "2026-09-18 15:44:18",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -8571,7 +8571,6 @@
                 "id": "FAMILY_STARYU",
                 "parent": "staryu_shadow"
             },
-            "searchPriority": 3,
             "tags": ["shadow"]
         },
         {
@@ -17442,7 +17441,7 @@
                 "cp1500l40": [40, 15, 15, 15]
             },
             "tags": ["shadow"],
-            "searchPriority": 7,
+            "searchPriority": 8,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true
@@ -22305,6 +22304,7 @@
             "types": ["fighting", "flying"],
             "fastMoves": ["QUICK_ATTACK", "WING_ATTACK", "GUST", "SAND_ATTACK"],
             "chargedMoves": ["BRAVE_BIRD", "CLOSE_COMBAT", "HEAT_WAVE", "FLY"],
+            "extraChargedMoves": ["BRAVE_BIRD_PLUS"],
             "eliteMoves": ["GUST"],
             "defaultIVs": {
                 "cp500": [5, 4, 7, 9],
@@ -22313,7 +22313,7 @@
             },
             "buddyDistance": 1,
             "thirdMoveCost": 10000,
-            "released": false,
+            "released": true,
             "level25CP": 1738,
             "tags": ["shadoweligible", "mega", "supermega"],
             "family": {
@@ -39814,7 +39814,7 @@
                 "cp2500": [25.5, 4, 15, 14]
             },
             "tags": ["mythical"],
-            "searchPriority": 7,
+            "searchPriority": 10,
             "buddyDistance": 20,
             "thirdMoveCost": 100000,
             "released": true,
@@ -46351,6 +46351,22 @@
             "buffApplyChance": "1",
             "archetype": "Self-Debuff Nuke",
             "turns": 1
+        },
+        {
+            "moveId": "BRAVE_BIRD_PLUS",
+            "name": "Brave Bird+",
+            "abbreviation": "BrB+",
+            "type": "flying",
+            "power": 70,
+            "energy": 40,
+            "energyGain": 0,
+            "cooldown": 500,
+            "buffs": [0, -3],
+            "buffTarget": "self",
+            "buffApplyChance": "1",
+            "archetype": "Self-Debuff",
+            "turns": 1,
+            "isMegaMove": true
         },
         {
             "moveId": "BREAKING_SWIPE",

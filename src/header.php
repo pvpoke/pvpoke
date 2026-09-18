@@ -1,12 +1,13 @@
 <?php require_once 'modules/config.php';
-require_once __DIR__ . '/modules/moveLanguages.php';
-$SITE_VERSION = '1.40.1.9';
-$_LANGUAGES = getMoveLanguages();
+$SITE_VERSION = '1.40.1.11';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
     $SITE_VERSION = rand(1,1000) . '.' . rand(1,1000) . '.' . rand(1,1000);
 }
+
+require_once __DIR__ . '/modules/moveLanguages.php';
+$_LANGUAGES = getMoveLanguages();
 
 // Initialize settings object
 if(isset($_COOKIE['settings'])){

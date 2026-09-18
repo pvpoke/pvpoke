@@ -378,6 +378,22 @@
         "turns": 1
     },
     {
+        "moveId": "BRAVE_BIRD_PLUS",
+        "name": "Brave Bird+",
+        "abbreviation": "BrB+",
+        "type": "flying",
+        "power": 70,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -3],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Self-Debuff",
+        "turns": 1,
+        "isMegaMove": true
+    },
+    {
         "moveId": "BREAKING_SWIPE",
         "name": "Breaking Swipe",
         "abbreviation": "BkS",
