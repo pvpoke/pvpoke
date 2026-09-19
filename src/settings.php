@@ -15,6 +15,15 @@ require_once 'header.php';
 	<p>Adjust your site preferences below. These will be saved in a cookie to your device.</p>
 
 	<div class="settings">
+		<h3>Move Language</h3>
+		<p>Select the language used for Pokemon GO move names across the site. Other interface text remains in English.</p>
+		<div>
+			<select class="input" id="language-select">
+				<?php foreach($_LANGUAGES as $languageCode => $languageName): ?>
+					<option value="<?php echo $languageCode; ?>" <?php if($_SETTINGS->language == $languageCode) : ?>selected<?php endif; ?>><?php echo htmlspecialchars($languageName); ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
 
 		<h3>Site Theme</h3>
 		<?php
