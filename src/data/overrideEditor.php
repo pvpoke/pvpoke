@@ -44,10 +44,12 @@ require_once '../header.php';
 
 	<h2 class="loading">Loading data...</h2>
 	<div class="rankings-container clear"></div>
+
+	<div class="button save-overrides">Save Overrides</div>
 </div>
 
 <textarea class="import" style="width:100%; height: 150px; padding: 10px;"></textarea>
-<div class="button copy export-json">Copy</div>
+<div class="button copy export-json" style="font-size:14px; max-width:100px; margin-left: 0;">Copy</div>
 
 <?php require_once '../modules/search-string-help.php'; ?>
 

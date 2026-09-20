@@ -11,11 +11,8 @@ if( (! isset($_POST['data'])) || (! isset($_POST['league'])) || (! isset($_POST[
 	exit("Data does not have valid keys.");
 }
 
-// If only there was some universal source for this info, like some kind of master file??
-// But nah let's scratch our head for 20 minutes when we can't figure out why the write function doesn't work after we change a name
-
 $leagues = [500,1500,2500,10000];
-$categories = ["closers","attackers","defenders","leads","switches","chargers","consistency","overall","beaminess"];
+$categories = ["closers","attackers","defenders","leads","switches","chargers","consistency","overall","overrides"];
 
 if( (! in_array($_POST['league'], $leagues)) || (! in_array($_POST['category'], $categories)) ){
 	exit("League or category is not valid");
@@ -28,7 +25,14 @@ if($json === null){
 }
 
 $cup = basename($_POST['cup']);
-$filepath = 'rankings/' . $cup . '/' . $_POST['category'] . '/rankings-' . $_POST['league'] . '.json';
+$filepath = '';
+
+if($_POST['category'] == 'overrides'){
+	$filepath = 'overrides/' . $cup . '/' . $_POST['league'] . '.json';
+} else{
+	$filepath = 'rankings/' . $cup . '/' . $_POST['category'] . '/rankings-' . $_POST['league'] . '.json';
+}
+
 
 if(file_put_contents($filepath, $_POST['data']) !== false){
 	echo '{ "status": "Success" }';

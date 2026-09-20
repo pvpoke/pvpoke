@@ -491,6 +491,37 @@ var InterfaceMaster = (function () {
 				});
 			});
 
+			// Save overrides to JSON file
+
+			$(".button.save-overrides").click(function(e){
+				var json = JSON.stringify(data);
+				var league = battle.getCP();
+				var cup = battle.getCup();
+
+				var filepath = "/overrides/"+cup.name+"/"+league+".json"
+
+				$.ajax({
+
+					url : 'write.php',
+					type : 'POST',
+					data : {
+						'data' : json,
+						'league' : league,
+						'category' : 'overrides',
+						'cup': cup.name
+					},
+					dataType:'json',
+					success : function(data) {
+						modalWindow("Overrides Saved", $("<div>Moveset overrides saved to <b>" + filepath + "</b></div>"));
+					},
+					error : function(request,error)
+					{
+						console.log("Request: "+JSON.stringify(request));
+						console.log(error);
+					}
+				});
+			});
+
 			// Copy overrides to clipboard
 
 			$(".export-json").click(function(e){
