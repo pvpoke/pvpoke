@@ -3,7 +3,7 @@
 function getMoveLanguages(){
 	$indexPath = __DIR__ . '/../data/locales/moves/index.json';
 	$index = [];
-	$languages = [];
+	$languages = ['en' => 'English'];
 
 	if(is_readable($indexPath)){
 		$decodedIndex = json_decode(file_get_contents($indexPath), true);
@@ -24,7 +24,7 @@ function getMoveLanguages(){
 		}
 	}
 
-	return count($languages) > 0 ? $languages : ['en' => 'English'];
+	return $languages;
 }
 
 ?>

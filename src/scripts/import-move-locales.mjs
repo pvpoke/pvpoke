@@ -6,7 +6,6 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const localeNames = {
-    en: "English",
     es: "Español",
     "es-mx": "Español (Latinoamérica)"
 };
@@ -213,14 +212,6 @@ for (const [locale, localeName] of Object.entries(localeNames)) {
             moves[move.moveId] = move.name;
             fallbackMoveIds.push(move.moveId);
         }
-    }
-
-    // Keep existing English spelling and punctuation stable throughout PvPoke.
-    if (locale === "en") {
-        for (const move of gameMaster.moves) {
-            moves[move.moveId] = move.name;
-        }
-        fallbackMoveIds.length = 0;
     }
 
     // Runtime locale files contain only moves used by the current PvPoke Game Master.

@@ -21,7 +21,7 @@ const gameMaster = readJson(join(projectRoot, "src/data/gamemaster.json"));
 const index = readJson(join(localeDirectory, "index.json"));
 const currentMoveIds = new Set(gameMaster.moves.map((move) => move.moveId));
 const localeCodes = new Set();
-const expectedLocaleCodes = new Set(["en", "es", "es-mx"]);
+const expectedLocaleCodes = new Set(["es", "es-mx"]);
 
 assert(index.schemaVersion === 1, "Unsupported move locale index schema");
 assert(index.defaultLocale === "en", "English must remain the safe default locale");
@@ -60,9 +60,6 @@ for (const locale of index.locales) {
             `${locale.code} is missing ${move.moveId}`
         );
 
-        if (locale.code === "en") {
-            assert(document.moves[move.moveId] === move.name, `English name changed for ${move.moveId}`);
-        }
     }
 }
 
