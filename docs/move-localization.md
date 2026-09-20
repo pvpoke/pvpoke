@@ -3,6 +3,10 @@
 PvPoke serves move names from static, versioned JSON files in
 `src/data/locales/moves`. The browser never calls an external API.
 
+The initial release is intentionally limited to English, Spanish, and Latin
+American Spanish. English continues to use the names built into the PvPoke Game
+Master; the generated locale files provide `es` and `es-mx` as opt-in choices.
+
 Users can change move language from the main navigation menu or from the
 Settings page. The menu writes only the `language` property through
 `data/languageCookie.php`, preserving all other saved preferences, and reloads
@@ -29,6 +33,8 @@ node src/scripts/validate-move-locales.mjs
 ```
 
 Commit the resulting JSON changes together. No npm packages are required.
+The generated files are minified and contain only move IDs present in PvPoke's
+current Game Master.
 
 The importer:
 
@@ -36,9 +42,8 @@ The importer:
 2. normalizes fast-move IDs and documented PvPoke aliases;
 3. resolves client text references and rejects unsafe/unresolved placeholders;
 4. derives Hidden Power type variants and Adventure Effect `+` variants;
-5. includes source moves that PvPoke does not use yet, so announced or future
-   moves can already be available locally;
-6. guarantees a name for every move in PvPoke's current Game Master, with an
+5. excludes source moves that PvPoke does not currently use;
+6. guarantees a name for every current PvPoke move, with an
    explicit English fallback list in the JSON metadata; and
 7. exits with an error if the expected source structure is missing or invalid.
 
@@ -48,3 +53,12 @@ changes, review the recorded fallbacks, and commit the new snapshot.
 
 Pokemon names and text are owned by their respective rights holders. Review
 upstream source terms before redistributing generated assets.
+
+## Follow-up scope
+
+- Add more move-name locales after the initial Spanish rollout establishes a
+  sustainable update process.
+- Add localized Pokemon names and language-aware search aliases as a separate
+  milestone.
+- Consider interface translation only after establishing a community
+  translation and review process.

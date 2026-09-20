@@ -6,21 +6,9 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const localeNames = {
-    de: "Deutsch",
     en: "English",
     es: "Español",
-    "es-mx": "Español (Latinoamérica)",
-    fr: "Français",
-    hi: "हिन्दी",
-    id: "Bahasa Indonesia",
-    it: "Italiano",
-    ja: "日本語",
-    ko: "한국어",
-    "pt-br": "Português (Brasil)",
-    ru: "Русский",
-    th: "ไทย",
-    tr: "Türkçe",
-    "zh-tw": "繁體中文"
+    "es-mx": "Español (Latinoamérica)"
 };
 
 // PvPoke and the Pokemon GO Game Master occasionally use different semantic IDs
@@ -235,6 +223,11 @@ for (const [locale, localeName] of Object.entries(localeNames)) {
         fallbackMoveIds.length = 0;
     }
 
+    // Runtime locale files contain only moves used by the current PvPoke Game Master.
+    const currentMoves = sortObject(Object.fromEntries(
+        gameMaster.moves.map((move) => [move.moveId, moves[move.moveId]])
+    ));
+
     const localeDocument = {
         _meta: {
             schemaVersion: 1,
@@ -244,7 +237,7 @@ for (const [locale, localeName] of Object.entries(localeNames)) {
             nativeCurrentMoveCount: currentMoveIds.size - fallbackMoveIds.length,
             fallbackMoveIds
         },
-        moves: sortObject(moves)
+        moves: currentMoves
     };
 
     localeDocuments.set(locale, localeDocument);
@@ -253,7 +246,7 @@ for (const [locale, localeName] of Object.entries(localeNames)) {
         code: locale,
         name: localeName,
         file: `${locale}.json`,
-        availableMoveCount: Object.keys(moves).length,
+        availableMoveCount: Object.keys(currentMoves).length,
         nativeCurrentMoveCount: currentMoveIds.size - fallbackMoveIds.length,
         fallbackMoveIds
     });
@@ -265,14 +258,14 @@ mkdirSync(outputDirectory, { recursive: true });
 for (const [locale, localeDocument] of localeDocuments) {
     writeFileSync(
         join(outputDirectory, `${locale}.json`),
-        `${JSON.stringify(localeDocument, null, 2)}\n`,
+        `${JSON.stringify(localeDocument)}\n`,
         "utf8"
     );
 }
 
 writeFileSync(
     join(outputDirectory, "index.json"),
-    `${JSON.stringify(outputIndex, null, 2)}\n`,
+    `${JSON.stringify(outputIndex)}\n`,
     "utf8"
 );
 
