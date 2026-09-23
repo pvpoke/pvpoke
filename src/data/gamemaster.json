@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-09-18 15:44:18",
+    "timestamp": "2026-09-23 03:24:34",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -53,37 +53,9 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["dragonite_mega", "garchomp_mega", "groudon_primal", "gyarados_mega", "heracross_mega", "kyogre_primal", "latias_mega", "latios_mega", "metagross_mega", "rayquaza_mega", "salamence_mega", "tyranitar_mega"]
+                    "values": ["rayquaza_mega", "groudon_primal", "kyogre_primal", "metagross_mega", "heracross_mega", "delphox_mega", "dragonite_mega", "tyranitar_mega", "salamence_mega", "garchomp_mega", "mewtwo_mega_y", "mewtwo_mega_x", "gyarados_mega", "greninja_mega", "chesnaught_mega"]
                 }
-            ],
-            "restrictedPicks": 1,
-            "restrictedPokemon": ["eternatus", "palkia_origin", "swampert_mega", "zacian_crowned_sword", "zamazenta_crowned_shield"],
-            "tierRules": {
-                "max": 11,
-                "floor": 0,
-                "tiers": [
-                    {
-                        "points": 5,
-                        "pokemon": ["eternatus", "palkia_origin", "swampert_mega", "zacian_crowned_sword", "zamazenta_crowned_shield"]
-                    },
-                    {
-                        "points": 4,
-                        "pokemon": ["aggron_mega", "charizard_mega_y", "gallade_mega", "gardevoir_mega", "kyurem_black", "kyurem_white", "scizor_mega", "zygarde_complete"]
-                    },
-                    {
-                        "points": 3,
-                        "pokemon": ["blastoise_mega", "blaziken_mega", "dialga_origin", "gengar_mega", "groudon", "kyogre", "landorus_therian", "lucario_mega", "lunala", "marshadow", "meloetta_aria", "metagross", "steelix_mega", "xerneas", "yveltal"]
-                    },
-                    {
-                        "points": 2,
-                        "pokemon": ["dialga", "florges", "giratina_origin", "ho_oh", "keldeo_ordinary", "keldeo_resolute", "lugia", "mewtwo", "necrozma_dawn_wings", "necrozma_dusk_mane", "palkia", "primarina", "reshiram", "rhyperior", "solgaleo", "tyranitar", "zekrom"]
-                    },
-                    {
-                        "points": 1,
-                        "pokemon": ["charizard_mega_x", "garchomp", "giratina_altered", "gyarados", "heatran", "kangaskhan_mega", "kyurem", "melmetal", "moltres", "moltres_galarian", "slowbro_mega", "tapu_lele", "urshifu_rapid_strike", "urshifu_single_strike", "volcanion", "zacian_hero", "zarude"]
-                    }
-                ]
-            }
+            ]
         },
         {
             "name": "catch",
@@ -97,6 +69,34 @@
                 {
                     "filterType": "tag",
                     "values": ["mega"]
+                }
+            ]
+        },
+        {
+            "name": "cauldron",
+            "title": "Cauldron Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["bug", "dark", "fairy", "ghost", "poison"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["blaziken", "blaziken_mega", "blaziken_shadow", "camerupt", "camerupt_mega", "camerupt_shadow", "charizard", "charizard_mega_x", "charizard_mega_y", "charizard_shadow", "delphox", "delphox_shadow", "greedent", "ninetales", "ninetales_shadow", "rapidash", "rapidash_shadow", "reshiram", "reshiram_shadow", "samurott", "samurott_shadow", "seaking", "sandslash", "sandslash_shadow", "talonflame", "talonflame_shadow", "turtonator", "typhlosion", "typhlosion_shadow", "ursaluna", "ursaluna_shadow"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "type",
+                    "values": []
+                },
+                {
+                    "filterType": "move",
+                    "values": []
+                },
+                {
+                    "filterType": "id",
+                    "values": ["crustle", "forretress", "greninja_mega", "guzzlord", "kingambit", "mawile_mega", "mimikyu", "nidoqueen", "tentacruel", "tinkaton"]
                 }
             ]
         },
@@ -166,6 +166,19 @@
             ],
             "partySize": 3,
             "levelCap": 40
+        },
+        {
+            "name": "colormega",
+            "title": "Mega Color Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["fire", "water", "grass", "electric"]
+                }
+            ],
+            "exclude": [],
+            "partySize": 3,
+            "presetOnly": true
         },
         {
             "name": "copadiluvio",
@@ -258,6 +271,34 @@
             ],
             "partySize": 3,
             "presetOnly": true
+        },
+        {
+            "name": "gymbreakers",
+            "title": "Gymbreakers Invitational Season 7",
+            "include": [
+                {
+                    "filterType": "type",
+                    "name": "Type",
+                    "values": ["dark", "fairy", "flying", "ice", "normal", "water"]
+                },
+                {
+                    "filterType": "id",
+                    "name": "Species",
+                    "values": ["rillaboom", "clodsire", "dusclops", "swalot"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "name": "Tag",
+                    "values": ["shadow", "mega"]
+                },
+                {
+                    "filterType": "id",
+                    "name": "Species",
+                    "values": ["empoleon", "corviknight", "tinkaton", "tinkatuff", "mawile", "mimikyu", "cramorant", "carbink", "morpeko_full_belly"]
+                }
+            ]
         },
         {
             "name": "laic2027",
@@ -360,6 +401,34 @@
             "presetOnly": true
         },
         {
+            "name": "spectral",
+            "title": "Spectral Cup",
+            "include": [
+                {
+                    "filterType": "type",
+                    "values": ["bug", "ghost", "ice", "poison", "psychic"]
+                },
+                {
+                    "filterType": "id",
+                    "values": []
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "values": ["shadow", "mega"]
+                },
+                {
+                    "filterType": "type",
+                    "values": ["dark", "normal", "rock", "steel"]
+                },
+                {
+                    "filterType": "id",
+                    "values": ["annihilape", "araquanid", "armarouge", "clodsire", "corsola_galarian", "dusclops", "dusknoir", "frillish", "golett", "golurk", "jellicent", "lapras", "marowak_alolan", "mimikyu", "sealeo", "spidops", "toxapex", "toxtricity", "typhlosion_hisuian", "walrein"]
+                }
+            ]
+        },
+        {
             "name": "tsuki",
             "title": "Battle Frontier (Tsuki Cup)",
             "include": [
@@ -451,16 +520,6 @@
             "rules": ["No CP limit.", "Mega Evolutions are eligible."]
         },
         {
-            "title": "Willpower Cup",
-            "cup": "willpower",
-            "cp": 1500,
-            "meta": "willpower",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokemon must be at or below 1, 500 CP to enter.", "Only Fighting-,  Psychic-,  and Dark-type Pokémon are eligible.", "The following Pokemon are not allowed: Gardevoir,  Zorua,  Zoroark."]
-        },
-        {
             "title": "Retro Cup",
             "cup": "retro",
             "cp": 1500,
@@ -479,6 +538,42 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokemon must be at or below 1, 500 CP to enter.", "Allowed Types: All besides those explicitly prohibited.", "Allowed Categories: Shadow Pokemon,  Mega Evolution and Primal Reversion Pokemon. All Mega Evolution Pokémon are eligible even if they would otherwise be prohibited by a species,  typing,  or category.", "Prohibited Types: Dark,  Fairy,  Fire,  Steel.", "Prohibited Categories: Legendary,  Mythical,  Ultra Beasts.", "Prohibited Pokemon: Altaria,  Annihilape,  Araquanid,  Chansey,  Clodsire,  Corsola (Galarian),  Dusclops,  Furret,  Jellicent,  Kingdra,  Medicham,  Oranguru,  Snorlax,  Wobbuffet,  Mega Sableye."]
+        },
+        {
+            "title": "Battle Frontier (Spectral)",
+            "cup": "spectral",
+            "cp": 1500,
+            "meta": "spectral",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Battle Frontier (Cauldron)",
+            "cup": "cauldron",
+            "cp": 2500,
+            "meta": "cauldron",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Battle Frontier (Master)",
+            "cup": "battlefrontiermaster",
+            "cp": 10000,
+            "meta": "battlefrontiermaster",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Gymbreakers Invitational Season 7",
+            "cup": "gymbreakers",
+            "cp": 1500,
+            "meta": "gymbreakers",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
         },
         {
             "title": "Master Premier Cup",

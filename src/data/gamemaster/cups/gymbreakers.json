@@ -1,0 +1,28 @@
+{
+    "name": "gymbreakers",
+    "title": "Gymbreakers Invitational Season 7",
+    "include": [
+        {
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "fairy", "flying", "ice", "normal", "water"]
+        },
+        {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["rillaboom", "clodsire", "dusclops", "swalot"]
+        }
+    ],
+    "exclude": [
+        {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["shadow", "mega"]
+        },
+        {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["empoleon", "corviknight", "tinkaton", "tinkatuff", "mawile", "mimikyu", "cramorant", "carbink", "morpeko_full_belly"]
+        }
+    ]
+}

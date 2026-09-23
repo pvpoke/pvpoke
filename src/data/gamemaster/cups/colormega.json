@@ -1,0 +1,11 @@
+{
+    "name": "colormega",
+    "title": "Mega Color Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["fire", "water", "grass", "electric"]
+    }],
+    "exclude": [],
+	"partySize": 3,
+	"presetOnly": true
+}

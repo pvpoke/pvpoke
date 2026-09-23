@@ -1,0 +1,21 @@
+{
+	"name": "cauldron",
+	"title": "Cauldron Cup",
+	"include": [{
+		"filterType": "type",
+		"values": ["bug","dark","fairy","ghost","poison"]
+	}, {
+		"filterType": "id",
+		"values": ["blaziken","blaziken_mega","blaziken_shadow","camerupt","camerupt_mega","camerupt_shadow","charizard","charizard_mega_x","charizard_mega_y","charizard_shadow","delphox","delphox_shadow","greedent","ninetales","ninetales_shadow","rapidash","rapidash_shadow","reshiram","reshiram_shadow","samurott","samurott_shadow","seaking","sandslash","sandslash_shadow","talonflame","talonflame_shadow","turtonator","typhlosion","typhlosion_shadow","ursaluna","ursaluna_shadow"]
+	}],
+	"exclude": [{
+		"filterType": "type",
+		"values": []
+	}, {
+		"filterType": "move",
+		"values": []
+	}, {
+		"filterType": "id",
+		"values": ["crustle","forretress","greninja_mega","guzzlord","kingambit","mawile_mega","mimikyu","nidoqueen","tentacruel","tinkaton"]
+	}]
+}

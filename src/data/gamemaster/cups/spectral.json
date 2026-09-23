@@ -1,0 +1,21 @@
+{
+    "name": "spectral",
+    "title": "Spectral Cup",
+	"include": [{
+        "filterType": "type",
+        "values": ["bug","ghost","ice","poison","psychic"]
+    },{
+        "filterType": "id",
+        "values": []
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["shadow","mega"]
+    }, {
+        "filterType": "type",
+        "values": ["dark","normal","rock","steel"]
+    }, {
+        "filterType": "id",
+        "values": ["annihilape","araquanid","armarouge","clodsire","corsola_galarian","dusclops","dusknoir","frillish","golett","golurk","jellicent","lapras","marowak_alolan","mimikyu","sealeo","spidops","toxapex","toxtricity","typhlosion_hisuian","walrein"]
+    }]
+}

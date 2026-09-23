@@ -49,20 +49,6 @@
 		]
 	},
 	{
-		"title": "Willpower Cup",
-		"cup": "willpower",
-		"cp": 1500,
-		"meta": "willpower",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokemon must be at or below 1,500 CP to enter.",
-			"Only Fighting-, Psychic-, and Dark-type Pokémon are eligible.",
-			"The following Pokemon are not allowed: Gardevoir, Zorua, Zoroark."
-		]
-	},
-	{
 		"title": "Retro Cup",
 		"cup": "retro",
 		"cp": 1500,
@@ -91,6 +77,42 @@
 			"Prohibited Categories: Legendary, Mythical, Ultra Beasts.",
 			"Prohibited Pokemon: Altaria, Annihilape, Araquanid, Chansey, Clodsire, Corsola (Galarian), Dusclops, Furret, Jellicent, Kingdra, Medicham, Oranguru, Snorlax, Wobbuffet, Mega Sableye."
 		]
+	},
+	{
+		"title": "Battle Frontier (Spectral)",
+		"cup": "spectral",
+		"cp": 1500,
+		"meta": "spectral",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Cauldron)",
+		"cup": "cauldron",
+		"cp": 2500,
+		"meta": "cauldron",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Master)",
+		"cup": "battlefrontiermaster",
+		"cp": 10000,
+		"meta": "battlefrontiermaster",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Gymbreakers Invitational Season 7",
+		"cup": "gymbreakers",
+		"cp": 1500,
+		"meta": "gymbreakers",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
 	},
 	{
 		"title": "Master Premier Cup",
