@@ -6,6 +6,9 @@ if (strpos($WEB_ROOT, 'src') !== false) {
     $SITE_VERSION = rand(1,1000) . '.' . rand(1,1000) . '.' . rand(1,1000);
 }
 
+require_once __DIR__ . '/modules/moveLanguages.php';
+$_LANGUAGES = getMoveLanguages();
+
 // Initialize settings object
 if(isset($_COOKIE['settings'])){
 	$_SETTINGS = json_decode($_COOKIE['settings']);
@@ -59,6 +62,10 @@ if(isset($_COOKIE['settings'])){
 	if(! isset($_SETTINGS->theme)){
 		$_SETTINGS->theme = 'default';
 	}
+
+	if(! isset($_SETTINGS->language) || ! array_key_exists($_SETTINGS->language, $_LANGUAGES)){
+		$_SETTINGS->language = 'en';
+	}
 } else{
 	$_SETTINGS = (object) [
 		'defaultIVs' => "gamemaster",
@@ -71,7 +78,8 @@ if(isset($_COOKIE['settings'])){
 		'rankingDetails' => 'one-page',
 		'hardMovesetLinks' => 0,
 		'colorblindMode' => 0,
-		'performanceMode' => 0
+		'performanceMode' => 0,
+		'language' => 'en'
 	];
 }
 
@@ -85,7 +93,7 @@ if(! isset($_COOKIE['migrate'])){
 
 ?>
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -153,6 +161,7 @@ if(! isset($OG_IMAGE)){
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/MoveLocalization.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/RSSReader.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once('modules/analytics.php'); ?>
@@ -163,6 +172,7 @@ if(! isset($OG_IMAGE)){
 	var host = "<?php echo $WEB_HOST; ?>";
 	var webRoot = "<?php echo $WEB_ROOT; ?>";
 	var siteVersion = "<?php echo $SITE_VERSION; ?>";
+	var moveLocales = <?php echo json_encode(array_keys($_LANGUAGES)); ?>;
 
 	<?php if(isset($_COOKIE['settings'])) : ?>
 		var settings = {
@@ -177,6 +187,7 @@ if(! isset($OG_IMAGE)){
 			hardMovesetLinks: <?php echo intval($_SETTINGS->hardMovesetLinks); ?>,
 			colorblindMode: <?php echo intval($_SETTINGS->colorblindMode); ?>,
 			performanceMode: <?php echo intval($_SETTINGS->performanceMode); ?>,
+			language: "<?php echo $_SETTINGS->language; ?>",
 			theme: "<?php echo htmlspecialchars($_SETTINGS->theme); ?>"
 		};
 	<?php else: ?>
@@ -193,6 +204,7 @@ if(! isset($OG_IMAGE)){
 			hardMovesetLinks: 0,
 			colorblindMode: 0,
 			performanceMode: 0,
+			language: "en",
 			theme: "default"
 		};
 
@@ -295,6 +307,15 @@ if(! isset($OG_IMAGE)){
 						</a>
 						<div class="submenu">
 							<div class="submenu-wrap">
+								<div class="menu-language-picker">
+									<label for="menu-language-select">Move language</label>
+									<select id="menu-language-select" aria-label="Move language">
+										<?php foreach($_LANGUAGES as $languageCode => $languageName): ?>
+											<option value="<?php echo $languageCode; ?>" <?php if($_SETTINGS->language == $languageCode) : ?>selected<?php endif; ?>><?php echo htmlspecialchars($languageName); ?></option>
+										<?php endforeach; ?>
+									</select>
+									<div class="language-change-status" aria-live="polite"></div>
+								</div>
 								<a href="<?php echo $WEB_ROOT; ?>attack-cmp-chart/">CMP Chart</a>
 								<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
 								<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
