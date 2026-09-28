@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-09-26 21:18:52",
+    "timestamp": "2026-09-28 01:57:22",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -429,6 +429,28 @@
             ]
         },
         {
+            "name": "trail",
+            "title": "Trail Cup",
+            "include": [
+                {
+                    "filterType": "id",
+                    "name": "Species",
+                    "values": ["aerodactyl", "aerodactyl_shadow", "aggron", "aggron_shadow", "aipom", "aipom_shadow", "annihilape", "annihilape_shadow", "araquanid", "araquanid_shadow", "arbok", "arbok_shadow", "arcanine", "arcanine_shadow", "ariados", "aromatisse", "audino", "avalugg_hisuian", "barraskewda", "beedrill", "beedrill_shadow", "bewear", "bewear_shadow", "blastoise", "blastoise_shadow", "blaziken", "blaziken_shadow", "bombirdier", "bruxish", "centiskorch", "cetoddle", "charizard", "charizard_shadow", "chesnaught", "chesnaught_shadow", "clefable", "cofagrigus", "cofagrigus_shadow", "comfey", "corviknight", "corviknight_shadow", "cradily", "cradily_shadow", "cresselia", "cresselia_shadow", "crobat", "crobat_shadow", "croconaw", "croconaw_shadow", "dachsbun", "delphox", "delphox_shadow", "deoxys_defense", "dodrio", "doublade", "drapion", "drapion_shadow", "drilbur_shadow", "dubwool", "dudunsparce", "dunsparce", "electabuzz_shadow", "electivire", "electivire_shadow", "emboar", "emboar_shadow", "excadrill", "excadrill_shadow", "farfetchd", "feraligatr", "feraligatr_shadow", "flamigo", "florges", "flygon", "flygon_shadow", "forretress", "forretress_shadow", "furfrou", "gallade", "gallade_shadow", "galvantula", "galvantula_shadow", "garchomp", "garchomp_shadow", "gastrodon", "genesect", "gengar", "gengar_shadow", "girafarig", "girafarig_shadow", "giratina_altered_shadow", "gliscor", "gliscor_shadow", "golbat", "golbat_shadow", "grafaiai", "greninja", "greninja_shadow", "grimmsnarl", "gurdurr", "gurdurr_shadow", "gyarados", "gyarados_shadow", "haunter", "haunter_shadow", "hawlucha", "heatran_shadow", "hippopotas", "hippopotas_shadow", "hippowdon", "hippowdon_shadow", "hitmonlee", "hitmonlee_shadow", "honchkrow", "honchkrow_shadow", "houndoom", "houndoom_shadow", "houndstone", "hydreigon", "hydreigon_shadow", "illumise", "incineroar", "jirachi", "kangaskhan", "kingambit", "klefki", "lickilicky", "lickitung", "lileep", "lileep_shadow", "lokix", "lopunny", "lucario", "lugia", "lugia_shadow", "magnemite", "magnemite_shadow", "magneton", "magneton_shadow", "magnezone", "magnezone_shadow", "mamoswine", "mamoswine_shadow", "mandibuzz", "maushold", "mawile", "mawile_shadow", "melmetal", "mienfoo", "mienshao", "mightyena", "mightyena_shadow", "miltank", "misdreavus", "misdreavus_shadow", "mismagius", "mismagius_shadow", "morgrem", "muk", "muk_alolan", "muk_alolan_shadow", "muk_shadow", "munchlax", "nidoking", "nidoking_shadow", "nidoqueen", "nidoqueen_shadow", "nidorina", "nidorina_shadow", "oinkologne", "oinkologne_female", "orthworm", "overqwil", "pawmot", "pawniard", "perrserker", "persian", "persian_alolan", "persian_shadow", "pidgeot", "pidgeot_shadow", "piloswine", "piloswine_shadow", "primarina", "probopass", "probopass_shadow", "quaquaval", "qwilfish_hisuian", "raichu", "raichu_alolan", "rapidash", "rapidash_shadow", "rillaboom", "salamence", "salamence_shadow", "salazzle", "samurott_hisuian", "sawk", "sawk_shadow", "shiinotic", "shiinotic_shadow", "skarmory", "skarmory_shadow", "sliggoo", "slurpuff", "snorlax", "snorlax_shadow", "spidops", "swalot", "sylveon", "tapu_fini", "tauros_aqua", "teddiursa", "teddiursa_shadow", "throh", "throh_shadow", "togetic", "toxapex", "toxtricity", "tyranitar_shadow", "umbreon", "ursaluna", "ursaluna_shadow", "venomoth", "venomoth_shadow", "victreebel", "victreebel_shadow", "vigoroth", "vigoroth_shadow", "volbeat", "wailmer", "wailmer_shadow", "wartortle", "wartortle_shadow", "weezing", "weezing_shadow", "whimsicott", "wobbuffet", "wobbuffet_shadow", "wormadam_sandy", "wormadam_trash", "zapdos", "zapdos_galarian", "zapdos_shadow", "zebstrika", "zebstrika_shadow", "zeraora", "zoroark_hisuian", "zweilous", "zweilous_shadow"]
+                }
+            ],
+            "exclude": [
+                {
+                    "filterType": "tag",
+                    "name": "Tag",
+                    "values": ["mega"]
+                }
+            ],
+            "overrides": [],
+            "league": 1500,
+            "useDefaultMovesets": 1,
+            "link": "https://devon.gg/"
+        },
+        {
             "name": "tsuki",
             "title": "Battle Frontier (Tsuki Cup)",
             "include": [
@@ -572,6 +594,15 @@
             "cup": "battlefrontiermaster",
             "cp": 10000,
             "meta": "battlefrontiermaster",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true
+        },
+        {
+            "title": "Devon Trail Cup",
+            "cup": "trail",
+            "cp": 1500,
+            "meta": "trail",
             "showCup": true,
             "showFormat": true,
             "showMeta": true
