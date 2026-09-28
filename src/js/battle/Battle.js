@@ -266,6 +266,7 @@ function Battle(){
 		timeline = [];
 		queuedActions = [];
 		turnActions = [];
+		previousTurnActions = [];
 		turnMessages = [];
 		turnAnimations = [];
 		switchTimerMarked = false;
