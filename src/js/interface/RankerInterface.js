@@ -23,6 +23,7 @@ var InterfaceMaster = (function () {
 
 				$(".format-select").on("change", selectFormat);
 				$(".simulate").on("click", startRanker);
+				$("body").on("click", ".check", checkBox);
 
 				battle = new Battle();
 
@@ -44,6 +45,8 @@ var InterfaceMaster = (function () {
 				});
 
 				gm.loadRankingData(self, "overall", 1500, "all");
+				gm.loadRankingData(self, "overall", 2500, "all");
+				gm.loadRankingData(self, "overall", 10000, "all");
 
 				self.loadGetData();
 
@@ -80,6 +83,13 @@ var InterfaceMaster = (function () {
 
 				$("a.rankersandbox-link").attr("href", webRoot+"rankersandbox.php?cup="+cup+"&cp="+cp);
 				$("a.rankings-link").attr("href", webRoot+"rankings/"+cup+"/"+cp+"/overall/");
+
+				if(battle.getCup().excludeLowPokemon){
+					$(".check.exclude-low-pokemon").addClass("on");
+				} else{
+					$(".check.exclude-low-pokemon").removeClass("on");
+				}
+					
 			}
 
 			// Load overrides for the currently selected league and cup
@@ -100,7 +110,20 @@ var InterfaceMaster = (function () {
 			// Run simulation
 
 			function startRanker(){
+				if($(".check.exclude-low-pokemon").hasClass("on")){
+					battle.getCup().excludeLowPokemon = true;
+				} else{
+					battle.getCup().excludeLowPokemon = false;
+				}
+
 				ranker.rankLoop(battle.getCP(), battle.getCup());
+			}
+
+			// Turn checkboxes on and off
+
+			function checkBox(e){
+				$(this).toggleClass("on");
+				$(this).trigger("change");
 			}
 		};
 

@@ -103,7 +103,7 @@ var RankerMaster = (function () {
 					let lowPokemon = gm.rankings["alloverall"+cp].filter(ranking => ranking.score < 70);
 
 					for(var i = 0; i < lowPokemon.length; i++){
-						if((pokemonList.findIndex(r => r.speciesId == lowPokemon[i].speciesId) > -1)){
+						if(cup.name == "custom" && (pokemonList.findIndex(r => r.speciesId == lowPokemon[i].speciesId) > -1)){
 							pokemonList.splice(pokemonList.findIndex(r => r.speciesId == lowPokemon[i].speciesId), 1);
 						}
 						if((targets.findIndex(r => r.speciesId == lowPokemon[i].speciesId) > -1)){
@@ -233,27 +233,30 @@ var RankerMaster = (function () {
 
 						var opponent = targets[n];
 
-						// If battle has already been simulated, skip
+						// If scenario is symmetrical and battle has already been simulated, skip
+						if(shieldCounts[0] == shieldCounts[1] && scenario.energy[0] == scenario.energy[1]
+							&& pokemon.speciesId.localeCompare(opponent.speciesId) > 0){
+							// Search by speciesId in case pokemon and target lists are asymmetrical
+							let targetMatches = rankings.find(r => r.speciesId == opponent.speciesId)?.matches;
 
-						if(rankings[n] && pokemonList.length == targets.length){
+							if(targetMatches){
+								let matchup = targetMatches.find(m => m.opponent == pokemon.speciesId);
 
-							// When shields are the same, A vs B is the same as B vs A, so take the existing result
+								if(matchup){
+									rankObj.matches.push({
+										opponent: opponent.speciesId,
+										rating: matchup.opRating,
+										adjRating: matchup.adjOpRating,
+										opRating: matchup.rating,
+										adjOpRating: matchup.adjRating,
+										moveUsage: matchup.oppMoveUsage,
+										oppMoveUsage: matchup.moveUsage
+									})
 
-							if((rankings[n].matches[i])&&(shieldCounts[0]==shieldCounts[1])&&(scenario.energy[0] == scenario.energy[1])){
+									avg += matchup.adjOpRating;
 
-								rankObj.matches.push({
-									opponent: opponent.speciesId,
-									rating: rankings[n].matches[i].opRating,
-									adjRating: rankings[n].matches[i].adjOpRating,
-									opRating: rankings[n].matches[i].rating,
-									adjOpRating: rankings[n].matches[i].adjRating,
-									moveUsage: rankings[n].matches[i].oppMoveUsage,
-									oppMoveUsage: rankings[n].matches[i].moveUsage
-								})
-
-								avg += rankings[n].matches[i].adjOpRating;
-
-								continue;
+									continue;
+								}
 							}
 						}
 
