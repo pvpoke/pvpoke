@@ -10,7 +10,7 @@
     }],
     "exclude": [{
         "filterType": "tag",
-        "values": ["shadow","mega"]
+        "values": ["shadow","mega","legendary","mythical","ultrabeast"]
     }, {
         "filterType": "type",
         "values": ["dark","normal","rock","steel"]
