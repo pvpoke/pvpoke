@@ -35232,6 +35232,34 @@
         "searchPriority": 4
     },
     {
+        "dex": 705,
+        "speciesName": "Sliggoo (Hisuian)",
+        "speciesId": "sliggoo_hisuian",
+        "baseStats": {
+            "atk": 153,
+            "def": 190,
+            "hp": 151
+        },
+        "types": ["dragon", "steel"],
+        "fastMoves": ["WATER_GUN", "TACKLE"],
+        "chargedMoves": ["DRAGON_PULSE", "SLUDGE_WAVE", "WATER_PULSE", "HEAVY_SLAM"],
+        "defaultIVs": {
+            "cp500": [10, 4, 8, 10],
+            "cp1500": [29, 4, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["hisuian"],
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false,
+        "family": {
+            "id": "FAMILY_GOOMY",
+            "parent": "goomy",
+            "evolutions": ["goodra"]
+        },
+        "searchPriority": 4
+    },
+    {
         "dex": 706,
         "speciesName": "Goodra",
         "speciesId": "goodra",
@@ -35253,6 +35281,33 @@
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
+        "family": {
+            "id": "FAMILY_GOOMY",
+            "parent": "sliggoo"
+        }
+    },
+    {
+        "dex": 706,
+        "speciesName": "Goodra (Hisuian)",
+        "speciesId": "goodra_hisuian",
+        "baseStats": {
+            "atk": 211,
+            "def": 255,
+            "hp": 190
+        },
+        "types": ["dragon", "steel"],
+        "fastMoves": ["WATER_GUN", "DRAGON_TAIL", "IRON_TAIL"],
+        "chargedMoves": ["DRACO_METEOR", "SLUDGE_WAVE", "HYDRO_PUMP", "HEAVY_SLAM"],
+        "defaultIVs": {
+            "cp500": [6, 4, 8, 4],
+            "cp1500": [16.5, 5, 15, 15],
+            "cp2500": [28, 4, 10, 14]
+        },
+        "tags": ["hisuian"],
+        "searchPriority": 6,
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false,
         "family": {
             "id": "FAMILY_GOOMY",
             "parent": "sliggoo"
