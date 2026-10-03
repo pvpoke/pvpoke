@@ -141,8 +141,13 @@ var InterfaceMaster = (function () {
 						league = get.cp.split("-")[0];
 					}
 				}
-
-				gm.loadRankingData(self, "overall", league, "mega");
+				
+				if(league != 500){
+					gm.loadRankingData(self, "overall", league, "mega");
+				} else{
+					gm.loadRankingData(self, "overall", league, "little");
+				}
+				
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -2347,9 +2352,9 @@ var InterfaceMaster = (function () {
 
 				var cupName = "mega";
 
-				if((cp == 10000)&&(levelCap == 40)){
-					cupName = "classic";
-					battle.setCup("classic");
+				if(cp == 500){
+					cupName = "little";
+					battle.setCup("little");
 				}
 
 				updateMultiBattleMetas();

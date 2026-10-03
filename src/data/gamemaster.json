@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-10-03 03:11:52",
+    "timestamp": "2026-10-04 00:17:21",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -354,7 +354,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["shuckle", "smeargle"]
+                    "values": ["shuckle", "smeargle", "meltan"]
                 }
             ],
             "levelCap": 50
@@ -554,6 +554,16 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokemon must be at or below 1, 500 CP to enter.", "Mega-Evolved Pokémon are eligible.", "Only Grass-,  Fire-,  Water-,  Electric-type Pokémon are eligible."]
+        },
+        {
+            "title": "Little Cup",
+            "cup": "little",
+            "cp": 500,
+            "meta": "little",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 500 CP to enter.", "Only Pokémon that are able to evolve and have not evolved even once are eligible."]
         },
         {
             "title": "LAIC 2027 Championship Series Cup",

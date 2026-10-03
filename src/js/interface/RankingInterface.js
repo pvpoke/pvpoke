@@ -306,10 +306,11 @@ var InterfaceMaster = (function () {
 
 				// Put together the recommended moveset string
 				var chargedMoves = [...pokemon.chargedMovePool, ...pokemon.extraChargedMovePool];
+				var moveset = r.moveset.filter(m => m != "none");
 
-				for(var n = 0; n < r.moveset.length; n++){
+				for(var n = 0; n < moveset.length; n++){
 					if(n == 0){
-						var fastMove = pokemon.fastMovePool.find(m => m.moveId == r.moveset[n]);
+						var fastMove = pokemon.fastMovePool.find(m => m.moveId == moveset[n]);
 
 						if(fastMove && typeof fastMove !== "undefined"){
 							moveNameStr += fastMove.displayName;
@@ -317,7 +318,7 @@ var InterfaceMaster = (function () {
 							moveNameStr += "<span class=\"count fast\">"+(fastMove.cooldown / 500)+"</span>";
 						}
 					} else{
-						var chargedMove = chargedMoves.find(m => m.moveId == r.moveset[n]);
+						var chargedMove = chargedMoves.find(m => m.moveId == moveset[n]);
 
 						if(chargedMove && typeof chargedMove !== "undefined"){
 							moveNameStr += chargedMove.displayName;
@@ -337,7 +338,7 @@ var InterfaceMaster = (function () {
 						}
 					}
 
-					if(n < r.moveset.length - 1){
+					if(n < moveset.length - 1){
 						moveNameStr += ", "
 					}
 				}

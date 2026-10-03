@@ -75,6 +75,21 @@ $formats = array (
   ),
   5 => 
   array (
+    'title' => 'Little Cup',
+    'cup' => 'little',
+    'cp' => 500,
+    'meta' => 'little',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 500 CP to enter.',
+      1 => 'Only Pokémon that are able to evolve and have not evolved even once are eligible.',
+    ),
+  ),
+  6 => 
+  array (
     'title' => 'LAIC 2027 Championship Series Cup',
     'cup' => 'laic2027',
     'cp' => 1500,
@@ -92,7 +107,7 @@ $formats = array (
       5 => 'Prohibited Pokemon: Altaria, Annihilape, Araquanid, Chansey, Clodsire, Corsola (Galarian), Dusclops, Furret, Jellicent, Kingdra, Medicham, Oranguru, Snorlax, Wobbuffet, Mega Sableye.',
     ),
   ),
-  6 => 
+  7 => 
   array (
     'title' => 'Battle Frontier (Spectral)',
     'cup' => 'spectral',
@@ -102,7 +117,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  8 => 
   array (
     'title' => 'Battle Frontier (Cauldron)',
     'cup' => 'cauldron',
@@ -112,7 +127,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  9 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -122,7 +137,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  10 => 
   array (
     'title' => 'Devon Trail Cup',
     'cup' => 'trail',
@@ -132,7 +147,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  11 => 
   array (
     'title' => 'Gymbreakers Invitational Season 7',
     'cup' => 'gymbreakers',
@@ -142,7 +157,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  12 => 
   array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
@@ -158,7 +173,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  12 => 
+  13 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -168,7 +183,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  14 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -178,7 +193,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  14 => 
+  15 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
