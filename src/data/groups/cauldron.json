@@ -17,7 +17,7 @@
   {
     "speciesId": "clefable",
     "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["METEOR_MASH","MOONBLAST"]
+    "chargedMoves": ["METEOR_MASH","DRAINING_KISS"]
   },
   {
     "speciesId": "crobat",
@@ -30,6 +30,11 @@
     "chargedMoves": ["SACRED_SWORD","IRON_HEAD"]
   },
   {
+    "speciesId": "dragalge",
+    "fastMove": "ACID",
+    "chargedMoves": ["AQUA_TAIL","OUTRAGE"]
+  },
+  {
     "speciesId": "drapion",
     "fastMove": "POISON_STING",
     "chargedMoves": ["CRUNCH","AQUA_TAIL"]
@@ -38,6 +43,11 @@
     "speciesId": "drapion_shadow",
     "fastMove": "POISON_STING",
     "chargedMoves": ["AQUA_TAIL","CRUNCH"]
+  },
+  {
+    "speciesId": "drifblim",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
   },
   {
     "speciesId": "dusknoir_shadow",
