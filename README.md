@@ -8,6 +8,13 @@ This started as a passion project that went from “I wonder what this would loo
 
 See the [Installation](https://github.com/pvpoke/pvpoke/wiki/Installation) section of the PvPoke Wiki.
 
+## Move Name Localization
+
+Pokemon GO move names are bundled as local JSON files and can be refreshed from
+a pinned upstream data snapshot without adding a runtime API dependency. See
+[`docs/move-localization.md`](docs/move-localization.md) for the source, coverage,
+validation, and update workflow.
+
 ## Site Structure
 
 It was about 10 minutes into development when I realized this project would be great in Angular, but that was unfortunately 5 minutes past the point I was willing to backtrack. So allow me to show you the result.
