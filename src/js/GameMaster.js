@@ -1,5 +1,95 @@
 // JavaScript Document
 
+// Sprite artwork for the rankings, matchup/counter lists and team builder.
+// PvPoke stores a species id (encoding forms, e.g. "ninetales_alolan") and a
+// Pokedex number, but no local artwork, so we use PokeAPI's "home" renders.
+// Base forms are keyed by Pokedex number; alternate forms (regional, mega,
+// etc.) live under different PokeAPI ids, so POKEAPI_FORM_IDS maps each PvPoke
+// form to its render id. This map was generated from and verified against the
+// official PokeAPI index. Anything not in the map uses the base Pokedex render;
+// if a form render is missing we fall back to the base render, then hide.
+var POKEAPI_FORM_IDS = {
+	"abomasnow_mega": 10060, "absol_mega": 10057, "aegislash_blade": 10026, "aerodactyl_mega": 10042,
+	"aggron_mega": 10053, "alakazam_mega": 10037, "altaria_mega": 10067, "ampharos_mega": 10045,
+	"arcanine_hisuian": 10230, "articuno_galarian": 10169, "audino_mega": 10069, "avalugg_hisuian": 10243,
+	"banette_mega": 10056, "basculegion_female": 10248, "beedrill_mega": 10090, "blastoise_mega": 10036,
+	"blaziken_mega": 10050, "braviary_hisuian": 10240, "calyrex_ice_rider": 10193, "camerupt_mega": 10087,
+	"castform_rainy": 10014, "castform_snowy": 10015, "castform_sunny": 10013, "charizard_mega_x": 10034,
+	"charizard_mega_y": 10035, "corsola_galarian": 10173, "darmanitan_galarian_standard": 10177, "darmanitan_galarian_zen": 10178,
+	"darmanitan_zen": 10017, "darumaka_galarian": 10176, "decidueye_hisuian": 10244, "deoxys_attack": 10001,
+	"deoxys_defense": 10002, "deoxys_speed": 10003, "dialga_origin": 10245, "diancie_mega": 10075,
+	"diglett_alolan": 10105, "dragonite_mega": 10281, "dugtrio_alolan": 10106, "eiscue_noice": 10185,
+	"electrode_hisuian": 10232, "enamorus_therian": 10249, "eternatus_eternamax": 10190, "exeggutor_alolan": 10114,
+	"falinks_mega": 10303, "farfetchd_galarian": 10166, "gallade_mega": 10068, "garchomp_mega": 10058,
+	"gardevoir_mega": 10051, "gengar_mega": 10038, "geodude_alolan": 10109, "giratina_origin": 10007,
+	"glalie_mega": 10074, "golem_alolan": 10111, "gourgeist_large": 10031, "gourgeist_small": 10030,
+	"gourgeist_super": 10032, "graveler_alolan": 10110, "grimer_alolan": 10112, "groudon_primal": 10078,
+	"growlithe_hisuian": 10229, "gyarados_mega": 10041, "heracross_mega": 10047, "hoopa_unbound": 10086,
+	"houndoom_mega": 10048, "indeedee_female": 10186, "kangaskhan_mega": 10039, "keldeo_resolute": 10024,
+	"kyogre_primal": 10077, "kyurem_black": 10022, "kyurem_white": 10023, "landorus_therian": 10021,
+	"latias_mega": 10062, "latios_mega": 10063, "lilligant_hisuian": 10237, "linoone_galarian": 10175,
+	"lopunny_mega": 10088, "lucario_mega": 10059, "lycanroc_dusk": 10152, "lycanroc_midnight": 10126,
+	"malamar_mega": 10297, "manectric_mega": 10055, "marowak_alolan": 10115, "maushold_family_of_three": 10257,
+	"mawile_mega": 10052, "medicham_mega": 10054, "meloetta_pirouette": 10018, "meowstic_female": 10025,
+	"meowth_alolan": 10107, "meowth_galarian": 10161, "metagross_mega": 10076, "mewtwo_mega_x": 10043,
+	"mewtwo_mega_y": 10044, "mimikyu_busted": 10143, "moltres_galarian": 10171, "morpeko_hangry": 10187,
+	"mr_mime_galarian": 10168, "muk_alolan": 10113, "necrozma_dawn_wings": 10156, "necrozma_dusk_mane": 10155,
+	"necrozma_ultra": 10157, "ninetales_alolan": 10104, "oinkologne_female": 10254, "oricorio_pau": 10124,
+	"oricorio_pom_pom": 10123, "oricorio_sensu": 10125, "palafin_hero": 10256, "palkia_origin": 10246,
+	"persian_alolan": 10108, "pidgeot_mega": 10073, "pinsir_mega": 10040, "ponyta_galarian": 10162,
+	"pumpkaboo_large": 10028, "pumpkaboo_small": 10027, "pumpkaboo_super": 10029, "qwilfish_hisuian": 10234,
+	"raichu_alolan": 10100, "rapidash_galarian": 10163, "raticate_alolan": 10092, "rattata_alolan": 10091,
+	"rayquaza_mega": 10079, "rotom_fan": 10011, "rotom_frost": 10010, "rotom_heat": 10008,
+	"rotom_mow": 10012, "rotom_wash": 10009, "sableye_mega": 10066, "salamence_mega": 10089,
+	"samurott_hisuian": 10236, "sandshrew_alolan": 10101, "sandslash_alolan": 10102, "sceptile_mega": 10065,
+	"scizor_mega": 10046, "sharpedo_mega": 10070, "shaymin_sky": 10006, "skarmory_mega": 10284,
+	"slowbro_galarian": 10165, "slowbro_mega": 10071, "slowking_galarian": 10172, "slowpoke_galarian": 10164,
+	"sneasel_hisuian": 10235, "steelix_mega": 10072, "stunfisk_galarian": 10180, "swampert_mega": 10064,
+	"tatsugiri_droopy": 10258, "tatsugiri_stretchy": 10259, "tauros_aqua": 10252, "tauros_blaze": 10251,
+	"tauros_combat": 10250, "thundurus_therian": 10020, "tornadus_therian": 10019, "toxtricity_low_key": 10184,
+	"typhlosion_hisuian": 10233, "tyranitar_mega": 10049, "urshifu_rapid_strike": 10191, "venusaur_mega": 10033,
+	"victreebel_mega": 10279, "voltorb_hisuian": 10231, "vulpix_alolan": 10103, "weezing_galarian": 10167,
+	"wishiwashi_school": 10127, "wooper_paldean": 10253, "wormadam_sandy": 10004, "wormadam_trash": 10005,
+	"yamask_galarian": 10179, "zacian_crowned_sword": 10188, "zamazenta_crowned_shield": 10189, "zapdos_galarian": 10170,
+	"zigzagoon_galarian": 10174, "zoroark_hisuian": 10239, "zorua_hisuian": 10238, "zygarde_10": 10181,
+	"zygarde_complete": 10120
+};
+
+function getPokemonSpriteHTML(speciesId, dex){
+	if(! speciesId){
+		return "";
+	}
+
+	// Shadows share their non-shadow form's artwork.
+	var baseId = speciesId.replace(/_shadow/g, "");
+	var id = POKEAPI_FORM_IDS[baseId] || dex;
+
+	if(! id){
+		return "";
+	}
+
+	var home = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/";
+	var primary = home + id + ".png";
+
+	var onError;
+	if(dex && id !== dex){
+		// Unknown form render: fall back to the base Pokedex render, then hide.
+		onError = "if(this.dataset.fb){this.onerror=null;this.parentNode.style.display='none';}else{this.dataset.fb='1';this.src='" + home + dex + ".png';}";
+	} else {
+		onError = "this.onerror=null;this.parentNode.style.display='none';";
+	}
+
+	// Shadow Pokemon get a purple aura. That's a Pokemon GO effect and doesn't
+	// exist in the HOME artwork (which is just the plain model), so we add it
+	// with CSS via the "shadow" class.
+	var spriteClass = (speciesId.indexOf("_shadow") > -1) ? "poke-sprite shadow" : "poke-sprite";
+
+	// Deter casual saving: block the right-click menu and dragging on the
+	// sprite. (This can't stop a determined user with dev tools or screenshots
+	// — nothing in a browser can — but it removes every easy save path.)
+	return "<span class=\"" + spriteClass + "\" oncontextmenu=\"return false\" ondragstart=\"return false\"><img loading=\"lazy\" draggable=\"false\" alt=\"\" src=\"" + primary + "\" onerror=\"" + onError + "\"></span>";
+}
+
 var GameMaster = (function () {
     var instance;
 
