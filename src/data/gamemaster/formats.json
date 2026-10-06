@@ -170,6 +170,23 @@
 		"showMeta": false
 	},
 	{
+		"title": "Darknes Cup (Import Test)",
+		"cup": "darknes-cup-demo",
+		"cp": 1500,
+		"meta": "darknes-cup-demo",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": false,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Allowed Types: Dark.",
+			"Also allowed: Annihilape.",
+			"Prohibited Pokémon: Pangoro.",
+			"Banned Moves (all Pokémon): Counter.",
+			"Banned Moves for Annihilape: Close Combat."
+		]
+	},
+	{
 		"title": "Custom",
 		"cup": "custom",
 		"cp": 1500,

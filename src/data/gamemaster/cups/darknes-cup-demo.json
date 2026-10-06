@@ -1,0 +1,40 @@
+{
+  "name": "darknes-cup-demo",
+  "title": "Darknes Cup (Import Test)",
+  "include": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "dark"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "annihilape"
+      ],
+      "includeShadows": true
+    }
+  ],
+  "exclude": [
+    {
+      "filterType": "tag",
+      "name": "Tag",
+      "values": [
+        "mega"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "pangoro"
+      ]
+    }
+  ],
+  "levelCap": 50,
+  "league": 1500,
+  "link": "https://pvprank.win/f/darknes-cup-demo"
+}
