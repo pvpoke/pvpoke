@@ -98,7 +98,7 @@ var RankerMaster = (function () {
 				}
 
 				// For custom rankings and open leagues, exclude Pokemon with a low league overall score
-				if(cup.excludeLowPokemon && gm.rankings["alloverall"+cp]){
+				if(cup.excludeLowPokemon && gm.rankings["alloverall"+cp] && moveSelectMode == "force"){
 
 					let lowPokemon = gm.rankings["alloverall"+cp].filter(ranking => ranking.score < 70);
 
