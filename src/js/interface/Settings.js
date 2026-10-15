@@ -58,6 +58,7 @@ var InterfaceMaster = (function () {
 				var hardMovesetLinks = $(".check.hard-moveset-links").hasClass("on") ? 1 : 0;
 				var colorblindMode = $(".check.colorblindMode").hasClass("on") ? 1 : 0;
 				var performanceMode = $(".check.performanceMode").hasClass("on") ? 1 : 0;
+				var language = $("#language-select option:selected").val();
 
 				$.ajax({
 
@@ -76,7 +77,8 @@ var InterfaceMaster = (function () {
 						'rankingDetails': rankingDetails,
 						'hardMovesetLinks': hardMovesetLinks,
 						'colorblindMode': colorblindMode,
-						'performanceMode': performanceMode
+						'performanceMode': performanceMode,
+						'language': language
 					},
 					dataType:'json',
 					success : function(data) {

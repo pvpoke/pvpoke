@@ -160,6 +160,40 @@ header .menu .parent-menu .icon-rankings + .submenu a.nav-ultra {
 header .menu .parent-menu .icon-rankings + .submenu a.nav-master {
   background-image: url("../img/themes/sunflower/nav-league-master.png");
 }
+header .menu .menu-language-picker {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+header .menu .menu-language-picker label {
+  display: block;
+  margin-bottom: 5px;
+  color: #f9fdff;
+  font-size: 12px;
+  font-weight: bold;
+}
+header .menu .menu-language-picker select {
+  width: 100%;
+  min-width: 210px;
+  padding: 7px 28px 7px 8px;
+  border: 1px solid #c4def5;
+  border-radius: 4px;
+  background: #f9fdff;
+  color: #003462;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+header .menu .menu-language-picker select:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+header .menu .language-change-status {
+  min-height: 14px;
+  margin-top: 3px;
+  color: #c4def5;
+  font-size: 11px;
+  white-space: normal;
+}
 header .hamburger .meat {
   width: 30px;
   height: 5px;
@@ -5188,13 +5222,24 @@ a.pokebattler {
   header .menu .more-parent-menu .submenu {
     padding-left: 0;
     display: block;
-    max-height: 350px;
+    max-height: 450px;
   }
   header .menu .more-parent-menu .submenu a {
     font-size: 18px;
     padding-left: 38px;
   }
-
+  header .menu .menu-language-picker {
+    padding: 10px 20px 10px 38px;
+  }
+  header .menu .menu-language-picker label {
+    font-size: 16px;
+  }
+  header .menu .menu-language-picker select {
+    min-width: 0;
+    max-width: 320px;
+    padding: 9px;
+    font-size: 16px;
+  }
   .header-ticker {
     position: fixed;
     z-index: 50;
