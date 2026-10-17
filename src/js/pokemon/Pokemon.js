@@ -180,6 +180,10 @@ function Pokemon(id, i, b, d){
 				move.legacy = false;
 			}
 
+			if(gm.excludeExclusiveMoves && (move.elite || move.legacy || move.moveId == "RETURN" || move.moveId == "FRUSTRATION")){
+				continue;
+			}
+
 			move.displayName = move.name;
 
 			if(move.legacy){
@@ -208,6 +212,10 @@ function Pokemon(id, i, b, d){
 				move.legacy = false;
 			}
 
+			if(gm.excludeExclusiveMoves && (move.elite || move.legacy || move.moveId == "RETURN" || move.moveId == "FRUSTRATION")){
+				continue;
+			}
+
 			move.displayName = move.name;
 
 			if(move.legacy){
@@ -231,7 +239,7 @@ function Pokemon(id, i, b, d){
 	if((data.tags)&&(data.tags.indexOf("shadoweligible") > -1)){
 		self.shadowEligible = true;
 
-		if(data.level25CP <= b.getCP()){
+		if((! gm.excludeExclusiveMoves) && (data.level25CP <= b.getCP())){
 			self.chargedMovePool.push(gm.getMoveById("RETURN"));
 			self.legacyMoves.push("RETURN");
 		}
@@ -240,11 +248,10 @@ function Pokemon(id, i, b, d){
 	if((data.tags)&&(data.tags.indexOf("shadow") > -1)){
 		self.shadowEligible = true;
 
-		if(data.tags.indexOf("shadow") > -1){
+		if(! gm.excludeExclusiveMoves){
 			self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
+			self.legacyMoves.push("FRUSTRATION");
 		}
-
-		self.legacyMoves.push("FRUSTRATION");
 	}
 
 	// Add extra Charged Moves for Mega Evolutions or other qualifying Pokemon
@@ -258,6 +265,10 @@ function Pokemon(id, i, b, d){
 
 				if(move.elite){
 					move.legacy = false;
+				}
+
+				if(gm.excludeExclusiveMoves && (move.elite || move.legacy || move.moveId == "RETURN" || move.moveId == "FRUSTRATION")){
+					continue;
 				}
 
 				move.displayName = move.name;
