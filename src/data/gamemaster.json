@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-10-13 01:07:13",
+    "timestamp": "2026-10-17 03:10:24",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -54,7 +54,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["rayquaza_mega", "groudon_primal", "kyogre_primal", "metagross_mega", "heracross_mega", "delphox_mega", "dragonite_mega", "tyranitar_mega", "salamence_mega", "garchomp_mega", "mewtwo_mega_y", "mewtwo_mega_x", "gyarados_mega", "greninja_mega", "chesnaught_mega", "charizard_mega_y", "swampert_mega", "latios_mega", "latias_mega", "gallade_mega", "gengar_mega", "kyogre", "xerneas", "yveltal", "palkia_origin", "ursaluna", "marshadow", "lugia", "kyurem_white"]
+                    "values": ["rayquaza_mega", "groudon_primal", "kyogre_primal", "metagross_mega", "heracross_mega", "delphox_mega", "dragonite_mega", "tyranitar_mega", "salamence_mega", "garchomp_mega", "mewtwo_mega_y", "mewtwo_mega_x", "gyarados_mega", "greninja_mega", "chesnaught_mega", "charizard_mega_y", "swampert_mega", "latios_mega", "latias_mega", "gallade_mega", "gengar_mega", "aggron_mega", "kyogre", "xerneas", "yveltal", "palkia_origin", "ursaluna", "marshadow", "lugia", "kyurem_white", "groudon", "reshiram", "lunala", "zacian_crowned_sword", "eternatus"]
                 }
             ]
         },
@@ -546,16 +546,6 @@
             "rules": ["No CP limit.", "Mega Evolutions are eligible."]
         },
         {
-            "title": "Mega Color Cup",
-            "cup": "colormega",
-            "cp": 1500,
-            "meta": "colormega",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokemon must be at or below 1, 500 CP to enter.", "Mega-Evolved Pokémon are eligible.", "Only Grass-,  Fire-,  Water-,  Electric-type Pokémon are eligible."]
-        },
-        {
             "title": "Little Cup",
             "cup": "little",
             "cp": 500,
@@ -564,6 +554,16 @@
             "showFormat": true,
             "showMeta": true,
             "rules": ["Pokémon must be at or below 500 CP to enter.", "Only Pokémon that are able to evolve and have not evolved even once are eligible."]
+        },
+        {
+            "title": "Fantasy Cup",
+            "cup": "fantasy",
+            "cp": 1500,
+            "meta": "fantasy",
+            "showCup": true,
+            "showFormat": true,
+            "showMeta": true,
+            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Dragon-,  Steel-,  and Fairy-type Pokémon are eligible."]
         },
         {
             "title": "LAIC 2027 Championship Series Cup",

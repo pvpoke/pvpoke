@@ -59,22 +59,6 @@ $formats = array (
   ),
   4 => 
   array (
-    'title' => 'Mega Color Cup',
-    'cup' => 'colormega',
-    'cp' => 1500,
-    'meta' => 'colormega',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokemon must be at or below 1,500 CP to enter.',
-      1 => 'Mega-Evolved Pokémon are eligible.',
-      2 => 'Only Grass-, Fire-, Water-, Electric-type Pokémon are eligible.',
-    ),
-  ),
-  5 => 
-  array (
     'title' => 'Little Cup',
     'cup' => 'little',
     'cp' => 500,
@@ -86,6 +70,21 @@ $formats = array (
     array (
       0 => 'Pokémon must be at or below 500 CP to enter.',
       1 => 'Only Pokémon that are able to evolve and have not evolved even once are eligible.',
+    ),
+  ),
+  5 => 
+  array (
+    'title' => 'Fantasy Cup',
+    'cup' => 'fantasy',
+    'cp' => 1500,
+    'meta' => 'fantasy',
+    'showCup' => true,
+    'showFormat' => true,
+    'showMeta' => true,
+    'rules' => 
+    array (
+      0 => 'Pokémon must be at or below 1,500 CP to enter.',
+      1 => 'Only Dragon-, Steel-, and Fairy-type Pokémon are eligible.',
     ),
   ),
   6 => 

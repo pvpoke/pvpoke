@@ -5,9 +5,9 @@
     "chargedMoves": ["ROCK_SLIDE","BRUTAL_SWING"]
   },
   {
-    "speciesId": "aggron_mega",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["ROCK_TOMB","BRICK_BREAK"]
+    "speciesId": "aerodactyl_mega",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["ROCK_SLIDE","EARTH_POWER"]
   },
   {
     "speciesId": "blastoise_mega",
@@ -23,11 +23,6 @@
     "speciesId": "dialga_origin",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["ROAR_OF_TIME","IRON_HEAD"]
-  },
-  {
-    "speciesId": "eternatus",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["DYNAMAX_CANNON","FLAMETHROWER"]
   },
   {
     "speciesId": "florges",
@@ -55,14 +50,14 @@
     "chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"]
   },
   {
-    "speciesId": "groudon",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["FIRE_PUNCH","PRECIPICE_BLADES"]
-  },
-  {
     "speciesId": "gyarados",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL","TWISTER"]
+  },
+  {
+    "speciesId": "ho_oh",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["SACRED_FIRE", "BRAVE_BIRD"]
   },
   {
     "speciesId": "keldeo_resolute",
@@ -80,9 +75,9 @@
     "chargedMoves": ["AURA_SPHERE","LUSTER_PURGE"]
   },
   {
-    "speciesId": "lunala",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SHADOW_BALL","MOONBLAST"]
+    "speciesId": "landorus_therian",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["SANDSEAR_STORM", "STONE_EDGE"]
   },
   {
     "speciesId": "melmetal",
@@ -105,14 +100,29 @@
     "chargedMoves": ["DARK_PULSE","MOONGEIST_BEAM"]
   },
   {
+    "speciesId": "necrozma_dusk_mane",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["DARK_PULSE","SUNSTEEL_STRIKE"]
+  },
+  {
+    "speciesId": "necrozma_dawn_wings",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["IRON_HEAD","OUTRAGE"]
+  },
+  {
     "speciesId": "palkia",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"]
   },
   {
-    "speciesId": "reshiram",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["FUSION_FLARE","DRACO_METEOR"]
+    "speciesId": "rhyperior",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["DRILL_RUN","ROCK_WRECKER"]
+  },
+  {
+    "speciesId": "rhyperior_shadow",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["DRILL_RUN","ROCK_WRECKER"]
   },
   {
     "speciesId": "scizor_mega",
@@ -120,9 +130,9 @@
     "chargedMoves": ["NIGHT_SLASH","RETURN"]
   },
   {
-    "speciesId": "zacian_crowned_sword",
-    "fastMove": "METAL_CLAW",
-    "chargedMoves": ["CLOSE_COMBAT","BEHEMOTH_BLADE"]
+    "speciesId": "togekiss",
+    "fastMove": "PECK",
+    "chargedMoves": ["AURA_SPHERE","DAZZLING_GLEAM"]
   },
   {
     "speciesId": "zamazenta_crowned_shield",

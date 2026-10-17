@@ -49,20 +49,6 @@
 		]
 	},
 	{
-		"title": "Mega Color Cup",
-		"cup": "colormega",
-		"cp": 1500,
-		"meta": "colormega",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokemon must be at or below 1,500 CP to enter.",
-			"Mega-Evolved Pokémon are eligible.",
-			"Only Grass-, Fire-, Water-, Electric-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "Little Cup",
 		"cup": "little",
 		"cp": 500,
@@ -73,6 +59,19 @@
 		"rules": [
 			"Pokémon must be at or below 500 CP to enter.",
 			"Only Pokémon that are able to evolve and have not evolved even once are eligible."
+		]
+	},
+	{
+		"title": "Fantasy Cup",
+		"cup": "fantasy",
+		"cp": 1500,
+		"meta": "fantasy",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
 		]
 	},
 	{
