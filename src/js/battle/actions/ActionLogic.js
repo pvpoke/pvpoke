@@ -251,6 +251,18 @@ class ActionLogic {
 			}
 		}
 
+		// If opponent is Minior Meteor, hold onto energy for as long as possible until it changes form
+		if(opponent.activeFormId == "minior_meteor" && 100 - poke.energy >= poke.fastMove.energyGain && turnsToLive > poke.fastMove.turns){
+			battle.logDecision(poke, " is saving its energy for an opponent's weaker form.");
+			return;
+		}
+
+		// If Minior Meteor, hold onto energy for as long as possible until it changes form
+		if(poke.activeFormId == "minior_meteor" && 100 - poke.energy >= poke.fastMove.energyGain && turnsToLive > poke.fastMove.turns){
+			battle.logDecision(poke, " is saving its energy for its high attack form.");
+			return;
+		}
+
 		// Optimize move timing to reduce free turns
 		if(poke.optimizeMoveTiming){
 			var targetCooldown = 500; // Look to throw moves when opponent is at this cooldown or lower
@@ -352,8 +364,6 @@ class ActionLogic {
 				if(poke.hp <= opponent.fastMove.damage * fastMovesInFastMove){
 					optimizeTiming = false;
 				}
-
-
 
 				if(optimizeTiming){
 					battle.logDecision(poke, " is optimizing move timing");
@@ -1238,6 +1248,12 @@ class ActionLogic {
 		// Save shields in Aegislash shield form to protect Blade form
 
 		if(defender.activeFormId == "aegislash_shield" && move.damage * 2 < defender.hp){
+			useShield = false;
+		}
+
+		// Save shields in Minior Meteor form to protect Core  form
+
+		if(defender.activeFormId == "minior_meteor" && move.damage * 2 < defender.hp){
 			useShield = false;
 		}
 

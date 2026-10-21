@@ -53,6 +53,7 @@ function Battle(){
 	var roundChargedMoveUsed;
 	var roundChargedMovesInitiated; // used in decision making
 	var roundShieldUsed;
+	var roundFormAnimation;
 
 	var chargedMinigameTime = 10000;
 
@@ -241,6 +242,11 @@ function Battle(){
 		for(var i = 0; i < pokemon.length; i++){
 			pokemon[i].reset();
 
+			if(pokemon[i].formChange && pokemon[i].formChange.trigger == "battle_start" && mode == "simulate")
+			{
+				pokemon[i].changeForm(pokemon[i].formChange.alternativeFormId);
+			}
+
 			startingValues[i].hp = pokemon[i].hp;
 			startingValues[i].energy = pokemon[i].energy;
 		}
@@ -286,6 +292,7 @@ function Battle(){
 		roundChargedMoveUsed = 0;
 		roundChargedMovesInitiated = 0;
 		roundShieldUsed = false;
+		roundFormAnimation = false;
 
 		// Hold the actions for both Pokemon this turn
 
@@ -538,7 +545,7 @@ function Battle(){
 
 			// Reset after a charged move
 
-			if(roundChargedMoveUsed){
+			if(roundChargedMoveUsed || roundFormAnimation){
 				poke.cooldown = 500;
 			}
 		}
@@ -1631,6 +1638,37 @@ function Battle(){
 			}
 
 			defenderChangedForm = true;
+		}
+
+		// Apply HP based form change to defender
+		if(defender.formChange && defender.formChange.trigger == "hp" && defender.formChange.amount){
+			if(defender.hp / defender.stats.hp < defender.formChange.amount && defender.hp > 0){
+				self.logDecision(defender, " has changed forms into " + defender.formChange.alternativeFormId);
+
+				let oldSpeciesName = defender.speciesName;
+				let formChangeDuration = defender?.formChange?.animationTime ?? 0;
+				defender.changeForm(defender.formChange.alternativeFormId);
+
+				if(mode == "emulate"){
+					self.pushAnimation(defender.index, "formchange", defender.activeFormId);
+				}
+
+				let eventTime = time;
+
+				if(move.category == "charged")
+					eventTime += chargedMinigameTime;
+				else
+					eventTime += 500;
+
+				let eventDescription = oldSpeciesName + " &rarr; " + defender.speciesName;
+
+				timeline.push(new TimelineEvent("formChange", "Form Change", defender.index, eventTime, turns, [eventDescription]));
+
+				defenderChangedForm = true;
+				roundFormAnimation = true;
+
+				time += formChangeDuration;
+			}
 		}
 
 		if(defenderChangedForm){

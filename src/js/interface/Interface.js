@@ -2658,6 +2658,10 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				if($(this).hasClass("formChange")){
+					$tooltip.find(".details").append($(this).attr("values"));
+				}
+
 				var width = $tooltip.width();
 				var left = (e.pageX - $(".section").first().offset().left) + 25;
 				var top = e.pageY - 20;

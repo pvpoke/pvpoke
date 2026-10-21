@@ -38506,6 +38506,7 @@
         "dex": 774,
         "speciesName": "Minior (Core)",
         "speciesId": "minior_core",
+        "originalFormId": "minior_core",
         "baseStats": {
             "atk": 218,
             "def": 131,
@@ -38522,12 +38523,20 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true,
+        "formChange": {
+            "type": "set",
+            "trigger": "battle_start",
+            "alternativeFormId": "minior_meteor",
+            "resetOnSwitch": false
+        },
+        "searchPriority": 4
     },
     {
         "dex": 774,
         "speciesName": "Minior (Meteor)",
         "speciesId": "minior_meteor",
+        "originalFormId": "minior_meteor",
         "baseStats": {
             "atk": 116,
             "def": 194,
@@ -38538,13 +38547,21 @@
         "chargedMoves": ["POWER_GEM", "ANCIENT_POWER", "ACROBATICS"],
         "defaultIVs": {
             "cp500": [12.5, 4, 11, 15],
-            "cp1500": [45.5, 4, 14, 13],
+            "cp1500": [44, 5, 14, 13],
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [39.5, 13, 14, 14]
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": false,
+        "formChange": {
+            "type": "set",
+            "trigger": "hp",
+            "amount": 0.5,
+            "alternativeFormId": "minior_core",
+            "resetOnSwitch": false,
+            "animationTime": 5000
+        }
     },
     {
         "dex": 775,

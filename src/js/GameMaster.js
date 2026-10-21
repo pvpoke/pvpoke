@@ -564,6 +564,10 @@ var GameMaster = (function () {
 				case "mimikyu":
 					defaultIVs["cp1500"] = [25, 4, 14, 15];
 					break;
+
+				case "minior_meteor":
+					defaultIVs["cp1500"] = [44, 5, 14, 15];
+					break;
 			}
 
 			return defaultIVs;

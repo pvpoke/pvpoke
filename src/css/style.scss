@@ -2723,6 +2723,20 @@ a.download-csv{
 				z-index: 10;
 			}
 
+			&.formChange{
+				z-index: 10;
+				color: #000 !Important;
+				font-weight: bold;
+				font-size: 24px;
+				line-height: 0;
+				top:-2px;
+				left: -25%;
+
+				&:after{
+					content: "\21C6";
+				}
+			}
+
 			&.faint{
 				color:$color-faint;
 				font-size:20px;
@@ -2962,7 +2976,7 @@ a.download-csv{
 		background:#fef4b5;
 	}
 
-	&.tap{
+	&.tap, &.formChange{
 		background:#eee;
 	}
 

@@ -412,6 +412,7 @@ function PokeSelect(element, i){
 					newForm.setIV("hp", selectedPokemon.ivs.hp);
 					newForm.setLevel(newStats.level);
 
+
 					let previousFormData = previousForms.find(form => form.speciesId == formId);
 					if(previousFormData 
 						&& previousFormData.ivs.atk == newForm.ivs.atk
@@ -1704,8 +1705,10 @@ function PokeSelect(element, i){
 
 			switch(formId){
 				case "aegislash_blade":
+				case "minior_meteor":
 					newForm.stats.hp = selectedPokemon.stats.hp;
 					newForm.hp = newForm.stats.hp;
+					newForm.startHp = newForm.hp;
 					break;
 			}
 			
