@@ -49,19 +49,6 @@
 		]
 	},
 	{
-		"title": "Little Cup",
-		"cup": "little",
-		"cp": 500,
-		"meta": "little",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 500 CP to enter.",
-			"Only Pokémon that are able to evolve and have not evolved even once are eligible."
-		]
-	},
-	{
 		"title": "Fantasy Cup",
 		"cup": "fantasy",
 		"cp": 1500,
@@ -72,6 +59,20 @@
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
+		]
+	},
+	{
+		"title": "Mega Halloween Cup",
+		"cup": "halloweenmega",
+		"cp": 1500,
+		"meta": "halloweenmega",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Mega-Evolved Pokémon are eligible.",
+			"Only Bug-, Poison-, Ghost-, Dark-, and Fairy-type Pokémon are eligible."
 		]
 	},
 	{
@@ -123,6 +124,15 @@
 		"cup": "trail",
 		"cp": 1500,
 		"meta": "trail",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Devon Fable Cup",
+		"cup": "fable",
+		"cp": 1500,
+		"meta": "fable",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

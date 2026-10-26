@@ -1,0 +1,11 @@
+{
+	"name": "halloweenmega",
+	"title": "Mega Halloween Cup",
+	"include": [{
+		"filterType": "type",
+		"values": ["poison", "ghost", "bug", "dark", "fairy"]
+	}],
+	"exclude": [],
+	"partySize": 3,
+	"presetOnly": true
+}

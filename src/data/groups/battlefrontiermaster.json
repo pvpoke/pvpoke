@@ -90,11 +90,6 @@
     "chargedMoves": ["PSYSHOCK","DAZZLING_GLEAM"]
   },
   {
-    "speciesId": "metagross",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
-  },
-  {
     "speciesId": "necrozma_dawn_wings",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["DARK_PULSE","MOONGEIST_BEAM"]
@@ -103,16 +98,6 @@
     "speciesId": "necrozma_dusk_mane",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["DARK_PULSE","SUNSTEEL_STRIKE"]
-  },
-  {
-    "speciesId": "necrozma_dawn_wings",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["IRON_HEAD","OUTRAGE"]
-  },
-  {
-    "speciesId": "palkia",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"]
   },
   {
     "speciesId": "rhyperior",
@@ -135,23 +120,8 @@
     "chargedMoves": ["AURA_SPHERE","DAZZLING_GLEAM"]
   },
   {
-    "speciesId": "zamazenta_crowned_shield",
-    "fastMove": "ICE_FANG",
-    "chargedMoves": ["CLOSE_COMBAT","BEHEMOTH_BASH"]
-  },
-  {
-    "speciesId": "zamazenta_crowned_shield",
-    "fastMove": "METAL_CLAW",
-    "chargedMoves": ["CLOSE_COMBAT","BEHEMOTH_BASH"]
-  },
-  {
     "speciesId": "zekrom",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["OUTRAGE","FUSION_BOLT"]
-  },
-  {
-    "speciesId": "zygarde_complete",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["CRUNCH","BULLDOZE"]
   }
 ]

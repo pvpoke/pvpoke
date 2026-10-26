@@ -1,0 +1,81 @@
+{
+  "name": "fable",
+  "title": "Fable Cup",
+  "link": "https://devon.gg/",
+  "include": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "fairy",
+        "ghost",
+        "grass",
+        "water"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "cetitan",
+        "dustox",
+        "flamigo",
+        "glalie",
+        "glalie_shadow",
+        "orbeetle",
+        "piloswine",
+        "piloswine_shadow",
+        "qwilfish",
+        "qwilfish_shadow",
+        "qwilfish_hisuian",
+        "venomoth",
+        "venomoth_shadow"
+      ]
+    }
+  ],
+  "exclude": [
+    {
+      "filterType": "type",
+      "name": "Type",
+      "values": [
+        "dark",
+        "fire",
+        "flying",
+        "poison",
+        "steel"
+      ]
+    },
+    {
+      "filterType": "tag",
+      "name": "Tag",
+      "values": [
+        "mega"
+      ]
+    },
+    {
+      "filterType": "id",
+      "name": "Species",
+      "values": [
+        "abomasnow",
+        "araquanid",
+        "carbink",
+        "clefable",
+        "corsola_galarian",
+        "dusclops",
+        "gourgeist_average",
+        "gourgeist_large",
+        "gourgeist_small",
+        "gourgeist_super",
+        "lanturn",
+        "mimikyu",
+        "ninetales_alolan",
+        "swadloon",
+        "wigglytuff"
+      ]
+    }
+  ],
+  "overrides": [],
+  "league": 1500,
+  "useDefaultMovesets": 1,
+  "excludeLowPokemon": 1
+}
