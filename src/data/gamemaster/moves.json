@@ -2119,6 +2119,18 @@
         "turns": 2
     },
     {
+        "moveId": "KOWTOW_CLEAVE",
+        "name": "Kowtow Cleave",
+        "abbreviation": "KTC",
+        "type": "dark",
+        "power": 75,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "Spam/Bait",
+        "turns": 1
+    },
+    {
         "moveId": "LAST_RESORT",
         "name": "Last Resort",
         "type": "normal",
@@ -2651,8 +2663,24 @@
         "buffs": [1, 1],
         "buffTarget": "self",
         "buffApplyChance": ".1",
-        "archetype": "Boost",
+        "archetype": "Boost Spam",
         "turns": 1
+    },
+    {
+        "moveId": "OMINOUS_WIND_PLUS",
+        "name": "Ominous Wind+",
+        "abbreviation": "OW+",
+        "type": "ghost",
+        "power": 50,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [1, 1],
+        "buffTarget": "self",
+        "buffApplyChance": ".1",
+        "archetype": "Boost",
+        "turns": 1,
+        "isMegaMove": true
     },
     {
         "moveId": "ORIGIN_PULSE",
