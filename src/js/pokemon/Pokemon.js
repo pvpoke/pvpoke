@@ -2531,55 +2531,19 @@ function Pokemon(id, i, b, d){
 		let cpmIndex = cpms.indexOf(self.cpm);
 		let battleCP = battle.getCP();
 		let oldCP = self.cp;
+		let fitToCap = true;
 
 		// Form specific cases
 		if(self.speciesId != formId){
 			switch(formId){
 				case "aegislash_blade":
-					if(battleCP == 1500){
-						newLevel = Math.ceil(self.level * 0.5) + 1;
-					}
-
-					if(battleCP == 2500){
-						newLevel = Math.ceil(self.level * 0.75);
-					}
-
-					cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
-					break;
-
-				case "aegislash_shield":
-					if(battleCP == 1500){
-						newLevel = (self.level / 0.5) + 2;
-					}
-
-					if(battleCP == 2500){
-						newLevel = Math.round(self.level / 0.75);
-					}
-
-					cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
-					break;
-
 				case "minior_meteor":
-					if(battleCP == 1500){
-						// Formulas as posted by u/Ok_Lobster8494
-						newLevel = Math.floor((47 * self.level / 25 + 1) * 2) / 2; // Floor to 0.5 level increment
-					}
+					// Formula as posted by u/eli5questions, scales Attack and Defense only
+					let ownMaxLevel = self.getFormMaxLevel(gm.getPokemonById(self.speciesId).baseStats);
+					let formMaxLevel = self.getFormMaxLevel(newForm.baseStats);
 
-					if(battleCP == 2500){
-						// Formulas as posted by u/Ok_Lobster8494
-						newLevel = Math.floor((73 * self.level/50 + (26/25)) * 2) / 2; // Floor to 0.5 level increment
-					}
-					break;
-
-				case "minior_core":
-					// Inverse of the formulas above
-					if(battleCP == 1500){
-						newLevel = Math.round((self.level - 1) * 25 / 47 * 2) / 2;
-					}
-
-					if(battleCP == 2500){
-						newLevel = Math.round((self.level - 26 / 25) * 50 / 73 * 2) / 2;
-					}
+					newLevel = 1 + Math.floor(2 * (formMaxLevel - 1) * self.level / ownMaxLevel) / 2; // Floor to 0.5 level increment
+					fitToCap = false; // A Pokemon with CP on the cap can show more than the cap in this form
 					break;
 			}
 		}
@@ -2591,7 +2555,7 @@ function Pokemon(id, i, b, d){
 		let newStats;
 
 		// This loop reduces the new form's effective level until it fits under the CP cap
-		while((! newStats || newCP > battleCP) && cpmIndex >= 0){
+		while((! newStats || (fitToCap && newCP > battleCP)) && cpmIndex >= 0){
 			cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
 			newCPM = cpms[cpmIndex];
 
@@ -2604,15 +2568,25 @@ function Pokemon(id, i, b, d){
 				level: newLevel
 			}
 
-			let decrementer = 1;
-
-			if(this.activeFormId == "minior_core" || this.decrementer == "minior_meteor")
-				decrementer = 0.5;
-
-			newLevel -= decrementer;
+			newLevel--;
 		}
 
 		return newStats;
+	}
+
+	// Return the highest level, up to 80, where a form's CP before rounding down fits under the CP cap
+	// Forms under the cap at the top of the CPM table return 80
+
+	this.getFormMaxLevel = function(baseStats){
+		let battleCP = battle.getCP();
+		let cpBase = (baseStats.atk+self.ivs.atk) * Math.pow(baseStats.def+self.ivs.def, 0.5) * Math.pow(baseStats.hp+self.ivs.hp, 0.5) / 10;
+		let overCapIndex = cpms.findIndex(cpm => cpBase * Math.pow(cpm, 2) > battleCP);
+
+		if(overCapIndex == -1){
+			return 80;
+		}
+
+		return Math.max(overCapIndex - 1, 0) / 2 + 1;
 	}
 
 	// Replaces a move in a Pokemon's move pool during battle (eg Morpeko)
