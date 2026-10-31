@@ -104,6 +104,18 @@
         "chargedMoves": ["SWIFT", "TRAILBLAZE"]
     },
     {
+        "speciesId": "hippowdon_shadow",
+        "fastMove": "SAND_ATTACK",
+        "chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"],
+        "shadowType": "shadow"
+    },
+    {
+        "speciesId": "hydreigon_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "FLY"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "jellicent",
         "fastMove": "HEX",
         "chargedMoves": ["SURF", "SHADOW_BALL"]
@@ -187,15 +199,9 @@
         "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
     },
     {
-        "speciesId": "hydreigon_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BRUTAL_SWING", "FLY"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "hippowdon_shadow",
-        "fastMove": "SAND_ATTACK",
-        "chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"],
+        "speciesId": "ursaluna_shadow",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["SWIFT", "FIRE_PUNCH"],
         "shadowType": "shadow"
     }
 ]

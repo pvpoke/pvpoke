@@ -31286,13 +31286,13 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_LITWICK",
             "parent": "lampent"
         },
         "level25CP": 2030,
-        "tags": ["shadoweligible", "mega", "supermega"]
+        "tags": ["shadoweligible", "mega", "supermega", "include1500", "include2500"]
     },
     {
         "dex": 609,
