@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-11-01 17:49:43",
+    "timestamp": "2026-11-01 18:13:55",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -17584,13 +17584,14 @@
             "types": ["dark", "ghost"],
             "fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
             "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK", "DAZZLING_GLEAM", "DRAIN_PUNCH"],
+            "extraChargedMoves": ["NIGHT_SHADE_PLUS"],
             "defaultIVs": {
                 "cp500": [9.5, 7, 15, 14],
                 "cp1500": [29, 4, 13, 15],
                 "cp2500": [50, 15, 15, 15]
             },
             "level25CP": 1158,
-            "tags": ["shadoweligible", "mega"],
+            "tags": ["shadoweligible", "mega", "supermega"],
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
             "released": true
@@ -49071,6 +49072,19 @@
             "cooldown": 500,
             "archetype": "General",
             "turns": 1
+        },
+        {
+            "moveId": "NIGHT_SHADE_PLUS",
+            "name": "Night Shade+",
+            "abbreviation": "NSh+",
+            "type": "ghost",
+            "power": 55,
+            "energy": 45,
+            "energyGain": 0,
+            "cooldown": 500,
+            "archetype": "General",
+            "turns": 1,
+            "isMegaMove": true
         },
         {
             "moveId": "NIGHT_SLASH",

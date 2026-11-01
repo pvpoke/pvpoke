@@ -2592,6 +2592,19 @@
         "turns": 1
     },
     {
+        "moveId": "NIGHT_SHADE_PLUS",
+        "name": "Night Shade+",
+        "abbreviation": "NSh+",
+        "type": "ghost",
+        "power": 55,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "General",
+        "turns": 1,
+        "isMegaMove": true
+    },
+    {
         "moveId": "NIGHT_SLASH",
         "name": "Night Slash",
         "type": "dark",
