@@ -31271,7 +31271,7 @@
         "speciesName": "Chandelure (Mega)",
         "baseStats": {
             "atk": 335,
-            "def": 182,
+            "def": 227,
             "hp": 155
         },
         "types": ["ghost", "fire"],
@@ -31280,9 +31280,9 @@
         "eliteMoves": ["POLTERGEIST"],
         "extraChargedMoves": ["OMINOUS_WIND_PLUS"],
         "defaultIVs": {
-            "cp500": [5, 4, 11, 4],
-            "cp1500": [13.5, 6, 14, 15],
-            "cp2500": [22.5, 7, 14, 14]
+            "cp500": [4.5, 4, 9, 10],
+            "cp1500": [12.5, 4, 7, 13],
+            "cp2500": [20.5, 4, 13, 14]
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
