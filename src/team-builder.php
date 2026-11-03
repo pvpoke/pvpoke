@@ -42,9 +42,12 @@ require_once 'header.php';
 				<h3>Shadow Pokemon</h3>
 				<div class="check on allow-shadows"><span></span>Show Shadow Pokemon in results</div>
 			</div>
-			<div class="team-option">
+			<div class="team-option" style="flex-basis:100%;">
 				<h3>Prioritize Meta</h3>
-				<div class="check on prioritize-meta"><span></span>Prioritize meta threats and alternatives</div>
+				<div class="flex" style="gap: 15px;">
+					<div class="check on prioritize-meta-threats" style="margin-top: 0;"><span></span>Prioritize meta threats</div>
+					<div class="check on prioritize-meta-alternatives" style="margin-top: 0;"><span></span>Prioritize meta alternatives</div>
+				</div>
 			</div>
 			<div class="team-option">
 				<h3>Recommend XL Pokemon</h3>

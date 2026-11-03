@@ -53,7 +53,7 @@
     {
         "speciesId": "cramorant",
         "fastMove": "PECK",
-        "chargedMoves": ["DIVE", "FLY"]
+        "chargedMoves": ["SURF", "FLY"]
     },
     {
         "speciesId": "dondozo",
@@ -194,14 +194,19 @@
         "chargedMoves": ["GIGATON_HAMMER", "BULLDOZE"]
     },
     {
+        "speciesId": "ursaluna_shadow",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["SWIFT", "FIRE_PUNCH"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "vigoroth",
         "fastMove": "SCRATCH",
         "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
     },
     {
-        "speciesId": "ursaluna_shadow",
-        "fastMove": "SCRATCH",
-        "chargedMoves": ["SWIFT", "FIRE_PUNCH"],
-        "shadowType": "shadow"
+        "speciesId": "toxapex",
+        "fastMove": "BITE",
+        "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
     }
 ]
