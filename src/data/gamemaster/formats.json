@@ -49,30 +49,19 @@
 		]
 	},
 	{
-		"title": "Fantasy Cup",
-		"cup": "fantasy",
+		"title": "LAIC 2027 Cup (GBL)",
+		"cup": "laic2027gbl",
 		"cp": 1500,
-		"meta": "fantasy",
+		"meta": "laic2027gbl",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
-		]
-	},
-	{
-		"title": "Mega Halloween Cup",
-		"cup": "halloweenmega",
-		"cp": 1500,
-		"meta": "halloweenmega",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Mega-Evolved Pokémon are eligible.",
-			"Only Bug-, Poison-, Ghost-, Dark-, and Fairy-type Pokémon are eligible."
+			"Pokemon must be at or below 1,500 CP to enter.",
+			"Fire-, Dark-, Steel-, and Fairy-type Pokémon are not eligible.",
+			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.",
+			"Mega-Evolved Pokémon are not eligible for the GO Battle League version of this Cup. However, Mega-Evolved Pokémon will be eligible for the Pokémon Latin America International Championships 2026 in-person competition.",
+			"Prohibited Pokemon: Altaria, Annihilape, Araquanid, Chansey, Clodsire, Corsola (Galarian), Dusclops, Furret, Jellicent, Kingdra, Medicham, Oranguru, Snorlax, Wobbuffet, Mega Sableye."
 		]
 	},
 	{

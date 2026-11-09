@@ -1,0 +1,24 @@
+{
+    "name": "laic2027gbl",
+    "title": "LAIC 2027 Championship Series Cup (GBL)",
+    "include": [
+        {
+            "filterType": "type",
+            "values": ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"]
+        }
+    ],
+    "exclude": [
+        {
+            "filterType": "type",
+            "values": ["dark", "fairy", "fire", "steel"]
+        },
+        {
+            "filterType": "tag",
+            "values": ["legendary", "mythical", "ultrabeast", "mega"]
+        },
+        {
+            "filterType": "id",
+            "values": ["altaria", "annihilape", "araquanid", "chansey", "clodsire", "corsola_galarian", "dusclops", "furret", "jellicent", "kingdra", "medicham", "oranguru", "snorlax", "wobbuffet"]
+        }
+    ]
+}
