@@ -68,6 +68,7 @@ function interfaceObject(){
 		$("body").on("click", ".field-section.type .select-all, .field-section.type .deselect-all", typeSelectAll);
 		$("body").on("click", ".filter .remove", deleteFilterConfirm);
 		$("body").on("click", ".import-custom-group", importIdsFromCustomGroup);
+		$("body").on("change", ".check.regular-moves-only", syncRegularMovesOnly);
 
 		battle = new Battle();
 
@@ -254,7 +255,7 @@ function interfaceObject(){
 			var overrides = collateOverrides(false);
 
 			cup.overrides = overrides;
-			ranker.setMoveOverrides(battle.getCP(), "custom", overrides);
+			ranker.setMoveOverrides(battle.getCP(), "custom", sanitizeExclusiveOverrides(overrides));
 
 			generateRankings(null, data);
 		} else if(ranker.getMoveSelectMode() == "force"){
@@ -326,6 +327,14 @@ function interfaceObject(){
 		} else{
 			$(".check.exclude-low-pokemon").removeClass("on");
 		}
+
+		if(data.regularMovesOnly){
+			$(".check.regular-moves-only").addClass("on");
+		} else if(data.regularMovesOnly !== undefined){
+			$(".check.regular-moves-only").removeClass("on");
+		}
+
+		gm.excludeExclusiveMoves = $(".check.regular-moves-only").hasClass("on");
 
 		// Set league
 		$(".league-select option[value=\""+cup.league+"\"][level-cap=\""+cup.levelCap+"\"]").prop("selected","selected");
@@ -575,6 +584,8 @@ function interfaceObject(){
 
 		setTimeout(function(){
 
+			gm.excludeExclusiveMoves = $(".check.regular-moves-only").hasClass("on");
+
 			if((! data)&&(rankingsRunning)){
 				rankingsRunning = true;
 				return false;
@@ -584,7 +595,13 @@ function interfaceObject(){
 
 			// Use default league movesets? If no moveset data exists, supply existing data
 			useDefaultMovesets = $(".check.use-default-movesets").hasClass("on");
+
+			if(gm.excludeExclusiveMoves){
+				useDefaultMovesets = false;
+			}
+
 			cup.useDefaultMovesets = useDefaultMovesets ? 1 : 0;
+			cup.regularMovesOnly = gm.excludeExclusiveMoves ? 1 : 0;
 
 			// Exclude low-scoring Pokemon from the simulations
 			var excludeLowPokemon = $(".check.exclude-low-pokemon").hasClass("on");
@@ -671,6 +688,66 @@ function interfaceObject(){
 		}
 
 		return overrides;
+	}
+
+	// Drop exclusive moves from manual overrides so they are not added back into the pool.
+
+	function sanitizeExclusiveOverrides(overrides){
+		if(! gm.excludeExclusiveMoves){
+			return overrides;
+		}
+
+		var sanitized = [];
+
+		for(var i = 0; i < overrides.length; i++){
+			var original = overrides[i];
+			var entry = gm.getPokemonById(original.speciesId);
+			var banned = {
+				RETURN: true,
+				FRUSTRATION: true
+			};
+
+			if(entry){
+				(entry.eliteMoves || []).forEach(function(moveId){
+					banned[moveId] = true;
+				});
+
+				(entry.legacyMoves || []).forEach(function(moveId){
+					banned[moveId] = true;
+				});
+			}
+
+			var next = {
+				speciesId: original.speciesId
+			};
+
+			if(original.weight !== undefined){
+				next.weight = original.weight;
+			}
+
+			if(original.fastMove && ! banned[original.fastMove]){
+				next.fastMove = original.fastMove;
+			}
+
+			if(original.chargedMoves){
+				next.chargedMoves = original.chargedMoves.filter(function(moveId){
+					return ! banned[moveId];
+				});
+			}
+
+			if(next.fastMove || (next.chargedMoves && next.chargedMoves.length) || next.weight !== undefined){
+				sanitized.push(next);
+			}
+		}
+
+		return sanitized;
+	}
+
+	// Keep the move filter in sync when the Advanced checkbox changes.
+
+	function syncRegularMovesOnly(){
+		gm.excludeExclusiveMoves = $(".check.regular-moves-only").hasClass("on");
+		cup.regularMovesOnly = gm.excludeExclusiveMoves ? 1 : 0;
 	}
 
 	// Turn a filter's checkbox on or off

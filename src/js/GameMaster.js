@@ -7,6 +7,7 @@ var GameMaster = (function () {
         var object = new Object();
 
 		object.data = {};
+		object.excludeExclusiveMoves = false;
 		object.rankings = [];
 		object.trainRankings = [];
 		object.groups = [];
