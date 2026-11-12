@@ -2,11 +2,7 @@
 	"name": "mega",
 	"title": "All Pokemon",
 	"include": [],
-	"exclude": [{
-		"filterType": "id",
-		"values": ["mewtwo_mega_x", "mewtwo_mega_y", "kyogre_primal", "groudon_primal", "rayquaza_mega"],
-		"leagues": [1500]
-	}],
+	"exclude": [],
 	"excludeLowPokemon": true,
 	"partySize": 3,
 	"presetOnly": true

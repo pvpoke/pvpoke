@@ -291,7 +291,7 @@ function Pokemon(id, i, b, d){
 			self.levelCap = b.getLevelCap();
 		}
 
-		if(self.megaLevel == 4){
+		if(self.megaLevel == 4 && targetCP < 10000){
 			self.baseLevelCap = 52;
 			self.levelCap = 52;
 		}
@@ -2020,14 +2020,6 @@ function Pokemon(id, i, b, d){
 
 	// Set the Pokemon's Mega Level
 	this.setMegaLevel = function(level){
-		if(battle.getCP() == 10000){
-			if(self.megaLevel != 4 && level == 4){
-				self.setLevel(52);
-			} else if(self.megaLevel == 4 && level < 4){
-				self.setLevel(50);
-			}
-		}
-
 		self.megaLevel = level;
 	}
 

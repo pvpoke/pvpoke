@@ -2494,6 +2494,35 @@
         }
     },
     {
+        "dex": 36,
+        "speciesName": "Clefable (Mega)",
+        "speciesId": "clefable_mega",
+        "baseStats": {
+            "atk": 253,
+            "def": 205,
+            "hp": 216
+        },
+        "types": ["fairy", "none"],
+        "fastMoves": ["CHARGE_BEAM", "POUND", "ZEN_HEADBUTT", "CHARM", "FAIRY_WIND"],
+        "chargedMoves": ["DAZZLING_GLEAM", "METEOR_MASH", "MOONBLAST", "PSYCHIC", "SWIFT", "DRAINING_KISS"],
+        "extraChargedMoves": ["MOONBLAST_PLUS"],
+        "defaultIVs": {
+            "cp500": [5, 11, 14, 15],
+            "cp1500": [14.5, 4, 15, 14],
+            "cp2500": [24.5, 4, 13, 11]
+        },
+        "eliteMoves": ["POUND"],
+        "searchPriority": 3,
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false,
+        "family": {
+            "id": "FAMILY_CLEFAIRY",
+            "parent": "clefairy"
+        },
+        "tags": ["mega", "supermega"]
+    },
+    {
         "dex": 37,
         "speciesName": "Vulpix",
         "speciesId": "vulpix",

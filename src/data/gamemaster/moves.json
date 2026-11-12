@@ -2477,6 +2477,21 @@
         "turns": 1
     },
     {
+        "moveId": "MOONBLAST_PLUS",
+        "name": "Moonblast+",
+        "abbreviation": "M+",
+        "type": "fairy",
+        "power": 80,
+        "energy": 50,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".1",
+        "archetype": "Debuff",
+        "turns": 1
+    },
+    {
         "moveId": "MOONGEIST_BEAM",
         "name": "Moongeist Beam",
         "abbreviation": "MoG",
@@ -3605,6 +3620,18 @@
         "buffApplyChance": ".125",
         "archetype": "Boost Spam",
         "turns": 1
+    },
+    {
+        "moveId": "SOAK",
+        "name": "Soak",
+        "abbreviation": "Sk",
+        "type": "water",
+        "power": 6,
+        "energy": 0,
+        "energyGain": 8,
+        "cooldown": 1000,
+        "archetype": "Multipurpose",
+        "turns": 2
     },
     {
         "moveId": "SOLAR_BEAM",
