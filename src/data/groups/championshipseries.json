@@ -62,7 +62,7 @@
     },
     {
         "speciesId": "dunsparce",
-        "fastMove": "BITE",
+        "fastMove": "ROLLOUT",
         "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
     },
     {
@@ -194,6 +194,11 @@
         "chargedMoves": ["GIGATON_HAMMER", "BULLDOZE"]
     },
     {
+        "speciesId": "toxapex",
+        "fastMove": "BITE",
+        "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
+    },
+    {
         "speciesId": "ursaluna_shadow",
         "fastMove": "SCRATCH",
         "chargedMoves": ["SWIFT", "FIRE_PUNCH"],
@@ -205,8 +210,8 @@
         "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
     },
     {
-        "speciesId": "toxapex",
-        "fastMove": "BITE",
-        "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
+        "speciesId": "dunsparce",
+        "fastMove": "ASTONISH",
+        "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
     }
 ]

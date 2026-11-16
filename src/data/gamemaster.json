@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-11-12 03:17:57",
+    "timestamp": "2026-11-16 18:41:19",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -36168,7 +36168,7 @@
             "tags": ["hisuian"],
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_GOOMY",
                 "parent": "goomy",
@@ -36224,7 +36224,7 @@
             "searchPriority": 6,
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_GOOMY",
                 "parent": "sliggoo"
@@ -42450,6 +42450,14 @@
                 "cp500": [9.5, 7, 15, 12],
                 "cp1500": [28.5, 5, 14, 15],
                 "cp2500": [50, 15, 15, 15]
+            },
+            "formChange": {
+                "type": "toggle",
+                "trigger": "charged_move",
+                "moveId": "ANY",
+                "defaultFormId": "morpeko_full_belly",
+                "alternativeFormId": "morpeko_full_belly",
+                "resetOnSwitch": true
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,

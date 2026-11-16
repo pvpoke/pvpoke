@@ -67,7 +67,7 @@
     },
     {
         "speciesId": "dunsparce",
-        "fastMove": "BITE",
+        "fastMove": "ROLLOUT",
         "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
     },
     {
@@ -112,6 +112,12 @@
         "speciesId": "guzzlord",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["BRUTAL_SWING", "SLUDGE_BOMB"]
+    },
+    {
+        "speciesId": "hydreigon_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "FLY"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "jellicent",
@@ -222,9 +228,14 @@
         "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
     },
     {
-        "speciesId": "hydreigon_shadow",
-        "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["BRUTAL_SWING", "FLY"],
+        "speciesId": "dunsparce",
+        "fastMove": "ASTONISH",
+        "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
+    },
+    {
+        "speciesId": "ursaluna_shadow",
+        "fastMove": "SCRATCH",
+        "chargedMoves": ["SWIFT", "FIRE_PUNCH"],
         "shadowType": "shadow"
     }
 ]

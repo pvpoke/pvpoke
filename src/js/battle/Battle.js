@@ -419,7 +419,7 @@ function Battle(){
 				valid = true;
 
 				if(chargedMoveLastTurn){
-					action.priority -= 40; // Resolve floating Fast Attacks before 0 turn swaps after a Charged Attack sequence
+					action.settings.priority -= 40; // Resolve floating Fast Attacks before 0 turn swaps after a Charged Attack sequence
 				}
 			}
 
