@@ -24438,7 +24438,8 @@
         },
         "types": ["electric", "steel"],
         "fastMoves": ["CHARGE_BEAM", "SPARK", "VOLT_SWITCH", "METAL_SOUND"],
-        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT"],
+        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT", "MAGNET_BOMB"],
+        "eliteMoves": ["MAGNET_BOMB"],
         "defaultIVs": {
             "cp500": [6, 4, 10, 15],
             "cp1500": [17, 6, 15, 14],
@@ -24467,7 +24468,8 @@
         },
         "types": ["electric", "steel"],
         "fastMoves": ["CHARGE_BEAM", "SPARK", "VOLT_SWITCH", "METAL_SOUND"],
-        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT"],
+        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT", "MAGNET_BOMB"],
+        "eliteMoves": ["MAGNET_BOMB"],
         "defaultIVs": {
             "cp500": [6, 4, 10, 15],
             "cp1500": [17, 6, 15, 14],
