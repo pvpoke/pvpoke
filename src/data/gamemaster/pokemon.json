@@ -44722,12 +44722,14 @@
         },
         "types": ["dark", "steel"],
         "fastMoves": ["SNARL", "METAL_CLAW", "METAL_SOUND", "LOW_KICK"],
-        "chargedMoves": ["DARK_PULSE", "IRON_HEAD", "X_SCISSOR", "FOCUS_BLAST", "FOUL_PLAY"],
+        "chargedMoves": ["DARK_PULSE", "IRON_HEAD", "X_SCISSOR", "FOCUS_BLAST", "FOUL_PLAY", "KOWTOW_CLEAVE"],
+        "eliteMoves": ["KOWTOW_CLEAVE"],
         "defaultIVs": {
             "cp500": [5.5, 4, 10, 4],
             "cp1500": [15.5, 4, 10, 11],
             "cp2500": [25, 7, 15, 15]
         },
+        "nicknames": ["gambit"],
         "searchPriority": 3,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
