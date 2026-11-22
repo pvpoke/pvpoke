@@ -59,103 +59,6 @@ $formats = array (
   ),
   4 => 
   array (
-    'title' => 'LAIC 2027 Cup (GBL)',
-    'cup' => 'laic2027gbl',
-    'cp' => 1500,
-    'meta' => 'laic2027gbl',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokemon must be at or below 1,500 CP to enter.',
-      1 => 'Fire-, Dark-, Steel-, and Fairy-type Pokémon are not eligible.',
-      2 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
-      3 => 'Mega-Evolved Pokémon are not eligible for the GO Battle League version of this Cup. However, Mega-Evolved Pokémon will be eligible for the Pokémon Latin America International Championships 2026 in-person competition.',
-      4 => 'Prohibited Pokemon: Altaria, Annihilape, Araquanid, Chansey, Clodsire, Corsola (Galarian), Dusclops, Furret, Jellicent, Kingdra, Medicham, Oranguru, Snorlax, Wobbuffet, Mega Sableye.',
-    ),
-  ),
-  5 => 
-  array (
-    'title' => 'LAIC 2027 Championship Series Cup',
-    'cup' => 'laic2027',
-    'cp' => 1500,
-    'meta' => 'laic2027',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokemon must be at or below 1,500 CP to enter.',
-      1 => 'Allowed Types: All besides those explicitly prohibited.',
-      2 => 'Allowed Categories: Shadow Pokemon, Mega Evolution and Primal Reversion Pokemon. All Mega Evolution Pokémon are eligible even if they would otherwise be prohibited by a species, typing, or category.',
-      3 => 'Prohibited Types: Dark, Fairy, Fire, Steel.',
-      4 => 'Prohibited Categories: Legendary, Mythical, Ultra Beasts.',
-      5 => 'Prohibited Pokemon: Altaria, Annihilape, Araquanid, Chansey, Clodsire, Corsola (Galarian), Dusclops, Furret, Jellicent, Kingdra, Medicham, Oranguru, Snorlax, Wobbuffet, Mega Sableye.',
-    ),
-  ),
-  6 => 
-  array (
-    'title' => 'Battle Frontier (Spectral)',
-    'cup' => 'spectral',
-    'cp' => 1500,
-    'meta' => 'spectral',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  7 => 
-  array (
-    'title' => 'Battle Frontier (Cauldron)',
-    'cup' => 'cauldron',
-    'cp' => 2500,
-    'meta' => 'cauldron',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  8 => 
-  array (
-    'title' => 'Battle Frontier (Master)',
-    'cup' => 'battlefrontiermaster',
-    'cp' => 10000,
-    'meta' => 'battlefrontiermaster',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  9 => 
-  array (
-    'title' => 'Devon Trail Cup',
-    'cup' => 'trail',
-    'cp' => 1500,
-    'meta' => 'trail',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  10 => 
-  array (
-    'title' => 'Devon Fable Cup',
-    'cup' => 'fable',
-    'cp' => 1500,
-    'meta' => 'fable',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  11 => 
-  array (
-    'title' => 'Gymbreakers Invitational Season 7',
-    'cup' => 'gymbreakers',
-    'cp' => 1500,
-    'meta' => 'gymbreakers',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-  ),
-  12 => 
-  array (
     'title' => 'Master Premier Cup',
     'cup' => 'premier',
     'cp' => 10000,
@@ -170,7 +73,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  13 => 
+  5 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -180,7 +83,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  14 => 
+  6 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -190,7 +93,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  15 => 
+  7 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',
