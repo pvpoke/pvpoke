@@ -100,7 +100,14 @@
     {
         "speciesId": "giratina_altered",
         "fastMove": "DRAGON_BREATH",
-        "chargedMoves": ["ANCIENT_POWER", "SHADOW_FORCE"]
+        "chargedMoves": ["ANCIENT_POWER", "SHADOW_FORCE"],
+        "level": 27.5,
+        "ivs": [5, 15, 8]
+    },
+    {
+        "speciesId": "giratina_altered",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["DRAGON_CLAW", "SHADOW_FORCE"]
     },
     {
         "speciesId": "greninja",
@@ -136,11 +143,6 @@
         "speciesId": "malamar",
         "fastMove": "PSYWAVE",
         "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"]
-    },
-    {
-        "speciesId": "malamar",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
     },
     {
         "speciesId": "malamar_mega",
@@ -214,11 +216,6 @@
         "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
     },
     {
-        "speciesId": "snorlax",
-        "fastMove": "PSYWAVE",
-        "chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
-    },
-    {
         "speciesId": "swampert",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
@@ -258,5 +255,31 @@
         "speciesId": "zygarde_complete",
         "fastMove": "DRAGON_TAIL",
         "chargedMoves": ["CRUNCH", "BULLDOZE"]
+    },
+    {
+        "speciesId": "typhlosion",
+        "fastMove": "INCINERATE",
+        "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"]
+    },
+    {
+        "speciesId": "clefable",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["MYSTICAL_FIRE", "DRAINING_KISS"]
+    },
+    {
+        "speciesId": "clefable_mega",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["METEOR_MASH", "MYSTICAL_FIRE", "MOONBLAST_PLUS"]
+    },
+    {
+        "speciesId": "walrein",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
+    },
+    {
+        "speciesId": "hydreigon_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["BRUTAL_SWING", "FLY"],
+        "shadowType": "shadow"
     }
 ]
