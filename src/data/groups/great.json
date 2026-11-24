@@ -26,6 +26,11 @@
         "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
     },
     {
+        "speciesId": "clefable",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["MYSTICAL_FIRE", "METEOR_MASH"]
+    },
+    {
         "speciesId": "clodsire",
         "fastMove": "POISON_STING",
         "chargedMoves": ["STONE_EDGE", "EARTHQUAKE"]
@@ -120,6 +125,12 @@
         "chargedMoves": ["ENERGY_BALL", "ACROBATICS"]
     },
     {
+        "speciesId": "machamp_shadow",
+        "fastMove": "KARATE_CHOP",
+        "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+        "shadowType": "shadow"
+    },
+    {
         "speciesId": "malamar",
         "fastMove": "PSYWAVE",
         "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
@@ -133,6 +144,12 @@
         "speciesId": "marowak",
         "fastMove": "MUD_SLAP",
         "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"]
+    },
+    {
+        "speciesId": "marowak_shadow",
+        "fastMove": "MUD_SLAP",
+        "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "medicham",
@@ -153,6 +170,12 @@
         "speciesId": "morpeko_full_belly",
         "fastMove": "THUNDER_SHOCK",
         "chargedMoves": ["AURA_WHEEL_ELECTRIC", "PSYCHIC_FANGS"]
+    },
+    {
+        "speciesId": "ninetales_alolan_shadow",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": ["WEATHER_BALL_ICE", "CHILLING_WATER"],
+        "shadowType": "shadow"
     },
     {
         "speciesId": "ninetales_shadow",
@@ -181,6 +204,11 @@
         "speciesId": "stunfisk",
         "fastMove": "THUNDER_SHOCK",
         "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+    },
+    {
+        "speciesId": "stunfisk_galarian",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
     },
     {
         "speciesId": "talonflame",
@@ -214,31 +242,8 @@
         "chargedMoves": ["BRICK_BREAK", "ROCK_SLIDE"]
     },
     {
-        "speciesId": "clefable",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["MYSTICAL_FIRE", "METEOR_MASH"]
-    },
-    {
-        "speciesId": "stunfisk_galarian",
-        "fastMove": "MUD_SHOT",
-        "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
-    },
-    {
-        "speciesId": "marowak_shadow",
-        "fastMove": "MUD_SLAP",
-        "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "machamp_shadow",
-        "fastMove": "KARATE_CHOP",
-        "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-        "shadowType": "shadow"
-    },
-    {
-        "speciesId": "ninetales_alolan_shadow",
-        "fastMove": "POWDER_SNOW",
-        "chargedMoves": ["WEATHER_BALL_ICE", "CHILLING_WATER"],
-        "shadowType": "shadow"
+        "speciesId": "furret",
+        "fastMove": "SUCKER_PUNCH",
+        "chargedMoves": ["SWIFT", "BRICK_BREAK"]
     }
 ]
