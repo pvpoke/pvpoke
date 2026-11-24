@@ -2489,7 +2489,8 @@
         "buffTarget": "opponent",
         "buffApplyChance": ".1",
         "archetype": "Debuff",
-        "turns": 1
+        "turns": 1,
+        "isMegaMove": true
     },
     {
         "moveId": "MOONGEIST_BEAM",
