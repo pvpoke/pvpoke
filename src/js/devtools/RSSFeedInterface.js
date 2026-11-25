@@ -27,7 +27,10 @@ var InterfaceMaster = (function () {
 				var pubDate = new Date().toUTCString();
 				var content = $("#post-content").val().replace(/(?:\r\n|\r|\n)/g, '<br>');
 
-				$(xml).find("channel").prepend("<item><title>"+$("#post-title").val()+"</title><description><![CDATA["+content+"]]></description><link>"+$("#post-link").val()+"</link><pubDate>"+pubDate+"</pubDate></item>");
+				var title = $("#post-title").val().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+			var link = $("#post-link").val().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+			$(xml).find("channel").prepend("<item><title>"+title+"</title><description><![CDATA["+content+"]]></description><link>"+link+"</link><pubDate>"+pubDate+"</pubDate></item>");
 
 				$(xml).find("channel item").last().remove();
 				updateXMLDisplay();
