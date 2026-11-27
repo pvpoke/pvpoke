@@ -58,6 +58,13 @@ require_once 'header.php'; ?>
 
 		<div class="flex-section">
 			<div>
+				<div class="regular-moves-only check"><span></span> Regular moves only</div>
+				<p class="small">Exclude Elite and Legacy moves, plus Return and Frustration, for every Pokemon. League default movesets are ignored, because those rankings include exclusive moves. Also turn off "Exclude Low-Performing Pokemon" if you want the full field: that cutoff comes from rankings that allow exclusive moves.</p>
+			</div>
+		</div>
+
+		<div class="flex-section">
+			<div>
 				<h3 class="section-title">Subject Energy<br>Advantage</h3>
 				<input type="number" class="subject-turns" index="0" placeholder="Turns" />
 			</div>
