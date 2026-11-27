@@ -77,11 +77,14 @@ if(isset($_COOKIE['settings'])){
 
 $performGroupMigration = false;
 
-if(! isset($_COOKIE['migrate'])){
-	$performGroupMigration = true;
+setcookie('migrate', 'true', [
+    'expires' => time() + (5 * 365 * 24 * 60 * 60),
+    'path' => '/',
+    'httponly' => true,      // ← New: Prevent JavaScript access
+    'secure' => !empty($_SERVER['HTTPS']),  // ← New: HTTPS only
+    'samesite' => 'Lax'      // ← New: Cross-site protection
+]);
 
-	setcookie('migrate', 'true', time() + (5 * 365 * 24 * 60 * 60), '/');
-}
 
 ?>
 <!doctype html>
