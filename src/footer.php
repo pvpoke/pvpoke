@@ -82,6 +82,46 @@
 			$("header .menu").slideToggle(125);
 		});
 
+		// Change move language directly from the main menu
+
+		$("#menu-language-select").on("change", function(e){
+			e.stopPropagation();
+
+			var $select = $(this);
+			var $status = $select.next(".language-change-status");
+			var language = MoveLocalization.normalizeLocale($select.val());
+
+			if(language == settings.language){
+				return;
+			}
+
+			$select.prop("disabled", true);
+			$status.text("Changing language...");
+
+			$.ajax({
+				url: host + "data/languageCookie.php",
+				type: "POST",
+				data: {
+					language: language
+				},
+				dataType: "json",
+				success: function(data){
+					if(data.response == "success"){
+						window.location.reload();
+						return;
+					}
+
+					restoreLanguageSelect();
+				},
+				error: restoreLanguageSelect
+			});
+
+			function restoreLanguageSelect(){
+				$select.val(settings.language).prop("disabled", false);
+				$status.text("Could not change language. Please try again.");
+			}
+		});
+
 		// Auto select link
 
 		$(".share-link input").click(function(e){

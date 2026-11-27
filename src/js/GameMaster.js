@@ -41,71 +41,34 @@ var GameMaster = (function () {
 				object.data = data;
 				object.originalData = {...object.data}; // Soft copy original data for custom gamemaster comparison
 
-				console.log("gamemaster loaded");
+				MoveLocalization.loadAndApply(object.data.moves, settings.language, function(){
+					console.log("gamemaster loaded");
 
-				// Insert cup and format values into cup and format select dropdowns
-				if(typeof updateFormatSelect === "function"){
-					updateFormatSelect(object.data.formats, InterfaceMaster.getInstance());
-				}
-
-				if(typeof updateCupSelect === "function"){
-					updateCupSelect(object.data.formats, InterfaceMaster.getInstance());
-				}
-
-				// Insert format links into ranking submenu
-				var formats = object.data.formats;
-
-				for(var i = formats.length - 1; i >= 0; i--){
-					if(formats[i].showFormat && ! formats[i].hideRankings && formats[i].title != "Custom"){
-						var $link = $("<a href=\""+(host + "rankings/" + formats[i].cup + "/" + formats[i].cp + "/overall/"+"\">"+formats[i].title+"</a>"));
-						$link.insertAfter($(".icon-rankings + .submenu a").eq(2));
-					}
-				}
-
-				object.createSearchMaps();
-
-				if(settings.gamemaster == "gamemaster"){
-					// Sort Pokemon alphabetically for searching
-					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
-
-					object.createPokeSelectList();
-
-					if(typeof InterfaceMaster !== 'undefined'){
-						InterfaceMaster.getInstance().init(object);
+					// Insert cup and format values into cup and format select dropdowns
+					if(typeof updateFormatSelect === "function"){
+						updateFormatSelect(object.data.formats, InterfaceMaster.getInstance());
 					}
 
-					if(typeof customRankingInterface !== 'undefined'){
-						customRankingInterface.init(object);
+					if(typeof updateCupSelect === "function"){
+						updateCupSelect(object.data.formats, InterfaceMaster.getInstance());
 					}
-				} else{
-					// Load custom gamemaster from local storage
-					let content = window.localStorage.getItem(settings.gamemaster);
 
-					try{
-						customData = JSON.parse(content);
+					// Insert format links into ranking submenu
+					var formats = object.data.formats;
 
-						if(customData?.id){
-							object.data.id = customData.id
+					for(var i = formats.length - 1; i >= 0; i--){
+						if(formats[i].showFormat && ! formats[i].hideRankings && formats[i].title != "Custom"){
+							var $link = $("<a href=\""+(host + "rankings/" + formats[i].cup + "/" + formats[i].cp + "/overall/"+"\">"+formats[i].title+"</a>"));
+							$link.insertAfter($(".icon-rankings + .submenu a").eq(2));
 						}
+					}
 
-						if(customData?.title){
-							object.data.title = customData.title
-						}
+					object.createSearchMaps();
 
-						if(customData?.pokemon){
-							// Strip any empty values
-							customData.pokemon = customData.pokemon.filter(pokemon => pokemon.speciesId != "");
-							object.data.pokemon = customData.pokemon
-						}
+					if(settings.gamemaster == "gamemaster"){
+						// Sort Pokemon alphabetically for searching
+						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
-						if(customData?.moves){
-							// Strip any empty values
-							customData.moves = customData.moves.filter(move => move.moveId != "");
-							object.data.moves = customData.moves
-						}
-
-						// Initialize search maps
-						object.createSearchMaps();
 						object.createPokeSelectList();
 
 						if(typeof InterfaceMaster !== 'undefined'){
@@ -115,11 +78,51 @@ var GameMaster = (function () {
 						if(typeof customRankingInterface !== 'undefined'){
 							customRankingInterface.init(object);
 						}
-					} catch(e){
-						console.error("Could not load custom gamemaster", e);
-					}
+					} else{
+						// Load custom gamemaster from local storage
+						let content = window.localStorage.getItem(settings.gamemaster);
 
-				}
+						try{
+							customData = JSON.parse(content);
+
+							if(customData?.id){
+								object.data.id = customData.id
+							}
+
+							if(customData?.title){
+								object.data.title = customData.title
+							}
+
+							if(customData?.pokemon){
+								// Strip any empty values
+								customData.pokemon = customData.pokemon.filter(pokemon => pokemon.speciesId != "");
+								object.data.pokemon = customData.pokemon
+							}
+
+							if(customData?.moves){
+								// Strip any empty values
+								customData.moves = customData.moves.filter(move => move.moveId != "");
+								object.data.moves = customData.moves
+								MoveLocalization.applyLoaded(object.data.moves, settings.language);
+							}
+
+							// Initialize search maps
+							object.createSearchMaps();
+							object.createPokeSelectList();
+
+							if(typeof InterfaceMaster !== 'undefined'){
+								InterfaceMaster.getInstance().init(object);
+							}
+
+							if(typeof customRankingInterface !== 'undefined'){
+								customRankingInterface.init(object);
+							}
+						} catch(e){
+							console.error("Could not load custom gamemaster", e);
+						}
+
+					}
+				});
 			}
 		});
 
@@ -150,6 +153,7 @@ var GameMaster = (function () {
 							moves: data.moves
 						};
 
+						MoveLocalization.applyLoaded(customData.moves, settings.language);
 						callback(customData);
 					}
 				});
@@ -160,6 +164,7 @@ var GameMaster = (function () {
 				try{
 					customData = JSON.parse(content);
 
+					MoveLocalization.applyLoaded(customData.moves, settings.language);
 					callback(customData);
 				} catch(e){
 					console.error("Could not load custom gamemaster", e);
